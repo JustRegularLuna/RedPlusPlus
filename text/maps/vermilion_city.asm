@@ -39,7 +39,7 @@ _SSAnneFlashedTicketText:: ; a576c (29:576c)
 	line "the S.S. Ticket!"
 
 	para "Great! Welcome to"
-	line "S.S. AnneE!"
+	line "S.S. Anne!"
 	done
 
 _SSAnneNoTicketText:: ; a57a3 (29:57a3)
