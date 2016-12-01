@@ -944,7 +944,7 @@ EngineerData: ; COMPLETED
 	db "Jack@",21,MAGNETON,RAICHU,$FF ; route 11 5
 
 CoupleData: ; COMPLETED
-	db "Mike&Nat@",25,CUBONE,WEEPINBELL,$FF ; route 6
+	db "Mike & Nat@",25,CUBONE,WEEPINBELL,$FF ; route 6
 
 FisherData: ; COMPLETED
 	db "Walt@",26,GOLDEEN,TENTACOOL,VAPOREON,$FF ;                     UNKNOWN

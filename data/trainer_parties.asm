@@ -884,7 +884,7 @@ EngineerData:
 	db "Jack@",18,MAGNEMITE,PIKACHU,$FF
 
 CoupleData: 
-	db "Mike&Nat@",20,CUBONE,WEEPINBELL,$FF
+	db "Mike & Nat@",20,CUBONE,WEEPINBELL,$FF
 
 FisherData:
 	db "Walt@",17,GOLDEEN,TENTACOOL,GOLDEEN,$FF
