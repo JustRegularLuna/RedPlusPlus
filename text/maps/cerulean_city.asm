@@ -43,7 +43,7 @@ _CeruleanCityText_19677:: ; a4e07 (29:4e07)
 
 	para "After all, Bill's"
 	line "world famous as a"
-	cont "#maniac!"
+	cont "# Maniac!"
 
 	para "He invented the"
 	line "#mon Storage"

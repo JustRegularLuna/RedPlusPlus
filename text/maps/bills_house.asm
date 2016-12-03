@@ -5,7 +5,7 @@ _BillsHouseText_1e865:: ; 8d267 (23:5267)
 
 	para "Call me Bill!"
 	line "I'm a true blue"
-	cont "#maniac! Hey!"
+	cont "# Maniac! Hey!"
 	cont "What's with that"
 	cont "skeptical look?"
 

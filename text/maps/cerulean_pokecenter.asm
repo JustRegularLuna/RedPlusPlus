@@ -11,8 +11,8 @@ _CeruleanPokecenterText3:: ; 9892a (26:492a)
 	text "Have you heard"
 	line "about Bill?"
 
-	para "Everyone calls"
-	line "him a #maniac!"
+	para "Everyone calls him"
+	line "a # Maniac!"
 
 	para "I think people"
 	line "are just jealous"
