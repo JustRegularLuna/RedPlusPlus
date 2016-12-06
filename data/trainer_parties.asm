@@ -764,7 +764,7 @@ LassData:
 	db "Bella@",23,ODDISH,GLOOM,$FF
 	
 SailorData:
-	db "Jack",18,MACHOP,SHELLDER,$FF
+	db "Jack@",18,MACHOP,SHELLDER,$FF
 	db "Will@",17,MACHOP,TENTACOOL,$FF
 	db "Lewis@",21,SHELLDER,$FF
 	db "Huey@",17,HORSEA,SHELLDER,TENTACOOL,$FF
