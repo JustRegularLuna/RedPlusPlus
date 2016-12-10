@@ -1,6 +1,6 @@
 _Route10BattleText1:: ; 8e642 (23:6642)
 	text "Wow, are you a"
-	line "#maniac too?"
+	line "# Maniac too?"
 	cont "Want to see my"
 	cont "collection?"
 	done
@@ -61,7 +61,7 @@ _Route10EndBattleText4:: ; 8e7a8 (23:67a8)
 
 _Route10AfterBattleText4:: ; 8e7bd (23:67bd)
 	text "I noticed some"
-	line "#maniacs"
+	line "# Maniacs"
 	cont "prowling around."
 	done
 
