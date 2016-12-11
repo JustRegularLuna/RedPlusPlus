@@ -147,6 +147,6 @@ _CeladonCityText18:: ; a5e6a (29:5e6a)
 	text "Rocket Game Corner"
 	
 	para "The playground"
-	cont "for everybody!"
+	line "for everybody!"
 	done
 
