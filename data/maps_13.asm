@@ -9,7 +9,7 @@ PewterPokecenterBlocks:
 CeruleanPokecenterBlocks:
 CinnabarPokecenterBlocks:
 FuchsiaPokecenterBlocks:
-INCBIN "maps/Pokecenter.blk"
+INCBIN "maps/ViridianPokecenter.blk"
 
 INCLUDE "data/mapHeaders/viridianpokecenter.asm"
 INCLUDE "scripts/viridianpokecenter.asm"
