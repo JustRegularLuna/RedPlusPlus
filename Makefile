@@ -7,10 +7,11 @@ endif
 PYTHON := python
 MD5 := md5sum -c --quiet
 
-2bpp     := $(PYTHON) extras/pokemontools/gfx.py 2bpp
-1bpp     := $(PYTHON) extras/pokemontools/gfx.py 1bpp
-pic      := $(PYTHON) extras/pokemontools/pic.py compress
-includes := $(PYTHON) extras/pokemontools/scan_includes.py
+2bpp := $(PYTHON) tools/gfx.py 2bpp
+1bpp := $(PYTHON) tools/gfx.py 1bpp
+pic  := $(PYTHON) tools/pic.py compress
+
+includes := $(PYTHON) tools/scan_includes.py
 
 pokered_obj := audio_red.o main_red.o text_red.o wram_red.o
 pokeblue_obj := audio_blue.o main_blue.o text_blue.o wram_blue.o
