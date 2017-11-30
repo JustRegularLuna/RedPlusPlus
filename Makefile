@@ -54,6 +54,6 @@ pokeblue_opt = -Cjv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON BLUE"
 	$(RGBDS_DIR)rgbfix $($*_opt) $@
 
 %.png:  ;
-%.2bpp: %.png  ; @$(2bpp) $<
-%.1bpp: %.png  ; @$(1bpp) $<
-%.pic:  %.2bpp ; @$(pic)  $<
+%.2bpp: %.png  ; $(2bpp) $<
+%.1bpp: %.png  ; $(1bpp) $<
+%.pic:  %.2bpp ; $(pic)  $<
