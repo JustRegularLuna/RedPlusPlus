@@ -1,48 +1,48 @@
 INCLUDE "data/mapHeaders/route2.asm"
 INCLUDE "data/mapObjects/route2.asm"
-Route2Blocks: INCBIN "maps/route2.blk"
+Route2Blocks: INCBIN "maps/Route2.blk"
 
 INCLUDE "data/mapHeaders/route3.asm"
 INCLUDE "data/mapObjects/route3.asm"
-Route3Blocks: INCBIN "maps/route3.blk"
+Route3Blocks: INCBIN "maps/Route3.blk"
 
 INCLUDE "data/mapHeaders/route4.asm"
 INCLUDE "data/mapObjects/route4.asm"
-Route4Blocks: INCBIN "maps/route4.blk"
+Route4Blocks: INCBIN "maps/Route4.blk"
 
 INCLUDE "data/mapHeaders/route5.asm"
 INCLUDE "data/mapObjects/route5.asm"
-Route5Blocks: INCBIN "maps/route5.blk"
+Route5Blocks: INCBIN "maps/Route5.blk"
 
 INCLUDE "data/mapHeaders/route9.asm"
 INCLUDE "data/mapObjects/route9.asm"
-Route9Blocks: INCBIN "maps/route9.blk"
+Route9Blocks: INCBIN "maps/Route9.blk"
 
 INCLUDE "data/mapHeaders/route13.asm"
 INCLUDE "data/mapObjects/route13.asm"
-Route13Blocks: INCBIN "maps/route13.blk"
+Route13Blocks: INCBIN "maps/Route13.blk"
 
 INCLUDE "data/mapHeaders/route14.asm"
 INCLUDE "data/mapObjects/route14.asm"
-Route14Blocks: INCBIN "maps/route14.blk"
+Route14Blocks: INCBIN "maps/Route14.blk"
 
 INCLUDE "data/mapHeaders/route17.asm"
 INCLUDE "data/mapObjects/route17.asm"
-Route17Blocks: INCBIN "maps/route17.blk"
+Route17Blocks: INCBIN "maps/Route17.blk"
 
 INCLUDE "data/mapHeaders/route19.asm"
 INCLUDE "data/mapObjects/route19.asm"
-Route19Blocks: INCBIN "maps/route19.blk"
+Route19Blocks: INCBIN "maps/Route19.blk"
 
 INCLUDE "data/mapHeaders/route21.asm"
 INCLUDE "data/mapObjects/route21.asm"
-Route21Blocks: INCBIN "maps/route21.blk"
+Route21Blocks: INCBIN "maps/Route21.blk"
 
 VermilionHouse2Blocks:
 Route12HouseBlocks:
-DayCareMBlocks: INCBIN "maps/daycarem.blk"
+DayCareMBlocks: INCBIN "maps/Daycarem.blk"
 
-FuchsiaHouse3Blocks: INCBIN "maps/fuchsiahouse3.blk"
+FuchsiaHouse3Blocks: INCBIN "maps/FuchsiaHouse3.blk"
 
 INCLUDE "scripts/route2.asm"
 INCLUDE "scripts/route3.asm"
@@ -63,7 +63,7 @@ INCLUDE "data/mapHeaders/celadonmart2.asm"
 INCLUDE "scripts/celadonmart2.asm"
 INCLUDE "data/mapObjects/celadonmart2.asm"
 INCLUDE "data/martInventories/celadon_2.asm"
-CeladonMart2Blocks: INCBIN "maps/celadonmart2.blk"
+CeladonMart2Blocks: INCBIN "maps/CeladonMart2.blk"
 
 INCLUDE "data/mapHeaders/fuchsiahouse3.asm"
 INCLUDE "scripts/fuchsiahouse3.asm"
@@ -80,4 +80,4 @@ INCLUDE "data/mapObjects/route12house.asm"
 INCLUDE "data/mapHeaders/silphco8.asm"
 INCLUDE "scripts/silphco8.asm"
 INCLUDE "data/mapObjects/silphco8.asm"
-SilphCo8Blocks: INCBIN "maps/silphco8.blk"
+SilphCo8Blocks: INCBIN "maps/SilphCo8F.blk"

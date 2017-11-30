@@ -1,23 +1,23 @@
 SaffronMartBlocks:
 LavenderMartBlocks:
 CeruleanMartBlocks:
-VermilionMartBlocks: INCBIN "maps/vermilionmart.blk"
+VermilionMartBlocks: INCBIN "maps/VermilionMart.blk"
 
 CopycatsHouse2FBlocks:
-RedsHouse2FBlocks: INCBIN "maps/redshouse2f.blk"
+RedsHouse2FBlocks: INCBIN "maps/RedsHouse2F.blk"
 
-Museum1FBlocks: INCBIN "maps/museum1f.blk"
+Museum1FBlocks: INCBIN "maps/Museum1F.blk"
 
-Museum2FBlocks: INCBIN "maps/museum2f.blk"
+Museum2FBlocks: INCBIN "maps/Museum2F.blk"
 
 UndergroundPathEntranceRoute7Blocks:
 UndergroundPathEntranceRoute7CopyBlocks:
 UndergroundPathEntranceRoute6Blocks:
-UndergroundPathEntranceRoute5Blocks: INCBIN "maps/undergroundpathentranceroute5.blk"
+UndergroundPathEntranceRoute5Blocks: INCBIN "maps/PathEntranceRoute5.blk"
 
 Route2GateBlocks:
 ViridianForestEntranceBlocks:
-ViridianForestExitBlocks: INCBIN "maps/viridianforestexit.blk"
+ViridianForestExitBlocks: INCBIN "maps/ViridianForestExit.blk"
 
 INCLUDE "data/mapHeaders/redshouse2f.asm"
 INCLUDE "scripts/redshouse2f.asm"
@@ -34,12 +34,12 @@ INCLUDE "data/mapObjects/museum2f.asm"
 INCLUDE "data/mapHeaders/pewtergym.asm"
 INCLUDE "scripts/pewtergym.asm"
 INCLUDE "data/mapObjects/pewtergym.asm"
-PewterGymBlocks: INCBIN "maps/pewtergym.blk"
+PewterGymBlocks: INCBIN "maps/PewterGym.blk"
 
 INCLUDE "data/mapHeaders/ceruleangym.asm"
 INCLUDE "scripts/ceruleangym.asm"
 INCLUDE "data/mapObjects/ceruleangym.asm"
-CeruleanGymBlocks: INCBIN "maps/ceruleangym.blk"
+CeruleanGymBlocks: INCBIN "maps/CeruleanGym.blk"
 
 INCLUDE "data/mapHeaders/ceruleanmart.asm"
 INCLUDE "scripts/ceruleanmart.asm"
@@ -59,7 +59,7 @@ INCLUDE "data/martInventories/vermillion.asm"
 INCLUDE "data/mapHeaders/vermiliongym.asm"
 INCLUDE "scripts/vermiliongym.asm"
 INCLUDE "data/mapObjects/vermiliongym.asm"
-VermilionGymBlocks: INCBIN "maps/vermiliongym.blk"
+VermilionGymBlocks: INCBIN "maps/VermilionGym.blk"
 
 INCLUDE "data/mapHeaders/copycatshouse2f.asm"
 INCLUDE "scripts/copycatshouse2f.asm"
@@ -68,12 +68,12 @@ INCLUDE "data/mapObjects/copycatshouse2f.asm"
 INCLUDE "data/mapHeaders/fightingdojo.asm"
 INCLUDE "scripts/fightingdojo.asm"
 INCLUDE "data/mapObjects/fightingdojo.asm"
-FightingDojoBlocks: INCBIN "maps/fightingdojo.blk"
+FightingDojoBlocks: INCBIN "maps/FightingDojo.blk"
 
 INCLUDE "data/mapHeaders/saffrongym.asm"
 INCLUDE "scripts/saffrongym.asm"
 INCLUDE "data/mapObjects/saffrongym.asm"
-SaffronGymBlocks: INCBIN "maps/saffrongym.blk"
+SaffronGymBlocks: INCBIN "maps/SaffronGym.blk"
 
 INCLUDE "data/mapHeaders/saffronmart.asm"
 INCLUDE "scripts/saffronmart.asm"
@@ -83,7 +83,7 @@ INCLUDE "data/martInventories/saffron.asm"
 INCLUDE "data/mapHeaders/silphco1.asm"
 INCLUDE "scripts/silphco1.asm"
 INCLUDE "data/mapObjects/silphco1.asm"
-SilphCo1Blocks: INCBIN "maps/silphco1.blk"
+SilphCo1Blocks: INCBIN "maps/SilphCo1F.blk"
 
 INCLUDE "data/mapHeaders/viridianforestexit.asm"
 INCLUDE "scripts/viridianforestexit.asm"
@@ -116,9 +116,9 @@ INCLUDE "data/mapObjects/undergroundpathentranceroute7copy.asm"
 INCLUDE "data/mapHeaders/silphco9.asm"
 INCLUDE "scripts/silphco9.asm"
 INCLUDE "data/mapObjects/silphco9.asm"
-SilphCo9Blocks: INCBIN "maps/silphco9.blk"
+SilphCo9Blocks: INCBIN "maps/SilphCo9F.blk"
 
 INCLUDE "data/mapHeaders/victoryroad1.asm"
 INCLUDE "scripts/victoryroad1.asm"
 INCLUDE "data/mapObjects/victoryroad1.asm"
-VictoryRoad1Blocks: INCBIN "maps/victoryroad1.blk"
+VictoryRoad1Blocks: INCBIN "maps/VictoryRoad1.blk"

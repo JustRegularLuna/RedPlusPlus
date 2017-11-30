@@ -9,7 +9,7 @@ PewterPokecenterBlocks:
 CeruleanPokecenterBlocks:
 CinnabarPokecenterBlocks:
 FuchsiaPokecenterBlocks:
-	INCBIN "maps/kantopokecenter.blk"
+INCBIN "maps/Pokecenter.blk"
 
 INCLUDE "data/mapHeaders/viridianpokecenter.asm"
 INCLUDE "scripts/viridianpokecenter.asm"
@@ -59,4 +59,4 @@ INCLUDE "data/mapHeaders/indigoplateaulobby.asm"
 INCLUDE "scripts/indigoplateaulobby.asm"
 INCLUDE "data/mapObjects/indigoplateaulobby.asm"
 INCLUDE "data/martInventories/indigo_plateau.asm"
-IndigoPlateauLobbyBlocks: INCBIN "maps/indigoplateaulobby.blk"
+IndigoPlateauLobbyBlocks: INCBIN "maps/IndigoPlateauLobby.blk"
