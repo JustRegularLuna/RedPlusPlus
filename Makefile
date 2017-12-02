@@ -1,10 +1,17 @@
+ifneq ($(wildcard rgbds/.*),)
+RGBDS_DIR = rgbds/
+else
+RGBDS_DIR =
+endif
+
 PYTHON := python
 MD5 := md5sum -c --quiet
 
-2bpp     := $(PYTHON) extras/pokemontools/gfx.py 2bpp
-1bpp     := $(PYTHON) extras/pokemontools/gfx.py 1bpp
-pic      := $(PYTHON) extras/pokemontools/pic.py compress
-includes := $(PYTHON) extras/pokemontools/scan_includes.py
+2bpp := $(PYTHON) tools/gfx.py 2bpp
+1bpp := $(PYTHON) tools/gfx.py 1bpp
+pic  := $(PYTHON) tools/pic.py compress
+
+includes := $(PYTHON) tools/scan_includes.py
 
 pokered_obj := audio_red.o main_red.o text_red.o wram_red.o
 pokeblue_obj := audio_blue.o main_blue.o text_blue.o wram_blue.o
@@ -34,20 +41,20 @@ clean:
 
 %_red.o: dep = $(shell $(includes) $(@D)/$*.asm)
 $(pokered_obj): %_red.o: %.asm $$(dep)
-	rgbasm -D _RED -h -o $@ $*.asm
+	$(RGBDS_DIR)rgbasm -D _RED -h -o $@ $*.asm
 
 %_blue.o: dep = $(shell $(includes) $(@D)/$*.asm)
 $(pokeblue_obj): %_blue.o: %.asm $$(dep)
-	rgbasm -D _BLUE -h -o $@ $*.asm
+	$(RGBDS_DIR)rgbasm -D _BLUE -h -o $@ $*.asm
 
 pokered_opt  = -Cjv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON RED"
 pokeblue_opt = -Cjv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON BLUE"
 
 %.gbc: $$(%_obj)
-	rgblink -n $*.sym -o $@ $^
-	rgbfix $($*_opt) $@
+	$(RGBDS_DIR)rgblink -n $*.sym -o $@ $^
+	$(RGBDS_DIR)rgbfix $($*_opt) $@
 
 %.png:  ;
-%.2bpp: %.png  ; @$(2bpp) $<
-%.1bpp: %.png  ; @$(1bpp) $<
-%.pic:  %.2bpp ; @$(pic)  $<
+%.2bpp: %.png  ; $(2bpp) $<
+%.1bpp: %.png  ; $(1bpp) $<
+%.pic:  %.2bpp ; $(pic)  $<

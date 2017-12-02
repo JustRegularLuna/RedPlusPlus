@@ -31,7 +31,12 @@ ChoosePlayerName:
 	call DisplayNamingScreen
 	ld a, [wcf4b]
 	cp "@"
-	jr z, .customName
+	jr nz, .notBlankName
+	ld hl, PlayerDefaultName
+	ld de, wPlayerName
+	ld bc, NAME_LENGTH
+	call CopyData
+.notBlankName
 	call ClearScreen
 	call Delay3
 	ld de, RedPicFront
@@ -70,7 +75,12 @@ ChooseRivalName:
 	call DisplayNamingScreen
 	ld a, [wcf4b]
 	cp "@"
-	jr z, .customName
+	jr nz, .notBlankName
+	ld hl, RivalDefaultName
+	ld de, wRivalName
+	ld bc, NAME_LENGTH
+	call CopyData
+.notBlankName
 	call ClearScreen
 	call Delay3
 	ld de, Rival1Pic
@@ -254,11 +264,13 @@ GetDefaultName:
 
 DefaultNamesPlayerList:
 	db "New Name@"
+PlayerDefaultName:
 	db "Red@"
 	db "Ash@"
 	db "Jack@"
 DefaultNamesRivalList:
-	db "New NameE@"
+	db "New Name@"
+RivalDefaultName:
 	db "Blue@"
 	db "Gary@"
 	db "John@"
