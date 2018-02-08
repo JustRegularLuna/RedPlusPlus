@@ -11,14 +11,6 @@ ValenciaHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  2,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, ValenciaHouseLassText, -1
+	db 0 ; object events
 
-ValenciaHouseLassText:
-	text "Prof.Ivy is really"
-	line "cool!"
-
-	para "She helped my"
-	line "#mon when they"
-	cont "were sick!"
-	done
+	const_def 1 ; object constants

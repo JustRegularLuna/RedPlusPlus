@@ -11,9 +11,8 @@ TinTower5F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event 14, 14, SIGNPOST_ITEM + FULL_RESTORE, EVENT_TIN_TOWER_5F_HIDDEN_FULL_RESTORE
-	bg_event  1, 15, SIGNPOST_ITEM + CARBOS, EVENT_TIN_TOWER_5F_HIDDEN_CARBOS
+	db 0 ; bg events
 
-	db 1 ; object events
-	itemball_event  7,  9, RARE_CANDY, 1, EVENT_TIN_TOWER_5F_RARE_CANDY
+	db 0 ; object events
+
+	const_def 1 ; object constants

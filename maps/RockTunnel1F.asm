@@ -15,30 +15,8 @@ RockTunnel1F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event 23,  4, SIGNPOST_ITEM + X_ACCURACY, EVENT_ROCK_TUNNEL_1F_HIDDEN_X_ACCURACY
-	bg_event  4, 18, SIGNPOST_ITEM + X_DEFEND, EVENT_ROCK_TUNNEL_1F_HIDDEN_X_DEFEND
+	db 0 ; bg events
 
-	db 3 ; object events
-	object_event 23, 18, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_GENERICTRAINER, 3, GenericTrainerHikerSeamus, -1
-	itemball_event 21, 15, ELIXER, 1, EVENT_ROCK_TUNNEL_1F_ELIXER
-	itemball_event 10, 15, HP_UP, 1, EVENT_ROCK_TUNNEL_1F_HP_UP
+	db 0 ; object events
 
-GenericTrainerHikerSeamus:
-	generictrainer HIKER, SEAMUS, EVENT_BEAT_HIKER_SEAMUS, HikerSeamusSeenText, HikerSeamusBeatenText
-
-	text "Was Rock Tunnel"
-	line "always this much"
-	cont "of a trek?"
-	done
-
-HikerSeamusSeenText:
-	text "Almost…"
-	line "there…"
-	done
-
-HikerSeamusBeatenText:
-	text "Where do you get"
-	line "your energy?"
-	done
-
+	const_def 1 ; object constants

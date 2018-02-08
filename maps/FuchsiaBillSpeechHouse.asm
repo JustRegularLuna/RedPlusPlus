@@ -11,18 +11,6 @@ FuchsiaBillSpeechHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	object_event  2,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x1963c3, -1
-	object_event  6,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x1963f9, -1
+	db 0 ; object events
 
-UnknownText_0x1963c3:
-	text "My grandpa is at"
-	line "my brother Bill's"
-	cont "in Goldenrod City."
-	done
-
-UnknownText_0x1963f9:
-	text "I saw these weird,"
-	line "slow #mon on"
-	cont "Cycling Road."
-	done
+	const_def 1 ; object constants

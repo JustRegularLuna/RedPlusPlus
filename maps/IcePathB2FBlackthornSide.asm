@@ -9,8 +9,8 @@ IcePathB2FBlackthornSide_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  2, 10, SIGNPOST_ITEM + ICE_HEAL, EVENT_ICE_PATH_B2F_BLACKTHORN_SIDE_HIDDEN_ICE_HEAL
+	db 0 ; bg events
 
-	db 1 ; object events
-	itemball_event  8, 16, NUGGET, 1, EVENT_ICE_PATH_B2F_BLACKTHORN_SIDE_NUGGET
+	db 0 ; object events
+
+	const_def 1 ; object constants

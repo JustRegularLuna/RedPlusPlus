@@ -13,16 +13,6 @@ Route16Gate_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  5,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, Route16GateOfficerText, -1
+	db 0 ; object events
 
-	end
-
-Route16GateOfficerText:
-	text "Route 16 is a bit"
-	line "untamed."
-
-	para "You'll need HM"
-	line "moves to get"
-	cont "through."
-	done
+	const_def 1 ; object constants

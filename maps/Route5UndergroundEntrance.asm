@@ -12,13 +12,6 @@ Route5UndergroundEntrance_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, PAL_NPC_GREEN, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x18b558, -1
+	db 0 ; object events
 
-UnknownText_0x18b558:
-	text "Many cities in"
-	line "Johto have long"
-
-	para "histories. I'd"
-	line "love to visit!"
-	done
+	const_def 1 ; object constants

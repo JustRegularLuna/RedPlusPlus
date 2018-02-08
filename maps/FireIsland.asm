@@ -23,6 +23,6 @@ FireIsland_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	itemball_event  2, 19, HEAT_ROCK, 1, EVENT_FIRE_ISLAND_HEAT_ROCK
+	db 0 ; object events
 
+	const_def 1 ; object constants

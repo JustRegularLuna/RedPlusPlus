@@ -9,23 +9,8 @@ PewterSnoozeSpeechHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  7,  1, SIGNPOST_JUMPSTD, picturebookshelf
+	db 0 ; bg events
 
-	db 2 ; object events
-	object_event  5,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x1a305f, -1
-	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, PewterSnoozeSpeechHouseGrannyText, -1
+	db 0 ; object events
 
-UnknownText_0x1a305f:
-	text "I like snoozing"
-	line "with the radio on…"
-	cont "…Zzzz…"
-	done
-
-PewterSnoozeSpeechHouseGrannyText:
-	text "Brock is the old-"
-	line "est of ten kids."
-
-	para "I don't know how"
-	line "his parents coped!"
-	done
+	const_def 1 ; object constants

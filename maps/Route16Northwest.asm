@@ -12,5 +12,6 @@ Route16Northwest_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	cuttree_event 17,  4, EVENT_ROUTE_16_CUT_TREE
+	db 0 ; object events
+
+	const_def 1 ; object constants

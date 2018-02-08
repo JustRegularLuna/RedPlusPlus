@@ -11,7 +11,6 @@ ScaryCaveB1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	itemball_event  2, 15, BIG_NUGGET, 1, EVENT_SCARY_CAVE_B1F_BIG_NUGGET
-	itemball_event 21, 19, BLACK_SLUDGE, 1, EVENT_SCARY_CAVE_B1F_BLACK_SLUDGE
+	db 0 ; object events
 
+	const_def 1 ; object constants

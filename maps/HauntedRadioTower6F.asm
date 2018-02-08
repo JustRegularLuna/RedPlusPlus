@@ -12,6 +12,4 @@ HauntedRadioTower6F_MapScriptHeader:
 
 	db 0 ; object events
 
-; setflag ENGINE_EXORCISED_LAV_RADIO_TOWER
-; setevent EVENT_EXORCISED_LAV_RADIO_TOWER
-; clearevent EVENT_LAV_RADIO_TOWER_POPULATION
+	const_def 1 ; object constants

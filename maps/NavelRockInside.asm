@@ -23,7 +23,6 @@ NavelRockInside_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	itemball_event 12, 12, SACRED_ASH, 1, EVENT_NAVEL_ROCK_SACRED_ASH
-	itemball_event 37, 12, MASTER_BALL, 1, EVENT_NAVEL_ROCK_MASTER_BALL
+	db 0 ; object events
 
+	const_def 1 ; object constants

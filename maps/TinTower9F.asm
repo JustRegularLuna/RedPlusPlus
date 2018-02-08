@@ -16,6 +16,6 @@ TinTower9F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	itemball_event  7,  1, HP_UP, 1, EVENT_TIN_TOWER_9F_HP_UP
+	db 0 ; object events
 
+	const_def 1 ; object constants

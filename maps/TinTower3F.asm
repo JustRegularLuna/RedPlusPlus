@@ -11,6 +11,6 @@ TinTower3F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	itemball_event  1, 14, FULL_HEAL, 1, EVENT_TIN_TOWER_3F_FULL_HEAL
+	db 0 ; object events
 
+	const_def 1 ; object constants

@@ -11,19 +11,6 @@ LavenderTownSpeechHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  2,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x7ea4d, -1
+	db 0 ; object events
 
-UnknownText_0x7ea4d:
-	text "Lavender is a"
-	line "tiny, quiet town"
-
-	para "at the foot of the"
-	line "mountains."
-
-	para "It's gotten a bit"
-	line "busier since the"
-
-	para "Radio Tower was"
-	line "built."
-	done
+	const_def 1 ; object constants

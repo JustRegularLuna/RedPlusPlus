@@ -14,13 +14,6 @@ Route15FuchsiaGate_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  5,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x1967a1, -1
+	db 0 ; object events
 
-UnknownText_0x1967a1:
-	text "You're working on"
-	line "a #dex? That's"
-
-	para "really something."
-	line "Don't give up!"
-	done
+	const_def 1 ; object constants

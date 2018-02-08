@@ -11,10 +11,8 @@ SilverCaveRoom2_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 14, 31, SIGNPOST_ITEM + MAX_POTION, EVENT_SILVER_CAVE_ROOM_2_HIDDEN_MAX_POTION
+	db 0 ; bg events
 
-	db 3 ; object events
-	itemball_event 24, 10, CALCIUM, 1, EVENT_SILVER_CAVE_ROOM_2_CALCIUM
-	itemball_event 22, 24, ULTRA_BALL, 1, EVENT_SILVER_CAVE_ROOM_2_ULTRA_BALL
-	itemball_event  4, 20, PP_UP, 1, EVENT_SILVER_CAVE_ROOM_2_PP_UP
+	db 0 ; object events
+
+	const_def 1 ; object constants

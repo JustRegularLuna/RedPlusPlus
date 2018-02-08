@@ -13,10 +13,8 @@ QuietCaveB2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 16, 11, SIGNPOST_ITEM + CALCIUM, EVENT_QUIET_CAVE_B2F_HIDDEN_CALCIUM
+	db 0 ; bg events
 
-	db 3 ; object events
-	itemball_event 10,  3, DUSK_BALL, 1, EVENT_QUIET_CAVE_B2F_DUSK_BALL
-	itemball_event  9, 23, RAZOR_CLAW, 1, EVENT_QUIET_CAVE_B2F_RAZOR_CLAW
-	itemball_event 19, 11, SAFE_GOGGLES, 1, EVENT_QUIET_CAVE_B2F_SAFE_GOGGLES
+	db 0 ; object events
+
+	const_def 1 ; object constants

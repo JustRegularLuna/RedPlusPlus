@@ -9,17 +9,8 @@ CeladonChiefHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  7,  1, SIGNPOST_ITEM + DUBIOUS_DISC, EVENT_CELADON_CHIEF_HOUSE_HIDDEN_DUBIOUS_DISC
+	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  1,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, CeladonChiefHouseCooltrainerMText, -1
+	db 0 ; object events
 
-CeladonChiefHouseCooltrainerMText:
-	text "The Game Corner is"
-	line "making us a lot"
-	cont "of money!"
-
-	para "It's all legal,"
-	line "too. Honestly!"
-	done
+	const_def 1 ; object constants

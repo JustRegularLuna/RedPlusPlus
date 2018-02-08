@@ -11,23 +11,8 @@ Route5_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 17, 29, SIGNPOST_JUMPTEXT, Route5UndergroundPathSignText
+	db 0 ; bg events
 
-	db 1 ; object events
-	object_event 17, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, PokefanMScript_0x1adb19Text, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
+	db 0 ; object events
 
-PokefanMScript_0x1adb19Text:
-	text "The road is closed"
-	line "until the problem"
-
-	para "at the Power Plant"
-	line "is solved."
-	done
-
-Route5UndergroundPathSignText:
-	text "Underground Path"
-
-	para "Cerulean City -"
-	line "Vermilion City"
-	done
+	const_def 1 ; object constants

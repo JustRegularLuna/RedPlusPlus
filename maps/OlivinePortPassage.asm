@@ -14,13 +14,6 @@ OlivinePortPassage_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  5, 23, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x76faf, EVENT_OLIVINE_PORT_PASSAGE_POKEFAN_M
+	db 0 ; object events
 
-UnknownText_0x76faf:
-	text "Fast Ship S.S.Aqua"
-	line "sails to Kanto on"
-
-	para "Mondays and Fri-"
-	line "days."
-	done
+	const_def 1 ; object constants

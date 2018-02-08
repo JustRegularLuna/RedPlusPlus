@@ -13,19 +13,6 @@ Route2Gate_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  6,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 2, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x9b955, -1
+	db 0 ; object events
 
-UnknownText_0x9b955:
-	text "Are you <PLAYER>?"
-
-	para "I work as Prof."
-	line "Oak's Aide."
-
-	para "I had no idea that"
-	line "you were out here."
-
-	para "Prof.Oak's Lab is"
-	line "nearby in Pallet"
-	cont "Town."
-	done
+	const_def 1 ; object constants
