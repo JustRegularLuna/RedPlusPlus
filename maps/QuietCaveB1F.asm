@@ -1,0 +1,106 @@
+QuietCaveB1F_MapScriptHeader:
+	db 0 ; scene scripts
+
+	db 0 ; callbacks
+
+	db 9 ; warp events
+	warp_event  5, 25, QUIET_CAVE_1F, 2
+	warp_event 29, 23, QUIET_CAVE_1F, 3
+	warp_event 19, 11, QUIET_CAVE_1F, 4
+	warp_event  3, 15, QUIET_CAVE_1F, 5
+	warp_event 31, 15, QUIET_CAVE_1F, 6
+	warp_event 21,  3, QUIET_CAVE_B2F, 1
+	warp_event 17, 25, QUIET_CAVE_B2F, 2
+	warp_event 23, 33, QUIET_CAVE_B2F, 3
+	warp_event 32,  2, QUIET_CAVE_B2F, 4
+
+	db 0 ; coord events
+
+	db 1 ; bg events
+	bg_event 26, 33, SIGNPOST_ITEM + HYPER_POTION, EVENT_QUIET_CAVE_B1F_HIDDEN_HYPER_POTION
+
+	db 6 ; object events
+	object_event 25,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_GENERICTRAINER, 1, GenericTrainerBattleGirlKagami, -1
+	object_event 21, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_GENERICTRAINER, 4, GenericTrainerPokemaniacAidan, -1
+	object_event 33, 30, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_GENERICTRAINER, 4, GenericTrainerHikerSteve, -1
+	object_event  4,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_GENERICTRAINER, 2, GenericTrainerPsychicVirgil, -1
+	itemball_event  8,  3, BIG_PEARL, 1, EVENT_QUIET_CAVE_B1F_BIG_PEARL
+	itemball_event 14, 13, ELIXER, 1, EVENT_QUIET_CAVE_B1F_ELIXIR
+
+GenericTrainerBattleGirlKagami:
+	generictrainer BATTLE_GIRL, KAGAMI, EVENT_BEAT_BATTLE_GIRL_KAGAMI, BattleGirlKagamiSeenText, BattleGirlKagamiBeatenText
+
+	text "I come here to"
+	line "train in peace"
+	cont "and solitude."
+	done
+
+GenericTrainerPokemaniacAidan:
+	generictrainer POKEMANIAC, AIDAN, EVENT_BEAT_POKEMANIAC_AIDAN, PokemaniacAidanSeenText, PokemaniacAidanBeatenText
+
+	text "Sometimes a"
+	line "#mon in a"
+
+	para "certain area will"
+	line "know a rare move."
+	done
+
+GenericTrainerHikerSteve:
+	generictrainer HIKER, STEVE, EVENT_BEAT_HIKER_STEVE, HikerSteveSeenText, HikerSteveBeatenText
+
+	text "Spelunking is also"
+	line "called caving."
+
+	para "It means exploring"
+	line "caves!"
+	done
+
+GenericTrainerPsychicVirgil:
+	generictrainer PSYCHIC_T, VIRGIL, EVENT_BEAT_PSYCHIC_VIRGIL, PsychicVirgilSeenText, PsychicVirgilBeatenText
+
+	text "The silence helps"
+	line "focus my ESP."
+	done
+
+BattleGirlKagamiSeenText:
+	text "Don't disturb my"
+	line "training!"
+	done
+
+BattleGirlKagamiBeatenText:
+	text "Not good enough…"
+	done
+
+PokemaniacAidanSeenText:
+	text "My #mon!"
+
+	para "Let me show"
+	line "you them!"
+	done
+
+PokemaniacAidanBeatenText:
+	text "My #mon…"
+	done
+
+HikerSteveSeenText:
+	text "They call me a"
+	line "Hiker, but right"
+
+	para "now I'm a spelunk-"
+	line "er!"
+	done
+
+HikerSteveBeatenText:
+	text "And now I'm a"
+	line "loser…"
+	done
+
+PsychicVirgilSeenText:
+	text "Shh! Be quiet!"
+	done
+
+PsychicVirgilBeatenText:
+	text "Why must battling"
+	line "be so loud?"
+	done
+
