@@ -14,12 +14,6 @@ VermilionPortPassage_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  5, 23, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x7701d, -1
+	db 0 ; object events
 
-UnknownText_0x7701d:
-	text "The Fast Ship"
-	line "sails on Wednes-"
-	cont "days and Sundays"
-	cont "every week."
-	done
+	const_def 1 ; object constants

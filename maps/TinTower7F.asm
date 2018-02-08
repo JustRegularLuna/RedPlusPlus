@@ -14,6 +14,6 @@ TinTower7F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	itemball_event 14,  1, MAX_REVIVE, 1, EVENT_TIN_TOWER_7F_MAX_REVIVE
+	db 0 ; object events
 
+	const_def 1 ; object constants

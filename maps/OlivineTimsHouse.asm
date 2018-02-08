@@ -11,5 +11,6 @@ OlivineTimsHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  2,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, trade, TRADE_WITH_TIM_FOR_KANGASKHAN, -1
+	db 0 ; object events
+
+	const_def 1 ; object constants

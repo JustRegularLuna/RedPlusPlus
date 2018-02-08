@@ -9,11 +9,8 @@ SinjohRuins_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  7,  8, SIGNPOST_JUMPTEXT, SinjohRuinsSignpostText
+	db 0 ; bg events
 
 	db 0 ; object events
 
-SinjohRuinsSignpostText:
-	text "The Sinjoh Ruins"
-	done
+	const_def 1 ; object constants

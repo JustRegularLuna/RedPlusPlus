@@ -9,28 +9,8 @@ BlackthornDragonSpeechHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  7,  1, SIGNPOST_JUMPSTD, difficultbookshelf
+	db 0 ; bg events
 
-	db 2 ; object events
-	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, BlackthornDragonSpeechHouseGrannyText, -1
-	object_event  5,  5, SPRITE_DRATINI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_POKEMON, DRATINI, BlackthornDragonSpeechHouseDratiniText, -1
+	db 0 ; object events
 
-BlackthornDragonSpeechHouseGrannyText:
-	text "A clan of trainers"
-	line "who can freely"
-
-	para "command dragons"
-	line "live right here in"
-	cont "Blackthorn."
-
-	para "As a result, there"
-	line "are many legends"
-
-	para "about dragons in"
-	line "this town."
-	done
-
-BlackthornDragonSpeechHouseDratiniText:
-	text "Dratini: Draa!"
-	done
+	const_def 1 ; object constants

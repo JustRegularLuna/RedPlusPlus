@@ -13,15 +13,8 @@ SeafoamIslandsB1F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 20, 11, SIGNPOST_ITEM + ICE_HEAL, EVENT_SEAFOAM_ISLANDS_B1F_HIDDEN_ICE_HEAL
+	db 0 ; bg events
 
-	db 8 ; object events
-	itemball_event 20,  3, GRIP_CLAW, 1, EVENT_SEAFOAM_ISLANDS_B1F_GRIP_CLAW
-	itemball_event 24,  5, ICE_HEAL, 1, EVENT_SEAFOAM_ISLANDS_B1F_ICE_HEAL
-	strengthboulder_event 30, 9
-	strengthboulder_event 31, 9
-	strengthboulder_event 32, 10
-	strengthboulder_event 12, 8
-	strengthboulder_event  7, 11
-	strengthboulder_event 13, 15
+	db 0 ; object events
+
+	const_def 1 ; object constants

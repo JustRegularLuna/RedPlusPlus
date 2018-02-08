@@ -16,43 +16,8 @@ MountMortar1FOutside_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 25, 22, SIGNPOST_ITEM + HYPER_POTION, EVENT_MOUNT_MORTAR_1F_OUTSIDE_HIDDEN_HYPER_POTION
+	db 0 ; bg events
 
-	db 4 ; object events
-	object_event  9, 15, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_GENERICTRAINER, 3, GenericTrainerBattleGirlSubaru, -1
-	object_event 30, 11, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_GENERICTRAINER, 4, GenericTrainerBattleGirlDiane, -1
-	itemball_event 13, 15, ETHER, 1, EVENT_MOUNT_MORTAR_1F_OUTSIDE_ETHER
-	itemball_event 31, 18, REVIVE, 1, EVENT_MOUNT_MORTAR_1F_OUTSIDE_REVIVE
+	db 0 ; object events
 
-GenericTrainerBattleGirlSubaru:
-	generictrainer BATTLE_GIRL, SUBARU, EVENT_BEAT_BATTLE_GIRL_SUBARU, BattleGirlSubaruSeenText, BattleGirlSubaruBeatenText
-
-	text "All this climbing"
-	line "and I'm still not"
-	cont "the toughest…"
-	done
-
-GenericTrainerBattleGirlDiane:
-	generictrainer BATTLE_GIRL, DIANE, EVENT_BEAT_BATTLE_GIRL_DIANE, BattleGirlDianeSeenText, BattleGirlDianeBeatenText
-
-	text "I bow to you."
-	done
-
-BattleGirlSubaruSeenText:
-	text "Kiyaah!"
-	done
-
-BattleGirlSubaruBeatenText:
-	text "Ooof!"
-	done
-
-BattleGirlDianeSeenText:
-	text "Hii-yaah!"
-	done
-
-BattleGirlDianeBeatenText:
-	text "This round goes"
-	line "to you."
-	done
-
+	const_def 1 ; object constants

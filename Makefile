@@ -1,8 +1,8 @@
-NAME := polishedcrystal
+NAME := redplusplus
 VERSION := 3.0.0-beta
 
-TITLE := PKPCRYSTAL
-MCODE := PKPC
+TITLE := POKEMONRPP
+MCODE := PRPP
 ROMVERSION := 0x30
 
 FILLER = 0x00
@@ -19,25 +19,13 @@ RGBFIX_FLAGS = -Cjv -t $(TITLE) -i $(MCODE) -n $(ROMVERSION) -p $(FILLER) -k 01 
 
 CFLAGS = -O3 -std=c11 -Wall -Wextra -pedantic
 
-ifeq ($(filter faithful,$(MAKECMDGOALS)),faithful)
-RGBASM_FLAGS += -DFAITHFUL
-endif
-ifeq ($(filter nortc,$(MAKECMDGOALS)),nortc)
-RGBASM_FLAGS += -DNO_RTC
-endif
-ifeq ($(filter monochrome,$(MAKECMDGOALS)),monochrome)
-RGBASM_FLAGS += -DMONOCHROME
-endif
-ifeq ($(filter hgss,$(MAKECMDGOALS)),hgss)
-RGBASM_FLAGS += -DHGSS
-endif
 ifeq ($(filter debug,$(MAKECMDGOALS)),debug)
 RGBASM_FLAGS += -DDEBUG
 endif
 
 
 .SUFFIXES:
-.PHONY: all clean crystal faithful nortc debug monochrome bankfree freespace compare tools
+.PHONY: all clean rpp debug bankfree freespace compare tools
 .SECONDEXPANSION:
 .PRECIOUS: %.2bpp %.1bpp %.lz %.o
 
@@ -58,7 +46,7 @@ SCAN_INCLUDES = tools/scan_includes
 bank_ends := $(PYTHON) contents/bank_ends.py $(NAME)-$(VERSION)
 
 
-crystal_obj := \
+rpp_obj := \
 main.o \
 home.o \
 ram.o \
@@ -76,17 +64,13 @@ gfx/pics.o \
 gfx/sprites.o
 
 
-all: crystal
+all: rpp
 
-crystal: FILLER = 0x00
-crystal: ROM_NAME = $(NAME)-$(VERSION)
-crystal: $(NAME)-$(VERSION).gbc
+rpp: FILLER = 0x00
+rpp: ROM_NAME = $(NAME)-$(VERSION)
+rpp: $(NAME)-$(VERSION).gbc
 
-faithful: crystal
-nortc: crystal
-monochrome: crystal
-hgss: crystal
-debug: crystal
+debug: rpp
 
 bankfree: FILLER = 0xff
 bankfree: ROM_NAME = $(NAME)-$(VERSION)-0xff
@@ -110,15 +94,15 @@ $(SCAN_INCLUDES): $(SCAN_INCLUDES).c
 
 
 clean:
-	$(RM) $(crystal_obj) $(wildcard $(NAME)-*.gbc) $(wildcard $(NAME)-*.map) $(wildcard $(NAME)-*.sym)
+	$(RM) $(rpp_obj) $(wildcard $(NAME)-*.gbc) $(wildcard $(NAME)-*.map) $(wildcard $(NAME)-*.sym)
 
-compare: crystal
+compare: rpp
 	$(MD5) -c $(roms_md5)
 
 
-$(bank_ends_txt): crystal bankfree ; $(bank_ends) > $@
-$(roms_md5): crystal ; $(MD5) $(NAME)-$(VERSION).gbc > $@
-$(sorted_sym): crystal ; tail -n +3 $(NAME)-$(VERSION).sym | sort -o $@
+$(bank_ends_txt): rpp bankfree ; $(bank_ends) > $@
+$(roms_md5): rpp ; $(MD5) $(NAME)-$(VERSION).gbc > $@
+$(sorted_sym): rpp ; tail -n +3 $(NAME)-$(VERSION).sym | sort -o $@
 
 
 %.o: dep = $(shell $(SCAN_INCLUDES) $(@D)/$*.asm)
@@ -126,7 +110,7 @@ $(sorted_sym): crystal ; tail -n +3 $(NAME)-$(VERSION).sym | sort -o $@
 	$(RGBDS_DIR)rgbasm $(RGBASM_FLAGS) -o $@ $<
 
 .gbc:
-%.gbc: $(crystal_obj)
+%.gbc: $(rpp_obj)
 	$(RGBDS_DIR)rgblink $(RGBLINK_FLAGS) -o $@ $^
 	$(RGBDS_DIR)rgbfix $(RGBFIX_FLAGS) $@
 

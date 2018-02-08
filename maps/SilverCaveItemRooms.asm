@@ -11,7 +11,6 @@ SilverCaveItemRooms_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	itemball_event 14, 33, MAX_REVIVE, 1, EVENT_SILVER_CAVE_ITEM_ROOMS_MAX_REVIVE
-	itemball_event 13, 23, FULL_RESTORE, 1, EVENT_SILVER_CAVE_ITEM_ROOMS_FULL_RESTORE
+	db 0 ; object events
 
+	const_def 1 ; object constants

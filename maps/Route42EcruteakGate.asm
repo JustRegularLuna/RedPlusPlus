@@ -13,13 +13,6 @@ Route42EcruteakGate_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x19a4b8, -1
+	db 0 ; object events
 
-UnknownText_0x19a4b8:
-	text "Mt.Mortar is like"
-	line "a maze inside."
-
-	para "Be careful. Don't"
-	line "get lost in there."
-	done
+	const_def 1 ; object constants

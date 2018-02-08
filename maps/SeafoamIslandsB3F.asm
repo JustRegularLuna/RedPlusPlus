@@ -17,11 +17,8 @@ SeafoamIslandsB3F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event 27, 17, SIGNPOST_ITEM + MAX_REVIVE, EVENT_SEAFOAM_ISLANDS_B3F_HIDDEN_MAX_REVIVE
-	bg_event  7,  5, SIGNPOST_ITEM + RARE_CANDY, EVENT_SEAFOAM_ISLANDS_B3F_HIDDEN_RARE_CANDY
+	db 0 ; bg events
 
-	db 3 ; object events
-	itemball_event 15, 15, REVIVE, 1, EVENT_SEAFOAM_ISLANDS_B3F_REVIVE
-	itemball_event 17,  6, BIG_PEARL, 1, EVENT_SEAFOAM_ISLANDS_B3F_BIG_PEARL
-	strengthboulder_event 28, 7
+	db 0 ; object events
+
+	const_def 1 ; object constants

@@ -13,13 +13,6 @@ GoldenrodHarborGate_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, GoldenrodHarborGateOfficerText, -1
+	db 0 ; object events
 
-GoldenrodHarborGateOfficerText:
-	text "If your #mon"
-	line "knows how to Surf,"
-
-	para "you can head north"
-	line "to Olivine City."
-	done
+	const_def 1 ; object constants

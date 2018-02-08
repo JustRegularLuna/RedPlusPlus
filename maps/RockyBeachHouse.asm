@@ -12,3 +12,5 @@ RockyBeachHouse_MapScriptHeader:
 	db 0 ; bg events
 
 	db 0 ; object events
+
+	const_def 1 ; object constants

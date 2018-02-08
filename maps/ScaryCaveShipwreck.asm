@@ -10,6 +10,6 @@ ScaryCaveShipwreck_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	itemball_event  7,  8, RARE_BONE, 1, EVENT_SCARY_CAVE_SHIPWRECK_RARE_BONE
+	db 0 ; object events
 
+	const_def 1 ; object constants

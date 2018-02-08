@@ -14,20 +14,6 @@ Route11Gate_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  5,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, Route11GateOfficerText, -1
+	db 0 ; object events
 
-Route11GateOfficerText:
-	text "When you catch"
-	line "lots of #mon,"
-	cont "isn't it hard to"
-	cont "think up names?"
-
-	para "In Lavender Town,"
-	line "there's a man who"
-	cont "rates #mon"
-	cont "nicknames."
-
-	para "He'll help you"
-	line "rename them too!"
-	done
+	const_def 1 ; object constants

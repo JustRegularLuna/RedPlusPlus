@@ -15,6 +15,6 @@ IceIsland_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	itemball_event 19,  6, ICY_ROCK, 1, EVENT_ICE_ISLAND_ICY_ROCK
+	db 0 ; object events
 
+	const_def 1 ; object constants

@@ -12,6 +12,6 @@ WhirlIslandNE_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	itemball_event 11, 11, ULTRA_BALL, 1, EVENT_WHIRL_ISLAND_NE_ULTRA_BALL
+	db 0 ; object events
 
+	const_def 1 ; object constants

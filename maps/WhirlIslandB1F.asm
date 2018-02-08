@@ -16,15 +16,8 @@ WhirlIslandB1F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
-	bg_event 30,  4, SIGNPOST_ITEM + RARE_CANDY, EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
-	bg_event 36, 18, SIGNPOST_ITEM + ULTRA_BALL, EVENT_WHIRL_ISLAND_B1F_HIDDEN_ULTRA_BALL
-	bg_event  2, 23, SIGNPOST_ITEM + FULL_RESTORE, EVENT_WHIRL_ISLAND_B1F_HIDDEN_FULL_RESTORE
+	db 0 ; bg events
 
-	db 6 ; object events
-	itemball_event  7, 13, FULL_RESTORE, 1, EVENT_WHIRL_ISLAND_B1F_FULL_RESTORE
-	itemball_event  2, 18, CARBOS, 1, EVENT_WHIRL_ISLAND_B1F_CARBOS
-	itemball_event 33, 23, CALCIUM, 1, EVENT_WHIRL_ISLAND_B1F_CALCIUM
-	itemball_event 17,  8, BIG_NUGGET, 1, EVENT_WHIRL_ISLAND_B1F_BIG_NUGGET
-	itemball_event 19, 26, ESCAPE_ROPE, 1, EVENT_WHIRL_ISLAND_B1F_ESCAPE_ROPE
-	strengthboulder_event 23, 26
+	db 0 ; object events
+
+	const_def 1 ; object constants

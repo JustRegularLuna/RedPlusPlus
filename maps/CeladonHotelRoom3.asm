@@ -11,16 +11,6 @@ CeladonHotelRoom3_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  2,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_COMMAND, jumptextfaceplayer, CeladonHotelRoom3GrampsText, -1
+	db 0 ; object events
 
-CeladonHotelRoom3GrampsText:
-	text "I've been staying"
-	line "at this hotel"
-	cont "every year since"
-	cont "I was a wee lad."
-
-	para "It almost feels"
-	line "like a second"
-	cont "home!"
-	done
+	const_def 1 ; object constants

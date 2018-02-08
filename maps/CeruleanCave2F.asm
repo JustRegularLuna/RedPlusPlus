@@ -13,13 +13,8 @@ CeruleanCave2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
-	bg_event 17, 19, SIGNPOST_ITEM + PROTEIN, EVENT_CERULEAN_CAVE_2F_HIDDEN_PROTEIN
-	bg_event 16,  4, SIGNPOST_ITEM + NUGGET, EVENT_CERULEAN_CAVE_2F_HIDDEN_NUGGET
-	bg_event 13, 17, SIGNPOST_ITEM + HYPER_POTION, EVENT_CERULEAN_CAVE_2F_HIDDEN_HYPER_POTION
+	db 0 ; bg events
 
-	db 4 ; object events
-	itemball_event 31, 11, FULL_RESTORE, 1, EVENT_CERULEAN_CAVE_2F_FULL_RESTORE
-	itemball_event  7, 17, PP_UP, 1, EVENT_CERULEAN_CAVE_2F_PP_UP
-	itemball_event 27, 15, ULTRA_BALL, 1, EVENT_CERULEAN_CAVE_2F_ULTRA_BALL
-	itemball_event  2,  7, DUSK_STONE, 1, EVENT_CERULEAN_CAVE_2F_DUSK_STONE
+	db 0 ; object events
+
+	const_def 1 ; object constants

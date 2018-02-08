@@ -1,61 +1,25 @@
 KrissHouse2F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 2 ; callbacks
-	callback MAPCALLBACK_NEWMAP, KrissHouse2FInitializeRoom
-	callback MAPCALLBACK_TILES, KrissHouse2FSetSpawn
+	db 0 ; callbacks
 
 	db 1 ; warp events
 	warp_event  7,  0, KRISS_HOUSE_1F, 3
 
 	db 0 ; coord events
 
-	db 4 ; bg events
-	bg_event  2,  1, SIGNPOST_READ, KrissHousePC
-	bg_event  3,  1, SIGNPOST_READ, KrissHouseRadio
-	bg_event  5,  1, SIGNPOST_READ, PokemonJournalProfElmScript
-	bg_event  6,  0, SIGNPOST_IFSET, KrissHousePoster
+if DEF(DEBUG)
+	db 1 ; bg events
+	bg_event  3,  1, SIGNPOST_READ, DebugCheatRadio
+endc
 
-	db 4 ; object events
-	object_event  4,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
-	object_event  4,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Doll1, EVENT_KRISS_HOUSE_2F_DOLL_1
-	object_event  5,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Doll2, EVENT_KRISS_HOUSE_2F_DOLL_2
-	object_event  0,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BigDoll, EVENT_KRISS_HOUSE_2F_BIG_DOLL
+	db 0 ; object events
 
-KrissHouse2FInitializeRoom:
-	special ToggleDecorationsVisibility
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
-	checkevent EVENT_INITIALIZED_EVENTS
-	iftrue .SkipInizialization
-	jumpstd initializeevents
-
-.SkipInizialization:
-	return
-
-KrissHouse2FSetSpawn:
-	special ToggleMaptileDecorations
-	return
-
-Doll1:
-	describedecoration 1
-
-Doll2:
-	describedecoration 2
-
-BigDoll:
-	describedecoration 3
-
-GameConsole:
-	describedecoration 4
-
-KrissHousePoster:
-	dw EVENT_KRISS_ROOM_POSTER
-	describedecoration 0
-
-KrissHouseRadio:
+	const_def 1 ; object constants
 
 if DEF(DEBUG)
 
+DebugCheatRadio:
 	opentext
 	; time
 	special Special_SetDayOfWeek
@@ -75,21 +39,6 @@ if DEF(DEBUG)
 	givetmhm HM_STRENGTH
 	givetmhm HM_WATERFALL
 	givetmhm HM_WHIRLPOOL
-	; tms for party
-	givetmhm TM_ICE_BEAM
-	givetmhm TM_BLIZZARD
-	givetmhm TM_FLAMETHROWER
-	givetmhm TM_FIRE_BLAST
-	givetmhm TM_THUNDERBOLT
-	givetmhm TM_THUNDER
-	givetmhm TM_PSYCHIC
-	givetmhm TM_SHADOW_BALL
-	givetmhm TM_EARTHQUAKE
-	givetmhm TM_SWORDS_DANCE
-	givetmhm TM_CALM_MIND
-	givetmhm TM_BULK_UP
-	givetmhm TM_ROCK_SMASH
-	givetmhm TM_FLASH
 	; max money
 	givemoney $0, 1000000
 	givemoney $0, 1000000
@@ -138,8 +87,6 @@ if DEF(DEBUG)
 	setevent EVENT_BEAT_BLUE
 	setevent EVENT_BEAT_ELITE_FOUR
 	setevent EVENT_BEAT_ELITE_FOUR_AGAIN
-	setevent EVENT_BATTLE_TOWER_OPEN
-	clearevent EVENT_BATTLE_TOWER_CLOSED
 	; fly anywhere
 	setflag ENGINE_FLYPOINT_NEW_BARK
 	setflag ENGINE_FLYPOINT_CHERRYGROVE
@@ -167,65 +114,25 @@ if DEF(DEBUG)
 	setflag ENGINE_FLYPOINT_FUCHSIA
 	setflag ENGINE_FLYPOINT_SAFFRON
 	setflag ENGINE_FLYPOINT_CINNABAR
-	; magnet train works
-	setevent EVENT_RESTORED_POWER_TO_KANTO
-	giveitem PASS
-	; cycling road works
-	giveitem BICYCLE
 	; useful items
-	giveitem ITEMFINDER
-	giveitem SQUIRTBOTTLE
-	giveitem MYSTICTICKET
-	giveitem OLD_SEA_MAP
-	giveitem MAX_REPEL, 99
-	giveitem MAX_REVIVE, 99
-	giveitem FULL_RESTORE, 99
-	giveitem MAX_ELIXER, 99
-	giveitem RARE_CANDY, 99
 	giveitem ESCAPE_ROPE, 99
-	giveitem SILVER_LEAF, 99
-	giveitem GOLD_LEAF, 99
-	giveitem HP_UP, 99
-	giveitem PP_UP, 99
-	giveitem PROTEIN, 99
-	giveitem IRON, 99
-	giveitem CARBOS, 99
-	giveitem CALCIUM, 99
-	giveitem ZINC, 99
-	giveitem MASTER_BALL, 99
-	giveitem EXP_SHARE, 2
+	; shiny dex
 	setflag ENGINE_CREDITS_SKIP
 	giveitem SHINY_CHARM
 	setflag ENGINE_HAVE_SHINY_CHARM
-	; good party
-	givepoke MEWTWO, 100, ARMOR_SUIT
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS
 	givepoke MEW, 100, LEFTOVERS
 	callasm TeachHMSlaveMoves
-	callasm MaxMewtwoStats
 	; pokedex
 	callasm FillPokedex
-	; intro events
+	; phone
 	addcellnum PHONE_MOM
-	domaptrigger KRISS_HOUSE_1F, $1
-	setevent EVENT_KRISS_HOUSE_MOM_1
-	clearevent EVENT_KRISS_HOUSE_MOM_2
-;	; prof.elm events
-;	addcellnum PHONE_ELM
-;	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
-;	setevent EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
-;	setevent EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
-;	setevent EVENT_GOT_A_POKEMON_FROM_ELM
-;	setevent EVENT_RIVAL_CHERRYGROVE_CITY
-;	setevent EVENT_LYRA_IN_ELMS_LAB
-;	domaptrigger ELMS_LAB, $5
-;	domaptrigger NEW_BARK_TOWN, $2
 	closetext
 	end
 
 TeachHMSlaveMoves:
-	ld hl, PartyMon2Moves
+	ld hl, PartyMon1Moves
 	ld a, FLY
 	ld [hli], a
 	ld a, SURF
@@ -234,7 +141,7 @@ TeachHMSlaveMoves:
 	ld [hli], a
 	ld a, CUT
 	ld [hl], a
-	ld hl, PartyMon2PP
+	ld hl, PartyMon1PP
 	ld a, 15
 	ld [hli], a
 ;	ld a, 15
@@ -243,7 +150,7 @@ TeachHMSlaveMoves:
 	ld [hli], a
 	ld a, 30
 	ld [hl], a
-	ld hl, PartyMon3Moves
+	ld hl, PartyMon2Moves
 	ld a, FLASH
 	ld [hli], a
 	ld a, ROCK_SMASH
@@ -252,7 +159,7 @@ TeachHMSlaveMoves:
 	ld [hli], a
 	ld a, WATERFALL
 	ld [hl], a
-	ld hl, PartyMon3PP
+	ld hl, PartyMon2PP
 	ld a, 20
 	ld [hli], a
 	ld a, 15
@@ -261,28 +168,6 @@ TeachHMSlaveMoves:
 	ld [hli], a
 ;	ld a, 15
 	ld [hl], a
-	ret
-
-MaxMewtwoStats:
-	ld hl, PartyMon1EVs
-	ld a, 252
-rept 6
-	ld [hli], a
-endr
-;	ld hl, PartyMon1DVs
-	ld a, $ff
-rept 3
-	ld [hli], a
-endr
-;	ld hl, PartyMon1Personality
-	ld [hl], ABILITY_2 | MODEST
-	ld hl, PartyMon1Stats
-rept 5
-	ld a, 999 / $100
-	ld [hli], a
-	ld a, 999 % $100
-	ld [hli], a
-endr
 	ret
 
 FillPokedex:
@@ -300,81 +185,4 @@ FillPokedex:
 	ld [hl], a ; 249-253
 	ret
 
-else
-
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .NormalRadio
-	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
-	iftrue .AbbreviatedRadio
-	playmusic MUSIC_POKEMON_TALK
-	opentext
-	writetext KrisRadioText1
-	pause 45
-	writetext KrisRadioText2
-	pause 45
-	writetext KrisRadioText3
-	pause 45
-	musicfadeout MUSIC_NEW_BARK_TOWN, 16
-	writetext KrisRadioText4
-	pause 45
-	closetext
-	setevent EVENT_LISTENED_TO_INITIAL_RADIO
-	end
-
-.NormalRadio:
-	jumpstd radio1
-
-.AbbreviatedRadio:
-	opentext
-	writetext KrisRadioText4
-	pause 45
-	endtext
-
 endc
-
-PokemonJournalProfElmScript:
-	setflag ENGINE_READ_PROF_ELM_JOURNAL
-	thistext
-
-	text "#mon Journal"
-
-	para "Special Feature:"
-	line "#mon Prof.Elm!"
-
-	para "Prof.Elm was the"
-	line "top student of"
-	cont "Prof.Oak."
-
-	para "They're said to"
-	line "often argue about"
-	cont "research."
-	done
-
-KrissHousePC:
-	opentext
-	special Special_KrissHousePC
-	iftrue .Warp
-	endtext
-.Warp:
-	warp NONE, 0, 0
-	end
-
-KrisRadioText1:
-	text "Prof.Oak's #mon"
-	line "Talk! Please tune"
-	cont "in next time!"
-	done
-
-KrisRadioText2:
-	text "#mon Channel!"
-	done
-
-KrisRadioText3:
-	text "This is DJ Mary,"
-	line "your co-host!"
-	done
-
-KrisRadioText4:
-	text "#mon!"
-	line "#mon Channel…"
-	done

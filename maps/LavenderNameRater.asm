@@ -11,11 +11,6 @@ LavenderNameRater_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  2,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, LavenderNameRater, -1
+	db 0 ; object events
 
-LavenderNameRater:
-	faceplayer
-	opentext
-	special SpecialNameRater
-	waitendtext
+	const_def 1 ; object constants

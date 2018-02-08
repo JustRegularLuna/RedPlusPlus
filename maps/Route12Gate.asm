@@ -14,13 +14,6 @@ Route12Gate_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  0,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, Route12GateOfficerText, -1
+	db 0 ; object events
 
-Route12GateOfficerText:
-	text "Silence Bridge got"
-	line "its name from all"
-
-	para "the people quietly"
-	line "fishing on it."
-	done
+	const_def 1 ; object constants

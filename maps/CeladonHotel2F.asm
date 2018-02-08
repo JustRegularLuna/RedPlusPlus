@@ -11,31 +11,8 @@ CeladonHotel2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
-	bg_event  5,  0, SIGNPOST_JUMPTEXT, CeladonHotel2FRoom1Text
-	bg_event  9,  0, SIGNPOST_JUMPTEXT, CeladonHotel2FRoom2Text
-	bg_event 13,  0, SIGNPOST_JUMPTEXT, CeladonHotel2FRoom3Text
+	db 0 ; bg events
 
-	db 1 ; object events
-	object_event 11,  2, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, CeladonHotel2FTeacherText, -1
+	db 0 ; object events
 
-CeladonHotel2FTeacherText:
-	text "I'm on a surprise"
-	line "visit to see my"
-	cont "son at university!"
-
-	para "Hopefully he isn't"
-	line "too embarrassed…"
-	done
-
-CeladonHotel2FRoom1Text:
-	text "Room 1"
-	done
-
-CeladonHotel2FRoom2Text:
-	text "Room 2"
-	done
-
-CeladonHotel2FRoom3Text:
-	text "Room 3"
-	done
+	const_def 1 ; object constants

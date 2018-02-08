@@ -13,13 +13,6 @@ Route8SaffronGate_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  5,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, UnknownText_0x7f419, -1
+	db 0 ; object events
 
-UnknownText_0x7f419:
-	text "Have you been to"
-	line "Lavender Town?"
-
-	para "There's a tall"
-	line "Radio Tower there."
-	done
+	const_def 1 ; object constants

@@ -12,6 +12,6 @@ TohjoFalls_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	itemball_event  2,  8, MOON_STONE, 1, EVENT_TOHJO_FALLS_MOON_STONE
+	db 0 ; object events
 
+	const_def 1 ; object constants

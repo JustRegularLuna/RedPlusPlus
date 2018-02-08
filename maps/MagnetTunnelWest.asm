@@ -10,6 +10,6 @@ MagnetTunnelWest_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	smashrock_event  9, 8
-	smashrock_event  7, 5
+	db 0 ; object events
+
+	const_def 1 ; object constants

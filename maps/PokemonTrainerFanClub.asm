@@ -9,27 +9,8 @@ PokemonTrainerFanClub_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event  0,  1, SIGNPOST_READ, PokemonJournalBrunoScript
-	bg_event  1,  1, SIGNPOST_READ, PokemonJournalBrunoScript
+	db 0 ; bg events
 
 	db 0 ; object events
 
-PokemonJournalBrunoScript:
-	setflag ENGINE_READ_BROCK_JOURNAL
-	thistext
-
-	text "#mon Journal"
-
-	para "Special Feature:"
-	line "Elite Four Bruno!"
-
-	para "Bruno apparently"
-	line "joined the Elite"
-
-	para "Four out of his"
-	line "burning ambition"
-
-	para "to battle the"
-	line "best trainers."
-	done
+	const_def 1 ; object constants
