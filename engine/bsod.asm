@@ -57,11 +57,11 @@ endc
 
 .Message: ; 4eb38
 	db   "      Pokémon"
-	next " Polished Crystal"
+	next "   Red++ Version "
 	next "       ERROR"
 	next "------------------"
 	next "Please report this"
 	next "crash to the deve-"
-	next "loper, Rangi42, at"
-	next "tinyurl.com/pkpc3.@"
+	next "loper, Mateo, at"
+	next "tinyurl.com/rppv3.@"
 ; 4eb76
