@@ -657,7 +657,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	cp GIOVANNI
 	jr nz, .not_armored_mewtwo
 	ld a, [OtherTrainerID]
-	cp GIOVANNI1
+	cp 1
 	jr z, .got_palette
 
 .not_armored_mewtwo
