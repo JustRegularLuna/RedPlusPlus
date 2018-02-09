@@ -30,15 +30,15 @@ RefreshSprites:: ; 14168
 ; 1416f
 
 GetPlayerSprite: ; 14183
-; Get Chris or Kris's sprite.
-	ld hl, .Chris
+; Get Red's or Leaf's sprite.
+	ld hl, .Red
 	ld a, [wPlayerSpriteSetupFlags]
 	bit 2, a
 	jr nz, .go
 	ld a, [PlayerGender]
 	bit 0, a
 	jr z, .go
-	ld hl, .Kris
+	ld hl, .Leaf
 
 .go
 	ld a, [PlayerState]
@@ -51,10 +51,10 @@ GetPlayerSprite: ; 14183
 	cp $ff
 	jr nz, .loop
 
-; Any player state not in the array defaults to Chris's sprite.
+; Any player state not in the array defaults to Red's sprite.
 	xor a ; ld a, PLAYER_NORMAL
 	ld [PlayerState], a
-	ld a, SPRITE_CHRIS
+	ld a, SPRITE_RED
 	jr .finish
 
 .good
@@ -66,18 +66,18 @@ GetPlayerSprite: ; 14183
 	ld [PlayerObjectSprite], a
 	ret
 
-.Chris:
-	db PLAYER_NORMAL,    SPRITE_CHRIS
-	db PLAYER_BIKE,      SPRITE_CHRIS_BIKE
-	db PLAYER_SURF,      SPRITE_CHRIS_SURF
-	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
+.Red:
+	db PLAYER_NORMAL,    SPRITE_RED
+	db PLAYER_BIKE,      SPRITE_RED_BIKE
+	db PLAYER_SURF,      SPRITE_RED_SURF
+;	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
 	db $ff
 
-.Kris:
-	db PLAYER_NORMAL,    SPRITE_KRIS
-	db PLAYER_BIKE,      SPRITE_KRIS_BIKE
-	db PLAYER_SURF,      SPRITE_KRIS_SURF
-	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
+.Leaf:
+	db PLAYER_NORMAL,    SPRITE_LEAF
+	db PLAYER_BIKE,      SPRITE_LEAF_BIKE
+	db PLAYER_SURF,      SPRITE_LEAF_SURF
+;	db PLAYER_SURF_PIKA, SPRITE_SURFING_PIKACHU
 	db $ff
 ; 141c9
 

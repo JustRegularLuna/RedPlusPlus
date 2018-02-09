@@ -1,4 +1,4 @@
 BTTrainerClassSprites:
 	db SPRITE_RED           ; RED
 	db SPRITE_LEAF          ; LEAF
-	db SPRITE_OAK           ; PROF_OAK
+	db SPRITE_NONE          ; PROF_OAK

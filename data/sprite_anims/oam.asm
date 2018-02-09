@@ -296,17 +296,17 @@ SpriteAnimOAMData: ; 8d94d
 
 .OAMData_63:
 	db 4
-	dsprite -1,  0, -1,  0, $00, $1
-	dsprite -1,  0,  0,  0, $01, $1
-	dsprite  0,  0, -1,  0, $02, $1
-	dsprite  0,  0,  0,  0, $03, $1
+	dsprite -1,  0, -1,  0, $00, PAL_OW_GREEN
+	dsprite -1,  0,  0,  0, $01, PAL_OW_GREEN
+	dsprite  0,  0, -1,  0, $02, PAL_OW_GREEN
+	dsprite  0,  0,  0,  0, $03,PAL_OW_GREEN
 
 .OAMData_65:
 	db 4
-	dsprite -1,  0, -1,  0, $00, $1 | BEHIND_BG
-	dsprite -1,  0,  0,  0, $01, $1 | BEHIND_BG
-	dsprite  0,  0, -1,  0, $02, $1 | BEHIND_BG
-	dsprite  0,  0,  0,  0, $03, $1 | BEHIND_BG
+	dsprite -1,  0, -1,  0, $00, PAL_OW_GREEN | BEHIND_BG
+	dsprite -1,  0,  0,  0, $01, PAL_OW_GREEN | BEHIND_BG
+	dsprite  0,  0, -1,  0, $02, PAL_OW_GREEN | BEHIND_BG
+	dsprite  0,  0,  0,  0, $03, PAL_OW_GREEN | BEHIND_BG
 
 .OAMData_6e:
 	db 36

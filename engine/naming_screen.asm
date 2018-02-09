@@ -135,8 +135,8 @@ NamingScreen: ; 116c1
 ; 117ae
 
 .Rival: ; 117ae (4:57ae)
-	ld de, SilverSpriteGFX
-	lb bc, BANK(SilverSpriteGFX), SPRITE_ANIM_INDEX_RED_WALK
+	ld de, RedSpriteGFX ; TODO: BlueSpriteGFX
+	lb bc, BANK(RedSpriteGFX), SPRITE_ANIM_INDEX_RED_WALK
 	call .LoadSprite
 	hlcoord 5, 2
 	ld de, .RivalNameString
@@ -151,8 +151,8 @@ NamingScreen: ; 116c1
 ; 117d1
 
 .TrendyPhrase:
-	ld de, ArtistSpriteGFX
-	lb bc, BANK(ArtistSpriteGFX), SPRITE_ANIM_INDEX_BLUE_WALK
+	ld de, RedSpriteGFX ; TODO: ???
+	lb bc, BANK(RedSpriteGFX), SPRITE_ANIM_INDEX_BLUE_WALK
 	call .LoadSprite
 	hlcoord 5, 2
 	ld de, .TrendyPhraseString
@@ -163,9 +163,9 @@ NamingScreen: ; 116c1
 	db "What's trendy?@"
 
 .Box: ; 117f5 (4:57f5)
-	ld de, BallCutFruitSpriteGFX
+	ld de, RedSpriteGFX ; TODO: poke ball sprite
 	ld hl, VTiles0 tile $00
-	lb bc, BANK(BallCutFruitSpriteGFX), $4
+	lb bc, BANK(RedSpriteGFX), $4
 	call Request2bpp
 	xor a
 	ld hl, wSpriteAnimDict

@@ -809,7 +809,7 @@ MapObjectsEnd::
 
 wObjectMasks:: ds NUM_OBJECTS
 
-VariableSprites:: ds $100 - SPRITE_VARS
+VariableSprites:: ds $10 ; at least enough space for SPRITE_VARS
 
 wEnteredMapFromContinue:: ds 1
 
