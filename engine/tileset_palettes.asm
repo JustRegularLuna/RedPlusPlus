@@ -101,6 +101,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .maybe_celadon_home_decor_store_4f
 	cp TILESET_PC_JOHTO_TRADITIONAL
 	jp z, .maybe_special_johto_1
+	cp TILESET_FOREST
+	jp z, .tileset_forest
 	cp TILESET_PC_FOREST
 	jp z, .maybe_special_forest
 	cp TILESET_PC_CAVE
@@ -448,6 +450,16 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .load_eight_time_of_day_bg_palettes
 .not_bellchime_trail
 	jp .do_nothing
+
+.tileset_forest
+	ld a, [MapGroup]
+	cp GROUP_VIRIDIAN_FOREST
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	cp MAP_VIRIDIAN_FOREST
+	jp nz, .do_nothing
+	ld hl, ViridianForestPalette
+	jp .load_eight_bg_palettes
 
 .maybe_special_forest
 	ld a, [MapGroup]
@@ -1435,6 +1447,9 @@ endr
 	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_BLACK
 endc
+
+ViridianForestPalette:
+INCLUDE "gfx/tilesets/palettes/viridian_forest.pal"
 
 YellowForestPalette:
 if !DEF(MONOCHROME)

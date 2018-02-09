@@ -8,6 +8,8 @@ Tilesets::
 Tileset00::
 	tileset Tileset00
 Tileset00End::
+	tileset TilesetForest
+	;------------------------------------
 	tileset TilesetJohto1
 	tileset TilesetJohto2
 	tileset TilesetJohto3
@@ -44,7 +46,7 @@ Tileset00End::
 	tileset TilesetQuietCave
 	tileset TilesetIcePath
 	tileset TilesetTunnel
-	tileset TilesetForest
+	tileset TilesetPCForest
 	tileset TilesetPark
 	tileset TilesetSafari
 	tileset TilesetRuins

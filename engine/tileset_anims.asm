@@ -238,7 +238,7 @@ TilesetIcePathAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  DoneTileAnimation
 
-TilesetForestAnim:
+TilesetPCForestAnim:
 	dw NULL,  ForestTreeLeftAnimation
 	dw NULL,  ForestTreeRightAnimation
 	dw NULL,  ForestTree2LeftAnimation
@@ -337,6 +337,7 @@ TilesetValenciaAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetForestAnim:
 TilesetJohto3Anim:
 TilesetHouse1Anim:
 TilesetHouse2Anim:

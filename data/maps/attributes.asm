@@ -876,7 +876,7 @@ ENDM
 	map_attributes BellchimeTrail, BELLCHIME_TRAIL, $5, 0
 	map_attributes PewterMuseumOfScience1F, PEWTER_MUSEUM_OF_SCIENCE_1F, $0, 0
 	map_attributes PewterMuseumOfScience2F, PEWTER_MUSEUM_OF_SCIENCE_2F, $0, 0
-	map_attributes ViridianForest, VIRIDIAN_FOREST, $45, 0
+	map_attributes ViridianForest, VIRIDIAN_FOREST, $0, 0
 	map_attributes ViridianForestViridianGate, VIRIDIAN_FOREST_VIRIDIAN_GATE, $0, 0
 	map_attributes ViridianForestPewterGate, VIRIDIAN_FOREST_PEWTER_GATE, $0, 0
 	map_attributes Route1ViridianGate, ROUTE_1_VIRIDIAN_GATE, $0, 0
