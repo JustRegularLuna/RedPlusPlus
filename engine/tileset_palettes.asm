@@ -1449,7 +1449,17 @@ endr
 endc
 
 ViridianForestPalette:
+if !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/viridian_forest.pal"
+else
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
 
 YellowForestPalette:
 if !DEF(MONOCHROME)
@@ -1857,6 +1867,14 @@ LoadSpecialMapOBPalette:
 	jr .load_tree_palette
 
 .not_faraway:
+	ld a, [MapGroup]
+	cp GROUP_VIRIDIAN_FOREST
+	jr nz, .not_viridian_forest
+	ld a, [MapNumber]
+	cp MAP_VIRIDIAN_FOREST
+	jr z, .load_bg_tree_palette
+
+.not_viridian_forest:
 	ld a, [MapGroup]
 	cp GROUP_MURKY_SWAMP
 	jr nz, .not_murky_swamp
