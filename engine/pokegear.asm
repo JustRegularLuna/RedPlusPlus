@@ -2584,11 +2584,11 @@ _Area: ; 91d11
 	ld [hli], a
 	inc de
 	push bc
-	ld c, 0 ; RED
+	ld c, PAL_OW_RED
 	ld a, [PlayerGender]
 	bit 0, a
 	jr z, .got_gender
-	inc c   ; BLUE
+	ld c, PAL_OW_GREEN
 .got_gender
 	ld a, c
 	ld [hli], a

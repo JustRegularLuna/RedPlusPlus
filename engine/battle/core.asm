@@ -8358,11 +8358,7 @@ BattleIntro: ; 3f4dd
 	ld [wBattleMenuCursorBuffer], a
 	xor a
 	ld [hMapAnims], a
-	ld a, [OtherTrainerClass]
-	cp LYRA2
-	jr z, .skip_music ; assume that the music is already playing
 	farcall PlayBattleMusic
-.skip_music
 	farcall ShowLinkBattleParticipants
 	farcall FindFirstAliveMonAndStartBattle
 	call DisableSpriteUpdates
@@ -9413,16 +9409,16 @@ BattleStartMessage: ; 3fc8b
 
 CheckPluralTrainer:
 	ld a, [OtherTrainerClass]
-	cp TWINS
-	jr z, .plural
-	cp SR_AND_JR
-	jr z, .plural
-	cp COUPLE
-	jr z, .plural
-	cp ACE_DUO
-	jr z, .plural
-	cp JESSIE_JAMES
-	jr z, .plural
+;	cp TWINS
+;	jr z, .plural
+;	cp SR_AND_JR
+;	jr z, .plural
+;	cp COUPLE
+;	jr z, .plural
+;	cp ACE_DUO
+;	jr z, .plural
+;	cp JESSIE_JAMES
+;	jr z, .plural
 	xor a
 	scf
 	ret

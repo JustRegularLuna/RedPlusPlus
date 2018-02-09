@@ -1064,13 +1064,3 @@ EggShinyPalette:        INCLUDE "gfx/pokemon/egg/shiny.pal"
 	RGB 30, 22, 17
 	RGB 16, 14, 19
 endc
-
-MewtwoArmoredPalette:
-if DEF(MONOCHROME)
-	MONOCHROME_RGB_TWO
-	MONOCHROME_RGB_TWO
-elif DEF(HGSS)
-INCLUDE "gfx/pokemon/mewtwo_armored/hgss/normal.pal"
-else
-INCLUDE "gfx/pokemon/mewtwo_armored/normal.pal"
-endc

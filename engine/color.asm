@@ -449,18 +449,6 @@ GetBattlemonBackpicPalettePointer:
 	ret
 
 GetEnemyFrontpicPalettePointer:
-	ld a, [TempEnemyMonSpecies]
-	cp MEWTWO
-	jr nz, .not_armored_mewtwo
-	ld a, [wBattleMode]
-	cp 2
-	jr nz, .not_armored_mewtwo
-	ld a, [OtherTrainerClass]
-	cp GIOVANNI
-	jr nz, .not_armored_mewtwo
-	ld hl, MewtwoArmoredPalette
-	ret
-.not_armored_mewtwo
 	push de
 	farcall GetEnemyMonPersonality
 	ld c, l
@@ -481,16 +469,16 @@ GetPlayerOrMonPalettePointer:
 	jr z, .male
 	ld a, [BattleType]
 	cp BATTLETYPE_TUTORIAL
-	jr z, .lyra
-	ld hl, KrisPalette
+	jr z, .tutorial
+	ld hl, LeafPalette
 	ret
 
 .male
-	ld hl, PlayerPalette
+	ld hl, RedPalette
 	ret
 
-.lyra
-	ld hl, Lyra1Palette
+.tutorial
+	ld hl, OldManPalette
 	ret
 
 GetFrontpicPalettePointer:
