@@ -520,7 +520,7 @@ MAP_NONE   EQU 0
 
 	mapconst ROUTE_2_SOUTH,                              18, 10 ;  1
 	mapconst ROUTE_22,                                    9, 15 ;  2
-	mapconst VIRIDIAN_CITY,                              18, 20 ;  3
+	mapconst VIRIDIAN_CITY,                              17, 18 ;  3
 	mapconst VIRIDIAN_GYM,                               23,  7 ;  4
 	mapconst VIRIDIAN_NICKNAME_SPEECH_HOUSE,              4,  4 ;  5
 	mapconst VIRIDIAN_SCHOOL_HOUSE,                       5,  4 ;  6

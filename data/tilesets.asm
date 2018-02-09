@@ -9,6 +9,7 @@ Tileset00::
 	tileset Tileset00
 Tileset00End::
 	tileset TilesetPalletCinnabar
+	tileset TilesetViridian
 	tileset TilesetForest
 	;------------------------------------
 	tileset TilesetJohto1

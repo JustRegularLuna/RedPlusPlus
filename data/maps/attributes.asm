@@ -217,21 +217,21 @@ ENDM
 	connection north, PewterCity, PEWTER_CITY, -3, 2, 16
 	connection south, Route2South, ROUTE_2_SOUTH, 0, 0, 10
 
-	map_attributes Route2South, ROUTE_2_SOUTH, $f, NORTH | SOUTH | EAST
+	map_attributes Route2South, ROUTE_2_SOUTH, $f, NORTH | EAST
 	connection north, Route2North, ROUTE_2_NORTH, 0, 0, 10
-	connection south, ViridianCity, VIRIDIAN_CITY, -3, 2, 16
+;	connection south, ViridianCity, VIRIDIAN_CITY, -3, 2, 16
 	connection east, Route16West, ROUTE_16_WEST, 8, 0, 10
 
-	map_attributes ViridianCity, VIRIDIAN_CITY, $f, NORTH | WEST
-	connection north, Route2South, ROUTE_2_SOUTH, 5, 0, 10
-;	connection south, Route1, ROUTE_1, 9, 0, 10
-	connection west, Route22, ROUTE_22, 4, 0, 9
+	map_attributes ViridianCity, VIRIDIAN_CITY, $f, SOUTH
+;	connection north, Route2South, ROUTE_2_SOUTH, 5, 0, 10
+	connection south, Route1, ROUTE_1, 5, 0, 12
+;	connection west, Route22, ROUTE_22, 4, 0, 9
 
-	map_attributes Route22, ROUTE_22, $2c, EAST
-	connection east, ViridianCity, VIRIDIAN_CITY, -3, 1, 15
+	map_attributes Route22, ROUTE_22, $2c, 0
+;	connection east, ViridianCity, VIRIDIAN_CITY, -3, 1, 15
 
-	map_attributes Route1, ROUTE_1, $f, SOUTH
-;	connection north, ViridianCity, VIRIDIAN_CITY, -3, 6, 13
+	map_attributes Route1, ROUTE_1, $f, NORTH | SOUTH
+	connection north, ViridianCity, VIRIDIAN_CITY, -3, 2, 16
 	connection south, PalletTown, PALLET_TOWN, 0, 0, 10
 
 	map_attributes PalletTown, PALLET_TOWN, $f, NORTH | SOUTH

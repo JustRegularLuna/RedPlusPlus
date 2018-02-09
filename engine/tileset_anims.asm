@@ -338,6 +338,7 @@ TilesetValenciaAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetPalletCinnabarAnim:
+TilesetViridianAnim:
 TilesetForestAnim:
 TilesetJohto3Anim:
 TilesetHouse1Anim:
