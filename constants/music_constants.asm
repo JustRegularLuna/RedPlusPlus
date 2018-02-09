@@ -1,220 +1,191 @@
-; HW sound channel register base addresses
-HW_CH1_BASE EQU (rNR10 % $100)
-HW_CH2_BASE EQU ((rNR21 % $100) - 1)
-HW_CH3_BASE EQU (rNR30 % $100)
-HW_CH4_BASE EQU ((rNR41 % $100) - 1)
+	const_def
+	const MUSIC_NONE                           ; 00
+	const MUSIC_CRYSTAL_OPENING                ; 01
+	const MUSIC_TITLE                          ; 02
+	const MUSIC_MAIN_MENU                      ; 03
+	const MUSIC_NEW_BARK_TOWN                  ; 04
+	const MUSIC_MOM                            ; 05
+	const MUSIC_PROF_ELM                       ; 06
+	const MUSIC_LYRA_ENCOUNTER_HGSS            ; 07
+	const MUSIC_RIVAL_BATTLE_XY                ; 08
+	const MUSIC_LYRA_DEPARTURE_HGSS            ; 09
+	const MUSIC_ROUTE_29                       ; 0a
+	const MUSIC_JOHTO_WILD_BATTLE              ; 0b
+	const MUSIC_JOHTO_WILD_BATTLE_NIGHT        ; 0c
+	const MUSIC_WILD_VICTORY                   ; 0d
+	const MUSIC_CHERRYGROVE_CITY               ; 0e
+	const MUSIC_SHOW_ME_AROUND                 ; 0f
+	const MUSIC_POKEMON_CENTER                 ; 10
+	const MUSIC_HEAL                           ; 11
+	const MUSIC_CAPTURE                        ; 12
+	const MUSIC_YOUNGSTER_ENCOUNTER            ; 13
+	const MUSIC_JOHTO_TRAINER_BATTLE           ; 14
+	const MUSIC_TRAINER_VICTORY                ; 15
+	const MUSIC_ROUTE_30                       ; 16
+	const MUSIC_VIOLET_CITY                    ; 17
+	const MUSIC_SPROUT_TOWER                   ; 18
+	const MUSIC_SAGE_ENCOUNTER                 ; 19
+	const MUSIC_MART_HGSS                      ; 1a
+	const MUSIC_UNION_CAVE                     ; 1b
+	const MUSIC_RUINS_OF_ALPH_INTERIOR         ; 1c
+	const MUSIC_RUINS_OF_ALPH_RADIO            ; 1d
+	const MUSIC_AZALEA_TOWN                    ; 1e
+	const MUSIC_ROCKET_ENCOUNTER               ; 1f
+	const MUSIC_ROCKET_BATTLE                  ; 20
+	const MUSIC_ROUTE_36                       ; 21
+	const MUSIC_RIVAL_ENCOUNTER                ; 22
+	const MUSIC_RIVAL_BATTLE                   ; 23
+	const MUSIC_RIVAL_AFTER                    ; 24
+	const MUSIC_EVOLUTION                      ; 25
+	const MUSIC_GOLDENROD_CITY                 ; 26
+	const MUSIC_POKECOM_CENTER                 ; 27
+	const MUSIC_GYM                            ; 28
+	const MUSIC_JOHTO_GYM_LEADER_BATTLE        ; 29
+	const MUSIC_FINAL_POKEMON_BW               ; 2a
+	const MUSIC_GYM_VICTORY                    ; 2b
+	const MUSIC_POKEMON_CHANNEL                ; 2c
+	const MUSIC_BUENAS_PASSWORD                ; 2d
+	const MUSIC_GAME_CORNER                    ; 2e
+	const MUSIC_BICYCLE                        ; 2f
+	const MUSIC_LASS_ENCOUNTER                 ; 30
+	const MUSIC_NATIONAL_PARK                  ; 31
+	const MUSIC_BUG_CATCHING_CONTEST           ; 32
+	const MUSIC_BUG_CATCHING_CONTEST_RANKING   ; 33
+	const MUSIC_ECRUTEAK_CITY                  ; 34
+	const MUSIC_DANCING_HALL                   ; 35
+	const MUSIC_KIMONO_ENCOUNTER               ; 36
+	const MUSIC_BURNED_TOWER                   ; 37
+	const MUSIC_MYSTICALMAN_ENCOUNTER          ; 38
+	const MUSIC_POKEMON_TALK                   ; 39
+	const MUSIC_ROUTE_37                       ; 3a
+	const MUSIC_POKEMON_MARCH                  ; 3b
+	const MUSIC_LIGHTHOUSE                     ; 3c
+	const MUSIC_SURF                           ; 3d
+	const MUSIC_CIANWOOD_CITY_HGSS             ; 3e
+	const MUSIC_ROUTE_47_HGSS                  ; 3f
+	const MUSIC_JESSIE_JAMES_ENCOUNTER         ; 40
+	const MUSIC_SAFARI_ZONE_GATE_HGSS          ; 41
+	const MUSIC_SURFING_PIKACHU                ; 42
+	const MUSIC_LAKE_OF_RAGE                   ; 43
+	const MUSIC_STARK_MOUNTAIN_DPPT            ; 44
+	const MUSIC_LAKE_OF_RAGE_ROCKET_RADIO      ; 45
+	const MUSIC_ROCKET_HIDEOUT                 ; 46
+	const MUSIC_POKEMANIAC_ENCOUNTER           ; 47
+	const MUSIC_ROCKET_OVERTURE                ; 48
+	const MUSIC_DARK_CAVE                      ; 49
+	const MUSIC_DRAGONS_DEN                    ; 4a
+	const MUSIC_CLAIR                          ; 4b
+	const MUSIC_ROUTE_4_BW                     ; 4c
+	const MUSIC_TIN_TOWER                      ; 4d
+	const MUSIC_SUICUNE_BATTLE                 ; 4e
+	const MUSIC_ROUTE_26                       ; 4f
+	const MUSIC_INDIGO_PLATEAU_RBY             ; 50
+	const MUSIC_VICTORY_ROAD                   ; 51
+	const MUSIC_INDIGO_PLATEAU                 ; 52
+	const MUSIC_ELITE_FOUR_BATTLE_SM           ; 53
+	const MUSIC_CHAMPION_BATTLE                ; 54
+	const MUSIC_HALL_OF_FAME                   ; 55
+	const MUSIC_SS_AQUA                        ; 56
+	const MUSIC_VERMILION_CITY                 ; 57
+	const MUSIC_KANTO_GYM_LEADER_BATTLE        ; 58
+	const MUSIC_LAVENDER_TOWN_RBY              ; 59
+	const MUSIC_POKEMON_TOWER_RBY              ; 5a
+	const MUSIC_LAVENDER_TOWN                  ; 5b
+	const MUSIC_KANTO_WILD_BATTLE              ; 5c
+	const MUSIC_CERULEAN_CITY_HGSS             ; 5d
+	const MUSIC_NUGGET_BRIDGE_HGSS             ; 5e
+	const MUSIC_MAGNET_TRAIN                   ; 5f
+	const MUSIC_BLACK_CITY_BW                  ; 60
+	const MUSIC_POKEMON_LULLABY                ; 61
+	const MUSIC_CELADON_CITY                   ; 62
+	const MUSIC_GAME_CORNER_DPPT               ; 63
+	const MUSIC_CANALAVE_CITY_DPPT             ; 64
+	const MUSIC_BICYCLE_XY                     ; 65
+	const MUSIC_ROUTE_12                       ; 66
+	const MUSIC_POKE_FLUTE_CHANNEL             ; 67
+	const MUSIC_ROUTE_209_DPPT                 ; 68
+	const MUSIC_ROUTE_210_DPPT                 ; 69
+	const MUSIC_ROUTE_225_DPPT                 ; 6a
+	const MUSIC_WILD_BATTLE_GO                 ; 6b
+	const MUSIC_DIGLETTS_CAVE_RBY              ; 6c
+	const MUSIC_VIRIDIAN_FOREST                ; 6d
+	const MUSIC_HIKER_ENCOUNTER                ; 6e
+	const MUSIC_VIRIDIAN_CITY                  ; 6f
+	const MUSIC_ROUTE_3                        ; 70
+	const MUSIC_OFFICER_ENCOUNTER              ; 71
+	const MUSIC_MT_MOON                        ; 72
+	const MUSIC_MT_MOON_SQUARE                 ; 73
+	const MUSIC_ROUTE_1                        ; 74
+	const MUSIC_PALLET_TOWN                    ; 75
+	const MUSIC_PROF_OAK                       ; 76
+	const MUSIC_BEAUTY_ENCOUNTER               ; 77
+	const MUSIC_KANTO_TRAINER_BATTLE           ; 78
+	const MUSIC_CINNABAR_ISLAND_HGSS           ; 79
+	const MUSIC_CINNABAR_MANSION_RBY           ; 7a
+	const MUSIC_TRAINER_BATTLE_DPPT            ; 7b
+	const MUSIC_SCARY_HOUSE_XY                 ; 7c
+	const MUSIC_ETERNA_FOREST_DPPT             ; 7d
+	const MUSIC_MOUNT_CHIMNEY_RSE              ; 7e
+	const MUSIC_MOUNT_PYRE_RSE                 ; 7f
+	const MUSIC_BATTLE_TOWER_THEME             ; 80
+	const MUSIC_BATTLE_TOWER_LOBBY             ; 81
+	const MUSIC_TRAINER_BATTLE_BW              ; 82
+	const MUSIC_FRONTIER_BRAIN_BATTLE_RSE      ; 83
+	const MUSIC_ZINNIA_ENCOUNTER_ORAS          ; 84
+	const MUSIC_ROUTE_205_DPPT                 ; 85
+	const MUSIC_WILD_BATTLE_SM                 ; 86
+	const MUSIC_SUNYSHORE_CITY_DPPT            ; 87
+	const MUSIC_TRAINER_BATTLE_SM              ; 88
+	const MUSIC_ROUTE_203_DPPT                 ; 89
+	const MUSIC_WHITE_TREEHOLLOW_W2            ; 8a
+	const MUSIC_LAVERRE_CITY_XY                ; 8b
+	const MUSIC_ROUTE_101_RSE                  ; 8c
+	const MUSIC_EVER_GRANDE_CITY_RSE           ; 8d
+	const MUSIC_OREBURGH_GATE_DPPT             ; 8e
+	const MUSIC_ROUTE_12_BW                    ; 8f
+	const MUSIC_ROAD_TO_REVERSAL_MOUNTAIN_B2W2 ; 90
+	const MUSIC_ZINNIA_BATTLE_ORAS             ; 91
+	const MUSIC_WALLY_ENCOUNTER_ORAS           ; 92
+	const MUSIC_WALLY_BATTLE_ORAS              ; 93
+	const MUSIC_SPIKY_EARED_PICHU_HGSS         ; 94
+	const MUSIC_MOTHER_BEAST_BATTLE_SM         ; 95
+	const MUSIC_FROST_CAVERN_XY                ; 96
+	const MUSIC_POWER_PLANT_XY                 ; 97
+	const MUSIC_REVERSAL_MOUNTAIN_W2           ; 98
+	const MUSIC_METEOR_FALLS_RSE               ; 99
+	const MUSIC_LUGIAS_SONG_2000               ; 9a
+	const MUSIC_LUGIA_BATTLE_HGSS              ; 9b
+	const MUSIC_SUMMONING_DANCE_HGSS           ; 9c
+	const MUSIC_HO_OH_BATTLE_HGSS              ; 9d
+	const MUSIC_CERULEAN_CAVE_RBY              ; 9e
+	const MUSIC_MEWTWO_BATTLE_STADIUM          ; 9f
+	const MUSIC_ABANDONED_SHIP_RSE             ; a0
+	const MUSIC_KANTO_LEGEND_BATTLE_XY         ; a1
+	const MUSIC_GYM_LEADER_BATTLE_RSE          ; a2
+	const MUSIC_GYM_LEADER_BATTLE_DPPT         ; a3
+	const MUSIC_GYM_LEADER_BATTLE_BW           ; a4
+	const MUSIC_GYM_LEADER_BATTLE_XY           ; a5
+	const MUSIC_GYM_LEADER_BATTLE_GO           ; a6
+	const MUSIC_ELITE_FOUR_BATTLE_BW           ; a7
+	const MUSIC_CELESTIAL_TOWER_BW             ; a8
+	const MUSIC_CHAMPION_BATTLE_RSE            ; a9
+	const MUSIC_MOUNT_CORONET_DPPT             ; aa
+	const MUSIC_CHAMPION_BATTLE_DPPT           ; ab
+	const MUSIC_WCS_BATTLE_BW                  ; ac
+	const MUSIC_CHAMPION_BATTLE_B2W2           ; ad
+	const MUSIC_CREDITS                        ; ae
+	const MUSIC_POST_CREDITS                   ; af
+	const MUSIC_TITLE_XY                       ; b0
+	const MUSIC_DEWFORD_TOWN_RSE               ; b1 ; unused
+	const MUSIC_MARINE_TUBE_B2W2               ; b2 ; unused
+	const MUSIC_LEGENDARY_BATTLE_XY            ; b3 ; unused
+	const MUSIC_WILD_BATTLE_PRISM              ; b4 ; unused
+	const MUSIC_TRAINER_BATTLE_PRISM           ; b5 ; unused
+	const MUSIC_GYM_LEADER_BATTLE_PRISM        ; b6 ; unused
+	const MUSIC_PALETTE_BATTLE_PRISM           ; b7 ; unused
+NUM_SONGS EQU const_value
 
-; HW sound channel enable bit masks
-HW_CH1_ENABLE_MASK EQU %00010001
-HW_CH2_ENABLE_MASK EQU %00100010
-HW_CH3_ENABLE_MASK EQU %01000100
-HW_CH4_ENABLE_MASK EQU %10001000
-
-; HW sound channel disable bit masks
-HW_CH1_DISABLE_MASK EQU (~HW_CH1_ENABLE_MASK & $ff)
-HW_CH2_DISABLE_MASK EQU (~HW_CH2_ENABLE_MASK & $ff)
-HW_CH3_DISABLE_MASK EQU (~HW_CH3_ENABLE_MASK & $ff)
-HW_CH4_DISABLE_MASK EQU (~HW_CH4_ENABLE_MASK & $ff)
-
-REG_DUTY_SOUND_LEN  EQU 1
-REG_VOLUME_ENVELOPE EQU 2
-REG_FREQUENCY_LO    EQU 3
-
-MAX_SFX_ID EQU $B9
-
-CRY_SFX_START EQU $14
-CRY_SFX_END   EQU $86
-
-; wChannelFlags1 constants
-BIT_PERFECT_PITCH         EQU 0 ; controlled by toggleperfectpitch command
-BIT_CHANNEL_CALL          EQU 1 ; if in channel call
-BIT_NOISE_OR_SFX          EQU 2 ; if channel is the music noise channel or an SFX channel
-BIT_VIBRATO_DIRECTION     EQU 3 ; if the pitch is above or below normal (cycles)
-BIT_PITCH_BEND_ON         EQU 4 ; if pitch bend is active
-BIT_PITCH_BEND_DECREASING EQU 5 ; if the pitch bend frequency is decreasing (instead of increasing)
-BIT_ROTATE_DUTY           EQU 6 ; if rotating duty
-
-; wChannelFlags2 constant (only has one flag)
-BIT_EXECUTE_MUSIC EQU 0 ; if in execute music
-
-; Song ids are calculated by address to save space.
-
-;music_const: MACRO
-;\1 EQUS "RB(\2)"
-;ENDM
-const_value = 1
-
-	const MUSIC_PALLET_TOWN
-	const MUSIC_POKECENTER
-	const MUSIC_GYM
-	const MUSIC_CITIES1
-	const MUSIC_CITIES2
-	const MUSIC_CELADON
-	const MUSIC_CINNABAR
-	const MUSIC_VERMILION
-	const MUSIC_LAVENDER
-	const MUSIC_SS_ANNE
-	const MUSIC_MEET_PROF_OAK
-	const MUSIC_MEET_RIVAL
-	const MUSIC_MUSEUM_GUY
-	const MUSIC_SAFARI_ZONE
-	const MUSIC_PKMN_HEALED
-	const MUSIC_ROUTES1
-	const MUSIC_ROUTES2
-	const MUSIC_ROUTES3
-	const MUSIC_ROUTES4
-	const MUSIC_INDIGO_PLATEAU
-	
-	const MUSIC_GYM_LEADER_BATTLE
-	const MUSIC_TRAINER_BATTLE
-	const MUSIC_WILD_BATTLE
-	const MUSIC_FINAL_BATTLE
-	const MUSIC_DEFEATED_TRAINER
-	const MUSIC_DEFEATED_WILD_MON
-	const MUSIC_DEFEATED_GYM_LEADER
-	
-	const MUSIC_TITLE_SCREEN
-	const MUSIC_CREDITS
-	const MUSIC_HALL_OF_FAME
-	const MUSIC_OAKS_LAB
-	const MUSIC_JIGGLYPUFF_SONG
-	const MUSIC_BIKE_RIDING
-	const MUSIC_SURFING
-	const MUSIC_GAME_CORNER
-	const MUSIC_INTRO_BATTLE
-	const MUSIC_DUNGEON1
-	const MUSIC_DUNGEON2
-	const MUSIC_DUNGEON3
-	const MUSIC_CINNABAR_MANSION
-	const MUSIC_POKEMON_TOWER
-	const MUSIC_SILPH_CO
-	const MUSIC_MEET_EVIL_TRAINER
-	const MUSIC_MEET_FEMALE_TRAINER
-	const MUSIC_MEET_MALE_TRAINER
-	
-	const MUSIC_MT_MOON_SQUARE
-	const MUSIC_ABANDONED_SHIP
-	const MUSIC_LAKE_OF_RAGE
-
-
-const_value = 1
-	; AUDIO_1 AUDIO_3
-	const SFX_GET_ITEM_1
-
-	; AUDIO_1 AUDIO_2 AUDIO_3
-	const SFX_GET_ITEM_2
-	const SFX_TINK
-	const SFX_HEAL_HP
-	const SFX_HEAL_AILMENT
-	const SFX_START_MENU
-	const SFX_PRESS_AB
-
-	; AUDIO_1 AUDIO_3
-	const SFX_POKEDEX_RATING
-	const SFX_GET_KEY_ITEM
-	const SFX_POISONED
-	const SFX_TRADE_MACHINE
-	const SFX_TURN_ON_PC
-	const SFX_TURN_OFF_PC
-	const SFX_ENTER_PC
-	const SFX_SHRINK
-	const SFX_SWITCH
-	const SFX_HEALING_MACHINE
-	const SFX_TELEPORT_EXIT_1
-	const SFX_TELEPORT_ENTER_1
-	const SFX_TELEPORT_EXIT_2
-	const SFX_LEDGE
-	const SFX_TELEPORT_ENTER_2
-	const SFX_FLY
-	const SFX_DENIED
-	const SFX_ARROW_TILES
-	const SFX_PUSH_BOULDER
-	const SFX_SS_ANNE_HORN
-	const SFX_WITHDRAW_DEPOSIT
-	const SFX_CUT
-	const SFX_GO_INSIDE
-	const SFX_SWAP
-	const SFX_59
-	const SFX_PURCHASE
-	const SFX_COLLISION
-	const SFX_GO_OUTSIDE
-	const SFX_SAVE
-
-	; AUDIO_1
-	const SFX_POKEFLUTE
-	const SFX_SAFARI_ZONE_PA
-
-	; AUDIO_2
-	const SFX_LEVEL_UP
-
-	const SFX_BALL_TOSS
-	const SFX_BALL_POOF
-	const SFX_FAINT_THUD
-	const SFX_RUN
-	const SFX_DEX_PAGE_ADDED
-	const SFX_CAUGHT_MON
-	const SFX_PECK
-	const SFX_FAINT_FALL
-	const SFX_BATTLE_09
-	const SFX_POUND
-	const SFX_BATTLE_0B
-	const SFX_BATTLE_0C
-	const SFX_BATTLE_0D
-	const SFX_BATTLE_0E
-	const SFX_BATTLE_0F
-	const SFX_DAMAGE
-	const SFX_NOT_VERY_EFFECTIVE
-	const SFX_BATTLE_12
-	const SFX_BATTLE_13
-	const SFX_BATTLE_14
-	const SFX_VINE_WHIP
-	const SFX_BATTLE_16
-	const SFX_BATTLE_17
-	const SFX_BATTLE_18
-	const SFX_BATTLE_19
-	const SFX_SUPER_EFFECTIVE
-	const SFX_BATTLE_1B
-	const SFX_BATTLE_1C
-	const SFX_DOUBLESLAP
-	const SFX_BATTLE_1E
-	const SFX_HORN_DRILL
-	const SFX_BATTLE_20
-	const SFX_BATTLE_21
-	const SFX_BATTLE_22
-	const SFX_BATTLE_23
-	const SFX_BATTLE_24
-	const SFX_BATTLE_25
-	const SFX_BATTLE_26
-	const SFX_BATTLE_27
-	const SFX_BATTLE_28
-	const SFX_BATTLE_29
-	const SFX_BATTLE_2A
-	const SFX_BATTLE_2B
-	const SFX_BATTLE_2C
-	const SFX_PSYBEAM
-	const SFX_BATTLE_2E
-	const SFX_BATTLE_2F
-	const SFX_PSYCHIC_M
-	const SFX_BATTLE_31
-	const SFX_BATTLE_32
-	const SFX_BATTLE_33
-	const SFX_BATTLE_34
-	const SFX_BATTLE_35
-	const SFX_BATTLE_36
-	const SFX_SILPH_SCOPE
-
-	; AUDIO_3
-	const SFX_INTRO_LUNGE
-	const SFX_INTRO_HIP
-	const SFX_INTRO_HOP
-	const SFX_INTRO_RAISE
-	const SFX_INTRO_CRASH
-	const SFX_INTRO_WHOOSH
-	const SFX_SLOTS_STOP_WHEEL
-	const SFX_SLOTS_REWARD
-	const SFX_SLOTS_NEW_SPIN
-	const SFX_SHOOTING_STAR
-
-	const GSSFX_NOT_VERY_EFFECTIVE
-	const GSSFX_DAMAGE
-	const GSSFX_SUPER_EFFECTIVE
+; special
+MUSIC_RADIO_TOWER EQU -1
+MUSIC_MAHOGANY_MART EQU -2
+MUSIC_LAVENDER EQU -3

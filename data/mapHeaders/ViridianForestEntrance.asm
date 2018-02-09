@@ -1,6 +1,0 @@
-ViridianForestEntrance_h:
-	db GATE
-	db VIRIDIAN_FOREST_ENTRANCE_HEIGHT, VIRIDIAN_FOREST_ENTRANCE_WIDTH
-	dw ViridianForestEntranceBlocks, ViridianForestEntranceTextPointers, ViridianForestEntranceScript
-	db 0
-	dw ViridianForestEntranceObject

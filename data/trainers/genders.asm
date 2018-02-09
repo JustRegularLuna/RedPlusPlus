@@ -1,0 +1,3 @@
+BTTrainerClassGenders:
+	; RED, LEAF, PROF_OAK, N/A, N/A, N/A, N/A, N/A
+	genders MALE, FEMALE, MALE, FEMALE, FEMALE, FEMALE, FEMALE, FEMALE

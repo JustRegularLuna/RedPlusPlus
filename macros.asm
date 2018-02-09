@@ -1,19 +1,21 @@
-INCLUDE "macros/asm_macros.asm"
-INCLUDE "macros/data_macros.asm"
-INCLUDE "macros/text_macros.asm"
-INCLUDE "macros/audio_macros.asm"
-INCLUDE "macros/event_macros.asm"
+INCLUDE "macros/enum.asm"
+INCLUDE "macros/predef.asm"
+INCLUDE "macros/rst.asm"
+INCLUDE "macros/data.asm"
+INCLUDE "macros/code.asm"
+INCLUDE "macros/gfx.asm"
+INCLUDE "macros/coords.asm"
 
+INCLUDE "macros/scripts/audio.asm"
+INCLUDE "macros/scripts/maps.asm"
+INCLUDE "macros/scripts/events.asm"
+INCLUDE "macros/scripts/text.asm"
+INCLUDE "macros/scripts/movement.asm"
+INCLUDE "macros/scripts/battle_commands.asm"
+INCLUDE "macros/scripts/battle_anims.asm"
+INCLUDE "macros/scripts/trade_anims.asm"
+INCLUDE "macros/scripts/gfx_anims.asm"
 
-; Macros for color hack
-
-;ORG: MACRO
-;	SECTION "ORG\@",ROMX[\2],BANK[\1]
-;	ENDM
-
-; rst $18 = bankswitch
-CALL_INDIRECT: MACRO
-	ld b, BANK(\1)
-	ld hl, \1
-	rst $18
-ENDM
+if DEF(MONOCHROME)
+INCLUDE "macros/monochrome.asm"
+endc
