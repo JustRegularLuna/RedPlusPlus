@@ -1714,21 +1714,17 @@ endr
 endc
 
 OvercastBGPalette:
-if DEF(HGSS)
-INCLUDE "gfx/tilesets/palettes/hgss/ob.pal"
-elif DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/monochrome/ob.pal"
-else
+if !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/bg_overcast.pal"
+else
+INCLUDE "gfx/tilesets/palettes/monochrome/ob.pal"
 endc
 
 OvercastOBPalette:
-if DEF(HGSS)
-INCLUDE "gfx/tilesets/palettes/hgss/ob_overcast.pal"
-elif DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/monochrome/ob_overcast.pal"
-else
+if !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/ob_overcast.pal"
+else
+INCLUDE "gfx/tilesets/palettes/monochrome/ob_overcast.pal"
 endc
 
 MartBluePalette:

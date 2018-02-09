@@ -1,12 +1,12 @@
 TrainerPalettes:
 
 if !DEF(MONOCHROME)
-	INCLUDE "gfx/trainers/red.pal"      ; TRAINER_NONE
+INCLUDE "gfx/trainers/red.pal"      ; TRAINER_NONE
 RedPalette:
-	INCLUDE "gfx/trainers/red.pal"      ; RED
+INCLUDE "gfx/trainers/red.pal"      ; RED
 LeafPalette:
-	INCLUDE "gfx/trainers/leaf.pal"     ; LEAF
-	INCLUDE "gfx/trainers/oak.pal"      ; PROF_OAK
+INCLUDE "gfx/trainers/leaf.pal"     ; LEAF
+INCLUDE "gfx/trainers/oak.pal"      ; PROF_OAK
 else
 RedPalette:
 LeafPalette:
@@ -17,8 +17,7 @@ endc
 
 OldManPalette:
 if !DEF(MONOCHROME)
-	RGB 24, 17, 07
-	RGB 18, 13, 04
+	RGB 24,17,07, 18,13,04
 else
 	MONOCHROME_RGB_TWO
 endc
