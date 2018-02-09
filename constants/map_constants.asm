@@ -171,7 +171,7 @@ MAP_NONE   EQU 0
 	mapconst SEAFOAM_ISLANDS_B4F,                        10, 20 ;  7
 	mapconst ROUTE_19,                                   29, 10 ;  8
 	mapconst ROUTE_20,                                    9, 51 ;  9
-	mapconst ROUTE_21,                                   48, 10 ; 10
+	mapconst ROUTE_21,                                   44, 12 ; 10
 	mapconst URAGA_CHANNEL_WEST,                         15,  6 ; 11
 	mapconst CINNABAR_ISLAND,                            11, 12 ; 12
 	mapconst CINNABAR_VOLCANO_1F,                        14, 14 ; 13

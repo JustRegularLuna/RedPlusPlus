@@ -234,14 +234,14 @@ ENDM
 ;	connection north, ViridianCity, VIRIDIAN_CITY, -3, 6, 13
 	connection south, PalletTown, PALLET_TOWN, 0, 0, 10
 
-	map_attributes PalletTown, PALLET_TOWN, $f, NORTH
+	map_attributes PalletTown, PALLET_TOWN, $f, NORTH | SOUTH
 	connection north, Route1, ROUTE_1, 0, 0, 10
-;	connection south, Route21, ROUTE_21, 0, 0, 10
+	connection south, Route21, ROUTE_21, -1, 1, 12
 
-	map_attributes Route21, ROUTE_21, $43, SOUTH | EAST
-;	connection north, PalletTown, PALLET_TOWN, 0, 0, 10
-	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 10
-	connection east, UragaChannelWest, URAGA_CHANNEL_WEST, 19, 0, 15
+	map_attributes Route21, ROUTE_21, $49, NORTH
+	connection north, PalletTown, PALLET_TOWN, 2, 0, 10
+;	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 10
+;	connection east, UragaChannelWest, URAGA_CHANNEL_WEST, 19, 0, 15
 
 	map_attributes CinnabarIsland, CINNABAR_ISLAND, $43, NORTH | EAST
 	connection north, Route21, ROUTE_21, 0, 0, 10
