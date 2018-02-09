@@ -7,6 +7,15 @@ ENDM
 
 SECTION "Tileset Data 1", ROMX
 
+TilesetPalletCinnabarGFX::
+INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.lz"
+
+TilesetPalletCinnabarMeta::
+INCBIN "data/tilesets/pallet_cinnabar_metatiles.bin"
+
+TilesetPalletCinnabarColl::
+INCLUDE "data/tilesets/pallet_cinnabar_collision.asm"
+
 TilesetForestGFX::
 INCBIN "gfx/tilesets/forest.2bpp.lz"
 

@@ -222,24 +222,24 @@ ENDM
 	connection south, ViridianCity, VIRIDIAN_CITY, -3, 2, 16
 	connection east, Route16West, ROUTE_16_WEST, 8, 0, 10
 
-	map_attributes ViridianCity, VIRIDIAN_CITY, $f, NORTH | SOUTH | WEST
+	map_attributes ViridianCity, VIRIDIAN_CITY, $f, NORTH | WEST
 	connection north, Route2South, ROUTE_2_SOUTH, 5, 0, 10
-	connection south, Route1, ROUTE_1, 9, 0, 10
+;	connection south, Route1, ROUTE_1, 9, 0, 10
 	connection west, Route22, ROUTE_22, 4, 0, 9
 
 	map_attributes Route22, ROUTE_22, $2c, EAST
 	connection east, ViridianCity, VIRIDIAN_CITY, -3, 1, 15
 
-	map_attributes Route1, ROUTE_1, $f, NORTH | SOUTH
-	connection north, ViridianCity, VIRIDIAN_CITY, -3, 6, 13
-	connection south, PalletTown, PALLET_TOWN, 1, 0, 10
+	map_attributes Route1, ROUTE_1, $f, SOUTH
+;	connection north, ViridianCity, VIRIDIAN_CITY, -3, 6, 13
+	connection south, PalletTown, PALLET_TOWN, 0, 0, 10
 
-	map_attributes PalletTown, PALLET_TOWN, $f, NORTH | SOUTH
-	connection north, Route1, ROUTE_1, -1, 0, 10
-	connection south, Route21, ROUTE_21, 0, 0, 10
+	map_attributes PalletTown, PALLET_TOWN, $f, NORTH
+	connection north, Route1, ROUTE_1, 0, 0, 10
+;	connection south, Route21, ROUTE_21, 0, 0, 10
 
-	map_attributes Route21, ROUTE_21, $43, NORTH | SOUTH | EAST
-	connection north, PalletTown, PALLET_TOWN, 0, 0, 10
+	map_attributes Route21, ROUTE_21, $43, SOUTH | EAST
+;	connection north, PalletTown, PALLET_TOWN, 0, 0, 10
 	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 10
 	connection east, UragaChannelWest, URAGA_CHANNEL_WEST, 19, 0, 15
 

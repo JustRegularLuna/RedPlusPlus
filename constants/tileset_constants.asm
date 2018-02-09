@@ -1,4 +1,5 @@
 	const_def 1
+	const TILESET_PALLET_CINNABAR
 	const TILESET_FOREST
 	;------------------------------------
 	const TILESET_PC_JOHTO_TRADITIONAL

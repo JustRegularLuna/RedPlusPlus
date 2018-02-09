@@ -337,6 +337,7 @@ TilesetValenciaAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetPalletCinnabarAnim:
 TilesetForestAnim:
 TilesetJohto3Anim:
 TilesetHouse1Anim:
