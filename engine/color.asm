@@ -761,7 +761,7 @@ LoadMapPals:
 	farcall LoadSpecialMapOBPalette
 
 	ld a, [wTileset]
-	cp TILESET_FOREST ; for Yellow Forest
+	cp TILESET_PC_FOREST ; for Yellow Forest
 	ret z
 
 	; overcast maps have their own roof color table

@@ -1,16 +1,16 @@
 CutGrassBlockPointers:
 ; Which tileset are we in?
-	dbw TILESET_JOHTO_TRADITIONAL, .johto_traditional
-	dbw TILESET_JOHTO_MODERN, .johto_modern
-	dbw TILESET_JOHTO_OVERCAST, .johto_overcast
-	dbw TILESET_KANTO, .kanto
-	dbw TILESET_INDIGO_PLATEAU, .indigo_plateau
-	dbw TILESET_PARK, .park
-	dbw TILESET_FOREST, .forest
-	dbw TILESET_SAFARI_ZONE, .safari_zone
-	dbw TILESET_SHAMOUTI_ISLAND, .shamouti_island
-	dbw TILESET_VALENCIA_ISLAND, .valencia_island
-	dbw TILESET_FARAWAY_ISLAND, .faraway_island
+	dbw TILESET_PC_JOHTO_TRADITIONAL, .johto_traditional
+	dbw TILESET_PC_JOHTO_MODERN, .johto_modern
+	dbw TILESET_PC_JOHTO_OVERCAST, .johto_overcast
+	dbw TILESET_PC_KANTO, .kanto
+	dbw TILESET_PC_INDIGO_PLATEAU, .indigo_plateau
+	dbw TILESET_PC_PARK, .park
+	dbw TILESET_PC_FOREST, .forest
+	dbw TILESET_PC_SAFARI_ZONE, .safari_zone
+	dbw TILESET_PC_SHAMOUTI_ISLAND, .shamouti_island
+	dbw TILESET_PC_VALENCIA_ISLAND, .valencia_island
+	dbw TILESET_PC_FARAWAY_ISLAND, .faraway_island
 	db -1
 
 ; Which meta tile are we facing, which should we replace it with, and which animation?
@@ -85,9 +85,9 @@ CutGrassBlockPointers:
 	db -1
 
 WhirlpoolBlockPointers:
-	dbw TILESET_JOHTO_TRADITIONAL, .johto_traditional
-	dbw TILESET_JOHTO_MODERN, .johto_modern
-	dbw TILESET_JOHTO_OVERCAST, .johto_overcast
+	dbw TILESET_PC_JOHTO_TRADITIONAL, .johto_traditional
+	dbw TILESET_PC_JOHTO_MODERN, .johto_modern
+	dbw TILESET_PC_JOHTO_OVERCAST, .johto_overcast
 	db -1
 
 .johto_traditional

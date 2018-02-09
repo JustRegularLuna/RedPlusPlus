@@ -30,80 +30,80 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wTileset]
 
 	ld hl, PokeComPalette
-	cp TILESET_POKECOM_CENTER
+	cp TILESET_PC_POKECOM_CENTER
 	jp z, .load_eight_bg_palettes
 	ld hl, BattleTowerPalette
-	cp TILESET_BATTLE_TOWER_INSIDE
+	cp TILESET_PC_BATTLE_TOWER_INSIDE
 	jp z, .load_eight_bg_palettes
 	ld hl, GatePalette
-	cp TILESET_GATE
+	cp TILESET_PC_GATE
 	jp z, .load_eight_bg_palettes
 	ld hl, HotelPalette
-	cp TILESET_HOTEL
+	cp TILESET_PC_HOTEL
 	jp z, .load_eight_bg_palettes
 	ld hl, QuietCavePalette
-	cp TILESET_QUIET_CAVE
+	cp TILESET_PC_QUIET_CAVE
 	jp z, .load_eight_bg_palettes
 	ld hl, RuinsPalette
-	cp TILESET_RUINS_OF_ALPH
+	cp TILESET_PC_RUINS_OF_ALPH
 	jp z, .load_eight_bg_palettes
-	cp TILESET_ALPH_WORD_ROOM
+	cp TILESET_PC_ALPH_WORD_ROOM
 	jp z, .load_eight_bg_palettes
 
 	ld hl, SafariZonePalette
-	cp TILESET_SAFARI_ZONE
+	cp TILESET_PC_SAFARI_ZONE
 	jp z, .load_eight_time_of_day_bg_palettes
 	ld hl, FarawayIslandPalette
-	cp TILESET_FARAWAY_ISLAND
+	cp TILESET_PC_FARAWAY_ISLAND
 	jp z, .load_eight_time_of_day_bg_palettes
 	ld hl, ShamoutiIslandPalette
-	cp TILESET_SHAMOUTI_ISLAND
+	cp TILESET_PC_SHAMOUTI_ISLAND
 	jp z, .load_eight_time_of_day_bg_palettes
 	ld hl, ValenciaIslandPalette
-	cp TILESET_VALENCIA_ISLAND
+	cp TILESET_PC_VALENCIA_ISLAND
 	jp z, .load_eight_time_of_day_bg_palettes
 
-	cp TILESET_POKECENTER
+	cp TILESET_PC_POKECENTER
 	jp z, .pokecenter
-	cp TILESET_ICE_PATH
+	cp TILESET_PC_ICE_PATH
 	jp z, .ice_path_or_hall_of_fame
-	cp TILESET_RADIO_TOWER
+	cp TILESET_PC_RADIO_TOWER
 	jp z, .radio_towers
-	cp TILESET_GYM
+	cp TILESET_PC_GYM
 	jp z, .maybe_elite_room
-	cp TILESET_MAGNET_TRAIN
+	cp TILESET_PC_MAGNET_TRAIN
 	jp z, .maybe_viridian_gym
-	cp TILESET_CHAMPIONS_ROOM
+	cp TILESET_PC_CHAMPIONS_ROOM
 	jp z, .maybe_lances_room
-	cp TILESET_PORT
+	cp TILESET_PC_PORT
 	jp z, .maybe_cerulean_gym
-	cp TILESET_GAME_CORNER
+	cp TILESET_PC_GAME_CORNER
 	jp z, .maybe_saffron_gym
-	cp TILESET_UNDERGROUND
+	cp TILESET_PC_UNDERGROUND
 	jp z, .maybe_fuchsia_gym
-	cp TILESET_LAB
+	cp TILESET_PC_LAB
 	jp z, .maybe_lab_or_dragon_shrine
-	cp TILESET_TUNNEL
+	cp TILESET_PC_TUNNEL
 	jp z, .maybe_lightning_island_or_magnet_tunnel
-	cp TILESET_SPROUT_TOWER
+	cp TILESET_PC_SPROUT_TOWER
 	jp z, .maybe_mystri_or_tower
-	cp TILESET_POKEMON_MANSION
+	cp TILESET_PC_POKEMON_MANSION
 	jp z, .maybe_cinnabar_lab
-	cp TILESET_MUSEUM
+	cp TILESET_PC_MUSEUM
 	jp z, .maybe_goldenrod_museum
-	cp TILESET_CELADON_MANSION
+	cp TILESET_PC_CELADON_MANSION
 	jp z, .maybe_celadon_mansion_roof
-	cp TILESET_MART
+	cp TILESET_PC_MART
 	jp z, .maybe_goldenrod_dept_store_roof
-	cp TILESET_LIGHTHOUSE
+	cp TILESET_PC_LIGHTHOUSE
 	jp z, .maybe_olivine_lighthouse_roof
-	cp TILESET_HOME_DECOR_STORE
+	cp TILESET_PC_HOME_DECOR_STORE
 	jp z, .maybe_celadon_home_decor_store_4f
-	cp TILESET_JOHTO_TRADITIONAL
+	cp TILESET_PC_JOHTO_TRADITIONAL
 	jp z, .maybe_special_johto_1
-	cp TILESET_FOREST
+	cp TILESET_PC_FOREST
 	jp z, .maybe_special_forest
-	cp TILESET_CAVE
+	cp TILESET_PC_CAVE
 	jp z, .maybe_special_cave
 
 	call GetOvercastIndex
@@ -1821,9 +1821,9 @@ LoadSpecialMapOBPalette:
 
 .not_overcast
 	ld a, [wTileset]
-	cp TILESET_SHAMOUTI_ISLAND
+	cp TILESET_PC_SHAMOUTI_ISLAND
 	jr z, .load_bg_tree_palette
-	cp TILESET_SAFARI_ZONE
+	cp TILESET_PC_SAFARI_ZONE
 	jr nz, .not_shamouti_or_safari
 .load_bg_tree_palette
 	ld hl, UnknBGPals palette PAL_BG_GREEN
@@ -1836,7 +1836,7 @@ LoadSpecialMapOBPalette:
 	jp FarCopyWRAM
 
 .not_shamouti_or_safari:
-	cp TILESET_FARAWAY_ISLAND
+	cp TILESET_PC_FARAWAY_ISLAND
 	jr nz, .not_faraway
 	ld hl, UnknBGPals palette 1 ; grass
 	jr .load_tree_palette
@@ -1906,7 +1906,7 @@ LoadSpecialMapOBPalette:
 	jp .load_single_palette
 .not_pokecom_center_office
 	ld a, [wTileset]
-	cp TILESET_MUSEUM
+	cp TILESET_PC_MUSEUM
 	jr nz, .not_goldenrod
 	ld hl, GoldenrodMuseumOBPalettes_TreeRock
 	ld de, UnknOBPals palette PAL_OW_TREE

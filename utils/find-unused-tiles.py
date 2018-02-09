@@ -28,7 +28,7 @@ tileset_names = ['johto1', 'johto2', 'johto3', 'johto4', 'kanto1', 'kanto2',
                  'tunnel', 'forest', 'park', 'safari', 'ruins', 'alph',
                  'pokemon_mansion']
 
-# {'TILESET_JOHTO_1': 'johto1', ...}
+# {'TILESET_PC_JOHTO_1': 'johto1', ...}
 tileset_ids = {}
 # {'NewBarkTown': 'johto1', ...}
 map_tilesets = {}

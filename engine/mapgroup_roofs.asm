@@ -17,7 +17,7 @@ LoadMapGroupRoof:: ; 1c000
 .extra_tiles
 ; Load puddle tiles for Stormy Beach on top of the unused Mart roof tiles
 	ld a, [wTileset]
-	cp TILESET_JOHTO_MODERN
+	cp TILESET_PC_JOHTO_MODERN
 	ret nz
 	ld a, [MapGroup]
 	cp GROUP_STORMY_BEACH
