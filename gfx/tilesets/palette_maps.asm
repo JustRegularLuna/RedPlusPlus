@@ -7,6 +7,9 @@ rept _NARG +- 1
 endr
 ENDM
 
+TilesetPalletCinnabarPalMap:
+INCLUDE "gfx/tilesets/pallet_cinnabar_palette_map.asm"
+
 TilesetForestPalMap:
 INCLUDE "gfx/tilesets/forest_palette_map.asm"
 

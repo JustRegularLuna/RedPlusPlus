@@ -303,8 +303,8 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 13
 
-	mapconst ROUTE_1,                                    18, 12 ;  1
-	mapconst PALLET_TOWN,                                 9, 10 ;  2
+	mapconst ROUTE_1,                                    22, 12 ;  1
+	mapconst PALLET_TOWN,                                10, 10 ;  2
 	mapconst REDS_HOUSE_1F,                               4,  4 ;  3
 	mapconst REDS_HOUSE_2F,                               4,  4 ;  4
 	mapconst BLUES_HOUSE_1F,                              4,  4 ;  5
