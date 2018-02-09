@@ -5,14 +5,14 @@ UnusedPhoneScript: ; 0xbcea5
 ; Mom
 
 MomPhoneScript: ; 0xbceaa
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iftrue .bcec5
-	checkevent EVENT_LEARNED_TO_CATCH_POKEMON
-	iftrue MomPhoneLectureScript
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue MomPhoneNoGymQuestScript
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue MomPhoneNoPokedexScript
+;	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
+;	iftrue .bcec5
+;	checkevent EVENT_LEARNED_TO_CATCH_POKEMON
+;	iftrue MomPhoneLectureScript
+;	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+;	iftrue MomPhoneNoGymQuestScript
+;	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+;	iftrue MomPhoneNoPokedexScript
 	jump MomPhoneNoPokemonScript
 
 .bcec5 ; 0xbcec5
@@ -139,7 +139,7 @@ MomPhoneNoGymQuestScript: ; 0xbcfac
 	end
 
 MomPhoneLectureScript: ; 0xbcfb1
-	setevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
+;	setevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
 	setflag ENGINE_DST
 	specialphonecall SPECIALCALL_NONE
 	farwritetext MomPhoneLectureText
@@ -214,23 +214,23 @@ BillPhoneWholePCFull:
 ElmPhoneScript1: ; 0xbd00d
 	checkcode VAR_SPECIALPHONECALL
 	ifequal SPECIALCALL_POKERUS, .pokerus
-	checkevent EVENT_SHOWED_TOGEPI_TO_ELM
-	iftrue .discovery
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
-	iffalse .next
-	checkevent EVENT_TOGEPI_HATCHED
-	iftrue .egghatched
+;	checkevent EVENT_SHOWED_TOGEPI_TO_ELM
+;	iftrue .discovery
+;	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
+;	iffalse .next
+;	checkevent EVENT_TOGEPI_HATCHED
+;	iftrue .egghatched
 .next
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
-	iftrue .eggunhatched
-	checkevent EVENT_ELMS_AIDE_IN_LAB
-	iftrue .assistant
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .checkingegg
-	checkevent EVENT_ELM_CALLED_ABOUT_STOLEN_POKEMON
-	iftrue .stolen
-	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
-	iftrue .sawmrpokemon
+;	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
+;	iftrue .eggunhatched
+;	checkevent EVENT_ELMS_AIDE_IN_LAB
+;	iftrue .assistant
+;	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+;	iftrue .checkingegg
+;	checkevent EVENT_ELM_CALLED_ABOUT_STOLEN_POKEMON
+;	iftrue .stolen
+;	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
+;	iftrue .sawmrpokemon
 	farwritetext ElmPhoneStartText
 	end
 
@@ -256,7 +256,7 @@ ElmPhoneScript1: ; 0xbd00d
 
 .egghatched ; 0xbd061
 	farwritetext ElmPhoneEggHatchedText
-	setevent EVENT_TOLD_ELM_ABOUT_TOGEPI_OVER_THE_PHONE
+;	setevent EVENT_TOLD_ELM_ABOUT_TOGEPI_OVER_THE_PHONE
 	end
 
 .discovery ; 0xbd069
@@ -731,10 +731,10 @@ UnknownScript_0xbd491:
 UnknownScript_0xbd495:
 	setflag ENGINE_WADE_HAS_ITEM
 	landmarktotext ROUTE_31, $2
-	clearevent EVENT_WADE_HAS_ORAN_BERRY
-	clearevent EVENT_WADE_HAS_PECHA_BERRY
-	clearevent EVENT_WADE_HAS_CHERI_BERRY
-	clearevent EVENT_WADE_HAS_PERSIM_BERRY
+;	clearevent EVENT_WADE_HAS_ORAN_BERRY
+;	clearevent EVENT_WADE_HAS_PECHA_BERRY
+;	clearevent EVENT_WADE_HAS_CHERI_BERRY
+;	clearevent EVENT_WADE_HAS_PERSIM_BERRY
 	random $4
 	ifequal $0, UnknownScript_0xbd4b9
 	ifequal $1, UnknownScript_0xbd4bf
@@ -742,19 +742,19 @@ UnknownScript_0xbd495:
 	ifequal $3, UnknownScript_0xbd4cb
 
 UnknownScript_0xbd4b9:
-	setevent EVENT_WADE_HAS_ORAN_BERRY
+;	setevent EVENT_WADE_HAS_ORAN_BERRY
 	jump UnknownScript_0xbd4ce
 
 UnknownScript_0xbd4bf:
-	setevent EVENT_WADE_HAS_PECHA_BERRY
+;	setevent EVENT_WADE_HAS_PECHA_BERRY
 	jump UnknownScript_0xbd4ce
 
 UnknownScript_0xbd4c5:
-	setevent EVENT_WADE_HAS_CHERI_BERRY
+;	setevent EVENT_WADE_HAS_CHERI_BERRY
 	jump UnknownScript_0xbd4ce
 
 UnknownScript_0xbd4cb:
-	setevent EVENT_WADE_HAS_PERSIM_BERRY
+;	setevent EVENT_WADE_HAS_PERSIM_BERRY
 
 UnknownScript_0xbd4ce:
 	farjump UnknownScript_0xa05e6
@@ -1095,8 +1095,8 @@ GinaPhoneScript2:
 	iftrue UnknownScript_0xbd7c8
 	checkflag ENGINE_GINA_HAS_LEAF_STONE
 	iftrue UnknownScript_0xbd7c8
-	checkevent EVENT_GINA_GAVE_LEAF_STONE
-	iftrue UnknownScript_0xbd7b2
+;	checkevent EVENT_GINA_GAVE_LEAF_STONE
+;	iftrue UnknownScript_0xbd7b2
 	farscall PhoneScript_Random2
 	ifequal $0, UnknownScript_0xbd7dd
 
@@ -1254,8 +1254,8 @@ AlanPhoneScript2:
 	iftrue UnknownScript_0xbd915
 	farscall PhoneScript_Random3
 	ifequal $0, UnknownScript_0xbd91c
-	checkevent EVENT_ALAN_GAVE_FIRE_STONE
-	iftrue UnknownScript_0xbd90d
+;	checkevent EVENT_ALAN_GAVE_FIRE_STONE
+;	iftrue UnknownScript_0xbd90d
 	farscall PhoneScript_Random2
 	ifequal $0, UnknownScript_0xbd926
 
@@ -1317,8 +1317,8 @@ DanaPhoneScript2:
 	iftrue UnknownScript_0xbd99f
 	farscall PhoneScript_Random3
 	ifequal $0, UnknownScript_0xbd9ae
-	checkevent EVENT_DANA_GAVE_THUNDERSTONE
-	iftrue UnknownScript_0xbd997
+;	checkevent EVENT_DANA_GAVE_THUNDERSTONE
+;	iftrue UnknownScript_0xbd997
 	farscall PhoneScript_Random2
 	ifequal $0, UnknownScript_0xbd9bc
 
@@ -1484,8 +1484,8 @@ TullyPhoneScript2:
 	iftrue UnknownScript_0xbdb1b
 	farscall PhoneScript_Random3
 	ifequal $0, UnknownScript_0xbdb22
-	checkevent EVENT_TULLY_GAVE_WATER_STONE
-	iftrue UnknownScript_0xbdb13
+;	checkevent EVENT_TULLY_GAVE_WATER_STONE
+;	iftrue UnknownScript_0xbdb13
 	farscall PhoneScript_Random2
 	ifequal $0, UnknownScript_0xbdb2c
 
@@ -1592,8 +1592,8 @@ TiffanyPhoneScript2:
 	iftrue UnknownScript_0xbdc10
 	farscall PhoneScript_Random3
 	ifequal $0, UnknownScript_0xbdc17
-	checkevent EVENT_TIFFANY_GAVE_PINK_BOW
-	iftrue UnknownScript_0xbdc08
+;	checkevent EVENT_TIFFANY_GAVE_PINK_BOW
+;	iftrue UnknownScript_0xbdc08
 	farscall PhoneScript_Random2
 	ifequal $0, UnknownScript_0xbdc69
 
@@ -1749,9 +1749,9 @@ UnknownScript_0xbdd36:
 UnknownScript_0xbdd40:
 	setflag ENGINE_WILTON_HAS_ITEM
 	landmarktotext ROUTE_44, $2
-	clearevent EVENT_WILTON_HAS_ULTRA_BALL
-	clearevent EVENT_WILTON_HAS_GREAT_BALL
-	clearevent EVENT_WILTON_HAS_POKE_BALL
+;	clearevent EVENT_WILTON_HAS_ULTRA_BALL
+;	clearevent EVENT_WILTON_HAS_GREAT_BALL
+;	clearevent EVENT_WILTON_HAS_POKE_BALL
 	random $5
 	ifequal $0, UnknownScript_0xbdd5e
 	random $3
@@ -1759,15 +1759,15 @@ UnknownScript_0xbdd40:
 	jump UnknownScript_0xbdd6a
 
 UnknownScript_0xbdd5e:
-	setevent EVENT_WILTON_HAS_ULTRA_BALL
+;	setevent EVENT_WILTON_HAS_ULTRA_BALL
 	jump UnknownScript_0xbdd6d
 
 UnknownScript_0xbdd64:
-	setevent EVENT_WILTON_HAS_GREAT_BALL
+;	setevent EVENT_WILTON_HAS_GREAT_BALL
 	jump UnknownScript_0xbdd6d
 
 UnknownScript_0xbdd6a:
-	setevent EVENT_WILTON_HAS_POKE_BALL
+;	setevent EVENT_WILTON_HAS_POKE_BALL
 
 UnknownScript_0xbdd6d:
 	farjump UnknownScript_0xa05e6

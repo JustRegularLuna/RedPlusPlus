@@ -458,30 +458,6 @@ UnknownScript_0xa0840:
 	jump PhoneScript_HangupText_Male
 
 UnknownScript_0xa0848:
-	checkevent EVENT_OPENED_MT_SILVER
-	iftrue UnknownScript_0xa08e0
-	checkevent EVENT_FOUGHT_SNORLAX
-	iftrue UnknownScript_0xa08d8
-	checkevent EVENT_GOT_PASS_FROM_COPYCAT
-	iftrue UnknownScript_0xa08d0
-	checkflag ENGINE_SOULBADGE
-	iftrue UnknownScript_0xa08f0
-	checkflag ENGINE_FLYPOINT_VERMILION
-	iftrue UnknownScript_0xa08c8
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue UnknownScript_0xa08c0
-	checkflag ENGINE_RISINGBADGE
-	iftrue UnknownScript_0xa08b8
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue UnknownScript_0xa08b0
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue UnknownScript_0xa08a8
-	checkevent EVENT_JASMINE_RETURNED_TO_GYM
-	iftrue UnknownScript_0xa08a0
-	checkflag ENGINE_FOGBADGE
-	iftrue UnknownScript_0xa08e8
-	checkflag ENGINE_PLAINBADGE
-	iftrue UnknownScript_0xa0898
 	farwritetext UnknownText_0x646a3
 	buttonsound
 	jump PhoneScript_HangupText_Male
@@ -715,7 +691,7 @@ UnknownScript_0xa0a08:
 	iftrue UnknownScript_0xa0a1d
 	checktime 1 << NITE
 	iftrue UnknownScript_0xa0a25
-	setevent EVENT_KENJI_ON_BREAK
+;	setevent EVENT_KENJI_ON_BREAK
 	farwritetext UnknownText_0x66f11
 	buttonsound
 	jump PhoneScript_HangupText_Male
