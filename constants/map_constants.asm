@@ -316,7 +316,7 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_2_NORTH,                              18, 10 ;  1
 	mapconst ROUTE_3,                                    11, 36 ;  2
 	mapconst ROUTE_3_POKECENTER_1F,                       4,  6 ;  3
-	mapconst PEWTER_CITY,                                18, 20 ;  4
+	mapconst PEWTER_CITY,                                21, 20 ;  4
 	mapconst PEWTER_NIDORAN_SPEECH_HOUSE,                 4,  4 ;  5
 	mapconst PEWTER_GYM,                                  7,  5 ;  6
 	mapconst PEWTER_MART,                                 4,  6 ;  7

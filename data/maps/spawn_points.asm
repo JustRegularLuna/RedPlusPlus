@@ -9,7 +9,7 @@ SpawnPoints: ; 0x152ab
 
 	spawn PALLET_TOWN,                 5,  6
 	spawn VIRIDIAN_CITY,              23, 26
-	spawn PEWTER_CITY,                13, 26
+	spawn PEWTER_CITY,                13, 30
 	spawn ROUTE_3,                    61,  4
 	spawn CERULEAN_CITY,              19, 18
 	spawn ROUTE_10_NORTH,             11, 36

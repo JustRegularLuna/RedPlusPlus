@@ -176,11 +176,11 @@
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WALL
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, WALL, FLOOR, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, WALL, POKECENTER_SIGN, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, WALL, WALL
@@ -188,19 +188,19 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, MART_SIGN, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, DOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll WALL, WALL, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll WALL, DOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll WALL, WALL, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, WALL
 	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
@@ -246,11 +246,11 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, FLOOR
+	tilecoll WALL, WALL, WARP_CARPET_UP, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, FLOOR
+	tilecoll DOOR, WALL, FLOOR, FLOOR
 	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
