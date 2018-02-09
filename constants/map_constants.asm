@@ -531,7 +531,7 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_2_NUGGET_SPEECH_HOUSE,                 4,  4 ; 12
 	mapconst ROUTE_2_GATE,                                4,  5 ; 13
 	mapconst POKEMON_LEAGUE_GATE,                         9, 11 ; 14
-	mapconst VIRIDIAN_FOREST,                            26, 19 ; 15
+	mapconst VIRIDIAN_FOREST,                            28, 21 ; 15
 	mapconst VIRIDIAN_FOREST_VIRIDIAN_GATE,                4, 5 ; 16
 	mapconst VIRIDIAN_FOREST_PEWTER_GATE,                  4, 5 ; 17
 	mapconst ROUTE_1_VIRIDIAN_GATE,                        4, 5 ; 18

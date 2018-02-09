@@ -449,18 +449,6 @@ GetBattlemonBackpicPalettePointer:
 	ret
 
 GetEnemyFrontpicPalettePointer:
-	ld a, [TempEnemyMonSpecies]
-	cp MEWTWO
-	jr nz, .not_armored_mewtwo
-	ld a, [wBattleMode]
-	cp 2
-	jr nz, .not_armored_mewtwo
-	ld a, [OtherTrainerClass]
-	cp GIOVANNI
-	jr nz, .not_armored_mewtwo
-	ld hl, MewtwoArmoredPalette
-	ret
-.not_armored_mewtwo
 	push de
 	farcall GetEnemyMonPersonality
 	ld c, l
@@ -481,16 +469,16 @@ GetPlayerOrMonPalettePointer:
 	jr z, .male
 	ld a, [BattleType]
 	cp BATTLETYPE_TUTORIAL
-	jr z, .lyra
-	ld hl, KrisPalette
+	jr z, .tutorial
+	ld hl, LeafPalette
 	ret
 
 .male
-	ld hl, PlayerPalette
+	ld hl, RedPalette
 	ret
 
-.lyra
-	ld hl, Lyra1Palette
+.tutorial
+	ld hl, OldManPalette
 	ret
 
 GetFrontpicPalettePointer:
@@ -773,7 +761,9 @@ LoadMapPals:
 	farcall LoadSpecialMapOBPalette
 
 	ld a, [wTileset]
-	cp TILESET_FOREST ; for Yellow Forest
+	cp TILESET_FOREST ; for Viridian Forest, since it's a ROUTE
+	ret z
+	cp TILESET_PC_FOREST ; for Yellow Forest, since it's a ROUTE
 	ret z
 
 	; overcast maps have their own roof color table
@@ -823,39 +813,31 @@ endr
 INCLUDE "data/maps/environment_colors.asm"
 
 TilesetBGPalette:
-if DEF(HGSS)
-INCLUDE "gfx/tilesets/palettes/hgss/bg.pal"
-elif DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/monochrome/bg.pal"
-else
+if !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/bg.pal"
+else
+INCLUDE "gfx/tilesets/palettes/monochrome/bg.pal"
 endc
 
 MapObjectPals:
-if DEF(HGSS)
-INCLUDE "gfx/tilesets/palettes/hgss/ob.pal"
-elif DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/monochrome/ob.pal"
-else
+if !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/ob.pal"
+else
+INCLUDE "gfx/tilesets/palettes/monochrome/ob.pal"
 endc
 
 RoofPals:
-if DEF(HGSS)
-INCLUDE "gfx/tilesets/palettes/hgss/roof.pal"
-elif DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/monochrome/roof.pal"
-else
+if !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/roof.pal"
+else
+INCLUDE "gfx/tilesets/palettes/monochrome/roof.pal"
 endc
 
 OvercastRoofPals:
-if DEF(HGSS)
-INCLUDE "gfx/tilesets/palettes/hgss/roof_overcast.pal"
-elif DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/monochrome/roof_overcast.pal"
-else
+if !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/roof_overcast.pal"
+else
+INCLUDE "gfx/tilesets/palettes/monochrome/roof_overcast.pal"
 endc
 
 

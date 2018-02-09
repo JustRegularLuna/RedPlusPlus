@@ -28,14 +28,14 @@ SpawnPlayer: ; 8029
 	call GetMapObject
 	ld hl, MAPOBJECT_COLOR
 	add hl, bc
-	ln e, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT
+	ln e, PAL_NPC_RED, PERSONTYPE_SCRIPT
 	ld a, [wPlayerSpriteSetupFlags]
 	bit 2, a
 	jr nz, .ok
 	ld a, [PlayerGender]
 	bit 0, a
 	jr z, .ok
-	ln e, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT
+	ln e, PAL_NPC_GREEN, PERSONTYPE_SCRIPT
 
 .ok
 	ld [hl], e
@@ -54,7 +54,7 @@ PlayerObjectTemplate: ; 8071
 ; Shorter than the actual amount copied by two bytes.
 ; Said bytes seem to be unused, but the game freezes when you first spawn
 ; in your room if this is not loaded.
-	object_event -4, -4, SPRITE_CHRIS, SPRITEMOVEDATA_PLAYER, 15, 15, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
+	object_event -4, -4, SPRITE_RED, SPRITEMOVEDATA_PLAYER, 15, 15, -1, -1, 0, PERSONTYPE_SCRIPT, 0, 0, -1
 
 CopyDECoordsToMapObject:: ; 807e
 	push de

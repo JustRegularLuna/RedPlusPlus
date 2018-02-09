@@ -589,10 +589,6 @@ CheckCanDeletePhoneNumber: ; 9038a (24:438a)
 	ld a, b
 	cp PHONECONTACT_MOM
 	ret z
-	cp PHONECONTACT_ELM
-	ret z
-	cp PHONECONTACT_LYRA
-	ret z
 	ld c, $1
 	ret
 

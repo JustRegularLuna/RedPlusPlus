@@ -1,11 +1,6 @@
 # Install Guide
 
-If you just want to play Polished Crystal, use one of the .ips patches as described in [README.md](README.md#download-and-play). To build a ROM yourself from the source code, follow these instructions.
-
-> You know it's sitting back and looking at it that you realize that Gamefreak is actually really good devs.  
-> Like you have Pokemon and it's a simple formula "How can you fuck it up?" and then all of these Romhacks basically go "Like this."
->
-> — Anonymous, [/vp/](http://boards.4chan.org/vp/)
+If you just want to play Red++, use one of the .ips patches as described in [README.md](README.md). To build a ROM yourself from the source code, follow these instructions.
 
 
 ## Windows
@@ -17,14 +12,14 @@ In the installer, select the following packages: `git`, `python`, `make`, and `g
 In the **Cygwin terminal**:
 
 ```bash
-git clone https://github.com/roukaour/polishedcrystal.git
-cd polishedcrystal
+git clone https://github.com/TheFakeMateo/RedPlusPlus.git
+cd RedPlusPlus
 mkdir rgbds
 ```
 
-Then download [**rgbds**](https://github.com/bentley/rgbds/). You'll need version 0.3.3 or later. Extract the archive and put all the .exe and .dll files in polishedcrystal/rgbds.
+Then download [**rgbds**](https://github.com/bentley/rgbds/). You'll need version 0.3.3 or later. Extract the archive and put all the .exe and .dll files in RedPlusPlus/rgbds.
 
-To build **polishedcrystal.gbc**:
+To build **redplusplus.gbc**:
 
 ```bash
 make
@@ -33,13 +28,7 @@ make
 To build other versions:
 
 ```bash
-make [faithful] [nortc] [monochrome] [debug]
-```
-
-For example, to build a mononchrome faithful version:
-
-```bash
-make faithful monochrome
+make [debug]
 ```
 
 
@@ -55,11 +44,11 @@ cd rgbds
 sudo make install
 cd ..
 
-git clone https://github.com/roukaour/polishedcrystal.git
-cd polishedcrystal
+git clone https://github.com/TheFakeMateo/RedPlusPlus.git
+cd RedPlusPlus
 ```
 
-To build **polishedcrystal.gbc**:
+To build **redplusplus.gbc**:
 
 ```bash
 make
@@ -68,7 +57,7 @@ make
 To build other versions:
 
 ```bash
-make [faithful] [nortc] [monochrome] [debug]
+make [debug]
 ```
 
 
@@ -84,11 +73,11 @@ cd rgbds
 sudo make install
 cd ..
 
-git clone https://github.com/roukaour/polishedcrystal.git
-cd polishedcrystal
+git clone https://github.com/TheFakeMateo/RedPlusPlus.git
+cd RedPlusPlus
 ```
 
-To build **polishedcrystal.gbc**:
+To build **redplusplus.gbc**:
 
 ```bash
 make
@@ -97,5 +86,5 @@ make
 To build other versions:
 
 ```bash
-make [faithful] [nortc] [monochrome] [debug]
+make [debug]
 ```

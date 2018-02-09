@@ -8358,11 +8358,7 @@ BattleIntro: ; 3f4dd
 	ld [wBattleMenuCursorBuffer], a
 	xor a
 	ld [hMapAnims], a
-	ld a, [OtherTrainerClass]
-	cp LYRA2
-	jr z, .skip_music ; assume that the music is already playing
 	farcall PlayBattleMusic
-.skip_music
 	farcall ShowLinkBattleParticipants
 	farcall FindFirstAliveMonAndStartBattle
 	call DisableSpriteUpdates
@@ -9250,16 +9246,16 @@ InitBattleDisplay: ; 3fb6c
 GetTrainerBackpic: ; 3fbff
 ; Load the player character's backpic (6x6) into VRAM starting from VTiles2 tile $31.
 
-	ld b, BANK(LyraBackpic) ; BANK(ChrisBackpic), BANK(KrisBackpic)
+	ld b, BANK(OldManBackpic) ; BANK(RedBackpic), BANK(LeafBackpic)
 
-; Special exception for Lyra.
-	ld hl, LyraBackpic
+; Special exception for old man.
+	ld hl, OldManBackpic
 	ld a, [BattleType]
 	cp BATTLETYPE_TUTORIAL
 	jr z, .Decompress
 
 ; What gender are we?
-	ld hl, ChrisBackpic
+	ld hl, RedBackpic
 	ld a, [wPlayerSpriteSetupFlags]
 	bit 2, a ; transformed to male
 	jr nz, .Decompress
@@ -9267,7 +9263,7 @@ GetTrainerBackpic: ; 3fbff
 	bit 0, a
 	jr z, .Decompress
 
-	ld hl, KrisBackpic
+	ld hl, LeafBackpic
 
 .Decompress:
 	ld de, VTiles2 tile $31
@@ -9413,16 +9409,16 @@ BattleStartMessage: ; 3fc8b
 
 CheckPluralTrainer:
 	ld a, [OtherTrainerClass]
-	cp TWINS
-	jr z, .plural
-	cp SR_AND_JR
-	jr z, .plural
-	cp COUPLE
-	jr z, .plural
-	cp ACE_DUO
-	jr z, .plural
-	cp JESSIE_JAMES
-	jr z, .plural
+;	cp TWINS
+;	jr z, .plural
+;	cp SR_AND_JR
+;	jr z, .plural
+;	cp COUPLE
+;	jr z, .plural
+;	cp ACE_DUO
+;	jr z, .plural
+;	cp JESSIE_JAMES
+;	jr z, .plural
 	xor a
 	scf
 	ret

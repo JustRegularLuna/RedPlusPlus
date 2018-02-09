@@ -7,6 +7,21 @@ ENDM
 
 SECTION "Tileset Data 1", ROMX
 
+TilesetForestGFX::
+INCBIN "gfx/tilesets/forest.2bpp.lz"
+
+TilesetForestMeta::
+INCBIN "data/tilesets/forest_metatiles.bin"
+
+TilesetForestColl::
+INCLUDE "data/tilesets/forest_collision.asm"
+
+
+;------------------------------------
+
+
+SECTION "PC Tileset Data 1", ROMX
+
 Tileset00GFX::
 TilesetJohto1GFX::
 INCBIN "gfx/tilesets/johto1.2bpp.lz"
@@ -26,7 +41,7 @@ TilesetKanto1Meta::
 INCBIN "data/tilesets/kanto1_metatiles.bin"
 
 
-SECTION "Tileset Data 2", ROMX
+SECTION "PC Tileset Data 2", ROMX
 
 TilesetHouse1GFX::
 INCBIN "gfx/tilesets/house1.2bpp.lz"
@@ -47,7 +62,7 @@ TilesetValenciaColl::
 INCLUDE "data/tilesets/valencia_collision.asm"
 
 
-SECTION "Tileset Data 3", ROMX
+SECTION "PC Tileset Data 3", ROMX
 
 TilesetPortGFX::
 INCBIN "gfx/tilesets/port.2bpp.lz"
@@ -86,7 +101,7 @@ TilesetGym1Coll::
 INCLUDE "data/tilesets/gym1_collision.asm"
 
 
-SECTION "Tileset Data 4", ROMX
+SECTION "PC Tileset Data 4", ROMX
 
 TilesetGateGFX::
 INCBIN "gfx/tilesets/gate.2bpp.lz"
@@ -125,7 +140,7 @@ TilesetParkColl::
 INCLUDE "data/tilesets/park_collision.asm"
 
 
-SECTION "Tileset Data 5", ROMX
+SECTION "PC Tileset Data 5", ROMX
 
 TilesetFacilityGFX::
 INCBIN "gfx/tilesets/facility.2bpp.lz"
@@ -164,7 +179,7 @@ TilesetIcePathColl::
 INCLUDE "data/tilesets/ice_path_collision.asm"
 
 
-SECTION "Tileset Data 6", ROMX
+SECTION "PC Tileset Data 6", ROMX
 
 TilesetMartGFX::
 INCBIN "gfx/tilesets/mart.2bpp.lz"
@@ -200,7 +215,7 @@ TilesetWarehouseColl::
 INCLUDE "data/tilesets/warehouse_collision.asm"
 
 
-SECTION "Tileset Data 7", ROMX
+SECTION "PC Tileset Data 7", ROMX
 
 TilesetPokeCenterGFX::
 INCBIN "gfx/tilesets/pokecenter.2bpp.lz"
@@ -224,7 +239,7 @@ TilesetAlphColl::
 INCLUDE "data/tilesets/alph_collision.asm"
 
 
-SECTION "Tileset Data 8", ROMX
+SECTION "PC Tileset Data 8", ROMX
 
 TilesetCaveGFX::
 INCBIN "gfx/tilesets/cave.2bpp.lz"
@@ -240,20 +255,20 @@ TilesetCaveColl::
 TilesetQuietCaveColl::
 INCLUDE "data/tilesets/cave_collision.asm"
 
-TilesetForestGFX::
-INCBIN "gfx/tilesets/forest.2bpp.lz"
+TilesetPCForestGFX::
+INCBIN "gfx/tilesets/pc_forest.2bpp.lz"
 
-TilesetForestMeta::
-INCBIN "data/tilesets/forest_metatiles.bin"
+TilesetPCForestMeta::
+INCBIN "data/tilesets/pc_forest_metatiles.bin"
 
-TilesetForestColl::
-INCLUDE "data/tilesets/forest_collision.asm"
+TilesetPCForestColl::
+INCLUDE "data/tilesets/pc_forest_collision.asm"
 
 TilesetValenciaGFX::
 INCBIN "gfx/tilesets/valencia.2bpp.lz"
 
 
-SECTION "Tileset Data 9", ROMX
+SECTION "PC Tileset Data 9", ROMX
 
 TilesetJohto2GFX::
 INCBIN "gfx/tilesets/johto2.2bpp.lz"
@@ -283,7 +298,7 @@ TilesetSafariColl::
 INCLUDE "data/tilesets/safari_collision.asm"
 
 
-SECTION "Tileset Data 10", ROMX
+SECTION "PC Tileset Data 10", ROMX
 
 TilesetHouse2GFX::
 INCBIN "gfx/tilesets/house2.2bpp.lz"
@@ -295,7 +310,7 @@ TilesetHouse2Coll::
 INCLUDE "data/tilesets/house2_collision.asm"
 
 
-SECTION "Tileset Data 11", ROMX
+SECTION "PC Tileset Data 11", ROMX
 
 TilesetGym3GFX::
 INCBIN "gfx/tilesets/gym3.2bpp.lz"
@@ -322,7 +337,7 @@ TilesetKanto1Coll::
 INCLUDE "data/tilesets/kanto1_collision.asm"
 
 
-SECTION "Tileset Data 12", ROMX
+SECTION "PC Tileset Data 12", ROMX
 
 TilesetBattleTowerGFX::
 INCBIN "gfx/tilesets/battle_tower.2bpp.lz"
@@ -361,7 +376,7 @@ TilesetShamoutiColl::
 INCLUDE "data/tilesets/shamouti_collision.asm"
 
 
-SECTION "Tileset Data 13", ROMX
+SECTION "PC Tileset Data 13", ROMX
 
 TilesetMuseumGFX::
 INCBIN "gfx/tilesets/museum.2bpp.lz"
@@ -376,7 +391,7 @@ TilesetHotelColl::
 INCLUDE "data/tilesets/hotel_collision.asm"
 
 
-SECTION "Tileset Data 14", ROMX
+SECTION "PC Tileset Data 14", ROMX
 
 TilesetLabGFX::
 INCBIN "gfx/tilesets/lab.2bpp.lz"
@@ -400,7 +415,7 @@ TilesetValenciaMeta::
 INCBIN "data/tilesets/valencia_metatiles.bin"
 
 
-SECTION "Tileset Data 15", ROMX
+SECTION "PC Tileset Data 15", ROMX
 
 TilesetRuinsGFX::
 TilesetAlphGFX::
@@ -416,7 +431,7 @@ TilesetJohto4Coll::
 INCLUDE "data/tilesets/johto4_collision.asm"
 
 
-SECTION "Tileset Data 16", ROMX
+SECTION "PC Tileset Data 16", ROMX
 
 TilesetKanto2GFX::
 INCBIN "gfx/tilesets/kanto2.2bpp.lz"

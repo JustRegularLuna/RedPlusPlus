@@ -777,27 +777,27 @@ _CGB_TrainerCard:
 _CGB_TrainerCard2: ; 9289
 	call LoadFirstTwoTrainerCardPals
 
-	ld a, FALKNER
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, BUGSY
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, WHITNEY
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, MORTY
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, JASMINE ; CHUCK
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, CLAIR ; PRYCE
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
@@ -863,27 +863,27 @@ _CGB_TrainerCard2: ; 9289
 _CGB_TrainerCard3:
 	call LoadFirstTwoTrainerCardPals
 
-	ld a, BROCK
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, SABRINA ; BLAINE
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, ERIKA ; LT_SURGE
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, MISTY
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, JANINE
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, BLUE
+	ld a, 1 ; TODO
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
@@ -962,9 +962,9 @@ LoadFirstTwoTrainerCardPals:
 	; player sprite
 	ld a, [PlayerGender]
 	and a
-	ld a, CHRIS
+	ld a, RED
 	jr z, .got_gender
-	ld a, KRIS
+	ld a, LEAF
 .got_gender
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
@@ -1217,9 +1217,9 @@ _CGB_IntroPals: ; 9591
 .IntroGradientPalette:
 if !DEF(MONOCHROME)
 	RGB 31, 31, 31
-	RGB 27, 31, 31
-	RGB 19, 31, 31
-	RGB 09, 30, 31
+	RGB 22, 26, 25
+	RGB 16, 22, 21
+	RGB 08, 17, 16
 else
 	MONOCHROME_RGB_FOUR
 endc

@@ -865,8 +865,8 @@ SelectMenuScript: ; 96b5f
 StartMenuCallback:
 SelectMenuCallback: ; 96b66
 	copybytetovar hMenuReturn
-	if_equal HMENURETURN_SCRIPT, .Script
-	if_equal HMENURETURN_ASM, .Asm
+	ifequal HMENURETURN_SCRIPT, .Script
+	ifequal HMENURETURN_ASM, .Asm
 	end
 ; 96b72
 
@@ -1351,7 +1351,7 @@ DoBikeStep:: ; 97db3
 	jr nz, .NoCall
 
 	; Queue the call.
-	ld a, SPECIALCALL_BIKESHOP
+	ld a, 0 ; TODO: SPECIALCALL_BIKESHOP
 	ld [wSpecialPhoneCallID], a
 	xor a
 	ld [wSpecialPhoneCallID + 1], a

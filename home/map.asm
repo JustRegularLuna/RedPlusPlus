@@ -1329,9 +1329,9 @@ LoadTileset:: ; 2821
 	ld [rSVBK], a
 
 	ld a, [wTileset]
-	cp TILESET_JOHTO_TRADITIONAL
+	cp TILESET_PC_JOHTO_TRADITIONAL
 	jr z, .load_roof
-	cp TILESET_JOHTO_MODERN
+	cp TILESET_PC_JOHTO_MODERN
 	jr z, .load_roof
 	jr .skip_roof
 

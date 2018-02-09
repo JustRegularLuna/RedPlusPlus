@@ -665,7 +665,7 @@ ProfElmSpeech: ; 0x5f99
 
 	xor a
 	ld [CurPartySpecies], a
-	ld a, PROF_ELM
+	ld a, PROF_OAK
 	ld [TrainerClass], a
 	call Intro_PrepTrainerPic
 
@@ -707,7 +707,7 @@ if !DEF(DEBUG)
 
 	xor a
 	ld [CurPartySpecies], a
-	ld a, PROF_ELM
+	ld a, PROF_OAK
 	ld [TrainerClass], a
 	call Intro_PrepTrainerPic
 
@@ -946,10 +946,10 @@ DrawIntroPlayerPic:
 	ld a, [PlayerGender]
 	bit 0, a
 	jr z, .male
-	ld a, CARRIE
+	ld a, LEAF
 	jr .ok
 .male
-	ld a, CAL
+	ld a, RED
 .ok
 	ld [TrainerClass], a
 Intro_PrepTrainerPic: ; 619c

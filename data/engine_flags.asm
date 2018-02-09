@@ -104,61 +104,27 @@ EngineFlags: ; 80462
 
 	engine_flag wLuckyNumberShowFlag, 0 ; lucky number show
 
-	engine_flag DailyFlags, 0 ; kurt making balls
 	engine_flag DailyFlags, 1 ; daily bug contest? ; $50
 	engine_flag DailyFlags, 2 ; special wilddata?
-	engine_flag DailyFlags, 3 ; valeries morning walk
 	engine_flag DailyFlags, 4 ; all fruit trees
 	engine_flag DailyFlags, 5 ; wobbuffet given
 	engine_flag DailyFlags, 6 ; goldenrod underground merchant closed
-	engine_flag DailyFlags, 7 ; fought in trainer hall today
 
-	engine_flag DailyFlags2, 0 ; gym leader rematch 1
-	engine_flag DailyFlags2, 1 ; gym leader rematch 2 ; $58
-	engine_flag DailyFlags2, 2 ; gym leader rematch 3
-	engine_flag DailyFlags2, 3 ; daily photograph
-	engine_flag DailyFlags2, 4 ; daily shrine visit
-	engine_flag DailyFlags2, 5 ; daily mystery gift
-	engine_flag DailyFlags2, 6 ; red in mt. silver
-	engine_flag DailyFlags2, 7 ; leaf in navel rock
-
-	engine_flag DailyFlags3, 0 ; bought leftovers
-	engine_flag DailyFlags3, 1 ; took hyper test ; $60
-	engine_flag DailyFlags3, 2 ; cheryl done today
-	engine_flag DailyFlags3, 3 ; riley done today
-	engine_flag DailyFlags3, 4 ; buck done today
-	engine_flag DailyFlags3, 5 ; marley done today
-	engine_flag DailyFlags3, 6 ; mira done today
-	engine_flag DailyFlags3, 7 ; anabel done today
-
-	engine_flag DailyFlags4, 0 ; seashore shell bell
-	engine_flag DailyFlags4, 1 ; shamouti restaurant challenge ; $68
-	engine_flag DailyFlags4, 2 ; fought psychic inver
-	engine_flag DailyFlags4, 3 ; bought moomoo milk
-	engine_flag DailyFlags4, 4 ; changed trendy phrase
 	engine_flag DailyFlags4, 5 ; all hidden grottoes
-	engine_flag DailyFlags4, 6 ; daily unused
-	engine_flag DailyFlags4, 7 ; daily unused
-
-	engine_flag WeeklyFlags, 0 ; mt moon square clefairy
-	engine_flag WeeklyFlags, 1 ; union cave lapras ; $70
-	engine_flag WeeklyFlags, 2 ; goldenrod underground haircut used
-	engine_flag WeeklyFlags, 3 ; goldenrod mall happiness event floor05 person07
-	engine_flag WeeklyFlags, 4 ; tea in blues house
-	engine_flag WeeklyFlags, 5 ; indigo plateau rival fight
-	engine_flag WeeklyFlags, 6 ; indigo plateau lyra fight
-	engine_flag WeeklyFlags, 7 ; buenas password
-
-	engine_flag SwarmFlags, 0 ; buenas password 2
-	engine_flag SwarmFlags, 1 ; goldenrod dept store sale is on ; $78
 
 	engine_flag GameTimerPause, 7 ; game timer pause
 
 	engine_flag PlayerGender, 0 ; player is female
+	engine_flag wPlayerSpriteSetupFlags, 2 ; female player has been transformed into male
 
 	engine_flag wCelebiEvent, 2 ; have gs ball after kurt examined it
 	engine_flag wCelebiEvent, 3 ; have silphscope2
 	engine_flag wCelebiEvent, 4 ; have shiny charm
+
+	engine_flag SwarmFlags, 1 ; goldenrod dept store sale is on ; $78
+
+	engine_flag SwarmFlags, 2 ; dunsparce swarm
+	engine_flag SwarmFlags, 3 ; yanma swarm ; $b8
 
 	; rematches
 	engine_flag wDailyRematchFlags, 0 ; jack
@@ -224,44 +190,3 @@ EngineFlags: ; 80462
 	engine_flag wDailyPhoneTimeOfDayFlags + 2, 5 ; wilton thursday morning
 	engine_flag wDailyPhoneTimeOfDayFlags + 2, 6 ; parry friday afternoon
 	engine_flag wDailyPhoneTimeOfDayFlags + 2, 7 ; erin saturday night
-
-	engine_flag wPlayerSpriteSetupFlags, 2 ; female player has been transformed into male
-
-	engine_flag SwarmFlags, 2 ; dunsparce swarm
-	engine_flag SwarmFlags, 3 ; yanma swarm ; $b8
-
-	engine_flag PokemonJournals, 0 ; read falkner journal
-	engine_flag PokemonJournals, 1 ; read bugsy journal
-	engine_flag PokemonJournals, 2 ; read whitney journal
-	engine_flag PokemonJournals, 3 ; read morty journal
-	engine_flag PokemonJournals, 4 ; read chuck journal
-	engine_flag PokemonJournals, 5 ; read jasmine journal
-	engine_flag PokemonJournals, 6 ; read pryce journal
-	engine_flag PokemonJournals, 7 ; read clair journal ; $c0
-
-	engine_flag PokemonJournals + 1, 0 ; read brock journal
-	engine_flag PokemonJournals + 1, 1 ; read misty journal
-	engine_flag PokemonJournals + 1, 2 ; read lt.surge journal
-	engine_flag PokemonJournals + 1, 3 ; read erika journal
-	engine_flag PokemonJournals + 1, 4 ; read janine journal
-	engine_flag PokemonJournals + 1, 5 ; read sabrina journal
-	engine_flag PokemonJournals + 1, 6 ; read blaine journal
-	engine_flag PokemonJournals + 1, 7 ; read blue journal ; $c8
-
-	engine_flag PokemonJournals + 2, 0 ; read will journal
-	engine_flag PokemonJournals + 2, 1 ; read koga journal
-	engine_flag PokemonJournals + 2, 2 ; read bruno journal
-	engine_flag PokemonJournals + 2, 3 ; read karen journal
-	engine_flag PokemonJournals + 2, 4 ; read lance journal
-	engine_flag PokemonJournals + 2, 5 ; read red journal
-	engine_flag PokemonJournals + 2, 6 ; read green journal
-	engine_flag PokemonJournals + 2, 7 ; read prof.oak journal ; $d0
-
-	engine_flag PokemonJournals + 3, 0 ; read prof.elm journal
-	engine_flag PokemonJournals + 3, 1 ; read prof.ivy journal
-	engine_flag PokemonJournals + 3, 2 ; read giovanni journal
-	engine_flag PokemonJournals + 3, 3 ; read lorelei journal
-	engine_flag PokemonJournals + 3, 4 ; read agatha journal
-	engine_flag PokemonJournals + 3, 5 ; read bill journal
-	engine_flag PokemonJournals + 3, 6 ; read kurt journal
-	engine_flag PokemonJournals + 3, 7 ; read mr.fuji journal ; $d8

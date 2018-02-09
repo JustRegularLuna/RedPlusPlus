@@ -27,11 +27,11 @@ tileset_names = ['johto1', 'johto2', 'johto3', 'johto4', 'kanto1', 'kanto2',
                  'tunnel', 'forest', 'park', 'safari', 'ruins', 'alph',
                  'pokemon_mansion']
 
-# {'TILESET_JOHTO_1': 1, ...}
+# {'TILESET_PC_JOHTO_1': 1, ...}
 tileset_ids = {}
 # {'NEW_BARK_TOWN': 9, ...}
 map_heights = OrderedDict()
-# {'NewBarkTown': 'TILESET_JOHTO_1', ...}
+# {'NewBarkTown': 'TILESET_PC_JOHTO_1', ...}
 map_tilesets = OrderedDict()
 # {'NewBarkTown': 'NewBarkTown.blk', ...}
 map_block_data_exceptions = {}

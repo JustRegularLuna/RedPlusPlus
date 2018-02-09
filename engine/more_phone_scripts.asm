@@ -1,7 +1,7 @@
 UnknownScript_0xa0000:
 	special RandomPhoneMon
 	farscall PhoneScript_Random2
-	if_equal 0, UnknownScript_0xa0013
+	ifequal 0, UnknownScript_0xa0013
 	farscall PhoneScript_Generic_Male
 	farjump UnknownScript_0xa003e
 
@@ -11,7 +11,7 @@ UnknownScript_0xa0013:
 UnknownScript_0xa0017:
 	special RandomPhoneMon
 	farscall PhoneScript_Random2
-	if_equal 0, UnknownScript_0xa002a
+	ifequal 0, UnknownScript_0xa002a
 	farscall PhoneScript_Generic_Female
 	farjump UnknownScript_0xa0055
 
@@ -29,7 +29,7 @@ UnknownScript_0xa0036:
 UnknownScript_0xa003e:
 	special RandomPhoneWildMon
 	farscall PhoneScript_Random2
-	if_equal 0, UnknownScript_0xa0051
+	ifequal 0, UnknownScript_0xa0051
 	farscall UnknownScript_0xa017a
 	farjump PhoneScript_HangupText_Male
 
@@ -39,7 +39,7 @@ UnknownScript_0xa0051:
 UnknownScript_0xa0055:
 	special RandomPhoneWildMon
 	farscall PhoneScript_Random2
-	if_equal 0, UnknownScript_0xa0068
+	ifequal 0, UnknownScript_0xa0068
 	farscall UnknownScript_0xa0226
 	farjump PhoneScript_HangupText_Female
 
@@ -55,470 +55,38 @@ UnknownScript_0xa0074:
 	farjump PhoneScript_HangupText_Female
 
 UnknownScript_0xa007c:
-	checkcode VAR_CALLERID
-	if_equal PHONE_SCHOOLBOY_JACK, .Jack
-	if_equal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	if_equal PHONE_BIRDKEEPER_JOSE, .Jose
-	if_equal PHONE_YOUNGSTER_JOEY, .Joey
-	if_equal PHONE_BUG_CATCHER_WADE, .Wade
-	if_equal PHONE_FISHER_RALPH, .Ralph
-	if_equal PHONE_HIKER_ANTHONY, .Anthony
-	if_equal PHONE_CAMPER_TODD, .Todd
-	if_equal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	if_equal PHONE_SCHOOLBOY_ALAN, .Alan
-	if_equal PHONE_SCHOOLBOY_CHAD, .Chad
-	if_equal PHONE_POKEFANM_DEREK, .Derek
-	if_equal PHONE_FISHER_TULLY, .Tully
-	if_equal PHONE_POKEMANIAC_BRENT, .Brent
-	if_equal PHONE_BIRDKEEPER_VANCE, .Vance
-	if_equal PHONE_FISHER_WILTON, .Wilton
-	if_equal PHONE_HIKER_PARRY, .Parry
-
-.Jack:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x1740c0
 	buttonsound
 	end
 
-.Gaven:
-	farwritetext UnknownText_0x174a24
-	buttonsound
-	end
-
-.Jose:
-	farwritetext UnknownText_0x174f2f
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x175530
-	buttonsound
-	end
-
-.Wade:
-	farwritetext UnknownText_0x1757d4
-	buttonsound
-	end
-
-.Ralph:
-	farwritetext UnknownText_0x175bc4
-	buttonsound
-	end
-
-.Anthony:
-	farwritetext UnknownText_0x176a2f
-	buttonsound
-	end
-
-.Todd:
-	farwritetext UnknownText_0x176e5d
-	buttonsound
-	end
-
-.Arnie:
-	farwritetext UnknownText_0x649dc
-	buttonsound
-	end
-
-.Alan:
-	farwritetext UnknownText_0x64cbd
-	buttonsound
-	end
-
-.Chad:
-	farwritetext UnknownText_0x65271
-	buttonsound
-	end
-
-.Derek:
-	farwritetext UnknownText_0x65ab2
-	buttonsound
-	end
-
-.Tully:
-	farwritetext UnknownText_0x65de4
-	buttonsound
-	end
-
-.Brent:
-	farwritetext UnknownText_0x660be
-	buttonsound
-	end
-
-.Vance:
-	farwritetext UnknownText_0x66980
-	buttonsound
-	end
-
-.Wilton:
-	farwritetext UnknownText_0x66afc
-	buttonsound
-	end
-
-.Parry:
-	farwritetext UnknownText_0x66f9f
-	buttonsound
-	end
-
 UnknownScript_0xa0128:
-	checkcode VAR_CALLERID
-	if_equal PHONE_POKEFAN_BEVERLY, .Beverly
-	if_equal PHONE_COOLTRAINERF_BETH, .Beth
-	if_equal PHONE_COOLTRAINERF_REENA, .Reena
-	if_equal PHONE_PICNICKER_LIZ, .Liz
-	if_equal PHONE_PICNICKER_GINA, .Gina
-	if_equal PHONE_LASS_DANA, .Dana
-	if_equal PHONE_PICNICKER_TIFFANY, .Tiffany
-	if_equal PHONE_PICNICKER_ERIN, .Erin
-
-.Beverly:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x174688
 	buttonsound
 	end
 
-.Beth:
-	farwritetext UnknownText_0x174c7f
-	buttonsound
-	end
-
-.Reena:
-	farwritetext UnknownText_0x1752f5
-	buttonsound
-	end
-
-.Liz:
-	farwritetext UnknownText_0x175fda
-	buttonsound
-	end
-
-.Gina:
-	farwritetext UnknownText_0x1771fd
-	buttonsound
-	end
-
-.Dana:
-	farwritetext UnknownText_0x64f74
-	buttonsound
-	end
-
-.Tiffany:
-	farwritetext UnknownText_0x665ad
-	buttonsound
-	end
-
-.Erin:
-	farwritetext UnknownText_0x6717a
-	buttonsound
-	end
-
 UnknownScript_0xa017a:
-	checkcode VAR_CALLERID
-	if_equal PHONE_SCHOOLBOY_JACK, .Jack
-	if_equal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	if_equal PHONE_BIRDKEEPER_JOSE, .Jose
-	if_equal PHONE_YOUNGSTER_JOEY, .Joey
-	if_equal PHONE_BUG_CATCHER_WADE, .Wade
-	if_equal PHONE_FISHER_RALPH, .Ralph
-	if_equal PHONE_HIKER_ANTHONY, .Anthony
-	if_equal PHONE_CAMPER_TODD, .Todd
-	if_equal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	if_equal PHONE_SCHOOLBOY_ALAN, .Alan
-	if_equal PHONE_SCHOOLBOY_CHAD, .Chad
-	if_equal PHONE_POKEFANM_DEREK, .Derek
-	if_equal PHONE_FISHER_TULLY, .Tully
-	if_equal PHONE_POKEMANIAC_BRENT, .Brent
-	if_equal PHONE_BIRDKEEPER_VANCE, .Vance
-	if_equal PHONE_FISHER_WILTON, .Wilton
-	if_equal PHONE_HIKER_PARRY, .Parry
-
-.Jack:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x174106
 	buttonsound
 	end
 
-.Gaven:
-	farwritetext UnknownText_0x174a80
-	buttonsound
-	end
-
-.Jose:
-	farwritetext UnknownText_0x174f90
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x175591
-	buttonsound
-	end
-
-.Wade:
-	farwritetext UnknownText_0x175869
-	buttonsound
-	end
-
-.Ralph:
-	farwritetext UnknownText_0x175c24
-	buttonsound
-	end
-
-.Anthony:
-	farwritetext UnknownText_0x176aef
-	buttonsound
-	end
-
-.Todd:
-	farwritetext UnknownText_0x176e9c
-	buttonsound
-	end
-
-.Arnie:
-	farwritetext UnknownText_0x64a13
-	buttonsound
-	end
-
-.Alan:
-	farwritetext UnknownText_0x64cf3
-	buttonsound
-	end
-
-.Chad:
-	farwritetext UnknownText_0x65318
-	buttonsound
-	end
-
-.Derek:
-	farwritetext UnknownText_0x65b29
-	buttonsound
-	end
-
-.Tully:
-	farwritetext UnknownText_0x65e42
-	buttonsound
-	end
-
-.Brent:
-	farwritetext UnknownText_0x6613c
-	buttonsound
-	end
-
-.Vance:
-	farwritetext UnknownText_0x669b2
-	buttonsound
-	end
-
-.Wilton:
-	farwritetext UnknownText_0x66b3e
-	buttonsound
-	end
-
-.Parry:
-	farwritetext UnknownText_0x66fc0
-	buttonsound
-	end
-
 UnknownScript_0xa0226:
-	checkcode VAR_CALLERID
-	if_equal PHONE_POKEFAN_BEVERLY, .Beverly
-	if_equal PHONE_COOLTRAINERF_BETH, .Beth
-	if_equal PHONE_COOLTRAINERF_REENA, .Reena
-	if_equal PHONE_PICNICKER_LIZ, .Liz
-	if_equal PHONE_PICNICKER_GINA, .Gina
-	if_equal PHONE_LASS_DANA, .Dana
-	if_equal PHONE_PICNICKER_TIFFANY, .Tiffany
-	if_equal PHONE_PICNICKER_ERIN, .Erin
-
-.Beverly:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x1746c3
 	buttonsound
 	end
 
-.Beth:
-	farwritetext UnknownText_0x174cf6
-	buttonsound
-	end
-
-.Reena:
-	farwritetext UnknownText_0x17536b
-	buttonsound
-	end
-
-.Liz:
-	farwritetext UnknownText_0x17602d
-	buttonsound
-	end
-
-.Gina:
-	farwritetext UnknownText_0x177237
-	buttonsound
-	end
-
-.Dana:
-	farwritetext UnknownText_0x64fb2
-	buttonsound
-	end
-
-.Tiffany:
-	farwritetext UnknownText_0x66605
-	buttonsound
-	end
-
-.Erin:
-	farwritetext UnknownText_0x671a4
-	buttonsound
-	end
-
 UnknownScript_0xa0278:
-	checkcode VAR_CALLERID
-	if_equal PHONE_SCHOOLBOY_JACK, .Jack
-	if_equal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	if_equal PHONE_BIRDKEEPER_JOSE, .Jose
-	if_equal PHONE_YOUNGSTER_JOEY, .Joey
-	if_equal PHONE_BUG_CATCHER_WADE, .Wade
-	if_equal PHONE_FISHER_RALPH, .Ralph
-	if_equal PHONE_HIKER_ANTHONY, .Anthony
-	if_equal PHONE_CAMPER_TODD, .Todd
-	if_equal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	if_equal PHONE_SCHOOLBOY_ALAN, .Alan
-	if_equal PHONE_SCHOOLBOY_CHAD, .Chad
-	if_equal PHONE_POKEFANM_DEREK, .Derek
-	if_equal PHONE_FISHER_TULLY, .Tully
-	if_equal PHONE_POKEMANIAC_BRENT, .Brent
-	if_equal PHONE_BIRDKEEPER_VANCE, .Vance
-	if_equal PHONE_FISHER_WILTON, .Wilton
-	if_equal PHONE_HIKER_PARRY, .Parry
-
-.Jack:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x174165
 	buttonsound
 	end
 
-.Gaven:
-	farwritetext UnknownText_0x174b2d
-	buttonsound
-	end
-
-.Jose:
-	farwritetext UnknownText_0x174ffd
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x175611
-	buttonsound
-	end
-
-.Wade:
-	farwritetext UnknownText_0x1758e4
-	buttonsound
-	end
-
-.Ralph:
-	farwritetext UnknownText_0x175c9f
-	buttonsound
-	end
-
-.Anthony:
-	farwritetext UnknownText_0x176b45
-	buttonsound
-	end
-
-.Todd:
-	farwritetext UnknownText_0x176eee
-	buttonsound
-	end
-
-.Arnie:
-	farwritetext UnknownText_0x64a71
-	buttonsound
-	end
-
-.Alan:
-	farwritetext UnknownText_0x64d4f
-	buttonsound
-	end
-
-.Chad:
-	farwritetext UnknownText_0x65399
-	buttonsound
-	end
-
-.Derek:
-	farwritetext UnknownText_0x65bc8
-	buttonsound
-	end
-
-.Tully:
-	farwritetext UnknownText_0x65eac
-	buttonsound
-	end
-
-.Brent:
-	farwritetext UnknownText_0x6618c
-	buttonsound
-	end
-
-.Vance:
-	farwritetext UnknownText_0x669ed
-	buttonsound
-	end
-
-.Wilton:
-	farwritetext UnknownText_0x66b8f
-	buttonsound
-	end
-
-.Parry:
-	farwritetext UnknownText_0x67001
-	buttonsound
-	end
-
 UnknownScript_0xa0324:
-	checkcode VAR_CALLERID
-	if_equal PHONE_POKEFAN_BEVERLY, .Beverly
-	if_equal PHONE_COOLTRAINERF_BETH, .Beth
-	if_equal PHONE_COOLTRAINERF_REENA, .Reena
-	if_equal PHONE_PICNICKER_LIZ, .Liz
-	if_equal PHONE_PICNICKER_GINA, .Gina
-	if_equal PHONE_LASS_DANA, .Dana
-	if_equal PHONE_PICNICKER_TIFFANY, .Tiffany
-	if_equal PHONE_PICNICKER_ERIN, .Erin
-
-.Beverly:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x174734
-	buttonsound
-	end
-
-.Beth:
-	farwritetext UnknownText_0x174d86
-	buttonsound
-	end
-
-.Reena:
-	farwritetext UnknownText_0x1753c5
-	buttonsound
-	end
-
-.Liz:
-	farwritetext UnknownText_0x176095
-	buttonsound
-	end
-
-.Gina:
-	farwritetext UnknownText_0x177297
-	buttonsound
-	end
-
-.Dana:
-	farwritetext UnknownText_0x6501c
-	buttonsound
-	end
-
-.Tiffany:
-	farwritetext UnknownText_0x66688
-	buttonsound
-	end
-
-.Erin:
-	farwritetext UnknownText_0x671eb
 	buttonsound
 	end
 
@@ -531,152 +99,14 @@ UnknownScript_0xa037e:
 	farjump PhoneScript_HangupText_Female
 
 PhoneScript_RematchText_Male:
-	checkcode VAR_CALLERID
-	if_equal PHONE_SCHOOLBOY_JACK, .Jack
-	if_equal PHONE_SAILOR_HUEY, .Huey
-	if_equal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	if_equal PHONE_BIRDKEEPER_JOSE, .Jose
-	if_equal PHONE_YOUNGSTER_JOEY, .Joey
-	if_equal PHONE_BUG_CATCHER_WADE, .Wade
-	if_equal PHONE_FISHER_RALPH, .Ralph
-	if_equal PHONE_HIKER_ANTHONY, .Anthony
-	if_equal PHONE_CAMPER_TODD, .Todd
-	if_equal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	if_equal PHONE_SCHOOLBOY_ALAN, .Alan
-	if_equal PHONE_SCHOOLBOY_CHAD, .Chad
-	if_equal PHONE_FISHER_TULLY, .Tully
-	if_equal PHONE_POKEMANIAC_BRENT, .Brent
-	if_equal PHONE_BIRDKEEPER_VANCE, .Vance
-	if_equal PHONE_FISHER_WILTON, .Wilton
-	if_equal PHONE_HIKER_PARRY, .Parry
-
-.Jack:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x1741e1
 	buttonsound
 	end
 
-.Huey:
-	farwritetext UnknownText_0x1748ea
-	buttonsound
-	end
-
-.Gaven:
-	farwritetext UnknownText_0x174bc5
-	buttonsound
-	end
-
-.Jose:
-	farwritetext UnknownText_0x17507d
-	buttonsound
-	end
-
-.Joey:
-	farwritetext UnknownText_0x175693
-	buttonsound
-	end
-
-.Wade:
-	farwritetext UnknownText_0x175976
-	buttonsound
-	end
-
-.Ralph:
-	farwritetext UnknownText_0x175d40
-	buttonsound
-	end
-
-.Anthony:
-	farwritetext UnknownText_0x176bee
-	buttonsound
-	end
-
-.Todd:
-	farwritetext UnknownText_0x176f60
-	buttonsound
-	end
-
-.Arnie:
-	farwritetext UnknownText_0x64ada
-	buttonsound
-	end
-
-.Alan:
-	farwritetext UnknownText_0x64da4
-	buttonsound
-	end
-
-.Chad:
-	farwritetext UnknownText_0x65419
-	buttonsound
-	end
-
-.Tully:
-	farwritetext UnknownText_0x65f17
-	buttonsound
-	end
-
-.Brent:
-	farwritetext UnknownText_0x66214
-	buttonsound
-	end
-
-.Vance:
-	farwritetext UnknownText_0x66a3a
-	buttonsound
-	end
-
-.Wilton:
-	farwritetext UnknownText_0x66bf3
-	buttonsound
-	end
-
-.Parry:
-	farwritetext UnknownText_0x67096
-	buttonsound
-	end
-
 PhoneScript_RematchText_Female:
-	checkcode VAR_CALLERID
-	if_equal PHONE_COOLTRAINERF_BETH, .Beth
-	if_equal PHONE_COOLTRAINERF_REENA, .Reena
-	if_equal PHONE_PICNICKER_LIZ, .Liz
-	if_equal PHONE_PICNICKER_GINA, .Gina
-	if_equal PHONE_LASS_DANA, .Dana
-	if_equal PHONE_PICNICKER_TIFFANY, .Tiffany
-	if_equal PHONE_PICNICKER_ERIN, .Erin
-
-.Beth:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x174e4e
-	buttonsound
-	end
-
-.Reena:
-	farwritetext UnknownText_0x17543a
-	buttonsound
-	end
-
-.Liz:
-	farwritetext UnknownText_0x17610a
-	buttonsound
-	end
-
-.Gina:
-	farwritetext UnknownText_0x1772e2
-	buttonsound
-	end
-
-.Dana:
-	farwritetext UnknownText_0x65091
-	buttonsound
-	end
-
-.Tiffany:
-	farwritetext UnknownText_0x66730
-	buttonsound
-	end
-
-.Erin:
-	farwritetext UnknownText_0x6722e
 	buttonsound
 	end
 
@@ -689,149 +119,13 @@ UnknownScript_0xa047f:
 	end
 
 PhoneScript_HangupText_Male:
-	checkcode VAR_CALLERID
-	if_equal PHONE_SCHOOLBOY_JACK, .Jack
-	if_equal PHONE_SAILOR_HUEY, .Huey
-	if_equal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	if_equal PHONE_BIRDKEEPER_JOSE, .Jose
-	if_equal PHONE_YOUNGSTER_JOEY, .Joey
-	if_equal PHONE_BUG_CATCHER_WADE, .Wade
-	if_equal PHONE_FISHER_RALPH, .Ralph
-	if_equal PHONE_HIKER_ANTHONY, .Anthony
-	if_equal PHONE_CAMPER_TODD, .Todd
-	if_equal PHONE_JUGGLER_IRWIN, .Irwin
-	if_equal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	if_equal PHONE_SCHOOLBOY_ALAN, .Alan
-	if_equal PHONE_SCHOOLBOY_CHAD, .Chad
-	if_equal PHONE_POKEFANM_DEREK, .Derek
-	if_equal PHONE_FISHER_TULLY, .Tully
-	if_equal PHONE_POKEMANIAC_BRENT, .Brent
-	if_equal PHONE_BIRDKEEPER_VANCE, .Vance
-	if_equal PHONE_FISHER_WILTON, .Wilton
-	if_equal PHONE_BLACKBELT_KENJI, .Kenji
-	if_equal PHONE_HIKER_PARRY, .Parry
-
-.Jack:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x174251
 	end
 
-.Huey:
-	farwritetext UnknownText_0x174962
-	end
-
-.Gaven:
-	farwritetext UnknownText_0x174c0e
-	end
-
-.Jose:
-	farwritetext UnknownText_0x175106
-	end
-
-.Joey:
-	farwritetext UnknownText_0x17570a
-	end
-
-.Wade:
-	farwritetext UnknownText_0x1759e7
-	end
-
-.Ralph:
-	farwritetext UnknownText_0x175db7
-	end
-
-.Anthony:
-	farwritetext UnknownText_0x176c47
-	end
-
-.Todd:
-	farwritetext UnknownText_0x176fdb
-	end
-
-.Irwin:
-	farwritetext UnknownText_0x64000
-	end
-
-.Arnie:
-	farwritetext UnknownText_0x64b48
-	end
-
-.Alan:
-	farwritetext UnknownText_0x64e1f
-	end
-
-.Chad:
-	farwritetext UnknownText_0x65471
-	end
-
-.Derek:
-	farwritetext UnknownText_0x65c4e
-	end
-
-.Tully:
-	farwritetext UnknownText_0x65f6e
-	end
-
-.Brent:
-	farwritetext UnknownText_0x662a9
-	end
-
-.Vance:
-	farwritetext UnknownText_0x66a93
-	end
-
-.Wilton:
-	farwritetext UnknownText_0x66c58
-	end
-
-.Kenji:
-	farwritetext UnknownText_0x66dab
-	end
-
-.Parry:
-	farwritetext UnknownText_0x670eb
-	end
-
 PhoneScript_HangupText_Female:
-	checkcode VAR_CALLERID
-	if_equal PHONE_POKEFAN_BEVERLY, .Beverly
-	if_equal PHONE_COOLTRAINERF_BETH, .Beth
-	if_equal PHONE_COOLTRAINERF_REENA, .Reena
-	if_equal PHONE_PICNICKER_LIZ, .Liz
-	if_equal PHONE_PICNICKER_GINA, .Gina
-	if_equal PHONE_LASS_DANA, .Dana
-	if_equal PHONE_PICNICKER_TIFFANY, .Tiffany
-	if_equal PHONE_PICNICKER_ERIN, .Erin
-
-.Beverly:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x1747ac
-	end
-
-.Beth:
-	farwritetext UnknownText_0x174eb7
-	end
-
-.Reena:
-	farwritetext UnknownText_0x175488
-	end
-
-.Liz:
-	farwritetext UnknownText_0x17620a
-	end
-
-.Gina:
-	farwritetext UnknownText_0x177361
-	end
-
-.Dana:
-	farwritetext UnknownText_0x650e2
-	end
-
-.Tiffany:
-	farwritetext UnknownText_0x667f7
-	end
-
-.Erin:
-	farwritetext UnknownText_0x67281
 	end
 
 UnknownScript_0xa0584:
@@ -855,17 +149,8 @@ UnknownScript_0xa05a0:
 	end
 
 UnknownScript_0xa05a4:
-	checkcode VAR_CALLERID
-	if_equal PHONE_BUG_CATCHER_WADE, .Wade
-	if_equal PHONE_POKEFANM_DEREK, .Derek
-
-.Wade:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x1759f7
-	buttonsound
-	jump PhoneScript_HangupText_Male
-
-.Derek:
-	farwritetext UnknownText_0x65c66
 	buttonsound
 	jump PhoneScript_HangupText_Male
 
@@ -895,59 +180,13 @@ UnknownScript_0xa05de:
 	jump PhoneScript_HangupText_Male
 
 UnknownScript_0xa05e6:
-	checkcode VAR_CALLERID
-	if_equal PHONE_BIRDKEEPER_JOSE, .Jose
-	if_equal PHONE_BUG_CATCHER_WADE, .Wade
-	if_equal PHONE_SCHOOLBOY_ALAN, .Alan
-	if_equal PHONE_POKEFANM_DEREK, .Derek
-	if_equal PHONE_FISHER_TULLY, .Tully
-	if_equal PHONE_FISHER_WILTON, .Wilton
-
-.Jose:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x175116
 	end
 
-.Wade:
-	farwritetext UnknownText_0x175a60
-	end
-
-.Alan:
-	farwritetext UnknownText_0x64e2f
-	end
-
-.Derek:
-	farwritetext UnknownText_0x65cf9
-	end
-
-.Tully:
-	farwritetext UnknownText_0x65f88
-	end
-
-.Wilton:
-	farwritetext UnknownText_0x66c6b
-	end
-
 UnknownScript_0xa061e:
-	checkcode VAR_CALLERID
-	if_equal PHONE_POKEFAN_BEVERLY, .Beverly
-	if_equal PHONE_PICNICKER_GINA, .Gina
-	if_equal PHONE_LASS_DANA, .Dana
-	if_equal PHONE_PICNICKER_TIFFANY, .Tiffany
-
-.Beverly:
+	; TODO: checkcode VAR_CALLERID
 	farwritetext UnknownText_0x1747cc
-	end
-
-.Gina:
-	farwritetext UnknownText_0x1773e7
-	end
-
-.Dana:
-	farwritetext UnknownText_0x650ec
-	end
-
-.Tiffany:
-	farwritetext UnknownText_0x66801
 	end
 
 UnknownScript_0xa0644:
@@ -962,17 +201,17 @@ UnknownScript_0xa064c:
 
 UnknownScript_0xa0654:
 	random 11
-	if_equal  0, UnknownScript_0xa0682
-	if_equal  1, UnknownScript_0xa068a
-	if_equal  2, UnknownScript_0xa0692
-	if_equal  3, UnknownScript_0xa069a
-	if_equal  4, UnknownScript_0xa06a2
-	if_equal  5, UnknownScript_0xa06aa
-	if_equal  6, UnknownScript_0xa06b2
-	if_equal  7, UnknownScript_0xa06ba
-	if_equal  8, UnknownScript_0xa06c2
-	if_equal  9, UnknownScript_0xa06ca
-	if_equal 10, UnknownScript_0xa06d2
+	ifequal  0, UnknownScript_0xa0682
+	ifequal  1, UnknownScript_0xa068a
+	ifequal  2, UnknownScript_0xa0692
+	ifequal  3, UnknownScript_0xa069a
+	ifequal  4, UnknownScript_0xa06a2
+	ifequal  5, UnknownScript_0xa06aa
+	ifequal  6, UnknownScript_0xa06b2
+	ifequal  7, UnknownScript_0xa06ba
+	ifequal  8, UnknownScript_0xa06c2
+	ifequal  9, UnknownScript_0xa06ca
+	ifequal 10, UnknownScript_0xa06d2
 
 UnknownScript_0xa0682:
 	farwritetext UnknownText_0x174261
@@ -1031,16 +270,16 @@ UnknownScript_0xa06d2:
 
 UnknownScript_0xa06da:
 	random 10
-	if_equal 0, UnknownScript_0xa0704
-	if_equal 1, UnknownScript_0xa070c
-	if_equal 2, UnknownScript_0xa0714
-	if_equal 3, UnknownScript_0xa071c
-	if_equal 4, UnknownScript_0xa0724
-	if_equal 5, UnknownScript_0xa072c
-	if_equal 6, UnknownScript_0xa0734
-	if_equal 7, UnknownScript_0xa073c
-	if_equal 8, UnknownScript_0xa0744
-	if_equal 9, UnknownScript_0xa074c
+	ifequal 0, UnknownScript_0xa0704
+	ifequal 1, UnknownScript_0xa070c
+	ifequal 2, UnknownScript_0xa0714
+	ifequal 3, UnknownScript_0xa071c
+	ifequal 4, UnknownScript_0xa0724
+	ifequal 5, UnknownScript_0xa072c
+	ifequal 6, UnknownScript_0xa0734
+	ifequal 7, UnknownScript_0xa073c
+	ifequal 8, UnknownScript_0xa0744
+	ifequal 9, UnknownScript_0xa074c
 
 UnknownScript_0xa0704:
 	farwritetext UnknownText_0x176223
@@ -1094,16 +333,16 @@ UnknownScript_0xa074c:
 
 UnknownScript_0xa0754:
 	random 10
-	if_equal 0, UnknownScript_0xa077e
-	if_equal 1, UnknownScript_0xa0786
-	if_equal 2, UnknownScript_0xa078e
-	if_equal 3, UnknownScript_0xa0796
-	if_equal 4, UnknownScript_0xa079e
-	if_equal 5, UnknownScript_0xa07a6
-	if_equal 6, UnknownScript_0xa07ae
-	if_equal 7, UnknownScript_0xa07b6
-	if_equal 8, UnknownScript_0xa07be
-	if_equal 9, UnknownScript_0xa07c6
+	ifequal 0, UnknownScript_0xa077e
+	ifequal 1, UnknownScript_0xa0786
+	ifequal 2, UnknownScript_0xa078e
+	ifequal 3, UnknownScript_0xa0796
+	ifequal 4, UnknownScript_0xa079e
+	ifequal 5, UnknownScript_0xa07a6
+	ifequal 6, UnknownScript_0xa07ae
+	ifequal 7, UnknownScript_0xa07b6
+	ifequal 8, UnknownScript_0xa07be
+	ifequal 9, UnknownScript_0xa07c6
 
 UnknownScript_0xa077e:
 	farwritetext UnknownText_0x65481
@@ -1157,16 +396,16 @@ UnknownScript_0xa07c6:
 
 UnknownScript_0xa07ce:
 	random 10
-	if_equal 0, UnknownScript_0xa07f8
-	if_equal 1, UnknownScript_0xa0800
-	if_equal 2, UnknownScript_0xa0808
-	if_equal 3, UnknownScript_0xa0810
-	if_equal 4, UnknownScript_0xa0818
-	if_equal 5, UnknownScript_0xa0820
-	if_equal 6, UnknownScript_0xa0828
-	if_equal 7, UnknownScript_0xa0830
-	if_equal 8, UnknownScript_0xa0838
-	if_equal 9, UnknownScript_0xa0840
+	ifequal 0, UnknownScript_0xa07f8
+	ifequal 1, UnknownScript_0xa0800
+	ifequal 2, UnknownScript_0xa0808
+	ifequal 3, UnknownScript_0xa0810
+	ifequal 4, UnknownScript_0xa0818
+	ifequal 5, UnknownScript_0xa0820
+	ifequal 6, UnknownScript_0xa0828
+	ifequal 7, UnknownScript_0xa0830
+	ifequal 8, UnknownScript_0xa0838
+	ifequal 9, UnknownScript_0xa0840
 
 UnknownScript_0xa07f8:
 	farwritetext UnknownText_0x662bc
@@ -1219,30 +458,6 @@ UnknownScript_0xa0840:
 	jump PhoneScript_HangupText_Male
 
 UnknownScript_0xa0848:
-	checkevent EVENT_OPENED_MT_SILVER
-	iftrue UnknownScript_0xa08e0
-	checkevent EVENT_FOUGHT_SNORLAX
-	iftrue UnknownScript_0xa08d8
-	checkevent EVENT_GOT_PASS_FROM_COPYCAT
-	iftrue UnknownScript_0xa08d0
-	checkflag ENGINE_SOULBADGE
-	iftrue UnknownScript_0xa08f0
-	checkflag ENGINE_FLYPOINT_VERMILION
-	iftrue UnknownScript_0xa08c8
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue UnknownScript_0xa08c0
-	checkflag ENGINE_RISINGBADGE
-	iftrue UnknownScript_0xa08b8
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue UnknownScript_0xa08b0
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue UnknownScript_0xa08a8
-	checkevent EVENT_JASMINE_RETURNED_TO_GYM
-	iftrue UnknownScript_0xa08a0
-	checkflag ENGINE_FOGBADGE
-	iftrue UnknownScript_0xa08e8
-	checkflag ENGINE_PLAINBADGE
-	iftrue UnknownScript_0xa0898
 	farwritetext UnknownText_0x646a3
 	buttonsound
 	jump PhoneScript_HangupText_Male
@@ -1439,9 +654,9 @@ UnknownScript_0xa09c0:
 
 UnknownScript_0xa09c8:
 	random 3
-	if_equal 0, UnknownScript_0xa09d6
-	if_equal 1, UnknownScript_0xa09de
-	if_equal 2, UnknownScript_0xa09e6
+	ifequal 0, UnknownScript_0xa09d6
+	ifequal 1, UnknownScript_0xa09de
+	ifequal 2, UnknownScript_0xa09e6
 
 UnknownScript_0xa09d6:
 	farwritetext UnknownText_0x64846
@@ -1460,8 +675,8 @@ UnknownScript_0xa09e6:
 
 UnknownScript_0xa09ee:
 	checkcode VAR_KENJI_BREAK
-	if_equal 2, UnknownScript_0xa0a00
-	if_equal 1, UnknownScript_0xa0a08
+	ifequal 2, UnknownScript_0xa0a00
+	ifequal 1, UnknownScript_0xa0a08
 	farwritetext UnknownText_0x66e17
 	buttonsound
 	jump PhoneScript_HangupText_Male
@@ -1472,11 +687,11 @@ UnknownScript_0xa0a00:
 	jump PhoneScript_HangupText_Male
 
 UnknownScript_0xa0a08:
-	checkmorn
+	checktime 1 << MORN
 	iftrue UnknownScript_0xa0a1d
-	checknite
+	checktime 1 << NITE
 	iftrue UnknownScript_0xa0a25
-	setevent EVENT_KENJI_ON_BREAK
+;	setevent EVENT_KENJI_ON_BREAK
 	farwritetext UnknownText_0x66f11
 	buttonsound
 	jump PhoneScript_HangupText_Male

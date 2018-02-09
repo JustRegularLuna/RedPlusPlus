@@ -53,7 +53,7 @@ SetFacingPokecomNews:
 
 SetFacingBigDoll: ; 45c5
 	ld a, [VariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS]
-	cp SPRITE_BIG_ONIX
+	cp -1 ; TODO: SPRITE_BIG_ONIX
 	ld a, FACING_BIG_DOLL_ASYM
 	jr z, SetFixedFacing
 SetFacingBigDollSym: ; 4589

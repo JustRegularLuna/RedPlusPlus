@@ -5,7 +5,7 @@ spawn: MACRO
 ENDM
 
 SpawnPoints: ; 0x152ab
-	spawn REDS_HOUSE_2F,               3,  3
+	spawn REDS_HOUSE_2F,               3,  6
 
 	spawn PALLET_TOWN,                 5,  6
 	spawn VIRIDIAN_CITY,              23, 26

@@ -4,9 +4,9 @@ ViridianForest_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 3 ; warp events
-	warp_event  3,  5, VIRIDIAN_FOREST_PEWTER_GATE, 1
-	warp_event 18, 47, VIRIDIAN_FOREST_VIRIDIAN_GATE, 1
-	warp_event 19, 47, VIRIDIAN_FOREST_VIRIDIAN_GATE, 2
+	warp_event  5,  7, VIRIDIAN_FOREST_PEWTER_GATE, 1
+	warp_event 21, 51, VIRIDIAN_FOREST_VIRIDIAN_GATE, 1
+	warp_event 22, 51, VIRIDIAN_FOREST_VIRIDIAN_GATE, 2
 
 	db 0 ; coord events
 
