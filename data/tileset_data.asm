@@ -32,6 +32,16 @@ TilesetForestColl::
 INCLUDE "data/tilesets/forest_collision.asm"
 
 
+SECTION "Tileset Data 3", ROMX
+
+TilesetPewterGFX::
+INCBIN "gfx/tilesets/pewter.2bpp.lz"
+TilesetPewterMeta::
+INCBIN "data/tilesets/pewter_metatiles.bin"
+TilesetPewterColl::
+INCLUDE "data/tilesets/pewter_collision.asm"
+
+
 ;------------------------------------
 
 

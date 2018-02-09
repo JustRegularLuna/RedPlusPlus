@@ -4,12 +4,12 @@ Route2North_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 6 ; warp events
-	warp_event 15, 19, ROUTE_2_NUGGET_SPEECH_HOUSE, 1
-	warp_event 16, 35, ROUTE_2_GATE, 1
-	warp_event 17, 35, ROUTE_2_GATE, 2
-	warp_event 12,  9, DIGLETTS_CAVE, 3
-	warp_event  1, 11, VIRIDIAN_FOREST_PEWTER_GATE, 3
-	warp_event  2, 11, VIRIDIAN_FOREST_PEWTER_GATE, 4
+	warp_event 15, 17, ROUTE_2_NUGGET_SPEECH_HOUSE, 1
+	warp_event 16, 33, ROUTE_2_GATE, 1
+	warp_event 17, 33, ROUTE_2_GATE, 2
+	warp_event 12,  7, DIGLETTS_CAVE, 3
+	warp_event  1,  9, VIRIDIAN_FOREST_PEWTER_GATE, 3
+	warp_event  2,  9, VIRIDIAN_FOREST_PEWTER_GATE, 4
 
 	db 0 ; coord events
 
