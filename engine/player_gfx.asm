@@ -16,44 +16,44 @@ GetPlayerIcon: ; 8832c
 
 
 GetCardPic: ; 8833e
-	ld hl, ChrisCardPic
+	ld hl, RedCardPic
 	ld a, [PlayerGender]
 	bit 0, a
 	jr z, .GotClass
-	ld hl, KrisCardPic
+	ld hl, LeafCardPic
 .GotClass:
 	ld de, VTiles2 tile $00
 	ld bc, $23 tiles
-	ld a, BANK(ChrisCardPic) ; BANK(KrisCardPic)
+	ld a, BANK(RedCardPic) ; BANK(LeafCardPic)
 	jp FarCopyBytes
 
-ChrisCardPic: ; 88365
-INCBIN "gfx/trainer_card/chris_card.5x7.2bpp"
+RedCardPic: ; 88365
+INCBIN "gfx/trainer_card/red_card.5x7.2bpp"
 
-KrisCardPic: ; 88595
-INCBIN "gfx/trainer_card/kris_card.5x7.2bpp"
+LeafCardPic: ; 88595
+INCBIN "gfx/trainer_card/leaf_card.5x7.2bpp"
 
 
 GetPlayerBackpic: ; 88825
-	ld hl, ChrisBackpic
+	ld hl, RedBackpic
 	ld a, [PlayerGender]
 	bit 0, a
 	jr z, .ok
-	ld hl, KrisBackpic
+	ld hl, LeafBackpic
 .ok
 	ld de, VTiles2 tile $31
-	lb bc, BANK(ChrisBackpic), 6 * 6 ; dimensions
+	lb bc, BANK(RedBackpic), 6 * 6 ; dimensions
 	predef DecompressPredef
 	ret
 
-ChrisBackpic: ; 2ba1a
-INCBIN "gfx/player/chris_back.6x6.2bpp.lz"
+RedBackpic: ; 2ba1a
+INCBIN "gfx/player/red_back.6x6.2bpp.lz"
 
-KrisBackpic: ; 88ed6
-INCBIN "gfx/player/kris_back.6x6.2bpp.lz"
+LeafBackpic: ; 88ed6
+INCBIN "gfx/player/leaf_back.6x6.2bpp.lz"
 
-LyraBackpic: ; 2bbaa
-INCBIN "gfx/battle/lyra_back.6x6.2bpp.lz"
+OldManBackpic: ; 2bbaa
+INCBIN "gfx/battle/old_man_back.6x6.2bpp.lz"
 
 
 HOF_LoadTrainerFrontpic: ; 88840
@@ -69,15 +69,15 @@ HOF_LoadTrainerFrontpic: ; 88840
 .GotClass:
 	ld a, e
 	ld [TrainerClass], a
-	ld de, ChrisCardPic
+	ld de, RedCardPic
 	ld a, [PlayerGender]
 	bit 0, a
 	jr z, .GotPic
-	ld de, KrisCardPic
+	ld de, LeafCardPic
 
 .GotPic:
 	ld hl, VTiles2
-	lb bc, BANK(ChrisCardPic), 5 * 7 ; BANK(KrisCardPic)
+	lb bc, BANK(RedCardPic), 5 * 7 ; BANK(LeafCardPic)
 	call Get2bpp
 	call WaitBGMap
 	ld a, $1
