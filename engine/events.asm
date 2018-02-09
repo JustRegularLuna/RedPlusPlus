@@ -1351,7 +1351,7 @@ DoBikeStep:: ; 97db3
 	jr nz, .NoCall
 
 	; Queue the call.
-	ld a, SPECIALCALL_BIKESHOP
+	ld a, 0 ; TODO: SPECIALCALL_BIKESHOP
 	ld [wSpecialPhoneCallID], a
 	xor a
 	ld [wSpecialPhoneCallID + 1], a
