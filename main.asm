@@ -1,2652 +1,4425 @@
 INCLUDE "constants.asm"
 
-NPC_SPRITES_1 EQU $4
-NPC_SPRITES_2 EQU $5
 
-GFX EQU $4
-
-PICS_1 EQU $9
-PICS_2 EQU $A
-PICS_3 EQU $B
-PICS_4 EQU $C
-PICS_5 EQU $D
-
-INCLUDE "home.asm"
-
-
-SECTION "bank1",ROMX,BANK[$1]
-
-INCLUDE "data/facing.asm"
-
-INCLUDE "engine/black_out.asm"
-
-
-INCLUDE "engine/battle/safari_zone.asm"
-
-INCLUDE "engine/titlescreen.asm"
-INCLUDE "engine/load_mon_data.asm"
-
-INCLUDE "data/item_prices.asm"
-INCLUDE "text/item_names.asm"
-;INCLUDE "text/unused_names.asm"
-
-INCLUDE "engine/overworld/oam.asm"
-INCLUDE "engine/oam_dma.asm"
-
-INCLUDE "engine/print_waiting_text.asm"
-
-INCLUDE "engine/overworld/map_sprite_functions1.asm"
-
-;INCLUDE "engine/test_battle.asm"
-
-INCLUDE "engine/overworld/item.asm"
-INCLUDE "engine/overworld/movement.asm"
-
-INCLUDE "engine/cable_club.asm"
-
-INCLUDE "engine/menu/main_menu.asm"
-
-INCLUDE "engine/oak_speech.asm"
-
-INCLUDE "engine/special_warps.asm"
-
-INCLUDE "engine/debug1.asm"
-
-INCLUDE "engine/menu/naming_screen.asm"
-
-INCLUDE "engine/oak_speech2.asm"
-
-INCLUDE "engine/subtract_paid_money.asm"
-
-INCLUDE "engine/menu/swap_items.asm"
-
-INCLUDE "engine/overworld/pokemart.asm"
-
-INCLUDE "engine/learn_move.asm"
-
-INCLUDE "engine/overworld/pokecenter.asm"
-
-INCLUDE "engine/overworld/set_blackout_map.asm"
-
-INCLUDE "engine/display_text_id_init.asm"
-INCLUDE "engine/menu/draw_start_menu.asm"
-
-INCLUDE "engine/overworld/cable_club_npc.asm"
-
-INCLUDE "engine/menu/text_box.asm"
-
-INCLUDE "engine/battle/moveEffects/drain_hp_effect.asm"
-
-INCLUDE "engine/menu/players_pc.asm"
-
-INCLUDE "engine/remove_pokemon.asm"
-
-INCLUDE "engine/display_pokedex.asm"
-
-
-; Hooks for color hack
-INCLUDE "color/cable_club.asm"
-INCLUDE "color/oak_intro.asm"
-INCLUDE "color/load_hp_and_exp_bar.asm"
-
-
-SECTION "bank3",ROMX,BANK[$3]
-
-INCLUDE "engine/joypad.asm"
-
-INCLUDE "data/map_header_banks.asm"
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-INCLUDE "engine/overworld/clear_variables.asm"
-INCLUDE "engine/overworld/player_state.asm"
-INCLUDE "engine/overworld/poison.asm"
-INCLUDE "engine/overworld/tileset_header.asm"
-INCLUDE "engine/overworld/daycare_exp.asm"
-
-INCLUDE "data/hide_show_data.asm"
-
-INCLUDE "engine/overworld/field_move_messages.asm"
-
-INCLUDE "engine/items/inventory.asm"
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-INCLUDE "engine/overworld/wild_mons.asm"
-
-INCLUDE "engine/items/items.asm"
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-INCLUDE "engine/menu/draw_badges.asm"
-
-INCLUDE "engine/overworld/update_map.asm"
-INCLUDE "engine/overworld/cut.asm"
-INCLUDE "engine/overworld/missable_objects.asm"
-INCLUDE "engine/overworld/push_boulder.asm"
-
-INCLUDE "engine/add_mon.asm"
-INCLUDE "engine/flag_action.asm"
-INCLUDE "engine/heal_party.asm"
-INCLUDE "engine/bcd.asm"
-INCLUDE "engine/init_player_data.asm"
-INCLUDE "engine/get_bag_item_quantity.asm"
-INCLUDE "engine/pathfinding.asm"
-INCLUDE "engine/hp_bar.asm"
-INCLUDE "engine/hidden_object_functions3.asm"
-
-INCLUDE "color/update_hp_bar.asm"
-
-SECTION "NPC Sprites 1", ROMX, BANK[NPC_SPRITES_1]
-RocketSprite:          INCBIN "gfx/sprites/rocket.2bpp"
-RocketFSprite:         INCBIN "gfx/sprites/rocketf.2bpp"
-OakAideSprite:         INCBIN "gfx/sprites/oak_aide.2bpp"
-RockerSprite:          INCBIN "gfx/sprites/rocker.2bpp"
-SwimmerSprite:         INCBIN "gfx/sprites/swimmer.2bpp"
-WhitePlayerSprite:     INCBIN "gfx/sprites/white_player.2bpp"
-GymHelperSprite:       INCBIN "gfx/sprites/gym_helper.2bpp"
-OldPersonSprite:       INCBIN "gfx/sprites/old_person.2bpp"
-MartGuySprite:         INCBIN "gfx/sprites/mart_guy.2bpp"
-FisherSprite:          INCBIN "gfx/sprites/fisher.2bpp"
-OldMediumWomanSprite:  INCBIN "gfx/sprites/old_medium_woman.2bpp"
-NurseSprite:           INCBIN "gfx/sprites/nurse.2bpp"
-CableClubWomanSprite:  INCBIN "gfx/sprites/cable_club_woman.2bpp"
-MrMasterballSprite:    INCBIN "gfx/sprites/mr_masterball.2bpp"
-LaprasGiverSprite:     INCBIN "gfx/sprites/lapras_giver.2bpp"
-WardenSprite:          INCBIN "gfx/sprites/warden.2bpp"
-SsCaptainSprite:       INCBIN "gfx/sprites/ss_captain.2bpp"
-Fisher2Sprite:         INCBIN "gfx/sprites/fisher2.2bpp"
-BlackbeltSprite:       INCBIN "gfx/sprites/blackbelt.2bpp"
-GuardSprite:           INCBIN "gfx/sprites/guard.2bpp"
-; Other sprites were moved to another bank
-
-
-
-SECTION "Graphics", ROMX, BANK[GFX]
-
-PokemonLogoGraphics:            INCBIN "gfx/pokemon_logo.2bpp"
-FontGraphics:                   INCBIN "gfx/font.1bpp"
-FontGraphicsEnd:
-ABTiles:                        INCBIN "gfx/AB.2bpp"
-HpBarAndStatusGraphics:  INCBIN "gfx/hp_bar_and_status.2bpp"
-HpBarAndStatusGraphicsEnd:
-BattleHudTiles1:         INCBIN "gfx/battle_hud1.1bpp"
-BattleHudTiles1End:
-BattleHudTiles2:         INCBIN "gfx/battle_hud2.1bpp"
-BattleHudTiles3:         INCBIN "gfx/battle_hud3.1bpp"
-BattleHudTiles3End:
-NintendoCopyrightLogoGraphics:  INCBIN "gfx/copyright.2bpp"
-GamefreakLogoGraphics:          INCBIN "gfx/gamefreak.2bpp"
-GamefreakLogoGraphicsEnd:
-TextBoxGraphics:                INCBIN "gfx/text_box.2bpp"
-TextBoxGraphicsEnd:
-PokedexTileGraphics:            INCBIN "gfx/pokedex.2bpp"
-PokedexTileGraphicsEnd:
-PlayerCharacterTitleGraphics:   INCBIN "gfx/player_title.2bpp"
-PlayerCharacterTitleGraphicsEnd:
-
-
-SECTION "Battle (bank 4)", ROMX, BANK[$4]
-
-INCLUDE "engine/overworld/is_player_just_outside_map.asm"
-INCLUDE "engine/menu/status_screen.asm"
-INCLUDE "engine/menu/party_menu.asm"
-
-RedPicFront::  INCBIN "pic/trainer/red.pic"
-LeafPicFront:: INCBIN "pic/trainer/leaf.pic"
-ShrinkPic1::   INCBIN "pic/trainer/shrink1.pic"
-ShrinkPic2::   INCBIN "pic/trainer/shrink2.pic"
-
-INCLUDE "engine/turn_sprite.asm"
-INCLUDE "engine/menu/start_sub_menus.asm"
-INCLUDE "engine/items/tms.asm"
-INCLUDE "engine/battle/end_of_battle.asm"
-INCLUDE "engine/battle/wild_encounters.asm"
-INCLUDE "engine/battle/moveEffects/recoil_effect.asm"
-INCLUDE "engine/battle/moveEffects/conversion_effect.asm"
-INCLUDE "engine/battle/moveEffects/haze_effect.asm"
-INCLUDE "engine/battle/get_trainer_name.asm"
-INCLUDE "engine/random.asm"
-
-EXPBarGraphics: INCBIN "gfx/exp_bar.2bpp"
-ShinySparkleGraphics: INCBIN "gfx/shiny_sparkle.2bpp"
-EXPBarShinySparkleGraphicsEnd:
-
-
-SECTION "NPC Sprites 2", ROMX, BANK[NPC_SPRITES_2]
-
-RedCyclingSprite:     INCBIN "gfx/sprites/cycling.2bpp"
-RedSprite:            INCBIN "gfx/sprites/red.2bpp"
-LeafSprite:           INCBIN "gfx/sprites/leaf.2bpp"
-LeafCyclingSprite:    INCBIN "gfx/sprites/leafcycling.2bpp"
-BlueSprite:           INCBIN "gfx/sprites/blue.2bpp"
-OakSprite:            INCBIN "gfx/sprites/oak.2bpp"
-BugCatcherSprite:     INCBIN "gfx/sprites/bug_catcher.2bpp"
-LassSprite:           INCBIN "gfx/sprites/lass.2bpp"
-BlackHairBoy1Sprite:  INCBIN "gfx/sprites/black_hair_boy_1.2bpp"
-LittleGirlSprite:     INCBIN "gfx/sprites/little_girl.2bpp"
-FatBaldGuySprite:     INCBIN "gfx/sprites/fat_bald_guy.2bpp"
-GamblerSprite:        INCBIN "gfx/sprites/gambler.2bpp"
-BlackHairBoy2Sprite:  INCBIN "gfx/sprites/black_hair_boy_2.2bpp"
-GirlSprite:           INCBIN "gfx/sprites/girl.2bpp"
-HikerSprite:          INCBIN "gfx/sprites/hiker.2bpp"
-FoulardWomanSprite:   INCBIN "gfx/sprites/foulard_woman.2bpp"
-GentlemanSprite:      INCBIN "gfx/sprites/gentleman.2bpp"
-DaisySprite:          INCBIN "gfx/sprites/daisy.2bpp"
-BikerSprite:          INCBIN "gfx/sprites/biker.2bpp"
-SailorSprite:         INCBIN "gfx/sprites/sailor.2bpp"
-CookSprite:           INCBIN "gfx/sprites/cook.2bpp"
-BikeShopGuySprite:    INCBIN "gfx/sprites/bike_shop_guy.2bpp"
-MrFujiSprite:         INCBIN "gfx/sprites/mr_fuji.2bpp"
-MediumSprite:         INCBIN "gfx/sprites/medium.2bpp"
-WaiterSprite:         INCBIN "gfx/sprites/waiter.2bpp"
-MomGeishaSprite:      INCBIN "gfx/sprites/mom_geisha.2bpp"
-BrunetteGirlSprite:   INCBIN "gfx/sprites/brunette_girl.2bpp"
-LanceSprite:          INCBIN "gfx/sprites/lance.2bpp"
-MomSprite:            INCBIN "gfx/sprites/mom.2bpp"
-BaldingGuySprite:     INCBIN "gfx/sprites/balding_guy.2bpp"
-YoungBoySprite:       INCBIN "gfx/sprites/young_boy.2bpp"
-GameboyKidSprite:     INCBIN "gfx/sprites/gameboy_kid.2bpp"
-AgathaSprite:         INCBIN "gfx/sprites/agatha.2bpp"
-BrunoSprite:          INCBIN "gfx/sprites/bruno.2bpp"
-LoreleiSprite:        INCBIN "gfx/sprites/lorelei.2bpp"
-SurfingLapras:        INCBIN "gfx/sprites/surf_lapras.2bpp"
-
-
-SECTION "Battle (bank 5)", ROMX, BANK[$5]
-
-INCLUDE "engine/load_pokedex_tiles.asm"
-INCLUDE "engine/overworld/map_sprites.asm"
-INCLUDE "engine/overworld/emotion_bubbles.asm"
-INCLUDE "engine/evolve_trade.asm"
-INCLUDE "engine/battle/moveEffects/substitute_effect.asm"
-INCLUDE "engine/menu/pc.asm"
-
-INCLUDE "data/map_songs.asm" ; moved from bank 3
-
-
-SECTION "bank6",ROMX,BANK[$6]
-
-INCLUDE "data/mapHeaders/CeladonCity.asm"
-INCLUDE "data/mapObjects/CeladonCity.asm"
-CeladonCityBlocks: INCBIN "maps/CeladonCity.blk"
-
-INCLUDE "data/mapHeaders/PalletTown.asm"
-INCLUDE "data/mapObjects/PalletTown.asm"
-PalletTownBlocks: INCBIN "maps/PalletTown.blk"
-
-INCLUDE "data/mapHeaders/ViridianCity.asm"
-INCLUDE "data/mapObjects/ViridianCity.asm"
-ViridianCityBlocks: INCBIN "maps/ViridianCity.blk"
-
-INCLUDE "data/mapHeaders/PewterCity.asm"
-INCLUDE "data/mapObjects/PewterCity.asm"
-PewterCityBlocks: INCBIN "maps/PewterCity.blk"
-
-INCLUDE "data/mapHeaders/CeruleanCity.asm"
-INCLUDE "data/mapObjects/CeruleanCity.asm"
-CeruleanCityBlocks: INCBIN "maps/CeruleanCity.blk"
-
-INCLUDE "data/mapHeaders/VermilionCity.asm"
-INCLUDE "data/mapObjects/VermilionCity.asm"
-VermilionCityBlocks: INCBIN "maps/VermilionCity.blk"
-
-INCLUDE "data/mapHeaders/FuchsiaCity.asm"
-INCLUDE "data/mapObjects/FuchsiaCity.asm"
-FuchsiaCityBlocks: INCBIN "maps/FuchsiaCity.blk"
-
-INCLUDE "engine/play_time.asm"
-
-INCLUDE "scripts/PalletTown.asm"
-INCLUDE "scripts/ViridianCity.asm"
-INCLUDE "scripts/PewterCity.asm"
-INCLUDE "scripts/CeruleanCity.asm"
-INCLUDE "scripts/VermilionCity.asm"
-INCLUDE "scripts/CeladonCity.asm"
-INCLUDE "scripts/FuchsiaCity.asm"
-
-INCLUDE "data/mapHeaders/BluesHouse.asm"
-INCLUDE "scripts/BluesHouse.asm"
-INCLUDE "data/mapObjects/BluesHouse.asm"
-BluesHouseBlocks: INCBIN "maps/BluesHouse.blk"
-
-INCLUDE "data/mapHeaders/VermilionHouse3.asm"
-INCLUDE "scripts/VermilionHouse3.asm"
-INCLUDE "data/mapObjects/VermilionHouse3.asm"
-VermilionHouse3Blocks: INCBIN "maps/VermilionHouse3.blk"
-
-INCLUDE "data/mapHeaders/SilphCo4F.asm"
-INCLUDE "scripts/SilphCo4F.asm"
-INCLUDE "data/mapObjects/SilphCo4F.asm"
-SilphCo4Blocks: INCBIN "maps/SilphCo4F.blk"
-
-INCLUDE "data/mapHeaders/SilphCo5F.asm"
-INCLUDE "scripts/SilphCo5F.asm"
-INCLUDE "data/mapObjects/SilphCo5F.asm"
-SilphCo5Blocks: INCBIN "maps/SilphCo5F.blk"
-
-INCLUDE "data/mapHeaders/SilphCo6F.asm"
-INCLUDE "scripts/SilphCo6F.asm"
-INCLUDE "data/mapObjects/SilphCo6F.asm"
-SilphCo6Blocks: INCBIN "maps/SilphCo6F.blk"
-
-INCLUDE "engine/overworld/npc_movement.asm"
-INCLUDE "engine/overworld/doors.asm"
-INCLUDE "engine/overworld/ledges.asm"
-
-
-SECTION "bank7",ROMX,BANK[$7]
-
-INCLUDE "data/mapHeaders/CinnabarIsland.asm"
-INCLUDE "data/mapObjects/CinnabarIsland.asm"
-CinnabarIslandBlocks: INCBIN "maps/CinnabarIsland.blk"
-
-INCLUDE "data/mapHeaders/Route1.asm"
-INCLUDE "data/mapObjects/Route1.asm"
-Route1Blocks: INCBIN "maps/Route1.blk"
-
-UndergroundPathEntranceRoute8Blocks: INCBIN "maps/PathEntranceRoute8.blk"
-
-OaksLabBlocks: INCBIN "maps/OaksLab.blk"
-
-Route16HouseBlocks:
-Route2HouseBlocks:
-SaffronHouse1Blocks:
-SaffronHouse2Blocks:
-VermilionHouse1Blocks:
-NameRaterBlocks:
-LavenderHouse1Blocks:
-LavenderHouse2Blocks:
-CeruleanHouse1Blocks:
-PewterHouse1Blocks:
-PewterHouse2Blocks:
-ViridianHouseBlocks: INCBIN "maps/ViridianHouse.blk"
-
-CeladonMansion5Blocks:
-SchoolBlocks: INCBIN "maps/ViridianSchool.blk"
-
-CeruleanHouseTrashedBlocks: INCBIN "maps/TrashedHouse.blk"
-
-DiglettsCaveEntranceRoute11Blocks:
-DiglettsCaveRoute2Blocks: INCBIN "maps/DiglettsCaveExit.blk"
-
-INCLUDE "text/monster_names.asm"
-
-INCLUDE "engine/clear_save.asm"
-
-INCLUDE "engine/predefs7.asm"
-
-INCLUDE "scripts/CinnabarIsland.asm"
-
-INCLUDE "scripts/Route1.asm"
-
-INCLUDE "data/mapHeaders/OaksLab.asm"
-INCLUDE "scripts/OaksLab.asm"
-INCLUDE "data/mapObjects/OaksLab.asm"
-
-INCLUDE "data/mapHeaders/ViridianMart.asm"
-INCLUDE "scripts/ViridianMart.asm"
-INCLUDE "data/mapObjects/ViridianMart.asm"
-INCLUDE "data/martInventories/viridian.asm"
-ViridianMartBlocks: INCBIN "maps/ViridianMart.blk"
-
-INCLUDE "data/mapHeaders/ViridianSchool.asm"
-INCLUDE "scripts/ViridianSchool.asm"
-INCLUDE "data/mapObjects/ViridianSchool.asm"
-
-INCLUDE "data/mapHeaders/ViridianHouse.asm"
-INCLUDE "scripts/ViridianHouse.asm"
-INCLUDE "data/mapObjects/ViridianHouse.asm"
-
-INCLUDE "data/mapHeaders/PewterHouse1.asm"
-INCLUDE "scripts/PewterHouse1.asm"
-INCLUDE "data/mapObjects/PewterHouse1.asm"
-
-INCLUDE "data/mapHeaders/PewterHouse2.asm"
-INCLUDE "scripts/PewterHouse2.asm"
-INCLUDE "data/mapObjects/PewterHouse2.asm"
-
-INCLUDE "data/mapHeaders/TrashedHouse.asm"
-INCLUDE "scripts/TrashedHouse.asm"
-INCLUDE "data/mapObjects/TrashedHouse.asm"
-
-INCLUDE "data/mapHeaders/CeruleanHouse1.asm"
-INCLUDE "scripts/CeruleanHouse1.asm"
-INCLUDE "data/mapObjects/CeruleanHouse1.asm"
-
-INCLUDE "data/mapHeaders/BikeShop.asm"
-INCLUDE "scripts/BikeShop.asm"
-INCLUDE "data/mapObjects/BikeShop.asm"
-BikeShopBlocks: INCBIN "maps/BikeShop.blk"
-
-INCLUDE "data/mapHeaders/LavenderHouse1.asm"
-INCLUDE "scripts/LavenderHouse1.asm"
-INCLUDE "data/mapObjects/LavenderHouse1.asm"
-
-INCLUDE "data/mapHeaders/LavenderHouse2.asm"
-INCLUDE "scripts/LavenderHouse2.asm"
-INCLUDE "data/mapObjects/LavenderHouse2.asm"
-
-INCLUDE "data/mapHeaders/NameRatersHouse.asm"
-INCLUDE "scripts/NameRatersHouse.asm"
-INCLUDE "data/mapObjects/NameRatersHouse.asm"
-
-INCLUDE "data/mapHeaders/VermilionHouse1.asm"
-INCLUDE "scripts/VermilionHouse1.asm"
-INCLUDE "data/mapObjects/VermilionHouse1.asm"
-
-INCLUDE "data/mapHeaders/VermilionDock.asm"
-INCLUDE "scripts/VermilionDock.asm"
-INCLUDE "data/mapObjects/VermilionDock.asm"
-VermilionDockBlocks: INCBIN "maps/VermilionDock.blk"
-
-INCLUDE "data/mapHeaders/CeladonMansion5.asm"
-INCLUDE "scripts/CeladonMansion5.asm"
-INCLUDE "data/mapObjects/CeladonMansion5.asm"
-
-INCLUDE "data/mapHeaders/FuchsiaMart.asm"
-INCLUDE "scripts/FuchsiaMart.asm"
-INCLUDE "data/mapObjects/FuchsiaMart.asm"
-INCLUDE "data/martInventories/fuchsia.asm"
-FuchsiaMartBlocks: INCBIN "maps/FuchsiaMart.blk"
-
-INCLUDE "data/mapHeaders/SaffronHouse1.asm"
-INCLUDE "scripts/SaffronHouse1.asm"
-INCLUDE "data/mapObjects/SaffronHouse1.asm"
-
-INCLUDE "data/mapHeaders/SaffronHouse2.asm"
-INCLUDE "scripts/SaffronHouse2.asm"
-INCLUDE "data/mapObjects/SaffronHouse2.asm"
-
-INCLUDE "data/mapHeaders/DiglettsCaveExit.asm"
-INCLUDE "scripts/DiglettsCaveExit.asm"
-INCLUDE "data/mapObjects/DiglettsCaveExit.asm"
-
-INCLUDE "data/mapHeaders/Route2House.asm"
-INCLUDE "scripts/Route2House.asm"
-INCLUDE "data/mapObjects/Route2House.asm"
-
-INCLUDE "data/mapHeaders/Route19Gate.asm"
-INCLUDE "scripts/Route19Gate.asm"
-INCLUDE "data/mapObjects/Route19Gate.asm"
-
-INCLUDE "data/mapHeaders/Route5Gate.asm"
-INCLUDE "scripts/Route5Gate.asm"
-INCLUDE "data/mapObjects/Route5Gate.asm"
-Route19GateBlocks:
-Route5GateBlocks: INCBIN "maps/Route5Gate.blk"
-
-INCLUDE "data/mapHeaders/Route6Gate.asm"
-INCLUDE "scripts/Route6Gate.asm"
-INCLUDE "data/mapObjects/Route6Gate.asm"
-Route6GateBlocks: INCBIN "maps/Route6Gate.blk"
-
-INCLUDE "data/mapHeaders/Route7Gate.asm"
-INCLUDE "scripts/Route7Gate.asm"
-INCLUDE "data/mapObjects/Route7Gate.asm"
-Route7GateBlocks: INCBIN "maps/Route7Gate.blk"
-
-INCLUDE "data/mapHeaders/Route8Gate.asm"
-INCLUDE "scripts/Route8Gate.asm"
-INCLUDE "data/mapObjects/Route8Gate.asm"
-Route8GateBlocks: INCBIN "maps/Route8Gate.blk"
-
-INCLUDE "data/mapHeaders/PathEntranceRoute8.asm"
-INCLUDE "scripts/PathEntranceRoute8.asm"
-INCLUDE "data/mapObjects/PathEntranceRoute8.asm"
-
-INCLUDE "data/mapHeaders/PowerPlant.asm"
-INCLUDE "scripts/PowerPlant.asm"
-INCLUDE "data/mapObjects/PowerPlant.asm"
-PowerPlantBlocks: INCBIN "maps/PowerPlant.blk"
-
-INCLUDE "data/mapHeaders/DiglettsCaveRoute11.asm"
-INCLUDE "scripts/DiglettsCaveRoute11.asm"
-INCLUDE "data/mapObjects/DiglettsCaveRoute11.asm"
-
-INCLUDE "data/mapHeaders/Route16House.asm"
-INCLUDE "scripts/Route16House.asm"
-INCLUDE "data/mapObjects/Route16House.asm"
-
-INCLUDE "data/mapHeaders/Route22Gate.asm"
-INCLUDE "scripts/Route22Gate.asm"
-INCLUDE "data/mapObjects/Route22Gate.asm"
-Route22GateBlocks: INCBIN "maps/Route22Gate.blk"
-
-INCLUDE "data/mapHeaders/BillsHouse.asm"
-INCLUDE "scripts/BillsHouse.asm"
-INCLUDE "data/mapObjects/BillsHouse.asm"
-BillsHouseBlocks: INCBIN "maps/BillsHouse.blk"
-
-INCLUDE "engine/menu/oaks_pc.asm"
-
-INCLUDE "engine/hidden_object_functions7.asm"
-
-
-SECTION "Pics 1", ROMX, BANK[PICS_1]
-
-BulbasaurPicFront::   INCBIN "pic/bmon/bulbasaur.pic"
-BulbasaurPicBack::    INCBIN "pic/monback/bulbasaurb.pic"
-IvysaurPicFront::     INCBIN "pic/bmon/ivysaur.pic"
-IvysaurPicBack::      INCBIN "pic/monback/ivysaurb.pic"
-VenusaurPicFront::    INCBIN "pic/bmon/venusaur.pic"
-VenusaurPicBack::     INCBIN "pic/monback/venusaurb.pic"
-CharmanderPicFront::  INCBIN "pic/bmon/charmander.pic"
-CharmanderPicBack::   INCBIN "pic/monback/charmanderb.pic"
-CharmeleonPicFront::  INCBIN "pic/bmon/charmeleon.pic"
-CharmeleonPicBack::   INCBIN "pic/monback/charmeleonb.pic"
-CharizardPicFront::   INCBIN "pic/bmon/charizard.pic"
-CharizardPicBack::    INCBIN "pic/monback/charizardb.pic"
-SquirtlePicFront::    INCBIN "pic/bmon/squirtle.pic"
-SquirtlePicBack::     INCBIN "pic/monback/squirtleb.pic"
-WartortlePicFront::   INCBIN "pic/bmon/wartortle.pic"
-WartortlePicBack::    INCBIN "pic/monback/wartortleb.pic"
-BlastoisePicFront::   INCBIN "pic/bmon/blastoise.pic"
-BlastoisePicBack::    INCBIN "pic/monback/blastoiseb.pic"
-CaterpiePicFront::    INCBIN "pic/bmon/caterpie.pic"
-CaterpiePicBack::     INCBIN "pic/monback/caterpieb.pic"
-MetapodPicFront::     INCBIN "pic/bmon/metapod.pic"
-MetapodPicBack::      INCBIN "pic/monback/metapodb.pic"
-ButterfreePicFront::  INCBIN "pic/bmon/butterfree.pic"
-ButterfreePicBack::   INCBIN "pic/monback/butterfreeb.pic"
-WeedlePicFront::      INCBIN "pic/bmon/weedle.pic"
-WeedlePicBack::       INCBIN "pic/monback/weedleb.pic"
-KakunaPicFront::      INCBIN "pic/bmon/kakuna.pic"
-KakunaPicBack::       INCBIN "pic/monback/kakunab.pic"
-BeedrillPicFront::    INCBIN "pic/bmon/beedrill.pic"
-BeedrillPicBack::     INCBIN "pic/monback/beedrillb.pic"
-PidgeyPicFront::      INCBIN "pic/bmon/pidgey.pic"
-PidgeyPicBack::       INCBIN "pic/monback/pidgeyb.pic"
-PidgeottoPicFront::   INCBIN "pic/bmon/pidgeotto.pic"
-PidgeottoPicBack::    INCBIN "pic/monback/pidgeottob.pic"
-PidgeotPicFront::     INCBIN "pic/bmon/pidgeot.pic"
-PidgeotPicBack::      INCBIN "pic/monback/pidgeotb.pic"
-RattataPicFront::     INCBIN "pic/bmon/rattata.pic"
-RattataPicBack::      INCBIN "pic/monback/rattatab.pic"
-RaticatePicFront::    INCBIN "pic/bmon/raticate.pic"
-RaticatePicBack::     INCBIN "pic/monback/raticateb.pic"
-SpearowPicFront::     INCBIN "pic/bmon/spearow.pic"
-SpearowPicBack::      INCBIN "pic/monback/spearowb.pic"
-FearowPicFront::      INCBIN "pic/bmon/fearow.pic"
-FearowPicBack::       INCBIN "pic/monback/fearowb.pic"
-EkansPicFront::       INCBIN "pic/bmon/ekans.pic"
-EkansPicBack::        INCBIN "pic/monback/ekansb.pic"
-ArbokPicFront::       INCBIN "pic/bmon/arbok.pic"
-ArbokPicBack::        INCBIN "pic/monback/arbokb.pic"
-PikachuPicFront::     INCBIN "pic/bmon/pikachu.pic"
-PikachuPicBack::      INCBIN "pic/monback/pikachub.pic"
-
-
-
-SECTION "Battle (bank 9)", ROMX[$7d6b], BANK[$9]
-INCLUDE "engine/battle/print_type.asm"
-INCLUDE "engine/battle/moveEffects/focus_energy_effect.asm"
-
-
-SECTION "Pics 2", ROMX, BANK[PICS_2]
-
-RaichuPicFront::      INCBIN "pic/bmon/raichu.pic"
-RaichuPicBack::       INCBIN "pic/monback/raichub.pic"
-SandshrewPicFront::   INCBIN "pic/bmon/sandshrew.pic"
-SandshrewPicBack::    INCBIN "pic/monback/sandshrewb.pic"
-SandslashPicFront::   INCBIN "pic/bmon/sandslash.pic"
-SandslashPicBack::    INCBIN "pic/monback/sandslashb.pic"
-NidoranFPicFront::    INCBIN "pic/bmon/nidoranf.pic"
-NidoranFPicBack::     INCBIN "pic/monback/nidoranfb.pic"
-NidorinaPicFront::    INCBIN "pic/bmon/nidorina.pic"
-NidorinaPicBack::     INCBIN "pic/monback/nidorinab.pic"
-NidoqueenPicFront::   INCBIN "pic/bmon/nidoqueen.pic"
-NidoqueenPicBack::    INCBIN "pic/monback/nidoqueenb.pic"
-NidoranMPicFront::    INCBIN "pic/bmon/nidoranm.pic"
-NidoranMPicBack::     INCBIN "pic/monback/nidoranmb.pic"
-NidorinoPicFront::    INCBIN "pic/bmon/nidorino.pic"
-NidorinoPicBack::     INCBIN "pic/monback/nidorinob.pic"
-NidokingPicFront::    INCBIN "pic/bmon/nidoking.pic"
-NidokingPicBack::     INCBIN "pic/monback/nidokingb.pic"
-ClefairyPicFront::    INCBIN "pic/bmon/clefairy.pic"
-ClefairyPicBack::     INCBIN "pic/monback/clefairyb.pic"
-ClefablePicFront::    INCBIN "pic/bmon/clefable.pic"
-ClefablePicBack::     INCBIN "pic/monback/clefableb.pic"
-VulpixPicFront::      INCBIN "pic/bmon/vulpix.pic"
-VulpixPicBack::       INCBIN "pic/monback/vulpixb.pic"
-NinetalesPicFront::   INCBIN "pic/bmon/ninetales.pic"
-NinetalesPicBack::    INCBIN "pic/monback/ninetalesb.pic"
-JigglypuffPicFront::  INCBIN "pic/bmon/jigglypuff.pic"
-JigglypuffPicBack::   INCBIN "pic/monback/jigglypuffb.pic"
-WigglytuffPicFront::  INCBIN "pic/bmon/wigglytuff.pic"
-WigglytuffPicBack::   INCBIN "pic/monback/wigglytuffb.pic"
-ZubatPicFront::       INCBIN "pic/bmon/zubat.pic"
-ZubatPicBack::        INCBIN "pic/monback/zubatb.pic"
-GolbatPicFront::      INCBIN "pic/bmon/golbat.pic"
-GolbatPicBack::       INCBIN "pic/monback/golbatb.pic"
-OddishPicFront::      INCBIN "pic/bmon/oddish.pic"
-OddishPicBack::       INCBIN "pic/monback/oddishb.pic"
-GloomPicFront::       INCBIN "pic/bmon/gloom.pic"
-GloomPicBack::        INCBIN "pic/monback/gloomb.pic"
-VileplumePicFront::   INCBIN "pic/bmon/vileplume.pic"
-VileplumePicBack::    INCBIN "pic/monback/vileplumeb.pic"
-ParasPicFront::       INCBIN "pic/bmon/paras.pic"
-ParasPicBack::        INCBIN "pic/monback/parasb.pic"
-ParasectPicFront::    INCBIN "pic/bmon/parasect.pic"
-ParasectPicBack::     INCBIN "pic/monback/parasectb.pic"
-VenonatPicFront::     INCBIN "pic/bmon/venonat.pic"
-VenonatPicBack::      INCBIN "pic/monback/venonatb.pic"
-VenomothPicFront::    INCBIN "pic/bmon/venomoth.pic"
-VenomothPicBack::     INCBIN "pic/monback/venomothb.pic"
-DiglettPicFront::     INCBIN "pic/bmon/diglett.pic"
-DiglettPicBack::      INCBIN "pic/monback/diglettb.pic"
-
-
-
-SECTION "Battle (bank A)", ROMX[$7ea9], BANK[$A]
-INCLUDE "engine/battle/moveEffects/leech_seed_effect.asm"
-
-
-SECTION "Pics 3", ROMX, BANK[PICS_3]
-
-DugtrioPicFront::     INCBIN "pic/bmon/dugtrio.pic"
-DugtrioPicBack::      INCBIN "pic/monback/dugtriob.pic"
-MeowthPicFront::      INCBIN "pic/bmon/meowth.pic"
-MeowthPicBack::       INCBIN "pic/monback/meowthb.pic"
-PersianPicFront::     INCBIN "pic/bmon/persian.pic"
-PersianPicBack::      INCBIN "pic/monback/persianb.pic"
-PsyduckPicFront::     INCBIN "pic/bmon/psyduck.pic"
-PsyduckPicBack::      INCBIN "pic/monback/psyduckb.pic"
-GolduckPicFront::     INCBIN "pic/bmon/golduck.pic"
-GolduckPicBack::      INCBIN "pic/monback/golduckb.pic"
-MankeyPicFront::      INCBIN "pic/bmon/mankey.pic"
-MankeyPicBack::       INCBIN "pic/monback/mankeyb.pic"
-PrimeapePicFront::    INCBIN "pic/bmon/primeape.pic"
-PrimeapePicBack::     INCBIN "pic/monback/primeapeb.pic"
-GrowlithePicFront::   INCBIN "pic/bmon/growlithe.pic"
-GrowlithePicBack::    INCBIN "pic/monback/growlitheb.pic"
-ArcaninePicFront::    INCBIN "pic/bmon/arcanine.pic"
-ArcaninePicBack::     INCBIN "pic/monback/arcanineb.pic"
-PoliwagPicFront::     INCBIN "pic/bmon/poliwag.pic"
-PoliwagPicBack::      INCBIN "pic/monback/poliwagb.pic"
-PoliwhirlPicFront::   INCBIN "pic/bmon/poliwhirl.pic"
-PoliwhirlPicBack::    INCBIN "pic/monback/poliwhirlb.pic"
-PoliwrathPicFront::   INCBIN "pic/bmon/poliwrath.pic"
-PoliwrathPicBack::    INCBIN "pic/monback/poliwrathb.pic"
-AbraPicFront::        INCBIN "pic/bmon/abra.pic"
-AbraPicBack::         INCBIN "pic/monback/abrab.pic"
-KadabraPicFront::     INCBIN "pic/bmon/kadabra.pic"
-KadabraPicBack::      INCBIN "pic/monback/kadabrab.pic"
-AlakazamPicFront::    INCBIN "pic/bmon/alakazam.pic"
-AlakazamPicBack::     INCBIN "pic/monback/alakazamb.pic"
-MachopPicFront::      INCBIN "pic/bmon/machop.pic"
-MachopPicBack::       INCBIN "pic/monback/machopb.pic"
-MachokePicFront::     INCBIN "pic/bmon/machoke.pic"
-MachokePicBack::      INCBIN "pic/monback/machokeb.pic"
-MachampPicFront::     INCBIN "pic/bmon/machamp.pic"
-MachampPicBack::      INCBIN "pic/monback/machampb.pic"
-BellsproutPicFront::  INCBIN "pic/bmon/bellsprout.pic"
-BellsproutPicBack::   INCBIN "pic/monback/bellsproutb.pic"
-WeepinbellPicFront::  INCBIN "pic/bmon/weepinbell.pic"
-WeepinbellPicBack::   INCBIN "pic/monback/weepinbellb.pic"
-VictreebelPicFront::  INCBIN "pic/bmon/victreebel.pic"
-VictreebelPicBack::   INCBIN "pic/monback/victreebelb.pic"
-TentacoolPicFront::   INCBIN "pic/bmon/tentacool.pic"
-TentacoolPicBack::    INCBIN "pic/monback/tentacoolb.pic"
-TentacruelPicFront::  INCBIN "pic/bmon/tentacruel.pic"
-TentacruelPicBack::   INCBIN "pic/monback/tentacruelb.pic"
-
-
-
-SECTION "Battle (bank B)", ROMX, BANK[$B]
-
-INCLUDE "engine/battle/display_effectiveness.asm"
-
-TrainerInfoTextBoxTileGraphics:  INCBIN "gfx/trainer_info.2bpp"
-TrainerInfoTextBoxTileGraphicsEnd:
-BlankLeaderNames:                INCBIN "gfx/blank_leader_names.2bpp"
-CircleTile:                      INCBIN "gfx/circle_tile.2bpp"
-BadgeNumbersTileGraphics:        INCBIN "gfx/badge_numbers.2bpp"
-
-INCLUDE "engine/items/tmhm.asm"
-INCLUDE "engine/battle/scale_sprites.asm"
-INCLUDE "engine/battle/moveEffects/pay_day_effect.asm"
-INCLUDE "engine/game_corner_slots2.asm"
-
-
-SECTION "Pics 4", ROMX, BANK[PICS_4]
-
-GeodudePicFront::     INCBIN "pic/bmon/geodude.pic"
-GeodudePicBack::      INCBIN "pic/monback/geodudeb.pic"
-GravelerPicFront::   INCBIN "pic/bmon/graveler.pic"
-GravelerPicBack::    INCBIN "pic/monback/gravelerb.pic"
-GolemPicFront::      INCBIN "pic/bmon/golem.pic"
-GolemPicBack::       INCBIN "pic/monback/golemb.pic"
-PonytaPicFront::     INCBIN "pic/bmon/ponyta.pic"
-PonytaPicBack::      INCBIN "pic/monback/ponytab.pic"
-RapidashPicFront::   INCBIN "pic/bmon/rapidash.pic"
-RapidashPicBack::    INCBIN "pic/monback/rapidashb.pic"
-SlowpokePicFront::   INCBIN "pic/bmon/slowpoke.pic"
-SlowpokePicBack::    INCBIN "pic/monback/slowpokeb.pic"
-SlowbroPicFront::    INCBIN "pic/bmon/slowbro.pic"
-SlowbroPicBack::     INCBIN "pic/monback/slowbrob.pic"
-MagnemitePicFront::  INCBIN "pic/bmon/magnemite.pic"
-MagnemitePicBack::   INCBIN "pic/monback/magnemiteb.pic"
-MagnetonPicFront::   INCBIN "pic/bmon/magneton.pic"
-MagnetonPicBack::    INCBIN "pic/monback/magnetonb.pic"
-FarfetchdPicFront::  INCBIN "pic/bmon/farfetchd.pic"
-FarfetchdPicBack::   INCBIN "pic/monback/farfetchdb.pic"
-DoduoPicFront::      INCBIN "pic/bmon/doduo.pic"
-DoduoPicBack::       INCBIN "pic/monback/doduob.pic"
-DodrioPicFront::     INCBIN "pic/bmon/dodrio.pic"
-DodrioPicBack::      INCBIN "pic/monback/dodriob.pic"
-SeelPicFront::       INCBIN "pic/bmon/seel.pic"
-SeelPicBack::        INCBIN "pic/monback/seelb.pic"
-DewgongPicFront::    INCBIN "pic/bmon/dewgong.pic"
-DewgongPicBack::     INCBIN "pic/monback/dewgongb.pic"
-GrimerPicFront::     INCBIN "pic/bmon/grimer.pic"
-GrimerPicBack::      INCBIN "pic/monback/grimerb.pic"
-MukPicFront::        INCBIN "pic/bmon/muk.pic"
-MukPicBack::         INCBIN "pic/monback/mukb.pic"
-ShellderPicFront::   INCBIN "pic/bmon/shellder.pic"
-ShellderPicBack::    INCBIN "pic/monback/shellderb.pic"
-CloysterPicFront::   INCBIN "pic/bmon/cloyster.pic"
-CloysterPicBack::    INCBIN "pic/monback/cloysterb.pic"
-GastlyPicFront::     INCBIN "pic/bmon/gastly.pic"
-GastlyPicBack::      INCBIN "pic/monback/gastlyb.pic"
-HaunterPicFront::    INCBIN "pic/bmon/haunter.pic"
-HaunterPicBack::     INCBIN "pic/monback/haunterb.pic"
-GengarPicFront::     INCBIN "pic/bmon/gengar.pic"
-GengarPicBack::      INCBIN "pic/monback/gengarb.pic"
-OnixPicFront::       INCBIN "pic/bmon/onix.pic"
-OnixPicBack::        INCBIN "pic/monback/onixb.pic"
-DrowzeePicFront::    INCBIN "pic/bmon/drowzee.pic"
-DrowzeePicBack::     INCBIN "pic/monback/drowzeeb.pic"
-HypnoPicFront::      INCBIN "pic/bmon/hypno.pic"
-HypnoPicBack::       INCBIN "pic/monback/hypnob.pic"
-
-
-
-SECTION "Battle (bank C)", ROMX[$7f2b], BANK[$C]
-INCLUDE "engine/battle/moveEffects/mist_effect.asm"
-INCLUDE "engine/battle/moveEffects/one_hit_ko_effect.asm"
-
-
-SECTION "Pics 5", ROMX, BANK[PICS_5]
-
-KrabbyPicFront::     INCBIN "pic/bmon/krabby.pic"
-KrabbyPicBack::      INCBIN "pic/monback/krabbyb.pic"
-KinglerPicFront::      INCBIN "pic/bmon/kingler.pic"
-KinglerPicBack::       INCBIN "pic/monback/kinglerb.pic"
-VoltorbPicFront::      INCBIN "pic/bmon/voltorb.pic"
-VoltorbPicBack::       INCBIN "pic/monback/voltorbb.pic"
-ElectrodePicFront::    INCBIN "pic/bmon/electrode.pic"
-ElectrodePicBack::     INCBIN "pic/monback/electrodeb.pic"
-ExeggcutePicFront::    INCBIN "pic/bmon/exeggcute.pic"
-ExeggcutePicBack::     INCBIN "pic/monback/exeggcuteb.pic"
-ExeggutorPicFront::    INCBIN "pic/bmon/exeggutor.pic"
-ExeggutorPicBack::     INCBIN "pic/monback/exeggutorb.pic"
-CubonePicFront::       INCBIN "pic/bmon/cubone.pic"
-CubonePicBack::        INCBIN "pic/monback/cuboneb.pic"
-MarowakPicFront::      INCBIN "pic/bmon/marowak.pic"
-MarowakPicBack::       INCBIN "pic/monback/marowakb.pic"
-HitmonleePicFront::    INCBIN "pic/bmon/hitmonlee.pic"
-HitmonleePicBack::     INCBIN "pic/monback/hitmonleeb.pic"
-HitmonchanPicFront::   INCBIN "pic/bmon/hitmonchan.pic"
-HitmonchanPicBack::    INCBIN "pic/monback/hitmonchanb.pic"
-LickitungPicFront::    INCBIN "pic/bmon/lickitung.pic"
-LickitungPicBack::     INCBIN "pic/monback/lickitungb.pic"
-KoffingPicFront::      INCBIN "pic/bmon/koffing.pic"
-KoffingPicBack::       INCBIN "pic/monback/koffingb.pic"
-WeezingPicFront::      INCBIN "pic/bmon/weezing.pic"
-WeezingPicBack::       INCBIN "pic/monback/weezingb.pic"
-RhyhornPicFront::      INCBIN "pic/bmon/rhyhorn.pic"
-RhyhornPicBack::       INCBIN "pic/monback/rhyhornb.pic"
-RhydonPicFront::       INCBIN "pic/bmon/rhydon.pic"
-RhydonPicBack::        INCBIN "pic/monback/rhydonb.pic"
-ChanseyPicFront::      INCBIN "pic/bmon/chansey.pic"
-ChanseyPicBack::       INCBIN "pic/monback/chanseyb.pic"
-TangelaPicFront::      INCBIN "pic/bmon/tangela.pic"
-TangelaPicBack::       INCBIN "pic/monback/tangelab.pic"
-KangaskhanPicFront::   INCBIN "pic/bmon/kangaskhan.pic"
-KangaskhanPicBack::    INCBIN "pic/monback/kangaskhanb.pic"
-FossilKabutopsPic::    INCBIN "pic/bmon/fossilkabutops.pic"
-FossilAerodactylPic::  INCBIN "pic/bmon/fossilaerodactyl.pic"
-GhostPic::             INCBIN "pic/other/ghost.pic"
-
-
-SECTION "Battle (bank D)", ROMX, BANK[$D]
-
-INCLUDE "engine/titlescreen2.asm"
-INCLUDE "engine/battle/link_battle_versus_text.asm"
-INCLUDE "engine/slot_machine.asm"
-INCLUDE "engine/overworld/pewter_guys.asm"
-INCLUDE "engine/multiply_divide.asm"
-INCLUDE "engine/game_corner_slots.asm"
-
-
-SECTION "bankE",ROMX,BANK[$E]
-
-INCLUDE "engine/battle/unused_stats_functions.asm"
-INCLUDE "engine/battle/scroll_draw_trainer_pic.asm"
-INCLUDE "engine/battle/trainer_ai.asm"
-INCLUDE "engine/battle/trainer_pic_money_pointers.asm"
-INCLUDE "text/trainer_names.asm"
-INCLUDE "engine/battle/bank_e_misc.asm"
-INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
-INCLUDE "engine/battle/moveEffects/rage_effect.asm"
-INCLUDE "engine/battle/moveEffects/heal_effect.asm"
-INCLUDE "engine/battle/moveEffects/transform_effect.asm"
-INCLUDE "engine/battle/moveEffects/reflect_light_screen_effect.asm"
-INCLUDE "color/draw_hud_pokeball_gfx.asm"
-
-INCLUDE "engine/evos_moves.asm"
-
-
-SECTION "bankF",ROMX,BANK[$F]
-
-INCLUDE "engine/battle/core.asm"
-
-	
-SECTION "bank10",ROMX,BANK[$10]
-
-INCLUDE "engine/menu/pokedex.asm"
-INCLUDE "engine/trade.asm"
-INCLUDE "engine/intro.asm"
-INCLUDE "engine/trade2.asm"
-INCLUDE "engine/battle/ai_read_move.asm"
-INCLUDE "data/moves.asm"
-INCLUDE "data/cries.asm"
-INCLUDE "engine/overworld/berrytree.asm"
-
-; Hooks for color hack
-INCLUDE "color/trade.asm"
-
-SECTION "bank11",ROMX,BANK[$11]
-
-INCLUDE "data/mapHeaders/LavenderTown.asm"
-INCLUDE "data/mapObjects/LavenderTown.asm"
-LavenderTownBlocks: INCBIN "maps/LavenderTown.blk"
-
-SafariZoneRestHouse1Blocks:
-SafariZoneRestHouse2Blocks:
-SafariZoneRestHouse3Blocks:
-SafariZoneRestHouse4Blocks: INCBIN "maps/SafariZoneRestHouse1.blk"
-
-INCLUDE "scripts/LavenderTown.asm"
-
-INCLUDE "engine/pokedex_rating.asm"
-
-INCLUDE "data/mapHeaders/Mansion1.asm"
-INCLUDE "scripts/Mansion1.asm"
-INCLUDE "data/mapObjects/Mansion1.asm"
-Mansion1Blocks: INCBIN "maps/Mansion1.blk"
-
-INCLUDE "data/mapHeaders/RockTunnel1.asm"
-INCLUDE "scripts/RockTunnel1.asm"
-INCLUDE "data/mapObjects/RockTunnel1.asm"
-RockTunnel1Blocks: INCBIN "maps/RockTunnel1.blk"
-
-INCLUDE "data/mapHeaders/SeafoamIslands1.asm"
-INCLUDE "scripts/SeafoamIslands1.asm"
-INCLUDE "data/mapObjects/SeafoamIslands1.asm"
-SeafoamIslands1Blocks: INCBIN "maps/SeafoamIslands1.blk"
-
-INCLUDE "data/mapHeaders/SSAnne3.asm"
-INCLUDE "scripts/SSAnne3.asm"
-INCLUDE "data/mapObjects/SSAnne3.asm"
-SSAnne3Blocks: INCBIN "maps/SSAnne3.blk"
-
-INCLUDE "data/mapHeaders/VictoryRoad3.asm"
-INCLUDE "scripts/VictoryRoad3.asm"
-INCLUDE "data/mapObjects/VictoryRoad3.asm"
-VictoryRoad3Blocks: INCBIN "maps/VictoryRoad3.blk"
-
-INCLUDE "data/mapHeaders/RocketHideout1.asm"
-INCLUDE "scripts/RocketHideout1.asm"
-INCLUDE "data/mapObjects/RocketHideout1.asm"
-RocketHideout1Blocks: INCBIN "maps/RocketHideout1.blk"
-
-INCLUDE "data/mapHeaders/RocketHideout2.asm"
-INCLUDE "scripts/RocketHideout2.asm"
-INCLUDE "data/mapObjects/RocketHideout2.asm"
-RocketHideout2Blocks: INCBIN "maps/RocketHideout2.blk"
-
-INCLUDE "data/mapHeaders/RocketHideout3.asm"
-INCLUDE "scripts/RocketHideout3.asm"
-INCLUDE "data/mapObjects/RocketHideout3.asm"
-RocketHideout3Blocks: INCBIN "maps/RocketHideout3.blk"
-
-INCLUDE "data/mapHeaders/RocketHideout4.asm"
-INCLUDE "scripts/RocketHideout4.asm"
-INCLUDE "data/mapObjects/RocketHideout4.asm"
-RocketHideout4Blocks: INCBIN "maps/RocketHideout4.blk"
-
-INCLUDE "data/mapHeaders/RocketHideoutElevator.asm"
-INCLUDE "scripts/RocketHideoutElevator.asm"
-INCLUDE "data/mapObjects/RocketHideoutElevator.asm"
-RocketHideoutElevatorBlocks: INCBIN "maps/RocketHideoutElevator.blk"
-
-INCLUDE "data/mapHeaders/SilphCoElevator.asm"
-INCLUDE "scripts/SilphCoElevator.asm"
-INCLUDE "data/mapObjects/SilphCoElevator.asm"
-SilphCoElevatorBlocks: INCBIN "maps/SilphCoElevator.blk"
-
-INCLUDE "data/mapHeaders/SafariZoneEast.asm"
-INCLUDE "scripts/SafariZoneEast.asm"
-INCLUDE "data/mapObjects/SafariZoneEast.asm"
-SafariZoneEastBlocks: INCBIN "maps/SafariZoneEast.blk"
-
-INCLUDE "data/mapHeaders/SafariZoneNorth.asm"
-INCLUDE "scripts/SafariZoneNorth.asm"
-INCLUDE "data/mapObjects/SafariZoneNorth.asm"
-SafariZoneNorthBlocks: INCBIN "maps/SafariZoneNorth.blk"
-
-INCLUDE "data/mapHeaders/SafariZoneCenter.asm"
-INCLUDE "scripts/SafariZoneCenter.asm"
-INCLUDE "data/mapObjects/SafariZoneCenter.asm"
-SafariZoneCenterBlocks: INCBIN "maps/SafariZoneCenter.blk"
-
-INCLUDE "data/mapHeaders/SafariZoneRestHouse1.asm"
-INCLUDE "scripts/SafariZoneRestHouse1.asm"
-INCLUDE "data/mapObjects/SafariZoneRestHouse1.asm"
-
-INCLUDE "data/mapHeaders/SafariZoneRestHouse2.asm"
-INCLUDE "scripts/SafariZoneRestHouse2.asm"
-INCLUDE "data/mapObjects/SafariZoneRestHouse2.asm"
-
-INCLUDE "data/mapHeaders/SafariZoneRestHouse3.asm"
-INCLUDE "scripts/SafariZoneRestHouse3.asm"
-INCLUDE "data/mapObjects/SafariZoneRestHouse3.asm"
-
-INCLUDE "data/mapHeaders/SafariZoneRestHouse4.asm"
-INCLUDE "scripts/SafariZoneRestHouse4.asm"
-INCLUDE "data/mapObjects/SafariZoneRestHouse4.asm"
-
-INCLUDE "data/mapHeaders/UnknownDungeon2.asm"
-INCLUDE "scripts/UnknownDungeon2.asm"
-INCLUDE "data/mapObjects/UnknownDungeon2.asm"
-UnknownDungeon2Blocks: INCBIN "maps/UnknownDungeon2.blk"
-
-INCLUDE "data/mapHeaders/UnknownDungeon3.asm"
-INCLUDE "scripts/UnknownDungeon3.asm"
-INCLUDE "data/mapObjects/UnknownDungeon3.asm"
-UnknownDungeon3Blocks: INCBIN "maps/UnknownDungeon3.blk"
-
-INCLUDE "data/mapHeaders/RockTunnel2.asm"
-INCLUDE "scripts/RockTunnel2.asm"
-INCLUDE "data/mapObjects/RockTunnel2.asm"
-RockTunnel2Blocks: INCBIN "maps/RockTunnel2.blk"
-
-INCLUDE "data/mapHeaders/SeafoamIslands2.asm"
-INCLUDE "scripts/SeafoamIslands2.asm"
-INCLUDE "data/mapObjects/SeafoamIslands2.asm"
-SeafoamIslands2Blocks: INCBIN "maps/SeafoamIslands2.blk"
-
-INCLUDE "data/mapHeaders/SeafoamIslands3.asm"
-INCLUDE "scripts/SeafoamIslands3.asm"
-INCLUDE "data/mapObjects/SeafoamIslands3.asm"
-SeafoamIslands3Blocks: INCBIN "maps/SeafoamIslands3.blk"
-
-INCLUDE "data/mapHeaders/SeafoamIslands4.asm"
-INCLUDE "scripts/SeafoamIslands4.asm"
-INCLUDE "data/mapObjects/SeafoamIslands4.asm"
-SeafoamIslands4Blocks: INCBIN "maps/SeafoamIslands4.blk"
-
-INCLUDE "data/mapHeaders/SeafoamIslands5.asm"
-INCLUDE "scripts/SeafoamIslands5.asm"
-INCLUDE "data/mapObjects/SeafoamIslands5.asm"
-SeafoamIslands5Blocks: INCBIN "maps/SeafoamIslands5.blk"
-
-INCLUDE "engine/overworld/hidden_objects.asm"
-
-
-SECTION "bank12",ROMX,BANK[$12]
-
-INCLUDE "data/mapHeaders/Route7.asm"
-INCLUDE "data/mapObjects/Route7.asm"
-Route7Blocks: INCBIN "maps/Route7.blk"
-
-Route18GateBlocks:
-Route15GateBlocks:
-Route11GateBlocks: INCBIN "maps/Route11Gate1F.blk"
-
-Route18GateUpstairsBlocks:
-Route16GateUpstairsBlocks:
-Route12GateUpstairsBlocks:
-Route15GateUpstairsBlocks:
-Route11GateUpstairsBlocks: INCBIN "maps/Route11Gate2F.blk"
-
-INCLUDE "engine/predefs12.asm"
-
-INCLUDE "scripts/Route7.asm"
-
-INCLUDE "data/mapHeaders/RedsHouse1F.asm"
-INCLUDE "scripts/RedsHouse1F.asm"
-INCLUDE "data/mapObjects/RedsHouse1F.asm"
-RedsHouse1FBlocks: INCBIN "maps/RedsHouse1F.blk"
-
-INCLUDE "data/mapHeaders/CeladonMart3.asm"
-INCLUDE "scripts/CeladonMart3.asm"
-INCLUDE "data/mapObjects/CeladonMart3.asm"
-CeladonMart3Blocks: INCBIN "maps/CeladonMart3.blk"
-
-INCLUDE "data/mapHeaders/CeladonMart4.asm"
-INCLUDE "scripts/CeladonMart4.asm"
-INCLUDE "data/mapObjects/CeladonMart4.asm"
-INCLUDE "data/martInventories/celadon_4.asm"
-CeladonMart4Blocks: INCBIN "maps/CeladonMart4.blk"
-
-INCLUDE "data/mapHeaders/CeladonMartRoof.asm"
-INCLUDE "scripts/CeladonMartRoof.asm"
-INCLUDE "data/mapObjects/CeladonMartRoof.asm"
-CeladonMartRoofBlocks: INCBIN "maps/CeladonMartRoof.blk"
-
-INCLUDE "data/mapHeaders/CeladonMartElevator.asm"
-INCLUDE "scripts/CeladonMartElevator.asm"
-INCLUDE "data/mapObjects/CeladonMartElevator.asm"
-CeladonMartElevatorBlocks: INCBIN "maps/CeladonMartElevator.blk"
-
-INCLUDE "data/mapHeaders/CeladonMansion1.asm"
-INCLUDE "scripts/CeladonMansion1.asm"
-INCLUDE "data/mapObjects/CeladonMansion1.asm"
-CeladonMansion1Blocks: INCBIN "maps/CeladonMansion1.blk"
-
-INCLUDE "data/mapHeaders/CeladonMansion2.asm"
-INCLUDE "scripts/CeladonMansion2.asm"
-INCLUDE "data/mapObjects/CeladonMansion2.asm"
-CeladonMansion2Blocks: INCBIN "maps/CeladonMansion2.blk"
-
-INCLUDE "data/mapHeaders/CeladonMansion3.asm"
-INCLUDE "scripts/CeladonMansion3.asm"
-INCLUDE "data/mapObjects/CeladonMansion3.asm"
-CeladonMansion3Blocks: INCBIN "maps/CeladonMansion3.blk"
-
-INCLUDE "data/mapHeaders/CeladonMansion4.asm"
-INCLUDE "scripts/CeladonMansion4.asm"
-INCLUDE "data/mapObjects/CeladonMansion4.asm"
-CeladonMansion4Blocks: INCBIN "maps/CeladonMansion4.blk"
-
-INCLUDE "data/mapHeaders/CeladonGym.asm"
-INCLUDE "scripts/CeladonGym.asm"
-INCLUDE "data/mapObjects/CeladonGym.asm"
-CeladonGymBlocks: INCBIN "maps/CeladonGym.blk"
-
-INCLUDE "data/mapHeaders/GameCorner.asm"
-INCLUDE "scripts/GameCorner.asm"
-INCLUDE "data/mapObjects/GameCorner.asm"
-CeladonGameCornerBlocks: INCBIN "maps/GameCorner.blk"
-
-INCLUDE "data/mapHeaders/CeladonMart5.asm"
-INCLUDE "scripts/CeladonMart5.asm"
-INCLUDE "data/mapObjects/CeladonMart5.asm"
-INCLUDE "data/martInventories/celadon_5.asm"
-CeladonMart5Blocks: INCBIN "maps/CeladonMart5.blk"
-
-INCLUDE "data/mapHeaders/CeladonPrizeRoom.asm"
-INCLUDE "scripts/CeladonPrizeRoom.asm"
-INCLUDE "data/mapObjects/CeladonPrizeRoom.asm"
-CeladonPrizeRoomBlocks: INCBIN "maps/CeladonPrizeRoom.blk"
-
-INCLUDE "data/mapHeaders/CeladonDiner.asm"
-INCLUDE "scripts/CeladonDiner.asm"
-INCLUDE "data/mapObjects/CeladonDiner.asm"
-CeladonDinerBlocks: INCBIN "maps/CeladonDiner.blk"
-
-INCLUDE "data/mapHeaders/CeladonHouse.asm"
-INCLUDE "scripts/CeladonHouse.asm"
-INCLUDE "data/mapObjects/CeladonHouse.asm"
-CeladonHouseBlocks: INCBIN "maps/CeladonHouse.blk"
-
-INCLUDE "data/mapHeaders/CeladonHotel.asm"
-INCLUDE "scripts/CeladonHotel.asm"
-INCLUDE "data/mapObjects/CeladonHotel.asm"
-CeladonHotelBlocks: INCBIN "maps/CeladonHotel.blk"
-
-INCLUDE "data/mapHeaders/Route11Gate1F.asm"
-INCLUDE "scripts/Route11Gate1F.asm"
-INCLUDE "data/mapObjects/Route11Gate1F.asm"
-
-INCLUDE "data/mapHeaders/Route11Gate2F.asm"
-INCLUDE "scripts/Route11Gate2F.asm"
-INCLUDE "data/mapObjects/Route11Gate2F.asm"
-
-INCLUDE "data/mapHeaders/Route12Gate1F.asm"
-INCLUDE "scripts/Route12Gate1F.asm"
-INCLUDE "data/mapObjects/Route12Gate1F.asm"
-Route12GateBlocks: INCBIN "maps/Route12Gate1F.blk"
-
-INCLUDE "data/mapHeaders/Route12Gate2F.asm"
-INCLUDE "scripts/Route12Gate2F.asm"
-INCLUDE "data/mapObjects/Route12Gate2F.asm"
-
-INCLUDE "data/mapHeaders/Route15Gate1F.asm"
-INCLUDE "scripts/Route15Gate1F.asm"
-INCLUDE "data/mapObjects/Route15Gate1F.asm"
-
-INCLUDE "data/mapHeaders/Route15Gate2F.asm"
-INCLUDE "scripts/Route15Gate2F.asm"
-INCLUDE "data/mapObjects/Route15Gate2F.asm"
-
-INCLUDE "data/mapHeaders/Route16Gate1F.asm"
-INCLUDE "scripts/Route16Gate1F.asm"
-INCLUDE "data/mapObjects/Route16Gate1F.asm"
-Route16GateBlocks: INCBIN "maps/Route16Gate1F.blk"
-
-INCLUDE "data/mapHeaders/Route16Gate2F.asm"
-INCLUDE "scripts/Route16Gate2F.asm"
-INCLUDE "data/mapObjects/Route16Gate2F.asm"
-
-INCLUDE "data/mapHeaders/Route18Gate1F.asm"
-INCLUDE "scripts/Route18Gate1F.asm"
-INCLUDE "data/mapObjects/Route18Gate1F.asm"
-
-INCLUDE "data/mapHeaders/Route18Gate2F.asm"
-INCLUDE "scripts/Route18Gate2F.asm"
-INCLUDE "data/mapObjects/Route18Gate2F.asm"
-
-INCLUDE "data/mapHeaders/MtMoon1.asm"
-INCLUDE "scripts/MtMoon1.asm"
-INCLUDE "data/mapObjects/MtMoon1.asm"
-MtMoon1Blocks: INCBIN "maps/MtMoon1.blk"
-
-INCLUDE "data/mapHeaders/MtMoon3.asm"
-INCLUDE "scripts/MtMoon3.asm"
-INCLUDE "data/mapObjects/MtMoon3.asm"
-MtMoon3Blocks: INCBIN "maps/MtMoon3.blk"
-
-INCLUDE "data/mapHeaders/SafariZoneWest.asm"
-INCLUDE "scripts/SafariZoneWest.asm"
-INCLUDE "data/mapObjects/SafariZoneWest.asm"
-SafariZoneWestBlocks: INCBIN "maps/SafariZoneWest.blk"
-
-INCLUDE "data/mapHeaders/SafariZoneSecretHouse.asm"
-INCLUDE "scripts/SafariZoneSecretHouse.asm"
-INCLUDE "data/mapObjects/SafariZoneSecretHouse.asm"
-SafariZoneSecretHouseBlocks: INCBIN "maps/SafariZoneSecretHouse.blk"
-
-
-SECTION "bank13",ROMX,BANK[$13]
-
-TrainerPics::
-YoungsterPic::     INCBIN "pic/trainer/youngster.pic"
-BugCatcherPic::    INCBIN "pic/trainer/bugcatcher.pic"
-LassPic::          INCBIN "pic/trainer/lass.pic"
-SailorPic::        INCBIN "pic/trainer/sailor.pic"
-JrTrainerMPic::    INCBIN "pic/trainer/jr.trainerm.pic"
-JrTrainerFPic::    INCBIN "pic/trainer/jr.trainerf.pic"
-PokemaniacPic::    INCBIN "pic/trainer/pokemaniac.pic"
-SuperNerdPic::     INCBIN "pic/trainer/supernerd.pic"
-HikerPic::         INCBIN "pic/trainer/hiker.pic"
-BikerPic::         INCBIN "pic/trainer/biker.pic"
-BurglarPic::       INCBIN "pic/trainer/burglar.pic"
-EngineerPic::      INCBIN "pic/trainer/engineer.pic"
-FisherPic::        INCBIN "pic/trainer/fisher.pic"
-SwimmerPic::       INCBIN "pic/trainer/swimmer.pic"
-CueBallPic::       INCBIN "pic/trainer/cueball.pic"
-GamblerPic::       INCBIN "pic/trainer/gambler.pic"
-BeautyPic::        INCBIN "pic/trainer/beauty.pic"
-PsychicPic::       INCBIN "pic/trainer/psychic.pic"
-RockerPic::        INCBIN "pic/trainer/rocker.pic"
-JugglerPic::       INCBIN "pic/trainer/juggler.pic"
-TamerPic::         INCBIN "pic/trainer/tamer.pic"
-BirdKeeperPic::    INCBIN "pic/trainer/birdkeeper.pic"
-BlackbeltPic::     INCBIN "pic/trainer/blackbelt.pic"
-Rival1Pic::        INCBIN "pic/trainer/rival1.pic"
-SwimmerFPic::      INCBIN "pic/trainer/swimmerf.pic"
-RocketFPic::       INCBIN "pic/trainer/rocketf.pic"
-ScientistPic::     INCBIN "pic/trainer/scientist.pic"
-GiovanniPic::      INCBIN "pic/trainer/giovanni.pic"
-RocketPic::        INCBIN "pic/trainer/rocket.pic"
-CooltrainerMPic::  INCBIN "pic/trainer/cooltrainerm.pic"
-CooltrainerFPic::  INCBIN "pic/trainer/cooltrainerf.pic"
-BrunoPic::         INCBIN "pic/trainer/bruno.pic"
-BrockPic::         INCBIN "pic/trainer/brock.pic"
-MistyPic::         INCBIN "pic/trainer/misty.pic"
-LtSurgePic::       INCBIN "pic/trainer/lt.surge.pic"
-ErikaPic::         INCBIN "pic/trainer/erika.pic"
-KogaPic::          INCBIN "pic/trainer/koga.pic"
-BlainePic::        INCBIN "pic/trainer/blaine.pic"
-SabrinaPic::       INCBIN "pic/trainer/sabrina.pic"
-GentlemanPic::     INCBIN "pic/trainer/gentleman.pic"
-Rival2Pic::        INCBIN "pic/trainer/rival2.pic"
-Rival3Pic::        INCBIN "pic/trainer/rival3.pic"
-LoreleiPic::       INCBIN "pic/trainer/lorelei.pic"
-ChannelerPic::     INCBIN "pic/trainer/channeler.pic"
-AgathaPic::        INCBIN "pic/trainer/agatha.pic"
-LancePic::         INCBIN "pic/trainer/lance.pic"
-YoungCouplePic::   INCBIN "pic/trainer/young_couple.pic"
-FlanneryPic::      INCBIN "pic/trainer/flannery.pic"
-
-INCLUDE "data/mapHeaders/TradeCenter.asm"
-INCLUDE "scripts/TradeCenter.asm"
-INCLUDE "data/mapObjects/TradeCenter.asm"
-TradeCenterBlocks: INCBIN "maps/TradeCenter.blk"
-
-INCLUDE "data/mapHeaders/Colosseum.asm"
-INCLUDE "scripts/Colosseum.asm"
-INCLUDE "data/mapObjects/Colosseum.asm"
-ColosseumBlocks: INCBIN "maps/Colosseum.blk"
-
-INCLUDE "engine/give_pokemon.asm"
-
-INCLUDE "engine/predefs.asm"
-
-
-SECTION "bank14",ROMX,BANK[$14]
-
-INCLUDE "data/mapHeaders/Route22.asm"
-INCLUDE "data/mapObjects/Route22.asm"
-Route22Blocks: INCBIN "maps/Route22.blk"
-
-INCLUDE "data/mapHeaders/Route20.asm"
-INCLUDE "data/mapObjects/Route20.asm"
-Route20Blocks: INCBIN "maps/Route20.blk"
-
-INCLUDE "data/mapHeaders/Route23.asm"
-INCLUDE "data/mapObjects/Route23.asm"
-Route23Blocks: INCBIN "maps/Route23.blk"
-
-INCLUDE "data/mapHeaders/Route24.asm"
-INCLUDE "data/mapObjects/Route24.asm"
-Route24Blocks: INCBIN "maps/Route24.blk"
-
-INCLUDE "data/mapHeaders/Route25.asm"
-INCLUDE "data/mapObjects/Route25.asm"
-Route25Blocks: INCBIN "maps/Route25.blk"
-
-INCLUDE "data/mapHeaders/IndigoPlateau.asm"
-INCLUDE "scripts/IndigoPlateau.asm"
-INCLUDE "data/mapObjects/IndigoPlateau.asm"
-IndigoPlateauBlocks: INCBIN "maps/IndigoPlateau.blk"
-
-INCLUDE "data/mapHeaders/SaffronCity.asm"
-INCLUDE "data/mapObjects/SaffronCity.asm"
-SaffronCityBlocks: INCBIN "maps/SaffronCity.blk"
-INCLUDE "scripts/SaffronCity.asm"
-
-INCLUDE "scripts/Route20.asm"
-INCLUDE "scripts/Route22.asm"
-INCLUDE "scripts/Route23.asm"
-INCLUDE "scripts/Route24.asm"
-INCLUDE "scripts/Route25.asm"
-
-INCLUDE "data/mapHeaders/VictoryRoad2.asm"
-INCLUDE "scripts/VictoryRoad2.asm"
-INCLUDE "data/mapObjects/VictoryRoad2.asm"
-VictoryRoad2Blocks: INCBIN "maps/VictoryRoad2.blk"
-
-INCLUDE "data/mapHeaders/MtMoon2.asm"
-INCLUDE "scripts/MtMoon2.asm"
-INCLUDE "data/mapObjects/MtMoon2.asm"
-MtMoon2Blocks: INCBIN "maps/MtMoon2.blk"
-
-INCLUDE "data/mapHeaders/SilphCo7F.asm"
-INCLUDE "scripts/SilphCo7F.asm"
-INCLUDE "data/mapObjects/SilphCo7F.asm"
-SilphCo7Blocks: INCBIN "maps/SilphCo7F.blk"
-
-INCLUDE "data/mapHeaders/Mansion2.asm"
-INCLUDE "scripts/Mansion2.asm"
-INCLUDE "data/mapObjects/Mansion2.asm"
-Mansion2Blocks: INCBIN "maps/Mansion2.blk"
-
-INCLUDE "data/mapHeaders/Mansion3.asm"
-INCLUDE "scripts/Mansion3.asm"
-INCLUDE "data/mapObjects/Mansion3.asm"
-Mansion3Blocks: INCBIN "maps/Mansion3.blk"
-
-INCLUDE "data/mapHeaders/Mansion4.asm"
-INCLUDE "scripts/Mansion4.asm"
-INCLUDE "data/mapObjects/Mansion4.asm"
-Mansion4Blocks: INCBIN "maps/Mansion4.blk"
-
-INCLUDE "engine/battle/init_battle_variables.asm"
-INCLUDE "engine/battle/moveEffects/paralyze_effect.asm"
-
-INCLUDE "engine/overworld/card_key.asm"
-
-INCLUDE "engine/menu/prize_menu.asm"
-
-INCLUDE "engine/hidden_object_functions14.asm"
-
-
-SECTION "bank15",ROMX,BANK[$15]
-
-INCLUDE "data/mapHeaders/Route2.asm"
-INCLUDE "data/mapObjects/Route2.asm"
-Route2Blocks: INCBIN "maps/Route2.blk"
-
-INCLUDE "data/mapHeaders/Route3.asm"
-INCLUDE "data/mapObjects/Route3.asm"
-Route3Blocks: INCBIN "maps/Route3.blk"
-
-INCLUDE "data/mapHeaders/Route4.asm"
-INCLUDE "data/mapObjects/Route4.asm"
-Route4Blocks: INCBIN "maps/Route4.blk"
-
-INCLUDE "data/mapHeaders/Route5.asm"
-INCLUDE "data/mapObjects/Route5.asm"
-Route5Blocks: INCBIN "maps/Route5.blk"
-
-INCLUDE "data/mapHeaders/Route9.asm"
-INCLUDE "data/mapObjects/Route9.asm"
-Route9Blocks: INCBIN "maps/Route9.blk"
-
-INCLUDE "data/mapHeaders/Route13.asm"
-INCLUDE "data/mapObjects/Route13.asm"
-Route13Blocks: INCBIN "maps/Route13.blk"
-
-INCLUDE "data/mapHeaders/Route14.asm"
-INCLUDE "data/mapObjects/Route14.asm"
-Route14Blocks: INCBIN "maps/Route14.blk"
-
-INCLUDE "data/mapHeaders/Route17.asm"
-INCLUDE "data/mapObjects/Route17.asm"
-Route17Blocks: INCBIN "maps/Route17.blk"
-
-INCLUDE "data/mapHeaders/Route19.asm"
-INCLUDE "data/mapObjects/Route19.asm"
-Route19Blocks: INCBIN "maps/Route19.blk"
-
-INCLUDE "data/mapHeaders/Route21.asm"
-INCLUDE "data/mapObjects/Route21.asm"
-Route21Blocks: INCBIN "maps/Route21.blk"
-
-VermilionHouse2Blocks:
-Route12HouseBlocks:
-DayCareMBlocks: INCBIN "maps/Daycarem.blk"
-
-FuchsiaHouse3Blocks: INCBIN "maps/FuchsiaHouse3.blk"
-
-INCLUDE "engine/battle/experience.asm"
-
-INCLUDE "scripts/Route2.asm"
-INCLUDE "scripts/Route3.asm"
-INCLUDE "scripts/Route4.asm"
-INCLUDE "scripts/Route5.asm"
-INCLUDE "scripts/Route9.asm"
-INCLUDE "scripts/Route13.asm"
-INCLUDE "scripts/Route14.asm"
-INCLUDE "scripts/Route17.asm"
-INCLUDE "scripts/Route19.asm"
-INCLUDE "scripts/Route21.asm"
-
-INCLUDE "data/mapHeaders/VermilionHouse2.asm"
-INCLUDE "scripts/VermilionHouse2.asm"
-INCLUDE "data/mapObjects/VermilionHouse2.asm"
-
-INCLUDE "data/mapHeaders/CeladonMart2.asm"
-INCLUDE "scripts/CeladonMart2.asm"
-INCLUDE "data/mapObjects/CeladonMart2.asm"
-INCLUDE "data/martInventories/celadon_2.asm"
-CeladonMart2Blocks: INCBIN "maps/CeladonMart2.blk"
-
-INCLUDE "data/mapHeaders/FuchsiaHouse3.asm"
-INCLUDE "scripts/FuchsiaHouse3.asm"
-INCLUDE "data/mapObjects/FuchsiaHouse3.asm"
-
-INCLUDE "data/mapHeaders/Daycarem.asm"
-INCLUDE "scripts/Daycarem.asm"
-INCLUDE "data/mapObjects/Daycarem.asm"
-
-INCLUDE "data/mapHeaders/Route12House.asm"
-INCLUDE "scripts/Route12House.asm"
-INCLUDE "data/mapObjects/Route12House.asm"
-
-INCLUDE "data/mapHeaders/SilphCo8F.asm"
-INCLUDE "scripts/SilphCo8F.asm"
-INCLUDE "data/mapObjects/SilphCo8F.asm"
-SilphCo8Blocks: INCBIN "maps/SilphCo8F.blk"
-
-INCLUDE "engine/menu/diploma.asm"
-
-INCLUDE "engine/overworld/trainers.asm"
-
-IsMonShiny:
-; Input: de = address in RAM for DVs
-; Reset zero flag if mon is shiny
-; 1 in 1024 wild Pokémon is shiny.
-
+SECTION "Code 1", ROMX
+
+LoadPushOAM:: ; 4031
+	lb bc, (PushOAMEnd - PushOAM), (hPushOAM - $ff00)
+	ld hl, PushOAM
+.loop
+	ld a, [hli]
+	ld [$ff00+c], a
+	inc c
+	dec b
+	jr nz, .loop
+	ret
+
+PushOAM: ; 403f
+	ld a, Sprites / $100
+	ld [rDMA], a
+	ld a, 40
+.loop
+	dec a
+	jr nz, .loop
+	ret
+PushOAMEnd
+
+ReanchorBGMap_NoOAMUpdate:: ; 6454
+	call DelayFrame
+
+	ld a, [hOAMUpdate]
+	push af
+
+	ld a, $1
+	ld [hOAMUpdate], a
+	ld a, [hBGMapMode]
+	push af
+
+	xor a
+	ld [hBGMapMode], a
+	ld [hLCDCPointer], a
+	ld a, $90
+	ld [hWY], a
+	call OverworldTextModeSwitch
+
+	ld a, VBGMap1 / $100
+	ld [hBGMapAddress + 1], a
+	xor a
+	ld [hBGMapAddress], a
+	farcall OpenAndCloseMenu_HDMATransferTileMapAndAttrMap
+
+	farcall LoadBlindingFlashPalette
+	farcall ApplyPals
+
+	xor a
+	ld [hBGMapMode], a
+	ld [hWY], a
+	inc a
+	ld [hCGBPalUpdate], a
+	call HDMATransfer_FillBGMap0WithBlackTile
+
+	ld a, VBGMap0 / $100
+	ld [hBGMapAddress + 1], a
+	ld [wBGMapAnchor + 1], a
+	xor a
+	ld [hBGMapAddress], a
+	ld [wBGMapAnchor], a
+	ld [hSCX], a
+	ld [hSCY], a
+	call ApplyBGMapAnchorToObjects
+
+	pop af
+	ld [hBGMapMode], a
+	pop af
+	ld [hOAMUpdate], a
+	ld hl, VramState
+	set 6, [hl]
+	ret
+
+LoadFonts_NoOAMUpdate:: ; 64bf
+	ld a, [hOAMUpdate]
+	push af
+	ld a, $1
+	ld [hOAMUpdate], a
+
+	call LoadFontsExtra
+	ld a, $90
+	ld [hWY], a
+	call SafeUpdateSprites
+	call LoadStandardFont
+
+	pop af
+	ld [hOAMUpdate], a
+	ret
+
+HDMATransfer_FillBGMap0WithBlackTile: ; 64db
+	ld a, [rSVBK]
+	push af
+	ld a, $6
+	ld [rSVBK], a
+
+	ld a, "<BLACK>"
+	ld hl, wScratchTileMap
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	call ByteFill
+	ld a, wScratchTileMap / $100
+	ld [rHDMA1], a
+	ld a, wScratchTileMap % $100
+	ld [rHDMA2], a
+	ld a, (VBGMap0 % $8000) / $100
+	ld [rHDMA3], a
+	ld a, (VBGMap0 % $8000) % $100
+	ld [rHDMA4], a
+	ld a, $3f
+	ld [hDMATransfer], a
+	call DelayFrame
+
+	pop af
+	ld [rSVBK], a
+	ret
+
+ReanchorBGMap_NoOAMUpdate_NoDelay::
+	ld a, [hOAMUpdate]
+	push af
+	ld a, $1
+	ld [hOAMUpdate], a
+
+	ld a, [hBGMapMode]
+	push af
+	xor a
+	ld [hBGMapMode], a
+
+	ld [hLCDCPointer], a
+	ld a, $90
+	ld [hWY], a
+	call OverworldTextModeSwitch
+
+	ld a, VBGMap1 / $100
+	ld [hBGMapAddress + 1], a
+	xor a
+	ld [hBGMapAddress], a
+	farcall BridgeTransition_HDMATransferTileMapAndAttrMap
+
+	ld a, VBGMap0 / $100
+	ld [hBGMapAddress + 1], a
+	ld [wBGMapAnchor + 1], a
+	xor a
+	ld [hBGMapAddress], a
+	ld [wBGMapAnchor], a
+	ld [hSCX], a
+	ld [hSCY], a
+	ld [hWY], a
+	inc a
+	ld [hCGBPalUpdate], a
+	farcall BridgeTransition_HDMATransferTileMapAndAttrMap
+
+	pop af
+	ld [hBGMapMode], a
+
+	pop af
+	ld [hOAMUpdate], a
+	ret
+
+INCLUDE "engine/map_objects.asm"
+INCLUDE "engine/intro_menu.asm"
+INCLUDE "engine/init_options.asm"
+INCLUDE "engine/learn.asm"
+INCLUDE "engine/math.asm"
+INCLUDE "engine/npc_movement.asm"
+INCLUDE "engine/events/happiness_egg.asm"
+INCLUDE "engine/events/specials_2.asm"
+INCLUDE "data/items/attributes.asm"
+
+
+SECTION "Code 2", ROMX
+
+INCLUDE "engine/player_object.asm"
+INCLUDE "engine/sine.asm"
+INCLUDE "data/predef_pointers.asm"
+INCLUDE "engine/color.asm"
+INCLUDE "engine/trainer_scripts.asm"
+
+
+SECTION "Code 3", ROMX
+
+INCLUDE "engine/events/specials.asm"
+INCLUDE "engine/printnum.asm"
+INCLUDE "engine/health.asm"
+INCLUDE "engine/events/overworld.asm"
+INCLUDE "engine/items.asm"
+INCLUDE "engine/player_step.asm"
+INCLUDE "engine/anim_hp_bar.asm"
+INCLUDE "engine/move_mon.asm"
+INCLUDE "engine/billspctop.asm"
+INCLUDE "engine/item_effects.asm"
+
+CheckTime:: ; c000
+	ld a, [TimeOfDay]
+	ld hl, TimeOfDayTable
+	ld de, 2
+	call IsInArray
+	inc hl
+	ld c, [hl]
+	ret c
+
+	xor a
+	ld c, a
+	ret
+
+TimeOfDayTable: ; c012
+	db MORN, 1 << MORN
+	db DAY,  1 << DAY
+	db NITE, 1 << NITE
+	db NITE, 1 << NITE
+	db -1
+
+GetBreedMon1LevelGrowth: ; e698
+	ld hl, wBreedMon1Stats
+	ld de, TempMon
+	ld bc, BOXMON_STRUCT_LENGTH
+	call CopyBytes
+	farcall CalcLevel
+	ld a, [wBreedMon1Level]
+	ld b, a
+	ld a, d
+	ld e, a
+	sub b
+	ld d, a
+	ret
+
+GetBreedMon2LevelGrowth: ; e6b3
+	ld hl, wBreedMon2Stats
+	ld de, TempMon
+	ld bc, BOXMON_STRUCT_LENGTH
+	call CopyBytes
+	farcall CalcLevel
+	ld a, [wBreedMon2Level]
+	ld b, a
+	ld a, d
+	ld e, a
+	sub b
+	ld d, a
+	ret
+
+BugContest_SetCaughtContestMon: ; e6ce
+	ld a, [wContestMon]
+	and a
+	jr z, .firstcatch
+	ld [wd265], a
+	call DisplayAlreadyCaughtText
+	call DisplayCaughtContestMonStats
+	call YesNoBox
+	ret c
+
+.firstcatch
+	call .generatestats
+	ld a, [TempEnemyMonSpecies]
+	ld [wd265], a
+	call GetPokemonName
+	ld hl, .caughttext
+	jp PrintText
+
+.generatestats ; e6fd
+	ld a, [TempEnemyMonSpecies]
+	ld [CurSpecies], a
+	ld [CurPartySpecies], a
+	call GetBaseData
+	xor a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld hl, wContestMon
+	call ByteFill
+	xor a
+	ld [MonType], a
+	ld hl, wContestMon
+	jp GeneratePartyMonStats
+
+.caughttext ; 0xe71d
+	; Caught @ !
+	text_jump UnknownText_0x1c10c0
+	db "@"
+
+DisplayAlreadyCaughtText: ; cc0c7
+	call GetPokemonName
+	ld hl, .AlreadyCaughtText
+	jp PrintText
+
+.AlreadyCaughtText: ; 0xcc0d0
+	; You already caught a @ .
+	text_jump UnknownText_0x1c10dd
+	db "@"
+
+DisplayCaughtContestMonStats: ; cc000
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	call LoadFontsBattleExtra
+
+	ld hl, Options1
+	ld a, [hl]
+	push af
+	set NO_TEXT_SCROLL, [hl]
+
+	hlcoord 0, 0
+	lb bc, 4, 13
+	call TextBox
+
+	hlcoord 0, 6
+	lb bc, 4, 13
+	call TextBox
+
+	hlcoord 2, 0
+	ld de, .Stock
+	call PlaceString
+
+	hlcoord 2, 6
+	ld de, .This
+	call PlaceString
+
+	hlcoord 5, 4
+	ld de, .Health
+	call PlaceString
+
+	hlcoord 5, 10
+	ld de, .Health
+	call PlaceString
+
+	ld a, [wContestMon]
+	ld [wd265], a
+	call GetPokemonName
+	ld de, StringBuffer1
+	hlcoord 1, 2
+	call PlaceString
+
+	ld h, b
+	ld l, c
+	ld a, [wContestMonLevel]
+	ld [TempMonLevel], a
+	call PrintLevel
+
+	ld de, EnemyMonNick
+	hlcoord 1, 8
+	call PlaceString
+
+	ld h, b
+	ld l, c
+	ld a, [EnemyMonLevel]
+	ld [TempMonLevel], a
+	call PrintLevel
+
+	hlcoord 11, 4
+	ld de, wContestMonMaxHP
+	lb bc, 2, 3
+	call PrintNum
+
+	hlcoord 11, 10
+	ld de, EnemyMonMaxHP
+	call PrintNum
+
+	ld hl, SwitchMonText
+	call PrintText
+
+	pop af
+	ld [Options1], a
+
+	call WaitBGMap
+	ld b, CGB_DIPLOMA
+	call GetCGBLayout
+	jp SetPalettes
+
+.Health:
+	db "Health@"
+.Stock:
+	db " Stock <PK><MN> @"
+.This:
+	db " This <PK><MN>  @"
+
+SwitchMonText: ; cc0c2
+	; Switch #MON?
+	text_jump UnknownText_0x1c10cf
+	db "@"
+
+
+SECTION "Code 4", ROMX
+
+INCLUDE "engine/pack.asm"
+INCLUDE "engine/time.asm"
+INCLUDE "engine/tmhm.asm"
+INCLUDE "engine/naming_screen.asm"
+INCLUDE "engine/events/itemball.asm"
+INCLUDE "engine/events/heal_machine_anim.asm"
+INCLUDE "engine/events/whiteout.asm"
+INCLUDE "engine/events/forced_movement.asm"
+INCLUDE "engine/events/itemfinder.asm"
+INCLUDE "engine/startmenu.asm"
+INCLUDE "engine/selectmenu.asm"
+INCLUDE "engine/events/elevator.asm"
+INCLUDE "engine/events/bug_contest.asm"
+INCLUDE "engine/events/safari_game.asm"
+INCLUDE "engine/events/std_tiles.asm"
+
+
+SECTION "Roofs", ROMX
+
+INCLUDE "engine/mapgroup_roofs.asm"
+
+
+SECTION "Code 5", ROMX
+
+INCLUDE "engine/rtc.asm"
+INCLUDE "engine/overworld.asm"
+INCLUDE "engine/tile_events.asm"
+INCLUDE "engine/save.asm"
+INCLUDE "engine/spawn_points.asm"
+INCLUDE "engine/map_setup.asm"
+INCLUDE "engine/pokecenter_pc.asm"
+INCLUDE "engine/mart.asm"
+INCLUDE "engine/money.asm"
+INCLUDE "data/items/marts.asm"
+INCLUDE "engine/events/mom.asm"
+INCLUDE "engine/events/daycare.asm"
+INCLUDE "engine/breeding.asm"
+
+
+SECTION "Code 6", ROMX
+
+INCLUDE "engine/clock_reset.asm"
+INCLUDE "engine/events/move_reminder.asm"
+
+
+SECTION "Code 7", ROMX
+
+INCLUDE "engine/events/pokepic.asm"
+INCLUDE "engine/scrolling_menu.asm"
+INCLUDE "engine/switch_items.asm"
+INCLUDE "engine/menu.asm"
+INCLUDE "engine/mon_menu.asm"
+INCLUDE "engine/battle/menu.asm"
+INCLUDE "engine/buy_sell_toss.asm"
+INCLUDE "engine/trainer_card.asm"
+INCLUDE "engine/events/prof_oaks_pc.asm"
+INCLUDE "engine/decorations.asm"
+INCLUDE "data/trainers/dvs.asm"
+
+UpdateItemDescriptionAndBagQuantity:
+	hlcoord 1, 1
+	lb bc, 1, 8
+	call ClearBox
+	ld a, [MenuSelection]
+	cp -1
+	jr z, UpdateItemDescription
+	hlcoord 1, 1
+	ld de, BagXString
+	call PlaceString
+	ld a, [MenuSelection]
+	call GetQuantityInBag
+	hlcoord 6, 1
+	ld de, Buffer1
+	lb bc, 2, 3
+	call PrintNum
+UpdateItemDescription: ; 0x244c3
+	ld a, [MenuSelection]
+	ld [CurSpecies], a
+	hlcoord 0, 12
+	lb bc, 4, SCREEN_WIDTH - 2
+	call TextBox
+	ld a, [MenuSelection]
+	cp -1
+	ret z
+	decoord 1, 14
+	farjp PrintItemDescription
+
+BagXString:
+	db "Bag ×@"
+
+UpdateTMHMDescriptionAndOwnership:
+	hlcoord 1, 1
+	lb bc, 1, 8
+	call ClearBox
+	ld a, [MenuSelection]
+	cp -1
+	jr z, UpdateTMHMDescription
+	ld a, [CurTMHM]
+	call CheckTMHM
+	ld de, OwnedTMString
+	jr c, .GotString
+	ld de, UnownedTMString
+.GotString
+	hlcoord 1, 1
+	call PlaceString
+UpdateTMHMDescription:
+	ld a, [MenuSelection]
+	ld [CurSpecies], a
+	hlcoord 0, 12
+	lb bc, 4, SCREEN_WIDTH - 2
+	call TextBox
+	ld a, [MenuSelection]
+	cp -1
+	ret z
+	decoord 1, 14
+	farjp PrintTMHMDescription
+
+OwnedTMString:
+	db "Owned@"
+UnownedTMString:
+	db "Unowned@"
+
+GetQuantityInBag:
+	ld a, [CurItem]
+	push af
+	ld a, [MenuSelection]
+	ld [CurItem], a
+	call CountItem
+	pop af
+	ret
+
+PlaceMenuItemName: ; 0x24ab4
+	push de
+	ld a, [MenuSelection]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	pop hl
+	jp PlaceString
+
+PlaceMenuTMHMName:
+	push de
+	ld a, [MenuSelection]
+	ld [wNamedObjectIndexBuffer], a
+	call GetTMHMName
+	pop hl
+	jp PlaceString
+
+PlaceMenuApricornQuantity:
+	ld a, [MenuSelection]
+	ld [CurItem], a
+	and a
+	ret nz
+	ld l, e
+	ld h, d
+	jr _PlaceMenuQuantity
+
+PlaceMenuItemQuantity: ; 0x24ac3
+	push de
+	ld a, [MenuSelection]
+	ld [CurItem], a
+	farcall _CheckTossableItem
+	ld a, [wItemAttributeParamBuffer]
+	pop hl
+	and a
+	ret nz
+_PlaceMenuQuantity:
+	ld de, $15
+	add hl, de
+	ld [hl], "×"
+	inc hl
+	ld de, MenuSelectionQuantity
+	lb bc, 1, 2
+	jp PrintNum
+
+PlaceMoneyTopRight: ; 24ae8
+	ld hl, MenuDataHeader_0x24b15
+	call CopyMenuDataHeader
+	jr PlaceMoneyDataHeader
+
+PlaceMoneyBottomLeft: ; 24af0
+	ld hl, MenuDataHeader_0x24b1d
+	call CopyMenuDataHeader
+	jr PlaceMoneyDataHeader
+
+PlaceMoneyAtTopLeftOfTextbox: ; 24af8
+	ld hl, MenuDataHeader_0x24b15
+	lb de, 0, 11
+	call OffsetMenuDataHeader
+
+PlaceMoneyDataHeader: ; 24b01
+	call MenuBox
+	call MenuBoxCoord2Tile
+	ld de, SCREEN_WIDTH + 1
+	add hl, de
+	ld de, Money
+	lb bc, PRINTNUM_MONEY | 3, 7
+	jp PrintNum
+
+MenuDataHeader_0x24b15: ; 0x24b15
+	db $40 ; flags
+	db 00, 10 ; start coords
+	db 02, 19 ; end coords
+	dw NULL
+	db 1 ; default option
+
+MenuDataHeader_0x24b1d: ; 0x24b1d
+	db $40 ; flags
+	db 11, 00 ; start coords
+	db 13, 09 ; end coords
+	dw NULL
+	db 1 ; default option
+
+PlaceBlueCardPointsTopRight:
+	hlcoord 11, 0
+	lb bc, 1, 7
+	call TextBox
+	hlcoord 12, 1
+	ld de, wBlueCardBalance
+	lb bc, 1, 3
+	call PrintNum
+	ld de, .PointsString
+	jp PlaceString
+
+.PointsString:
+	db " Pts@"
+
+PlaceBattlePointsTopRight:
+	hlcoord 12, 0
+	lb bc, 1, 6
+	call TextBox
+	hlcoord 13, 1
+	ld de, BattlePoints
+	lb bc, 1, 3
+	call PrintNum
+	ld de, .BPString
+	jp PlaceString
+
+.BPString:
+	db " BP@"
+
+Special_DisplayCoinCaseBalance: ; 24b25
+	; Place a text box of size 1x7 at 11, 0.
+	hlcoord 11, 0
+	lb bc, 1, 7
+	call TextBox
+	hlcoord 12, 0
+	ld de, CoinString
+	call PlaceString
+	ld de, Coins
+	lb bc, 2, 5
+	hlcoord 13, 1
+	jp PrintNum
+
+Special_DisplayMoneyAndCoinBalance: ; 24b4e
+	hlcoord 5, 0
+	lb bc, 3, 13
+	call TextBox
+	hlcoord 6, 1
+	ld de, MoneyString
+	call PlaceString
+	hlcoord 11, 1
+	ld de, Money
+	lb bc, PRINTNUM_MONEY | 3, 7
+	call PrintNum
+	hlcoord 6, 3
+	ld de, CoinString
+	call PlaceString
+	hlcoord 14, 3
+	ld de, Coins
+	lb bc, 2, 5
+	jp PrintNum
+
+MoneyString: ; 24b83
+	db "Money@"
+CoinString: ; 24b89
+	db "Coin@"
+
+StartMenu_DrawBugContestStatusBox: ; 24bdc
+	hlcoord 0, 0
+	lb bc, 5, 17
+	jp TextBox
+
+StartMenu_PrintBugContestStatus: ; 24be7
+	ld hl, Options1
+	ld a, [hl]
+	push af
+	set NO_TEXT_SCROLL, [hl]
+	call StartMenu_DrawBugContestStatusBox
+	hlcoord 1, 5
+	ld de, .Balls
+	call PlaceString
+	hlcoord 8, 5
+	ld de, wParkBallsRemaining
+	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
+	call PrintNum
+	hlcoord 1, 1
+	ld de, .Caught
+	call PlaceString
+	ld a, [wContestMon]
+	and a
+	ld de, .None
+	jr z, .no_contest_mon
+	ld [wd265], a
+	call GetPokemonName
+
+.no_contest_mon
+	hlcoord 8, 1
+	call PlaceString
+	ld a, [wContestMon]
+	and a
+	jr z, .skip_level
+	hlcoord 1, 3
+	ld de, .Level
+	call PlaceString
+	ld a, [wContestMonLevel]
+	ld h, b
+	ld l, c
+	inc hl
+	ld c, 3
+	call Print8BitNumRightAlign
+
+.skip_level
+	pop af
+	ld [Options1], a
+	ret
+
+.Caught: ; 24c4b
+	db "Caught@"
+.Balls: ; 24c52
+	db "Balls:@"
+.None: ; 24c59
+	db "None@"
+.Level: ; 24c5e
+	db "Level@"
+
+PadCoords_de: ; 27092
+	ld a, d
+	add 4
+	ld d, a
+	ld a, e
+	add 4
+	ld e, a
+	jp GetBlockLocation
+
+LevelUpHappinessMod: ; 2709e
+	ld a, [CurPartyMon]
+	ld hl, PartyMon1CaughtLocation
+	call GetPartyLocation
+	ld a, [hl]
+	and $7f
+	ld d, a
+	ld a, [MapGroup]
+	ld b, a
+	ld a, [MapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	cp d
+	ld c, HAPPINESS_GAINLEVEL
+	jr nz, .ok
+	ld c, HAPPINESS_GAINLEVELATHOME
+
+.ok
+	farjp ChangeHappiness
+
+_ReturnToBattle_UseBall: ; 2715c
+	call ClearBGPalettes
+	call ClearTileMap
+	ld a, [BattleType]
+	cp BATTLETYPE_TUTORIAL
+	jr z, .gettutorialbackpic
+	farcall GetMonBackpic
+	jr .continue
+
+.gettutorialbackpic
+	farcall GetTrainerBackpic
+.continue
+	farcall GetMonFrontpic
+	farcall _LoadBattleFontsHPBar
+	call GetMemCGBLayout
+	call CloseWindow
+	call LoadStandardMenuDataHeader
+	call WaitBGMap
+	call SetPalettes
+	farcall LoadPlayerStatusIcon
+	farcall LoadEnemyStatusIcon
+	farjp InstantReloadPaletteHack
+
+INCLUDE "data/moves/effects_pointers.asm"
+
+INCLUDE "data/moves/effects.asm"
+
+
+SECTION "Code 8", ROMX
+
+INCLUDE "engine/link.asm"
+
+
+SECTION "Code 9", ROMX
+
+INCLUDE "data/battle/music.asm"
+INCLUDE "engine/battle/trainer_huds.asm"
+INCLUDE "engine/battle/ai/redundant.asm"
+INCLUDE "engine/events/move_deleter.asm"
+INCLUDE "engine/tmhm2.asm"
+INCLUDE "engine/events/pokerus.asm"
+INCLUDE "data/trainers/class_names.asm"
+INCLUDE "data/moves/descriptions.asm"
+
+ShowLinkBattleParticipants: ; 2ee18
+; If we're not in a communications room,
+; we don't need to be here.
+	ld a, [wLinkMode]
+	and a
+	ret z
+
+	farcall _ShowLinkBattleParticipants
+	ld c, 150
+	call DelayFrames
+	call ClearTileMap
+	jp ClearSprites
+
+FindFirstAliveMonAndStartBattle: ; 2ee2f
+	xor a
+	ld [hMapAnims], a
+	call DelayFrame
+	ld b, 6
+	ld hl, PartyMon1HP
+	ld de, PARTYMON_STRUCT_LENGTH - 1
+
+.loop
+	ld a, [hli]
+	or [hl]
+	jr nz, .okay
+	add hl, de
+	dec b
+	jr nz, .loop
+
+.okay
+	ld de, MON_LEVEL - MON_HP
+	add hl, de
+	ld a, [hl]
+	ld [BattleMonLevel], a
+	predef Predef_StartBattle
+	farcall _LoadBattleFontsHPBar
+	ld a, 1
+	ld [hBGMapMode], a
+	call ClearSprites
+	call ClearTileMap
+	xor a
+	ld [hBGMapMode], a
+	ld [hWY], a
+	ld [rWY], a
+	ld [hMapAnims], a
+	ret
+
+ClearBattleRAM: ; 2ef18
+	xor a
+	ld [wPlayerAction], a
+	ld [wBattleResult], a
+
+	ld hl, wPartyMenuCursor
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+
+	ld [wMenuScrollPosition], a
+	ld [CriticalHit], a
+	ld [BattleMonSpecies], a
+	ld [wBattleParticipantsNotFainted], a
+	ld [CurBattleMon], a
+	ld [wForcedSwitch], a
+	ld [TimeOfDayPal], a
+	ld [PlayerTurnsTaken], a
+	ld [EnemyTurnsTaken], a
+	ld [EvolvableFlags], a
+
+	ld hl, PlayerHPPal
+	ld [hli], a
+	ld [hl], a
+
+	ld hl, BattleMonDVs
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+
+	ld hl, BattleMonPersonality
+	ld [hli], a
+	ld [hl], a
+
+	ld hl, EnemyMonDVs
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+
+	ld hl, EnemyMonPersonality
+	ld [hli], a
+	ld [hl], a
+
+	; Clear the entire BattleMons area
+	ld hl, wBattle
+	ld bc, wBattleEnd - wBattle
+	xor a
+	call ByteFill
+
+	; Clear UsedItems
+	ld hl, PartyUsedItems
+	ld bc, 6
+	xor a
+	call ByteFill
+	ld hl, OTPartyUsedItems
+	ld bc, 6
+	xor a
+	call ByteFill
+
+	farcall ResetEnemyStatLevels
+
+	call ClearWindowData
+
+	ld hl, hBGMapAddress
+	xor a
+	ld [hli], a
+	ld [hl], VBGMap0 / $100
+	ret
+
+PlaceGraphic: ; 2ef6e
+; Fill wBoxAlignment-aligned box width b height c
+; with iterating tile starting from hGraphicStartTile at hl.
+; Predef $13
+
+	ld de, SCREEN_WIDTH
+
+	ld a, [wBoxAlignment]
+	and a
+	jr nz, .right
+
+	ld a, [hGraphicStartTile]
+.x1
+	push bc
+	push hl
+
+.y1
+	ld [hl], a
+	add hl, de
+	inc a
+	dec c
+	jr nz, .y1
+
+	pop hl
+	inc hl
+	pop bc
+	dec b
+	jr nz, .x1
+	ret
+
+.right
+; Right-aligned.
+	push bc
+	ld b, 0
+	dec c
+	add hl, bc
+	pop bc
+
+	ld a, [hGraphicStartTile]
+.x2
+	push bc
+	push hl
+
+.y2
+	ld [hl], a
+	add hl, de
+	inc a
+	dec c
+	jr nz, .y2
+
+	pop hl
+	dec hl
+	pop bc
+	dec b
+	jr nz, .x2
+	ret
+
+
+SECTION "Code 10", ROMX
+
+INCLUDE "engine/mail.asm"
+INCLUDE "engine/events/fruit_trees.asm"
+INCLUDE "engine/events/hidden_grottoes.asm"
+INCLUDE "engine/battle/ai/move.asm"
+
+AnimateDexSearchSlowpoke: ; 441cf
+	ld hl, .FrameIDs
+	ld b, 25
+.loop
+	ld a, [hli]
+
+	; Wrap around
+	cp $fe
+	jr nz, .ok
+	ld hl, .FrameIDs
+	ld a, [hli]
+.ok
+
+	ld [wDexSearchSlowpokeFrame], a
+	ld a, [hli]
+	ld c, a
+	push bc
+	push hl
+	call DoDexSearchSlowpokeFrame
+	pop hl
+	pop bc
+	call DelayFrames
+	dec b
+	jr nz, .loop
+	xor a
+	ld [wDexSearchSlowpokeFrame], a
+	call DoDexSearchSlowpokeFrame
+	ld c, 32
+	jp DelayFrames
+
+.FrameIDs: ; 441fc
+	; frame ID, duration
+	db 0, 7
+	db 1, 7
+	db 2, 7
+	db 3, 7
+	db 4, 7
+	db -2
+
+DoDexSearchSlowpokeFrame: ; 44207
+	ld a, [wDexSearchSlowpokeFrame]
+	ld hl, .SpriteData
+	ld de, Sprites
+.loop
+	ld a, [hli]
+	cp -1
+	ret z
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [wDexSearchSlowpokeFrame]
+	ld b, a
+	add a
+	add b
+	add [hl]
+	inc hl
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	jr .loop
+
+.SpriteData: ; 44228
+	dsprite 11, 0,  9, 0, $00, $0
+	dsprite 11, 0, 10, 0, $01, $0
+	dsprite 11, 0, 11, 0, $02, $0
+	dsprite 12, 0,  9, 0, $10, $0
+	dsprite 12, 0, 10, 0, $11, $0
+	dsprite 12, 0, 11, 0, $12, $0
+	dsprite 13, 0,  9, 0, $20, $0
+	dsprite 13, 0, 10, 0, $21, $0
+	dsprite 13, 0, 11, 0, $22, $0
+	db -1
+
+DisplayDexEntry: ; 4424d
+	call GetPokemonName
+	hlcoord 9, 3
+	call PlaceString ; mon species
+	ld a, [wd265]
+	ld b, a
+	call GetDexEntryPointer
+	ld a, b
+	push af
+	hlcoord 9, 5
+	call FarString ; dex species
+	ld h, b
+	ld l, c
+	push de
+; Print dex number
+	hlcoord 2, 8
+	ld a, "№"
+	ld [hli], a
+	ld a, "."
+	ld [hli], a
+	ld de, wd265
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+; Check to see if we caught it.  Get out of here if we haven't.
+	ld a, [wd265]
+	dec a
+	call CheckCaughtMon
+	pop hl
+	pop bc
+	ret z
+; Get the height of the Pokemon.
+	ld a, [CurPartySpecies]
+	ld [CurSpecies], a
+	inc hl
+	ld a, b
+	push af
+	push hl
+	call GetFarHalfword
+	ld d, l
+	ld e, h
+	pop hl
+	inc hl
+	inc hl
+	ld a, d
+	or e
+	jr z, .skip_height
+	ld a, [Options2]
+	bit POKEDEX_UNITS, a
+	jr z, .imperial_height
+
+	push hl
+	ld l, d
+	ld h, e
+	ld bc, -100
+	ld e, 0
+.inchloop
+	ld a, h
+	and a
+	jr nz, .inchloop2
+	ld a, l
+	cp 100
+	jr c, .inchdone
+.inchloop2
+	add hl, bc
+	inc e
+	jr .inchloop
+.inchdone
+	ld a, e
+	ld e, l
+	ld d, 0
+	ld hl, 0
+	ld bc, 12
+	call AddNTimes
+	add hl, de
+	ld b, h
+	ld c, l
+	ld de, 16646 ; 0.254 << 16
+	call Mul16
+	ld de, hTmpd
+	hlcoord 11, 7
+	lb bc, 2, PRINTNUM_RIGHTALIGN | 5
+	call PrintNum
+	pop hl
+	jr .skip_height
+
+.imperial_height
+	push hl
+	push de
+	ld hl, sp+$0
+	ld d, h
+	ld e, l
+	hlcoord 12, 7
+	lb bc, 2, PRINTNUM_MONEY | 4
+	call PrintNum
+	hlcoord 14, 7
+	ld [hl], "′"
+	pop af
+	pop hl
+
+.skip_height
+	pop af
+	push af
+	inc hl
+	push hl
+	dec hl
+	call GetFarHalfword
+	ld d, l
+	ld e, h
+	ld a, e
+	or d
+	jr z, .skip_weight
+	ld a, [Options2]
+	bit POKEDEX_UNITS, a
+	jr z, .imperial_weight
+
+	ld c, d
+	ld b, e
+	ld de, 29726 ; 0.45359237 << 16
+	call Mul16
+	ld de, hTmpd
+	hlcoord 11, 9
+	lb bc, 2, PRINTNUM_RIGHTALIGN | 5
+	call PrintNum
+	jr .skip_weight
+
+.imperial_weight
+	push de
+	ld hl, sp+$0
+	ld d, h
+	ld e, l
+	hlcoord 11, 9
+	lb bc, 2, PRINTNUM_RIGHTALIGN | 5
+	call PrintNum
+	pop de
+
+.skip_weight
+; Page 1
+	lb bc, 5, SCREEN_WIDTH - 2
+	hlcoord 2, 11
+	call ClearBox
+	hlcoord 1, 10
+	ld bc, SCREEN_WIDTH - 1
+	ld a, $5f ; horizontal divider
+	call ByteFill
+	; page number
+	hlcoord 1, 9
+	ld [hl], $55
+	inc hl
+	ld [hl], $55
+	hlcoord 1, 10
+	ld [hl], $56 ; P.
+	inc hl
+	ld [hl], $57 ; 1
+	pop de
+	inc de
+	pop af
+	hlcoord 2, 11
+	push af
+	call FarString
+	pop bc
+	ld a, [wPokedexStatus]
+	or a
+	ret z
+
+; Page 2
+	push bc
+	push de
+	lb bc, 5, SCREEN_WIDTH - 2
+	hlcoord 2, 11
+	call ClearBox
+	hlcoord 1, 10
+	ld bc, SCREEN_WIDTH - 1
+	ld a, $5f ; horizontal divider
+	call ByteFill
+	; page number
+	hlcoord 1, 9
+	ld [hl], $55
+	inc hl
+	ld [hl], $55
+	hlcoord 1, 10
+	ld [hl], $56 ; P.
+	inc hl
+	ld [hl], $58 ; 2
+	pop de
+	inc de
+	pop af
+	hlcoord 2, 11
+	jp FarString
+
+; Metric conversion code by TPP Anniversary Crystal 251
+; https://github.com/TwitchPlaysPokemon/tppcrystal251pub/blob/public/main.asm
+Mul16:
+	;[hTmpd][hTmpe]hl = bc * de
+	xor a
+	ld [hTmpd], a
+	ld [hTmpe], a
+	ld hl, 0
+	ld a, 16
+	ld [hProduct], a
+.loop
+	sla l
+	rl h
+	ld a, [hTmpe]
+	rla
+	ld [hTmpe], a
+	ld a, [hTmpd]
+	rla
+	ld [hTmpd], a
+	sla e
+	rl d
+	jr nc, .noadd
+	add hl, bc
+	ld a, [hTmpe]
+	adc 0
+	ld [hTmpe], a
+	ld a, [hTmpd]
+	adc 0
+	ld [hTmpd], a
+.noadd
+	ld a, [hProduct]
+	dec a
+	ld [hProduct], a
+	jr nz, .loop
+	ret
+
+GetDexEntryPointer: ; 44333
+; return dex entry pointer b:de
+	push hl
+	ld hl, PokedexDataPointerTable
+	ld a, b
+	dec a
+	ld d, 0
+	ld e, a
+	add hl, de
+	add hl, de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	push de
+	rlca
+	rlca
+	and $3
+	ld hl, .PokedexEntryBanks
+	ld d, 0
+	ld e, a
+	add hl, de
+	ld b, [hl]
+	pop de
+	pop hl
+	ret
+
+.PokedexEntryBanks: ; 44351
+
+GLOBAL PokedexEntries1
+GLOBAL PokedexEntries2
+GLOBAL PokedexEntries3
+GLOBAL PokedexEntries4
+
+	db BANK(PokedexEntries1)
+	db BANK(PokedexEntries2)
+	db BANK(PokedexEntries3)
+	db BANK(PokedexEntries4)
+
+	call GetDexEntryPointer ; b:de
+	push hl
 	ld h, d
 	ld l, e
+; skip species name
+.loop1
+	ld a, b
+	call GetFarByte
+	inc hl
+	cp "@"
+	jr nz, .loop1
+; skip height and weight
+rept 4
+	inc hl
+endr
+; if c != 1: skip entry
+	dec c
+	jr z, .done
+; skip entry
+.loop2
+	ld a, b
+	call GetFarByte
+	inc hl
+	cp "@"
+	jr nz, .loop2
 
-; Attack must be odd (1, 3, 5, 7, 9, 11, 13, or 15) (1 in 2)
-	ld a, [hl]
-	and 1 << 4
-	jr z, .NotShiny
-
-; Defense must be 2, 3, 7, or 11 (1 in 4)
-	ld a, [hli]
-	and $f
-	cp 2
-	jr z, .MaybeShiny1
-	cp 3
-	jr z, .MaybeShiny1
-	cp 7
-	jr z, .MaybeShiny1
-	cp 11
-	jr nz, .NotShiny
-
-; Speed must be 5 or 13 (1 in 8)
-.MaybeShiny1
-	ld a, [hl]
-	and $f << 4
-	cp 5 << 4
-	jr z, .MaybeShiny2
-	cp 13 << 4
-	jr nz, .NotShiny
-
-; Special must be 15 (1 in 16)
-.MaybeShiny2
-	ld a, [hl]
-	and $f
-	cp 15
-	jr nz, .NotShiny
-
-.Shiny
-	; set zero flag
-	and a ; a cannot be 0, so zero flag is set with thing command
+.done
+	ld d, h
+	ld e, l
+	pop hl
 	ret
-.NotShiny
-	; reset zero flag
+
+PokedexDataPointerTable: ; 0x44378
+INCLUDE "data/pokemon/dex_entry_pointers.asm"
+
+
+SECTION "Code 11", ROMX
+
+INCLUDE "engine/main_menu.asm"
+INCLUDE "engine/search.asm"
+INCLUDE "engine/events/celebi.asm"
+INCLUDE "engine/tileset_palettes.asm"
+
+Special_MoveTutor: ; 4925b
+	call FadeToMenu
+	call ClearBGPalettes
+	call ClearScreen
+	call DelayFrame
+	ld b, CGB_PACKPALS
+	call GetCGBLayout
+	xor a
+	ld [wItemAttributeParamBuffer], a
+	ld a, [ScriptVar]
+	ld [wd265], a
+	ld [wPutativeTMHMMove], a
+	call GetMoveName
+	call CopyName1
+	farcall ChooseMonToLearnTMHM
+	jr c, .cancel
+	jr .enter_loop
+
+.loop
+	farcall ChooseMonToLearnTMHM_NoRefresh
+	jr c, .cancel
+.enter_loop
+	call CheckCanLearnMoveTutorMove
+	jr nc, .loop
+	xor a
+	jr .quit
+
+.cancel
+	ld a, -1
+.quit
+	ld [ScriptVar], a
+	jp CloseSubmenu
+
+CheckCanLearnMoveTutorMove: ; 492b9
+	ld hl, .MenuDataHeader
+	call LoadMenuDataHeader
+
+	predef CanLearnTMHMMove
+
+	push bc
+	ld a, [CurPartyMon]
+	ld hl, PartyMonNicknames
+	call GetNick
+	pop bc
+
+	ld a, c
+	and a
+	jr nz, .can_learn
+	push de
+	ld de, SFX_WRONG
+	call PlaySFX
+	pop de
+	ld a, BANK(Text_TMHMNotCompatible)
+	ld hl, Text_TMHMNotCompatible
+	call FarPrintText
+	jr .didnt_learn
+
+.can_learn
+	farcall KnowsMove
+	jr c, .didnt_learn
+
+	predef LearnMove
+	ld a, b
+	and a
+	jr z, .didnt_learn
+
+	ld c, HAPPINESS_LEARNMOVE
+	farcall ChangeHappiness
+	jr .learned
+
+.didnt_learn
+	call ExitMenu
+	and a
+	ret
+
+.learned
+	call ExitMenu
+	scf
+	ret
+
+.MenuDataHeader: ; 0x4930a
+	db $40 ; flags
+	db 12, 00 ; start coords
+	db 17, 19 ; end coords
+
+AskRememberPassword: ; 4ae12
+	call .DoMenu
+	ld a, 0 ; not xor a; preserve carry flag
+	jr c, .okay
+	ld a, $1
+
+.okay
+	ld [ScriptVar], a
+	ret
+
+.DoMenu: ; 4ae1f
+	lb bc, 14, 7
+	push bc
+	ld hl, YesNoMenuDataHeader
+	call CopyMenuDataHeader
+	pop bc
+	ld a, b
+	ld [wMenuBorderLeftCoord], a
+	add $5
+	ld [wMenuBorderRightCoord], a
+	ld a, c
+	ld [wMenuBorderTopCoord], a
+	add $4
+	ld [wMenuBorderBottomCoord], a
+	call PushWindow
+	call VerticalMenu
+	push af
+	ld c, 15
+	call DelayFrames
+	call Buena_ExitMenu
+	pop af
+	jr c, .refused
+	ld a, [wMenuCursorY]
+	cp $2
+	jr z, .refused
+	and a
+	ret
+
+.refused
+	ld a, $2
+	ld [wMenuCursorY], a
+	scf
+	ret
+
+Buena_ExitMenu: ; 4ae5e
+	ld a, [hOAMUpdate]
+	push af
+	call ExitMenu
+	call UpdateSprites
+	xor a
+	ld [hOAMUpdate], a
+	call DelayFrame
+	ld a, $1
+	ld [hOAMUpdate], a
+	call ApplyTilemap
+	pop af
+	ld [hOAMUpdate], a
+	ret
+
+PackGFX:
+INCBIN "gfx/pack/pack.w40.2bpp"
+PackFGFX: ; 48e9b
+INCBIN "gfx/pack/pack_f.w40.2bpp"
+
+
+SECTION "Code 12", ROMX
+
+EmptyAllSRAMBanks: ; 4cf1f
+	xor a
+	call .EmptyBank
+	ld a, $1
+	call .EmptyBank
+	ld a, $2
+	call .EmptyBank
+	ld a, $3
+	; fallthrough
+
+.EmptyBank: ; 4cf34
+	call GetSRAMBank
+	ld hl, SRAM_Begin
+	ld bc, SRAM_End - SRAM_Begin
+	xor a
+	call ByteFill
+	jp CloseSRAM
+
+SaveMenu_LoadEDTile: ; 4cf45 (13:4f45)
+; The following is a modified version of Function3246.
+	ld a, [hBGMapMode]
+	push af
+	xor a
+	ld [hBGMapMode], a
+	ld a, [hMapAnims]
+	push af
+	xor a
+	ld [hMapAnims], a
+.WaitLY:
+	ld a, [rLY]
+	cp $60
+	jr c, .WaitLY
+
+	di
+	ld a, BANK(VBGMap2)
+	ld [rVBK], a
+	hlcoord 0, 0, AttrMap
+	call .LoadEDTile
+	xor a ; ld a, BANK(VBGMap0)
+	ld [rVBK], a
+	hlcoord 0, 0
+	call .LoadEDTile
+.WaitLY2:
+	ld a, [rLY]
+	cp $60
+	jr c, .WaitLY2
+	ei
+
+	pop af
+	ld [hMapAnims], a
+	pop af
+	ld [hBGMapMode], a
+	ret
+
+.LoadEDTile: ; 4cf80 (13:4f80)
+	ld [hSPBuffer], sp ; $ffd9
+	ld sp, hl
+	ld a, [hBGMapAddress + 1]
+	ld h, a
+	ld l, 0
+	ld a, SCREEN_HEIGHT
+	ld [hTilesPerCycle], a
+	lb bc, (1 << 1), (rSTAT % $100)
+
+.loop
+rept SCREEN_WIDTH / 2
+	pop de
+.loop\@
+	ld a, [$ff00+c]
+	and b
+	jr nz, .loop\@
+	ld [hl], e
+	inc l
+	ld [hl], d
+	inc l
+endr
+
+	ld de, $20 - SCREEN_WIDTH
+	add hl, de
+	ld a, [hTilesPerCycle]
+	dec a
+	ld [hTilesPerCycle], a
+	jr nz, .loop
+
+	ld a, [hSPBuffer]
+	ld l, a
+	ld a, [hSPBuffer + 1]
+	ld h, a
+	ld sp, hl
+	ret
+
+CheckSave:: ; 4cffe
+	ld a, BANK(sCheckValue1)
+	call GetSRAMBank
+	ld a, [sCheckValue1]
+	ld b, a
+	ld a, [sCheckValue2]
+	ld c, a
+	call CloseSRAM
+	ld a, b
+	cp SAVE_CHECK_VALUE_1
+	jr nz, .ok
+	ld a, c
+	cp SAVE_CHECK_VALUE_2
+	jr nz, .ok
+	ld c, $1
+	ret
+
+.ok
+	ld c, $0
+	ret
+
+INCLUDE "data/maps/scenes.asm"
+
+_LoadMapPart:: ; 4d15b
+	ld hl, wMisc
+	ld a, [wMetatileStandingY]
+	and a
+	jr z, .top_row
+	ld bc, WMISC_WIDTH * 2
+	add hl, bc
+
+.top_row
+	ld a, [wMetatileStandingX]
+	and a
+	jr z, .left_column
+	inc hl
+	inc hl
+
+.left_column
+	decoord 0, 0
+	ld b, SCREEN_HEIGHT
+.loop
+	ld c, SCREEN_WIDTH
+.loop2
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .loop2
+	ld a, l
+	add 4
+	ld l, a
+	jr nc, .carry
+	inc h
+
+.carry
+	dec b
+	jr nz, .loop
+	ret
+
+PhoneRing_LoadEDTile: ; 4d188
+	ld a, [wSpriteUpdatesEnabled]
+	cp $0
+	jp z, WaitBGMap
+
+; What follows is a modified version of LoadEDTile.
+	ld a, [hBGMapMode]
+	push af
+	xor a
+	ld [hBGMapMode], a
+	ld a, [hMapAnims]
+	push af
+	xor a
+	ld [hMapAnims], a
+.wait
+	ld a, [rLY]
+	cp $8f
+	jr c, .wait
+
+	di
+	ld a, BANK(VBGMap2)
+	ld [rVBK], a
+	hlcoord 0, 0, AttrMap
+	call .StackPointerMagic
+	xor a ; ld a, BANK(VBGMap0)
+	ld [rVBK], a
+	hlcoord 0, 0
+	call .StackPointerMagic
+.wait2
+	ld a, [rLY]
+	cp $8f
+	jr c, .wait2
+	ei
+
+	pop af
+	ld [hMapAnims], a
+	pop af
+	ld [hBGMapMode], a
+	ret
+
+.StackPointerMagic: ; 4d1cb
+; Copy all tiles to VBGMap
+	ld [hSPBuffer], sp
+	ld sp, hl
+	ld a, [hBGMapAddress + 1]
+	ld h, a
+	ld l, 0
+	ld a, SCREEN_HEIGHT
+	ld [hTilesPerCycle], a
+	lb bc, (1 << 1), (rSTAT % $100) ; b: not in v/hblank
+
+.loop
+rept SCREEN_WIDTH / 2
+	pop de
+; if in v/hblank, wait until not in v/hblank
+.loop\@
+	ld a, [$ff00+c]
+	and b
+	jr nz, .loop\@
+; load BGMap0
+	ld [hl], e
+	inc l
+	ld [hl], d
+	inc l
+endr
+
+	ld de, $20 - SCREEN_WIDTH
+	add hl, de
+	ld a, [hTilesPerCycle]
+	dec a
+	ld [hTilesPerCycle], a
+	jr nz, .loop
+
+	ld a, [hSPBuffer]
+	ld l, a
+	ld a, [hSPBuffer + 1]
+	ld h, a
+	ld sp, hl
+	ret
+
+Shrink1Pic: ; 4d249
+INCBIN "gfx/new_game/shrink1.2bpp.lz"
+
+Shrink2Pic: ; 4d2d9
+INCBIN "gfx/new_game/shrink2.2bpp.lz"
+
+_ResetClock: ; 4d3b1
+	farcall BlankScreen
+	ld b, CGB_DIPLOMA
+	call GetCGBLayout
+	call LoadStandardFont
+	call LoadFontsExtra
+	ld de, MUSIC_MAIN_MENU
+	call PlayMusic
+	ld hl, .text_askreset
+	call PrintText
+	ld hl, .NoYes_MenuDataHeader
+	call CopyMenuDataHeader
+	call VerticalMenu
+	ret c
+	ld a, [wMenuCursorY]
+	cp $1
+	ret z
+	ld a, BANK(sRTCStatusFlags)
+	call GetSRAMBank
+	ld a, $80
+	ld [sRTCStatusFlags], a
+	call CloseSRAM
+	ld hl, .text_okay
+	jp PrintText
+
+.text_okay ; 0x4d3fe
+	; Select CONTINUE & reset settings.
+	text_jump UnknownText_0x1c55db
+	db "@"
+
+.text_askreset ; 0x4d408
+	; Reset the clock?
+	text_jump UnknownText_0x1c561c
+	db "@"
+
+.NoYes_MenuDataHeader: ; 0x4d40d
+	db $00 ; flags
+	db 07, 14 ; start coords
+	db 11, 19 ; end coords
+	dw .NoYes_MenuData2
+	db 1 ; default option
+
+.NoYes_MenuData2: ; 0x4d415
+	db $c0 ; flags
+	db 2 ; items
+	db "No@"
+	db "Yes@"
+
+_DeleteSaveData: ; 4d54c
+	farcall BlankScreen
+	ld b, CGB_DIPLOMA
+	call GetCGBLayout
+	call LoadStandardFont
+	call LoadFontsExtra
+	ld de, MUSIC_MAIN_MENU
+	call PlayMusic
+	ld hl, .Text_ClearAllSaveData
+	call PrintText
+	ld hl, TitleScreenNoYesMenuDataHeader
+	call CopyMenuDataHeader
+	call VerticalMenu
+	ret c
+	ld a, [wMenuCursorY]
+	cp $1
+	ret z
+	farjp EmptyAllSRAMBanks
+
+.Text_ClearAllSaveData: ; 0x4d580
+	; Clear all save data?
+	text_jump UnknownText_0x1c564a
+	db "@"
+
+_ResetInitialOptions:
+	farcall BlankScreen
+	ld b, CGB_DIPLOMA
+	call GetCGBLayout
+	call LoadStandardFont
+	call LoadFontsExtra
+	ld de, MUSIC_MAIN_MENU
+	call PlayMusic
+	ld hl, .Text_ResetInitialOptions
+	call PrintText
+	ld hl, TitleScreenNoYesMenuDataHeader
+	call CopyMenuDataHeader
+	call VerticalMenu
+	ret c
+	ld a, [wMenuCursorY]
+	cp $1
+	ret z
+	ld a, [InitialOptions]
+	set RESET_INIT_OPTS, a
+	ld [InitialOptions], a
+	ld a, BANK(sOptions)
+	call GetSRAMBank
+	ld a, [InitialOptions]
+	ld [sOptions + 6], a ; sInitialOptions
+	jp CloseSRAM
+
+.Text_ResetInitialOptions: ; 0x4d580
+	; Reset the initial game options?
+	text_jump ResetInitialOptionsText
+	db "@"
+
+TitleScreenNoYesMenuDataHeader: ; 0x4d585
+	db $00 ; flags
+	db 07, 14 ; start coords
+	db 11, 19 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2: ; 0x4d58d
+	db $c0 ; flags
+	db 2 ; items
+	db "No@"
+	db "Yes@"
+
+INCLUDE "data/tilesets.asm"
+
+FlagPredef: ; 4d7c1
+; Perform action b on flag c in flag array hl.
+; If checking a flag, check flag array d:hl unless d is 0.
+
+; For longer flag arrays, see FlagAction.
+
+	push hl
+	push bc
+
+; Divide by 8 to get the byte we want.
+	push bc
+	srl c
+	srl c
+	srl c
+	ld b, 0
+	add hl, bc
+	pop bc
+
+; Which bit we want from the byte
+	ld a, c
+	and 7
+	ld c, a
+
+; Shift left until we can mask the bit
+	ld a, 1
+	jr z, .shifted
+.shift
+	add a
+	dec c
+	jr nz, .shift
+.shifted
+	ld c, a
+
+; What are we doing to this flag?
+	dec b
+	jr z, .set ; 1
+	dec b
+	jr z, .check ; 2
+
+.reset
+	ld a, c
+	cpl
+	and [hl]
+	ld [hl], a
+	jr .done
+
+.set
+	ld a, [hl]
+	or c
+	ld [hl], a
+	jr .done
+
+.check
+	ld a, d
+	cp 0
+	jr nz, .farcheck
+
+	ld a, [hl]
+	and c
+	jr .done
+
+.farcheck
+	call GetFarByte
+	and c
+
+.done
+	pop bc
+	pop hl
+	ld c, a
+	ret
+
+GetTrademonFrontpic: ; 4d7fd
+	ld a, [wOTTrademonSpecies]
+	ld hl, wOTTrademonForm
+	ld de, VTiles2
+	push de
+	push af
+	predef GetVariant
+	pop af
+	ld [CurPartySpecies], a
+	ld [CurSpecies], a
+	call GetBaseData
+	pop de
+	predef FrontpicPredef
+	ret
+
+AnimateTrademonFrontpic: ; 4d81e
+	ld a, [wOTTrademonSpecies]
+	call IsAPokemon
+	ret c
+	farcall ShowOTTrademonStats
+	ld a, [wOTTrademonSpecies]
+	ld [CurPartySpecies], a
+	ld a, [wOTTrademonPersonality]
+	ld [TempMonPersonality], a
+	ld a, [wOTTrademonPersonality + 1]
+	ld [TempMonPersonality + 1], a
+	ld b, CGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetCGBLayout
+	ld a, %11100100 ; 3,2,1,0
+	call DmgToCgbBGPals
+	farcall TradeAnim_ShowGetmonFrontpic
+	ld a, [wOTTrademonSpecies]
+	ld [CurPartySpecies], a
+	hlcoord 7, 2
+	lb de, $0, ANIM_MON_TRADE
+	predef AnimateFrontpic
+	ret
+
+CheckPokerus: ; 4d860
+; Return carry if a monster in your party has Pokerus
+
+; Get number of monsters to iterate over
+	ld a, [PartyCount]
+	and a
+	jr z, .NoPokerus
+	ld b, a
+; Check each monster in the party for Pokerus
+	ld hl, PartyMon1PokerusStatus
+	ld de, PARTYMON_STRUCT_LENGTH
+.Check:
+	ld a, [hl]
+	and $0f ; only the bottom nybble is used
+	jr nz, .HasPokerus
+; Next PartyMon
+	add hl, de
+	dec b
+	jr nz, .Check
+.NoPokerus:
+	and a
+	ret
+.HasPokerus:
+	scf
+	ret
+
+Special_CheckForLuckyNumberWinners: ; 4d87a
+	xor a
+	ld [ScriptVar], a
+	ld [wFoundMatchingIDInParty], a
+	ld a, [PartyCount]
+	and a
+	ret z
+	ld d, a
+	ld hl, PartyMon1ID
+	ld bc, PartySpecies
+.PartyLoop:
+	ld a, [bc]
+	inc bc
+	cp EGG
+	call nz, .CompareLuckyNumberToMonID
+	push bc
+	ld bc, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	pop bc
+	dec d
+	jr nz, .PartyLoop
+	ld a, BANK(sBox)
+	call GetSRAMBank
+	ld a, [sBoxCount]
+	and a
+	jr z, .SkipOpenBox
+	ld d, a
+	ld hl, sBoxMon1ID
+	ld bc, sBoxSpecies
+.OpenBoxLoop:
+	ld a, [bc]
+	inc bc
+	cp EGG
+	jr z, .SkipOpenBoxMon
+	call .CompareLuckyNumberToMonID
+	jr nc, .SkipOpenBoxMon
+	ld a, 1
+	ld [wFoundMatchingIDInParty], a
+
+.SkipOpenBoxMon:
+	push bc
+	ld bc, BOXMON_STRUCT_LENGTH
+	add hl, bc
+	pop bc
+	dec d
+	jr nz, .OpenBoxLoop
+
+.SkipOpenBox:
+	call CloseSRAM
+	ld c, $0
+.BoxesLoop:
+	ld a, [wCurBox]
+	and $f
+	cp c
+	jr z, .SkipBox
+	ld hl, .BoxBankAddresses
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	call GetSRAMBank
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a ; hl now contains the address of the loaded box in SRAM
+	ld a, [hl]
+	and a
+	jr z, .SkipBox ; no mons in this box
+	push bc
+	ld b, h
+	ld c, l
+	inc bc
+	ld de, sBoxMon1ID - sBox
+	add hl, de
+	ld d, a
+.BoxNLoop:
+	ld a, [bc]
+	inc bc
+	cp EGG
+	jr z, .SkipBoxMon
+
+	call .CompareLuckyNumberToMonID ; sets ScriptVar and CurPartySpecies appropriately
+	jr nc, .SkipBoxMon
+	ld a, 1
+	ld [wFoundMatchingIDInParty], a
+
+.SkipBoxMon:
+	push bc
+	ld bc, BOXMON_STRUCT_LENGTH
+	add hl, bc
+	pop bc
+	dec d
+	jr nz, .BoxNLoop
+	pop bc
+
+.SkipBox:
+	inc c
+	ld a, c
+	cp NUM_BOXES
+	jr c, .BoxesLoop
+
+	call CloseSRAM
+	ld a, [ScriptVar]
+	and a
+	ret z ; found nothing
+	ld a, [wFoundMatchingIDInParty]
+	and a
+	push af
+	ld a, [CurPartySpecies]
+	ld [wNamedObjectIndexBuffer], a
+	call GetPokemonName
+	ld hl, .FoundPartymonText
+	pop af
+	jr z, .print
+	ld hl, .FoundBoxmonText
+
+.print
+	jp PrintText
+
+.CompareLuckyNumberToMonID: ; 4d939
+	push bc
+	push de
+	push hl
+	ld d, h
+	ld e, l
+	ld hl, Buffer1
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	call PrintNum
+	ld hl, LuckyNumberDigitsBuffer
+	ld de, wLuckyIDNumber
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	call PrintNum
+	lb bc, 5, 0
+	ld hl, LuckyNumberDigitsBuffer + 4
+	ld de, Buffer1 + 4
+.loop
+	ld a, [de]
+	cp [hl]
+	jr nz, .done
+	dec de
+	dec hl
+	inc c
+	dec b
+	jr nz, .loop
+
+.done
+	pop hl
+	push hl
+	ld de, -6
+	add hl, de
+	ld a, [hl]
+	pop hl
+	pop de
+	push af
+	ld a, c
+	ld b, 1
+	cp 5
+	jr z, .okay
+	ld b, 2
+	cp 4
+	jr z, .okay
+	ld b, 3
+	cp 3
+	jr nc, .okay
+	ld b, 4
+	cp 2
+	jr nz, .nomatch
+
+.okay
+	inc b
+	ld a, [ScriptVar]
+	and a
+	jr z, .bettermatch
+	cp b
+	jr c, .nomatch
+
+.bettermatch
+	dec b
+	ld a, b
+	ld [ScriptVar], a
+	pop bc
+	ld a, b
+	ld [CurPartySpecies], a
+	pop bc
+	scf
+	ret
+
+.nomatch
+	pop bc
+	pop bc
+	and a
+	ret
+
+.BoxBankAddresses: ; 4d99f
+	dba sBox1
+	dba sBox2
+	dba sBox3
+	dba sBox4
+	dba sBox5
+	dba sBox6
+	dba sBox7
+	dba sBox8
+	dba sBox9
+	dba sBox10
+	dba sBox11
+	dba sBox12
+	dba sBox13
+	dba sBox14
+
+.FoundPartymonText: ; 0x4d9c9
+	; Congratulations! We have a match with the ID number of @  in your party.
+	text_jump UnknownText_0x1c1261
+	db "@"
+
+.FoundBoxmonText: ; 0x4d9ce
+	; Congratulations! We have a match with the ID number of @  in your PC BOX.
+	text_jump UnknownText_0x1c12ae
+	db "@"
+
+Special_PrintTodaysLuckyNumber: ; 4d9d3
+	ld hl, StringBuffer3
+	ld de, wLuckyIDNumber
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	call PrintNum
+	ld a, "@"
+	ld [StringBuffer3 + 5], a
+	ret
+
+CheckPartyFullAfterContest: ; 4d9e5
+	ld a, [wContestMon]
+	and a
+	jp z, .DidntCatchAnything
+	ld [CurPartySpecies], a
+	ld [CurSpecies], a
+	call GetBaseData
+	ld hl, PartyCount
+	ld a, [hl]
+	cp 6
+	jp nc, .TryAddToBox
+	inc a
+	ld [hl], a
+	ld c, a
+	ld b, $0
+	add hl, bc
+	ld a, [wContestMon]
+	ld [hli], a
+	ld [CurSpecies], a
+	ld a, $ff
+	ld [hl], a
+	ld hl, PartyMon1Species
+	ld a, [PartyCount]
+	dec a
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, wContestMon
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call CopyBytes
+	ld a, [PartyCount]
+	dec a
+	ld hl, PartyMonOT
+	call SkipNames
+	ld d, h
+	ld e, l
+	ld hl, PlayerName
+	call CopyBytes
+	ld a, [CurPartySpecies]
+	ld [wd265], a
+	call GetPokemonName
+	ld hl, StringBuffer1
+	ld de, wMonOrItemNameBuffer
+	ld bc, PKMN_NAME_LENGTH
+	call CopyBytes
+	call GiveANickname_YesNo
+	jr c, .Party_SkipNickname
+	ld a, [PartyCount]
+	dec a
+	ld [CurPartyMon], a
+	xor a
+	ld [MonType], a
+	ld de, wMonOrItemNameBuffer
+	farcall InitNickname
+
+.Party_SkipNickname:
+	ld a, [PartyCount]
+	dec a
+	ld hl, PartyMonNicknames
+	call SkipNames
+	ld d, h
+	ld e, l
+	ld hl, wMonOrItemNameBuffer
+	call CopyBytes
+	ld a, [PartyCount]
+	dec a
+	ld hl, PartyMon1Level
+	call GetPartyLocation
+	ld a, [hl]
+	ld [CurPartyLevel], a
+	ld a, PARK_BALL
+	ld [CurItem], a
+	call SetCaughtData
+	ld a, [PartyCount]
+	dec a
+	ld hl, PartyMon1CaughtLocation
+	call GetPartyLocation
+	ld a, NATIONAL_PARK
+	ld [hl], a
+	xor a
+	ld [wContestMon], a
+	and a
+	ld [ScriptVar], a
+	ret
+
+.TryAddToBox: ; 4daa3
+	ld a, BANK(sBoxCount)
+	call GetSRAMBank
+	ld hl, sBoxCount
+	ld a, [hl]
+	cp MONS_PER_BOX
+	call CloseSRAM
+	jr nc, .BoxFull
+	xor a
+	ld [CurPartyMon], a
+	ld hl, wContestMon
+	ld de, wBufferMon
+	ld bc, BOXMON_STRUCT_LENGTH
+	call CopyBytes
+	ld hl, PlayerName
+	ld de, wBufferMonOT
+	ld bc, NAME_LENGTH
+	call CopyBytes
+	farcall InsertPokemonIntoBox
+	ld a, [CurPartySpecies]
+	ld [wd265], a
+	call GetPokemonName
+	call GiveANickname_YesNo
+	ld hl, StringBuffer1
+	jr c, .Box_SkipNickname
+	ld a, BOXMON
+	ld [MonType], a
+	ld de, wMonOrItemNameBuffer
+	farcall InitNickname
+	ld hl, wMonOrItemNameBuffer
+
+.Box_SkipNickname:
+	ld a, BANK(sBoxMonNicknames)
+	call GetSRAMBank
+	ld de, sBoxMonNicknames
+	ld bc, PKMN_NAME_LENGTH
+	call CopyBytes
+	call CloseSRAM
+
+.BoxFull:
+	ld a, BANK(sBoxMon1Level)
+	call GetSRAMBank
+	ld a, [sBoxMon1Level]
+	ld [CurPartyLevel], a
+	call CloseSRAM
+	call SetBoxMonCaughtData
+	ld a, BANK(sBoxMon1CaughtLocation)
+	call GetSRAMBank
+	ld hl, sBoxMon1CaughtLocation
+	ld a, [hl]
+	and $80
+	ld b, $13
+	or b
+	ld [hl], a
+	call CloseSRAM
+	xor a
+	ld [wContestMon], a
+	ld a, $1
+	ld [ScriptVar], a
+	ret
+
+.DidntCatchAnything: ; 4db35
+	ld a, $2
+	ld [ScriptVar], a
+	ret
+
+GiveANickname_YesNo: ; 4db3b
+	ld a, [InitialOptions]
+	bit NUZLOCKE_MODE, a
+	jr nz, .AlwaysNickname
+	ld hl, TextJump_GiveANickname
+	call PrintText
+	jp YesNoBox
+
+.AlwaysNickname:
+	ld a, 1
+	and a
+	ret
+
+TextJump_GiveANickname: ; 0x4db44
+	; Give a nickname to the @  you received?
+	text_jump UnknownText_0x1c12fc
+	db "@"
+
+SetCaughtData: ; 4db49
+	ld a, [PartyCount]
+	dec a
+	ld hl, PartyMon1CaughtData
+	call GetPartyLocation
+SetBoxmonOrEggmonCaughtData: ; 4db53
+	; CaughtGender
+	ld a, [PlayerGender]
+	and a
+	jr z, .male
+	ld a, FEMALE
+	jr .ok
+.male
+	ld a, MALE
+.ok
+	ld b, a
+	; CaughtTime
+	ld a, [TimeOfDay]
+	inc a
+	rrca
+	rrca
+	rrca
+	or b
+	ld b, a
+	; CaughtBall
+	ld a, [CurItem]
+	and CAUGHTBALL_MASK
+	or b
+	ld [hli], a
+	; CaughtLevel
+	ld a, [CurPartyLevel]
+	ld [hli], a
+	; CaughtLocation
+	call GetCurrentLandmark
+	ld [hl], a
+	ret
+
+SetBoxMonCaughtData: ; 4db83
+	ld a, BANK(sBoxMon1CaughtData)
+	call GetSRAMBank
+	ld hl, sBoxMon1CaughtData
+	call SetBoxmonOrEggmonCaughtData
+	jp CloseSRAM
+
+SetGiftBoxMonCaughtData: ; 4db92
+	push bc
+	ld a, BANK(sBoxMon1CaughtData)
+	call GetSRAMBank
+	ld hl, sBoxMon1CaughtData
+	pop bc
+	call SetGiftMonCaughtData
+	jp CloseSRAM
+
+SetGiftPartyMonCaughtData: ; 4dba3
+	ld a, [PartyCount]
+	dec a
+	ld hl, PartyMon1CaughtData
+	call GetPartyLocation
+SetGiftMonCaughtData: ; 4dbaf
+	; CaughtGender
+	; b contains it
+	; CaughtTime
+	ld a, [TimeOfDay]
+	inc a
+	rrca
+	rrca
+	rrca
+	or b
+	ld b, a
+	; CaughtBall
+	; c contains it
+	ld a, c
+	and CAUGHTBALL_MASK
+	or b
+	ld [hli], a
+	; CaughtLevel
+	; Met in a trade
+	xor a
+	ld [hli], a
+	; CaughtLocation
+	; Unknown location
+	ld [hl], a
+	ret
+
+SetEggMonCaughtData: ; 4dbb8 (13:5bb8)
+	ld a, [CurPartyMon]
+	ld hl, PartyMon1CaughtData
+	call GetPartyLocation
+	ld a, [CurPartyLevel]
+	push af
+	ld a, EGG_LEVEL
+	ld [CurPartyLevel], a
+	ld a, POKE_BALL
+	ld [CurItem], a
+	call SetBoxmonOrEggmonCaughtData
+	pop af
+	ld [CurPartyLevel], a
+	ret
+
+_FindGreaterThanThatLevel: ; 4dbd2
+	ld hl, PartyMon1Level
+	jp FindGreaterThanThatLevel
+
+_FindAtLeastThatHappy: ; 4dbd9
+	ld hl, PartyMon1Happiness
+	jp FindAtLeastThatHappy
+
+_FindThatSpecies: ; 4dbe0
+	ld hl, PartyMon1Species
+	jp FindThatSpecies
+
+_FindThatSpeciesYourTrainerID: ; 4dbe6
+	ld hl, PartyMon1Species
+	call FindThatSpecies
+	ret z
+	ld a, c
+	ld hl, PartyMon1ID
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld a, [PlayerID]
+	cp [hl]
+	jr nz, .nope
+	inc hl
+	ld a, [PlayerID + 1]
+	cp [hl]
+	jr nz, .nope
+	ld a, $1
+	and a
+	ret
+
+.nope
 	xor a
 	ret
 
-EvolutionSetWholeScreenPalette_:
-	; check if evolving mon is shiny
-	ld hl, wShinyMonFlag
-	res 0, [hl]
-	ld b, Bank(IsMonShiny)
-	ld hl, IsMonShiny
-	push de
-	ld de, wLoadedMonDVs
-	call Bankswitch
-	pop de
-	jr z, .setPAL
-	ld hl, wShinyMonFlag
-	set 0, [hl]
-.setPAL
-	ld c, d
-	ld b, SET_PAL_POKEMON_WHOLE_SCREEN
-	jp RunPaletteCommand
-
-PlayShinySparkleAnimation:
-	; flash the screen
-	ld a, [rBGP]
-	push af
-	ld a,%00011011 ; 0, 1, 2, 3 (inverted colors)
-	ld [rBGP],a
-	ld c,4
-	call DelayFrames
-	pop af
-	ld [rBGP],a ; restore initial palette
-	; play animation
-	ld b, $b + 1
+FindAtLeastThatHappy: ; 4dc0a
+; Sets the bits for the Pokemon that have a happiness greater than or equal to b.
+; The lowest bits are used.  Sets z if no Pokemon in your party is at least that happy.
+	ld c, $0
+	ld a, [PartyCount]
+	ld d, a
 .loop
-	dec b
-	jr z,.animationFinished
-	ld c, ((ShinySparkleCoordsEnd - ShinySparkleCoords) / 3) + 1
-	ld a, [wShinyMonFlag]
-	bit 1, a
-	ld de,ShinySparkleCoords
-	jr z, .ok
-	ld de,EnemyShinySparkleCoords
-.ok
-	ld hl,wOAMBuffer
-.innerLoop
-	dec c
-	jr z,.delayFrames
-	ld a, [de]
-	cp b
-	jr c, .sparkleInactive
-	sub b
-	cp 4
-	jr nc, .sparkleInactive
+	ld a, d
+	dec a
+	push hl
 	push bc
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	pop bc
+	ld a, b
+	cp [hl]
+	pop hl
+	jr z, .greater_equal
+	jr nc, .lower
+
+.greater_equal
+	ld a, c
+	or $1
+	ld c, a
+
+.lower
+	sla c
+	dec d
+	jr nz, .loop
+	call RetroactivelyIgnoreEggs
+	ld a, c
+	and a
+	ret
+
+FindGreaterThanThatLevel: ; 4dc31
+	ld c, $0
+	ld a, [PartyCount]
+	ld d, a
+.loop
+	ld a, d
+	dec a
+	push hl
+	push bc
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	pop bc
+	ld a, b
+	cp [hl]
+	pop hl
+	jr c, .greater
+	ld a, c
+	or $1
+	ld c, a
+
+.greater
+	sla c
+	dec d
+	jr nz, .loop
+	call RetroactivelyIgnoreEggs
+	ld a, c
+	and a
+	ret
+
+FindThatSpecies: ; 4dc56
+; Find species b in your party.
+; If you have no Pokemon, returns c = -1 and z.
+; If that species is in your party, returns its location in c, and nz.
+; Otherwise, returns z.
+	ld c, -1
+	ld hl, PartySpecies
+.loop
+	ld a, [hli]
+	cp -1
+	ret z
+	inc c
+	cp b
+	jr nz, .loop
+	ld a, $1
+	and a
+	ret
+
+RetroactivelyIgnoreEggs: ; 4dc67
+	ld e, -2
+	ld hl, PartySpecies
+.loop
+	ld a, [hli]
+	cp -1
+	ret z
+	cp EGG
+	jr nz, .skip_notegg
+	ld a, c
+	and e
+	ld c, a
+
+.skip_notegg
+	rlc e
+	jr .loop
+
+INCLUDE "engine/stats_screen.asm"
+
+CatchTutorial:: ; 4e554
+	ld a, [BattleType]
+	dec a
+	ld c, a
+	ld hl, .dw
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.dw ; 4e564 (13:6564)
+	dw .DudeTutorial
+	dw .DudeTutorial
+	dw .DudeTutorial
+
+.DudeTutorial: ; 4e56a (13:656a)
+; Back up your name
+	ld hl, PlayerName
+	ld de, BackupName
+	ld bc, NAME_LENGTH
+	call CopyBytes
+; Copy Dude's name to your name
+	ld hl, .Dude
+	ld de, PlayerName
+	ld bc, NAME_LENGTH
+	call CopyBytes
+
+	call .LoadDudeData
+
+	xor a
+	ld [hJoyDown], a
+	ld [hJoyPressed], a
+
+	ld hl, .AutoInput
+	ld a, BANK(.AutoInput)
+	call StartAutoInput
+	farcall StartBattle
+	call StopAutoInput
+
+	ld hl, BackupName
+	ld de, PlayerName
+	ld bc, NAME_LENGTH
+	jp CopyBytes
+
+.LoadDudeData: ; 4e5b7 (13:65b7)
+	ld hl, wDudeNumItems
+	ld [hl], 1
+	inc hl
+	ld [hl], REPEL
+	inc hl
+	ld [hl], 1
+	inc hl
+	ld [hl], -1
+	ld hl, wDudeNumMedicine
+	ld [hl], 1
+	inc hl
+	ld [hl], POTION
+	inc hl
+	ld [hl], 1
+	inc hl
+	ld [hl], -1
+	ld hl, wDudeNumBalls
+	ld [hl], 1
+	inc hl
+	ld [hl], POKE_BALL
+	inc hl
+	ld [hl], 10
+	inc hl
+	ld [hl], -1
+	ret
+
+.Dude: ; 4e5da
+	db "Lyra@"
+
+.AutoInput: ; 4e5df
+	db NO_INPUT, $ff ; end
+
+INCLUDE "engine/evolution_animation.asm"
+
+InitDisplayForHallOfFame: ; 4e881
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	call DisableLCD
+	call LoadStandardFont
+	call LoadFontsBattleExtra
+	hlbgcoord 0, 0
+	ld bc, VBGMap1 - VBGMap0
+	ld a, " "
+	call ByteFill
+	hlcoord 0, 0, AttrMap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	xor a
+	call ByteFill
+	xor a
+	ld [hSCY], a
+	ld [hSCX], a
+	call EnableLCD
+	ld hl, .SavingRecordDontTurnOff
+	call PrintText
+	call WaitBGMap2
+	jp SetPalettes
+
+.SavingRecordDontTurnOff: ; 0x4e8bd
+	; SAVING RECORD… DON'T TURN OFF!
+	text_jump UnknownText_0x1bd39e
+	db "@"
+
+InitDisplayForLeafCredits: ; 4e8c2
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	call DisableLCD
+	call LoadStandardFont
+	call LoadFontsBattleExtra
+	hlbgcoord 0, 0
+	ld bc, VBGMap1 - VBGMap0
+	ld a, " "
+	call ByteFill
+	hlcoord 0, 0, AttrMap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	xor a
+	call ByteFill
+	ld hl, UnknBGPals
+	ld c, 4 tiles
+.load_white_palettes
+if !DEF(MONOCHROME)
+	ld a, (palred 31 + palgreen 31 + palblue 31) % $100
+	ld [hli], a
+	ld a, (palred 31 + palgreen 31 + palblue 31) / $100
+	ld [hli], a
+else
+	ld a, PAL_MONOCHROME_WHITE % $100
+	ld [hli], a
+	ld a, PAL_MONOCHROME_WHITE / $100
+	ld [hli], a
+endc
+	dec c
+	jr nz, .load_white_palettes
+	xor a
+	ld [hSCY], a
+	ld [hSCX], a
+	call EnableLCD
+	call WaitBGMap2
+	jp SetPalettes
+
+ResetDisplayBetweenHallOfFameMons: ; 4e906
+	ld a, [rSVBK]
+	push af
+	ld a, $6
+	ld [rSVBK], a
+	ld hl, wScratchTileMap
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	ld a, " "
+	call ByteFill
+	hlbgcoord 0, 0
+	ld de, wScratchTileMap
+	lb bc, $0, $40
+	call Request2bpp
+	pop af
+	ld [rSVBK], a
+	ret
+
+INCLUDE "engine/battle/sliding_intro.asm"
+
+CheckBattleEffects: ; 4ea44
+; Return carry if battle scene is turned off.
+	ld a, [Options1]
+	bit BATTLE_EFFECTS, a
+	jr z, .off
+	and a
+	ret
+.off
+	scf
+	ret
+
+INCLUDE "engine/bsod.asm"
+
+INCLUDE "engine/events/stats_judge.asm"
+
+INCLUDE "engine/events/poisonstep.asm"
+INCLUDE "engine/events/squirtbottle.asm"
+INCLUDE "engine/events/card_key.asm"
+INCLUDE "engine/events/basement_key.asm"
+INCLUDE "engine/events/sacred_ash.asm"
+
+
+SECTION "Code 13", ROMX
+
+INCLUDE "engine/party_menu.asm"
+
+CopyPkmnToTempMon: ; 5084a
+; gets the BaseData of a Pkmn
+; and copys the PkmnStructure to TempMon
+
+	ld a, [CurPartyMon]
+	ld e, a
+	call GetPkmnSpecies
+	ld a, [CurPartySpecies]
+	ld [CurSpecies], a
+	call GetBaseData
+
+	ld a, [MonType]
+	ld hl, PartyMon1Species
+	ld bc, PARTYMON_STRUCT_LENGTH
+	and a
+	jr z, .copywholestruct
+	ld hl, OTPartyMon1Species
+	ld bc, PARTYMON_STRUCT_LENGTH
+	cp OTPARTYMON
+	jr z, .copywholestruct
+	ld bc, BOXMON_STRUCT_LENGTH
+	farjp CopyBoxmonToTempMon
+
+.copywholestruct
+	ld a, [CurPartyMon]
+	call AddNTimes
+	ld de, TempMon
+	ld bc, PARTYMON_STRUCT_LENGTH
+	jp CopyBytes
+
+CalcwBufferMonStats: ; 5088b
+	ld bc, wBufferMon
+	jr _TempMonStatsCalculation
+
+CalcTempmonStats: ; 50890
+	ld bc, TempMon
+_TempMonStatsCalculation: ; 50893
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	ld [CurPartyLevel], a
+	ld hl, MON_MAXHP
+	add hl, bc
+	ld d, h
+	ld e, l
+	ld hl, MON_EVS - 1
+	add hl, bc
+	push bc
+	ld b, TRUE
+	predef CalcPkmnStats
+	pop bc
+	ld hl, MON_HP
+	add hl, bc
+	ld d, h
+	ld e, l
+	ld a, [CurPartySpecies]
+	cp EGG
+	jr nz, .not_egg
+	xor a
+	ld [de], a
+	inc de
+	ld [de], a
+	jr .zero_status
+
+.not_egg
+	push bc
+	ld hl, MON_MAXHP
+	add hl, bc
+	ld bc, 2
+	call CopyBytes
+	pop bc
+
+.zero_status
+	ld hl, MON_STATUS
+	add hl, bc
+	xor a
+	ld [hli], a
+	ld [hl], a
+	ret
+
+GetPkmnSpecies: ; 508d5
+; [MonType] has the type of the Pkmn
+; e = Nr. of Pkmn (i.e. [CurPartyMon])
+
+	ld a, [MonType]
+	and a ; PARTYMON
+	jr z, .partymon
+	cp OTPARTYMON
+	jr z, .otpartymon
+	cp BOXMON
+	jr z, .boxmon
+	cp BREEDMON
+	jr z, .breedmon
+	; WILDMON
+
+.partymon
+	ld hl, PartySpecies
+	jr .done
+
+.otpartymon
+	ld hl, OTPartySpecies
+	jr .done
+
+.boxmon
+	ld a, BANK(sBoxSpecies)
+	call GetSRAMBank
+	ld hl, sBoxSpecies
+	call .done
+	jp CloseSRAM
+
+.breedmon
+	ld a, [wBreedMon1Species]
+	jr .done2
+
+.done
+	ld d, 0
+	add hl, de
+	ld a, [hl]
+
+.done2
+	ld [CurPartySpecies], a
+	ret
+
+INCLUDE "data/types/names.asm"
+
+PrintNature:
+; Print nature b at hl.
+	ld a, b
+	push hl
+	ld hl, NatureNames
+	jr _PrintNatureProperty
+
+PrintNatureIndicators:
+; Print indicators for nature b at hl.
+	ld a, b
+	push hl
+	ld hl, NatureIndicators
+_PrintNatureProperty:
+	add a
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld d, [hl]
+	pop hl
+	jp PlaceString
+
+INCLUDE "data/natures.asm"
+
+DrawPlayerHP: ; 50b0a
+	ld a, $1
+	ld [wWhichHPBar], a
+	push hl
+	push bc
+	ld a, [MonType]
+	cp BOXMON
+	jr z, .at_least_1_hp
+
+	ld a, [TempMonHP]
+	ld b, a
+	ld a, [TempMonHP + 1]
+	ld c, a
+
+; Any HP?
+	or b
+	jr nz, .at_least_1_hp
+
+	xor a
+	ld c, a
+	ld e, a
+	ld a, 6
+	ld d, a
+	jp .fainted
+
+.at_least_1_hp
+	ld a, [TempMonMaxHP]
+	ld d, a
+	ld a, [TempMonMaxHP + 1]
+	ld e, a
+	ld a, [MonType]
+	cp BOXMON
+	jr nz, .not_boxmon
+
+	ld b, d
+	ld c, e
+
+.not_boxmon
+	predef ComputeHPBarPixels
+	ld a, 6
+	ld d, a
+	ld c, a
+
+.fainted
+	ld a, c
+	pop bc
+	ld c, a
+	pop hl
+	push de
+	push hl
+	push hl
+	call DrawBattleHPBar
+	pop hl
+
+; Print HP
+	ld bc, $15 ; move (1,1)
+	add hl, bc
+	ld de, TempMonHP
+	ld a, [MonType]
+	cp BOXMON
+	jr nz, .not_boxmon_2
+	ld de, TempMonMaxHP
+.not_boxmon_2
+	lb bc, 2, 3
+	call PrintNum
+
+	ld a, "/"
+	ld [hli], a
+
+; Print max HP
+	ld de, TempMonMaxHP
+	lb bc, 2, 3
+	call PrintNum
+	pop hl
+	pop de
+	ret
+
+PrintTempMonStats: ; 50b7b
+; Print TempMon's stats at hl, with spacing bc.
+	push bc
+	push hl
+	ld de, .StatNames
+	call PlaceString
+	pop hl
+	pop bc
+
+	push bc
+	push hl
+	push hl
+	ld a, [TempMonNature]
+	ld b, a
+	farcall GetNature
+	pop hl
+rept 8
+	inc hl
+endr
+	predef PrintNatureIndicators
+	pop hl
+	pop bc
+
+	add hl, bc
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	ld de, TempMonAttack
+	lb bc, 2, 3
+	call .PrintStat
+	ld de, TempMonDefense
+	call .PrintStat
+	ld de, TempMonSpclAtk
+	call .PrintStat
+	ld de, TempMonSpclDef
+	call .PrintStat
+	ld de, TempMonSpeed
+	jp PrintNum
+
+.PrintStat: ; 50bab
+	push hl
+	call PrintNum
+	pop hl
+	ld de, SCREEN_WIDTH * 2
+	add hl, de
+	ret
+
+.StatNames: ; 50bb5
+	db   "Attack"
+	next "Defense"
+	next "Spcl.Atk"
+	next "Spcl.Def"
+	next "Speed"
+	next "@"
+
+GetGender: ; 50bdd
+; Return the gender of a given monster (CurPartyMon/CurOTMon/CurWildMon).
+; When calling this function, a should be set to an appropriate MonType value.
+
+; return values:
+; a = 1: f = nc|nz; male
+; a = 0: f = nc|z;  female
+;        f = c:  genderless
+
+; This is determined by checking the Personality gender value,
+; which was already determined by the species' gender ratio.
+
+; Figure out what type of monster struct we're looking at.
+
+; 0: PartyMon
+	ld hl, PartyMon1Gender
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [MonType]
+	and a
+	jr z, .PartyMon
+
+; 1: OTPartyMon
+	ld hl, OTPartyMon1Gender
+	dec a
+	jr z, .PartyMon
+
+; 2: sBoxMon
+	ld hl, sBoxMon1Gender
+	ld bc, BOXMON_STRUCT_LENGTH
+	dec a
+	jr z, .sBoxMon
+
+; 3: Other (used for breeding, possibly elsewhere)
+	ld hl, TempMonGender
+	dec a
+	jr z, .Gender
+
+; else: WildMon
+	ld hl, EnemyMonGender
+	jr .Gender
+
+; Get our place in the party/box.
+
+.PartyMon:
+.sBoxMon
+	ld a, [CurPartyMon]
+	call AddNTimes
+
+.Gender:
+
+; sBoxMon data is read directly from SRAM.
+	ld a, [MonType]
+	cp BOXMON
+	ld a, 1
+	call z, GetSRAMBank
+
+; Gender
+	ld a, [hl]
+	and GENDER_MASK
+	ld b, a
+
+; Close SRAM if we were dealing with a sBoxMon.
+	ld a, [MonType]
+	cp BOXMON
+	call z, CloseSRAM
+
+; We need the gender ratio to do anything with this.
+	push bc
+	ld a, [CurPartySpecies]
+	dec a
+	ld hl, BASEMON_GENDER
+	ld bc, BASEMON_STRUCT_LENGTH
+	call AddNTimes
+	pop bc
+
+	ld a, BANK(BaseData)
+	call GetFarByte
+	swap a
+	and $f
+
+; Fixed values ignore the Personality gender value.
+	cp GENDERLESS
+	jr z, .Genderless
+	and a ; cp ALL_MALE
+	jr z, .Male
+	cp ALL_FEMALE
+	jr z, .Female
+
+; Otherwise, use the Personality gender value directly.
+	ld a, b
+	and a ; cp MALE
+	jr z, .Male
+
+.Female:
+	xor a
+	ret
+
+.Male:
+	ld a, 1
+	and a
+	ret
+
+.Genderless:
+	scf
+	ret
+
+ListMovePP: ; 50c50
+	ld a, [wNumMoves]
+	inc a
+	ld c, a
+	ld a, NUM_MOVES
+	sub c
+	ld b, a
+	push hl
+	ld a, [Buffer1]
+	ld e, a
+	ld d, $0
+	ld a, "<BOLDP>"
+	call .load_loop
+	ld a, b
+	and a
+	jr z, .skip
+	ld c, a
+	ld a, "-"
+	call .load_loop
+
+.skip
+	pop hl
+	inc hl
+	inc hl
+	inc hl
+	ld d, h
+	ld e, l
+	ld hl, TempMonMoves
+	ld b, 0
+.loop
+	ld a, [hli]
+	and a
+	ret z
+	push bc
+	push hl
+	push de
+	ld hl, wMenuCursorY
+	ld a, [hl]
+	push af
+	ld [hl], b
+	push hl
+	farcall GetMaxPPOfMove
+	pop hl
+	pop af
+	ld [hl], a
+	pop de
+	pop hl
+	push hl
+	ld bc, TempMonPP - (TempMonMoves + 1)
+	add hl, bc
+	ld a, [hl]
+	and $3f
+	ld [StringBuffer1 + 4], a
+	ld h, d
+	ld l, e
+	push hl
+	ld de, StringBuffer1 + 4
+	lb bc, 1, 2
+	call PrintNum
+	ld a, "/"
+	ld [hli], a
+	ld de, wd265
+	lb bc, 1, 2
+	call PrintNum
+	pop hl
+	ld a, [Buffer1]
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld d, h
+	ld e, l
+	pop hl
+	pop bc
+	inc b
+	ld a, b
+	cp NUM_MOVES
+	jr nz, .loop
+	ret
+
+.load_loop ; 50cc9
+	ld [hli], a
+	ld [hld], a
+	add hl, de
+	dec c
+	jr nz, .load_loop
+	ret
+
+GetStatusConditionIndex:
+; de points to status, e.g. from a party_struct or battle_struct
+; return the status condition index in a
+	push de
+	inc de
+	inc de
+	ld a, [de]
 	ld b, a
 	inc de
 	ld a, [de]
-	ld [hli], a
-	inc de
+	or b
+	pop de
+	jr z, .fnt
 	ld a, [de]
-	ld [hli], a
-	inc de
-	ld a, $C9 ; first sparkle tile
-	add 3
-	sub b
-	ld [hli], a
+	ld b, a
+	and SLP
+	ld a, 0
+	jr nz, .slp
 	xor a
-	ld [hli], a
-	pop bc
-	jr .innerLoop
-.sparkleInactive
-	inc de
-	inc de
-	inc de
+	bit TOX, b
+	jr nz, .tox
+	bit PSN, b
+	jr nz, .psn
+	bit PAR, b
+	jr nz, .par
+	bit BRN, b
+	jr nz, .brn
+	bit FRZ, b
+	jr nz, .frz
+	jr .done
+.tox
+	inc a
+.fnt
+	inc a
+.frz
+	inc a
+.brn
+	inc a
+.slp
+	inc a
+.par
+	inc a
+.psn
+	inc a
+.done
+	ret
+
+PlaceStatusString: ; 50d0a
 	xor a
+	call GetStatusConditionIndex
+	and a
+	ret z
+	push de
+
+	ld d, 0
+	ld e, a
+	push hl
+	ld hl, StatusStringPointers
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld a, [hl]
+	ld d, a
+	pop hl
+
+	ld a, [de]
+	inc de
 	ld [hli], a
+	ld a, [de]
+	inc de
 	ld [hli], a
-	ld [hli], a
-	ld [hli], a
-	jr .innerLoop
-.delayFrames
+	ld a, [de]
+	ld [hl], a
+
+	pop de
+	ld a, $1
+	and a
+	ret
+
+StatusStringPointers:
+	dw OKString
+	dw PsnString
+	dw ParString
+	dw SlpString
+	dw BrnString
+	dw FrzString
+	dw FntString
+
+OKString:  db "OK @"
+PsnString: db "Psn@"
+ParString: db "Par@"
+SlpString: db "Slp@"
+BrnString: db "Brn@"
+FrzString: db "Frz@"
+FntString: db "Fnt@"
+
+ListMoves: ; 50d6f
+; List moves at hl, spaced every [Buffer1] tiles.
+	ld de, wListMoves_MoveIndicesBuffer
+	ld b, $0
+.moves_loop
+	ld a, [de]
+	inc de
+	and a
+	jr z, .no_more_moves
+	push de
+	push hl
+	push hl
+	ld [CurSpecies], a
+	ld a, MOVE_NAME
+	ld [wNamedObjectTypeBuffer], a
+	call GetName
+	ld de, StringBuffer1
+	pop hl
 	push bc
-	ld c,2
-	call DelayFrames
-	ld a, SFX_SILPH_SCOPE
-	call PlaySound
+	call PlaceString
 	pop bc
-	jr .loop
-.animationFinished
+	ld a, b
+	ld [wNumMoves], a
+	inc b
+	pop hl
+	push bc
+	ld a, [Buffer1]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	pop bc
+	pop de
+	ld a, b
+	cp NUM_MOVES
+	ret z
+	jr .moves_loop
+
+.no_more_moves
+	ld a, b
+.nonmove_loop
+	push af
+	ld [hl], "-"
+	ld a, [Buffer1]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	pop af
+	inc a
+	cp NUM_MOVES
+	jr nz, .nonmove_loop
+	ret
+
+CalcLevel: ; 50e1b
+	ld a, [TempMonSpecies]
+	ld [CurSpecies], a
+	call GetBaseData
+	ld d, 1
+.next_level
+	inc d
+	ld a, d
+	cp (MAX_LEVEL + 1) % $100
+	jr z, .got_level
+	call CalcExpAtLevel
+	push hl
+	ld hl, TempMonExp + 2
+	ld a, [hProduct + 3]
+	ld c, a
+	ld a, [hld]
+	sub c
+	ld a, [hProduct + 2]
+	ld c, a
+	ld a, [hld]
+	sbc c
+	ld a, [hProduct + 1]
+	ld c, a
+	ld a, [hl]
+	sbc c
+	pop hl
+	jr nc, .next_level
+
+.got_level
+	dec d
+	ret
+
+CalcExpAtLevel: ; 50e47
+; (a/b)*n**3 + c*n**2 + d*n - e
+	ld a, d
+	cp 1
+	jr nz, .UseExpFormula
+; Pokémon have 0 experience at level 1
 	xor a
-	ld hl, wOAMBuffer
-	ld bc, 4 * ((ShinySparkleCoordsEnd - ShinySparkleCoords) / 3)
-	jp FillMemory
-
-ShinySparkleCoords:
-; First byte is the frame where the animation starts (higher = sooner)
-; Second and third bytes are y/x coordinates
-	db $0B, 70, 48
-	db $0A, 75, 60
-	db $09, 86, 64
-	db $08, 99, 60
-	db $07, 103, 48
-	db $06, 99, 36
-	db $05, 86, 30
-	db $04, 75, 36
-ShinySparkleCoordsEnd:
-
-EnemyShinySparkleCoords:
-; First byte is the frame where the animation starts (higher = sooner)
-; Second and third bytes are y/x coordinates
-	db $0B, 70 - 48, 48 + 80
-	db $0A, 75 - 48, 60 + 80
-	db $09, 86 - 48, 64 + 80
-	db $08, 99 - 48, 60 + 80
-	db $07, 103 - 48, 48 + 80
-	db $06, 99 - 48, 36 + 80
-	db $05, 86 - 48, 30 + 80
-	db $04, 75 - 48, 36 + 80
-EnemyShinySparkleCoordsEnd:
-
-INCLUDE "engine/menu/item_descriptions.asm"
-
-INCLUDE "color/exp_bar.asm"
-
-
-SECTION "bank16",ROMX,BANK[$16]
-
-INCLUDE "data/mapHeaders/Route6.asm"
-INCLUDE "data/mapObjects/Route6.asm"
-Route6Blocks: INCBIN "maps/Route6.blk"
-
-INCLUDE "data/mapHeaders/Route8.asm"
-INCLUDE "data/mapObjects/Route8.asm"
-Route8Blocks: INCBIN "maps/Route8.blk"
-
-INCLUDE "data/mapHeaders/Route10.asm"
-INCLUDE "data/mapObjects/Route10.asm"
-Route10Blocks: INCBIN "maps/Route10.blk"
-
-INCLUDE "data/mapHeaders/Route11.asm"
-INCLUDE "data/mapObjects/Route11.asm"
-Route11Blocks: INCBIN "maps/Route11.blk"
-
-INCLUDE "data/mapHeaders/Route12.asm"
-INCLUDE "data/mapObjects/Route12.asm"
-Route12Blocks: INCBIN "maps/Route12.blk"
-
-INCLUDE "data/mapHeaders/Route15.asm"
-INCLUDE "data/mapObjects/Route15.asm"
-Route15Blocks: INCBIN "maps/Route15.blk"
-
-INCLUDE "data/mapHeaders/Route16.asm"
-INCLUDE "data/mapObjects/Route16.asm"
-Route16Blocks: INCBIN "maps/Route16.blk"
-
-INCLUDE "data/mapHeaders/Route18.asm"
-INCLUDE "data/mapObjects/Route18.asm"
-Route18Blocks: INCBIN "maps/Route18.blk"
-
-
-INCLUDE "engine/battle/common_text.asm"
-
-INCLUDE "engine/experience.asm"
-
-INCLUDE "engine/overworld/oaks_aide.asm"
-
-INCLUDE "scripts/Route6.asm"
-INCLUDE "scripts/Route8.asm"
-INCLUDE "scripts/Route10.asm"
-INCLUDE "scripts/Route11.asm"
-INCLUDE "scripts/Route12.asm"
-INCLUDE "scripts/Route15.asm"
-INCLUDE "scripts/Route16.asm"
-INCLUDE "scripts/Route18.asm"
-
-INCLUDE "data/mapHeaders/PokemonFanClub.asm"
-INCLUDE "scripts/PokemonFanClub.asm"
-INCLUDE "data/mapObjects/PokemonFanClub.asm"
-FanClubBlocks:
-	INCBIN "maps/PokemonFanClub.blk"
-
-INCLUDE "data/mapHeaders/SilphCo2F.asm"
-INCLUDE "scripts/SilphCo2F.asm"
-INCLUDE "data/mapObjects/SilphCo2F.asm"
-SilphCo2Blocks:
-	INCBIN "maps/SilphCo2F.blk"
-
-INCLUDE "data/mapHeaders/SilphCo3F.asm"
-INCLUDE "scripts/SilphCo3F.asm"
-INCLUDE "data/mapObjects/SilphCo3F.asm"
-SilphCo3Blocks:
-	INCBIN "maps/SilphCo3F.blk"
-
-INCLUDE "data/mapHeaders/SilphCo10F.asm"
-INCLUDE "scripts/SilphCo10F.asm"
-INCLUDE "data/mapObjects/SilphCo10F.asm"
-SilphCo10Blocks:
-	INCBIN "maps/SilphCo10F.blk"
-
-INCLUDE "data/mapHeaders/LancesRoom.asm"
-INCLUDE "scripts/LancesRoom.asm"
-INCLUDE "data/mapObjects/LancesRoom.asm"
-LanceBlocks:
-	INCBIN "maps/LancesRoom.blk"
-
-INCLUDE "data/mapHeaders/HallOfFame.asm"
-INCLUDE "scripts/HallOfFame.asm"
-INCLUDE "data/mapObjects/HallOfFame.asm"
-HallofFameRoomBlocks:
-	INCBIN "maps/HallOfFame.blk"
-
-INCLUDE "engine/overworld/saffron_guards.asm"
-
-
-SECTION "bank17",ROMX,BANK[$17]
-
-SaffronMartBlocks:
-LavenderMartBlocks:
-CeruleanMartBlocks:
-VermilionMartBlocks: INCBIN "maps/VermilionMart.blk"
-
-CopycatsHouse2FBlocks:
-RedsHouse2FBlocks: INCBIN "maps/RedsHouse2F.blk"
-
-Museum1FBlocks: INCBIN "maps/Museum1F.blk"
-
-Museum2FBlocks: INCBIN "maps/Museum2F.blk"
-
-UndergroundPathEntranceRoute7Blocks:
-UndergroundPathEntranceRoute7CopyBlocks:
-UndergroundPathEntranceRoute6Blocks:
-UndergroundPathEntranceRoute5Blocks: INCBIN "maps/PathEntranceRoute5.blk"
-
-Route2GateBlocks:
-ViridianForestEntranceBlocks:
-ViridianForestExitBlocks: INCBIN "maps/ViridianForestExit.blk"
-
-INCLUDE "data/mapHeaders/RedsHouse2F.asm"
-INCLUDE "scripts/RedsHouse2F.asm"
-INCLUDE "data/mapObjects/RedsHouse2F.asm"
-
-INCLUDE "engine/predefs17.asm"
-
-INCLUDE "data/mapHeaders/Museum1F.asm"
-INCLUDE "scripts/Museum1F.asm"
-INCLUDE "data/mapObjects/Museum1F.asm"
-
-INCLUDE "data/mapHeaders/Museum2F.asm"
-INCLUDE "scripts/Museum2F.asm"
-INCLUDE "data/mapObjects/Museum2F.asm"
-
-INCLUDE "data/mapHeaders/PewterGym.asm"
-INCLUDE "scripts/PewterGym.asm"
-INCLUDE "data/mapObjects/PewterGym.asm"
-PewterGymBlocks: INCBIN "maps/PewterGym.blk"
-
-INCLUDE "data/mapHeaders/CeruleanGym.asm"
-INCLUDE "scripts/CeruleanGym.asm"
-INCLUDE "data/mapObjects/CeruleanGym.asm"
-CeruleanGymBlocks: INCBIN "maps/CeruleanGym.blk"
-
-INCLUDE "data/mapHeaders/CeruleanMart.asm"
-INCLUDE "scripts/CeruleanMart.asm"
-INCLUDE "data/mapObjects/CeruleanMart.asm"
-INCLUDE "data/martInventories/cerulean.asm"
-
-INCLUDE "data/mapHeaders/LavenderMart.asm"
-INCLUDE "scripts/LavenderMart.asm"
-INCLUDE "data/mapObjects/LavenderMart.asm"
-INCLUDE "data/martInventories/lavender.asm"
-
-INCLUDE "data/mapHeaders/VermilionMart.asm"
-INCLUDE "scripts/VermilionMart.asm"
-INCLUDE "data/mapObjects/VermilionMart.asm"
-INCLUDE "data/martInventories/vermillion.asm"
-
-INCLUDE "data/mapHeaders/VermilionGym.asm"
-INCLUDE "scripts/VermilionGym.asm"
-INCLUDE "data/mapObjects/VermilionGym.asm"
-VermilionGymBlocks: INCBIN "maps/VermilionGym.blk"
-
-INCLUDE "data/mapHeaders/CopycatsHouse2F.asm"
-INCLUDE "scripts/CopycatsHouse2F.asm"
-INCLUDE "data/mapObjects/CopycatsHouse2F.asm"
-
-INCLUDE "data/mapHeaders/FightingDojo.asm"
-INCLUDE "scripts/FightingDojo.asm"
-INCLUDE "data/mapObjects/FightingDojo.asm"
-FightingDojoBlocks: INCBIN "maps/FightingDojo.blk"
-
-INCLUDE "data/mapHeaders/SaffronGym.asm"
-INCLUDE "scripts/SaffronGym.asm"
-INCLUDE "data/mapObjects/SaffronGym.asm"
-SaffronGymBlocks: INCBIN "maps/SaffronGym.blk"
-
-INCLUDE "data/mapHeaders/SaffronMart.asm"
-INCLUDE "scripts/SaffronMart.asm"
-INCLUDE "data/mapObjects/SaffronMart.asm"
-INCLUDE "data/martInventories/saffron.asm"
-
-INCLUDE "data/mapHeaders/SilphCo1F.asm"
-INCLUDE "scripts/SilphCo1F.asm"
-INCLUDE "data/mapObjects/SilphCo1F.asm"
-SilphCo1Blocks: INCBIN "maps/SilphCo1F.blk"
-
-INCLUDE "data/mapHeaders/ViridianForestExit.asm"
-INCLUDE "scripts/ViridianForestExit.asm"
-INCLUDE "data/mapObjects/ViridianForestExit.asm"
-
-INCLUDE "data/mapHeaders/Route2Gate.asm"
-INCLUDE "scripts/Route2Gate.asm"
-INCLUDE "data/mapObjects/Route2Gate.asm"
-
-INCLUDE "data/mapHeaders/ViridianForestEntrance.asm"
-INCLUDE "scripts/ViridianForestEntrance.asm"
-INCLUDE "data/mapObjects/ViridianForestEntrance.asm"
-
-INCLUDE "data/mapHeaders/PathEntranceRoute5.asm"
-INCLUDE "scripts/PathEntranceRoute5.asm"
-INCLUDE "data/mapObjects/PathEntranceRoute5.asm"
-
-INCLUDE "data/mapHeaders/PathEntranceRoute6.asm"
-INCLUDE "scripts/PathEntranceRoute6.asm"
-INCLUDE "data/mapObjects/PathEntranceRoute6.asm"
-
-INCLUDE "data/mapHeaders/PathEntranceRoute7.asm"
-INCLUDE "scripts/PathEntranceRoute7.asm"
-INCLUDE "data/mapObjects/PathEntranceRoute7.asm"
-
-INCLUDE "data/mapHeaders/PathEntranceRoute5Copy.asm"
-INCLUDE "scripts/PathEntranceRoute5Copy.asm"
-INCLUDE "data/mapObjects/PathEntranceRoute5Copy.asm"
-
-INCLUDE "data/mapHeaders/SilphCo9F.asm"
-INCLUDE "scripts/SilphCo9F.asm"
-INCLUDE "data/mapObjects/SilphCo9F.asm"
-SilphCo9Blocks: INCBIN "maps/SilphCo9F.blk"
-
-INCLUDE "data/mapHeaders/VictoryRoad1.asm"
-INCLUDE "scripts/VictoryRoad1.asm"
-INCLUDE "data/mapObjects/VictoryRoad1.asm"
-VictoryRoad1Blocks: INCBIN "maps/VictoryRoad1.blk"
-
-INCLUDE "engine/predefs17_2.asm"
-
-INCLUDE "engine/hidden_object_functions17.asm"
-
-
-SECTION "bank18",ROMX,BANK[$18]
-
-ViridianForestBlocks:    INCBIN "maps/ViridianForest.blk"
-UndergroundPathNSBlocks: INCBIN "maps/UndergroundPathNS.blk"
-UndergroundPathWEBlocks: INCBIN "maps/UndergroundPathWE.blk"
-
-SSAnne10Blocks:
-SSAnne9Blocks: INCBIN "maps/SSAnne9.blk"
-
-INCLUDE "data/mapHeaders/Pokemontower1.asm"
-INCLUDE "scripts/Pokemontower1.asm"
-INCLUDE "data/mapObjects/Pokemontower1.asm"
-PokemonTower1Blocks: INCBIN "maps/Pokemontower1.blk"
-
-INCLUDE "data/mapHeaders/Pokemontower2.asm"
-INCLUDE "scripts/Pokemontower2.asm"
-INCLUDE "data/mapObjects/Pokemontower2.asm"
-PokemonTower2Blocks: INCBIN "maps/Pokemontower2.blk"
-
-INCLUDE "data/mapHeaders/Pokemontower3.asm"
-INCLUDE "scripts/Pokemontower3.asm"
-INCLUDE "data/mapObjects/Pokemontower3.asm"
-PokemonTower3Blocks: INCBIN "maps/Pokemontower3.blk"
-
-INCLUDE "data/mapHeaders/Pokemontower4.asm"
-INCLUDE "scripts/Pokemontower4.asm"
-INCLUDE "data/mapObjects/Pokemontower4.asm"
-PokemonTower4Blocks: INCBIN "maps/Pokemontower4.blk"
-
-INCLUDE "data/mapHeaders/Pokemontower5.asm"
-INCLUDE "scripts/Pokemontower5.asm"
-INCLUDE "data/mapObjects/Pokemontower5.asm"
-PokemonTower5Blocks: INCBIN "maps/Pokemontower5.blk"
-
-INCLUDE "data/mapHeaders/Pokemontower6.asm"
-INCLUDE "scripts/Pokemontower6.asm"
-INCLUDE "data/mapObjects/Pokemontower6.asm"
-PokemonTower6Blocks: INCBIN "maps/Pokemontower6.blk"
-
-INCLUDE "data/mapHeaders/Pokemontower7.asm"
-INCLUDE "scripts/Pokemontower7.asm"
-INCLUDE "data/mapObjects/Pokemontower7.asm"
-PokemonTower7Blocks: INCBIN "maps/Pokemontower7.blk"
-
-INCLUDE "data/mapHeaders/CeladonMart1.asm"
-INCLUDE "scripts/CeladonMart1.asm"
-INCLUDE "data/mapObjects/CeladonMart1.asm"
-CeladonMart1Blocks: INCBIN "maps/CeladonMart1.blk"
-
-INCLUDE "engine/overworld/cinnabar_lab.asm"
-
-INCLUDE "data/mapHeaders/ViridianForest.asm"
-INCLUDE "scripts/ViridianForest.asm"
-INCLUDE "data/mapObjects/ViridianForest.asm"
-
-INCLUDE "data/mapHeaders/SSAnne1.asm"
-INCLUDE "scripts/SSAnne1.asm"
-INCLUDE "data/mapObjects/SSAnne1.asm"
-SSAnne1Blocks: INCBIN "maps/SSAnne1.blk"
-
-INCLUDE "data/mapHeaders/SSAnne2.asm"
-INCLUDE "scripts/SSAnne2.asm"
-INCLUDE "data/mapObjects/SSAnne2.asm"
-SSAnne2Blocks: INCBIN "maps/SSAnne2.blk"
-
-INCLUDE "data/mapHeaders/SSAnne4.asm"
-INCLUDE "scripts/SSAnne4.asm"
-INCLUDE "data/mapObjects/SSAnne4.asm"
-SSAnne4Blocks: INCBIN "maps/SSAnne4.blk"
-
-INCLUDE "data/mapHeaders/SSAnne5.asm"
-INCLUDE "scripts/SSAnne5.asm"
-INCLUDE "data/mapObjects/SSAnne5.asm"
-SSAnne5Blocks: INCBIN "maps/SSAnne5.blk"
-
-INCLUDE "data/mapHeaders/SSAnne6.asm"
-INCLUDE "scripts/SSAnne6.asm"
-INCLUDE "data/mapObjects/SSAnne6.asm"
-SSAnne6Blocks: INCBIN "maps/SSAnne6.blk"
-
-INCLUDE "data/mapHeaders/SSAnne7.asm"
-INCLUDE "scripts/SSAnne7.asm"
-INCLUDE "data/mapObjects/SSAnne7.asm"
-SSAnne7Blocks: INCBIN "maps/SSAnne7.blk"
-
-INCLUDE "data/mapHeaders/SSAnne8.asm"
-INCLUDE "scripts/SSAnne8.asm"
-INCLUDE "data/mapObjects/SSAnne8.asm"
-SSAnne8Blocks: INCBIN "maps/SSAnne8.blk"
-
-INCLUDE "data/mapHeaders/SSAnne9.asm"
-INCLUDE "scripts/SSAnne9.asm"
-INCLUDE "data/mapObjects/SSAnne9.asm"
-
-INCLUDE "data/mapHeaders/SSAnne10.asm"
-INCLUDE "scripts/SSAnne10.asm"
-INCLUDE "data/mapObjects/SSAnne10.asm"
-
-INCLUDE "data/mapHeaders/UndergroundPathNS.asm"
-INCLUDE "scripts/UndergroundPathNS.asm"
-INCLUDE "data/mapObjects/UndergroundPathNS.asm"
-
-INCLUDE "data/mapHeaders/UndergroundPathWE.asm"
-INCLUDE "scripts/UndergroundPathWE.asm"
-INCLUDE "data/mapObjects/UndergroundPathWE.asm"
-
-INCLUDE "data/mapHeaders/DiglettsCave.asm"
-INCLUDE "scripts/DiglettsCave.asm"
-INCLUDE "data/mapObjects/DiglettsCave.asm"
-DiglettsCaveBlocks: INCBIN "maps/DiglettsCave.blk"
-
-INCLUDE "data/mapHeaders/SilphCo11F.asm"
-INCLUDE "scripts/SilphCo11F.asm"
-INCLUDE "data/mapObjects/SilphCo11F.asm"
-SilphCo11Blocks: INCBIN "maps/SilphCo11F.blk"
-
-INCLUDE "engine/hidden_object_functions18.asm"
-
-
-SECTION "bank19",ROMX,BANK[$19]
-
-RedsHouse1_GFX:
-RedsHouse2_GFX:    INCBIN "gfx/tilesets/reds_house.2bpp"
-RedsHouse1_Block:
-RedsHouse2_Block:  INCBIN "gfx/blocksets/reds_house.bst"
-
-House_GFX:         INCBIN "gfx/tilesets/house.t2.2bpp"
-House_Block:       INCBIN "gfx/blocksets/house.bst"
-Mansion_GFX:       INCBIN "gfx/tilesets/mansion.t2.2bpp"
-Mansion_Block:     INCBIN "gfx/blocksets/mansion.bst"
-ShipPort_GFX:      INCBIN "gfx/tilesets/ship_port.t2.2bpp"
-ShipPort_Block:    INCBIN "gfx/blocksets/ship_port.bst"
-Interior_GFX:      INCBIN "gfx/tilesets/interior.t1.2bpp"
-Interior_Block:    INCBIN "gfx/blocksets/interior.bst"
-Plateau_GFX:       INCBIN "gfx/tilesets/plateau.t6.2bpp"
-Plateau_Block:     INCBIN "gfx/blocksets/plateau.bst"
-
-INCLUDE "engine/battle/get_trainer_pic_pointers.asm"
-
-SECTION "bank1A",ROMX,BANK[$1A]
-
-INCLUDE "engine/battle/decrement_pp.asm"
-
-Version_GFX:       INCBIN "gfx/red/redgreenversion.1bpp" ; 10 tiles
-Version_GFXEnd:
-
-OakTS_GFX:         INCBIN "gfx/tilesets/oakts.2bpp"
-OakTS_Block:       INCBIN "gfx/blocksets/oakts.bst"
-
-Gym_GFX:           INCBIN "gfx/tilesets/gym.2bpp"
-Gym_Block:         INCBIN "gfx/blocksets/gym.bst"
-
-Pokecenter_GFX:    INCBIN "gfx/tilesets/pokecenter.2bpp"
-Pokecenter_Block:  INCBIN "gfx/blocksets/pokecenter.bst"
-
-Gate_GFX:          INCBIN "gfx/tilesets/gate.t1.2bpp"
-Gate_Block:        INCBIN "gfx/blocksets/gate.bst"
-
-Facility_GFX:      INCBIN "gfx/tilesets/facility.2bpp"
-Facility_Block:    INCBIN "gfx/blocksets/facility.bst"
-
-
-SECTION "bank1B",ROMX,BANK[$1B]
-
-Cemetery_GFX:      INCBIN "gfx/tilesets/cemetery.t4.2bpp"
-Cemetery_Block:    INCBIN "gfx/blocksets/cemetery.bst"
-Lobby_GFX:         INCBIN "gfx/tilesets/lobby.t2.2bpp"
-Lobby_Block:       INCBIN "gfx/blocksets/lobby.bst"
-Ship_GFX:          INCBIN "gfx/tilesets/ship.t6.2bpp"
-Ship_Block:        INCBIN "gfx/blocksets/ship.bst"
-Lab_GFX:           INCBIN "gfx/tilesets/lab.t4.2bpp"
-Lab_Block:         INCBIN "gfx/blocksets/lab.bst"
-Club_GFX:          INCBIN "gfx/tilesets/club.t5.2bpp"
-Club_Block:        INCBIN "gfx/blocksets/club.bst"
-Underground_GFX:   INCBIN "gfx/tilesets/underground.t7.2bpp"
-Underground_Block: INCBIN "gfx/blocksets/underground.bst"
-
-
-SECTION "bank1C",ROMX,BANK[$1C]
-
-INCLUDE "engine/gamefreak.asm"
-INCLUDE "engine/hall_of_fame.asm"
-INCLUDE "engine/overworld/healing_machine.asm"
-INCLUDE "engine/overworld/player_animations.asm"
-INCLUDE "engine/battle/ghost_marowak_anim.asm"
-INCLUDE "engine/battle/battle_transitions.asm"
-INCLUDE "engine/town_map.asm"
-INCLUDE "engine/mon_party_sprites.asm"
-INCLUDE "engine/in_game_trades.asm"
-INCLUDE "engine/palettes.asm"
-
-INCLUDE "engine/save.asm"
- 
-BlackTile:
-	REPT 16
-	db $ff
-	ENDR
-BlackTileEnd:
-
-INCLUDE "color/ghost_marowak_anim.asm"
-INCLUDE "color/color.asm"
-
-
-SECTION "bank1D",ROMX,BANK[$1D]
-
-CopycatsHouse1FBlocks: INCBIN "maps/CopycatsHouse1F.blk"
-
-CinnabarMartBlocks:
-PewterMartBlocks: INCBIN "maps/PewterMart.blk"
-
-FuchsiaHouse1Blocks: INCBIN "maps/FuchsiaHouse1.blk"
-
-CeruleanHouse2Blocks: INCBIN "maps/CeruleanHouse2.blk"
-
-INCLUDE "engine/HoF_room_pc.asm"
-
-INCLUDE "engine/status_ailments.asm"
-
-INCLUDE "engine/items/itemfinder.asm"
-
-INCLUDE "scripts/CeruleanCity2.asm"
-
-INCLUDE "data/mapHeaders/ViridianGym.asm"
-INCLUDE "scripts/ViridianGym.asm"
-INCLUDE "data/mapObjects/ViridianGym.asm"
-ViridianGymBlocks: INCBIN "maps/ViridianGym.blk"
-
-INCLUDE "data/mapHeaders/PewterMart.asm"
-INCLUDE "scripts/PewterMart.asm"
-INCLUDE "data/mapObjects/PewterMart.asm"
-INCLUDE "data/martInventories/pewter.asm"
-
-INCLUDE "data/mapHeaders/UnknownDungeon1.asm"
-INCLUDE "scripts/UnknownDungeon1.asm"
-INCLUDE "data/mapObjects/UnknownDungeon1.asm"
-UnknownDungeon1Blocks: INCBIN "maps/UnknownDungeon1.blk"
-
-INCLUDE "data/mapHeaders/CeruleanHouse2.asm"
-INCLUDE "scripts/CeruleanHouse2.asm"
-INCLUDE "data/mapObjects/CeruleanHouse2.asm"
-
-INCLUDE "engine/menu/vending_machine.asm"
-
-INCLUDE "data/mapHeaders/FuchsiaHouse1.asm"
-INCLUDE "scripts/FuchsiaHouse1.asm"
-INCLUDE "data/mapObjects/FuchsiaHouse1.asm"
-
-INCLUDE "data/mapHeaders/FuchsiaHouse2.asm"
-INCLUDE "scripts/FuchsiaHouse2.asm"
-INCLUDE "data/mapObjects/FuchsiaHouse2.asm"
-FuchsiaHouse2Blocks: INCBIN "maps/FuchsiaHouse2.blk"
-
-INCLUDE "data/mapHeaders/SafariZoneEntrance.asm"
-INCLUDE "scripts/SafariZoneEntrance.asm"
-INCLUDE "data/mapObjects/SafariZoneEntrance.asm"
-SafariZoneEntranceBlocks: INCBIN "maps/SafariZoneEntrance.blk"
-
-INCLUDE "data/mapHeaders/FuchsiaGym.asm"
-INCLUDE "scripts/FuchsiaGym.asm"
-INCLUDE "data/mapObjects/FuchsiaGym.asm"
-FuchsiaGymBlocks: INCBIN "maps/FuchsiaGym.blk"
-
-INCLUDE "data/mapHeaders/FuchsiaMeetingRoom.asm"
-INCLUDE "scripts/FuchsiaMeetingRoom.asm"
-INCLUDE "data/mapObjects/FuchsiaMeetingRoom.asm"
-FuchsiaMeetingRoomBlocks: INCBIN "maps/FuchsiaMeetingRoom.blk"
-
-INCLUDE "data/mapHeaders/CinnabarGym.asm"
-INCLUDE "scripts/CinnabarGym.asm"
-INCLUDE "data/mapObjects/CinnabarGym.asm"
-CinnabarGymBlocks: INCBIN "maps/CinnabarGym.blk"
-
-INCLUDE "data/mapHeaders/CinnabarLab1.asm"
-INCLUDE "scripts/CinnabarLab1.asm"
-INCLUDE "data/mapObjects/CinnabarLab1.asm"
-Lab1Blocks: INCBIN "maps/CinnabarLab1.blk"
-
-INCLUDE "data/mapHeaders/CinnabarLab2.asm"
-INCLUDE "scripts/CinnabarLab2.asm"
-INCLUDE "data/mapObjects/CinnabarLab2.asm"
-Lab2Blocks: INCBIN "maps/CinnabarLab2.blk"
-
-INCLUDE "data/mapHeaders/CinnabarLab3.asm"
-INCLUDE "scripts/CinnabarLab3.asm"
-INCLUDE "data/mapObjects/CinnabarLab3.asm"
-Lab3Blocks: INCBIN "maps/CinnabarLab3.blk"
-
-INCLUDE "data/mapHeaders/CinnabarLab4.asm"
-INCLUDE "scripts/CinnabarLab4.asm"
-INCLUDE "data/mapObjects/CinnabarLab4.asm"
-Lab4Blocks: INCBIN "maps/CinnabarLab4.blk"
-
-INCLUDE "data/mapHeaders/CinnabarMart.asm"
-INCLUDE "scripts/CinnabarMart.asm"
-INCLUDE "data/mapObjects/CinnabarMart.asm"
-INCLUDE "data/martInventories/cinnabar.asm"
-
-INCLUDE "data/mapHeaders/CopycatsHouse1F.asm"
-INCLUDE "scripts/CopycatsHouse1F.asm"
-INCLUDE "data/mapObjects/CopycatsHouse1F.asm"
-
-INCLUDE "data/mapHeaders/ChampionsRoom.asm"
-INCLUDE "scripts/ChampionsRoom.asm"
-INCLUDE "data/mapObjects/ChampionsRoom.asm"
-GaryBlocks: INCBIN "maps/ChampionsRoom.blk"
-
-INCLUDE "data/mapHeaders/LoreleisRoom.asm"
-INCLUDE "scripts/LoreleisRoom.asm"
-INCLUDE "data/mapObjects/LoreleisRoom.asm"
-LoreleiBlocks: INCBIN "maps/LoreleisRoom.blk"
-
-INCLUDE "data/mapHeaders/BrunosRoom.asm"
-INCLUDE "scripts/BrunosRoom.asm"
-INCLUDE "data/mapObjects/BrunosRoom.asm"
-BrunoBlocks: INCBIN "maps/BrunosRoom.blk"
-
-INCLUDE "data/mapHeaders/AgathasRoom.asm"
-INCLUDE "scripts/AgathasRoom.asm"
-INCLUDE "data/mapObjects/AgathasRoom.asm"
-AgathaBlocks: INCBIN "maps/AgathasRoom.blk"
-
-INCLUDE "engine/menu/league_pc.asm"
-
-INCLUDE "engine/overworld/hidden_items.asm"
-
-RedFishingTilesFront: INCBIN "gfx/red_fishing_tile_front.2bpp"
-RedFishingTilesBack:  INCBIN "gfx/red_fishing_tile_back.2bpp"
-RedFishingTilesSide:  INCBIN "gfx/red_fishing_tile_side.2bpp"
-RedFishingRodTiles:   INCBIN "gfx/red_fishingrod_tiles.2bpp"
-
-
-SECTION "bank1E",ROMX,BANK[$1E]
-
-INCLUDE "engine/battle/animations.asm"
-
-INCLUDE "engine/overworld/cut2.asm"
-
-INCLUDE "engine/overworld/ssanne.asm"
-
-INCLUDE "data/animations.asm"
-
-INCLUDE "engine/evolution.asm"
-
-INCLUDE "engine/overworld/elevator.asm"
-
-INCLUDE "engine/items/tm_prices.asm"
-
-INCLUDE "color/animations.asm"
-
-
-SECTION "bank2D",ROMX,BANK[$2D]
-
-HorseaPicFront::       INCBIN "pic/bmon/horsea.pic"
-HorseaPicBack::        INCBIN "pic/monback/horseab.pic"
-SeadraPicFront::      INCBIN "pic/bmon/seadra.pic"
-SeadraPicBack::       INCBIN "pic/monback/seadrab.pic"
-GoldeenPicFront::     INCBIN "pic/bmon/goldeen.pic"
-GoldeenPicBack::      INCBIN "pic/monback/goldeenb.pic"
-SeakingPicFront::     INCBIN "pic/bmon/seaking.pic"
-SeakingPicBack::      INCBIN "pic/monback/seakingb.pic"
-StaryuPicFront::      INCBIN "pic/bmon/staryu.pic"
-StaryuPicBack::       INCBIN "pic/monback/staryub.pic"
-StarmiePicFront::     INCBIN "pic/bmon/starmie.pic"
-StarmiePicBack::      INCBIN "pic/monback/starmieb.pic"
-MrMimePicFront::      INCBIN "pic/bmon/mr.mime.pic"
-MrMimePicBack::       INCBIN "pic/monback/mr.mimeb.pic"
-ScytherPicFront::     INCBIN "pic/bmon/scyther.pic"
-ScytherPicBack::      INCBIN "pic/monback/scytherb.pic"
-JynxPicFront::        INCBIN "pic/bmon/jynx.pic"
-JynxPicBack::         INCBIN "pic/monback/jynxb.pic"
-ElectabuzzPicFront::  INCBIN "pic/bmon/electabuzz.pic"
-ElectabuzzPicBack::   INCBIN "pic/monback/electabuzzb.pic"
-MagmarPicFront::      INCBIN "pic/bmon/magmar.pic"
-MagmarPicBack::       INCBIN "pic/monback/magmarb.pic"
-PinsirPicFront::      INCBIN "pic/bmon/pinsir.pic"
-PinsirPicBack::       INCBIN "pic/monback/pinsirb.pic"
-TaurosPicFront::      INCBIN "pic/bmon/tauros.pic"
-TaurosPicBack::       INCBIN "pic/monback/taurosb.pic"
-MagikarpPicFront::    INCBIN "pic/bmon/magikarp.pic"
-MagikarpPicBack::     INCBIN "pic/monback/magikarpb.pic"
-GyaradosPicFront::    INCBIN "pic/bmon/gyarados.pic"
-GyaradosPicBack::     INCBIN "pic/monback/gyaradosb.pic"
-LaprasPicFront::      INCBIN "pic/bmon/lapras.pic"
-LaprasPicBack::       INCBIN "pic/monback/laprasb.pic"
-DittoPicFront::       INCBIN "pic/bmon/ditto.pic"
-DittoPicBack::        INCBIN "pic/monback/dittob.pic"
-EeveePicFront::       INCBIN "pic/bmon/eevee.pic"
-EeveePicBack::        INCBIN "pic/monback/eeveeb.pic"
-VaporeonPicFront::    INCBIN "pic/bmon/vaporeon.pic"
-VaporeonPicBack::     INCBIN "pic/monback/vaporeonb.pic"
-JolteonPicFront::     INCBIN "pic/bmon/jolteon.pic"
-JolteonPicBack::      INCBIN "pic/monback/jolteonb.pic"
-FlareonPicFront::     INCBIN "pic/bmon/flareon.pic"
-FlareonPicBack::      INCBIN "pic/monback/flareonb.pic"
-PorygonPicFront::     INCBIN "pic/bmon/porygon.pic"
-PorygonPicBack::      INCBIN "pic/monback/porygonb.pic"
-OmanytePicFront::     INCBIN "pic/bmon/omanyte.pic"
-OmanytePicBack::      INCBIN "pic/monback/omanyteb.pic"
-OmastarPicFront::     INCBIN "pic/bmon/omastar.pic"
-OmastarPicBack::      INCBIN "pic/monback/omastarb.pic"
-
-
-
-SECTION "bank2E",ROMX,BANK[$2E]
-
-KabutoPicFront::      INCBIN "pic/bmon/kabuto.pic"
-KabutoPicBack::       INCBIN "pic/monback/kabutob.pic"
-KabutopsPicFront::    INCBIN "pic/bmon/kabutops.pic"
-KabutopsPicBack::     INCBIN "pic/monback/kabutopsb.pic"
-AerodactylPicFront::  INCBIN "pic/bmon/aerodactyl.pic"
-AerodactylPicBack::   INCBIN "pic/monback/aerodactylb.pic"
-SnorlaxPicFront::     INCBIN "pic/bmon/snorlax.pic"
-SnorlaxPicBack::      INCBIN "pic/monback/snorlaxb.pic"
-ArticunoPicFront::    INCBIN "pic/bmon/articuno.pic"
-ArticunoPicBack::     INCBIN "pic/monback/articunob.pic"
-ZapdosPicFront::      INCBIN "pic/bmon/zapdos.pic"
-ZapdosPicBack::       INCBIN "pic/monback/zapdosb.pic"
-MoltresPicFront::     INCBIN "pic/bmon/moltres.pic"
-MoltresPicBack::      INCBIN "pic/monback/moltresb.pic"
-DratiniPicFront::     INCBIN "pic/bmon/dratini.pic"
-DratiniPicBack::      INCBIN "pic/monback/dratinib.pic"
-DragonairPicFront::   INCBIN "pic/bmon/dragonair.pic"
-DragonairPicBack::    INCBIN "pic/monback/dragonairb.pic"
-DragonitePicFront::   INCBIN "pic/bmon/dragonite.pic"
-DragonitePicBack::    INCBIN "pic/monback/dragoniteb.pic"
-MewtwoPicFront::      INCBIN "pic/bmon/mewtwo.pic"
-MewtwoPicBack::       INCBIN "pic/monback/mewtwob.pic"
-MewPicFront::         INCBIN "pic/bmon/mew.pic"
-MewPicBack::          INCBIN "pic/monback/mewb.pic"
-LugiaPicFront::		  INCBIN "pic/bmon/lugia.pic"
-LugiaPicBack::		  INCBIN "pic/monback/lugia.pic"
-HoundourPicFront::    INCBIN "pic/bmon/houndour.pic"
-HoundourPicBack::     INCBIN "pic/monback/houndour.pic"
-HoundoomPicFront::    INCBIN "pic/bmon/houndoom.pic"
-HoundoomPicBack::     INCBIN "pic/monback/houndoom.pic"
-MurkrowPicFront::     INCBIN "pic/bmon/murkrow.pic"
-MurkrowPicBack::      INCBIN "pic/monback/murkrow.pic"
-HonchkrowPicFront::   INCBIN "pic/bmon/honchkrow.pic"
-HonchkrowPicBack::    INCBIN "pic/monback/honchkrow.pic"
-HeracrossPicFront::   INCBIN "pic/bmon/heracross.pic"
-HeracrossPicBack::    INCBIN "pic/monback/heracross.pic"
-EspeonPicFront::      INCBIN "pic/bmon/espeon.pic"
-EspeonPicBack::       INCBIN "pic/monback/espeon.pic"
-UmbreonPicFront::     INCBIN "pic/bmon/umbreon.pic"
-UmbreonPicBack::      INCBIN "pic/monback/umbreon.pic"
-GlaceonPicFront::     INCBIN "pic/bmon/glaceon.pic"
-GlaceonPicBack::      INCBIN "pic/monback/glaceon.pic"
-LeafeonPicFront::     INCBIN "pic/bmon/leafeon.pic"
-LeafeonPicBack::      INCBIN "pic/monback/leafeon.pic"
-SylveonPicFront::     INCBIN "pic/bmon/sylveon.pic"
-SylveonPicBack::      INCBIN "pic/monback/sylveon.pic"
-ScizorPicFront:       INCBIN "pic/bmon/scizor.pic"
-ScizorPicBack:        INCBIN "pic/monback/scizor.pic"
-
-
-
-SECTION "bank2F",ROMX,BANK[$2F]
-
-TradingAnimationGraphics:
-	INCBIN "gfx/game_boy.norepeat.2bpp"
-	INCBIN "gfx/link_cable.2bpp"
-TradingAnimationGraphicsEnd:
-
-TradingAnimationGraphics2:
-; Pokeball traveling through the link cable.
-	INCBIN "gfx/trade2.2bpp"
-TradingAnimationGraphics2End:
-
-MissingnoPic::          INCBIN "pic/other/missingno.pic"
-
-RedPicBack::            INCBIN "pic/trainer/redb.pic"
-LeafPicBack::           INCBIN "pic/trainer/leafb.pic"
-OldManPic::             INCBIN "pic/trainer/oldman.pic"
-
-LeafFishingTilesFront:: INCBIN "gfx/leaf_fishing_tile_front.2bpp"
-LeafFishingTilesBack::  INCBIN "gfx/leaf_fishing_tile_back.2bpp"
-LeafFishingTilesSide::  INCBIN "gfx/leaf_fishing_tile_side.2bpp"
-
-LyingOldManSprite:     INCBIN "gfx/sprites/lying_old_man.2bpp"
-BoulderSprite:         INCBIN "gfx/sprites/boulder.2bpp"
-PaperSheetSprite:      INCBIN "gfx/sprites/paper_sheet.2bpp"
-BookMapDexSprite:      INCBIN "gfx/sprites/book_map_dex.2bpp"
-ClipboardSprite:       INCBIN "gfx/sprites/clipboard.2bpp"
-OldAmberSprite:        INCBIN "gfx/sprites/old_amber.2bpp"
-PokedexSprite:         INCBIN "gfx/sprites/pokedex.2bpp"
-TownMapSprite:         INCBIN "gfx/sprites/map_ow.2bpp"
-BerryTreeSprite:       INCBIN "gfx/sprites/berry_tree.2bpp"
-BagOverworldSprite:    INCBIN "gfx/sprites/bag.2bpp"
-BallSprite:            INCBIN "gfx/sprites/ball.2bpp"
-OmanyteSprite:         INCBIN "gfx/sprites/omanyte.2bpp"
-FossilSprite:          INCBIN "gfx/sprites/fossil.2bpp"
-SudowoodoSprite:       INCBIN "gfx/sprites/sudowoodo.2bpp"
-SlowpokeOverworld:     INCBIN "gfx/sprites/pokey.2bpp"
-DittoOverworld:        INCBIN "gfx/sprites/ditto.2bpp"
-SnorlaxSprite:         INCBIN "gfx/sprites/snorlax.2bpp"
-CelebiSprite:          INCBIN "gfx/sprites/celebi.2bpp"
-
-SurfingPikachu:        INCBIN "gfx/sprites/surfing_pikachu.2bpp"
-SeelSprite:            INCBIN "gfx/sprites/seel.2bpp"
-SlowbroSprite:         INCBIN "gfx/sprites/slowbro.2bpp"
-
-BirdSprite:            INCBIN "gfx/sprites/bird.2bpp"
-ClefairySprite:        INCBIN "gfx/sprites/clefairy.2bpp"
-
-BrockOverworld:        INCBIN "gfx/sprites/brock.2bpp"
-MistyOverworld:        INCBIN "gfx/sprites/misty.2bpp"
-SurgeOverworld:        INCBIN "gfx/sprites/surge.2bpp"
-ErikaSprite:           INCBIN "gfx/sprites/erika.2bpp"
-SabrinaOverworld:      INCBIN "gfx/sprites/sabrina.2bpp"
-KogaOverworld:         INCBIN "gfx/sprites/koga.2bpp"
-BlaineOverworld:       INCBIN "gfx/sprites/blaine.2bpp"
-GiovanniSprite:        INCBIN "gfx/sprites/giovanni.2bpp"
-
-BrendanOverworld:      INCBIN "gfx/sprites/brendan.2bpp"
-FlanneryOverworld:     INCBIN "gfx/sprites/flannery.2bpp"
-LookerOverworld:       INCBIN "gfx/sprites/tennant.2bpp"
-GreeterWoman:          INCBIN "gfx/sprites/greeter_woman.2bpp"
-SwimmerFSprite:        INCBIN "gfx/sprites/swimmer_f.2bpp"
-OfficerJennySprite:    INCBIN "gfx/sprites/officer_jenny.2bpp"
-JessieSprite:          INCBIN "gfx/sprites/jessie.2bpp"
-JamesSprite:           INCBIN "gfx/sprites/james.2bpp"
-HiroSprite:            INCBIN "gfx/sprites/hiro.2bpp"
-KrisSprite:            INCBIN "gfx/sprites/kris.2bpp"
-SilverSprite:          INCBIN "gfx/sprites/silver.2bpp"
-BillSprite:            INCBIN "gfx/sprites/bill.2bpp"
-
-
-
-SECTION "bank30",ROMX,BANK[$30]
-
-BaseStats: INCLUDE "data/base_stats.asm"
-
-
-SECTION "bank31",ROMX,BANK[$31]
-
-SteelixPicFront:        INCBIN "pic/bmon/steelix.pic"
-SteelixPicBack:         INCBIN "pic/monback/steelix.pic"
-CrobatPicFront:         INCBIN "pic/bmon/crobat.pic"
-CrobatPicBack:          INCBIN "pic/monback/crobat.pic"
-PolitoedPicFront:       INCBIN "pic/bmon/politoed.pic"
-PolitoedPicBack:        INCBIN "pic/monback/politoed.pic"
-SlowkingPicFront:       INCBIN "pic/bmon/slowking.pic"
-SlowkingPicBack:        INCBIN "pic/monback/slowking.pic"
-BellossomPicFront:      INCBIN "pic/bmon/bellossom.pic"
-BellossomPicBack:       INCBIN "pic/monback/bellossom.pic"
-KingdraPicFront:        INCBIN "pic/bmon/kingdra.pic"
-KingdraPicBack:         INCBIN "pic/monback/kingdra.pic"
-BlisseyPicFront:        INCBIN "pic/bmon/blissey.pic"
-BlisseyPicBack:         INCBIN "pic/monback/blissey.pic"
-Porygon2PicFront:       INCBIN "pic/bmon/porygon2.pic"
-Porygon2PicBack:        INCBIN "pic/monback/porygon2.pic"
-PorygonZPicFront:       INCBIN "pic/bmon/porygonz.pic"
-PorygonZPicBack:        INCBIN "pic/monback/porygonz.pic"
-MagmortarPicFront:      INCBIN "pic/bmon/magmortar.pic"
-MagmortarPicBack:       INCBIN "pic/monback/magmortar.pic"
-ElectivirePicFront:     INCBIN "pic/bmon/electivire.pic"
-ElectivirePicBack:      INCBIN "pic/monback/electivire.pic"
-MagnezonePicFront:      INCBIN "pic/bmon/magnezone.pic"
-MagnezonePicBack:       INCBIN "pic/monback/magnezone.pic"
-RhyperiorPicFront:      INCBIN "pic/bmon/rhyperior.pic"
-RhyperiorPicBack:       INCBIN "pic/monback/rhyperior.pic"
-TangrowthPicFront:      INCBIN "pic/bmon/tangrowth.pic"
-TangrowthPicBack:       INCBIN "pic/monback/tangrowth.pic"
-LickilickyPicFront:     INCBIN "pic/bmon/lickilicky.pic"
-LickilickyPicBack:      INCBIN "pic/monback/lickilicky.pic"
-TogepiPicFront:         INCBIN "pic/bmon/togepi.pic"
-TogepiPicBack:          INCBIN "pic/monback/togepi.pic"
-TogeticPicFront:        INCBIN "pic/bmon/togetic.pic"
-TogeticPicBack:         INCBIN "pic/monback/togetic.pic"
-TogekissPicFront:       INCBIN "pic/bmon/togekiss.pic"
-TogekissPicBack:        INCBIN "pic/monback/togekiss.pic"
-SneaselPicFront:        INCBIN "pic/bmon/sneasel.pic"
-SneaselPicBack:         INCBIN "pic/monback/sneasel.pic"
-WeavilePicFront:        INCBIN "pic/bmon/weavile.pic"
-WeavilePicBack:         INCBIN "pic/monback/weavile.pic"
-SkarmoryPicFront:       INCBIN "pic/bmon/skarmory.pic"
-SkarmoryPicBack:        INCBIN "pic/monback/skarmory.pic"
-MisdreavusPicFront:     INCBIN "pic/bmon/misdreavus.pic"
-MisdreavusPicBack:      INCBIN "pic/monback/misdreavus.pic"
-MismagiusPicFront:      INCBIN "pic/bmon/mismagius.pic"
-MismagiusPicBack:       INCBIN "pic/monback/mismagius.pic"
-MiltankPicFront:        INCBIN "pic/bmon/miltank.pic"
-MiltankPicBack:         INCBIN "pic/monback/miltank.pic"
-
-
-;============================
-; BANK $32 holds Pokedex text
-;============================
-
-
-
-SECTION "bank33",ROMX,BANK[$33]
-
-ChinchouPicFront:       INCBIN "pic/bmon/chinchou.pic"
-ChinchouPicBack:        INCBIN "pic/monback/chinchou.pic"
-LanturnPicFront:        INCBIN "pic/bmon/lanturn.pic"
-LanturnPicBack:         INCBIN "pic/monback/lanturn.pic"
-SlugmaPicFront::   INCBIN "pic/bmon/slugma.pic"
-SlugmaPicBack::    INCBIN "pic/monback/slugma.pic"
-MagcargoPicFront:: INCBIN "pic/bmon/magcargo.pic"
-MagcargoPicBack::  INCBIN "pic/monback/magcargo.pic"
-TorkoalPicFront::  INCBIN "pic/bmon/torkoal.pic"
-TorkoalPicBack::   INCBIN "pic/monback/torkoal.pic"
-LatiasPicFront::   INCBIN "pic/bmon/latias.pic"
-LatiasPicBack::    INCBIN "pic/monback/latias.pic"
-LatiosPicFront::   INCBIN "pic/bmon/latios.pic"
-LatiosPicBack::    INCBIN "pic/monback/latios.pic"
-HitmontopPicFront:: INCBIN "pic/bmon/hitmontop.pic"
-HitmontopPicBack::  INCBIN "pic/monback/hitmontop.pic"
-TyroguePicFront::   INCBIN "pic/bmon/tyrogue.pic"
-TyroguePicBack::    INCBIN "pic/monback/tyrogue.pic"
-PichuPicFront::     INCBIN "pic/bmon/pichu.pic"
-PichuPicBack::      INCBIN "pic/monback/pichu.pic"
-CleffaPicFront::    INCBIN "pic/bmon/cleffa.pic"
-CleffaPicBack::     INCBIN "pic/monback/cleffa.pic"
-IgglybuffPicFront:: INCBIN "pic/bmon/igglybuff.pic"
-IgglybuffPicBack::  INCBIN "pic/monback/igglybuff.pic"
-SmoochumPicFront::  INCBIN "pic/bmon/smoochum.pic"
-SmoochumPicBack::   INCBIN "pic/monback/smoochum.pic"
-ElekidPicFront::    INCBIN "pic/bmon/elekid.pic"
-ElekidPicBack::     INCBIN "pic/monback/elekid.pic"
-MagbyPicFront::     INCBIN "pic/bmon/magby.pic"
-MagbyPicBack::      INCBIN "pic/monback/magby.pic"
-MimeJrPicFront::    INCBIN "pic/bmon/mime_jr.pic"
-MimeJrPicBack::     INCBIN "pic/monback/mime_jr.pic"
-HappinyPicFront::   INCBIN "pic/bmon/happiny.pic"
-HappinyPicBack::    INCBIN "pic/monback/happiny.pic"
-MunchlaxPicFront::  INCBIN "pic/bmon/munchlax.pic"
-MunchlaxPicBack::   INCBIN "pic/monback/munchlax.pic"
-
-WorldMapTileGraphics:
-	INCBIN "gfx/town_map.2bpp"
-WorldMapTileGraphicsEnd:
-
-Mart_GFX:          INCBIN "gfx/tilesets/mart.2bpp"
-Mart_Block:        INCBIN "gfx/blocksets/mart.bst"
-
-SECTION "bank34",ROMX,BANK[$34]
-
-; Mt Moon Square
-INCLUDE "data/mapHeaders/MtMoonSquare.asm"
-INCLUDE "scripts/MtMoonSquare.asm"
-INCLUDE "data/mapObjects/MtMoonSquare.asm"
-MtMoonSquareBlocks: INCBIN "maps/MtMoonSquare.blk"
-
-; Mt Moon Shop
-INCLUDE "data/mapHeaders/MtMoonShop.asm"
-INCLUDE "scripts/MtMoonShop.asm"
-INCLUDE "data/mapObjects/MtMoonShop.asm"
-INCLUDE "data/martInventories/mt_moon_square.asm"
-MtMoonShopBlocks: INCBIN "maps/MtMoonShop.blk"
-
-; Vermilion Ferry Dock
-INCLUDE "data/mapHeaders/VermilionFerryDock.asm"
-INCLUDE "data/mapObjects/VermilionFerryDock.asm"
-INCLUDE "scripts/VermilionFerryDock.asm"
-NavelRockFerryBlocks:
-VermilionFerryBlocks: INCBIN "maps/VermilionFerryDock.blk"
-
-; Faraway Island (Outside)
-INCLUDE "data/mapHeaders/FarawayIslandOutside.asm"
-INCLUDE "data/mapObjects/FarawayIslandOutside.asm"
-INCLUDE "scripts/FarawayIslandOutside.asm"
-FarawayIslandOutsideBlocks: INCBIN "maps/FarawayIslandOutside.blk"
-
-; Faraway Island (Inside)
-INCLUDE "data/mapHeaders/FarawayIslandInside.asm"
-INCLUDE "data/mapObjects/FarawayIslandInside.asm"
-INCLUDE "scripts/FarawayIslandInside.asm"
-FarawayIslandInsideBlocks: INCBIN "maps/FarawayIslandInside.blk"
-
-; Southern Island (Outside)
-INCLUDE "data/mapHeaders/SouthernIslandOutside.asm"
-INCLUDE "data/mapObjects/SouthernIslandOutside.asm"
-INCLUDE "scripts/SouthernIslandOutside.asm"
-SouthernIslandOutsideBlocks: INCBIN "maps/SouthernIslandOutside.blk"
-
-; Southern Island (Inside)
-INCLUDE "data/mapHeaders/SouthernIslandInside.asm"
-INCLUDE "data/mapObjects/SouthernIslandInside.asm"
-INCLUDE "scripts/SouthernIslandInside.asm"
-SouthernIslandInsideBlocks: INCBIN "maps/SouthernIslandInside.blk"
-
-; Navel Rock Ferry Dock
-INCLUDE "data/mapHeaders/NavelRockFerry.asm"
-INCLUDE "data/mapObjects/NavelRockFerry.asm"
-INCLUDE "scripts/NavelRockFerry.asm"
-; uses same map as Vermilion Ferry Dock
-
-; Navel Rock (Outside)
-INCLUDE "data/mapHeaders/NavelRockOutside.asm"
-INCLUDE "data/mapObjects/NavelRockOutside.asm"
-INCLUDE "scripts/NavelRockOutside.asm"
-NavelRockOutsideBlocks: INCBIN "maps/NavelRockOutside.blk"
-
-; Navel Rock (Cave 1)
-INCLUDE "data/mapHeaders/NavelRockCave1.asm"
-INCLUDE "data/mapObjects/NavelRockCave1.asm"
-INCLUDE "scripts/NavelRockCave1.asm"
-NavelRockCave1Blocks: INCBIN "maps/NavelRockCave1.blk"
-
-; Navel Rock (Cave 2)
-INCLUDE "data/mapHeaders/NavelRockCave2.asm"
-INCLUDE "data/mapObjects/NavelRockCave2.asm"
-INCLUDE "scripts/NavelRockCave2.asm"
-NavelRockCave2Blocks: INCBIN "maps/NavelRockCave2.blk"
-
-; Navel Rock (Lugia Room)
-INCLUDE "data/mapHeaders/NavelRockLugiaRoom.asm"
-INCLUDE "data/mapObjects/NavelRockLugiaRoom.asm"
-INCLUDE "scripts/NavelRockLugiaRoom.asm"
-NavelRockLugiaRoomBlocks: INCBIN "maps/NavelRockLugiaRoom.blk"
-
-; Inside Ferry
-INCLUDE "data/mapHeaders/InsideFerry.asm"
-INCLUDE "data/mapObjects/InsideFerry.asm"
-INCLUDE "scripts/InsideFerry.asm"
-InsideFerryBlocks: INCBIN "maps/InsideFerry.blk"
-
-SECTION "pokecenters", ROMX,BANK[$35]
-
-ViridianPokecenterBlocks:
-CeladonPokecenterBlocks:
-RockTunnelPokecenterBlocks:
-MtMoonPokecenterBlocks:
-SaffronPokecenterBlocks:
-VermilionPokecenterBlocks:
-LavenderPokecenterBlocks:
-PewterPokecenterBlocks:
-CeruleanPokecenterBlocks:
-CinnabarPokecenterBlocks:
-FuchsiaPokecenterBlocks:
-	INCBIN "maps/Pokecenter.blk"
-
-INCLUDE "data/mapHeaders/ViridianPokecenter.asm"
-INCLUDE "scripts/ViridianPokecenter.asm"
-INCLUDE "data/mapObjects/ViridianPokecenter.asm"
-
-INCLUDE "data/mapHeaders/CeladonPokecenter.asm"
-INCLUDE "scripts/CeladonPokecenter.asm"
-INCLUDE "data/mapObjects/CeladonPokecenter.asm"
-
-INCLUDE "data/mapHeaders/MtMoonPokecenter.asm"
-INCLUDE "scripts/MtMoonPokecenter.asm"
-INCLUDE "data/mapObjects/MtMoonPokecenter.asm"
-
-INCLUDE "data/mapHeaders/RockTunnelPokecenter.asm"
-INCLUDE "scripts/RockTunnelPokecenter.asm"
-INCLUDE "data/mapObjects/RockTunnelPokecenter.asm"
-
-INCLUDE "data/mapHeaders/PewterPokecenter.asm"
-INCLUDE "scripts/PewterPokecenter.asm"
-INCLUDE "data/mapObjects/PewterPokecenter.asm"
-
-INCLUDE "data/mapHeaders/CeruleanPokecenter.asm"
-INCLUDE "scripts/CeruleanPokecenter.asm"
-INCLUDE "data/mapObjects/CeruleanPokecenter.asm"
-
-INCLUDE "data/mapHeaders/LavenderPokecenter.asm"
-INCLUDE "scripts/LavenderPokecenter.asm"
-INCLUDE "data/mapObjects/LavenderPokecenter.asm"
-
-INCLUDE "data/mapHeaders/VermilionPokecenter.asm"
-INCLUDE "scripts/VermilionPokecenter.asm"
-INCLUDE "data/mapObjects/VermilionPokecenter.asm"
-
-INCLUDE "data/mapHeaders/SaffronPokecenter.asm"
-INCLUDE "scripts/SaffronPokecenter.asm"
-INCLUDE "data/mapObjects/SaffronPokecenter.asm"
-
-INCLUDE "data/mapHeaders/FuchsiaPokecenter.asm"
-INCLUDE "scripts/FuchsiaPokecenter.asm"
-INCLUDE "data/mapObjects/FuchsiaPokecenter.asm"
-
-INCLUDE "data/mapHeaders/CinnabarPokecenter.asm"
-INCLUDE "scripts/CinnabarPokecenter.asm"
-INCLUDE "data/mapObjects/CinnabarPokecenter.asm"
-
-INCLUDE "data/mapHeaders/IndigoPlateauLobby.asm"
-INCLUDE "scripts/IndigoPlateauLobby.asm"
-INCLUDE "data/mapObjects/IndigoPlateauLobby.asm"
-INCLUDE "data/martInventories/indigo_plateau.asm"
-IndigoPlateauLobbyBlocks: INCBIN "maps/IndigoPlateauLobby.blk"
-
-
-SECTION "bank36",ROMX,BANK[$36]
-
-ForestGate_GFX:      INCBIN "gfx/tilesets/forest_gate.2bpp"
-ForestGate_Block:    INCBIN "gfx/blocksets/forest_gate.bst"
-
-Museum_GFX:          INCBIN "gfx/tilesets/museum.2bpp"
-Museum_Block:        INCBIN "gfx/blocksets/museum.bst"
-
-Safari_GFX:        INCBIN "gfx/tilesets/safari.2bpp"
-Safari_Block:      INCBIN "gfx/blocksets/safari.bst"
-
-Forest_GFX:        INCBIN "gfx/tilesets/forest.2bpp"
-Forest_Block:      INCBIN "gfx/blocksets/forest.bst"
-
-
-SECTION "bank37",ROMX,BANK[$37]
-
-Overworld_GFX:     INCBIN "gfx/tilesets/overworld.2bpp"
-Overworld_Block:   INCBIN "gfx/blocksets/overworld.bst"
-
-Ferry_GFX:    INCBIN "gfx/tilesets/ferry.2bpp"
-Ferry_Block:  INCBIN "gfx/blocksets/ferry.bst"
-
-Ice_Cavern_GFX:    INCBIN "gfx/tilesets/ice_cavern.t14.2bpp"
-Cavern_GFX:        INCBIN "gfx/tilesets/cavern.t14.2bpp"
-Cavern_Block:      INCBIN "gfx/blocksets/cavern.bst"
-
-INCLUDE "data/mapHeaders/BeachHouse.asm"
-INCLUDE "scripts/BeachHouse.asm"
-INCLUDE "data/mapObjects/BeachHouse.asm"
-BeachHouseBlocks: INCBIN "maps/BeachHouse.blk"
-
-SECTION "field moves", ROMX,BANK[$38]
-
-INCLUDE "engine/overworld/field_moves.asm"
-INCLUDE "engine/wonder_trade.asm"
-INCLUDE "engine/overworld/automatic_repel.asm"
-INCLUDE "scripts/DayCareManScript.asm"
-INCLUDE "engine/overworld/ferry_script.asm"
-INCLUDE "engine/battle/physical_special_split.asm"
-INCLUDE "scripts/move_deleter.asm"
-INCLUDE "scripts/move_relearner.asm"
-INCLUDE "scripts/move_tutor.asm"
-
-SECTION "trainer pics 2", ROMX,BANK[$39]
-
-ProfOakPic::     INCBIN "pic/trainer/prof.oak.pic"
-ExecutiveFPic::  INCBIN "pic/trainer/executivef.pic"
-ExecutiveMPic::  INCBIN "pic/trainer/executivem.pic"
-RockerFPic::     INCBIN "pic/trainer/rockerf.pic"
-JessieJamesPic:: INCBIN "pic/trainer/jessiejames.pic"
-CosplayGirlPic:: INCBIN "pic/trainer/cosplaygirl.pic"
-JaninePic::      INCBIN "pic/trainer/janine.pic"
-TraceyPic::      INCBIN "pic/trainer/tracey.pic"
-PiTrainerPic::   INCBIN "pic/trainer/pi.pic"
-HexManiacPic::   INCBIN "pic/trainer/hex_maniac.pic"
-JessiePic::      INCBIN "pic/trainer/jessie.pic"
-JamesPic::       INCBIN "pic/trainer/james.pic"
-GiovanniGymPic:: INCBIN "pic/trainer/giovanni2.pic"
-
-SECTION "random stuff", ROMX,BANK[$3A]
-WindowsGraphics1:
-	INCBIN "gfx/windows1.2bpp"
-WindowsGraphics1End:
-INCLUDE "engine/splashscreens/splashscreen_main.asm"
-INCLUDE "engine/splashscreens/programmer.asm"
-INCLUDE "engine/splashscreens/tetris.asm"
-INCLUDE "engine/splashscreens/gamescript.asm"
-INCLUDE "engine/splashscreens/mateo_presents.asm"
-INCLUDE "engine/splashscreens/version_screen.asm"
-INCLUDE "engine/splashscreens/players_in_intro.asm"
-INCLUDE "engine/overworld/headbutt.asm"
-INCLUDE "engine/sliding_tile_puzzle.asm"
-
-SECTION "Trainer Parties", ROMX,BANK[$3B]
-INCLUDE "engine/battle/read_trainer_party.asm"
-INCLUDE "engine/overworld/advance_player_sprite.asm"
-INCLUDE "engine/mon_gender.asm"
+	ld [hProduct], a
+	ld [hProduct + 1], a
+	ld [hProduct + 2], a
+	ld [hProduct + 3], a
+	ret
+.UseExpFormula
+	ld a, [BaseGrowthRate]
+	add a
+	add a
+	ld c, a
+	ld b, 0
+	ld hl, GrowthRates
+	add hl, bc
+; Cube the level
+	call .LevelSquared
+	ld a, d
+	ld [hMultiplier], a
+	call Multiply
+
+; Multiply by a
+	ld a, [hl]
+	and $f0
+	swap a
+	ld [hMultiplier], a
+	call Multiply
+; Divide by b
+	ld a, [hli]
+	and $f
+	ld [hDivisor], a
+	ld b, 4
+	call Divide
+; Push the cubic term to the stack
+	ld a, [hQuotient + 0]
+	push af
+	ld a, [hQuotient + 1]
+	push af
+	ld a, [hQuotient + 2]
+	push af
+; Square the level and multiply by the lower 7 bits of c
+	call .LevelSquared
+	ld a, [hl]
+	and $7f
+	ld [hMultiplier], a
+	call Multiply
+; Push the absolute value of the quadratic term to the stack
+	ld a, [hProduct + 1]
+	push af
+	ld a, [hProduct + 2]
+	push af
+	ld a, [hProduct + 3]
+	push af
+	ld a, [hli]
+	push af
+; Multiply the level by d
+	xor a
+	ld [hMultiplicand + 0], a
+	ld [hMultiplicand + 1], a
+	ld a, d
+	ld [hMultiplicand + 2], a
+	ld a, [hli]
+	ld [hMultiplier], a
+	call Multiply
+; Subtract e
+	ld b, [hl]
+	ld a, [hProduct + 3]
+	sub b
+	ld [hMultiplicand + 2], a
+	ld b, $0
+	ld a, [hProduct + 2]
+	sbc b
+	ld [hMultiplicand + 1], a
+	ld a, [hProduct + 1]
+	sbc b
+	ld [hMultiplicand], a
+; If bit 7 of c is set, c is negative; otherwise, it's positive
+	pop af
+	and $80
+	jr nz, .subtract
+; Add c*n**2 to (d*n - e)
+	pop bc
+	ld a, [hProduct + 3]
+	add b
+	ld [hMultiplicand + 2], a
+	pop bc
+	ld a, [hProduct + 2]
+	adc b
+	ld [hMultiplicand + 1], a
+	pop bc
+	ld a, [hProduct + 1]
+	adc b
+	ld [hMultiplicand], a
+	jr .done_quadratic
+
+.subtract
+; Subtract c*n**2 from (d*n - e)
+	pop bc
+	ld a, [hProduct + 3]
+	sub b
+	ld [hMultiplicand + 2], a
+	pop bc
+	ld a, [hProduct + 2]
+	sbc b
+	ld [hMultiplicand + 1], a
+	pop bc
+	ld a, [hProduct + 1]
+	sbc b
+	ld [hMultiplicand], a
+
+.done_quadratic
+; Add (a/b)*n**3 to (d*n - e +/- c*n**2)
+	pop bc
+	ld a, [hProduct + 3]
+	add b
+	ld [hMultiplicand + 2], a
+	pop bc
+	ld a, [hProduct + 2]
+	adc b
+	ld [hMultiplicand + 1], a
+	pop bc
+	ld a, [hProduct + 1]
+	adc b
+	ld [hMultiplicand], a
+	ret
+
+.LevelSquared: ; 50eed
+	xor a
+	ld [hMultiplicand + 0], a
+	ld [hMultiplicand + 1], a
+	ld a, d
+	ld [hMultiplicand + 2], a
+	ld [hMultiplier], a
+	jp Multiply
+
+INCLUDE "data/growth_rates.asm"
+
+_SwitchPartyMons:
+	ld a, [wSwitchMon]
+	dec a
+	ld [Buffer3], a
+	ld b, a
+	ld a, [wMenuCursorY]
+	dec a
+	ld [Buffer2], a
+	cp b
+	ret z
+	call .SwapMonAndMail
+	ld a, [Buffer3]
+	call .ClearSprite
+	ld a, [Buffer2]
+	; fallthrough
+
+.ClearSprite: ; 50f34 (14:4f34)
+	push af
+	hlcoord 0, 1
+	ld bc, 2 * SCREEN_WIDTH
+	call AddNTimes
+	ld bc, 2 * SCREEN_WIDTH
+	ld a, " "
+	call ByteFill
+	pop af
+	ld hl, Sprites
+	ld bc, $10
+	call AddNTimes
+	ld de, $4
+	ld c, $4
+.gfx_loop
+	ld [hl], $a0
+	add hl, de
+	dec c
+	jr nz, .gfx_loop
+	ld de, SFX_SWITCH_POKEMON
+	jp WaitPlaySFX
+
+.SwapMonAndMail: ; 50f62 (14:4f62)
+	push hl
+	push de
+	push bc
+	ld bc, PartySpecies
+	ld a, [Buffer2]
+	ld l, a
+	ld h, $0
+	add hl, bc
+	ld d, h
+	ld e, l
+	ld a, [Buffer3]
+	ld l, a
+	ld h, $0
+	add hl, bc
+	ld a, [hl]
+	push af
+	ld a, [de]
+	ld [hl], a
+	pop af
+	ld [de], a
+	ld a, [Buffer2]
+	ld hl, PartyMons
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	push hl
+	ld de, wd002
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call CopyBytes
+	ld a, [Buffer3]
+	ld hl, PartyMons
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	pop de
+	push hl
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call CopyBytes
+	pop de
+	ld hl, wd002
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call CopyBytes
+	ld a, [Buffer2]
+	ld hl, PartyMonOT
+	call SkipNames
+	push hl
+	call .CopyNameTowd002
+	ld a, [Buffer3]
+	ld hl, PartyMonOT
+	call SkipNames
+	pop de
+	push hl
+	call .CopyName
+	pop de
+	ld hl, wd002
+	call .CopyName
+	ld hl, PartyMonNicknames
+	ld a, [Buffer2]
+	call SkipNames
+	push hl
+	call .CopyNameTowd002
+	ld hl, PartyMonNicknames
+	ld a, [Buffer3]
+	call SkipNames
+	pop de
+	push hl
+	call .CopyName
+	pop de
+	ld hl, wd002
+	call .CopyName
+	ld hl, sPartyMail
+	ld a, [Buffer2]
+	ld bc, MAIL_STRUCT_LENGTH
+	call AddNTimes
+	push hl
+	ld de, wd002
+	ld bc, MAIL_STRUCT_LENGTH
+	ld a, BANK(sPartyMail)
+	call GetSRAMBank
+	call CopyBytes
+	ld hl, sPartyMail
+	ld a, [Buffer3]
+	ld bc, MAIL_STRUCT_LENGTH
+	call AddNTimes
+	pop de
+	push hl
+	ld bc, MAIL_STRUCT_LENGTH
+	call CopyBytes
+	pop de
+	ld hl, wd002
+	ld bc, MAIL_STRUCT_LENGTH
+	call CopyBytes
+	call CloseSRAM
+	pop bc
+	pop de
+	pop hl
+	ret
+
+.CopyNameTowd002: ; 51036 (14:5036)
+	ld de, wd002
+
+.CopyName: ; 51039 (14:5039)
+	ld bc, NAME_LENGTH
+	jp CopyBytes
+
+INCLUDE "gfx/load_pics.asm"
+
+InsertPokemonIntoBox: ; 51322
+	ld a, BANK(sBoxCount)
+	call GetSRAMBank
+	ld hl, sBoxCount
+	call InsertSpeciesIntoBoxOrParty
+	ld a, [sBoxCount]
+	dec a
+	ld [wd265], a
+	ld hl, sBoxMonNicknames
+	ld bc, PKMN_NAME_LENGTH
+	ld de, wBufferMonNick
+	call InsertDataIntoBoxOrParty
+	ld a, [sBoxCount]
+	dec a
+	ld [wd265], a
+	ld hl, sBoxMonOT
+	ld bc, NAME_LENGTH
+	ld de, wBufferMonOT
+	call InsertDataIntoBoxOrParty
+	ld a, [sBoxCount]
+	dec a
+	ld [wd265], a
+	ld hl, sBoxMons
+	ld bc, BOXMON_STRUCT_LENGTH
+	ld de, wBufferMon
+	call InsertDataIntoBoxOrParty
+	ld hl, wBufferMonMoves
+	ld de, TempMonMoves
+	ld bc, NUM_MOVES
+	call CopyBytes
+	ld hl, wBufferMonPP
+	ld de, TempMonPP
+	ld bc, NUM_MOVES
+	call CopyBytes
+	ld a, [CurPartyMon]
+	ld b, a
+	farcall RestorePPofDepositedPokemon
+	jp CloseSRAM
+
+InsertPokemonIntoParty: ; 5138b
+	ld hl, PartyCount
+	call InsertSpeciesIntoBoxOrParty
+	ld a, [PartyCount]
+	dec a
+	ld [wd265], a
+	ld hl, PartyMonNicknames
+	ld bc, PKMN_NAME_LENGTH
+	ld de, wBufferMonNick
+	call InsertDataIntoBoxOrParty
+	ld a, [PartyCount]
+	dec a
+	ld [wd265], a
+	ld hl, PartyMonOT
+	ld bc, NAME_LENGTH
+	ld de, wBufferMonOT
+	call InsertDataIntoBoxOrParty
+	ld a, [PartyCount]
+	dec a
+	ld [wd265], a
+	ld hl, PartyMons
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld de, wBufferMon
+	jp InsertDataIntoBoxOrParty
+
+InsertSpeciesIntoBoxOrParty: ; 513cb
+	inc [hl]
+	inc hl
+	ld a, [CurPartyMon]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [CurPartySpecies]
+	ld c, a
+.loop
+	ld a, [hl]
+	ld [hl], c
+	inc hl
+	inc c
+	ld c, a
+	jr nz, .loop
+	ret
+
+InsertDataIntoBoxOrParty: ; 513e0
+	push de
+	push hl
+	push bc
+	ld a, [wd265]
+	dec a
+	call AddNTimes
+	push hl
+	add hl, bc
+	ld d, h
+	ld e, l
+	pop hl
+.loop
+	push bc
+	ld a, [wd265]
+	ld b, a
+	ld a, [CurPartyMon]
+	cp b
+	pop bc
+	jr z, .insert
+	push hl
+	push de
+	push bc
+	call CopyBytes
+	pop bc
+	pop de
+	pop hl
+	push hl
+	ld a, l
+	sub c
+	ld l, a
+	ld a, h
+	sbc b
+	ld h, a
+	pop de
+	ld a, [wd265]
+	dec a
+	ld [wd265], a
+	jr .loop
+
+.insert
+	pop bc
+	pop hl
+	ld a, [CurPartyMon]
+	call AddNTimes
+	ld d, h
+	ld e, l
+	pop hl
+	jp CopyBytes
+
+INCLUDE "data/pokemon/base_stats.asm"
+INCLUDE "data/pokemon/names.asm"
+
+
+SECTION "Code 14", ROMX
+
+INCLUDE "engine/battle/abilities.asm"
+INCLUDE "data/trainers/final_text.asm"
+INCLUDE "engine/player_movement.asm"
+INCLUDE "engine/engine_flags.asm"
+INCLUDE "engine/variables.asm"
+INCLUDE "data/text/battle.asm"
+
+
+SECTION "Code 15", ROMX
+
+INCLUDE "gfx/battle_anims.asm"
+INCLUDE "engine/events/halloffame.asm"
+
+PrintAbility:
+; Print ability b at hl.
+	ld l, b
+	ld h, 0
+	ld bc, AbilityNames
+	add hl, hl
+	add hl, bc
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	hlcoord 3, 13
+	jp PlaceString
+
+BufferAbility:
+; Buffer name for b into StringBuffer1
+	ld l, b
+	ld h, 0
+	ld bc, AbilityNames
+	add hl, hl
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, StringBuffer1
+.loop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	cp "@"
+	ret z
+	jr .loop
+
+PrintAbilityDescription:
+; Print ability description for b
+; we can't use PlaceString, because it would linebreak with an empty line inbetween
+	ld l, b
+	ld h, 0
+	ld bc, AbilityDescriptions
+	add hl, hl
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	decoord 1, 15
+	push de
+.loop
+	ld a, [hli]
+	cp "@"
+	jr z, .done
+	cp $4e
+	jr z, .line
+	ld [de], a
+	inc de
+	jr .loop
+
+.line
+	pop de
+	push hl
+	ld hl, $0014
+	add hl, de
+	ld d, h
+	ld e, l
+	pop hl
+	push de
+	jr .loop
+
+.done
+	pop de
+	ret
+
+INCLUDE "data/abilities.asm"
+
+
+SECTION "Code 16", ROMX
+
+INCLUDE "engine/player_gfx.asm"
+INCLUDE "engine/events/kurt.asm"
+INCLUDE "engine/events/unown.asm"
+INCLUDE "engine/events/buena.asm"
+INCLUDE "engine/events/movesets.asm"
+INCLUDE "engine/events/battle_tower/battle_tower.asm"
+INCLUDE "engine/events/battle_tower/trainer_text.asm"
+INCLUDE "engine/events/item_maniacs.asm"
+
+
+SECTION "Code 17", ROMX
+
+INCLUDE "engine/timeofdaypals.asm"
+INCLUDE "engine/battle_start.asm"
+INCLUDE "engine/sprites.asm"
+INCLUDE "engine/mon_icons.asm"
+INCLUDE "engine/events/field_moves.asm"
+INCLUDE "engine/events/magnet_train.asm"
+INCLUDE "data/pokemon/menu_icon_pointers.asm"
+INCLUDE "data/pokemon/menu_icons.asm"
+
+
+SECTION "Code 18", ROMX
+
+INCLUDE "engine/phone.asm"
+INCLUDE "engine/timeset.asm"
+INCLUDE "engine/pokegear.asm"
+INCLUDE "engine/events/fish.asm"
+INCLUDE "engine/slot_machine.asm"
+
+
+SECTION "Code 19", ROMX
+
+INCLUDE "engine/events_2.asm"
+INCLUDE "engine/radio.asm"
+INCLUDE "gfx/mail.asm"
+
+
+SECTION "Code 20", ROMX
+
+INCLUDE "engine/events/std_scripts.asm"
+INCLUDE "engine/phone_scripts.asm"
+
+
+SECTION "Code 21", ROMX
+
+INCLUDE "engine/battle_anims/bg_effects.asm"
+INCLUDE "data/moves/animations.asm"
+
+
+SECTION "Code 22", ROMX
+
+INCLUDE "engine/card_flip.asm"
+INCLUDE "engine/unown_puzzle.asm"
+;INCLUDE "engine/dummy_game.asm"
+INCLUDE "engine/billspc.asm"
+
+
+SECTION "Code 23", ROMX
+
+INCLUDE "engine/battle/hidden_power.asm"
+INCLUDE "engine/battle/misc.asm"
+INCLUDE "engine/unowndex.asm"
+INCLUDE "engine/events/magikarp.asm"
+INCLUDE "engine/events/name_rater.asm"
+INCLUDE "audio/distorted_cries.asm"
+
+
+SECTION "Code 24", ROMX
+
+INCLUDE "engine/tileset_anims.asm"
+INCLUDE "engine/events/npc_trade.asm"
+INCLUDE "engine/events/wonder_trade.asm"
+INCLUDE "engine/events/mom_phone.asm"
+
+
+SECTION "Code 25", ROMX
+
+INCLUDE "engine/misc_gfx.asm"
+INCLUDE "engine/warp_connection.asm"
+INCLUDE "engine/battle/used_move_text.asm"
+INCLUDE "gfx/items.asm"
+
+
+SECTION "Introduction", ROMX
+
+INCLUDE "engine/options_menu.asm"
+INCLUDE "engine/crystal_intro.asm"
+
+CopyrightGFX:: ; e4000
+INCBIN "gfx/splash/copyright.2bpp"
+
+
+SECTION "Title Screen", ROMX
+
+INCLUDE "engine/title.asm"
+
+
+SECTION "Diploma", ROMX
+
+INCLUDE "engine/diploma.asm"
+
+
+SECTION "Palette Maps", ROMX
+
+INCLUDE "engine/map_palettes.asm"
+
+
+SECTION "Typefaces", ROMX
+
+INCLUDE "gfx/font.asm"
+
+
+SECTION "Battle Core", ROMX
+
+INCLUDE "engine/battle/core.asm"
+
+
+SECTION "Effect Commands", ROMX
+
+INCLUDE "engine/battle/effect_commands.asm"
+
+
+SECTION "Effect Command Pointers", ROMX
+
+INCLUDE "data/battle/effect_command_pointers.asm"
+
+
+SECTION "Battle Animations", ROMX
+
+INCLUDE "engine/battle_anims/anim_commands.asm"
+INCLUDE "engine/battle_anims/core.asm"
+INCLUDE "data/battle_anims/objects.asm"
+INCLUDE "engine/battle_anims/functions.asm"
+INCLUDE "engine/battle_anims/helpers.asm"
+INCLUDE "data/battle_anims/framesets.asm"
+INCLUDE "data/battle_anims/oam.asm"
+INCLUDE "data/battle_anims/object_gfx.asm"
+
+
+SECTION "Battle Graphics", ROMX
+
+SubstituteFrontpic: INCBIN "gfx/battle/substitute-front.2bpp.lz"
+SubstituteBackpic:  INCBIN "gfx/battle/substitute-back.2bpp.lz"
+
+GhostFrontpic:      INCBIN "gfx/battle/ghost.2bpp.lz"
+
+
+SECTION "Moves", ROMX
+
+INCLUDE "data/moves/moves.asm"
+
+
+SECTION "Enemy Trainers", ROMX
+
+INCLUDE "engine/battle/ai/items.asm"
+
+AIScoring: ; 38591
+INCLUDE "engine/battle/ai/scoring.asm"
+
+GetTrainerClassName: ; 3952d
+	ld a, c
+	ld [CurSpecies], a
+	ld a, TRAINER_NAME
+	ld [wNamedObjectTypeBuffer], a
+	call GetName
+	ld de, StringBuffer1
+	ret
+
+GetOTName: ; 39550
+	ld hl, OTPlayerName
+	ld a, [wLinkMode]
+	and a
+	jr nz, .ok
+
+	ld a, c
+	ld [CurSpecies], a
+	ld a, TRAINER_NAME
+	ld [wNamedObjectTypeBuffer], a
+	call GetName
+	ld hl, StringBuffer1
+
+.ok
+	ld bc, TRAINER_CLASS_NAME_LENGTH
+	ld de, OTClassName
+	push de
+	call CopyBytes
+	pop de
+	ret
+
+GetTrainerAttributes: ; 3957b
+	ld a, [TrainerClass]
+	ld c, a
+	call GetOTName
+	ld a, [TrainerClass]
+	dec a
+	ld hl, TrainerClassAttributes + TRNATTR_ITEM1
+	ld bc, NUM_TRAINER_ATTRIBUTES
+	call AddNTimes
+	ld de, wEnemyTrainerItem1
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	ld a, [hl]
+	ld [wEnemyTrainerBaseReward], a
+	ret
+
+ComputeTrainerReward: ; 3991b (e:591b)
+	ld hl, hProduct
+	xor a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld a, [wEnemyTrainerBaseReward]
+	ld [hli], a
+	ld a, [CurPartyLevel]
+	ld [hl], a
+	call Multiply
+	ld hl, wBattleReward
+	xor a
+	ld [hli], a
+	ld a, [hProduct + 2]
+	ld [hli], a
+	ld a, [hProduct + 3]
+	ld [hl], a
+	ret
+
+INCLUDE "data/trainers/attributes.asm"
+
+
+SECTION "Enemy Trainer Pointers", ROMX
+
+INCLUDE "engine/read_party.asm"
+INCLUDE "data/trainers/party_pointers.asm"
+INCLUDE "data/trainers/parties.asm"
+
+
+SECTION "Wild Data", ROMX
+
+INCLUDE "engine/wildmons.asm"
+
+
+SECTION "Pokedex", ROMX
+
+INCLUDE "engine/pokedex.asm"
+
+
+SECTION "Evolution", ROMX
+
+INCLUDE "engine/evolve.asm"
+
+
+SECTION "Pic Animations", ROMX
+
+INCLUDE "engine/pic_animation.asm"
+
+; Pic animations are assembled in 3 parts:
+
+; Top-level animations:
+; 	frame #, duration: Frame 0 is the original pic (no change)
+;	setrepeat #:       Sets the number of times to repeat
+; 	dorepeat #:        Repeats from command # (starting from 0)
+; 	end
+
+; Bitmasks:
+;	Layered over the pic to designate affected tiles
+
+; Frame definitions:
+;	first byte is the bitmask used for this frame
+;	following bytes are tile ids mapped to each bit in the mask
+
+; Main animations (played everywhere)
+INCLUDE "gfx/pokemon/anim_pointers.asm"
+INCLUDE "gfx/pokemon/anims.asm"
+
+; Extra animations, appended to the main animation
+; Used in the status screen (blinking, tail wags etc.)
+INCLUDE "gfx/pokemon/extra_pointers.asm"
+INCLUDE "gfx/pokemon/extras.asm"
+
+; Variants have their own animation data despite having entries in the main tables
+INCLUDE "gfx/pokemon/variant_anim_pointers.asm"
+INCLUDE "gfx/pokemon/variant_anims.asm"
+INCLUDE "gfx/pokemon/variant_extra_pointers.asm"
+INCLUDE "gfx/pokemon/variant_extras.asm"
+
+
+SECTION "Pic Animations Frames 1", ROMX
+
+INCLUDE "gfx/pokemon/frame_pointers.asm"
+INCLUDE "gfx/pokemon/kanto_frames.asm"
+
+
+SECTION "Pic Animations Frames 2", ROMX
+
+INCLUDE "gfx/pokemon/johto_frames.asm"
+INCLUDE "gfx/pokemon/variant_frame_pointers.asm"
+INCLUDE "gfx/pokemon/variant_frames.asm"
+
+
+SECTION "Pic Animations Bitmasks", ROMX
+
+; Bitmasks
+INCLUDE "gfx/pokemon/bitmask_pointers.asm"
+INCLUDE "gfx/pokemon/bitmasks.asm"
+INCLUDE "gfx/pokemon/variant_bitmask_pointers.asm"
+INCLUDE "gfx/pokemon/variant_bitmasks.asm"
+
+
+SECTION "Standard Text", ROMX
+
+INCLUDE "data/text/std_text.asm"
+
+
+SECTION "Phone Scripts", ROMX
+
+INCLUDE "engine/more_phone_scripts.asm"
+INCLUDE "engine/buena_phone_scripts.asm"
+
+
+SECTION "Phone Text 1", ROMX
+
+INCLUDE "data/phone/text/anthony_overworld.asm"
+INCLUDE "data/phone/text/todd_overworld.asm"
+INCLUDE "data/phone/text/gina_overworld.asm"
+INCLUDE "data/phone/text/irwin_overworld.asm"
+INCLUDE "data/phone/text/arnie_overworld.asm"
+INCLUDE "data/phone/text/alan_overworld.asm"
+INCLUDE "data/phone/text/dana_overworld.asm"
+INCLUDE "data/phone/text/chad_overworld.asm"
+INCLUDE "data/phone/text/derek_overworld.asm"
+INCLUDE "data/phone/text/tully_overworld.asm"
+INCLUDE "data/phone/text/brent_overworld.asm"
+INCLUDE "data/phone/text/tiffany_overworld.asm"
+INCLUDE "data/phone/text/vance_overworld.asm"
+INCLUDE "data/phone/text/wilton_overworld.asm"
+INCLUDE "data/phone/text/kenji_overworld.asm"
+INCLUDE "data/phone/text/parry_overworld.asm"
+INCLUDE "data/phone/text/erin_overworld.asm"
+
+
+SECTION "Phone Text 2", ROMX
+
+INCLUDE "data/phone/text/jack_overworld.asm"
+INCLUDE "data/phone/text/beverly_overworld.asm"
+INCLUDE "data/phone/text/huey_overworld.asm"
+INCLUDE "data/phone/text/gaven_overworld.asm"
+INCLUDE "data/phone/text/beth_overworld.asm"
+INCLUDE "data/phone/text/jose_overworld.asm"
+INCLUDE "data/phone/text/reena_overworld.asm"
+INCLUDE "data/phone/text/joey_overworld.asm"
+INCLUDE "data/phone/text/wade_overworld.asm"
+INCLUDE "data/phone/text/ralph_overworld.asm"
+
+
+SECTION "Phone Text 3", ROMX
+
+INCLUDE "data/phone/text/mom.asm"
+INCLUDE "data/phone/text/bill.asm"
+INCLUDE "data/phone/text/elm.asm"
+INCLUDE "data/phone/text/trainers1.asm"
+INCLUDE "data/phone/text/liz_overworld.asm"
+
+
+SECTION "Phone Text 4", ROMX
+
+INCLUDE "data/phone/text/extra.asm"
+INCLUDE "data/phone/text/lyra.asm"
+
+
+SECTION "Phone Text 5", ROMX
+
+INCLUDE "data/phone/text/extra2.asm"
+
+
+SECTION "Item Text", ROMX
+
+INCLUDE "data/items/names.asm"
+
+PrintItemDescription: ; 0x1c8955
+; Print the description for item [CurSpecies] at de.
+
+	ld hl, ItemDescriptions
+	ld a, [CurSpecies]
+	dec a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	push de
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	pop hl
+	jp PlaceString
+; 0x1c8987
+
+PrintTMHMDescription:
+; Print the description for TM/HM [CurSpecies] at de.
+
+	ld a, [CurSpecies]
+	inc a
+	ld [CurTMHM], a
+	ld [wCurTMHM], a
+	push de
+	predef GetTMHMMove
+	pop hl
+	ld a, [wd265]
+	ld [CurSpecies], a
+	predef PrintMoveDesc
+	ret
+
+INCLUDE "data/items/descriptions.asm"
+INCLUDE "data/items/apricorn_names.asm"
+
+
+SECTION "Move and Landmark Text", ROMX
+
+INCLUDE "data/moves/names.asm"
+
+INCLUDE "engine/landmarks.asm"
+
+
+SECTION "Battle Tower Text", ROMX
+
+INCLUDE "data/battle_tower/trainer_text.asm"
+
+
+SECTION "Crystal Data", ROMX
+
+INCLUDE "engine/events/battle_tower/load_trainer.asm"
+INCLUDE "data/events/odd_eggs.asm"

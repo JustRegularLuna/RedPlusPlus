@@ -1,60 +1,133 @@
+NAME := redplusplus
+VERSION := 3.0.0-beta
+
+TITLE := POKEMONRPP
+MCODE := PRPP
+ROMVERSION := 0x30
+
+FILLER = 0x00
+
 ifneq ($(wildcard rgbds/.*),)
 RGBDS_DIR = rgbds/
 else
 RGBDS_DIR =
 endif
 
-PYTHON := python2
-MD5 := md5sum -c --quiet
+RGBASM_FLAGS =
+RGBLINK_FLAGS = -n $(ROM_NAME).sym -m $(ROM_NAME).map -l contents/contents.link -p $(FILLER)
+RGBFIX_FLAGS = -Cjv -t $(TITLE) -i $(MCODE) -n $(ROMVERSION) -p $(FILLER) -k 01 -l 0x33 -m 0x10 -r 3
 
-2bpp     := $(PYTHON) extras/pokemontools/gfx.py 2bpp
-1bpp     := $(PYTHON) extras/pokemontools/gfx.py 1bpp
-pic      := $(PYTHON) extras/pokemontools/pic.py compress
-includes := $(PYTHON) extras/pokemontools/scan_includes.py
+CFLAGS = -O3 -std=c11 -Wall -Wextra -pedantic
 
-pokered_obj := audio_red.o main_red.o text_red.o wram_red.o
-pokeblue_obj := audio_blue.o main_blue.o text_blue.o wram_blue.o
+ifeq ($(filter debug,$(MAKECMDGOALS)),debug)
+RGBASM_FLAGS += -DDEBUG
+endif
+ifeq ($(filter monochrome,$(MAKECMDGOALS)),monochrome)
+RGBASM_FLAGS += -DMONOCHROME
+endif
+
 
 .SUFFIXES:
-.SUFFIXES: .asm .o .gbc .png .2bpp .1bpp .pic
+.PHONY: all clean rpp debug monochrome bankfree freespace compare tools
 .SECONDEXPANSION:
-# Suppress annoying intermediate file deletion messages.
-.PRECIOUS: %.2bpp
-.PHONY: all clean red blue compare
+.PRECIOUS: %.2bpp %.1bpp %.lz %.o
 
-roms := pokered.gbc pokeblue.gbc
 
-all: $(roms)
-red: pokered.gbc
-blue: pokeblue.gbc
+roms_md5      = roms.md5
+bank_ends_txt = contents/bank_ends.txt
+sorted_sym    = contents/$(NAME).sym
 
-# For contributors to make sure a change didn't affect the contents of the rom.
-compare: red blue
-	@$(MD5) roms.md5
+PYTHON = python
+CC     = gcc
+RM     = rm -f
+GFX    = $(PYTHON) gfx.py
+MD5    = md5sum
+
+LZ            = tools/lzcomp
+SCAN_INCLUDES = tools/scan_includes
+
+bank_ends := $(PYTHON) contents/bank_ends.py $(NAME)-$(VERSION)
+
+
+rpp_obj := \
+main.o \
+home.o \
+ram.o \
+audio.o \
+audio/musicplayer.o \
+data/pokemon/dex_entries.o \
+data/pokemon/egg_moves.o \
+data/pokemon/evos_attacks.o \
+data/maps/map_data.o \
+data/text/common.o \
+data/tileset_data.o \
+engine/credits.o \
+engine/events.o \
+gfx/pics.o \
+gfx/sprites.o
+
+
+all: rpp
+
+rpp: FILLER = 0x00
+rpp: ROM_NAME = $(NAME)-$(VERSION)
+rpp: $(NAME)-$(VERSION).gbc
+
+debug: rpp
+monochrome: rpp
+
+bankfree: FILLER = 0xff
+bankfree: ROM_NAME = $(NAME)-$(VERSION)-0xff
+bankfree: $(NAME)-$(VERSION)-0xff.gbc
+
+freespace: $(bank_ends_txt) $(roms_md5) $(sorted_sym)
+
+
+# Build tools when building the rom
+ifeq ($(filter clean tools,$(MAKECMDGOALS)),)
+Makefile: tools
+endif
+
+tools: $(LZ) $(SCAN_INCLUDES)
+
+$(LZ): $(LZ).c
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(SCAN_INCLUDES): $(SCAN_INCLUDES).c
+	$(CC) $(CFLAGS) -o $@ $<
+
 
 clean:
-	rm -f $(roms) $(pokered_obj) $(pokeblue_obj) $(roms:.gbc=.sym)
-	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pic' \) -exec rm {} +
+	$(RM) $(rpp_obj) $(wildcard $(NAME)-*.gbc) $(wildcard $(NAME)-*.map) $(wildcard $(NAME)-*.sym)
 
-%.asm: ;
+compare: rpp
+	$(MD5) -c $(roms_md5)
 
-%_red.o: dep = $(shell $(includes) $(@D)/$*.asm)
-$(pokered_obj): %_red.o: %.asm $$(dep)
-	$(RGBDS_DIR)rgbasm -D _RED -h -o $@ $*.asm
 
-%_blue.o: dep = $(shell $(includes) $(@D)/$*.asm)
-$(pokeblue_obj): %_blue.o: %.asm $$(dep)
-	$(RGBDS_DIR)rgbasm -D _BLUE -h -o $@ $*.asm
+$(bank_ends_txt): rpp bankfree ; $(bank_ends) > $@
+$(roms_md5): rpp ; $(MD5) $(NAME)-$(VERSION).gbc > $@
+$(sorted_sym): rpp ; tail -n +3 $(NAME)-$(VERSION).sym | sort -o $@
 
-pokered_opt  = -Cjv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON RED"
-pokeblue_opt = -Cjv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON BLUE"
 
-%.gbc: $$(%_obj)
-	$(RGBDS_DIR)rgblink -n $*.sym -o $@ $^
-	$(RGBDS_DIR)rgbfix $($*_opt) $@
-	sort $*.sym -o $*.sym
+%.o: dep = $(shell $(SCAN_INCLUDES) $(@D)/$*.asm)
+%.o: %.asm $$(dep)
+	$(RGBDS_DIR)rgbasm $(RGBASM_FLAGS) -o $@ $<
 
-%.png:  ;
-%.2bpp: %.png  ; $(2bpp) $<
-%.1bpp: %.png  ; $(1bpp) $<
-%.pic:  %.2bpp ; $(pic)  $<
+.gbc:
+%.gbc: $(rpp_obj)
+	$(RGBDS_DIR)rgblink $(RGBLINK_FLAGS) -o $@ $^
+	$(RGBDS_DIR)rgbfix $(RGBFIX_FLAGS) $@
+
+%.2bpp: %.png ; $(GFX) 2bpp $<
+%.1bpp: %.png ; $(GFX) 1bpp $<
+
+%.pal: %.2bpp
+gfx/pokemon/%/normal.pal gfx/pokemon/%/bitmask.asm gfx/pokemon/%/frames.asm: gfx/pokemon/%/front.2bpp
+
+%.lz: % ; $(LZ) $< $@
+
+%.png: ; $(error ERROR: No rule to make '$@')
+%.asm: ; $(error ERROR: No rule to make '$@')
+%.bin: ; $(error ERROR: No rule to make '$@')
+%.blk: ; $(error ERROR: No rule to make '$@')
+%.tilemap: ; $(error ERROR: No rule to make '$@')
