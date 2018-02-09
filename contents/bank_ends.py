@@ -31,16 +31,6 @@ with open(rom_name + '.gbc', 'rb') as f1, open(rom_name + '-0xff.gbc', 'rb') as 
 			bank_space.append(bank_diff)
 			bank_ends.append(bank_diff)
 
-print('''
-> Back in the day, the programming used up all the space on a cartridge, so if
-> we wanted to add something new, we had to clean it up first... First we'd
-> find enough space, then we could make what we wanted... It was a pain!
-> 
-> -- Morimoto, Pokémon Ultra Sun/Ultra Moon
-> <https://www.serebii.net/ultrasunultramoon/virtualconsole.shtml>'''[1:])
-
-print()
-
 total_size = bank_diff * num_banks
 free_space = sum(bank_space)
 pct_free = free_space * 100.0 / total_size

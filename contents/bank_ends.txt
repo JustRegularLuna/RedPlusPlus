@@ -1,10 +1,3 @@
-> Back in the day, the programming used up all the space on a cartridge, so if
-> we wanted to add something new, we had to clean it up first... First we'd
-> find enough space, then we could make what we wanted... It was a pain!
-> 
-> -- Morimoto, Pokémon Ultra Sun/Ultra Moon
-> <https://www.serebii.net/ultrasunultramoon/virtualconsole.shtml>
-
 Free space: 729823/2097152 (34.80%)
 
 bank	end	free
