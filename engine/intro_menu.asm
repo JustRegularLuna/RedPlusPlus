@@ -945,11 +945,9 @@ DrawIntroPlayerPic:
 	ld [CurPartySpecies], a
 	ld a, [PlayerGender]
 	bit 0, a
-	jr z, .male
-	ld a, LEAF
-	jr .ok
-.male
 	ld a, RED
+	jr z, .ok
+	ld a, LEAF
 .ok
 	ld [TrainerClass], a
 Intro_PrepTrainerPic: ; 619c
@@ -994,11 +992,11 @@ Intro_PlacePlayerSprite: ; 61cd
 	inc de
 	ld [hli], a
 
-	ld b, 0
+	ld b, PAL_OW_RED
 	ld a, [PlayerGender]
 	bit 0, a
 	jr z, .male
-	ld b, 1
+	ld b, PAL_OW_GREEN
 .male
 	ld a, b
 
