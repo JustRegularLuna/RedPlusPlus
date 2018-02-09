@@ -213,17 +213,17 @@ ENDM
 	connection south, Route2North, ROUTE_2_NORTH, 5, 0, 10
 	connection east, Route3, ROUTE_3, 5, 0, 9
 
-	map_attributes Route2North, ROUTE_2_NORTH, $f, NORTH | SOUTH
+	map_attributes Route2North, ROUTE_2_NORTH, $f, NORTH
 	connection north, PewterCity, PEWTER_CITY, -3, 2, 16
-	connection south, Route2South, ROUTE_2_SOUTH, 0, 0, 10
+;	connection south, Route2South, ROUTE_2_SOUTH, 0, 0, 10
 
-	map_attributes Route2South, ROUTE_2_SOUTH, $f, NORTH | EAST
-	connection north, Route2North, ROUTE_2_NORTH, 0, 0, 10
-;	connection south, ViridianCity, VIRIDIAN_CITY, -3, 2, 16
-	connection east, Route16West, ROUTE_16_WEST, 8, 0, 10
+	map_attributes Route2South, ROUTE_2_SOUTH, $f, SOUTH
+;	connection north, Route2North, ROUTE_2_NORTH, 0, 0, 10
+	connection south, ViridianCity, VIRIDIAN_CITY, -3, 2, 16
+;	connection east, Route16West, ROUTE_16_WEST, 8, 0, 10
 
-	map_attributes ViridianCity, VIRIDIAN_CITY, $f, SOUTH
-;	connection north, Route2South, ROUTE_2_SOUTH, 5, 0, 10
+	map_attributes ViridianCity, VIRIDIAN_CITY, $f, NORTH | SOUTH
+	connection north, Route2South, ROUTE_2_SOUTH, 5, 0, 10
 	connection south, Route1, ROUTE_1, 5, 0, 12
 ;	connection west, Route22, ROUTE_22, 4, 0, 9
 
