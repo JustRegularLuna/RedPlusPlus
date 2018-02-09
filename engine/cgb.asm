@@ -381,7 +381,7 @@ _CGB_Pokedex: ; 8f70
 
 	ld hl, PokegearOBPals
 	ld de, UnknOBPals
-	ld bc, 2 palettes
+	ld bc, 3 palettes
 	ld a, $5
 	call FarCopyWRAM
 

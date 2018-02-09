@@ -434,7 +434,7 @@ InitPokegearPalettes:
 ; This is needed because the regular palette is dark at night.
 	ld hl, PokegearOBPals
 	ld de, UnknOBPals
-	ld bc, 2 palettes
+	ld bc, 3 palettes
 	ld a, $5
 	jp FarCopyWRAM
 
