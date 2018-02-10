@@ -2,6 +2,7 @@
 	const TILESET_PALLET_CINNABAR
 	const TILESET_VIRIDIAN
 	const TILESET_PEWTER
+	const TILESET_CERULEAN
 	const TILESET_INDIGO
 	const TILESET_FOREST
 	;------------------------------------

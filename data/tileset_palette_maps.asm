@@ -16,6 +16,9 @@ INCLUDE "gfx/tilesets/viridian_palette_map.asm"
 TilesetPewterPalMap:
 INCLUDE "gfx/tilesets/pewter_palette_map.asm"
 
+TilesetCeruleanPalMap:
+INCLUDE "gfx/tilesets/cerulean_palette_map.asm"
+
 TilesetIndigoPalMap:
 INCLUDE "gfx/tilesets/indigo_palette_map.asm"
 

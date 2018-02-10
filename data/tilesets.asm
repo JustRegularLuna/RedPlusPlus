@@ -11,6 +11,7 @@ Tileset00End::
 	tileset TilesetPalletCinnabar
 	tileset TilesetViridian
 	tileset TilesetPewter
+	tileset TilesetCerulean
 	tileset TilesetIndigo
 	tileset TilesetForest
 	;------------------------------------

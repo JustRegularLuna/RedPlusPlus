@@ -42,7 +42,14 @@ TilesetPewterColl::
 INCLUDE "data/tilesets/pewter_collision.asm"
 
 
-SECTION "Tileset Data 3", ROMX
+SECTION "Tileset Data 4", ROMX
+
+TilesetCeruleanGFX::
+INCBIN "gfx/tilesets/cerulean.2bpp.lz"
+TilesetCeruleanMeta::
+INCBIN "data/tilesets/cerulean_metatiles.bin"
+TilesetCeruleanColl::
+INCLUDE "data/tilesets/cerulean_collision.asm"
 
 TilesetIndigoGFX::
 INCBIN "gfx/tilesets/indigo.2bpp.lz"
