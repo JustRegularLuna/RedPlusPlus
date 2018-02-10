@@ -42,6 +42,16 @@ TilesetPewterColl::
 INCLUDE "data/tilesets/pewter_collision.asm"
 
 
+SECTION "Tileset Data 3", ROMX
+
+TilesetIndigoGFX::
+INCBIN "gfx/tilesets/indigo.2bpp.lz"
+TilesetIndigoMeta::
+INCBIN "data/tilesets/indigo_metatiles.bin"
+TilesetIndigoColl::
+INCLUDE "data/tilesets/indigo_collision.asm"
+
+
 ;------------------------------------
 
 

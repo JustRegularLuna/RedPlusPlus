@@ -340,6 +340,7 @@ TilesetValenciaAnim:
 TilesetPalletCinnabarAnim:
 TilesetViridianAnim:
 TilesetPewterAnim:
+TilesetIndigoAnim:
 TilesetForestAnim:
 TilesetJohto3Anim:
 TilesetHouse1Anim:
