@@ -63,10 +63,10 @@ ENDM
 	connection north, Route1, ROUTE_1, 0, 0, 10
 	connection south, Route21, ROUTE_21, -1, 1, 12
 
-	map_attributes ViridianCity, VIRIDIAN_CITY, $f, NORTH | SOUTH
+	map_attributes ViridianCity, VIRIDIAN_CITY, $f, NORTH | SOUTH | WEST
 	connection north, Route2South, ROUTE_2_SOUTH, 5, 0, 10
 	connection south, Route1, ROUTE_1, 5, 0, 12
-;	connection west, Route22, ROUTE_22, 4, 0, 9
+	connection west, Route22, ROUTE_22, 3, 0, 12
 
 	map_attributes PewterCity, PEWTER_CITY, $f, SOUTH
 	connection south, Route2North, ROUTE_2_NORTH, 5, 0, 10
@@ -280,8 +280,8 @@ ENDM
 ;	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 10
 ;	connection east, UragaChannelWest, URAGA_CHANNEL_WEST, 19, 0, 15
 
-	map_attributes Route22, ROUTE_22, $2c, 0
-;	connection east, ViridianCity, VIRIDIAN_CITY, -3, 1, 15
+	map_attributes Route22, ROUTE_22, $55, EAST
+	connection east, ViridianCity, VIRIDIAN_CITY, -2, 1, 15
 
 	map_attributes Route23, ROUTE_23, $f, NORTH
 	connection north, IndigoPlateau, INDIGO_PLATEAU, 0, 0, 10

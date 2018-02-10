@@ -519,7 +519,7 @@ MAP_NONE   EQU 0
 	newgroup                                                    ; 23
 
 	mapconst ROUTE_2_SOUTH,                              17, 10 ;  1
-	mapconst ROUTE_22,                                    9, 15 ;  2
+	mapconst ROUTE_22,                                   12, 18 ;  2
 	mapconst VIRIDIAN_CITY,                              17, 18 ;  3
 	mapconst VIRIDIAN_GYM,                               23,  7 ;  4
 	mapconst VIRIDIAN_NICKNAME_SPEECH_HOUSE,              4,  4 ;  5
