@@ -897,7 +897,8 @@ INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route2North.asm"
 INCLUDE "maps/Route2NuggetSpeechHouse.asm"
 INCLUDE "maps/Route2South.asm"
-INCLUDE "maps/Route3.asm"
+INCLUDE "maps/Route3South.asm"
+INCLUDE "maps/Route3North.asm"
 INCLUDE "maps/Route4.asm"
 
 

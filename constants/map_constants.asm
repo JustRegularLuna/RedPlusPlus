@@ -314,16 +314,17 @@ MAP_NONE   EQU 0
 	newgroup                                                    ; 14
 
 	mapconst ROUTE_2_NORTH,                              18, 10 ;  1
-	mapconst ROUTE_3,                                    11, 36 ;  2
-	mapconst ROUTE_3_POKECENTER_1F,                       4,  6 ;  3
-	mapconst PEWTER_CITY,                                21, 20 ;  4
-	mapconst PEWTER_NIDORAN_SPEECH_HOUSE,                 4,  4 ;  5
-	mapconst PEWTER_GYM,                                  7,  5 ;  6
-	mapconst PEWTER_MART,                                 4,  6 ;  7
-	mapconst PEWTER_POKECENTER_1F,                        4,  6 ;  8
-	mapconst PEWTER_SNOOZE_SPEECH_HOUSE,                  4,  4 ;  9
-	mapconst PEWTER_MUSEUM_OF_SCIENCE_1F,                 4, 10 ; 10
-	mapconst PEWTER_MUSEUM_OF_SCIENCE_2F,                 4,  7 ; 11
+	mapconst ROUTE_3_SOUTH,                              10, 36 ;  2
+	mapconst ROUTE_3_NORTH,                               9, 12 ;  3
+	mapconst ROUTE_3_POKECENTER_1F,                       4,  6 ;  4
+	mapconst PEWTER_CITY,                                21, 20 ;  5
+	mapconst PEWTER_NIDORAN_SPEECH_HOUSE,                 4,  4 ;  6
+	mapconst PEWTER_GYM,                                  7,  5 ;  7
+	mapconst PEWTER_MART,                                 4,  6 ;  8
+	mapconst PEWTER_POKECENTER_1F,                        4,  6 ;  9
+	mapconst PEWTER_SNOOZE_SPEECH_HOUSE,                  4,  4 ; 10
+	mapconst PEWTER_MUSEUM_OF_SCIENCE_1F,                 4, 10 ; 11
+	mapconst PEWTER_MUSEUM_OF_SCIENCE_2F,                 4,  7 ; 12
 
 	newgroup                                                    ; 15
 
