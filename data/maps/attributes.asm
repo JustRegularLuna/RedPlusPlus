@@ -72,10 +72,10 @@ ENDM
 	connection south, Route2North, ROUTE_2_NORTH, 5, 0, 10
 	connection east, Route3South, ROUTE_3_SOUTH, 6, 0, 10
 
-	map_attributes CeruleanCity, CERULEAN_CITY, $f, NORTH | SOUTH | WEST | EAST
+	map_attributes CeruleanCity, CERULEAN_CITY, $f, NORTH | SOUTH | EAST
 	connection north, Route24, ROUTE_24, 0, 0, 14
 	connection south, Route5, ROUTE_5, 5, 0, 10
-	connection west, Route4, ROUTE_4, 2, 0, 10
+;	connection west, Route4, ROUTE_4, 2, 0, 10
 	connection east, Route9, ROUTE_9, 4, 0, 9
 
 	map_attributes VermilionCity, VERMILION_CITY, $43, NORTH | EAST
@@ -180,8 +180,8 @@ ENDM
 	map_attributes Route3North, ROUTE_3_NORTH, $55, SOUTH
 	connection south, Route3South, ROUTE_3_SOUTH, 0, 25, 11
 
-	map_attributes Route4, ROUTE_4, $2c, EAST
-	connection east, CeruleanCity, CERULEAN_CITY, -2, 0, 16
+	map_attributes Route4, ROUTE_4, $55, 0
+;	connection east, CeruleanCity, CERULEAN_CITY, -2, 0, 16
 
 	map_attributes Route5, ROUTE_5, $f, NORTH | SOUTH
 	connection north, CeruleanCity, CERULEAN_CITY, -3, 2, 16

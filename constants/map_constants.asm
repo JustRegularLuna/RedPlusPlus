@@ -196,7 +196,7 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_10_POKECENTER_1F,                      4,  6 ;  8
 	mapconst POWER_PLANT,                                 9, 10 ; 10
 	mapconst BILLS_HOUSE,                                 4,  4 ; 11
-	mapconst ROUTE_4,                                    10, 33 ; 12
+	mapconst ROUTE_4,                                    11, 35 ; 12
 	mapconst ROUTE_24,                                   20, 14 ; 13
 	mapconst ROUTE_25,                                   21, 17 ; 14
 	mapconst CERULEAN_CAPE,                              19, 25 ; 15
