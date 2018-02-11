@@ -196,11 +196,11 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_10_POKECENTER_1F,                      4,  6 ;  8
 	mapconst POWER_PLANT,                                 9, 10 ; 10
 	mapconst BILLS_HOUSE,                                 4,  4 ; 11
-	mapconst ROUTE_4,                                    11, 35 ; 12
-	mapconst ROUTE_24,                                   20, 14 ; 13
-	mapconst ROUTE_25,                                   21, 17 ; 14
-	mapconst CERULEAN_CAPE,                              19, 25 ; 15
-	mapconst CERULEAN_CITY,                              16, 20 ; 16
+	mapconst ROUTE_4,                                    11, 34 ; 12
+	mapconst ROUTE_24,                                   20, 15 ; 13
+	mapconst ROUTE_25,                                   20, 16 ; 14
+	mapconst CERULEAN_CAPE,                              19, 27 ; 15
+	mapconst CERULEAN_CITY,                              17, 21 ; 16
 	mapconst CERULEAN_CAVE_1F,                           12, 17 ; 17
 	mapconst CERULEAN_CAVE_2F,                           11, 17 ; 18
 	mapconst CERULEAN_CAVE_B1F,                          11, 17 ; 19
@@ -570,7 +570,7 @@ MAP_NONE   EQU 0
 	mapconst SILPH_CO_3F,                                 4,  8 ;  9
 	mapconst COPYCATS_HOUSE_1F,                           4,  4 ; 10
 	mapconst COPYCATS_HOUSE_2F,                           3,  4 ; 11
-	mapconst ROUTE_5,                                    17, 10 ; 12
+	mapconst ROUTE_5,                                    18, 14 ; 12
 	mapconst ROUTE_5_UNDERGROUND_ENTRANCE,                4,  4 ; 13
 	mapconst ROUTE_5_SAFFRON_CITY_GATE,                   4,  5 ; 14
 	mapconst ROUTE_5_CLEANSE_TAG_SPEECH_HOUSE,            4,  4 ; 15

@@ -13,19 +13,22 @@ from collections import defaultdict
 
 code_directory         = './'
 tileset_filename       = 'constants/tileset_constants.asm'
-map_headers_filename   = 'data/maps/definitions.asm'
-map_headers_2_filename = 'data/maps/data.asm'
+map_headers_filename   = 'data/maps/maps.asm'
+map_headers_2_filename = 'data/maps/attributes.asm'
 block_data_filename    = 'data/maps/blocks.asm'
 block_filename_fmt     = 'maps/%s.blk'
 metatile_filename_fmt  = 'data/tilesets/%s_metatiles.bin'
 
-tileset_names = ['johto1', 'johto2', 'johto3', 'johto4', 'kanto1', 'kanto2',
+tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'indigo',
+                 'forest',
+                 ###############################################################
+                 'johto1', 'johto2', 'johto3', 'johto4', 'kanto1', 'kanto2',
                  'shamouti', 'valencia', 'faraway', 'house1', 'house2', 'house3',
                  'pokecenter', 'pokecom', 'mart', 'gate', 'gym1', 'gym2', 'gym3',
                  'port', 'lab', 'facility', 'mansion', 'game_corner', 'decor',
                  'museum', 'hotel', 'tower', 'battle_tower', 'radio_tower',
                  'lighthouse', 'warehouse', 'cave', 'quiet_cave', 'ice_path',
-                 'tunnel', 'forest', 'park', 'safari', 'ruins', 'alph',
+                 'tunnel', 'pc_forest', 'park', 'safari', 'ruins', 'alph',
                  'pokemon_mansion']
 
 # {'TILESET_PC_JOHTO_1': 'johto1', ...}
@@ -90,7 +93,9 @@ def read_tileset_ids():
 	with open(code_directory + tileset_filename, 'r') as f:
 		for line in f:
 			line = line.strip()
-			if line.startswith('const_value '):
+			if line.startswith('const PAL_BG_'):
+				break
+			elif line.startswith('const_value '):
 				parts = line.split()
 				tileset_id = int(parts[2])
 			elif line.startswith('const '):
@@ -98,14 +103,12 @@ def read_tileset_ids():
 				tileset_name = parts[1]
 				tileset_ids[tileset_name] = tileset_names[tileset_id - 1]
 				tileset_id += 1
-			elif line.startswith('const_def'):
-				break
 
 def read_map_tilesets():
 	with open(code_directory + map_headers_filename, 'r') as f:
 		for line in f:
 			line = line.strip()
-			if line.startswith('map_header '):
+			if line.startswith('map '):
 				parts = line.split()
 				map_name = parts[1].rstrip(',')
 				tileset_name = parts[2].rstrip(',')
@@ -138,7 +141,7 @@ def read_used_block_ids_2():
 	with open(code_directory + map_headers_2_filename, 'r') as f:
 		for line in f:
 			line = line.strip()
-			if line.startswith('map_header_2 '):
+			if line.startswith('map_attributes '):
 				parts = line.split()
 				map_name = parts[1].rstrip(',')
 				used_block_id = parts[3].rstrip(',')

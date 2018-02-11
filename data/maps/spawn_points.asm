@@ -11,7 +11,7 @@ SpawnPoints: ; 0x152ab
 	spawn VIRIDIAN_CITY,              23, 26
 	spawn PEWTER_CITY,                13, 30
 	spawn ROUTE_3_NORTH,              11,  6
-	spawn CERULEAN_CITY,              19, 18
+	spawn CERULEAN_CITY,              21, 16
 	spawn ROUTE_10_NORTH,             11, 36
 	spawn VERMILION_CITY,              9,  6
 	spawn LAVENDER_TOWN,               5,  8

@@ -72,11 +72,11 @@ ENDM
 	connection south, Route2North, ROUTE_2_NORTH, 5, 0, 10
 	connection east, Route3South, ROUTE_3_SOUTH, 6, 0, 10
 
-	map_attributes CeruleanCity, CERULEAN_CITY, $f, NORTH | SOUTH | EAST
-	connection north, Route24, ROUTE_24, 0, 0, 14
-	connection south, Route5, ROUTE_5, 5, 0, 10
-;	connection west, Route4, ROUTE_4, 2, 0, 10
-	connection east, Route9, ROUTE_9, 4, 0, 9
+	map_attributes CeruleanCity, CERULEAN_CITY, $f, NORTH | SOUTH | WEST
+	connection north, Route24, ROUTE_24, 1, 0, 15
+	connection south, Route5, ROUTE_5, 4, 0, 14
+	connection west, Route4, ROUTE_4, 2, 0, 11
+;	connection east, Route9, ROUTE_9, 4, 0, 9
 
 	map_attributes VermilionCity, VERMILION_CITY, $43, NORTH | EAST
 	connection north, Route6, ROUTE_6, 3, 0, 15
@@ -180,12 +180,12 @@ ENDM
 	map_attributes Route3North, ROUTE_3_NORTH, $55, SOUTH
 	connection south, Route3South, ROUTE_3_SOUTH, 0, 25, 11
 
-	map_attributes Route4, ROUTE_4, $55, 0
-;	connection east, CeruleanCity, CERULEAN_CITY, -2, 0, 16
+	map_attributes Route4, ROUTE_4, $55, EAST
+	connection east, CeruleanCity, CERULEAN_CITY, -2, 0, 15
 
-	map_attributes Route5, ROUTE_5, $f, NORTH | SOUTH
-	connection north, CeruleanCity, CERULEAN_CITY, -3, 2, 16
-	connection south, SaffronCity, SAFFRON_CITY, -3, 2, 16
+	map_attributes Route5, ROUTE_5, $f, NORTH
+	connection north, CeruleanCity, CERULEAN_CITY, -2, 2, 18
+;	connection south, SaffronCity, SAFFRON_CITY, -3, 2, 16
 
 	map_attributes Route6, ROUTE_6, $f, NORTH | SOUTH
 	connection north, SaffronCity, SAFFRON_CITY, -3, 0, 18
@@ -290,11 +290,11 @@ ENDM
 	map_attributes Route23, ROUTE_23, $f, NORTH
 	connection north, IndigoPlateau, INDIGO_PLATEAU, 0, 0, 10
 
-	map_attributes Route24, ROUTE_24, $2c, SOUTH | EAST
-	connection south, CeruleanCity, CERULEAN_CITY, 0, 0, 14
-	connection east, Route25, ROUTE_25, 0, 0, 21
+	map_attributes Route24, ROUTE_24, $f, SOUTH | EAST
+	connection south, CeruleanCity, CERULEAN_CITY, -1, 0, 15
+	connection east, Route25, ROUTE_25, 0, 0, 20
 
-	map_attributes Route25, ROUTE_25, $2c, WEST | EAST
+	map_attributes Route25, ROUTE_25, $f, WEST | EAST
 	connection west, Route24, ROUTE_24, 0, 0, 20
 	connection east, CeruleanCape, CERULEAN_CAPE, 0, 0, 19
 
@@ -406,7 +406,7 @@ ENDM
 	map_attributes Route49, ROUTE_49, $0, EAST
 	connection east, ValenciaIsland, VALENCIA_ISLAND, 2, 0, 9
 
-	map_attributes CeruleanCape, CERULEAN_CAPE, $2c, WEST
+	map_attributes CeruleanCape, CERULEAN_CAPE, $f, WEST
 	connection west, Route25, ROUTE_25, 0, 0, 20
 
 	map_attributes CeladonOutskirts, CELADON_OUTSKIRTS, $f, SOUTH
