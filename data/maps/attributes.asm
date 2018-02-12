@@ -72,11 +72,11 @@ ENDM
 	connection south, Route2North, ROUTE_2_NORTH, 5, 0, 10
 	connection east, Route3South, ROUTE_3_SOUTH, 6, 0, 10
 
-	map_attributes CeruleanCity, CERULEAN_CITY, $f, NORTH | SOUTH | WEST
+	map_attributes CeruleanCity, CERULEAN_CITY, $f, NORTH | SOUTH | WEST | EAST
 	connection north, Route24, ROUTE_24, 1, 0, 15
 	connection south, Route5, ROUTE_5, 4, 0, 14
 	connection west, Route4, ROUTE_4, 2, 0, 11
-;	connection east, Route9, ROUTE_9, 4, 0, 9
+	connection east, Route9, ROUTE_9, 2, 0, 11
 
 	map_attributes VermilionCity, VERMILION_CITY, $43, NORTH | EAST
 	connection north, Route6, ROUTE_6, 3, 0, 15
@@ -86,7 +86,7 @@ ENDM
 	connection west, Route16Northeast, ROUTE_16_NORTHEAST, 10, 0, 8
 	connection east, Route7, ROUTE_7, 5, 0, 9
 
-	map_attributes LavenderTown, LAVENDER_TOWN, $2c, NORTH | SOUTH | WEST
+	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | SOUTH | WEST
 	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 10
 	connection south, Route12North, ROUTE_12_NORTH, 0, 0, 10
 	connection west, Route8, ROUTE_8, 0, 0, 11
@@ -106,7 +106,7 @@ ENDM
 	connection north, Route21, ROUTE_21, 0, 0, 10
 	connection east, Route20, ROUTE_20, 2, 0, 9
 
-	map_attributes IndigoPlateau, INDIGO_PLATEAU, $2c, SOUTH
+	map_attributes IndigoPlateau, INDIGO_PLATEAU, $55, SOUTH
 	connection south, Route23, ROUTE_23, 0, 0, 10
 
 	map_attributes NewBarkTown, NEW_BARK_TOWN, $5, WEST | EAST
@@ -196,19 +196,19 @@ ENDM
 	connection west, CeladonCity, CELADON_CITY, -3, 2, 15
 	connection east, SaffronCity, SAFFRON_CITY, -3, 3, 12
 
-	map_attributes Route8, ROUTE_8, $2c, WEST | EAST
+	map_attributes Route8, ROUTE_8, $55, WEST | EAST
 	connection west, SaffronCity, SAFFRON_CITY, -2, 2, 14
 	connection east, LavenderTown, LAVENDER_TOWN, 0, 0, 10
 
-	map_attributes Route9, ROUTE_9, $2c, WEST | EAST
-	connection west, CeruleanCity, CERULEAN_CITY, -3, 1, 12
-	connection east, Route10North, ROUTE_10_NORTH, 0, 6, 12
+	map_attributes Route9, ROUTE_9, $55, WEST
+	connection west, CeruleanCity, CERULEAN_CITY, -1, 1, 14
+;	connection east, Route10North, ROUTE_10_NORTH, 0, 6, 12
 
-	map_attributes Route10North, ROUTE_10_NORTH, $2c, SOUTH | WEST
+	map_attributes Route10North, ROUTE_10_NORTH, $55, SOUTH | WEST
 	connection south, Route10South, ROUTE_10_SOUTH, 0, 0, 10
 	connection west, Route9, ROUTE_9, 6, 0, 12
 
-	map_attributes Route10South, ROUTE_10_SOUTH, $2c, NORTH | SOUTH
+	map_attributes Route10South, ROUTE_10_SOUTH, $55, NORTH | SOUTH
 	connection north, Route10North, ROUTE_10_NORTH, 0, 0, 10
 	connection south, LavenderTown, LAVENDER_TOWN, 0, 0, 10
 
@@ -504,7 +504,7 @@ ENDM
 	map_attributes RuinsofAlphOmanyteWordRoom, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, $0, 0
 	map_attributes RuinsofAlphAerodactylWordRoom, RUINS_OF_ALPH_AERODACTYL_WORD_ROOM, $0, 0
 	map_attributes RuinsofAlphSinjohChamber, RUINS_OF_ALPH_SINJOH_CHAMBER, $0, 0
-	map_attributes Route22Past, ROUTE_22_PAST, $2c, 0
+	map_attributes Route22Past, ROUTE_22_PAST, $55, 0
 	map_attributes UnionCave1F, UNION_CAVE_1F, $9, 0
 	map_attributes UnionCaveB1FNorth, UNION_CAVE_B1F_NORTH, $9, 0
 	map_attributes UnionCaveB1FSouth, UNION_CAVE_B1F_SOUTH, $9, 0
