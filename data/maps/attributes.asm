@@ -200,13 +200,13 @@ ENDM
 	connection west, SaffronCity, SAFFRON_CITY, -2, 2, 14
 	connection east, LavenderTown, LAVENDER_TOWN, 0, 0, 10
 
-	map_attributes Route9, ROUTE_9, $55, WEST
+	map_attributes Route9, ROUTE_9, $55, WEST | EAST
 	connection west, CeruleanCity, CERULEAN_CITY, -1, 1, 14
-;	connection east, Route10North, ROUTE_10_NORTH, 0, 6, 12
+	connection east, Route10North, ROUTE_10_NORTH, 0, 4, 11
 
-	map_attributes Route10North, ROUTE_10_NORTH, $55, SOUTH | WEST
-	connection south, Route10South, ROUTE_10_SOUTH, 0, 0, 10
-	connection west, Route9, ROUTE_9, 6, 0, 12
+	map_attributes Route10North, ROUTE_10_NORTH, $55, WEST
+;	connection south, Route10South, ROUTE_10_SOUTH, 0, 0, 10
+	connection west, Route9, ROUTE_9, 4, 0, 11
 
 	map_attributes Route10South, ROUTE_10_SOUTH, $55, NORTH | SOUTH
 	connection north, Route10North, ROUTE_10_NORTH, 0, 0, 10

@@ -609,7 +609,7 @@ MAP_NONE   EQU 0
 	newgroup                                                    ; 28
 
 	mapconst ROUTE_9,                                    11, 28 ;  1
-	mapconst ROUTE_10_NORTH,                             29, 10 ;  2
+	mapconst ROUTE_10_NORTH,                             30, 12 ;  2
 	mapconst DIM_CAVE_1F,                                18, 17 ;  3
 	mapconst DIM_CAVE_2F,                                18, 17 ;  4
 	mapconst DIM_CAVE_3F,                                17, 16 ;  5
