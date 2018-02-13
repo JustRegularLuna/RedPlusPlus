@@ -3,6 +3,11 @@
 	const TILESET_VIRIDIAN
 	const TILESET_PEWTER
 	const TILESET_CERULEAN
+	const TILESET_VERMILION
+	const TILESET_LAVENDER
+	const TILESET_CELADON
+	const TILESET_FUCHSIA
+	const TILESET_SAFFRON
 	const TILESET_INDIGO
 	const TILESET_FOREST
 	;------------------------------------

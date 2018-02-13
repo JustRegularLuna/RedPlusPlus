@@ -51,6 +51,57 @@ INCBIN "data/tilesets/cerulean_metatiles.bin"
 TilesetCeruleanColl::
 INCLUDE "data/tilesets/cerulean_collision.asm"
 
+
+
+SECTION "Tileset Data 5", ROMX
+
+TilesetVermilionGFX::
+INCBIN "gfx/tilesets/vermilion.2bpp.lz"
+TilesetVermilionMeta::
+INCBIN "data/tilesets/vermilion_metatiles.bin"
+TilesetVermilionColl::
+INCLUDE "data/tilesets/vermilion_collision.asm"
+
+
+SECTION "Tileset Data 6", ROMX
+
+TilesetLavenderGFX::
+INCBIN "gfx/tilesets/lavender.2bpp.lz"
+TilesetLavenderMeta::
+INCBIN "data/tilesets/lavender_metatiles.bin"
+TilesetLavenderColl::
+INCLUDE "data/tilesets/lavender_collision.asm"
+
+
+SECTION "Tileset Data 7", ROMX
+
+TilesetCeladonGFX::
+INCBIN "gfx/tilesets/celadon.2bpp.lz"
+TilesetCeladonMeta::
+INCBIN "data/tilesets/celadon_metatiles.bin"
+TilesetCeladonColl::
+INCLUDE "data/tilesets/celadon_collision.asm"
+
+
+SECTION "Tileset Data 8", ROMX
+
+TilesetFuchsiaGFX::
+INCBIN "gfx/tilesets/fuchsia.2bpp.lz"
+TilesetFuchsiaMeta::
+INCBIN "data/tilesets/fuchsia_metatiles.bin"
+TilesetFuchsiaColl::
+INCLUDE "data/tilesets/fuchsia_collision.asm"
+
+
+SECTION "Tileset Data 9", ROMX
+
+TilesetSaffronGFX::
+INCBIN "gfx/tilesets/saffron.2bpp.lz"
+TilesetSaffronMeta::
+INCBIN "data/tilesets/saffron_metatiles.bin"
+TilesetSaffronColl::
+INCLUDE "data/tilesets/saffron_collision.asm"
+
 TilesetIndigoGFX::
 INCBIN "gfx/tilesets/indigo.2bpp.lz"
 TilesetIndigoMeta::

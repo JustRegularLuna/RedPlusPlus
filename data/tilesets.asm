@@ -12,6 +12,11 @@ Tileset00End::
 	tileset TilesetViridian
 	tileset TilesetPewter
 	tileset TilesetCerulean
+	tileset TilesetVermilion
+	tileset TilesetLavender
+	tileset TilesetCeladon
+	tileset TilesetFuchsia
+	tileset TilesetSaffron
 	tileset TilesetIndigo
 	tileset TilesetForest
 	;------------------------------------
