@@ -223,8 +223,8 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WARP_CARPET_UP, WALL
+	tilecoll WALL, WALL, WALL, FLOOR
+	tilecoll WALL, WALL, WARP_CARPET_UP, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, FLOOR
 	tilecoll DOOR, WALL, FLOOR, FLOOR
