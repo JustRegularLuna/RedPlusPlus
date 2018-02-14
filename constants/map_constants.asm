@@ -434,13 +434,13 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 21
 
-	mapconst ROUTE_7,                                     9, 10 ;  1
+	mapconst ROUTE_7,                                    24,  9 ;  1
 	mapconst ROUTE_16_NORTHEAST,                         11, 11 ;  2
 	mapconst ROUTE_16_SOUTH,                             11, 11 ;  3
 	mapconst ROUTE_17,                                   63, 10 ;  4
 	mapconst ROUTE_18_WEST,                               9, 10 ;  5
 	mapconst URAGA_CHANNEL_EAST,                          9, 23 ;  6
-	mapconst CELADON_CITY,                               18, 22 ;  7
+	mapconst CELADON_CITY,                               24, 25 ;  7
 	mapconst CELADON_DEPT_STORE_1F,                       4,  8 ;  8
 	mapconst CELADON_DEPT_STORE_2F,                       4,  8 ;  9
 	mapconst CELADON_DEPT_STORE_3F,                       4,  8 ; 10

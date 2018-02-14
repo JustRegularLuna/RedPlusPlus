@@ -190,10 +190,6 @@
 	tilecoll WATER, WATER, WATER, WATER
 	tilecoll WATER, WATER, WATER, WATER
 	tilecoll TV, TV, TV, TV
-	tilecoll TV, TV, TV, TV
-	tilecoll TV, TV, TV, TV
-	tilecoll TV, TV, TV, TV
-	tilecoll TV, TV, TV, TV
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL

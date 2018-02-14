@@ -82,9 +82,9 @@ ENDM
 ;	connection north, Route6, ROUTE_6, 3, 0, 15
 	connection east, Route11, ROUTE_11, 5, 0, 9
 
-	map_attributes CeladonCity, CELADON_CITY, $f, WEST | EAST
-	connection west, Route16Northeast, ROUTE_16_NORTHEAST, 10, 0, 8
-	connection east, Route7, ROUTE_7, 5, 0, 9
+	map_attributes CeladonCity, CELADON_CITY, $1f, EAST
+;	connection west, Route16Northeast, ROUTE_16_NORTHEAST, 10, 0, 8
+	connection east, Route7, ROUTE_7, 0, 0, 24
 
 	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | SOUTH
 	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 10
@@ -96,10 +96,10 @@ ENDM
 	connection west, Route18East, ROUTE_18_EAST, 7, 0, 11
 	connection east, Route15, ROUTE_15, 9, 0, 9
 
-	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH | EAST
+	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH | WEST | EAST
 	connection north, Route5, ROUTE_5, 5, 0, 14
 	connection south, Route6, ROUTE_6, 5, 0, 12
-;	connection west, Route7, ROUTE_7, 6, 0, 9
+	connection west, Route7, ROUTE_7, 0, 0, 22
 	connection east, Route8, ROUTE_8, 5, 0, 11
 
 	map_attributes CinnabarIsland, CINNABAR_ISLAND, $43, NORTH | EAST
@@ -191,10 +191,9 @@ ENDM
 	connection north, SaffronCity, SAFFRON_CITY, -3, 2, 17
 ;	connection south, VermilionCity, VERMILION_CITY, -3, 0, 18
 
-	map_attributes Route7, ROUTE_7, $f, NORTH | WEST
-	connection north, CeladonOutskirts, CELADON_OUTSKIRTS, 0, 0, 10
-	connection west, CeladonCity, CELADON_CITY, -3, 2, 15
-;	connection east, SaffronCity, SAFFRON_CITY, -3, 3, 12
+	map_attributes Route7, ROUTE_7, $1f, WEST | EAST
+	connection west, CeladonCity, CELADON_CITY, 0, 0, 24
+	connection east, SaffronCity, SAFFRON_CITY, 0, 0, 22
 
 	map_attributes Route8, ROUTE_8, $55, WEST
 	connection west, SaffronCity, SAFFRON_CITY, -3, 2, 14
