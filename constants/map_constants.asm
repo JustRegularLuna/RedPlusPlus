@@ -570,7 +570,7 @@ MAP_NONE   EQU 0
 	mapconst SILPH_CO_3F,                                 4,  8 ;  9
 	mapconst COPYCATS_HOUSE_1F,                           4,  4 ; 10
 	mapconst COPYCATS_HOUSE_2F,                           3,  4 ; 11
-	mapconst ROUTE_5,                                    18, 14 ; 12
+	mapconst ROUTE_5,                                    17, 14 ; 12
 	mapconst ROUTE_5_UNDERGROUND_ENTRANCE,                4,  4 ; 13
 	mapconst ROUTE_5_SAFFRON_CITY_GATE,                   4,  5 ; 14
 	mapconst ROUTE_5_CLEANSE_TAG_SPEECH_HOUSE,            4,  4 ; 15
@@ -704,7 +704,7 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 35
 
-	mapconst SAFFRON_CITY,                               19, 20 ;  1
+	mapconst SAFFRON_CITY,                               22, 25 ;  1
 	mapconst SHAMOUTI_SHRINE_RUINS,                      17, 12 ;  2
 
 	newgroup                                                    ; 36

@@ -96,11 +96,11 @@ ENDM
 	connection west, Route18East, ROUTE_18_EAST, 7, 0, 11
 	connection east, Route15, ROUTE_15, 9, 0, 9
 
-	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH | WEST | EAST
-	connection north, Route5, ROUTE_5, 5, 0, 10
-	connection south, Route6, ROUTE_6, 3, 0, 15
-	connection west, Route7, ROUTE_7, 6, 0, 9
-	connection east, Route8, ROUTE_8, 4, 0, 11
+	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH
+	connection north, Route5, ROUTE_5, 5, 0, 14
+;	connection south, Route6, ROUTE_6, 3, 0, 15
+;	connection west, Route7, ROUTE_7, 6, 0, 9
+;	connection east, Route8, ROUTE_8, 4, 0, 11
 
 	map_attributes CinnabarIsland, CINNABAR_ISLAND, $43, NORTH | EAST
 	connection north, Route21, ROUTE_21, 0, 0, 10
@@ -183,21 +183,21 @@ ENDM
 	map_attributes Route4, ROUTE_4, $55, EAST
 	connection east, CeruleanCity, CERULEAN_CITY, -2, 0, 15
 
-	map_attributes Route5, ROUTE_5, $f, NORTH
+	map_attributes Route5, ROUTE_5, $f, NORTH | SOUTH
 	connection north, CeruleanCity, CERULEAN_CITY, -2, 2, 18
-;	connection south, SaffronCity, SAFFRON_CITY, -3, 2, 16
+	connection south, SaffronCity, SAFFRON_CITY, -3, 2, 21
 
-	map_attributes Route6, ROUTE_6, $f, NORTH | SOUTH
-	connection north, SaffronCity, SAFFRON_CITY, -3, 0, 18
+	map_attributes Route6, ROUTE_6, $f, SOUTH
+;	connection north, SaffronCity, SAFFRON_CITY, -3, 0, 18
 	connection south, VermilionCity, VERMILION_CITY, -3, 0, 18
 
-	map_attributes Route7, ROUTE_7, $f, NORTH | WEST | EAST
+	map_attributes Route7, ROUTE_7, $f, NORTH | WEST
 	connection north, CeladonOutskirts, CELADON_OUTSKIRTS, 0, 0, 10
 	connection west, CeladonCity, CELADON_CITY, -3, 2, 15
-	connection east, SaffronCity, SAFFRON_CITY, -3, 3, 12
+;	connection east, SaffronCity, SAFFRON_CITY, -3, 3, 12
 
-	map_attributes Route8, ROUTE_8, $55, WEST | EAST
-	connection west, SaffronCity, SAFFRON_CITY, -2, 2, 14
+	map_attributes Route8, ROUTE_8, $55, EAST
+;	connection west, SaffronCity, SAFFRON_CITY, -2, 2, 14
 	connection east, LavenderTown, LAVENDER_TOWN, 0, 0, 10
 
 	map_attributes Route9, ROUTE_9, $55, WEST | EAST
