@@ -84,18 +84,18 @@ FoundNone: ; c298
 	ret
 ; c29d
 
-SpecialNameRival: ; 0xc29d
-	ld b, $2 ; rival
-	ld de, RivalName
-	farcall _NamingScreen
-	; default to "Silver"
-	ld hl, RivalName
-	ld de, .DefaultRivalName
-	jp InitName
+;SpecialNameRival: ; 0xc29d
+;	ld b, $2 ; rival
+;	ld de, RivalName
+;	farcall _NamingScreen
+;	; default to "Silver"
+;	ld hl, RivalName
+;	ld de, .DefaultRivalName
+;	jp InitName
 ; 0xc2b2
 
-.DefaultRivalName: ; 0xc2b2
-	db "Silver@"
+;.DefaultRivalName: ; 0xc2b2
+;	db "Silver@"
 
 SpecialTrendyPhrase:
 	ld b, $3 ; trendy phrase
