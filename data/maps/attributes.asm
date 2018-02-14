@@ -78,8 +78,8 @@ ENDM
 	connection west, Route4, ROUTE_4, 2, 0, 11
 	connection east, Route9, ROUTE_9, 2, 0, 11
 
-	map_attributes VermilionCity, VERMILION_CITY, $43, NORTH | EAST
-	connection north, Route6, ROUTE_6, 3, 0, 15
+	map_attributes VermilionCity, VERMILION_CITY, $43, EAST
+;	connection north, Route6, ROUTE_6, 3, 0, 15
 	connection east, Route11, ROUTE_11, 5, 0, 9
 
 	map_attributes CeladonCity, CELADON_CITY, $f, WEST | EAST
@@ -96,9 +96,9 @@ ENDM
 	connection west, Route18East, ROUTE_18_EAST, 7, 0, 11
 	connection east, Route15, ROUTE_15, 9, 0, 9
 
-	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH
+	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH
 	connection north, Route5, ROUTE_5, 5, 0, 14
-;	connection south, Route6, ROUTE_6, 3, 0, 15
+	connection south, Route6, ROUTE_6, 5, 0, 12
 ;	connection west, Route7, ROUTE_7, 6, 0, 9
 ;	connection east, Route8, ROUTE_8, 4, 0, 11
 
@@ -187,9 +187,9 @@ ENDM
 	connection north, CeruleanCity, CERULEAN_CITY, -2, 2, 18
 	connection south, SaffronCity, SAFFRON_CITY, -3, 2, 21
 
-	map_attributes Route6, ROUTE_6, $f, SOUTH
-;	connection north, SaffronCity, SAFFRON_CITY, -3, 0, 18
-	connection south, VermilionCity, VERMILION_CITY, -3, 0, 18
+	map_attributes Route6, ROUTE_6, $f, NORTH
+	connection north, SaffronCity, SAFFRON_CITY, -3, 2, 17
+;	connection south, VermilionCity, VERMILION_CITY, -3, 0, 18
 
 	map_attributes Route7, ROUTE_7, $f, NORTH | WEST
 	connection north, CeladonOutskirts, CELADON_OUTSKIRTS, 0, 0, 10

@@ -284,7 +284,7 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 12
 
-	mapconst ROUTE_6,                                    16, 15 ;  1
+	mapconst ROUTE_6,                                    16, 12 ;  1
 	mapconst ROUTE_11,                                    9, 26 ;  2
 	mapconst VERMILION_CITY,                             20, 20 ;  3
 	mapconst VERMILION_HOUSE_FISHING_SPEECH_HOUSE,        4,  4 ;  4

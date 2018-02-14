@@ -186,3 +186,19 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WARP_CARPET_LEFT, FLOOR, WARP_CARPET_LEFT, FLOOR
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll FLOOR, WALL, FLOOR, FLOOR
+	tilecoll WATER, WATER, WATER, WATER
+	tilecoll WATER, WATER, WATER, WATER
+	tilecoll WATER, WATER, WATER, WATER
+	tilecoll WALL, WALL, WALL, DOOR
+	tilecoll WATER, WATER, WATER, WATER
+	tilecoll WATER, WATER, WATER, WATER
+	tilecoll WATER, WATER, WATER, WATER
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll TV, TV, TV, TV
