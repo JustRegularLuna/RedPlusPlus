@@ -380,7 +380,7 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 18
 
-	mapconst ROUTE_8,                                    11, 26 ;  1
+	mapconst ROUTE_8,                                    11, 27 ;  1
 	mapconst ROUTE_8_SAFFRON_GATE,                        4,  5 ;  2
 	mapconst ROUTE_10_SOUTH,                              9, 10 ;  3
 	mapconst ROUTE_12_NORTH,                              9, 10 ;  4
