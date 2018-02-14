@@ -242,3 +242,15 @@
 	tilecoll WARP_CARPET_DOWN, FLOOR, WALL, WALL
 	tilecoll WARP_CARPET_DOWN, WARP_CARPET_DOWN, WALL, WALL
 	tilecoll TV, TV, TV, TV
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll TV, TV, TV, TV
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WARP_CARPET_RIGHT, WALL, WARP_CARPET_RIGHT, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll LEDGE_DOWN, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, DOOR, WALL
+	tilecoll WALL, WALL, WALL, WALL
