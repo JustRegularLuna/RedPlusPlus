@@ -1,4 +1,5 @@
 GetFinalPkmnTextPointer::
+; TODO: Add these later
 ; no final text
 	xor a
 	and a
