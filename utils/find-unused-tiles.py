@@ -155,6 +155,7 @@ def read_used_block_ids_2():
 
 def read_used_tile_ids():
 	for tileset_id in tileset_ids.values():
+		tileset_used_tile_ids[tileset_id] = set()
 		with open(code_directory + metatile_filename_fmt % tileset_id, 'rb') as f:
 			block_id = 0
 			while True:
