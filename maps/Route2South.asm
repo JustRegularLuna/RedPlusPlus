@@ -4,8 +4,8 @@ Route2South_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event 15,  3, ROUTE_2_GATE, 3
-	warp_event  5,  7, VIRIDIAN_FOREST_VIRIDIAN_GATE, 3
+	warp_event 16,  1, ROUTE_2_GATE, 3
+	warp_event  3,  5, VIRIDIAN_FOREST_VIRIDIAN_GATE, 3
 
 	db 0 ; coord events
 

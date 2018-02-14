@@ -338,6 +338,15 @@ TilesetValenciaAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetPalletCinnabarAnim:
+TilesetViridianAnim:
+TilesetPewterAnim:
+TilesetCeruleanAnim:
+TilesetVermilionAnim:
+TilesetLavenderAnim:
+TilesetCeladonAnim:
+TilesetFuchsiaAnim:
+TilesetSaffronAnim:
+TilesetIndigoAnim:
 TilesetForestAnim:
 TilesetJohto3Anim:
 TilesetHouse1Anim:

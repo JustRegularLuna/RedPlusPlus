@@ -10,6 +10,33 @@ ENDM
 TilesetPalletCinnabarPalMap:
 INCLUDE "gfx/tilesets/pallet_cinnabar_palette_map.asm"
 
+TilesetViridianPalMap:
+INCLUDE "gfx/tilesets/viridian_palette_map.asm"
+
+TilesetPewterPalMap:
+INCLUDE "gfx/tilesets/pewter_palette_map.asm"
+
+TilesetCeruleanPalMap:
+INCLUDE "gfx/tilesets/cerulean_palette_map.asm"
+
+TilesetVermilionPalMap:
+INCLUDE "gfx/tilesets/vermilion_palette_map.asm"
+
+TilesetLavenderPalMap:
+INCLUDE "gfx/tilesets/lavender_palette_map.asm"
+
+TilesetCeladonPalMap:
+INCLUDE "gfx/tilesets/celadon_palette_map.asm"
+
+TilesetFuchsiaPalMap:
+INCLUDE "gfx/tilesets/fuchsia_palette_map.asm"
+
+TilesetSaffronPalMap:
+INCLUDE "gfx/tilesets/saffron_palette_map.asm"
+
+TilesetIndigoPalMap:
+INCLUDE "gfx/tilesets/indigo_palette_map.asm"
+
 TilesetForestPalMap:
 INCLUDE "gfx/tilesets/forest_palette_map.asm"
 

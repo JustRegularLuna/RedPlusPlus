@@ -147,92 +147,62 @@ InitMapNameFrame: ; b80d3
 	hlcoord 0, 0
 	ld de, AttrMap - TileMap
 	add hl, de
-	; top row
+	; top row + start of first middle row
 	ld a, TILE_BANK | BEHIND_BG | PAL_BG_TEXT
-	ld bc, SCREEN_WIDTH - 1
+	ld bc, SCREEN_WIDTH + 1
 	call ByteFill
-	or X_FLIP
-	ld [hli], a
 	; middle rows
-rept 2
-	and $ff - X_FLIP
-	ld [hli], a
-	and $ff - TILE_BANK
+	ld a, BEHIND_BG | PAL_BG_TEXT
 	ld bc, SCREEN_WIDTH - 2
 	call ByteFill
-	or X_FLIP | TILE_BANK
+	ld a, TILE_BANK | BEHIND_BG | PAL_BG_TEXT
 	ld [hli], a
-endr
-	; bottom row
-	and $ff - X_FLIP
-	ld bc, SCREEN_WIDTH - 1
+	ld [hli], a
+	ld a, BEHIND_BG | PAL_BG_TEXT
+	ld bc, SCREEN_WIDTH - 2
 	call ByteFill
-	or X_FLIP
-	ld [hl], a
+	; end of second middle row + bottom row
+	ld a, TILE_BANK | BEHIND_BG | PAL_BG_TEXT
+	ld bc, SCREEN_WIDTH + 1
+	call ByteFill
 ; PlaceMapNameFrame
 	hlcoord 0, 0
-	; top left
 	ld a, $f8
-	ld [hli], a
-	; top row
-	inc a ; $f9
 	call .FillTopBottom
-	; top right
-	dec a ; $f8
-	ld [hli], a
-	; left, first line
-	ld a, $fb
-	ld [hli], a
-	; first line
+	inc a
 	call .FillMiddle
-	; right, first line
-	ld [hli], a
-	; left, second line
-	inc a ; $fc
-	ld [hli], a
-	; second line
+	dec a
 	call .FillMiddle
-	; right, second line
-	ld [hli], a
-	; bottom left
-	inc a ; $fd
-	ld [hli], a
-	; bottom
-	inc a ; $fe
+	inc a
 	call .FillTopBottom
-	; bottom right
-	dec a ; $fd
-	ld [hl], a
 	ret
 ; b815b
 
 .FillMiddle: ; b815b
+	ld [hli], a
 	push af
-	ld a, $7f
+	ld a, " "
 	ld c, SCREEN_WIDTH - 2
-.loop
+.middle_loop
 	ld [hli], a
 	dec c
-	jr nz, .loop
+	jr nz, .middle_loop
 	pop af
+	inc a
+	ld [hli], a
 	ret
 ; b8164
 
 .FillTopBottom: ; b8164
-	ld c, 5
-	jr .enterloop
-
-.continueloop
 	ld [hli], a
+	inc a
+	ld c, SCREEN_WIDTH - 2
+.top_bottom_loop
 	ld [hli], a
-
-.enterloop
+	dec c
+	jr nz, .top_bottom_loop
 	inc a
 	ld [hli], a
-	ld [hli], a
-	dec a
-	dec c
-	jr nz, .continueloop
 	ret
 ; b8172
 

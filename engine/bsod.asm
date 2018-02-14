@@ -56,9 +56,9 @@ else
 endc
 
 .Message: ; 4eb38
-	db   "      Pokémon"
-	next "   Red++ Version "
-	next "       ERROR"
+	db   "  Pokémon Red++"
+	next "   Version 3.0"
+	next "      ERROR"
 	next "------------------"
 	next "Please report this"
 	next "crash to the deve-"

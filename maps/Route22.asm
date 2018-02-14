@@ -4,7 +4,7 @@ Route22_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_event  3,  5, POKEMON_LEAGUE_GATE, 1
+	warp_event  6,  7, POKEMON_LEAGUE_GATE, 1
 
 	db 0 ; coord events
 

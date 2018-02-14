@@ -1293,8 +1293,11 @@ Route2North_BlockData:
 Route2South_BlockData:
 	INCBIN "maps/Route2South.blk"
 
-Route3_BlockData:
-	INCBIN "maps/Route3.blk"
+Route3South_BlockData:
+	INCBIN "maps/Route3South.blk"
+
+Route3North_BlockData:
+	INCBIN "maps/Route3North.blk"
 
 Route4_BlockData:
 	INCBIN "maps/Route4.blk"

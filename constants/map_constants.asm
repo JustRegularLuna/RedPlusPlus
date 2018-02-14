@@ -171,7 +171,7 @@ MAP_NONE   EQU 0
 	mapconst SEAFOAM_ISLANDS_B4F,                        10, 20 ;  7
 	mapconst ROUTE_19,                                   29, 10 ;  8
 	mapconst ROUTE_20,                                    9, 51 ;  9
-	mapconst ROUTE_21,                                   48, 10 ; 10
+	mapconst ROUTE_21,                                   44, 12 ; 10
 	mapconst URAGA_CHANNEL_WEST,                         15,  6 ; 11
 	mapconst CINNABAR_ISLAND,                            11, 12 ; 12
 	mapconst CINNABAR_VOLCANO_1F,                        14, 14 ; 13
@@ -196,11 +196,11 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_10_POKECENTER_1F,                      4,  6 ;  8
 	mapconst POWER_PLANT,                                 9, 10 ; 10
 	mapconst BILLS_HOUSE,                                 4,  4 ; 11
-	mapconst ROUTE_4,                                    10, 33 ; 12
-	mapconst ROUTE_24,                                   20, 14 ; 13
-	mapconst ROUTE_25,                                   21, 17 ; 14
-	mapconst CERULEAN_CAPE,                              19, 25 ; 15
-	mapconst CERULEAN_CITY,                              16, 20 ; 16
+	mapconst ROUTE_4,                                    11, 34 ; 12
+	mapconst ROUTE_24,                                   20, 15 ; 13
+	mapconst ROUTE_25,                                   20, 16 ; 14
+	mapconst CERULEAN_CAPE,                              19, 27 ; 15
+	mapconst CERULEAN_CITY,                              17, 21 ; 16
 	mapconst CERULEAN_CAVE_1F,                           12, 17 ; 17
 	mapconst CERULEAN_CAVE_2F,                           11, 17 ; 18
 	mapconst CERULEAN_CAVE_B1F,                          11, 17 ; 19
@@ -314,16 +314,17 @@ MAP_NONE   EQU 0
 	newgroup                                                    ; 14
 
 	mapconst ROUTE_2_NORTH,                              18, 10 ;  1
-	mapconst ROUTE_3,                                    11, 36 ;  2
-	mapconst ROUTE_3_POKECENTER_1F,                       4,  6 ;  3
-	mapconst PEWTER_CITY,                                18, 20 ;  4
-	mapconst PEWTER_NIDORAN_SPEECH_HOUSE,                 4,  4 ;  5
-	mapconst PEWTER_GYM,                                  7,  5 ;  6
-	mapconst PEWTER_MART,                                 4,  6 ;  7
-	mapconst PEWTER_POKECENTER_1F,                        4,  6 ;  8
-	mapconst PEWTER_SNOOZE_SPEECH_HOUSE,                  4,  4 ;  9
-	mapconst PEWTER_MUSEUM_OF_SCIENCE_1F,                 4, 10 ; 10
-	mapconst PEWTER_MUSEUM_OF_SCIENCE_2F,                 4,  7 ; 11
+	mapconst ROUTE_3_SOUTH,                              10, 36 ;  2
+	mapconst ROUTE_3_NORTH,                               9, 12 ;  3
+	mapconst ROUTE_3_POKECENTER_1F,                       4,  6 ;  4
+	mapconst PEWTER_CITY,                                21, 20 ;  5
+	mapconst PEWTER_NIDORAN_SPEECH_HOUSE,                 4,  4 ;  6
+	mapconst PEWTER_GYM,                                  7,  5 ;  7
+	mapconst PEWTER_MART,                                 4,  6 ;  8
+	mapconst PEWTER_POKECENTER_1F,                        4,  6 ;  9
+	mapconst PEWTER_SNOOZE_SPEECH_HOUSE,                  4,  4 ; 10
+	mapconst PEWTER_MUSEUM_OF_SCIENCE_1F,                 4, 10 ; 11
+	mapconst PEWTER_MUSEUM_OF_SCIENCE_2F,                 4,  7 ; 12
 
 	newgroup                                                    ; 15
 
@@ -518,9 +519,9 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 23
 
-	mapconst ROUTE_2_SOUTH,                              18, 10 ;  1
-	mapconst ROUTE_22,                                    9, 15 ;  2
-	mapconst VIRIDIAN_CITY,                              18, 20 ;  3
+	mapconst ROUTE_2_SOUTH,                              17, 10 ;  1
+	mapconst ROUTE_22,                                   12, 18 ;  2
+	mapconst VIRIDIAN_CITY,                              17, 18 ;  3
 	mapconst VIRIDIAN_GYM,                               23,  7 ;  4
 	mapconst VIRIDIAN_NICKNAME_SPEECH_HOUSE,              4,  4 ;  5
 	mapconst VIRIDIAN_SCHOOL_HOUSE,                       5,  4 ;  6
@@ -569,7 +570,7 @@ MAP_NONE   EQU 0
 	mapconst SILPH_CO_3F,                                 4,  8 ;  9
 	mapconst COPYCATS_HOUSE_1F,                           4,  4 ; 10
 	mapconst COPYCATS_HOUSE_2F,                           3,  4 ; 11
-	mapconst ROUTE_5,                                    17, 10 ; 12
+	mapconst ROUTE_5,                                    17, 14 ; 12
 	mapconst ROUTE_5_UNDERGROUND_ENTRANCE,                4,  4 ; 13
 	mapconst ROUTE_5_SAFFRON_CITY_GATE,                   4,  5 ; 14
 	mapconst ROUTE_5_CLEANSE_TAG_SPEECH_HOUSE,            4,  4 ; 15
@@ -607,8 +608,8 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 28
 
-	mapconst ROUTE_9,                                     9, 26 ;  1
-	mapconst ROUTE_10_NORTH,                             29, 10 ;  2
+	mapconst ROUTE_9,                                    11, 28 ;  1
+	mapconst ROUTE_10_NORTH,                             30, 12 ;  2
 	mapconst DIM_CAVE_1F,                                18, 17 ;  3
 	mapconst DIM_CAVE_2F,                                18, 17 ;  4
 	mapconst DIM_CAVE_3F,                                17, 16 ;  5
@@ -703,7 +704,7 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 35
 
-	mapconst SAFFRON_CITY,                               19, 20 ;  1
+	mapconst SAFFRON_CITY,                               22, 25 ;  1
 	mapconst SHAMOUTI_SHRINE_RUINS,                      17, 12 ;  2
 
 	newgroup                                                    ; 36

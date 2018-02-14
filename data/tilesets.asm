@@ -9,6 +9,15 @@ Tileset00::
 	tileset Tileset00
 Tileset00End::
 	tileset TilesetPalletCinnabar
+	tileset TilesetViridian
+	tileset TilesetPewter
+	tileset TilesetCerulean
+	tileset TilesetVermilion
+	tileset TilesetLavender
+	tileset TilesetCeladon
+	tileset TilesetFuchsia
+	tileset TilesetSaffron
+	tileset TilesetIndigo
 	tileset TilesetForest
 	;------------------------------------
 	tileset TilesetJohto1
