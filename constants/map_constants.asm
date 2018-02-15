@@ -384,7 +384,7 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_8_SAFFRON_GATE,                        4,  5 ;  2
 	mapconst ROUTE_10_SOUTH,                              9, 10 ;  3
 	mapconst ROUTE_12_NORTH,                              9, 10 ;  4
-	mapconst LAVENDER_TOWN,                              10, 10 ;  5
+	mapconst LAVENDER_TOWN,                              11, 10 ;  5
 	mapconst LAVENDER_POKECENTER_1F,                      4,  6 ;  6
 	mapconst MR_FUJIS_HOUSE,                              4,  5 ;  7
 	mapconst LAVENDER_TOWN_SPEECH_HOUSE,                  4,  4 ;  8

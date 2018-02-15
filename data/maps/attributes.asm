@@ -86,10 +86,10 @@ ENDM
 ;	connection west, Route16Northeast, ROUTE_16_NORTHEAST, 10, 0, 8
 	connection east, Route7, ROUTE_7, 0, 0, 24
 
-	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | SOUTH
-	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 10
-	connection south, Route12North, ROUTE_12_NORTH, 0, 0, 10
-;	connection west, Route8, ROUTE_8, 0, 0, 11
+	map_attributes LavenderTown, LAVENDER_TOWN, $55, WEST
+;	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 10
+;	connection south, Route12North, ROUTE_12_NORTH, 0, 0, 10
+	connection west, Route8, ROUTE_8, 0, 0, 11
 
 	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, SOUTH | WEST | EAST
 	connection south, Route19, ROUTE_19, 0, 0, 10
@@ -195,9 +195,9 @@ ENDM
 	connection west, CeladonCity, CELADON_CITY, 0, 0, 24
 	connection east, SaffronCity, SAFFRON_CITY, 0, 0, 22
 
-	map_attributes Route8, ROUTE_8, $55, WEST
+	map_attributes Route8, ROUTE_8, $55, WEST | EAST
 	connection west, SaffronCity, SAFFRON_CITY, -3, 2, 14
-;	connection east, LavenderTown, LAVENDER_TOWN, 0, 0, 10
+	connection east, LavenderTown, LAVENDER_TOWN, 0, 0, 11
 
 	map_attributes Route9, ROUTE_9, $55, WEST | EAST
 	connection west, CeruleanCity, CERULEAN_CITY, -1, 1, 14

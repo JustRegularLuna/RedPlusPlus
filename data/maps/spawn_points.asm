@@ -14,7 +14,7 @@ SpawnPoints: ; 0x152ab
 	spawn CERULEAN_CITY,              21, 16
 	spawn ROUTE_10_NORTH,             15, 34
 	spawn VERMILION_CITY,             13,  4
-	spawn LAVENDER_TOWN,               5,  8
+	spawn LAVENDER_TOWN,               1,  6
 	spawn SAFFRON_CITY,               13, 34
 	spawn CELADON_CITY,               41, 14
 	spawn FUCHSIA_CITY,               19, 28
