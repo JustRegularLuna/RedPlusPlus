@@ -233,4 +233,10 @@
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll TV, TV, TV, TV
+	tilecoll FLOOR, WALL, FLOOR, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, TOP_WALL, WALL, FLOOR
+	tilecoll TOP_WALL, WALL, FLOOR, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, FLOOR, FLOOR, WALL
+	tilecoll WALL, WALL, WALL, WALL
