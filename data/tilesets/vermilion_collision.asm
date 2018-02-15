@@ -189,7 +189,48 @@
 	tilecoll WATER, WATER, WATER, WATER
 	tilecoll WATER, WATER, WATER, WATER
 	tilecoll WATER, WATER, WATER, WATER
+	tilecoll WALL, WALL, WALL, WALL
 	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll WALL, WALL, WATER, WATER
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WATER, WATER, WALL, WALL
+	tilecoll WALL, WALL, FLOOR, FLOOR
+	tilecoll DOOR, WALL, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll WALL, WALL, WALL, DOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll WALL, FLOOR, WALL, FLOOR
+	tilecoll FLOOR, WALL, FLOOR, WALL
+	tilecoll WALL, FLOOR, WALL, FLOOR
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN
+	tilecoll WATER, FLOOR, BUOY, WARP_CARPET_DOWN
+	tilecoll FLOOR, WATER, WARP_CARPET_DOWN, BUOY
+	tilecoll WALL, FLOOR, WALL, FLOOR
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll WALL, WALL, FLOOR, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, WALL
+	tilecoll WALL, WALL, FLOOR, WALL
+	tilecoll WALL, WALL, WALL, DOOR
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll TV, TV, TV, TV

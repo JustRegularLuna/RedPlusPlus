@@ -286,7 +286,7 @@ MAP_NONE   EQU 0
 
 	mapconst ROUTE_6,                                    16, 12 ;  1
 	mapconst ROUTE_11,                                    9, 26 ;  2
-	mapconst VERMILION_CITY,                             20, 20 ;  3
+	mapconst VERMILION_CITY,                             18, 21 ;  3
 	mapconst VERMILION_HOUSE_FISHING_SPEECH_HOUSE,        4,  4 ;  4
 	mapconst VERMILION_POKECENTER_1F,                     4,  6 ;  5
 	mapconst POKEMON_FAN_CLUB,                            4,  5 ;  6
