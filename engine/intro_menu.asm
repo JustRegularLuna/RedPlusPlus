@@ -92,7 +92,7 @@ _NewGame_FinishSetup:
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
 	call SetInitialOptions
-	call ProfElmSpeech
+	call ProfOakSpeech
 	call InitializeWorld
 	ld a, 1
 	ld [wPreviousLandmark], a
@@ -652,7 +652,14 @@ Continue_DisplayGameTime: ; 5f84
 	jp PrintNum
 ; 5f99
 
-ProfElmSpeech: ; 0x5f99
+ProfOakSpeech: ; 0x5f99
+	ld a, POTION
+	ld [CurItem], a
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ld hl, PCItems
+	call ReceiveItem
+
 	farcall InitClock
 	call RotateFourPalettesLeft
 	call ClearTileMap
@@ -674,7 +681,7 @@ ProfElmSpeech: ; 0x5f99
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, ElmText1
+	ld hl, OakText1
 	call PrintText
 if !DEF(DEBUG)
 	call RotateThreePalettesRight
@@ -698,9 +705,9 @@ if !DEF(DEBUG)
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, ElmText2
+	ld hl, OakText2
 	call PrintText
-	ld hl, ElmText4
+	ld hl, OakText4
 	call PrintText
 	call RotateThreePalettesRight
 	call ClearTileMap
@@ -716,7 +723,7 @@ if !DEF(DEBUG)
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, ElmText5
+	ld hl, OakText5
 	call PrintText
 endc
 
@@ -725,7 +732,7 @@ endc
 	ld c, 10
 	call DelayFrames
 
-	ld hl, ElmText6
+	ld hl, OakText6
 	call PrintText
 
 	call NamePlayer
@@ -740,40 +747,87 @@ endc
 	call InitIntroGradient
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, ElmText7
+	ld hl, OakText7
+	call PrintText
+	call RotateThreePalettesRight
+	call ClearTileMap
+	call DrawIntroRivalPic
+
+	ld b, CGB_INTRO_PALS
+	call GetCGBLayout
+	call InitIntroGradient
+	call Intro_RotatePalettesLeftFrontpic
+	ld hl, OakText8
+	call PrintText
+	
+	call NameRival
+	
+	call ClearTileMap
+	call LoadFontsExtra
+	call WaitBGMap
+	call DrawIntroRivalPic
+
+	ld b, CGB_INTRO_PALS
+	call GetCGBLayout
+	call InitIntroGradient
+	call Intro_RotatePalettesLeftFrontpic
+	
+	ld hl, OakText9
+	call PrintText
+	call RotateThreePalettesRight
+	call ClearTileMap
+	call DrawIntroPlayerPic
+
+	ld b, CGB_INTRO_PALS
+	call GetCGBLayout
+	call InitIntroGradient
+	call Intro_RotatePalettesLeftFrontpic
+	ld hl, OakText10
 	jp PrintText
 
-ElmText1: ; 0x6045
-	text_jump _ElmText1
+OakText1: ; 0x6045
+	text_jump _OakText1
 	db "@"
 
-ElmText2: ; 0x604a
-	text_jump _ElmText2
+OakText2: ; 0x604a
+	text_jump _OakText2
 	start_asm
 	ld a, SYLVEON
 	call PlayCry
 	call WaitSFX
-	ld hl, ElmText3
+	ld hl, OakText3
 	ret
 
-ElmText3: ; 0x605b
-	text_jump _ElmText3
+OakText3: ; 0x605b
+	text_jump _OakText3
 	db "@"
 
-ElmText4: ; 0x6060
-	text_jump _ElmText4
+OakText4: ; 0x6060
+	text_jump _OakText4
 	db "@"
 
-ElmText5: ; 0x6065
-	text_jump _ElmText5
+OakText5: ; 0x6065
+	text_jump _OakText5
 	db "@"
 
-ElmText6: ; 0x606a
-	text_jump _ElmText6
+OakText6: ; 0x606a
+	text_jump _OakText6
 	db "@"
 
-ElmText7: ; 0x606f
-	text_jump _ElmText7
+OakText7: ; 0x606f
+	text_jump _OakText7
+	db "@"
+
+OakText8: ; 0x606f
+	text_jump _OakText8
+	db "@"
+
+OakText9: ; 0x606f
+	text_jump _OakText9
+	db "@"
+
+OakText10: ; 0x606f
+	text_jump _OakText10
 	db "@"
 
 InitGender: ; 48dcb (12:4dcb)
@@ -865,6 +919,18 @@ NamePlayer: ; 0x6074
 
 INCLUDE "data/default_player_names.asm"
 
+NameRival:
+	ld b, $2 ; rival
+	ld de, RivalName
+	farcall NamingScreen
+	; default to "Blue"
+	ld hl, RivalName
+	ld de, .DefaultRivalName
+	jp InitName
+
+.DefaultRivalName:
+	db "Blue@"
+
 ShrinkPlayer: ; 610f
 
 	ld a, [hROMBank]
@@ -939,6 +1005,13 @@ IntroFadePalettes: ; 0x617c
 	db %11100100
 IntroFadePalettesEnd
 ; 6182
+
+DrawIntroRivalPic:
+	xor a
+	ld [CurPartySpecies], a
+	ld a, SONY1
+	ld [TrainerClass], a
+	jp Intro_PrepTrainerPic
 
 DrawIntroPlayerPic:
 	xor a

@@ -1275,44 +1275,46 @@ _InitialOptionsText::
 	cont "Red++."
 	prompt
 
-_ElmText1::
-	text "Hello! Sorry to"
-	line "keep you waiting!"
+_OakText1::
+	text "Hello, there!"
+	line "Glad to meet you!"
 
 if !DEF(DEBUG)
 	para "Welcome to the"
 	line "world of #mon!"
 
-	para "My name is Elm."
+	para "My name is Oak."
 
-	para "People call me the"
-	line "#mon Prof."
+	para "People affection-"
+	line "ately refer to me"
+	cont "as the #mon"
+	cont "Professor."
 endc
 	prompt
 
-_ElmText2::
-	text "This world is in-"
-	line "habited by crea-"
-	cont "tures that we call"
-	cont "#mon.@@"
+_OakText2::
+	text "This world is"
+	line "inhabited far and"
+	cont "wide by creatures"
+	cont "called Pokémon.@@"
 
-_ElmText3::
+_OakText3::
 	text_waitbutton
 	db "@@"
 
-_ElmText4::
-	text "People and #mon"
-	line "live together by"
+_OakText4::
+	text "For some people,"
+	line "#mon are pets."
+	
+	para "Others use them"
+	line "for battling."
 
-	para "supporting each"
-	line "other."
-
-	para "Some people play"
-	line "with #mon, some"
-	cont "battle with them."
+	para "As for myself…"
+	line "I study #mon"
+	cont "as a profession."
 	prompt
 
-_ElmText5::
+_OakText5::
 	text "But we don't know"
 	line "everything about"
 	cont "#mon yet."
@@ -1323,4 +1325,8 @@ _ElmText5::
 
 	para "That's why I study"
 	line "#mon every day."
+
+	para "But first, tell"
+	line "me a little bit"
+	cont "about yourself."
 	prompt

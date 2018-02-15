@@ -37,7 +37,7 @@ SpecialsPointers::
 	add_special MoveDeletion
 	add_special Special_BankOfMom
 	add_special Special_MagnetTrain
-	add_special SpecialNameRival
+;	add_special SpecialNameRival
 	add_special SpecialTrendyPhrase
 	add_special Special_SetDayOfWeek
 	add_special Special_TownMap
