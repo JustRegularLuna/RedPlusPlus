@@ -4,7 +4,7 @@ Route10South_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_event  6,  3, ROCK_TUNNEL_1F, 2
+	warp_event 10,  5, ROCK_TUNNEL_1F, 2
 
 	db 0 ; coord events
 

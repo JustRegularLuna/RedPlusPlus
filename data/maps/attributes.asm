@@ -86,8 +86,8 @@ ENDM
 ;	connection west, Route16Northeast, ROUTE_16_NORTHEAST, 10, 0, 8
 	connection east, Route7, ROUTE_7, 0, 0, 24
 
-	map_attributes LavenderTown, LAVENDER_TOWN, $55, WEST
-;	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 10
+	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | WEST
+	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 11
 ;	connection south, Route12North, ROUTE_12_NORTH, 0, 0, 10
 	connection west, Route8, ROUTE_8, 0, 0, 11
 
@@ -203,13 +203,13 @@ ENDM
 	connection west, CeruleanCity, CERULEAN_CITY, -1, 1, 14
 	connection east, Route10North, ROUTE_10_NORTH, 0, 4, 11
 
-	map_attributes Route10North, ROUTE_10_NORTH, $55, WEST
-;	connection south, Route10South, ROUTE_10_SOUTH, 0, 0, 10
+	map_attributes Route10North, ROUTE_10_NORTH, $55, SOUTH | WEST
+	connection south, Route10South, ROUTE_10_SOUTH, 1, 0, 11
 	connection west, Route9, ROUTE_9, 4, 0, 11
 
 	map_attributes Route10South, ROUTE_10_SOUTH, $55, NORTH | SOUTH
-	connection north, Route10North, ROUTE_10_NORTH, 0, 0, 10
-	connection south, LavenderTown, LAVENDER_TOWN, 0, 0, 10
+	connection north, Route10North, ROUTE_10_NORTH, -1, 0, 12
+	connection south, LavenderTown, LAVENDER_TOWN, 0, 0, 11
 
 	map_attributes Route11, ROUTE_11, $f, WEST
 	connection west, VermilionCity, VERMILION_CITY, -1, 1, 15
