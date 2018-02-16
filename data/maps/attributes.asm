@@ -86,9 +86,9 @@ ENDM
 ;	connection west, Route16Northeast, ROUTE_16_NORTHEAST, 10, 0, 8
 	connection east, Route7, ROUTE_7, 0, 0, 24
 
-	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | WEST
+	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | SOUTH | WEST
 	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 11
-;	connection south, Route12North, ROUTE_12_NORTH, 0, 0, 10
+	connection south, Route12, ROUTE_12, -1, 1, 13
 	connection west, Route8, ROUTE_8, 0, 0, 11
 
 	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, SOUTH | WEST | EAST
@@ -211,21 +211,17 @@ ENDM
 	connection north, Route10North, ROUTE_10_NORTH, -1, 0, 12
 	connection south, LavenderTown, LAVENDER_TOWN, 0, 0, 11
 
-	map_attributes Route11, ROUTE_11, $f, WEST
+	map_attributes Route11, ROUTE_11, $f, WEST | EAST
 	connection west, VermilionCity, VERMILION_CITY, -1, 1, 15
-;	connection east, Route12South, ROUTE_12_SOUTH, -3, 14, 15
+	connection east, Route12, ROUTE_12, -3, 21, 19
 
-	map_attributes Route12North, ROUTE_12_NORTH, $43, NORTH | SOUTH
-	connection north, LavenderTown, LAVENDER_TOWN, 0, 0, 10
-	connection south, Route12South, ROUTE_12_SOUTH, 0, 0, 10
-
-	map_attributes Route12South, ROUTE_12_SOUTH, $43, NORTH | SOUTH | WEST
-	connection north, Route12North, ROUTE_12_NORTH, 0, 0, 10
-	connection south, Route13East, ROUTE_13_EAST, 0, 13, 10
-	connection west, Route11, ROUTE_11, 17, 0, 9
+	map_attributes Route12, ROUTE_12, $49, NORTH | WEST
+	connection north, LavenderTown, LAVENDER_TOWN, 2, 0, 11
+;	connection south, Route13East, ROUTE_13_EAST, 0, 13, 10
+	connection west, Route11, ROUTE_11, 24, 0, 13
 
 	map_attributes Route13East, ROUTE_13_EAST, $43, NORTH | SOUTH | WEST
-	connection north, Route12South, ROUTE_12_SOUTH, 13, 0, 10
+;	connection north, Route12, ROUTE_12, 13, 0, 10
 	connection south, LuckyIsland, LUCKY_ISLAND, 0, 0, 23
 	connection west, Route13West, ROUTE_13_WEST, 0, 0, 10
 

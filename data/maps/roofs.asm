@@ -38,6 +38,7 @@ MapGroupRoofs:
 	db -1 ; group 34
 	db -1 ; group 35
 	db  4 ; group 36 (Route 35+36)
+	db -1 ; group 37 (Route 12+13)
 
 Roofs:
 INCBIN "gfx/tilesets/roofs/0.2bpp"

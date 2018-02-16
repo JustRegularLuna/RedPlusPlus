@@ -14,18 +14,13 @@ from collections import OrderedDict
 code_directory       = './'
 tileset_filename     = 'constants/tileset_constants.asm'
 maps_filename        = 'constants/map_constants.asm'
-map_headers_filename = 'data/maps/definitions.asm'
+map_headers_filename = 'data/maps/maps.asm'
 block_data_filename  = 'data/maps/blocks.asm'
 block_filename_fmt   = 'maps/%s.blk'
-
-tileset_names = ['johto1', 'johto2', 'johto3', 'johto4', 'kanto1', 'kanto2',
-                 'shamouti', 'valencia', 'faraway', 'house1', 'house2', 'house3',
-                 'pokecenter', 'pokecom', 'mart', 'gate', 'gym1', 'gym2', 'gym3',
-                 'port', 'lab', 'facility', 'mansion', 'game_corner', 'decor',
-                 'museum', 'hotel', 'tower', 'battle_tower', 'radio_tower',
-                 'lighthouse', 'warehouse', 'cave', 'quiet_cave', 'ice_path',
-                 'tunnel', 'forest', 'park', 'safari', 'ruins', 'alph',
-                 'pokemon_mansion']
+ 
+tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'vermilion', 'lavender',
+                 'celadon', 'fuchsia', 'saffron', 'routes', 'cerulean', 'indigo',
+                 'forest']
 
 # {'TILESET_PC_JOHTO_1': 1, ...}
 tileset_ids = {}
@@ -41,16 +36,16 @@ def read_tileset_ids():
 	with open(code_directory + tileset_filename, 'r') as f:
 		for line in f:
 			line = line.strip()
-			if line.startswith('const_value '):
+			if line.startswith('const PAL_BG_'):
+				break
+			elif line.startswith('const_def '):
 				parts = line.split()
-				tileset_id = int(parts[2])
+				tileset_id = int(parts[1])
 			elif line.startswith('const '):
 				parts = line.split()
 				tileset_const = parts[1]
 				tileset_ids[tileset_const] = tileset_id
 				tileset_id += 1
-			elif line.startswith('const_def'):
-				break
 
 def read_map_heights():
 	with open(code_directory + maps_filename, 'r') as f:
@@ -66,8 +61,8 @@ def read_map_tilesets():
 	with open(code_directory + map_headers_filename, 'r') as f:
 		for line in f:
 			line = line.strip()
-			if line.startswith('map_header '):
-				parts = line[11:].split(',')
+			if line.startswith('map '):
+				parts = line[4:].split(',')
 				map_name = parts[0].strip()
 				map_tileset = parts[1].strip()
 				map_tilesets[map_name] = map_tileset
@@ -90,8 +85,9 @@ def render_map_images(valid_tilesets):
 	rendered = set()
 	for map_const, map_name in sorted(zip(map_heights, map_tilesets)):
 		map_height = map_heights[map_const]
-		tileset_name = tileset_names[tileset_ids[map_tilesets[map_name]] - 1]
-		if not valid_tilesets or tileset_name in valid_tilesets:
+		tileset_id = tileset_ids[map_tilesets[map_name]]
+		tileset_name = tileset_names[tileset_id - 1] if tileset_id <= len(tileset_names) else None
+		if tileset_name and (not valid_tilesets or tileset_name in valid_tilesets):
 			block_data_name = map_block_data_exceptions.get(map_name, map_name)
 			if block_data_name in rendered:
 				continue

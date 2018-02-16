@@ -93,6 +93,7 @@ TilesetFuchsiaColl::
 INCLUDE "data/tilesets/fuchsia_collision.asm"
 
 
+
 SECTION "Tileset Data 9", ROMX
 
 TilesetSaffronGFX::
@@ -101,6 +102,16 @@ TilesetSaffronMeta::
 INCBIN "data/tilesets/saffron_metatiles.bin"
 TilesetSaffronColl::
 INCLUDE "data/tilesets/saffron_collision.asm"
+
+
+SECTION "Tileset Data 10", ROMX
+
+TilesetRoutesGFX::
+INCBIN "gfx/tilesets/routes.2bpp.lz"
+TilesetRoutesMeta::
+INCBIN "data/tilesets/routes_metatiles.bin"
+TilesetRoutesColl::
+INCLUDE "data/tilesets/routes_collision.asm"
 
 TilesetIndigoGFX::
 INCBIN "gfx/tilesets/indigo.2bpp.lz"
