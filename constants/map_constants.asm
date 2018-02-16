@@ -284,9 +284,9 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 12
 
-	mapconst ROUTE_6,                                    16, 15 ;  1
-	mapconst ROUTE_11,                                    9, 26 ;  2
-	mapconst VERMILION_CITY,                             20, 20 ;  3
+	mapconst ROUTE_6,                                    16, 12 ;  1
+	mapconst ROUTE_11,                                   13, 27 ;  2
+	mapconst VERMILION_CITY,                             18, 21 ;  3
 	mapconst VERMILION_HOUSE_FISHING_SPEECH_HOUSE,        4,  4 ;  4
 	mapconst VERMILION_POKECENTER_1F,                     4,  6 ;  5
 	mapconst POKEMON_FAN_CLUB,                            4,  5 ;  6
@@ -382,9 +382,9 @@ MAP_NONE   EQU 0
 
 	mapconst ROUTE_8,                                    11, 26 ;  1
 	mapconst ROUTE_8_SAFFRON_GATE,                        4,  5 ;  2
-	mapconst ROUTE_10_SOUTH,                              9, 10 ;  3
+	mapconst ROUTE_10_SOUTH,                             11, 11 ;  3
 	mapconst ROUTE_12_NORTH,                              9, 10 ;  4
-	mapconst LAVENDER_TOWN,                              10, 10 ;  5
+	mapconst LAVENDER_TOWN,                              11, 11 ;  5
 	mapconst LAVENDER_POKECENTER_1F,                      4,  6 ;  6
 	mapconst MR_FUJIS_HOUSE,                              4,  5 ;  7
 	mapconst LAVENDER_TOWN_SPEECH_HOUSE,                  4,  4 ;  8
@@ -434,13 +434,13 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 21
 
-	mapconst ROUTE_7,                                     9, 10 ;  1
+	mapconst ROUTE_7,                                    24,  9 ;  1
 	mapconst ROUTE_16_NORTHEAST,                         11, 11 ;  2
 	mapconst ROUTE_16_SOUTH,                             11, 11 ;  3
 	mapconst ROUTE_17,                                   63, 10 ;  4
 	mapconst ROUTE_18_WEST,                               9, 10 ;  5
 	mapconst URAGA_CHANNEL_EAST,                          9, 23 ;  6
-	mapconst CELADON_CITY,                               18, 22 ;  7
+	mapconst CELADON_CITY,                               24, 25 ;  7
 	mapconst CELADON_DEPT_STORE_1F,                       4,  8 ;  8
 	mapconst CELADON_DEPT_STORE_2F,                       4,  8 ;  9
 	mapconst CELADON_DEPT_STORE_3F,                       4,  8 ; 10

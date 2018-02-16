@@ -13,10 +13,10 @@ SpawnPoints: ; 0x152ab
 	spawn ROUTE_3_NORTH,              11,  6
 	spawn CERULEAN_CITY,              21, 16
 	spawn ROUTE_10_NORTH,             15, 34
-	spawn VERMILION_CITY,              9,  6
-	spawn LAVENDER_TOWN,               5,  8
+	spawn VERMILION_CITY,             13,  4
+	spawn LAVENDER_TOWN,               3,  6
 	spawn SAFFRON_CITY,               13, 34
-	spawn CELADON_CITY,               33, 10
+	spawn CELADON_CITY,               41, 14
 	spawn FUCHSIA_CITY,               19, 28
 	spawn CINNABAR_ISLAND,            11, 16
 	spawn INDIGO_PLATEAU,              9,  6

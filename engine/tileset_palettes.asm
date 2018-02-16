@@ -50,9 +50,16 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PC_ALPH_WORD_ROOM
 	jp z, .load_eight_bg_palettes
 
+	ld hl, LavenderPalette
+	cp TILESET_LAVENDER
+	jp z, .load_eight_time_of_day_bg_palettes
+	ld hl, CeladonPalette
+	cp TILESET_CELADON
+	jp z, .load_eight_time_of_day_bg_palettes
 	ld hl, SaffronPalette
 	cp TILESET_SAFFRON
 	jp z, .load_eight_time_of_day_bg_palettes
+
 	ld hl, SafariZonePalette
 	cp TILESET_PC_SAFARI_ZONE
 	jp z, .load_eight_time_of_day_bg_palettes
@@ -65,6 +72,9 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, ValenciaIslandPalette
 	cp TILESET_PC_VALENCIA_ISLAND
 	jp z, .load_eight_time_of_day_bg_palettes
+
+	cp TILESET_FOREST
+	jp z, .tileset_forest
 
 	cp TILESET_PC_POKECENTER
 	jp z, .pokecenter
@@ -104,8 +114,6 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .maybe_celadon_home_decor_store_4f
 	cp TILESET_PC_JOHTO_TRADITIONAL
 	jp z, .maybe_special_johto_1
-	cp TILESET_FOREST
-	jp z, .tileset_forest
 	cp TILESET_PC_FOREST
 	jp z, .maybe_special_forest
 	cp TILESET_PC_CAVE
@@ -656,6 +664,72 @@ else
 rept 7
 	MONOCHROME_RGB_FOUR
 endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
+
+LavenderPalette:
+if !DEF(MONOCHROME)
+INCLUDE "gfx/tilesets/palettes/lavender.pal"
+else
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 4
+	MONOCHROME_RGB_FOUR_NIGHT
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+	MONOCHROME_RGB_FOUR_NIGHT
+	MONOCHROME_RGB_FOUR_NIGHT
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
+
+CeladonPalette:
+if !DEF(MONOCHROME)
+INCLUDE "gfx/tilesets/palettes/celadon.pal"
+else
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 4
+	MONOCHROME_RGB_FOUR_NIGHT
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+	MONOCHROME_RGB_FOUR_NIGHT
+	MONOCHROME_RGB_FOUR_NIGHT
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK

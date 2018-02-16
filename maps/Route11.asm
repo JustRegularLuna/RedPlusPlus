@@ -3,9 +3,10 @@ Route11_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
-	warp_event 47,  8, ROUTE_11_GATE, 1
-	warp_event 47,  9, ROUTE_11_GATE, 2
+	db 3 ; warp events
+	warp_event 49, 12, ROUTE_11_GATE, 1
+	warp_event 49, 13, ROUTE_11_GATE, 2
+	warp_event  4,  9, DIGLETTS_CAVE, 1
 
 	db 0 ; coord events
 

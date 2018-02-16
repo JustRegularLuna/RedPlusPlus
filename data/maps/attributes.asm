@@ -78,17 +78,17 @@ ENDM
 	connection west, Route4, ROUTE_4, 2, 0, 11
 	connection east, Route9, ROUTE_9, 2, 0, 11
 
-	map_attributes VermilionCity, VERMILION_CITY, $43, NORTH | EAST
-	connection north, Route6, ROUTE_6, 3, 0, 15
-	connection east, Route11, ROUTE_11, 5, 0, 9
+	map_attributes VermilionCity, VERMILION_CITY, $1f, NORTH | EAST
+	connection north, Route6, ROUTE_6, 4, 0, 12
+	connection east, Route11, ROUTE_11, 2, 0, 13
 
-	map_attributes CeladonCity, CELADON_CITY, $f, WEST | EAST
-	connection west, Route16Northeast, ROUTE_16_NORTHEAST, 10, 0, 8
-	connection east, Route7, ROUTE_7, 5, 0, 9
+	map_attributes CeladonCity, CELADON_CITY, $1f, EAST
+;	connection west, Route16Northeast, ROUTE_16_NORTHEAST, 10, 0, 8
+	connection east, Route7, ROUTE_7, 0, 0, 24
 
-	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | SOUTH | WEST
-	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 10
-	connection south, Route12North, ROUTE_12_NORTH, 0, 0, 10
+	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | WEST
+	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 11
+;	connection south, Route12North, ROUTE_12_NORTH, 0, 0, 10
 	connection west, Route8, ROUTE_8, 0, 0, 11
 
 	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, SOUTH | WEST | EAST
@@ -96,11 +96,11 @@ ENDM
 	connection west, Route18East, ROUTE_18_EAST, 7, 0, 11
 	connection east, Route15, ROUTE_15, 9, 0, 9
 
-	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH
+	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH | WEST | EAST
 	connection north, Route5, ROUTE_5, 5, 0, 14
-;	connection south, Route6, ROUTE_6, 3, 0, 15
-;	connection west, Route7, ROUTE_7, 6, 0, 9
-;	connection east, Route8, ROUTE_8, 4, 0, 11
+	connection south, Route6, ROUTE_6, 5, 0, 12
+	connection west, Route7, ROUTE_7, 0, 0, 22
+	connection east, Route8, ROUTE_8, 5, 0, 11
 
 	map_attributes CinnabarIsland, CINNABAR_ISLAND, $43, NORTH | EAST
 	connection north, Route21, ROUTE_21, 0, 0, 10
@@ -187,34 +187,33 @@ ENDM
 	connection north, CeruleanCity, CERULEAN_CITY, -2, 2, 18
 	connection south, SaffronCity, SAFFRON_CITY, -3, 2, 21
 
-	map_attributes Route6, ROUTE_6, $f, SOUTH
-;	connection north, SaffronCity, SAFFRON_CITY, -3, 0, 18
-	connection south, VermilionCity, VERMILION_CITY, -3, 0, 18
+	map_attributes Route6, ROUTE_6, $f, NORTH | SOUTH
+	connection north, SaffronCity, SAFFRON_CITY, -3, 2, 17
+	connection south, VermilionCity, VERMILION_CITY, -2, 2, 18
 
-	map_attributes Route7, ROUTE_7, $f, NORTH | WEST
-	connection north, CeladonOutskirts, CELADON_OUTSKIRTS, 0, 0, 10
-	connection west, CeladonCity, CELADON_CITY, -3, 2, 15
-;	connection east, SaffronCity, SAFFRON_CITY, -3, 3, 12
+	map_attributes Route7, ROUTE_7, $1f, WEST | EAST
+	connection west, CeladonCity, CELADON_CITY, 0, 0, 24
+	connection east, SaffronCity, SAFFRON_CITY, 0, 0, 22
 
-	map_attributes Route8, ROUTE_8, $55, EAST
-;	connection west, SaffronCity, SAFFRON_CITY, -2, 2, 14
-	connection east, LavenderTown, LAVENDER_TOWN, 0, 0, 10
+	map_attributes Route8, ROUTE_8, $55, WEST | EAST
+	connection west, SaffronCity, SAFFRON_CITY, -3, 2, 14
+	connection east, LavenderTown, LAVENDER_TOWN, 0, 0, 11
 
 	map_attributes Route9, ROUTE_9, $55, WEST | EAST
 	connection west, CeruleanCity, CERULEAN_CITY, -1, 1, 14
 	connection east, Route10North, ROUTE_10_NORTH, 0, 4, 11
 
-	map_attributes Route10North, ROUTE_10_NORTH, $55, WEST
-;	connection south, Route10South, ROUTE_10_SOUTH, 0, 0, 10
+	map_attributes Route10North, ROUTE_10_NORTH, $55, SOUTH | WEST
+	connection south, Route10South, ROUTE_10_SOUTH, 1, 0, 11
 	connection west, Route9, ROUTE_9, 4, 0, 11
 
 	map_attributes Route10South, ROUTE_10_SOUTH, $55, NORTH | SOUTH
-	connection north, Route10North, ROUTE_10_NORTH, 0, 0, 10
-	connection south, LavenderTown, LAVENDER_TOWN, 0, 0, 10
+	connection north, Route10North, ROUTE_10_NORTH, -1, 0, 12
+	connection south, LavenderTown, LAVENDER_TOWN, 0, 0, 11
 
-	map_attributes Route11, ROUTE_11, $f, WEST | EAST
-	connection west, VermilionCity, VERMILION_CITY, -3, 2, 15
-	connection east, Route12South, ROUTE_12_SOUTH, -3, 14, 15
+	map_attributes Route11, ROUTE_11, $f, WEST
+	connection west, VermilionCity, VERMILION_CITY, -1, 1, 15
+;	connection east, Route12South, ROUTE_12_SOUTH, -3, 14, 15
 
 	map_attributes Route12North, ROUTE_12_NORTH, $43, NORTH | SOUTH
 	connection north, LavenderTown, LAVENDER_TOWN, 0, 0, 10

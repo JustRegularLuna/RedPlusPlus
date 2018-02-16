@@ -5,7 +5,7 @@ Route6_MapScriptHeader:
 
 	db 2 ; warp events
 	warp_event 21,  9, ROUTE_6_UNDERGROUND_ENTRANCE, 1
-	warp_event 10,  1, ROUTE_6_SAFFRON_GATE, 3
+	warp_event 14,  1, ROUTE_6_SAFFRON_GATE, 3
 
 	db 0 ; coord events
 
