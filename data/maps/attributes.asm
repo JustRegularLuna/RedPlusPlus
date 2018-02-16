@@ -220,14 +220,13 @@ ENDM
 	connection south, Route13, ROUTE_13, 0, 27, 13
 	connection west, Route11, ROUTE_11, 24, 0, 13
 
-	map_attributes Route13, ROUTE_13, $49, NORTH
+	map_attributes Route13, ROUTE_13, $49, NORTH | SOUTH
 	connection north, Route12, ROUTE_12, 27, 0, 13
-;	connection south, Route14, ROUTE_14, 0, 0, 12
+	connection south, Route14, ROUTE_14, 0, 0, 10
 
-	map_attributes Route14, ROUTE_14, $43, WEST | EAST
-;	connection north, Route13, ROUTE_13, 0, 0, 12
-	connection west, Route15, ROUTE_15, 10, 0, 9
-	connection east, LuckyIsland, LUCKY_ISLAND, 0, 0, 15
+	map_attributes Route14, ROUTE_14, $49, NORTH
+	connection north, Route13, ROUTE_13, 0, 0, 13
+;	connection west, Route15, ROUTE_15, 10, 0, 9
 
 	map_attributes Route15, ROUTE_15, $f, WEST | EAST
 	connection west, FuchsiaCity, FUCHSIA_CITY, -3, 6, 12

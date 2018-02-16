@@ -711,7 +711,7 @@ MAP_NONE   EQU 0
 
 	mapconst ROUTE_12,                                   53, 13 ;  1
 	mapconst ROUTE_13,                                    9, 40 ;  2
-	mapconst ROUTE_14,                                   19, 12 ;  3
+	mapconst ROUTE_14,                                   18, 10 ;  3
 	mapconst ROUTE_15,                                    9, 20 ;  4
 	mapconst ROUTE_12_GATE,                               5,  5 ;  5
 	mapconst ROUTE_12_GATE_2F,                            4,  4 ;  6
