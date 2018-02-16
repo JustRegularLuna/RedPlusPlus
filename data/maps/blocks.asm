@@ -1333,11 +1333,8 @@ Route11_BlockData:
 Route12_BlockData:
 	INCBIN "maps/Route12.blk"
 
-Route13East_BlockData:
-	INCBIN "maps/Route13East.blk"
-
-Route13West_BlockData:
-	INCBIN "maps/Route13West.blk"
+Route13_BlockData:
+	INCBIN "maps/Route13.blk"
 
 Route14_BlockData:
 	INCBIN "maps/Route14.blk"

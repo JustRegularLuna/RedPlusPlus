@@ -279,8 +279,7 @@ Group35Sprites:
 
 Group37Sprites:
 ; Route12
-; Route13East
-; Route13West
+; Route13
 ; Route14
 ; Route15
 ; LuckyIsland

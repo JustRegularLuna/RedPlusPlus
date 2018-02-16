@@ -710,11 +710,10 @@ MAP_NONE   EQU 0
 	newgroup                                                    ; 37
 
 	mapconst ROUTE_12,                                   53, 13 ;  1
-	mapconst ROUTE_13_EAST,                              10, 23 ;  2
-	mapconst ROUTE_13_WEST,                              10, 12 ;  3
-	mapconst ROUTE_14,                                   19, 12 ;  4
-	mapconst ROUTE_15,                                    9, 20 ;  5
-	mapconst ROUTE_12_GATE,                               5,  5 ;  6
-	mapconst ROUTE_12_GATE_2F,                            4,  4 ;  7
-	mapconst ROUTE_12_SUPER_ROD_HOUSE,                    4,  4 ;  8
-	mapconst LUCKY_ISLAND,                               17, 23 ;  9
+	mapconst ROUTE_13,                                    9, 40 ;  2
+	mapconst ROUTE_14,                                   19, 12 ;  3
+	mapconst ROUTE_15,                                    9, 20 ;  4
+	mapconst ROUTE_12_GATE,                               5,  5 ;  5
+	mapconst ROUTE_12_GATE_2F,                            4,  4 ;  6
+	mapconst ROUTE_12_SUPER_ROD_HOUSE,                    4,  4 ;  7
+	mapconst LUCKY_ISLAND,                               17, 23 ;  8
