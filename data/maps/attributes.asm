@@ -91,10 +91,10 @@ ENDM
 	connection south, Route12, ROUTE_12, -1, 1, 13
 	connection west, Route8, ROUTE_8, 0, 0, 11
 
-	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, SOUTH | WEST | EAST
+	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, SOUTH | WEST
 	connection south, Route19, ROUTE_19, 0, 0, 10
 	connection west, Route18East, ROUTE_18_EAST, 7, 0, 11
-	connection east, Route15, ROUTE_15, 9, 0, 9
+;	connection east, Route15, ROUTE_15, 9, 0, 9
 
 	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH | WEST | EAST
 	connection north, Route5, ROUTE_5, 5, 0, 14
@@ -224,13 +224,13 @@ ENDM
 	connection north, Route12, ROUTE_12, 27, 0, 13
 	connection south, Route14, ROUTE_14, 0, 0, 10
 
-	map_attributes Route14, ROUTE_14, $49, NORTH
+	map_attributes Route14, ROUTE_14, $49, NORTH | WEST
 	connection north, Route13, ROUTE_13, 0, 0, 13
-;	connection west, Route15, ROUTE_15, 10, 0, 9
+	connection west, Route15, ROUTE_15, 9, 0, 9
 
-	map_attributes Route15, ROUTE_15, $f, WEST | EAST
-	connection west, FuchsiaCity, FUCHSIA_CITY, -3, 6, 12
-	connection east, Route14, ROUTE_14, -3, 7, 12
+	map_attributes Route15, ROUTE_15, $f, EAST
+;	connection west, FuchsiaCity, FUCHSIA_CITY, -3, 6, 12
+	connection east, Route14, ROUTE_14, -3, 6, 12
 
 	map_attributes Route16South, ROUTE_16_SOUTH, $f, SOUTH
 	connection south, Route17, ROUTE_17, 0, 0, 10
