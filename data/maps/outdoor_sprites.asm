@@ -1,286 +1,109 @@
 OutdoorSprites: ; 144b8
 ; Valid sprite IDs for each map group.
-; Maximum 9 walking sprites and 18-32 total sprites used per group.
-	dw Group1Sprites
-	dw Group2Sprites
-	dw Group3Sprites
-	dw Group4Sprites
-	dw Group5Sprites
-	dw Group6Sprites
-	dw Group7Sprites
-	dw Group8Sprites
-	dw Group9Sprites
-	dw Group10Sprites
-	dw Group11Sprites
-	dw Group12Sprites
-	dw Group13Sprites
-	dw Group14Sprites
-	dw Group15Sprites
-	dw Group16Sprites
-	dw Group17Sprites
-	dw Group18Sprites
-	dw Group19Sprites
-	dw Group20Sprites
-	dw Group21Sprites
-	dw Group22Sprites
-	dw Group23Sprites
-	dw Group24Sprites
-	dw Group25Sprites
-	dw Group26Sprites
-	dw Group27Sprites
-	dw Group28Sprites
-	dw Group29Sprites
-	dw Group30Sprites
-	dw Group31Sprites
-	dw Group32Sprites
-	dw Group33Sprites
-	dw Group34Sprites
-	dw Group35Sprites
-	dw Group36Sprites
-	dw Group37Sprites
+; Maximum 9 walking sprites per group.
+	dw OutdoorSprites_Special
+	dw OutdoorSprites_Pallet
+	dw OutdoorSprites_Viridian
+	dw OutdoorSprites_Pewter
+	dw OutdoorSprites_MountMoonSquare
+	dw OutdoorSprites_Cerulean
+	dw OutdoorSprites_Route10
+	dw OutdoorSprites_Route5
+	dw OutdoorSprites_Vermilion
+	dw OutdoorSprites_Celadon
+	dw OutdoorSprites_Lavender
+	dw OutdoorSprites_SilenceBridge
+	dw OutdoorSprites_CyclingRoad
+	dw OutdoorSprites_Route16
+	dw OutdoorSprites_Fuchsia
+	dw OutdoorSprites_Saffron
+	dw OutdoorSprites_Cinnabar
+	dw OutdoorSprites_Indigo
+	dw OutdoorSprites_Route26
+	dw OutdoorSprites_NewBark
+	dw OutdoorSprites_Cherrygrove
+	dw OutdoorSprites_Route32
+	dw OutdoorSprites_Violet
+	dw OutdoorSprites_RuinsOfAlph
+	dw OutdoorSprites_Azalea
+	dw OutdoorSprites_Goldenrod
+	dw OutdoorSprites_Route35
+	dw OutdoorSprites_Ecruteak
+	dw OutdoorSprites_EcruteakShrine
+	dw OutdoorSprites_BellchimeTrail
+	dw OutdoorSprites_GoldenrodHarbor
+	dw OutdoorSprites_Olivine
+	dw OutdoorSprites_BattleTower
+	dw OutdoorSprites_Cianwood
+	dw OutdoorSprites_Route47
+	dw OutdoorSprites_Mahogany
+	dw OutdoorSprites_LakeOfRage
+	dw OutdoorSprites_Blackthorn
+	dw OutdoorSprites_SilverCave
+	dw OutdoorSprites_Shamouti
+	dw OutdoorSprites_ShamoutiShrine
+	dw OutdoorSprites_ShamoutiCoast
+	dw OutdoorSprites_Valencia
+	dw OutdoorSprites_NavelFaraway
+	dw OutdoorSprites_SinjohRuins
+	dw OutdoorSprites_KantoGates
+	dw OutdoorSprites_KantoDungeons
+	dw OutdoorSprites_JohtoGates
+	dw OutdoorSprites_JohtoDungeons
+	dw OutdoorSprites_IslandGates
+	dw OutdoorSprites_IslandDungeons
+	dw OutdoorSprites_Deleted
 
-
-; OlivineCity connects to Route40
-Group1Sprites:
-; Route38
-; Route39
-; OlivineCity
-; Route35Coast
-Group22Sprites:
-; Route40
-; Route41
-; CianwoodCity
-; BattleTowerOutside
-Group29Sprites:
-; GoldenrodHarbor
-	db 0 ; end
-
-
-; Route42 connects to VioletOutskirts
-; Route32 connects to CherrygroveBay
-; Route29 connects to CherrygroveCity
-Group2Sprites:
-; Route42
-; Route44
-; MahoganyTown
-Group10Sprites:
-; Route32
-; VioletCity
-; MagnetTunnelEast
-; VioletOutskirts
-Group24Sprites:
-; Route26
-; Route27
-; Route29
-; NewBarkTown
-Group26Sprites:
-; Route30
-; Route31
-; CherrygroveBay
-; CherrygroveCity
-	db 0 ; end
-
-
-Group3Sprites:
-; NationalPark
-; NationalParkBugContest
-	; 13 total sprites
-	db 0 ; end
-
-
-; EcruteakCity connects to Route36
-Group4Sprites:
-; EcruteakCity
-; Route37
-Group36Sprites:
-; Route35
-; Route36
-	db 0 ; end
-
-
-Group5Sprites:
-; Route45
-; Route46
-; BlackthornCity
-	db 0 ; end
-
-
-; Route21 connects to PalletTown
-Group6Sprites:
-; Route19
-; Route20
-; Route21
-; UragaChannelWest
-; CinnabarIsland
-Group13Sprites:
-; Route1
-; PalletTown
-	db 0 ; end
-
-
-; CeruleanCity connects to Route5
-; CeruleanCity connects to Route9
-Group7Sprites:
-; Route4
-; Route24
-; Route25
-; CeruleanCape
-; CeruleanCity
-Group25Sprites:
-; Route5
-Group28Sprites:
-; Route9
-; Route10North
-	db 0 ; end
-
-
-Group8Sprites:
-; Route33
-; AzaleaTown
-	db 0 ; end
-
-
-Group9Sprites:
-; Route43
-; LakeofRage
-	db 0 ; end
-
-
-Group11Sprites:
-; Route34
-; Route34Coast
-; StormyBeach
-; GoldenrodCity
-; MagnetTunnelWest
-	db 0 ; end
-
-
-Group12Sprites:
-; Route6
-; Route11
-; VermilionCity
-	db 0 ; end
-
-
-Group14Sprites:
-; Route2North
-; Route3
-; PewterCity
-	db 0 ; end
-
-
-Group15Sprites:
-; OlivinePort
-; VermilionPort
-; MountMoonSquare
-; TinTowerRoof
-	db 0 ; end
-
-
-Group16Sprites:
-; Route23
-; IndigoPlateau
-; BellchimeTrail
-	db 0 ; end
-
-
-Group17Sprites:
-; Route18East
-; FuchsiaCity
-	db 0 ; end
-
-
-Group18Sprites:
-; Route8
-; Route10South
-; Route12North
-; LavenderTown
-	db 0 ; end
-
-
-Group19Sprites:
-; Route28
-; SilverCaveOutside
-; FarawayIsland
-; FarawayJungle
-	db 0 ; end
-
-
-Group20Sprites:
-; YellowForest
-; EcruteakShrineOutside
-	db 0 ; end
-
-
-Group21Sprites:
-; Route7
-; Route16North
-; Route16South
-; Route17
-; UragaChannelEast
-; CeladonCity
-	db 0 ; end
-
-
-Group23Sprites:
-; Route2South
-; Route22
-; ViridianCity
-; ViridianForest
-; Route16West
-	db 0 ; end
-
-
-Group27Sprites:
-; Route47
-; Route48
-	db 0 ; end
-
-
-Group30Sprites:
-; RuinsofAlphOutside
-; Route22Past
-	db 0 ; end
-
-
-Group31Sprites:
-; ShamoutiIsland
-; BeautifulBeach
-; RockyBeach
-; WarmBeach
-; ShamoutiCoast
-	db 0 ; end
-
-
-Group32Sprites:
-; SafariZoneEast
-; SafariZoneHub
-; SafariZoneNorth
-; SafariZoneWest
-	db 0 ; end
-
-
-Group33Sprites:
-; ValenciaIsland
-; Route49
-	db 0 ; end
-
-
-Group34Sprites:
-; SinjohRuins
-	db 0 ; end
-
-
-Group35Sprites:
-; SaffronCity
-; ShamoutiShrineRuins
-	db 0 ; end
-
-
-Group37Sprites:
-; Route12
-; Route13
-; Route14
-; Route15
-; LuckyIsland
+OutdoorSprites_Special:
+OutdoorSprites_Pallet:
+OutdoorSprites_Viridian:
+OutdoorSprites_Pewter:
+OutdoorSprites_MountMoonSquare:
+OutdoorSprites_Cerulean:
+OutdoorSprites_Route10:
+OutdoorSprites_Route5:
+OutdoorSprites_Vermilion:
+OutdoorSprites_Celadon:
+OutdoorSprites_Lavender:
+OutdoorSprites_SilenceBridge:
+OutdoorSprites_CyclingRoad:
+OutdoorSprites_Route16:
+OutdoorSprites_Fuchsia:
+OutdoorSprites_Saffron:
+OutdoorSprites_Cinnabar:
+OutdoorSprites_Indigo:
+OutdoorSprites_Route26:
+OutdoorSprites_NewBark:
+OutdoorSprites_Cherrygrove:
+OutdoorSprites_Route32:
+OutdoorSprites_Violet:
+OutdoorSprites_RuinsOfAlph:
+OutdoorSprites_Azalea:
+OutdoorSprites_Goldenrod:
+OutdoorSprites_Route35:
+OutdoorSprites_Ecruteak:
+OutdoorSprites_EcruteakShrine:
+OutdoorSprites_BellchimeTrail:
+OutdoorSprites_GoldenrodHarbor:
+OutdoorSprites_Olivine:
+OutdoorSprites_BattleTower:
+OutdoorSprites_Cianwood:
+OutdoorSprites_Route47:
+OutdoorSprites_Mahogany:
+OutdoorSprites_LakeOfRage:
+OutdoorSprites_Blackthorn:
+OutdoorSprites_SilverCave:
+OutdoorSprites_Shamouti:
+OutdoorSprites_ShamoutiShrine:
+OutdoorSprites_ShamoutiCoast:
+OutdoorSprites_Valencia:
+OutdoorSprites_NavelFaraway:
+OutdoorSprites_SinjohRuins:
+OutdoorSprites_KantoGates:
+OutdoorSprites_KantoDungeons:
+OutdoorSprites_JohtoGates:
+OutdoorSprites_JohtoDungeons:
+OutdoorSprites_IslandGates:
+OutdoorSprites_IslandDungeons:
+OutdoorSprites_Deleted:
 	db 0 ; end
