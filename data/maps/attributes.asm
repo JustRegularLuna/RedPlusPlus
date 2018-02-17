@@ -86,15 +86,15 @@ ENDM
 ;	connection west, Route16Northeast, ROUTE_16_NORTHEAST, 10, 0, 8
 	connection east, Route7, ROUTE_7, 0, 0, 24
 
-	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | WEST
+	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | SOUTH | WEST
 	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 11
-;	connection south, Route12North, ROUTE_12_NORTH, 0, 0, 10
+	connection south, Route12, ROUTE_12, -1, 1, 13
 	connection west, Route8, ROUTE_8, 0, 0, 11
 
-	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, SOUTH | WEST | EAST
-	connection south, Route19, ROUTE_19, 0, 0, 10
-	connection west, Route18East, ROUTE_18_EAST, 7, 0, 11
-	connection east, Route15, ROUTE_15, 9, 0, 9
+	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, EAST
+;	connection south, Route19, ROUTE_19, 0, 0, 10
+;	connection west, Route18East, ROUTE_18_EAST, 7, 0, 11
+	connection east, Route15, ROUTE_15, 5, 0, 9
 
 	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH | WEST | EAST
 	connection north, Route5, ROUTE_5, 5, 0, 14
@@ -211,36 +211,26 @@ ENDM
 	connection north, Route10North, ROUTE_10_NORTH, -1, 0, 12
 	connection south, LavenderTown, LAVENDER_TOWN, 0, 0, 11
 
-	map_attributes Route11, ROUTE_11, $f, WEST
+	map_attributes Route11, ROUTE_11, $f, WEST | EAST
 	connection west, VermilionCity, VERMILION_CITY, -1, 1, 15
-;	connection east, Route12South, ROUTE_12_SOUTH, -3, 14, 15
+	connection east, Route12, ROUTE_12, -3, 21, 19
 
-	map_attributes Route12North, ROUTE_12_NORTH, $43, NORTH | SOUTH
-	connection north, LavenderTown, LAVENDER_TOWN, 0, 0, 10
-	connection south, Route12South, ROUTE_12_SOUTH, 0, 0, 10
+	map_attributes Route12, ROUTE_12, $49, NORTH | SOUTH | WEST
+	connection north, LavenderTown, LAVENDER_TOWN, 2, 0, 11
+	connection south, Route13, ROUTE_13, 0, 27, 13
+	connection west, Route11, ROUTE_11, 24, 0, 13
 
-	map_attributes Route12South, ROUTE_12_SOUTH, $43, NORTH | SOUTH | WEST
-	connection north, Route12North, ROUTE_12_NORTH, 0, 0, 10
-	connection south, Route13East, ROUTE_13_EAST, 0, 13, 10
-	connection west, Route11, ROUTE_11, 17, 0, 9
+	map_attributes Route13, ROUTE_13, $49, NORTH | SOUTH
+	connection north, Route12, ROUTE_12, 27, 0, 13
+	connection south, Route14, ROUTE_14, 0, 0, 10
 
-	map_attributes Route13East, ROUTE_13_EAST, $43, NORTH | SOUTH | WEST
-	connection north, Route12South, ROUTE_12_SOUTH, 13, 0, 10
-	connection south, LuckyIsland, LUCKY_ISLAND, 0, 0, 23
-	connection west, Route13West, ROUTE_13_WEST, 0, 0, 10
-
-	map_attributes Route13West, ROUTE_13_WEST, $43, SOUTH | EAST
-	connection south, Route14, ROUTE_14, 0, 0, 12
-	connection east, Route13East, ROUTE_13_EAST, 0, 0, 10
-
-	map_attributes Route14, ROUTE_14, $43, NORTH | WEST | EAST
-	connection north, Route13West, ROUTE_13_WEST, 0, 0, 12
-	connection west, Route15, ROUTE_15, 10, 0, 9
-	connection east, LuckyIsland, LUCKY_ISLAND, 0, 0, 15
+	map_attributes Route14, ROUTE_14, $49, NORTH | WEST
+	connection north, Route13, ROUTE_13, 0, 0, 13
+	connection west, Route15, ROUTE_15, 9, 0, 9
 
 	map_attributes Route15, ROUTE_15, $f, WEST | EAST
-	connection west, FuchsiaCity, FUCHSIA_CITY, -3, 6, 12
-	connection east, Route14, ROUTE_14, -3, 7, 12
+	connection west, FuchsiaCity, FUCHSIA_CITY, -3, 2, 12
+	connection east, Route14, ROUTE_14, -3, 6, 12
 
 	map_attributes Route16South, ROUTE_16_SOUTH, $f, SOUTH
 	connection south, Route17, ROUTE_17, 0, 0, 10
@@ -261,17 +251,17 @@ ENDM
 	connection north, Route16South, ROUTE_16_SOUTH, 0, 0, 10
 	connection south, Route18West, ROUTE_18_WEST, 0, 0, 10
 
-	map_attributes Route18East, ROUTE_18_EAST, $43, WEST | EAST
+	map_attributes Route18East, ROUTE_18_EAST, $43, WEST
 	connection west, Route18West, ROUTE_18_WEST, 0, 0, 11
-	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 4, 14
+;	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 4, 14
 
 	map_attributes Route18West, ROUTE_18_WEST, $43, NORTH | WEST | EAST
 	connection north, Route17, ROUTE_17, 0, 0, 10
 	connection west, UragaChannelEast, URAGA_CHANNEL_EAST, 0, 0, 9
 	connection east, Route18East, ROUTE_18_EAST, 0, 0, 11
 
-	map_attributes Route19, ROUTE_19, $43, NORTH | WEST
-	connection north, FuchsiaCity, FUCHSIA_CITY, 0, 0, 13
+	map_attributes Route19, ROUTE_19, $43, WEST
+;	connection north, FuchsiaCity, FUCHSIA_CITY, 0, 0, 13
 	connection west, Route20, ROUTE_20, 20, 0, 9
 
 	map_attributes Route20, ROUTE_20, $43, WEST | EAST
@@ -419,9 +409,7 @@ ENDM
 	connection west, Route21, ROUTE_21, -3, 16, 15
 	connection east, UragaChannelEast, URAGA_CHANNEL_EAST, 0, 0, 9
 
-	map_attributes LuckyIsland, LUCKY_ISLAND, $43, NORTH | WEST
-	connection north, Route13East, ROUTE_13_EAST, 0, 0, 23
-	connection west, Route14, ROUTE_14, 0, 0, 17
+	map_attributes LuckyIsland, LUCKY_ISLAND, $43, 0
 
 	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $35, SOUTH | WEST | EAST
 	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15

@@ -356,54 +356,44 @@ MAP_NONE   EQU 0
 
 	newgroup                                                    ; 17
 
-	mapconst ROUTE_12_SOUTH,                             44, 10 ;  1
-	mapconst ROUTE_13_EAST,                              10, 23 ;  2
-	mapconst ROUTE_13_WEST,                              10, 12 ;  3
-	mapconst ROUTE_14,                                   19, 12 ;  4
-	mapconst ROUTE_15,                                    9, 20 ;  5
-	mapconst ROUTE_18_EAST,                              11, 14 ;  6
-	mapconst FUCHSIA_CITY,                               18, 20 ;  7
-	mapconst FUCHSIA_MART,                                4,  6 ;  8
-	mapconst FUCHSIA_GYM,                                 9,  5 ;  9
-	mapconst FUCHSIA_BILL_SPEECH_HOUSE,                   4,  4 ; 10
-	mapconst FUCHSIA_SAFARI_BALL_HOUSE,                   4,  4 ; 11
-	mapconst FUCHSIA_POKECENTER_1F,                       4,  6 ; 12
-	mapconst SAFARI_ZONE_WARDENS_HOME,                    4,  5 ; 13
-	mapconst SAFARI_ZONE_FUCHSIA_GATE,                    4,  5 ; 14
-	mapconst ROUTE_12_GATE,                               5,  5 ; 15
-	mapconst ROUTE_12_GATE_2F,                            4,  4 ; 16
-	mapconst ROUTE_15_FUCHSIA_GATE,                       5,  5 ; 17
-	mapconst ROUTE_15_FUCHSIA_GATE_2F,                    4,  4 ; 18
-	mapconst ROUTE_19_FUCHSIA_GATE,                       4,  5 ; 19
-	mapconst ROUTE_12_SUPER_ROD_HOUSE,                    4,  4 ; 20
-	mapconst LUCKY_ISLAND,                               17, 23 ; 21
+	mapconst ROUTE_18_EAST,                              11, 14 ;  1
+	mapconst FUCHSIA_CITY,                               18, 25 ;  2
+	mapconst FUCHSIA_MART,                                4,  6 ;  3
+	mapconst FUCHSIA_GYM,                                 9,  5 ;  4
+	mapconst FUCHSIA_BILL_SPEECH_HOUSE,                   4,  4 ;  5
+	mapconst FUCHSIA_SAFARI_BALL_HOUSE,                   4,  4 ;  6
+	mapconst FUCHSIA_POKECENTER_1F,                       4,  6 ;  7
+	mapconst SAFARI_ZONE_WARDENS_HOME,                    4,  5 ;  8
+	mapconst SAFARI_ZONE_FUCHSIA_GATE,                    4,  5 ;  9
+	mapconst ROUTE_15_FUCHSIA_GATE,                       5,  5 ; 10
+	mapconst ROUTE_15_FUCHSIA_GATE_2F,                    4,  4 ; 11
+	mapconst ROUTE_19_FUCHSIA_GATE,                       4,  5 ; 12
 
 	newgroup                                                    ; 18
 
 	mapconst ROUTE_8,                                    11, 26 ;  1
 	mapconst ROUTE_8_SAFFRON_GATE,                        4,  5 ;  2
 	mapconst ROUTE_10_SOUTH,                             11, 11 ;  3
-	mapconst ROUTE_12_NORTH,                              9, 10 ;  4
-	mapconst LAVENDER_TOWN,                              11, 11 ;  5
-	mapconst LAVENDER_POKECENTER_1F,                      4,  6 ;  6
-	mapconst MR_FUJIS_HOUSE,                              4,  5 ;  7
-	mapconst LAVENDER_TOWN_SPEECH_HOUSE,                  4,  4 ;  8
-	mapconst LAVENDER_NAME_RATER,                         4,  4 ;  9
-	mapconst LAVENDER_MART,                               4,  6 ; 10
-	mapconst SOUL_HOUSE,                                  5,  5 ; 11
-	mapconst SOUL_HOUSE_B1F,                              9, 10 ; 12
-	mapconst SOUL_HOUSE_B2F,                              9, 10 ; 13
-	mapconst SOUL_HOUSE_B3F,                              9,  4 ; 14
-	mapconst LAV_RADIO_TOWER_1F,                          4, 10 ; 15
-	mapconst LAV_RADIO_TOWER_2F,                          4,  9 ; 16
-	mapconst LAV_RADIO_TOWER_3F,                          4,  9 ; 17
-	mapconst LAV_RADIO_TOWER_4F,                          4,  9 ; 18
-	mapconst LAV_RADIO_TOWER_5F,                          4,  7 ; 19
-	mapconst HAUNTED_RADIO_TOWER_2F,                      4,  9 ; 20
-	mapconst HAUNTED_RADIO_TOWER_3F,                      4,  9 ; 21
-	mapconst HAUNTED_RADIO_TOWER_4F,                      4,  9 ; 22
-	mapconst HAUNTED_RADIO_TOWER_5F,                      9,  8 ; 23
-	mapconst HAUNTED_RADIO_TOWER_6F,                      9,  8 ; 24
+	mapconst LAVENDER_TOWN,                              11, 11 ;  4
+	mapconst LAVENDER_POKECENTER_1F,                      4,  6 ;  5
+	mapconst MR_FUJIS_HOUSE,                              4,  5 ;  6
+	mapconst LAVENDER_TOWN_SPEECH_HOUSE,                  4,  4 ;  7
+	mapconst LAVENDER_NAME_RATER,                         4,  4 ;  8
+	mapconst LAVENDER_MART,                               4,  6 ;  9
+	mapconst SOUL_HOUSE,                                  5,  5 ; 10
+	mapconst SOUL_HOUSE_B1F,                              9, 10 ; 11
+	mapconst SOUL_HOUSE_B2F,                              9, 10 ; 12
+	mapconst SOUL_HOUSE_B3F,                              9,  4 ; 13
+	mapconst LAV_RADIO_TOWER_1F,                          4, 10 ; 14
+	mapconst LAV_RADIO_TOWER_2F,                          4,  9 ; 15
+	mapconst LAV_RADIO_TOWER_3F,                          4,  9 ; 16
+	mapconst LAV_RADIO_TOWER_4F,                          4,  9 ; 17
+	mapconst LAV_RADIO_TOWER_5F,                          4,  7 ; 18
+	mapconst HAUNTED_RADIO_TOWER_2F,                      4,  9 ; 19
+	mapconst HAUNTED_RADIO_TOWER_3F,                      4,  9 ; 20
+	mapconst HAUNTED_RADIO_TOWER_4F,                      4,  9 ; 21
+	mapconst HAUNTED_RADIO_TOWER_5F,                      9,  8 ; 22
+	mapconst HAUNTED_RADIO_TOWER_6F,                      9,  8 ; 23
 
 	newgroup                                                    ; 19
 
@@ -716,3 +706,14 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_36_RUINS_OF_ALPH_GATE,                 4,  5 ;  5
 	mapconst ROUTE_36_NATIONAL_PARK_GATE,                 4,  5 ;  6
 	mapconst ROUTE_36_VIOLET_GATE,                        4,  5 ;  7
+
+	newgroup                                                    ; 37
+
+	mapconst ROUTE_12,                                   53, 13 ;  1
+	mapconst ROUTE_13,                                    9, 40 ;  2
+	mapconst ROUTE_14,                                   18, 10 ;  3
+	mapconst ROUTE_15,                                    9, 25 ;  4
+	mapconst ROUTE_12_GATE,                               5,  5 ;  5
+	mapconst ROUTE_12_GATE_2F,                            4,  4 ;  6
+	mapconst ROUTE_12_SUPER_ROD_HOUSE,                    4,  4 ;  7
+	mapconst LUCKY_ISLAND,                               17, 23 ;  8

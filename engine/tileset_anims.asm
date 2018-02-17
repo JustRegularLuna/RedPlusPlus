@@ -347,6 +347,7 @@ TilesetCeladonAnim:
 TilesetFuchsiaAnim:
 TilesetSaffronAnim:
 TilesetIndigoAnim:
+TilesetRoutesAnim:
 TilesetForestAnim:
 TilesetJohto3Anim:
 TilesetHouse1Anim:

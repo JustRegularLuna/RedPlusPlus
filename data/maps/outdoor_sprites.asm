@@ -37,6 +37,7 @@ OutdoorSprites: ; 144b8
 	dw Group34Sprites
 	dw Group35Sprites
 	dw Group36Sprites
+	dw Group37Sprites
 
 
 ; OlivineCity connects to Route40
@@ -184,14 +185,8 @@ Group16Sprites:
 
 
 Group17Sprites:
-; Route12South
-; Route13East
-; Route13West
-; Route14
-; Route15
 ; Route18East
 ; FuchsiaCity
-; LuckyIsland
 	db 0 ; end
 
 
@@ -279,4 +274,13 @@ Group34Sprites:
 Group35Sprites:
 ; SaffronCity
 ; ShamoutiShrineRuins
+	db 0 ; end
+
+
+Group37Sprites:
+; Route12
+; Route13
+; Route14
+; Route15
+; LuckyIsland
 	db 0 ; end

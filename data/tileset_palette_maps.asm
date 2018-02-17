@@ -16,9 +16,6 @@ INCLUDE "gfx/tilesets/viridian_palette_map.asm"
 TilesetPewterPalMap:
 INCLUDE "gfx/tilesets/pewter_palette_map.asm"
 
-TilesetCeruleanPalMap:
-INCLUDE "gfx/tilesets/cerulean_palette_map.asm"
-
 TilesetVermilionPalMap:
 INCLUDE "gfx/tilesets/vermilion_palette_map.asm"
 
@@ -33,6 +30,12 @@ INCLUDE "gfx/tilesets/fuchsia_palette_map.asm"
 
 TilesetSaffronPalMap:
 INCLUDE "gfx/tilesets/saffron_palette_map.asm"
+
+TilesetRoutesPalMap:
+INCLUDE "gfx/tilesets/routes_palette_map.asm"
+
+TilesetCeruleanPalMap:
+INCLUDE "gfx/tilesets/cerulean_palette_map.asm"
 
 TilesetIndigoPalMap:
 INCLUDE "gfx/tilesets/indigo_palette_map.asm"

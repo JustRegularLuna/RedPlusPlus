@@ -53,14 +53,14 @@ def load_palette(filename):
 					hue = []
 	except:
 		palette = [
-			[RGB5(30,28,26), RGB5(19,19,19), RGB5(13,13,13), RGB5( 7, 7, 7)],
-			[RGB5(30,28,26), RGB5(31,19,24), RGB5(30,10, 6), RGB5( 7, 7, 7)],
-			[RGB5(18,24, 9), RGB5(15,20, 1), RGB5( 9,13, 0), RGB5( 7, 7, 7)],
-			[RGB5(30,28,26), RGB5(15,16,31), RGB5( 9, 9,31), RGB5( 7, 7, 7)],
-			[RGB5(30,28,26), RGB5(31,31, 7), RGB5(31,16, 1), RGB5( 7, 7, 7)],
-			[RGB5(26,24,17), RGB5(21,17, 7), RGB5(16,13, 3), RGB5( 7, 7, 7)],
-			[RGB5(30,28,26), RGB5(17,19,31), RGB5(14,16,31), RGB5( 7, 7, 7)],
-			[RGB5(31,31,16), RGB5(31,31,16), RGB5(14, 9, 0), RGB5( 0, 0, 0)]
+			[RGB5(28,31,28), RGB5(21,21,21), RGB5(13,13,13), RGB5( 7, 7, 7)],
+			[RGB5(28,31,28), RGB5(29,16,13), RGB5(24, 6, 8), RGB5( 7, 7, 7)],
+			[RGB5(14,25,20), RGB5( 9,19, 5), RGB5( 5,14,10), RGB5( 7, 7, 7)],
+			[RGB5(28,31,28), RGB5( 8,20,27), RGB5( 1,12,19), RGB5( 7, 7, 7)],
+			[RGB5(28,31,28), RGB5(19,26,31), RGB5(12,20,27), RGB5( 7, 7, 7)],
+			[RGB5(28,31,28), RGB5(22,18,15), RGB5(17,13,10), RGB5( 7, 7, 7)],
+			[RGB5(28,31,28), RGB5(15,31,31), RGB5( 5,17,31), RGB5( 7, 7, 7)],
+			[RGB5(28,31,28), RGB5(31,31,31), RGB5(26, 8, 5), RGB5( 0, 0, 0)]
 		]
 	assert len(palette) >= 8
 	return palette
@@ -208,6 +208,12 @@ class PaletteMap(object):
 	}
 
 	tileset_palettes = {
+		'lavender': lambda: load_palette('gfx/tilesets/palettes/lavender.pal')[8:16],
+		'celadon': lambda: load_palette('gfx/tilesets/palettes/celadon.pal')[8:16],
+		'fuchsia': lambda: load_palette('gfx/tilesets/palettes/fuchsia.pal')[8:16],
+		'saffron': lambda: load_palette('gfx/tilesets/palettes/saffron.pal')[8:16],
+		'forest': lambda: PaletteMap.nite_palette(),
+		#######################################
 		'johto1': lambda: PaletteMap.day_palette(),
 		'johto2': lambda: PaletteMap.day_palette(),
 		'johto3': lambda: PaletteMap.day_palette(),
@@ -215,7 +221,7 @@ class PaletteMap(object):
 		'kanto1': lambda: PaletteMap.day_palette(),
 		'kanto2': lambda: PaletteMap.day_palette(),
 		'park': lambda: PaletteMap.day_palette(),
-		'forest': lambda: PaletteMap.nite_palette(),
+		'pc_forest': lambda: PaletteMap.nite_palette(),
 		'cave': lambda: PaletteMap.nite_palette(),
 		'tunnel': lambda: PaletteMap.nite_palette(),
 		'alph': lambda: load_palette('gfx/tilesets/palettes/ruins.pal'),
@@ -238,7 +244,7 @@ class PaletteMap(object):
 
 	def __init__(self, filename, key, map_blk):
 		colors_lambda = PaletteMap.map_palettes.get(map_blk,
-			PaletteMap.tileset_palettes.get(key, PaletteMap.indoor_palette))
+			PaletteMap.tileset_palettes.get(key, PaletteMap.day_palette))
 		colors = colors_lambda()
 		assert len(colors) == 8
 		colors = {k: colors[v] for k, v in PaletteMap.color_constants.items()}
