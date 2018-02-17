@@ -136,7 +136,7 @@ NamingScreen: ; 116c1
 
 .Rival: ; 117ae (4:57ae)
 	ld de, BlueSprite
-	lb bc, BANK(BlueSprite), SPRITE_ANIM_INDEX_BLUE_WALK
+	lb bc, BANK(BlueSprite), SPRITE_ANIM_INDEX_RIVAL_WALK
 	call .LoadSprite
 	hlcoord 5, 2
 	ld de, .RivalNameString
