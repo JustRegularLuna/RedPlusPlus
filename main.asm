@@ -398,11 +398,6 @@ INCLUDE "engine/events/safari_game.asm"
 INCLUDE "engine/events/std_tiles.asm"
 
 
-SECTION "Roofs", ROMX
-
-INCLUDE "engine/mapgroup_roofs.asm"
-
-
 SECTION "Code 5", ROMX
 
 INCLUDE "engine/rtc.asm"
