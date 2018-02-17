@@ -30,7 +30,7 @@ SpriteHeaders:
 	overworld_sprite BikerSprite, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SailorSprite, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CookSprite, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite BikeShopGuySprite, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite BikeShopGuySprite, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite MrFujiSprite, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite GiovanniSprite, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite RocketSprite, WALKING_SPRITE, PAL_OW_RED
@@ -44,26 +44,26 @@ SpriteHeaders:
 	overworld_sprite OakAideSprite, WALKING_SPRITE, PAL_OW_BLUE ; in the list twice
 	overworld_sprite RockerSprite, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SwimmerSprite, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite WhitePlayerSprite, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite GymHelperSprite, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite WhitePlayerSprite, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite GymHelperSprite, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite OldPersonSprite, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite MartGuySprite, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite FisherSprite, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite MartGuySprite, STANDING_SPRITE, PAL_OW_GREEN
+	overworld_sprite FisherSprite, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite OldMediumWomanSprite, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite NurseSprite, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite NurseSprite, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite CableClubWomanSprite, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite MrMasterballSprite, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite LaprasGiverSprite, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite WardenSprite, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite SsCaptainSprite, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite MrMasterballSprite, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite LaprasGiverSprite, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite WardenSprite, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite SsCaptainSprite, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite Fisher2Sprite, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BlackbeltSprite, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite GuardSprite, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite RocketFSprite, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite MomSprite, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite BaldingGuySprite, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite YoungBoySprite, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite GameboyKidSprite, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite MomSprite, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite BaldingGuySprite, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite YoungBoySprite, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite GameboyKidSprite, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ClefairySprite, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite AgathaSprite, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite BrunoSprite, WALKING_SPRITE, PAL_OW_BROWN
@@ -72,7 +72,7 @@ SpriteHeaders:
 	overworld_sprite BrockOverworld, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite MistyOverworld, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SurgeOverworld, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite SabrinaOverworld, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite SabrinaOverworld, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite KogaOverworld, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BlaineOverworld, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BrendanOverworld, WALKING_SPRITE, PAL_OW_BLUE
@@ -89,5 +89,8 @@ SpriteHeaders:
 	overworld_sprite KrisSprite, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SilverSprite, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BillSprite, WALKING_SPRITE, PAL_OW_RED
-	
-	; TODO: single frame sprites combined into grouped sprites like PC uses
+	overworld_sprite BigSnorlaxSpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite BallCutFruitSpriteGFX, STANDING_SPRITE, PAL_OW_TREE
+	overworld_sprite BoulderRockFossilSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
+	overworld_sprite BookPaperPokedexSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite MapAmberLyingOldManSpriteGFX, STANDING_SPRITE, PAL_OW_RED
