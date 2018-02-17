@@ -210,6 +210,7 @@ class PaletteMap(object):
 	tileset_palettes = {
 		'lavender': lambda: load_palette('gfx/tilesets/palettes/lavender.pal')[8:16],
 		'celadon': lambda: load_palette('gfx/tilesets/palettes/celadon.pal')[8:16],
+		'fuchsia': lambda: load_palette('gfx/tilesets/palettes/fuchsia.pal')[8:16],
 		'saffron': lambda: load_palette('gfx/tilesets/palettes/saffron.pal')[8:16],
 		'forest': lambda: PaletteMap.nite_palette(),
 		#######################################

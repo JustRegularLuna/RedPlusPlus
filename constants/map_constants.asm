@@ -357,7 +357,7 @@ MAP_NONE   EQU 0
 	newgroup                                                    ; 17
 
 	mapconst ROUTE_18_EAST,                              11, 14 ;  1
-	mapconst FUCHSIA_CITY,                               18, 20 ;  2
+	mapconst FUCHSIA_CITY,                               18, 25 ;  2
 	mapconst FUCHSIA_MART,                                4,  6 ;  3
 	mapconst FUCHSIA_GYM,                                 9,  5 ;  4
 	mapconst FUCHSIA_BILL_SPEECH_HOUSE,                   4,  4 ;  5
