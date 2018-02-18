@@ -233,23 +233,20 @@ ENDM
 	connection east, Route14, ROUTE_14, -3, 6, 12
 
 	map_attributes Route16East, ROUTE_16_EAST, $1f, WEST | EAST
-	connection west, Route16North, ROUTE_16_NORTH, 0, 0, 10
+	connection west, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 12
 	connection east, CeladonCity, CELADON_CITY, -3, 3, 13
 
-	map_attributes Route16North, ROUTE_16_NORTH, $1f, EAST
+	map_attributes Route16NorthSouth, ROUTE_16_NORTH_SOUTH, $1f, EAST
 ;	connection west, Route16West, ROUTE_16_WEST, 0, 0, 11
 	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
-
-	map_attributes Route16South, ROUTE_16_SOUTH, $1f, EAST
 ;	connection south, Route17, ROUTE_17, 0, 0, 10
-	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
 
 	map_attributes Route16West, ROUTE_16_WEST, $f, WEST
 	connection west, Route2South, ROUTE_2_SOUTH, -3, 5, 10
-;	connection east, Route16North, ROUTE_16_NORTH, 0, 0, 11
+;	connection east, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 10
 
 	map_attributes Route17, ROUTE_17, $43, NORTH
-;	connection north, Route16South, ROUTE_16_SOUTH, 0, 0, 10
+;	connection north, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 10
 	connection south, Route18West, ROUTE_18_WEST, 0, 0, 10
 
 	map_attributes Route18East, ROUTE_18_EAST, $43, WEST
