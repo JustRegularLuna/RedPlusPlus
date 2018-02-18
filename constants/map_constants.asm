@@ -119,7 +119,7 @@ MAP_NONE   EQU 0
 
 	mapconst CELADON_CITY,                         24, 25 ;  1
 	mapconst ROUTE_7,                              24,  9 ;  2
-	mapconst ROUTE_16_NORTHEAST,                   11, 11 ;  3
+	mapconst ROUTE_16_EAST,                         7, 10 ;  3
 	mapconst CELADON_POKECENTER_1F,                 4,  6 ;  4
 	mapconst CELADON_GYM,                           9,  5 ;  5
 	mapconst EUSINES_HOUSE,                         4,  4 ;  6
@@ -188,13 +188,13 @@ MAP_NONE   EQU 0
 
 	newgroup ; 13
 
-	mapconst ROUTE_16_SOUTH, 11, 11 ;  1
+	mapconst ROUTE_16_SOUTH, 10, 10 ;  1
 	mapconst ROUTE_17,       63, 10 ;  2
 	mapconst ROUTE_18_WEST,   9, 10 ;  3
 
 	newgroup ; 14
 
-	mapconst ROUTE_16_NORTHWEST,            11, 11 ;  1
+	mapconst ROUTE_16_NORTH,                10, 10 ;  1
 	mapconst ROUTE_16_WEST,                 11, 34 ;  2
 	mapconst PSYCHIC_INVERS_HOUSE,           4,  4 ;  3
 	mapconst ROUTE_16_FUCHSIA_SPEECH_HOUSE,  4,  4 ;  4
