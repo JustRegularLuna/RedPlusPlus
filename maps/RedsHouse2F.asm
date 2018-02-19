@@ -101,6 +101,7 @@ DebugCheatScript:
 	setflag ENGINE_FLYPOINT_SAFFRON
 	setflag ENGINE_FLYPOINT_CINNABAR
 	; useful items
+	giveitem BICYCLE
 	giveitem ESCAPE_ROPE, 99
 	; shiny dex
 	setflag ENGINE_CREDITS_SKIP
