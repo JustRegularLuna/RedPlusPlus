@@ -193,7 +193,7 @@
 	tilecoll WALL, WALL, WALL, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, WALL, FLOOR
+	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, WALL, WALL, FLOOR
 	tilecoll WALL, WALL, FLOOR, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
@@ -208,8 +208,8 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, FLOOR, WALL, WALL
@@ -241,5 +241,6 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
