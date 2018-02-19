@@ -79,7 +79,7 @@ ENDM
 	connection east, Route9, ROUTE_9, 2, 0, 11
 
 	map_attributes VermilionCity, VERMILION_CITY, $1f, NORTH | EAST
-	connection north, Route6, ROUTE_6, 4, 0, 12
+	connection north, Route6, ROUTE_6, 3, 0, 14
 	connection east, Route11, ROUTE_11, 2, 0, 13
 
 	map_attributes CeladonCity, CELADON_CITY, $1f, WEST | EAST
@@ -91,14 +91,14 @@ ENDM
 	connection south, Route12, ROUTE_12, -1, 1, 13
 	connection west, Route8, ROUTE_8, 0, 0, 11
 
-	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, EAST
-;	connection south, Route19, ROUTE_19, 0, 0, 10
-;	connection west, Route18East, ROUTE_18_EAST, 7, 0, 11
+	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, SOUTH | WEST | EAST
+	connection south, Route19, ROUTE_19, 5, 0, 10
+	connection west, Route18East, ROUTE_18_EAST, 4, 0, 11
 	connection east, Route15, ROUTE_15, 5, 0, 9
 
 	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH | WEST | EAST
 	connection north, Route5, ROUTE_5, 5, 0, 14
-	connection south, Route6, ROUTE_6, 5, 0, 12
+	connection south, Route6, ROUTE_6, 3, 0, 14
 	connection west, Route7, ROUTE_7, 0, 0, 22
 	connection east, Route8, ROUTE_8, 5, 0, 11
 
@@ -187,8 +187,8 @@ ENDM
 	connection south, SaffronCity, SAFFRON_CITY, -3, 2, 21
 
 	map_attributes Route6, ROUTE_6, $f, NORTH | SOUTH
-	connection north, SaffronCity, SAFFRON_CITY, -3, 2, 17
-	connection south, VermilionCity, VERMILION_CITY, -2, 2, 18
+	connection north, SaffronCity, SAFFRON_CITY, 0, 3, 17
+	connection south, VermilionCity, VERMILION_CITY, -1, 2, 18
 
 	map_attributes Route7, ROUTE_7, $1f, WEST | EAST
 	connection west, CeladonCity, CELADON_CITY, 0, 0, 24
@@ -243,24 +243,24 @@ ENDM
 	map_attributes Route16West, ROUTE_16_WEST, $1f, EAST
 	connection east, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 12
 
-	map_attributes Route17, ROUTE_17, $49, NORTH
+	map_attributes Route17, ROUTE_17, $49, NORTH | SOUTH
 	connection north, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 10
-;	connection south, Route18West, ROUTE_18_WEST, 0, 0, 10
+	connection south, Route18West, ROUTE_18_WEST, 0, 0, 13
 
-	map_attributes Route18East, ROUTE_18_EAST, $43, WEST
+	map_attributes Route18East, ROUTE_18_EAST, $f, WEST | EAST
 	connection west, Route18West, ROUTE_18_WEST, 0, 0, 11
-;	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 4, 14
+	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 2, 14
 
-	map_attributes Route18West, ROUTE_18_WEST, $43, NORTH | WEST | EAST
+	map_attributes Route18West, ROUTE_18_WEST, $49, NORTH | WEST | EAST
 	connection north, Route17, ROUTE_17, 0, 0, 10
 	connection west, UragaChannelEast, URAGA_CHANNEL_EAST, 0, 0, 9
 	connection east, Route18East, ROUTE_18_EAST, 0, 0, 11
 
-	map_attributes Route19, ROUTE_19, $43, WEST
-;	connection north, FuchsiaCity, FUCHSIA_CITY, 0, 0, 13
-	connection west, Route20, ROUTE_20, 20, 0, 9
+	map_attributes Route19, ROUTE_19, $49, NORTH
+	connection north, FuchsiaCity, FUCHSIA_CITY, -3, 2, 16
+;	connection west, Route20, ROUTE_20, 20, 0, 9
 
-	map_attributes Route20, ROUTE_20, $43, WEST | EAST
+	map_attributes Route20, ROUTE_20, $49, WEST | EAST
 	connection west, CinnabarIsland, CINNABAR_ISLAND, -2, 0, 11
 	connection east, Route19, ROUTE_19, -3, 17, 12
 

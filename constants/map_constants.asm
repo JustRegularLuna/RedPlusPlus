@@ -104,8 +104,8 @@ MAP_NONE   EQU 0
 
 	newgroup ; 10
 
-	mapconst VERMILION_CITY,                             18, 21 ;  1
-	mapconst ROUTE_6,                                    16, 12 ;  2
+	mapconst VERMILION_CITY,                             18, 22 ;  1
+	mapconst ROUTE_6,                                    16, 14 ;  2
 	mapconst ROUTE_11,                                   13, 27 ;  3
 	mapconst VERMILION_PORT,                             13, 10 ;  4
 	mapconst VERMILION_POKECENTER_1F,                     4,  6 ;  5
@@ -194,15 +194,15 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_16_NORTH_SOUTH,          12, 10 ;  1
 	mapconst ROUTE_16_WEST,                 12, 23 ;  2
 	mapconst ROUTE_17,                      68, 10 ;  3
-	mapconst ROUTE_18_WEST,                  9, 10 ;  4
+	mapconst ROUTE_18_WEST,                 11, 16 ;  4
 	mapconst PSYCHIC_INVERS_HOUSE,           4,  4 ;  5
 	mapconst ROUTE_16_FUCHSIA_SPEECH_HOUSE,  4,  4 ;  6
 
 	newgroup ; 15
 
 	mapconst FUCHSIA_CITY,                  18, 25 ;  1
-	mapconst ROUTE_18_EAST,                 11, 14 ;  2
-	mapconst ROUTE_19,                      29, 10 ;  3
+	mapconst ROUTE_18_EAST,                 11, 10 ;  2
+	mapconst ROUTE_19,                      30, 10 ;  3
 	mapconst FUCHSIA_POKECENTER_1F,          4,  6 ;  4
 	mapconst FUCHSIA_MART,                   4,  6 ;  5
 	mapconst FUCHSIA_GYM,                    9,  5 ;  6

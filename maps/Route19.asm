@@ -4,8 +4,8 @@ Route19_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  7,  1, ROUTE_19_FUCHSIA_GATE, 3
-	warp_event  5, 13, ROUTE_19_BEACH_HOUSE, 1
+	warp_event  8,  3, ROUTE_19_FUCHSIA_GATE, 3
+	warp_event  5, 15, ROUTE_19_BEACH_HOUSE, 1
 
 	db 0 ; coord events
 
