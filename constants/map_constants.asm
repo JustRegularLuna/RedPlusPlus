@@ -75,31 +75,34 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_4,                          11, 34 ;  2
 	mapconst ROUTE_9,                          11, 28 ;  3
 	mapconst ROUTE_24,                         20, 15 ;  4
-	mapconst ROUTE_25,                         20, 16 ;  5
-	mapconst CERULEAN_CAPE,                    19, 27 ;  6
-	mapconst CERULEAN_POKECENTER_1F,            4,  6 ;  7
-	mapconst CERULEAN_MART,                     4,  6 ;  8
-	mapconst CERULEAN_GYM,                      8,  5 ;  9
-	mapconst CERULEAN_BIKE_SHOP,                4,  4 ; 10
-	mapconst CERULEAN_POLICE_STATION,           4,  4 ; 11
-	mapconst CERULEAN_BERRY_POWDER_HOUSE,       4,  4 ; 12
-	mapconst CERULEAN_GYM_BADGE_SPEECH_HOUSE,   4,  4 ; 13
-	mapconst CERULEAN_TRADE_SPEECH_HOUSE,       4,  4 ; 14
-	mapconst CERULEAN_COUPLE_HOUSE,             4,  4 ; 15
-	mapconst CERULEAN_WATER_SHOW_SPEECH_HOUSE,  4,  4 ; 16
-	mapconst BILLS_HOUSE,                       4,  4 ; 17
+	mapconst CERULEAN_POKECENTER_1F,            4,  6 ;  5
+	mapconst CERULEAN_MART,                     4,  6 ;  6
+	mapconst CERULEAN_GYM,                      8,  5 ;  7
+	mapconst CERULEAN_BIKE_SHOP,                4,  4 ;  8
+	mapconst CERULEAN_POLICE_STATION,           4,  4 ;  9
+	mapconst CERULEAN_BERRY_POWDER_HOUSE,       4,  4 ; 10
+	mapconst CERULEAN_GYM_BADGE_SPEECH_HOUSE,   4,  4 ; 11
+	mapconst CERULEAN_TRADE_SPEECH_HOUSE,       4,  4 ; 12
+	mapconst CERULEAN_COUPLE_HOUSE,             4,  4 ; 13
+	mapconst CERULEAN_WATER_SHOW_SPEECH_HOUSE,  4,  4 ; 14
 
 	newgroup ;  7
+
+	mapconst ROUTE_25,      20, 16 ;  1
+	mapconst CERULEAN_CAPE, 19, 27 ;  2
+	mapconst BILLS_HOUSE,    4,  4 ;  3
+
+	newgroup ;  8
 
 	mapconst ROUTE_10_NORTH,         30, 12 ;  1
 	mapconst ROUTE_10_POKECENTER_1F,  4,  6 ;  2
 
-	newgroup ;  8
+	newgroup ;  9
 
 	mapconst ROUTE_5,                          17, 14 ;  1
 	mapconst ROUTE_5_CLEANSE_TAG_SPEECH_HOUSE,  4,  4 ;  2
 
-	newgroup ;  9
+	newgroup ; 10
 
 	mapconst VERMILION_CITY,                             18, 21 ;  1
 	mapconst ROUTE_6,                                    16, 12 ;  2
@@ -115,11 +118,11 @@ MAP_NONE   EQU 0
 	mapconst VERMILION_POLLUTION_SPEECH_HOUSE,            4,  4 ; 12
 	mapconst VERMILION_S_S_ANNE_SPEECH_HOUSE,             4,  4 ; 13
 
-	newgroup ; 10
+	newgroup ; 11
 
 	mapconst CELADON_CITY,                         24, 25 ;  1
 	mapconst ROUTE_7,                              24,  9 ;  2
-	mapconst ROUTE_16_NORTHEAST,                   11, 11 ;  3
+	mapconst ROUTE_16_EAST,                         7, 10 ;  3
 	mapconst CELADON_POKECENTER_1F,                 4,  6 ;  4
 	mapconst CELADON_GYM,                           9,  5 ;  5
 	mapconst EUSINES_HOUSE,                         4,  4 ;  6
@@ -167,7 +170,7 @@ MAP_NONE   EQU 0
 	mapconst CELADON_HOME_DECOR_STORE_3F,           4,  5 ; 48
 	mapconst CELADON_HOME_DECOR_STORE_4F,           4,  5 ; 49
 
-	newgroup ; 11
+	newgroup ; 12
 
 	mapconst LAVENDER_TOWN,              11, 11 ;  1
 	mapconst ROUTE_8,                    11, 26 ;  2
@@ -178,7 +181,7 @@ MAP_NONE   EQU 0
 	mapconst LAVENDER_NAME_RATER,         4,  4 ;  7
 	mapconst LAVENDER_TOWN_SPEECH_HOUSE,  4,  4 ;  8
 
-	newgroup ; 12
+	newgroup ; 13
 
 	mapconst ROUTE_12,                 53, 13 ;  1
 	mapconst ROUTE_13,                  9, 40 ;  2
@@ -186,18 +189,14 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_15,                  9, 25 ;  4
 	mapconst ROUTE_12_SUPER_ROD_HOUSE,  4,  4 ;  5
 
-	newgroup ; 13
-
-	mapconst ROUTE_16_SOUTH, 11, 11 ;  1
-	mapconst ROUTE_17,       63, 10 ;  2
-	mapconst ROUTE_18_WEST,   9, 10 ;  3
-
 	newgroup ; 14
 
-	mapconst ROUTE_16_NORTHWEST,            11, 11 ;  1
-	mapconst ROUTE_16_WEST,                 11, 34 ;  2
-	mapconst PSYCHIC_INVERS_HOUSE,           4,  4 ;  3
-	mapconst ROUTE_16_FUCHSIA_SPEECH_HOUSE,  4,  4 ;  4
+	mapconst ROUTE_16_NORTH_SOUTH,          12, 10 ;  1
+	mapconst ROUTE_16_WEST,                 12, 23 ;  2
+	mapconst ROUTE_17,                      68, 10 ;  3
+	mapconst ROUTE_18_WEST,                  9, 10 ;  4
+	mapconst PSYCHIC_INVERS_HOUSE,           4,  4 ;  5
+	mapconst ROUTE_16_FUCHSIA_SPEECH_HOUSE,  4,  4 ;  6
 
 	newgroup ; 15
 
@@ -240,7 +239,7 @@ MAP_NONE   EQU 0
 	newgroup ; 18
 
 	mapconst INDIGO_PLATEAU,               13, 10 ;  1
-	mapconst ROUTE_23,                     70, 10 ;  2
+	mapconst ROUTE_23,                     72, 10 ;  2
 	mapconst INDIGO_PLATEAU_POKECENTER_1F,  7,  8 ;  3
 	mapconst WILLS_ROOM,                    9,  5 ;  4
 	mapconst KOGAS_ROOM,                    9,  5 ;  5

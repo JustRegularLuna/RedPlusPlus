@@ -82,8 +82,8 @@ ENDM
 	connection north, Route6, ROUTE_6, 4, 0, 12
 	connection east, Route11, ROUTE_11, 2, 0, 13
 
-	map_attributes CeladonCity, CELADON_CITY, $1f, EAST
-;	connection west, Route16Northeast, ROUTE_16_NORTHEAST, 10, 0, 8
+	map_attributes CeladonCity, CELADON_CITY, $1f, WEST | EAST
+	connection west, Route16East, ROUTE_16_EAST, 6, 0, 7
 	connection east, Route7, ROUTE_7, 0, 0, 24
 
 	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | SOUTH | WEST
@@ -171,7 +171,6 @@ ENDM
 	map_attributes Route2South, ROUTE_2_SOUTH, $f, NORTH | SOUTH
 	connection north, Route2North, ROUTE_2_NORTH, 0, 0, 10
 	connection south, ViridianCity, VIRIDIAN_CITY, -3, 2, 16
-;	connection east, Route16West, ROUTE_16_WEST, 8, 0, 10
 
 	map_attributes Route3South, ROUTE_3_SOUTH, $55, NORTH | WEST
 	connection north, Route3North, ROUTE_3_NORTH, 25, 0, 12
@@ -232,24 +231,21 @@ ENDM
 	connection west, FuchsiaCity, FUCHSIA_CITY, -3, 2, 12
 	connection east, Route14, ROUTE_14, -3, 6, 12
 
-	map_attributes Route16South, ROUTE_16_SOUTH, $f, SOUTH
+	map_attributes Route16East, ROUTE_16_EAST, $1f, WEST | EAST
+	connection west, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 12
+	connection east, CeladonCity, CELADON_CITY, -3, 3, 13
+
+	map_attributes Route16NorthSouth, ROUTE_16_NORTH_SOUTH, $1f, SOUTH | WEST | EAST
 	connection south, Route17, ROUTE_17, 0, 0, 10
+	connection west, Route16West, ROUTE_16_WEST, 0, 0, 12
+	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
 
-	map_attributes Route16Northeast, ROUTE_16_NORTHEAST, $f, WEST | EAST
-	connection west, Route16West, ROUTE_16_WEST, 0, 0, 11
-	connection east, CeladonCity, CELADON_CITY, -3, 7, 10
+	map_attributes Route16West, ROUTE_16_WEST, $1f, EAST
+	connection east, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 12
 
-	map_attributes Route16Northwest, ROUTE_16_NORTHWEST, $f, WEST | EAST
-	connection west, Route16West, ROUTE_16_WEST, 0, 0, 11
-	connection east, CeladonCity, CELADON_CITY, -3, 7, 10
-
-	map_attributes Route16West, ROUTE_16_WEST, $f, WEST | EAST
-	connection west, Route2South, ROUTE_2_SOUTH, -3, 5, 10
-	connection east, Route16Northwest, ROUTE_16_NORTHWEST, 0, 0, 11
-
-	map_attributes Route17, ROUTE_17, $43, NORTH | SOUTH
-	connection north, Route16South, ROUTE_16_SOUTH, 0, 0, 10
-	connection south, Route18West, ROUTE_18_WEST, 0, 0, 10
+	map_attributes Route17, ROUTE_17, $49, NORTH
+	connection north, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 10
+;	connection south, Route18West, ROUTE_18_WEST, 0, 0, 10
 
 	map_attributes Route18East, ROUTE_18_EAST, $43, WEST
 	connection west, Route18West, ROUTE_18_WEST, 0, 0, 11

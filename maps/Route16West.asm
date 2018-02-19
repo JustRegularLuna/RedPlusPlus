@@ -4,7 +4,7 @@ Route16West_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_event 35,  1, PSYCHIC_INVERS_HOUSE, 1
+	warp_event 15,  3, PSYCHIC_INVERS_HOUSE, 1
 
 	db 0 ; coord events
 

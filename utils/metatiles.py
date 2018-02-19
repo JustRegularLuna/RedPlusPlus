@@ -134,6 +134,8 @@ class PaletteMap(object):
 		load_palette('gfx/tilesets/palettes/bg.pal')[32:40])
 
 	map_palettes = {
+		'maps/ViridianForest.blk': lambda: load_palette('gfx/tilesets/palettes/viridian_forest.pal'),
+		########################################################################
 		'maps/BellchimeTrail.blk': lambda: load_palette('gfx/tilesets/palettes/bellchime_trail.pal')[8:16],
 		'maps/BrunosRoom.blk': lambda: load_palette('gfx/tilesets/palettes/brunos_room.pal'),
 		'maps/CeladonHomeDecorStore4F.blk': lambda: load_palette('gfx/tilesets/palettes/celadon_home_decor_store_4f.pal'),
@@ -213,7 +215,7 @@ class PaletteMap(object):
 		'fuchsia': lambda: load_palette('gfx/tilesets/palettes/fuchsia.pal')[8:16],
 		'saffron': lambda: load_palette('gfx/tilesets/palettes/saffron.pal')[8:16],
 		'forest': lambda: PaletteMap.nite_palette(),
-		#######################################
+		########################################################################
 		'johto1': lambda: PaletteMap.day_palette(),
 		'johto2': lambda: PaletteMap.day_palette(),
 		'johto3': lambda: PaletteMap.day_palette(),

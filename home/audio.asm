@@ -484,20 +484,6 @@ SpecialMapMusic:: ; 3d62
 	jr z, .no
 
 .not_lugia_chamber
-	ld a, [MapGroup]
-	cp GROUP_ROUTE_16_SOUTH ; GROUP_ROUTE_18_WEST
-	jr nz, .not_cycling_road_bike
-	ld a, [MapNumber]
-	cp MAP_ROUTE_16_SOUTH
-	jr z, .route_16
-	cp MAP_ROUTE_18_WEST
-	jr nz, .not_cycling_road_bike
-.route_16
-	ld a, [PlayerState]
-	cp PLAYER_BIKE
-	jr z, .cycling_road_bike
-
-.not_cycling_road_bike
 	ld a, [PlayerState]
 	cp PLAYER_SURF
 	jr z, .surf
