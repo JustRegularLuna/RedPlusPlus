@@ -246,3 +246,11 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, WALL, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, WALL
+	tilecoll WALL, WALL, WATER, WALL
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll WALL, WATER, WALL, WATER
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
