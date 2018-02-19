@@ -234,23 +234,23 @@
 	tilecoll WALL, WALL, WATER, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, WALL, WATER, WALL
 	tilecoll WALL, WALL, WALL, WATER
-	tilecoll FLOOR, FLOOR, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WATER, WALL, WATER, WALL
 	tilecoll WALL, WATER, WALL, WATER
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, WALL, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, WALL
-	tilecoll WALL, WALL, WATER, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, WALL
 	tilecoll TV, TV, TV, TV
 	tilecoll TV, TV, TV, TV
 	tilecoll TV, TV, TV, TV
-	tilecoll WALL, WATER, WALL, WATER
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
 	tilecoll TV, TV, TV, TV
 	tilecoll TV, TV, TV, TV
 	tilecoll TV, TV, TV, TV
