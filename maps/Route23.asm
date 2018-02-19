@@ -4,8 +4,8 @@ Route23_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_event  7, 135, POKEMON_LEAGUE_GATE, 5
-	warp_event  8, 135, POKEMON_LEAGUE_GATE, 6
+	warp_event  7, 139, POKEMON_LEAGUE_GATE, 5
+	warp_event  8, 139, POKEMON_LEAGUE_GATE, 6
 	warp_event  4, 31, VICTORY_ROAD_1F, 1
 	warp_event 14, 31, VICTORY_ROAD_2F, 1
 

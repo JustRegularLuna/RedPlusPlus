@@ -236,7 +236,7 @@ MAP_NONE   EQU 0
 	newgroup ; 17
 
 	mapconst INDIGO_PLATEAU,               13, 10 ;  1
-	mapconst ROUTE_23,                     70, 10 ;  2
+	mapconst ROUTE_23,                     72, 10 ;  2
 	mapconst INDIGO_PLATEAU_POKECENTER_1F,  7,  8 ;  3
 	mapconst WILLS_ROOM,                    9,  5 ;  4
 	mapconst KOGAS_ROOM,                    9,  5 ;  5
