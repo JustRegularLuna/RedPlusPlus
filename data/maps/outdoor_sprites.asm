@@ -7,6 +7,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_Pewter
 	dw OutdoorSprites_MountMoonSquare
 	dw OutdoorSprites_Cerulean
+	dw OutdoorSprites_CeruleanCape
 	dw OutdoorSprites_Route10
 	dw OutdoorSprites_Route5
 	dw OutdoorSprites_Vermilion
@@ -60,6 +61,7 @@ OutdoorSprites_Viridian:
 OutdoorSprites_Pewter:
 OutdoorSprites_MountMoonSquare:
 OutdoorSprites_Cerulean:
+OutdoorSprites_CeruleanCape:
 OutdoorSprites_Route10:
 OutdoorSprites_Route5:
 OutdoorSprites_Vermilion:
