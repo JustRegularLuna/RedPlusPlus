@@ -171,7 +171,6 @@ ENDM
 	map_attributes Route2South, ROUTE_2_SOUTH, $f, NORTH | SOUTH
 	connection north, Route2North, ROUTE_2_NORTH, 0, 0, 10
 	connection south, ViridianCity, VIRIDIAN_CITY, -3, 2, 16
-;	connection east, Route16West, ROUTE_16_WEST, 8, 0, 10
 
 	map_attributes Route3South, ROUTE_3_SOUTH, $55, NORTH | WEST
 	connection north, Route3North, ROUTE_3_NORTH, 25, 0, 12
@@ -236,14 +235,13 @@ ENDM
 	connection west, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 12
 	connection east, CeladonCity, CELADON_CITY, -3, 3, 13
 
-	map_attributes Route16NorthSouth, ROUTE_16_NORTH_SOUTH, $1f, SOUTH | EAST
+	map_attributes Route16NorthSouth, ROUTE_16_NORTH_SOUTH, $1f, SOUTH | WEST | EAST
 	connection south, Route17, ROUTE_17, 0, 0, 10
-;	connection west, Route16West, ROUTE_16_WEST, 0, 0, 11
+	connection west, Route16West, ROUTE_16_WEST, 0, 0, 12
 	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
 
-	map_attributes Route16West, ROUTE_16_WEST, $f, 0
-;	connection west, Route2South, ROUTE_2_SOUTH, -3, 5, 10
-;	connection east, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 10
+	map_attributes Route16West, ROUTE_16_WEST, $1f, EAST
+	connection east, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 12
 
 	map_attributes Route17, ROUTE_17, $49, NORTH
 	connection north, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 10

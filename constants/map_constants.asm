@@ -192,7 +192,7 @@ MAP_NONE   EQU 0
 	newgroup ; 14
 
 	mapconst ROUTE_16_NORTH_SOUTH,          12, 10 ;  1
-	mapconst ROUTE_16_WEST,                 11, 34 ;  2
+	mapconst ROUTE_16_WEST,                 12, 23 ;  2
 	mapconst ROUTE_17,                      68, 10 ;  3
 	mapconst ROUTE_18_WEST,                  9, 10 ;  4
 	mapconst PSYCHIC_INVERS_HOUSE,           4,  4 ;  5
