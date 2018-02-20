@@ -104,7 +104,7 @@ ENDM
 
 	map_attributes CinnabarIsland, CINNABAR_ISLAND, $49, NORTH | EAST
 	connection north, Route21, ROUTE_21, 0, 0, 12
-	connection east, Route20, ROUTE_20, 0, 0, 9
+	connection east, Route20, ROUTE_20, 6, 0, 9
 
 	map_attributes IndigoPlateau, INDIGO_PLATEAU, $55, SOUTH
 	connection south, Route23, ROUTE_23, 0, 0, 10
@@ -257,15 +257,15 @@ ENDM
 
 	map_attributes Route19, ROUTE_19, $49, NORTH | WEST
 	connection north, FuchsiaCity, FUCHSIA_CITY, -3, 2, 16
-	connection west, Route20, ROUTE_20, 21, 0, 9
+	connection west, Route20, ROUTE_20, 24, 0, 9
 
 	map_attributes Route20, ROUTE_20, $49, WEST | EAST
-	connection west, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 9
-	connection east, Route19, ROUTE_19, -3, 18, 12
+	connection west, CinnabarIsland, CINNABAR_ISLAND, -3, 3, 12
+	connection east, Route19, ROUTE_19, -3, 21, 12
 
 	map_attributes Route21, ROUTE_21, $49, NORTH | SOUTH
 	connection north, PalletTown, PALLET_TOWN, 2, 0, 10
-	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 14
+	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 15
 
 	map_attributes Route22, ROUTE_22, $55, EAST
 	connection east, ViridianCity, VIRIDIAN_CITY, -2, 1, 15

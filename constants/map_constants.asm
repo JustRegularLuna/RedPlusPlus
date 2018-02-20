@@ -202,7 +202,7 @@ MAP_NONE   EQU 0
 
 	mapconst FUCHSIA_CITY,                  18, 25 ;  1
 	mapconst ROUTE_18_EAST,                 11, 10 ;  2
-	mapconst ROUTE_19,                      30, 10 ;  3
+	mapconst ROUTE_19,                      33, 10 ;  3
 	mapconst FUCHSIA_POKECENTER_1F,          4,  6 ;  4
 	mapconst FUCHSIA_MART,                   4,  6 ;  5
 	mapconst FUCHSIA_GYM,                    9,  5 ;  6
@@ -229,9 +229,9 @@ MAP_NONE   EQU 0
 
 	newgroup ; 17
 
-	mapconst CINNABAR_ISLAND,         9, 14 ;  1
-	mapconst ROUTE_20,                9, 50 ;  2
-	mapconst ROUTE_21,               44, 12 ;  3
+	mapconst CINNABAR_ISLAND,        16, 16 ;  1
+	mapconst ROUTE_20,                9, 48 ;  2
+	mapconst ROUTE_21,               41, 12 ;  3
 	mapconst CINNABAR_POKECENTER_1F,  4,  6 ;  4
 	mapconst SEAFOAM_GYM,            12, 12 ;  5
 	mapconst CINNABAR_LAB,            9, 16 ;  6
