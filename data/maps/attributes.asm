@@ -249,7 +249,7 @@ ENDM
 
 	map_attributes Route18East, ROUTE_18_EAST, $f, WEST | EAST
 	connection west, Route18West, ROUTE_18_WEST, 0, 0, 11
-	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 2, 14
+	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 1, 14
 
 	map_attributes Route18West, ROUTE_18_WEST, $49, NORTH | EAST
 	connection north, Route17, ROUTE_17, 0, 0, 10
