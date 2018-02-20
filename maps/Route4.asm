@@ -5,7 +5,7 @@ Route4_MapScriptHeader:
 
 	db 2 ; warp events
 	warp_event  4,  7, MOUNT_MOON_B1F, 8
-	warp_event 19,  5, MOUNT_MOON_SQUARE, 1
+	warp_event 19,  5, MOUNT_MOON_SQUARE, 1 ; TODO: Cable Car Building
 
 	db 0 ; coord events
 
