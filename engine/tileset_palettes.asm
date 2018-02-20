@@ -197,23 +197,6 @@ LoadSpecialMapPalette: ; 494ac
 
 .radio_towers
 	ld hl, RadioTowerPalette
-	ld a, [MapGroup]
-	cp GROUP_RADIO_TOWER_1F
-	jp z, .load_eight_bg_palettes
-	ld hl, HauntedRadioTowerPalette
-	ld a, [MapNumber]
-	cp MAP_HAUNTED_RADIO_TOWER_2F
-	jp z, .load_eight_bg_palettes
-	cp MAP_HAUNTED_RADIO_TOWER_3F
-	jp z, .load_eight_bg_palettes
-	ld hl, HauntedPokemonTowerPalette
-	cp MAP_HAUNTED_RADIO_TOWER_4F
-	jp z, .load_eight_bg_palettes
-	cp MAP_HAUNTED_RADIO_TOWER_5F
-	jp z, .load_eight_bg_palettes
-	cp MAP_HAUNTED_RADIO_TOWER_6F
-	jp z, .load_eight_bg_palettes
-	ld hl, RadioTowerPalette
 	jp .load_eight_bg_palettes
 
 .maybe_elite_room
@@ -1009,39 +992,6 @@ else
 	RGB_MONOCHROME_BLACK
 rept 4
 	MONOCHROME_RGB_FOUR
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-endc
-
-
-HauntedRadioTowerPalette:
-if !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/haunted_radio_tower.pal"
-else
-	MONOCHROME_RGB_FOUR_NIGHT
-	MONOCHROME_RGB_FOUR_NIGHT
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-rept 4
-	MONOCHROME_RGB_FOUR_NIGHT
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-endc
-
-HauntedPokemonTowerPalette:
-if !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/haunted_pokemon_tower.pal"
-else
-rept 7
-	MONOCHROME_RGB_FOUR_NIGHT
 endr
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE

@@ -3,8 +3,6 @@ CutGrassBlockPointers:
 	dbw TILESET_PC_JOHTO_TRADITIONAL, .johto_traditional
 	dbw TILESET_PC_JOHTO_MODERN, .johto_modern
 	dbw TILESET_PC_JOHTO_OVERCAST, .johto_overcast
-	dbw TILESET_PC_KANTO, .kanto
-	dbw TILESET_PC_INDIGO_PLATEAU, .indigo_plateau
 	dbw TILESET_PC_PARK, .park
 	dbw TILESET_PC_FOREST, .forest
 	dbw TILESET_PC_SAFARI_ZONE, .safari_zone
@@ -22,21 +20,6 @@ CutGrassBlockPointers:
 .johto_overcast
 .valencia_island
 	db $03, $02, $01
-	db -1
-
-.kanto
-	db $94, $0a, $01
-	db $95, $0a, $01
-	db $96, $0a, $01
-	db $97, $0a, $01
-	db $98, $0a, $01
-	db $99, $0a, $01
-	db $9c, $0a, $01
-	db $9d, $0a, $01
-	db $a0, $0a, $01
-	db $a1, $0a, $01
-.indigo_plateau
-	db $0b, $0a, $01
 	db -1
 
 .park

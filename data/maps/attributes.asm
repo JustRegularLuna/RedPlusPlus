@@ -392,11 +392,6 @@ ENDM
 	map_attributes CeruleanCape, CERULEAN_CAPE, $f, WEST
 	connection west, Route25, ROUTE_25, 0, 0, 20
 
-	map_attributes CeladonOutskirts, CELADON_OUTSKIRTS, $f, 0
-	map_attributes UragaChannelEast, URAGA_CHANNEL_EAST, $43, 0
-	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $43, 0
-	map_attributes LuckyIsland, LUCKY_ISLAND, $43, 0
-
 	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $35, SOUTH | WEST | EAST
 	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15
 	connection west, Route32, ROUTE_32, -2, 10, 26
@@ -477,7 +472,6 @@ ENDM
 	map_attributes RuinsofAlphOmanyteWordRoom, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, $0, 0
 	map_attributes RuinsofAlphAerodactylWordRoom, RUINS_OF_ALPH_AERODACTYL_WORD_ROOM, $0, 0
 	map_attributes RuinsofAlphSinjohChamber, RUINS_OF_ALPH_SINJOH_CHAMBER, $0, 0
-	map_attributes Route22Past, ROUTE_22_PAST, $55, 0
 	map_attributes UnionCave1F, UNION_CAVE_1F, $9, 0
 	map_attributes UnionCaveB1FNorth, UNION_CAVE_B1F_NORTH, $9, 0
 	map_attributes UnionCaveB1FSouth, UNION_CAVE_B1F_SOUTH, $9, 0
@@ -683,7 +677,6 @@ ENDM
 	map_attributes FastShipCabins_SE_SSE_CaptainsCabin, FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN, $0, 0
 	map_attributes FastShipB1F, FAST_SHIP_B1F, $0, 0
 	map_attributes OlivinePortPassage, OLIVINE_PORT_PASSAGE, $0, 0
-	map_attributes VermilionPortPassage, VERMILION_PORT_PASSAGE, $0, 0
 	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $2d, 0
 	map_attributes MountMoonGiftShop, MOUNT_MOON_GIFT_SHOP, $0, 0
 	map_attributes TinTowerRoof, TIN_TOWER_ROOF, $1, 0
@@ -709,20 +702,6 @@ ENDM
 	map_attributes LavenderTownSpeechHouse, LAVENDER_TOWN_SPEECH_HOUSE, $0, 0
 	map_attributes LavenderNameRater, LAVENDER_NAME_RATER, $0, 0
 	map_attributes LavenderMart, LAVENDER_MART, $0, 0
-	map_attributes SoulHouse, SOUL_HOUSE, $0, 0
-	map_attributes SoulHouseB1F, SOUL_HOUSE_B1F, $0, 0
-	map_attributes SoulHouseB2F, SOUL_HOUSE_B2F, $0, 0
-	map_attributes SoulHouseB3F, SOUL_HOUSE_B3F, $0, 0
-	map_attributes LavRadioTower1F, LAV_RADIO_TOWER_1F, $0, 0
-	map_attributes LavRadioTower2F, LAV_RADIO_TOWER_2F, $0, 0
-	map_attributes LavRadioTower3F, LAV_RADIO_TOWER_3F, $0, 0
-	map_attributes LavRadioTower4F, LAV_RADIO_TOWER_3F, $0, 0
-	map_attributes LavRadioTower5F, LAV_RADIO_TOWER_5F, $0, 0
-	map_attributes HauntedRadioTower2F, HAUNTED_RADIO_TOWER_2F, $0, 0
-	map_attributes HauntedRadioTower3F, HAUNTED_RADIO_TOWER_3F, $0, 0
-	map_attributes HauntedRadioTower4F, HAUNTED_RADIO_TOWER_4F, $0, 0
-	map_attributes HauntedRadioTower5F, HAUNTED_RADIO_TOWER_5F, $0, 0
-	map_attributes HauntedRadioTower6F, HAUNTED_RADIO_TOWER_6F, $0, 0
 	map_attributes Route8SaffronGate, ROUTE_8_SAFFRON_GATE, $0, 0
 	map_attributes Route12SuperRodHouse, ROUTE_12_SUPER_ROD_HOUSE, $0, 0
 	map_attributes SilverCavePokeCenter1F, SILVER_CAVE_POKECENTER_1F, $0, 0
@@ -805,8 +784,6 @@ ENDM
 	map_attributes ViridianGym, VIRIDIAN_GYM, $0, 0
 	map_attributes ViridianNicknameSpeechHouse, VIRIDIAN_NICKNAME_SPEECH_HOUSE, $0, 0
 	map_attributes ViridianSchoolHouse, VIRIDIAN_SCHOOL_HOUSE, $0, 0
-	map_attributes TrainerHouse1F, TRAINER_HOUSE_1F, $0, 0
-	map_attributes TrainerHouseB1F, TRAINER_HOUSE_B1F, $0, 0
 	map_attributes ViridianMart, VIRIDIAN_MART, $0, 0
 	map_attributes ViridianPokeCenter1F, VIRIDIAN_POKECENTER_1F, $0, 0
 	map_attributes Route2NuggetSpeechHouse, ROUTE_2_NUGGET_SPEECH_HOUSE, $0, 0
@@ -828,7 +805,6 @@ ENDM
 	map_attributes SaffronMart, SAFFRON_MART, $0, 0
 	map_attributes SaffronPokeCenter1F, SAFFRON_POKECENTER_1F, $0, 0
 	map_attributes MrPsychicsHouse, MR_PSYCHICS_HOUSE, $0, 0
-	map_attributes SaffronTrainStation, SAFFRON_TRAIN_STATION, $0, 0
 	map_attributes SilphCo1F, SILPH_CO_1F, $0, 0
 	map_attributes SilphCo2F, SILPH_CO_2F, $0, 0
 	map_attributes SilphCo3F, SILPH_CO_3F, $0, 0
@@ -895,9 +871,6 @@ ENDM
 	map_attributes PokemonMansion1F, POKEMON_MANSION_1F, $0, 0
 	map_attributes PokemonMansionB1F, POKEMON_MANSION_B1F, $45, 0
 	map_attributes CinnabarLab, CINNABAR_LAB, $0, 0
-	map_attributes ScaryCave1F, SCARY_CAVE_1F, $9, 0
-	map_attributes ScaryCaveB1F, SCARY_CAVE_B1F, $9, 0
-	map_attributes ScaryCaveShipwreck, SCARY_CAVE_SHIPWRECK, $9, 0
 	map_attributes Route19BeachHouse, ROUTE_19_BEACH_HOUSE, $0, 0
 	map_attributes ShamoutiTunnel, SHAMOUTI_TUNNEL, $9, 0
 	map_attributes NoisyForest, NOISY_FOREST, $0, 0

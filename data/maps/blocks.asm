@@ -541,8 +541,7 @@ OlivinePort_BlockData:
 	INCBIN "maps/OlivinePort.blk"
 
 OlivinePortPassage_BlockData:
-VermilionPortPassage_BlockData:
-	INCBIN "maps/PortPassage.blk"
+	INCBIN "maps/OlivinePortPassage.blk"
 
 OlivineLighthouse1F_BlockData:
 	INCBIN "maps/OlivineLighthouse1F.blk"
@@ -783,12 +782,6 @@ ViridianCity_BlockData:
 ViridianSchoolHouse_BlockData:
 	INCBIN "maps/ViridianSchoolHouse.blk"
 
-TrainerHouse1F_BlockData:
-	INCBIN "maps/TrainerHouse1F.blk"
-
-TrainerHouseB1F_BlockData:
-	INCBIN "maps/TrainerHouseB1F.blk"
-
 ViridianForest_BlockData:
 	INCBIN "maps/ViridianForest.blk"
 
@@ -894,54 +887,11 @@ LavenderTown_BlockData:
 MrFujisHouse_BlockData:
 	INCBIN "maps/MrFujisHouse.blk"
 
-SoulHouse_BlockData:
-	INCBIN "maps/SoulHouse.blk"
-
-SoulHouseB1F_BlockData:
-	INCBIN "maps/SoulHouseB1F.blk"
-
-SoulHouseB2F_BlockData:
-	INCBIN "maps/SoulHouseB2F.blk"
-
-SoulHouseB3F_BlockData:
-	INCBIN "maps/SoulHouseB3F.blk"
-
-LavRadioTower1F_BlockData:
-	INCBIN "maps/LavRadioTower1F.blk"
-
-LavRadioTower2F_BlockData:
-HauntedRadioTower2F_BlockData:
-	INCBIN "maps/LavRadioTower2F.blk"
-
-LavRadioTower3F_BlockData:
-	INCBIN "maps/LavRadioTower3F.blk"
-
-LavRadioTower4F_BlockData:
-	INCBIN "maps/LavRadioTower4F.blk"
-
-LavRadioTower5F_BlockData:
-	INCBIN "maps/LavRadioTower5F.blk"
-
-HauntedRadioTower3F_BlockData:
-	INCBIN "maps/HauntedRadioTower3F.blk"
-
-HauntedRadioTower4F_BlockData:
-	INCBIN "maps/HauntedRadioTower4F.blk"
-
-HauntedRadioTower5F_BlockData:
-	INCBIN "maps/HauntedRadioTower5F.blk"
-
-HauntedRadioTower6F_BlockData:
-	INCBIN "maps/HauntedRadioTower6F.blk"
-
 CeladonGym_BlockData:
 	INCBIN "maps/CeladonGym.blk"
 
 CeladonCity_BlockData:
 	INCBIN "maps/CeladonCity.blk"
-
-CeladonOutskirts_BlockData:
-	INCBIN "maps/CeladonOutskirts.blk"
 
 CeladonGameCorner_BlockData:
 	INCBIN "maps/CeladonGameCorner.blk"
@@ -1069,9 +1019,6 @@ SaffronCity_BlockData:
 SaffronBookSpeechHouse_BlockData:
 	INCBIN "maps/SaffronBookSpeechHouse.blk"
 
-SaffronTrainStation_BlockData:
-	INCBIN "maps/SaffronTrainStation.blk"
-
 FightingDojo_BlockData:
 	INCBIN "maps/FightingDojo.blk"
 
@@ -1105,12 +1052,6 @@ FuchsiaCity_BlockData:
 
 SECTION "Map Blockdata 7", ROMX
 
-LuckyIsland_BlockData:
-	INCBIN "maps/LuckyIsland.blk"
-
-LuckyIslandHidden_BlockData:
-	INCBIN "maps/LuckyIslandHidden.blk"
-
 SafariZoneHub_BlockData:
 	INCBIN "maps/SafariZoneHub.blk"
 
@@ -1129,21 +1070,6 @@ SafariZoneEastRestHouse_BlockData:
 SafariZoneWestRestHouse1_BlockData:
 SafariZoneWestRestHouse2_BlockData:
 	INCBIN "maps/SafariZoneRestHouse.blk"
-
-UragaChannelEast_BlockData:
-	INCBIN "maps/UragaChannelEast.blk"
-
-UragaChannelWest_BlockData:
-	INCBIN "maps/UragaChannelWest.blk"
-
-ScaryCave1F_BlockData:
-	INCBIN "maps/ScaryCave1F.blk"
-
-ScaryCaveB1F_BlockData:
-	INCBIN "maps/ScaryCaveB1F.blk"
-
-ScaryCaveShipwreck_BlockData:
-	INCBIN "maps/ScaryCaveShipwreck.blk"
 
 CinnabarIsland_BlockData:
 	INCBIN "maps/CinnabarIsland.blk"
@@ -1371,9 +1297,6 @@ Route21_BlockData:
 
 Route22_BlockData:
 	INCBIN "maps/Route22.blk"
-
-Route22Past_BlockData:
-	INCBIN "maps/Route22Past.blk"
 
 Route23_BlockData:
 	INCBIN "maps/Route23.blk"

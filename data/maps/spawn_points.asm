@@ -18,7 +18,7 @@ SpawnPoints: ; 0x152ab
 	spawn SAFFRON_CITY,               13, 34
 	spawn CELADON_CITY,               41, 14
 	spawn FUCHSIA_CITY,               19, 28
-	spawn CINNABAR_ISLAND,            11, 16
+	spawn CINNABAR_ISLAND,            13, 12
 	spawn INDIGO_PLATEAU,              9,  6
 
 	spawn NEW_BARK_TOWN,              15,  6

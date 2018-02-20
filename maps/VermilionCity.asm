@@ -11,9 +11,9 @@ VermilionCity_MapScriptHeader:
 	warp_event 27, 13, VERMILION_MART, 2
 	warp_event 27, 19, VERMILION_HOUSE_DIGLETTS_CAVE_SPEECH_HOUSE, 1
 	warp_event 14, 20, VERMILION_GYM, 1
-	warp_event 16, 31, VERMILION_PORT_PASSAGE, 1
-	warp_event 17, 31, VERMILION_PORT_PASSAGE, 2
-	warp_event  0,  0, DIGLETTS_CAVE, 1 ; TODO: remove
+	warp_event 16, 31, VERMILION_PORT, 1
+	warp_event 17, 31, VERMILION_PORT, 1
+	warp_event  0,  0, N_A, 0 ; TODO: remove
 	warp_event 29, 29, SEAGALLOP_FERRY_VERMILION_GATE, 1
 	warp_event 30, 29, SEAGALLOP_FERRY_VERMILION_GATE, 1
 	warp_event 19,  3, VERMILION_POLLUTION_SPEECH_HOUSE, 1 ; TODO: remove

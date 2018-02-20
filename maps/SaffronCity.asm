@@ -9,7 +9,7 @@ SaffronCity_MapScriptHeader:
 	warp_event 29, 15, SAFFRON_MART, 2
 	warp_event 13, 33, SAFFRON_POKECENTER_1F, 1
 	warp_event 33, 33, MR_PSYCHICS_HOUSE, 1
-	warp_event  0,  0, SAFFRON_TRAIN_STATION, 2 ; TODO: remove
+	warp_event  0,  0, N_A, 0 ; TODO: remove
 	warp_event 22, 24, SILPH_CO_1F, 1
 	warp_event 11,  9, COPYCATS_HOUSE_1F, 1
 	warp_event 22,  1, ROUTE_5_SAFFRON_CITY_GATE, 3

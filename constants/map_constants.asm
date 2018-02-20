@@ -733,33 +733,3 @@ MAP_NONE   EQU 0
 	mapconst NAVEL_ROCK_ROOF,       11,  8 ; 10
 	mapconst FARAWAY_JUNGLE,        12, 14 ; 11
 	mapconst MYSTRI_STAGE,          10,  7 ; 12
-
-	newgroup ; 52
-
-	; TODO: delete these
-	mapconst CELADON_OUTSKIRTS,       6, 10
-	mapconst HAUNTED_RADIO_TOWER_2F,  4,  9
-	mapconst HAUNTED_RADIO_TOWER_3F,  4,  9
-	mapconst HAUNTED_RADIO_TOWER_4F,  4,  9
-	mapconst HAUNTED_RADIO_TOWER_5F,  9,  8
-	mapconst HAUNTED_RADIO_TOWER_6F,  9,  8
-	mapconst LAV_RADIO_TOWER_1F,      4, 10
-	mapconst LAV_RADIO_TOWER_2F,      4,  9
-	mapconst LAV_RADIO_TOWER_3F,      4,  9
-	mapconst LAV_RADIO_TOWER_4F,      4,  9
-	mapconst LAV_RADIO_TOWER_5F,      4,  7
-	mapconst LUCKY_ISLAND,           17, 23
-	mapconst ROUTE_22_PAST,           6,  6
-	mapconst SAFFRON_TRAIN_STATION,   9, 10
-	mapconst SCARY_CAVE_1F,          17, 20
-	mapconst SCARY_CAVE_B1F,         12, 12
-	mapconst SCARY_CAVE_SHIPWRECK,    6,  6
-	mapconst SOUL_HOUSE,              5,  5
-	mapconst SOUL_HOUSE_B1F,          9, 10
-	mapconst SOUL_HOUSE_B2F,          9, 10
-	mapconst SOUL_HOUSE_B3F,          9,  4
-	mapconst TRAINER_HOUSE_1F,        6,  5
-	mapconst TRAINER_HOUSE_B1F,       8,  5
-	mapconst URAGA_CHANNEL_EAST,      9, 23
-	mapconst URAGA_CHANNEL_WEST,     15,  6
-	mapconst VERMILION_PORT_PASSAGE, 15,  4
