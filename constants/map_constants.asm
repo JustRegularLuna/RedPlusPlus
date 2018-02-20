@@ -172,7 +172,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 12
 
-	mapconst LAVENDER_TOWN,              11, 11 ;  1
+	mapconst LAVENDER_TOWN,              13, 13 ;  1
 	mapconst ROUTE_8,                    11, 26 ;  2
 	mapconst ROUTE_10_SOUTH,             11, 11 ;  3
 	mapconst LAVENDER_POKECENTER_1F,      4,  6 ;  4
@@ -183,7 +183,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 13
 
-	mapconst ROUTE_12,                 53, 13 ;  1
+	mapconst ROUTE_12,                 51, 13 ;  1
 	mapconst ROUTE_13,                  9, 40 ;  2
 	mapconst ROUTE_14,                 18, 10 ;  3
 	mapconst ROUTE_15,                  9, 25 ;  4

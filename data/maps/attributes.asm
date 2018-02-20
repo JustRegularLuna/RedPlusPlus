@@ -212,12 +212,12 @@ ENDM
 
 	map_attributes Route11, ROUTE_11, $f, WEST | EAST
 	connection west, VermilionCity, VERMILION_CITY, -1, 1, 15
-	connection east, Route12, ROUTE_12, -3, 21, 19
+	connection east, Route12, ROUTE_12, -3, 19, 19
 
 	map_attributes Route12, ROUTE_12, $49, NORTH | SOUTH | WEST
-	connection north, LavenderTown, LAVENDER_TOWN, 2, 0, 11
+	connection north, LavenderTown, LAVENDER_TOWN, 2, 0, 13
 	connection south, Route13, ROUTE_13, 0, 27, 13
-	connection west, Route11, ROUTE_11, 24, 0, 13
+	connection west, Route11, ROUTE_11, 22, 0, 13
 
 	map_attributes Route13, ROUTE_13, $49, NORTH | SOUTH
 	connection north, Route12, ROUTE_12, 27, 0, 13
