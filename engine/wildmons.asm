@@ -475,10 +475,10 @@ _ChooseWildEncounter:
 	ld [TempWildMonSpecies], a
 
 	ld a, [MapGroup]
-	cp GROUP_SOUL_HOUSE_B1F ; Soul House or Lavender Radio Tower
+	cp GROUP_LAVENDER_TOWN ; TODO: Pokémon Tower
 	jr nz, .not_ghost
 	ld a, [MapNumber]
-	cp MAP_SOUL_HOUSE_B1F ; first Ghost map in its group
+	cp MAP_LAVENDER_TOWN ; first Ghost map in its group
 	jr c, .not_ghost
 	ld a, SILPHSCOPE2
 	ld [CurItem], a

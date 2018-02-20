@@ -104,8 +104,8 @@ MAP_NONE   EQU 0
 
 	newgroup ; 10
 
-	mapconst VERMILION_CITY,                             18, 21 ;  1
-	mapconst ROUTE_6,                                    16, 12 ;  2
+	mapconst VERMILION_CITY,                             18, 22 ;  1
+	mapconst ROUTE_6,                                    16, 14 ;  2
 	mapconst ROUTE_11,                                   13, 27 ;  3
 	mapconst VERMILION_PORT,                             13, 10 ;  4
 	mapconst VERMILION_POKECENTER_1F,                     4,  6 ;  5
@@ -172,7 +172,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 12
 
-	mapconst LAVENDER_TOWN,              11, 11 ;  1
+	mapconst LAVENDER_TOWN,              13, 13 ;  1
 	mapconst ROUTE_8,                    11, 26 ;  2
 	mapconst ROUTE_10_SOUTH,             11, 11 ;  3
 	mapconst LAVENDER_POKECENTER_1F,      4,  6 ;  4
@@ -183,7 +183,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 13
 
-	mapconst ROUTE_12,                 53, 13 ;  1
+	mapconst ROUTE_12,                 51, 13 ;  1
 	mapconst ROUTE_13,                  9, 40 ;  2
 	mapconst ROUTE_14,                 18, 10 ;  3
 	mapconst ROUTE_15,                  9, 25 ;  4
@@ -194,15 +194,15 @@ MAP_NONE   EQU 0
 	mapconst ROUTE_16_NORTH_SOUTH,          12, 10 ;  1
 	mapconst ROUTE_16_WEST,                 12, 23 ;  2
 	mapconst ROUTE_17,                      68, 10 ;  3
-	mapconst ROUTE_18_WEST,                  9, 10 ;  4
+	mapconst ROUTE_18_WEST,                 11, 16 ;  4
 	mapconst PSYCHIC_INVERS_HOUSE,           4,  4 ;  5
 	mapconst ROUTE_16_FUCHSIA_SPEECH_HOUSE,  4,  4 ;  6
 
 	newgroup ; 15
 
 	mapconst FUCHSIA_CITY,                  18, 25 ;  1
-	mapconst ROUTE_18_EAST,                 11, 14 ;  2
-	mapconst ROUTE_19,                      29, 10 ;  3
+	mapconst ROUTE_18_EAST,                 11, 10 ;  2
+	mapconst ROUTE_19,                      34, 10 ;  3
 	mapconst FUCHSIA_POKECENTER_1F,          4,  6 ;  4
 	mapconst FUCHSIA_MART,                   4,  6 ;  5
 	mapconst FUCHSIA_GYM,                    9,  5 ;  6
@@ -229,9 +229,9 @@ MAP_NONE   EQU 0
 
 	newgroup ; 17
 
-	mapconst CINNABAR_ISLAND,        11, 12 ;  1
-	mapconst ROUTE_20,                9, 51 ;  2
-	mapconst ROUTE_21,               44, 12 ;  3
+	mapconst CINNABAR_ISLAND,        16, 16 ;  1
+	mapconst ROUTE_20,               10, 48 ;  2
+	mapconst ROUTE_21,               41, 12 ;  3
 	mapconst CINNABAR_POKECENTER_1F,  4,  6 ;  4
 	mapconst SEAFOAM_GYM,            12, 12 ;  5
 	mapconst CINNABAR_LAB,            9, 16 ;  6
@@ -733,33 +733,3 @@ MAP_NONE   EQU 0
 	mapconst NAVEL_ROCK_ROOF,       11,  8 ; 10
 	mapconst FARAWAY_JUNGLE,        12, 14 ; 11
 	mapconst MYSTRI_STAGE,          10,  7 ; 12
-
-	newgroup ; 52
-
-	; TODO: delete these
-	mapconst CELADON_OUTSKIRTS,       6, 10
-	mapconst HAUNTED_RADIO_TOWER_2F,  4,  9
-	mapconst HAUNTED_RADIO_TOWER_3F,  4,  9
-	mapconst HAUNTED_RADIO_TOWER_4F,  4,  9
-	mapconst HAUNTED_RADIO_TOWER_5F,  9,  8
-	mapconst HAUNTED_RADIO_TOWER_6F,  9,  8
-	mapconst LAV_RADIO_TOWER_1F,      4, 10
-	mapconst LAV_RADIO_TOWER_2F,      4,  9
-	mapconst LAV_RADIO_TOWER_3F,      4,  9
-	mapconst LAV_RADIO_TOWER_4F,      4,  9
-	mapconst LAV_RADIO_TOWER_5F,      4,  7
-	mapconst LUCKY_ISLAND,           17, 23
-	mapconst ROUTE_22_PAST,           6,  6
-	mapconst SAFFRON_TRAIN_STATION,   9, 10
-	mapconst SCARY_CAVE_1F,          17, 20
-	mapconst SCARY_CAVE_B1F,         12, 12
-	mapconst SCARY_CAVE_SHIPWRECK,    6,  6
-	mapconst SOUL_HOUSE,              5,  5
-	mapconst SOUL_HOUSE_B1F,          9, 10
-	mapconst SOUL_HOUSE_B2F,          9, 10
-	mapconst SOUL_HOUSE_B3F,          9,  4
-	mapconst TRAINER_HOUSE_1F,        6,  5
-	mapconst TRAINER_HOUSE_B1F,       8,  5
-	mapconst URAGA_CHANNEL_EAST,      9, 23
-	mapconst URAGA_CHANNEL_WEST,     15,  6
-	mapconst VERMILION_PORT_PASSAGE, 15,  4

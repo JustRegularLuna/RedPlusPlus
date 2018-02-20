@@ -25,8 +25,6 @@ Tileset00End::
 	tileset TilesetJohto2
 	tileset TilesetJohto3
 	tileset TilesetJohto4
-	tileset TilesetKanto1
-	tileset TilesetKanto2
 	tileset TilesetShamouti
 	tileset TilesetValencia
 	tileset TilesetFaraway

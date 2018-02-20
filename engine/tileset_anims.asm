@@ -100,24 +100,6 @@ TilesetJohto4Anim:
 	dw VTiles2 tile $40, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 
-TilesetKanto1Anim:
-	dw VTiles2 tile $14, AnimateKantoWaterTile
-	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $40, WriteTileToBuffer
-	dw NULL,  WaitTileAnimation
-	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  WaitTileAnimation
-	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  WaitTileAnimation
-	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $40, WriteTileFromBuffer
-	dw NULL,  AnimateKantoFlowerTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  StandingTileFrame8
-	dw NULL,  DoneTileAnimation
-
 TilesetPortAnim:
 	dw VTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
@@ -138,25 +120,6 @@ TilesetGym1Anim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  SafariFountainAnim1
-	dw NULL,  WaitTileAnimation
-	dw NULL,  StandingTileFrame8
-	dw NULL,  DoneTileAnimation
-
-TilesetKanto2Anim:
-	dw VTiles2 tile $14, AnimateKantoWaterTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $20, ScrollTileUp
-	dw VTiles2 tile $21, ScrollTileDown
-	dw VTiles2 tile $22, ScrollTileLeft
-	dw VTiles2 tile $23, ScrollTileRight
-	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateKantoFlowerTile
-	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $20, ScrollTileUp
-	dw VTiles2 tile $21, ScrollTileDown
-	dw VTiles2 tile $22, ScrollTileLeft
-	dw VTiles2 tile $23, ScrollTileRight
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation

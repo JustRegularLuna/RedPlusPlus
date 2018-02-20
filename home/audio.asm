@@ -469,14 +469,6 @@ SpecialMapMusic:: ; 3d62
 
 .not_quiet_cave
 	ld a, [MapGroup]
-	cp GROUP_SCARY_CAVE_SHIPWRECK
-	jr nz, .not_shipwreck
-	ld a, [MapNumber]
-	cp MAP_SCARY_CAVE_SHIPWRECK
-	jr z, .no
-
-.not_shipwreck
-	ld a, [MapGroup]
 	cp GROUP_WHIRL_ISLAND_LUGIA_CHAMBER
 	jr nz, .not_lugia_chamber
 	ld a, [MapNumber]

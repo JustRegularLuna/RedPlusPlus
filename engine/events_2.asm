@@ -33,13 +33,6 @@ ReturnFromMapSetupScript:: ; b8000
 	call .CheckSpecialMap
 	jr z, .dont_do_map_sign
 
-	ld a, [wCurrentLandmark]
-	cp LUCKY_ISLAND
-	jr nz, .not_lucky_island
-	eventflagcheck EVENT_LUCKY_ISLAND_CIVILIANS
-	jr nz, .dont_do_map_sign
-.not_lucky_island
-
 ; Display for 60 frames
 	ld a, 60
 	ld [wLandmarkSignTimer], a

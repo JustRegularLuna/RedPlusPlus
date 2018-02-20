@@ -79,7 +79,7 @@ ENDM
 	connection east, Route9, ROUTE_9, 2, 0, 11
 
 	map_attributes VermilionCity, VERMILION_CITY, $1f, NORTH | EAST
-	connection north, Route6, ROUTE_6, 4, 0, 12
+	connection north, Route6, ROUTE_6, 3, 0, 14
 	connection east, Route11, ROUTE_11, 2, 0, 13
 
 	map_attributes CeladonCity, CELADON_CITY, $1f, WEST | EAST
@@ -91,20 +91,20 @@ ENDM
 	connection south, Route12, ROUTE_12, -1, 1, 13
 	connection west, Route8, ROUTE_8, 0, 0, 11
 
-	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, EAST
-;	connection south, Route19, ROUTE_19, 0, 0, 10
-;	connection west, Route18East, ROUTE_18_EAST, 7, 0, 11
+	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, SOUTH | WEST | EAST
+	connection south, Route19, ROUTE_19, 5, 0, 10
+	connection west, Route18East, ROUTE_18_EAST, 4, 0, 11
 	connection east, Route15, ROUTE_15, 5, 0, 9
 
 	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH | WEST | EAST
 	connection north, Route5, ROUTE_5, 5, 0, 14
-	connection south, Route6, ROUTE_6, 5, 0, 12
+	connection south, Route6, ROUTE_6, 3, 0, 14
 	connection west, Route7, ROUTE_7, 0, 0, 22
 	connection east, Route8, ROUTE_8, 5, 0, 11
 
-	map_attributes CinnabarIsland, CINNABAR_ISLAND, $43, NORTH | EAST
-	connection north, Route21, ROUTE_21, 0, 0, 10
-	connection east, Route20, ROUTE_20, 2, 0, 9
+	map_attributes CinnabarIsland, CINNABAR_ISLAND, $49, NORTH | EAST
+	connection north, Route21, ROUTE_21, 0, 0, 12
+	connection east, Route20, ROUTE_20, 6, 0, 10
 
 	map_attributes IndigoPlateau, INDIGO_PLATEAU, $55, SOUTH
 	connection south, Route23, ROUTE_23, 0, 0, 10
@@ -187,8 +187,8 @@ ENDM
 	connection south, SaffronCity, SAFFRON_CITY, -3, 2, 21
 
 	map_attributes Route6, ROUTE_6, $f, NORTH | SOUTH
-	connection north, SaffronCity, SAFFRON_CITY, -3, 2, 17
-	connection south, VermilionCity, VERMILION_CITY, -2, 2, 18
+	connection north, SaffronCity, SAFFRON_CITY, 0, 3, 17
+	connection south, VermilionCity, VERMILION_CITY, -1, 2, 18
 
 	map_attributes Route7, ROUTE_7, $1f, WEST | EAST
 	connection west, CeladonCity, CELADON_CITY, 0, 0, 24
@@ -212,12 +212,12 @@ ENDM
 
 	map_attributes Route11, ROUTE_11, $f, WEST | EAST
 	connection west, VermilionCity, VERMILION_CITY, -1, 1, 15
-	connection east, Route12, ROUTE_12, -3, 21, 19
+	connection east, Route12, ROUTE_12, -3, 19, 19
 
 	map_attributes Route12, ROUTE_12, $49, NORTH | SOUTH | WEST
-	connection north, LavenderTown, LAVENDER_TOWN, 2, 0, 11
+	connection north, LavenderTown, LAVENDER_TOWN, 2, 0, 13
 	connection south, Route13, ROUTE_13, 0, 27, 13
-	connection west, Route11, ROUTE_11, 24, 0, 13
+	connection west, Route11, ROUTE_11, 22, 0, 13
 
 	map_attributes Route13, ROUTE_13, $49, NORTH | SOUTH
 	connection north, Route12, ROUTE_12, 27, 0, 13
@@ -243,31 +243,29 @@ ENDM
 	map_attributes Route16West, ROUTE_16_WEST, $1f, EAST
 	connection east, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 12
 
-	map_attributes Route17, ROUTE_17, $49, NORTH
+	map_attributes Route17, ROUTE_17, $49, NORTH | SOUTH
 	connection north, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 10
-;	connection south, Route18West, ROUTE_18_WEST, 0, 0, 10
+	connection south, Route18West, ROUTE_18_WEST, 0, 0, 13
 
-	map_attributes Route18East, ROUTE_18_EAST, $43, WEST
+	map_attributes Route18East, ROUTE_18_EAST, $f, WEST | EAST
 	connection west, Route18West, ROUTE_18_WEST, 0, 0, 11
-;	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 4, 14
+	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 2, 14
 
-	map_attributes Route18West, ROUTE_18_WEST, $43, NORTH | WEST | EAST
+	map_attributes Route18West, ROUTE_18_WEST, $49, NORTH | EAST
 	connection north, Route17, ROUTE_17, 0, 0, 10
-	connection west, UragaChannelEast, URAGA_CHANNEL_EAST, 0, 0, 9
 	connection east, Route18East, ROUTE_18_EAST, 0, 0, 11
 
-	map_attributes Route19, ROUTE_19, $43, WEST
-;	connection north, FuchsiaCity, FUCHSIA_CITY, 0, 0, 13
-	connection west, Route20, ROUTE_20, 20, 0, 9
+	map_attributes Route19, ROUTE_19, $49, NORTH | WEST
+	connection north, FuchsiaCity, FUCHSIA_CITY, -3, 2, 16
+	connection west, Route20, ROUTE_20, 24, 0, 10
 
-	map_attributes Route20, ROUTE_20, $43, WEST | EAST
-	connection west, CinnabarIsland, CINNABAR_ISLAND, -2, 0, 11
-	connection east, Route19, ROUTE_19, -3, 17, 12
+	map_attributes Route20, ROUTE_20, $49, WEST | EAST
+	connection west, CinnabarIsland, CINNABAR_ISLAND, -3, 3, 13
+	connection east, Route19, ROUTE_19, -3, 21, 13
 
-	map_attributes Route21, ROUTE_21, $49, NORTH
+	map_attributes Route21, ROUTE_21, $49, NORTH | SOUTH
 	connection north, PalletTown, PALLET_TOWN, 2, 0, 10
-;	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 10
-;	connection east, UragaChannelWest, URAGA_CHANNEL_WEST, 19, 0, 15
+	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 15
 
 	map_attributes Route22, ROUTE_22, $55, EAST
 	connection east, ViridianCity, VIRIDIAN_CITY, -2, 1, 15
@@ -394,19 +392,6 @@ ENDM
 	map_attributes CeruleanCape, CERULEAN_CAPE, $f, WEST
 	connection west, Route25, ROUTE_25, 0, 0, 20
 
-	map_attributes CeladonOutskirts, CELADON_OUTSKIRTS, $f, SOUTH
-	connection south, Route7, ROUTE_7, 0, 0, 10
-
-	map_attributes UragaChannelEast, URAGA_CHANNEL_EAST, $43, WEST | EAST
-	connection west, UragaChannelWest, URAGA_CHANNEL_WEST, 0, 0, 9
-	connection east, Route18West, ROUTE_18_WEST, 0, 0, 9
-
-	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $43, WEST | EAST
-	connection west, Route21, ROUTE_21, -3, 16, 15
-	connection east, UragaChannelEast, URAGA_CHANNEL_EAST, 0, 0, 9
-
-	map_attributes LuckyIsland, LUCKY_ISLAND, $43, 0
-
 	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $35, SOUTH | WEST | EAST
 	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15
 	connection west, Route32, ROUTE_32, -2, 10, 26
@@ -487,7 +472,6 @@ ENDM
 	map_attributes RuinsofAlphOmanyteWordRoom, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, $0, 0
 	map_attributes RuinsofAlphAerodactylWordRoom, RUINS_OF_ALPH_AERODACTYL_WORD_ROOM, $0, 0
 	map_attributes RuinsofAlphSinjohChamber, RUINS_OF_ALPH_SINJOH_CHAMBER, $0, 0
-	map_attributes Route22Past, ROUTE_22_PAST, $55, 0
 	map_attributes UnionCave1F, UNION_CAVE_1F, $9, 0
 	map_attributes UnionCaveB1FNorth, UNION_CAVE_B1F_NORTH, $9, 0
 	map_attributes UnionCaveB1FSouth, UNION_CAVE_B1F_SOUTH, $9, 0
@@ -693,7 +677,6 @@ ENDM
 	map_attributes FastShipCabins_SE_SSE_CaptainsCabin, FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN, $0, 0
 	map_attributes FastShipB1F, FAST_SHIP_B1F, $0, 0
 	map_attributes OlivinePortPassage, OLIVINE_PORT_PASSAGE, $0, 0
-	map_attributes VermilionPortPassage, VERMILION_PORT_PASSAGE, $0, 0
 	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $2d, 0
 	map_attributes MountMoonGiftShop, MOUNT_MOON_GIFT_SHOP, $0, 0
 	map_attributes TinTowerRoof, TIN_TOWER_ROOF, $1, 0
@@ -719,20 +702,6 @@ ENDM
 	map_attributes LavenderTownSpeechHouse, LAVENDER_TOWN_SPEECH_HOUSE, $0, 0
 	map_attributes LavenderNameRater, LAVENDER_NAME_RATER, $0, 0
 	map_attributes LavenderMart, LAVENDER_MART, $0, 0
-	map_attributes SoulHouse, SOUL_HOUSE, $0, 0
-	map_attributes SoulHouseB1F, SOUL_HOUSE_B1F, $0, 0
-	map_attributes SoulHouseB2F, SOUL_HOUSE_B2F, $0, 0
-	map_attributes SoulHouseB3F, SOUL_HOUSE_B3F, $0, 0
-	map_attributes LavRadioTower1F, LAV_RADIO_TOWER_1F, $0, 0
-	map_attributes LavRadioTower2F, LAV_RADIO_TOWER_2F, $0, 0
-	map_attributes LavRadioTower3F, LAV_RADIO_TOWER_3F, $0, 0
-	map_attributes LavRadioTower4F, LAV_RADIO_TOWER_3F, $0, 0
-	map_attributes LavRadioTower5F, LAV_RADIO_TOWER_5F, $0, 0
-	map_attributes HauntedRadioTower2F, HAUNTED_RADIO_TOWER_2F, $0, 0
-	map_attributes HauntedRadioTower3F, HAUNTED_RADIO_TOWER_3F, $0, 0
-	map_attributes HauntedRadioTower4F, HAUNTED_RADIO_TOWER_4F, $0, 0
-	map_attributes HauntedRadioTower5F, HAUNTED_RADIO_TOWER_5F, $0, 0
-	map_attributes HauntedRadioTower6F, HAUNTED_RADIO_TOWER_6F, $0, 0
 	map_attributes Route8SaffronGate, ROUTE_8_SAFFRON_GATE, $0, 0
 	map_attributes Route12SuperRodHouse, ROUTE_12_SUPER_ROD_HOUSE, $0, 0
 	map_attributes SilverCavePokeCenter1F, SILVER_CAVE_POKECENTER_1F, $0, 0
@@ -815,8 +784,6 @@ ENDM
 	map_attributes ViridianGym, VIRIDIAN_GYM, $0, 0
 	map_attributes ViridianNicknameSpeechHouse, VIRIDIAN_NICKNAME_SPEECH_HOUSE, $0, 0
 	map_attributes ViridianSchoolHouse, VIRIDIAN_SCHOOL_HOUSE, $0, 0
-	map_attributes TrainerHouse1F, TRAINER_HOUSE_1F, $0, 0
-	map_attributes TrainerHouseB1F, TRAINER_HOUSE_B1F, $0, 0
 	map_attributes ViridianMart, VIRIDIAN_MART, $0, 0
 	map_attributes ViridianPokeCenter1F, VIRIDIAN_POKECENTER_1F, $0, 0
 	map_attributes Route2NuggetSpeechHouse, ROUTE_2_NUGGET_SPEECH_HOUSE, $0, 0
@@ -838,7 +805,6 @@ ENDM
 	map_attributes SaffronMart, SAFFRON_MART, $0, 0
 	map_attributes SaffronPokeCenter1F, SAFFRON_POKECENTER_1F, $0, 0
 	map_attributes MrPsychicsHouse, MR_PSYCHICS_HOUSE, $0, 0
-	map_attributes SaffronTrainStation, SAFFRON_TRAIN_STATION, $0, 0
 	map_attributes SilphCo1F, SILPH_CO_1F, $0, 0
 	map_attributes SilphCo2F, SILPH_CO_2F, $0, 0
 	map_attributes SilphCo3F, SILPH_CO_3F, $0, 0
@@ -905,9 +871,6 @@ ENDM
 	map_attributes PokemonMansion1F, POKEMON_MANSION_1F, $0, 0
 	map_attributes PokemonMansionB1F, POKEMON_MANSION_B1F, $45, 0
 	map_attributes CinnabarLab, CINNABAR_LAB, $0, 0
-	map_attributes ScaryCave1F, SCARY_CAVE_1F, $9, 0
-	map_attributes ScaryCaveB1F, SCARY_CAVE_B1F, $9, 0
-	map_attributes ScaryCaveShipwreck, SCARY_CAVE_SHIPWRECK, $9, 0
 	map_attributes Route19BeachHouse, ROUTE_19_BEACH_HOUSE, $0, 0
 	map_attributes ShamoutiTunnel, SHAMOUTI_TUNNEL, $9, 0
 	map_attributes NoisyForest, NOISY_FOREST, $0, 0

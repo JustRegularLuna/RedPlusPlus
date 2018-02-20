@@ -136,11 +136,6 @@ Tileset00Coll::
 TilesetJohto1Coll::
 INCLUDE "data/tilesets/johto1_collision.asm"
 
-TilesetKanto1GFX::
-INCBIN "gfx/tilesets/kanto1.2bpp.lz"
-TilesetKanto1Meta::
-INCBIN "data/tilesets/kanto1_metatiles.bin"
-
 
 SECTION "PC Tileset Data 2", ROMX
 
@@ -381,9 +376,6 @@ INCBIN "data/tilesets/pokemon_mansion_metatiles.bin"
 TilesetPokemonMansionColl::
 INCLUDE "data/tilesets/pokemon_mansion_collision.asm"
 
-TilesetKanto1Coll::
-INCLUDE "data/tilesets/kanto1_collision.asm"
-
 
 SECTION "PC Tileset Data 12", ROMX
 
@@ -461,13 +453,3 @@ TilesetJohto4Meta::
 INCBIN "data/tilesets/johto4_metatiles.bin"
 TilesetJohto4Coll::
 INCLUDE "data/tilesets/johto4_collision.asm"
-
-
-SECTION "PC Tileset Data 16", ROMX
-
-TilesetKanto2GFX::
-INCBIN "gfx/tilesets/kanto2.2bpp.lz"
-TilesetKanto2Meta::
-INCBIN "data/tilesets/kanto2_metatiles.bin"
-TilesetKanto2Coll::
-INCLUDE "data/tilesets/kanto2_collision.asm"

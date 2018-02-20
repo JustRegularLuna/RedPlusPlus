@@ -4,7 +4,7 @@ VermilionPort_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  9,  5, VERMILION_PORT_PASSAGE, 5
+	warp_event  9,  5, VERMILION_CITY, 8
 	warp_event  7, 17, FAST_SHIP_1F, 1
 
 	db 0 ; coord events

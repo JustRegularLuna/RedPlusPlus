@@ -52,9 +52,6 @@ INCLUDE "gfx/tilesets/johto1_palette_map.asm"
 TilesetJohto2PalMap:
 INCLUDE "gfx/tilesets/johto2_palette_map.asm"
 
-TilesetKanto1PalMap:
-INCLUDE "gfx/tilesets/kanto1_palette_map.asm"
-
 TilesetJohto3PalMap:
 INCLUDE "gfx/tilesets/johto3_palette_map.asm"
 
@@ -102,9 +99,6 @@ INCLUDE "gfx/tilesets/gym3_palette_map.asm"
 
 TilesetLighthousePalMap:
 INCLUDE "gfx/tilesets/lighthouse_palette_map.asm"
-
-TilesetKanto2PalMap:
-INCLUDE "gfx/tilesets/kanto2_palette_map.asm"
 
 TilesetPokeComPalMap:
 INCLUDE "gfx/tilesets/pokecom_palette_map.asm"

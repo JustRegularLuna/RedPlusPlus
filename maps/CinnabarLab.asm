@@ -3,7 +3,11 @@ CinnabarLab_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 0 ; warp events
+	db 4 ; warp events
+	warp_event 25, 14, CINNABAR_ISLAND, 4
+	warp_event  2,  6, CINNABAR_LAB, 3
+	warp_event 14,  9, CINNABAR_LAB, 2
+	warp_event 15,  9, CINNABAR_LAB, 2
 
 	db 0 ; coord events
 

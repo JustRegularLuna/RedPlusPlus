@@ -475,8 +475,6 @@ INCLUDE "maps/ViridianMart.asm"
 INCLUDE "maps/ViridianGym.asm"
 INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/ViridianSchoolHouse.asm"
-INCLUDE "maps/TrainerHouse1F.asm"
-INCLUDE "maps/TrainerHouseB1F.asm"
 
 
 SECTION "Viridian Forest Scripts", ROMX
@@ -551,7 +549,6 @@ INCLUDE "maps/VermilionHouseFishingSpeechHouse.asm"
 INCLUDE "maps/VermilionMagnetTrainSpeechHouse.asm"
 INCLUDE "maps/VermilionPollutionSpeechHouse.asm"
 INCLUDE "maps/VermilionPort.asm"
-INCLUDE "maps/VermilionPortPassage.asm"
 INCLUDE "maps/VermilionSSAnneSpeechHouse.asm"
 INCLUDE "maps/PokemonFanClub.asm"
 
@@ -585,32 +582,6 @@ INCLUDE "maps/LavenderMart.asm"
 INCLUDE "maps/LavenderNameRater.asm"
 INCLUDE "maps/LavenderTownSpeechHouse.asm"
 INCLUDE "maps/MrFujisHouse.asm"
-
-
-SECTION "Soul House Scripts", ROMX
-
-INCLUDE "maps/SoulHouse.asm"
-INCLUDE "maps/SoulHouseB1F.asm"
-INCLUDE "maps/SoulHouseB2F.asm"
-INCLUDE "maps/SoulHouseB3F.asm"
-
-
-SECTION "Lav Radio Tower Scripts", ROMX
-
-INCLUDE "maps/LavRadioTower1F.asm"
-INCLUDE "maps/LavRadioTower2F.asm"
-INCLUDE "maps/LavRadioTower3F.asm"
-INCLUDE "maps/LavRadioTower4F.asm"
-INCLUDE "maps/LavRadioTower5F.asm"
-
-
-SECTION "Haunted Radio Tower Scripts", ROMX
-
-INCLUDE "maps/HauntedRadioTower2F.asm"
-INCLUDE "maps/HauntedRadioTower3F.asm"
-INCLUDE "maps/HauntedRadioTower4F.asm"
-INCLUDE "maps/HauntedRadioTower5F.asm"
-INCLUDE "maps/HauntedRadioTower6F.asm"
 
 
 SECTION "Celadon Scripts", ROMX
@@ -696,11 +667,6 @@ INCLUDE "maps/CeladonUniversityLibrary1F.asm"
 INCLUDE "maps/CeladonUniversityLibrary2F.asm" ; shares text with CeladonUniversityLibrary1F.asm
 
 
-SECTION "Celadon Outskirts Scripts", ROMX
-
-INCLUDE "maps/CeladonOutskirts.asm"
-
-
 SECTION "Saffron Scripts", ROMX
 
 INCLUDE "maps/SaffronCity.asm"
@@ -710,7 +676,6 @@ INCLUDE "maps/SaffronBookSpeechHouse.asm"
 INCLUDE "maps/SaffronHitmontopKidHouse.asm"
 INCLUDE "maps/SaffronOrreSpeechHouse.asm"
 INCLUDE "maps/SaffronRichSpeechHouse.asm"
-INCLUDE "maps/SaffronTrainStation.asm"
 
 
 SECTION "Saffron Scripts 2", ROMX
@@ -742,7 +707,6 @@ INCLUDE "maps/FuchsiaGym.asm"
 INCLUDE "maps/FuchsiaBillSpeechHouse.asm"
 INCLUDE "maps/FuchsiaSafariBallHouse.asm"
 INCLUDE "maps/SafariZoneWardensHome.asm"
-INCLUDE "maps/LuckyIsland.asm"
 
 
 SECTION "Safari Zone Scripts", ROMX
@@ -757,20 +721,6 @@ INCLUDE "maps/SafariZoneEastRestHouse.asm"
 INCLUDE "maps/SafariZoneWestRestHouse1.asm"
 INCLUDE "maps/SafariZoneWestRestHouse2.asm"
 INCLUDE "maps/SafariZoneFuchsiaGate.asm"
-
-
-SECTION "Uraga Channel Scripts", ROMX
-
-INCLUDE "maps/UragaChannelEast.asm"
-INCLUDE "maps/UragaChannelWest.asm"
-INCLUDE "maps/Route18West.asm" ; shares text with UragaChannelEast.asm
-
-
-SECTION "Scary Cave Scripts", ROMX
-
-INCLUDE "maps/ScaryCave1F.asm"
-INCLUDE "maps/ScaryCaveB1F.asm"
-INCLUDE "maps/ScaryCaveShipwreck.asm"
 
 
 SECTION "Cinnabar Scripts", ROMX
@@ -955,6 +905,7 @@ INCLUDE "maps/Route17.asm"
 SECTION "Routes 18-20 Scripts", ROMX
 
 INCLUDE "maps/Route18East.asm"
+INCLUDE "maps/Route18West.asm"
 INCLUDE "maps/Route18Gate.asm"
 INCLUDE "maps/Route18Gate2F.asm"
 INCLUDE "maps/Route19.asm"
@@ -967,7 +918,6 @@ SECTION "Routes 21-23 Scripts", ROMX
 
 INCLUDE "maps/Route21.asm"
 INCLUDE "maps/Route22.asm"
-INCLUDE "maps/Route22Past.asm"
 INCLUDE "maps/Route23.asm"
 
 
