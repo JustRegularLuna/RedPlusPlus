@@ -229,8 +229,8 @@ MAP_NONE   EQU 0
 
 	newgroup ; 17
 
-	mapconst CINNABAR_ISLAND,        11, 12 ;  1
-	mapconst ROUTE_20,                9, 51 ;  2
+	mapconst CINNABAR_ISLAND,         9, 14 ;  1
+	mapconst ROUTE_20,                9, 50 ;  2
 	mapconst ROUTE_21,               44, 12 ;  3
 	mapconst CINNABAR_POKECENTER_1F,  4,  6 ;  4
 	mapconst SEAFOAM_GYM,            12, 12 ;  5

@@ -102,9 +102,9 @@ ENDM
 	connection west, Route7, ROUTE_7, 0, 0, 22
 	connection east, Route8, ROUTE_8, 5, 0, 11
 
-	map_attributes CinnabarIsland, CINNABAR_ISLAND, $43, NORTH | EAST
-	connection north, Route21, ROUTE_21, 0, 0, 10
-	connection east, Route20, ROUTE_20, 2, 0, 9
+	map_attributes CinnabarIsland, CINNABAR_ISLAND, $49, NORTH | EAST
+	connection north, Route21, ROUTE_21, 0, 0, 12
+	connection east, Route20, ROUTE_20, 0, 0, 9
 
 	map_attributes IndigoPlateau, INDIGO_PLATEAU, $55, SOUTH
 	connection south, Route23, ROUTE_23, 0, 0, 10
@@ -251,23 +251,21 @@ ENDM
 	connection west, Route18West, ROUTE_18_WEST, 0, 0, 11
 	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 2, 14
 
-	map_attributes Route18West, ROUTE_18_WEST, $49, NORTH | WEST | EAST
+	map_attributes Route18West, ROUTE_18_WEST, $49, NORTH | EAST
 	connection north, Route17, ROUTE_17, 0, 0, 10
-	connection west, UragaChannelEast, URAGA_CHANNEL_EAST, 0, 0, 9
 	connection east, Route18East, ROUTE_18_EAST, 0, 0, 11
 
-	map_attributes Route19, ROUTE_19, $49, NORTH
+	map_attributes Route19, ROUTE_19, $49, NORTH | WEST
 	connection north, FuchsiaCity, FUCHSIA_CITY, -3, 2, 16
-;	connection west, Route20, ROUTE_20, 20, 0, 9
+	connection west, Route20, ROUTE_20, 21, 0, 9
 
 	map_attributes Route20, ROUTE_20, $49, WEST | EAST
-	connection west, CinnabarIsland, CINNABAR_ISLAND, -2, 0, 11
-	connection east, Route19, ROUTE_19, -3, 17, 12
+	connection west, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 9
+	connection east, Route19, ROUTE_19, -3, 18, 12
 
-	map_attributes Route21, ROUTE_21, $49, NORTH
+	map_attributes Route21, ROUTE_21, $49, NORTH | SOUTH
 	connection north, PalletTown, PALLET_TOWN, 2, 0, 10
-;	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 10
-;	connection east, UragaChannelWest, URAGA_CHANNEL_WEST, 19, 0, 15
+	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 14
 
 	map_attributes Route22, ROUTE_22, $55, EAST
 	connection east, ViridianCity, VIRIDIAN_CITY, -2, 1, 15
@@ -394,17 +392,9 @@ ENDM
 	map_attributes CeruleanCape, CERULEAN_CAPE, $f, WEST
 	connection west, Route25, ROUTE_25, 0, 0, 20
 
-	map_attributes CeladonOutskirts, CELADON_OUTSKIRTS, $f, SOUTH
-	connection south, Route7, ROUTE_7, 0, 0, 10
-
-	map_attributes UragaChannelEast, URAGA_CHANNEL_EAST, $43, WEST | EAST
-	connection west, UragaChannelWest, URAGA_CHANNEL_WEST, 0, 0, 9
-	connection east, Route18West, ROUTE_18_WEST, 0, 0, 9
-
-	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $43, WEST | EAST
-	connection west, Route21, ROUTE_21, -3, 16, 15
-	connection east, UragaChannelEast, URAGA_CHANNEL_EAST, 0, 0, 9
-
+	map_attributes CeladonOutskirts, CELADON_OUTSKIRTS, $f, 0
+	map_attributes UragaChannelEast, URAGA_CHANNEL_EAST, $43, 0
+	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $43, 0
 	map_attributes LuckyIsland, LUCKY_ISLAND, $43, 0
 
 	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $35, SOUTH | WEST | EAST

@@ -4,8 +4,8 @@ Route20_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event 62,  9, SEAFOAM_ISLANDS_1F, 1
-	warp_event 54,  5, SEAFOAM_ISLANDS_1F, 4
+	warp_event 58,  9, SEAFOAM_ISLANDS_1F, 1
+	warp_event 48,  5, SEAFOAM_ISLANDS_1F, 4
 
 	db 0 ; coord events
 
