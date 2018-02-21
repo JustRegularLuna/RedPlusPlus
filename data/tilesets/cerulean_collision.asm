@@ -168,8 +168,8 @@
 	tilecoll TV, TV, TV, TV
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll TV, TV, TV, TV
-	tilecoll TV, TV, TV, TV
+	tilecoll WALL, WALL, WALL, DOOR
+	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, POKECENTER_SIGN, WALL
 	tilecoll WALL, WALL, MART_SIGN, WALL
