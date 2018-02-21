@@ -11,7 +11,8 @@ Route4_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
+	object_event 16,   4, SPRITE_CABLE_CAR_BIKE_SILPH, SPRITEMOVEDATA_OVERHEAD_TILE_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, end, NULL, -1
 	fruittree_event 37,  6, FRUITTREE_ROUTE_4, ORAN_BERRY
 
 	const_def 1 ; object constants

@@ -29,6 +29,8 @@ SaffronCity_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event 23, 13, SPRITE_CABLE_CAR_BIKE_SILPH, SPRITEMOVEDATA_OVERHEAD_TILE_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 24, 13, SPRITE_CABLE_CAR_BIKE_SILPH, SPRITEMOVEDATA_OVERHEAD_TILE_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, end, NULL, -1
 
 	const_def 1 ; object constants

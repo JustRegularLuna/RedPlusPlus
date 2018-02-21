@@ -1953,9 +1953,21 @@ LoadSpecialMapOBPalette:
 	jp FarCopyWRAM
 
 .not_shamouti_or_safari:
+	cp TILESET_CERULEAN
+	jr nz, .not_cerulean
+	ld hl, UnknBGPals palette PAL_BG_GRAY
+	jp .load_rock_palette
+
+.not_cerulean:
+	cp TILESET_SAFFRON
+	jr nz, .not_saffron
+	ld hl, UnknBGPals palette PAL_BG_YELLOW
+	jp .load_rock_palette
+
+.not_saffron:
 	cp TILESET_PC_FARAWAY_ISLAND
 	jr nz, .not_faraway
-	ld hl, UnknBGPals palette 1 ; grass
+	ld hl, UnknBGPals palette PAL_BG_GREEN
 	jr .load_tree_palette
 
 .not_faraway:

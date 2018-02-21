@@ -38,11 +38,13 @@ SpriteMovementData::
 	sprite_movement_data SPRITEMOVEFN_RANDOM_WALK_XY,        DOWN,   PERSON_ACTION_STAND,         $00,    $00,    %0010 ; SPRITEMOVEDATA_SWIM_AROUND
 	sprite_movement_data SPRITEMOVEFN_RANDOM_WALK_Y,         DOWN,   PERSON_ACTION_STAND,         $00,    $00,    %0010 ; SPRITEMOVEDATA_SWIM_UP_DOWN
 	sprite_movement_data SPRITEMOVEFN_RANDOM_WALK_X,         DOWN,   PERSON_ACTION_STAND,         $00,    $00,    %0010 ; SPRITEMOVEDATA_SWIM_LEFT_RIGHT
-	sprite_movement_data SPRITEMOVEFN_BIG_GYARADOS,          DOWN,   PERSON_ACTION_BIG_GYARADOS,  $2e,    $01,    %1100 ; SPRITEMOVEDATA_BIG_GYARADOS
 	sprite_movement_data SPRITEMOVEFN_STANDING_FLIP,         DOWN,   PERSON_ACTION_STAND_FLIP,    $00,    $00,    %0000 ; SPRITEMOVEDATA_STANDING_DOWN_FLIP
 	sprite_movement_data SPRITEMOVEFN_STANDING_FLIP,         UP,     PERSON_ACTION_STAND_FLIP,    $00,    $00,    %0000 ; SPRITEMOVEDATA_STANDING_UP_FLIP
-	sprite_movement_data SPRITEMOVEFN_POKECOM_NEWS,          DOWN,   PERSON_ACTION_POKECOM_NEWS,  $8e,    $02,    %0000 ; SPRITEMOVEDATA_POKECOM_NEWS
-	sprite_movement_data SPRITEMOVEFN_ARCH_TREE,             DOWN,   PERSON_ACTION_ARCH_TREE,     $8e,    $02,    %0000 ; SPRITEMOVEDATA_ARCH_TREE_DOWN
-	sprite_movement_data SPRITEMOVEFN_ARCH_TREE,             UP,     PERSON_ACTION_ARCH_TREE,     $8e,    $02,    %0000 ; SPRITEMOVEDATA_ARCH_TREE_UP
-	sprite_movement_data SPRITEMOVEFN_ARCH_TREE,             LEFT,   PERSON_ACTION_ARCH_TREE,     $8e,    $02,    %0000 ; SPRITEMOVEDATA_ARCH_TREE_LEFT
-	sprite_movement_data SPRITEMOVEFN_ARCH_TREE,             RIGHT,  PERSON_ACTION_ARCH_TREE,     $8e,    $02,    %0000 ; SPRITEMOVEDATA_ARCH_TREE_RIGHT
+	sprite_movement_data SPRITEMOVEFN_TILE,                  DOWN,   PERSON_ACTION_TILE,          $0e,    $00,    %0000 ; SPRITEMOVEDATA_TILE_DOWN
+	sprite_movement_data SPRITEMOVEFN_TILE,                  UP,     PERSON_ACTION_TILE,          $0e,    $00,    %0000 ; SPRITEMOVEDATA_TILE_UP
+	sprite_movement_data SPRITEMOVEFN_TILE,                  LEFT,   PERSON_ACTION_TILE,          $0e,    $00,    %0000 ; SPRITEMOVEDATA_TILE_LEFT
+	sprite_movement_data SPRITEMOVEFN_TILE,                  RIGHT,  PERSON_ACTION_TILE,          $0e,    $00,    %0000 ; SPRITEMOVEDATA_TILE_RIGHT
+	sprite_movement_data SPRITEMOVEFN_TILE,                  DOWN,   PERSON_ACTION_TILE,          $8e,    $02,    %0000 ; SPRITEMOVEDATA_OVERHEAD_TILE_DOWN
+	sprite_movement_data SPRITEMOVEFN_TILE,                  UP,     PERSON_ACTION_TILE,          $8e,    $02,    %0000 ; SPRITEMOVEDATA_OVERHEAD_TILE_UP
+	sprite_movement_data SPRITEMOVEFN_TILE,                  LEFT,   PERSON_ACTION_TILE,          $8e,    $02,    %0000 ; SPRITEMOVEDATA_OVERHEAD_TILE_LEFT
+	sprite_movement_data SPRITEMOVEFN_TILE,                  RIGHT,  PERSON_ACTION_TILE,          $8e,    $02,    %0000 ; SPRITEMOVEDATA_OVERHEAD_TILE_RIGHT
