@@ -64,12 +64,12 @@ ENDM
 	connection south, Route21, ROUTE_21, -1, 1, 12
 
 	map_attributes ViridianCity, VIRIDIAN_CITY, $f, NORTH | SOUTH | WEST
-	connection north, Route2South, ROUTE_2_SOUTH, 5, 0, 10
+	connection north, Route2South, ROUTE_2_SOUTH, 5, 0, 13
 	connection south, Route1, ROUTE_1, 5, 0, 12
 	connection west, Route22, ROUTE_22, 3, 0, 12
 
 	map_attributes PewterCity, PEWTER_CITY, $f, SOUTH | EAST
-	connection south, Route2North, ROUTE_2_NORTH, 5, 0, 10
+	connection south, Route2North, ROUTE_2_NORTH, 5, 0, 13
 	connection east, Route3South, ROUTE_3_SOUTH, 6, 0, 10
 
 	map_attributes CeruleanCity, CERULEAN_CITY, $f, NORTH | SOUTH | WEST | EAST
@@ -165,12 +165,12 @@ ENDM
 	connection south, PalletTown, PALLET_TOWN, 0, 0, 10
 
 	map_attributes Route2North, ROUTE_2_NORTH, $f, NORTH | SOUTH
-	connection north, PewterCity, PEWTER_CITY, -3, 2, 14
-	connection south, Route2South, ROUTE_2_SOUTH, 0, 0, 10
+	connection north, PewterCity, PEWTER_CITY, -3, 2, 17
+	connection south, Route2South, ROUTE_2_SOUTH, 0, 0, 13
 
 	map_attributes Route2South, ROUTE_2_SOUTH, $f, NORTH | SOUTH
-	connection north, Route2North, ROUTE_2_NORTH, 0, 0, 10
-	connection south, ViridianCity, VIRIDIAN_CITY, -3, 2, 16
+	connection north, Route2North, ROUTE_2_NORTH, 0, 0, 13
+	connection south, ViridianCity, VIRIDIAN_CITY, -3, 2, 19
 
 	map_attributes Route3South, ROUTE_3_SOUTH, $55, NORTH | WEST
 	connection north, Route3North, ROUTE_3_NORTH, 25, 0, 12
@@ -231,20 +231,23 @@ ENDM
 	connection west, FuchsiaCity, FUCHSIA_CITY, -3, 2, 12
 	connection east, Route14, ROUTE_14, -3, 6, 12
 
-	map_attributes Route16East, ROUTE_16_EAST, $1f, WEST | EAST
-	connection west, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 12
+	map_attributes Route16East, ROUTE_16_EAST, $1f, EAST
 	connection east, CeladonCity, CELADON_CITY, -3, 3, 13
 
-	map_attributes Route16NorthSouth, ROUTE_16_NORTH_SOUTH, $1f, SOUTH | WEST | EAST
+	map_attributes Route16North, ROUTE_16_NORTH, $1f, WEST | EAST
+	connection west, Route16West, ROUTE_16_WEST, 0, 0, 15
+	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
+
+	map_attributes Route16South, ROUTE_16_SOUTH, $1f, SOUTH | WEST | EAST
 	connection south, Route17, ROUTE_17, 0, 0, 10
-	connection west, Route16West, ROUTE_16_WEST, 0, 0, 12
+	connection west, Route16West, ROUTE_16_WEST, 0, 0, 15
 	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
 
 	map_attributes Route16West, ROUTE_16_WEST, $1f, EAST
-	connection east, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 12
+	connection east, Route16North, ROUTE_16_NORTH, 0, 0, 12
 
 	map_attributes Route17, ROUTE_17, $49, NORTH | SOUTH
-	connection north, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 10
+	connection north, Route16South, ROUTE_16_SOUTH, 0, 0, 10
 	connection south, Route18West, ROUTE_18_WEST, 0, 0, 13
 
 	map_attributes Route18East, ROUTE_18_EAST, $f, WEST | EAST
@@ -677,7 +680,7 @@ ENDM
 	map_attributes FastShipCabins_SE_SSE_CaptainsCabin, FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN, $0, 0
 	map_attributes FastShipB1F, FAST_SHIP_B1F, $0, 0
 	map_attributes OlivinePortPassage, OLIVINE_PORT_PASSAGE, $0, 0
-	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $2d, 0
+	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $55, 0
 	map_attributes MountMoonGiftShop, MOUNT_MOON_GIFT_SHOP, $0, 0
 	map_attributes TinTowerRoof, TIN_TOWER_ROOF, $1, 0
 	map_attributes IndigoPlateauPokeCenter1F, INDIGO_PLATEAU_POKECENTER_1F, $0, 0

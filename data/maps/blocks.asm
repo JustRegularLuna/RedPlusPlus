@@ -59,7 +59,6 @@ Route43MahoganyGate_BlockData:
 	INCBIN "maps/NorthSouthGate.blk"
 
 Route1ViridianGate_BlockData:
-Route2Gate_BlockData:
 ViridianForestViridianGate_BlockData:
 ViridianForestPewterGate_BlockData:
 Route5SaffronCityGate_BlockData:
@@ -1219,6 +1218,9 @@ Route2North_BlockData:
 Route2South_BlockData:
 	INCBIN "maps/Route2South.blk"
 
+Route2Gate_BlockData:
+	INCBIN "maps/Route2Gate.blk"
+
 Route3South_BlockData:
 	INCBIN "maps/Route3South.blk"
 
@@ -1271,7 +1273,8 @@ Route15_BlockData:
 Route16East_BlockData:
 	INCBIN "maps/Route16East.blk"
 
-Route16NorthSouth_BlockData:
+Route16North_BlockData:
+Route16South_BlockData:
 	INCBIN "maps/Route16NorthSouth.blk"
 
 Route16West_BlockData:

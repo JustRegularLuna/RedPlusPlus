@@ -1,11 +1,11 @@
-PsychicInversHouse_MapScriptHeader:
+Route16South_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  2,  7, ROUTE_16_WEST, 5
-	warp_event  3,  7, ROUTE_16_WEST, 5
+	warp_event 17, 10, ROUTE_16_17_GATE, 1
+	warp_event 17, 11, ROUTE_16_17_GATE, 2
 
 	db 0 ; coord events
 

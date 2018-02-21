@@ -17,6 +17,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_CyclingRoad
 	dw OutdoorSprites_Route16
 	dw OutdoorSprites_Fuchsia
+	dw OutdoorSprites_Route19
 	dw OutdoorSprites_Saffron
 	dw OutdoorSprites_Cinnabar
 	dw OutdoorSprites_Indigo
@@ -71,6 +72,7 @@ OutdoorSprites_SilenceBridge:
 OutdoorSprites_CyclingRoad:
 OutdoorSprites_Route16:
 OutdoorSprites_Fuchsia:
+OutdoorSprites_Route19:
 OutdoorSprites_Saffron:
 OutdoorSprites_Cinnabar:
 OutdoorSprites_Indigo:
