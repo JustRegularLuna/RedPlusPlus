@@ -11,6 +11,7 @@ Route4_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	fruittree_event 37,  6, FRUITTREE_ROUTE_4, ORAN_BERRY
 
 	const_def 1 ; object constants

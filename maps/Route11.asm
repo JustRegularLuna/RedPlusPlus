@@ -12,6 +12,7 @@ Route11_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	fruittree_event 48, 17, FRUITTREE_ROUTE_11, ORAN_BERRY
 
 	const_def 1 ; object constants

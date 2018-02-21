@@ -11,6 +11,9 @@ Route8_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 3 ; object events
+	fruittree_event 47,  7, FRUITTREE_ROUTE_8, ORAN_BERRY
+	cuttree_event 23, 14, -1
+	cuttree_event 34, 13, -1
 
 	const_def 1 ; object constants

@@ -25,6 +25,8 @@ CeladonCity_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	cuttree_event 46, 24, -1
+	cuttree_event 35, 38, -1
 
 	const_def 1 ; object constants

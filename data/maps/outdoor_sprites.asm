@@ -54,28 +54,65 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_JohtoDungeons
 	dw OutdoorSprites_IslandGates
 	dw OutdoorSprites_IslandDungeons
-	dw OutdoorSprites_Deleted
 
-OutdoorSprites_Special:
 OutdoorSprites_Pallet:
+OutdoorSprites_Cinnabar:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_Viridian:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_Pewter:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_MountMoonSquare:
+	db 0 ; end
+
 OutdoorSprites_Cerulean:
 OutdoorSprites_CeruleanCape:
 OutdoorSprites_Route10:
 OutdoorSprites_Route5:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_Vermilion:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_Celadon:
+	db SPRITE_BIG_SNORLAX
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_Lavender:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_SilenceBridge:
+	db SPRITE_BIG_SNORLAX
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_CyclingRoad:
 OutdoorSprites_Route16:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_Fuchsia:
 OutdoorSprites_Route19:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_Saffron:
-OutdoorSprites_Cinnabar:
+	db 0 ; end
+
 OutdoorSprites_Indigo:
+	db 0 ; end
+
+OutdoorSprites_Special:
 OutdoorSprites_Route26:
 OutdoorSprites_NewBark:
 OutdoorSprites_Cherrygrove:
@@ -109,5 +146,4 @@ OutdoorSprites_JohtoGates:
 OutdoorSprites_JohtoDungeons:
 OutdoorSprites_IslandGates:
 OutdoorSprites_IslandDungeons:
-OutdoorSprites_Deleted:
 	db 0 ; end

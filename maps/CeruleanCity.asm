@@ -20,6 +20,7 @@ CeruleanCity_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	cuttree_event 25, 26, -1
 
 	const_def 1 ; object constants

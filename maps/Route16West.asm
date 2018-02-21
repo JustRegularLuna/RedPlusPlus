@@ -14,6 +14,8 @@ Route16West_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	fruittree_event 37,  4, FRUITTREE_ROUTE_16, ORAN_BERRY
+	cuttree_event 15,  5, -1
 
 	const_def 1 ; object constants

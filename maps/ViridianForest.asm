@@ -12,6 +12,7 @@ ViridianForest_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	fruittree_event 34,  8, FRUITTREE_VIRIDIAN_FOREST, ORAN_BERRY
 
 	const_def 1 ; object constants

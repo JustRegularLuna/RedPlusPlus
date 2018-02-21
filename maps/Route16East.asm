@@ -13,6 +13,8 @@ Route16East_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event  8, 10, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_SNORLAX, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	cuttree_event 14,  9, -1
 
 	const_def 1 ; object constants

@@ -20,6 +20,10 @@ FuchsiaCity_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 4 ; object events
+	fruittree_event 16, 15, FRUITTREE_FUCHSIA_CITY, ORAN_BERRY
+	cuttree_event 22,  7, -1
+	cuttree_event 16, 11, -1
+	cuttree_event 18, 19, -1
 
 	const_def 1 ; object constants

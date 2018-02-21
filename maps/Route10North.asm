@@ -14,6 +14,10 @@ Route10North_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 4 ; object events
+	cuttree_event  9, 21, -1
+	cuttree_event 11, 21, -1
+	cuttree_event 13, 21, -1
+	cuttree_event 15, 21, -1
 
 	const_def 1 ; object constants
