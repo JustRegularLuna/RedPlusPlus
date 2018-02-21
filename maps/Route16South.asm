@@ -1,11 +1,11 @@
-Route16NorthSouth_MapScriptHeader:
+Route16South_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event 19, 10, ROUTE_16_17_GATE, 1
-	warp_event 19, 11, ROUTE_16_17_GATE, 2
+	warp_event 17, 10, ROUTE_16_17_GATE, 1
+	warp_event 17, 11, ROUTE_16_17_GATE, 2
 
 	db 0 ; coord events
 

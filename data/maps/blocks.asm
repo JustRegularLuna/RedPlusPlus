@@ -1273,7 +1273,8 @@ Route15_BlockData:
 Route16East_BlockData:
 	INCBIN "maps/Route16East.blk"
 
-Route16NorthSouth_BlockData:
+Route16North_BlockData:
+Route16South_BlockData:
 	INCBIN "maps/Route16NorthSouth.blk"
 
 Route16West_BlockData:

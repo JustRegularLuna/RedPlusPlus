@@ -231,19 +231,23 @@ ENDM
 	connection west, FuchsiaCity, FUCHSIA_CITY, -3, 2, 12
 	connection east, Route14, ROUTE_14, -3, 6, 12
 
-	map_attributes Route16East, ROUTE_16_EAST, $1f, WEST | EAST
-	connection west, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 0, 12
+	map_attributes Route16East, ROUTE_16_EAST, $1f, EAST
 	connection east, CeladonCity, CELADON_CITY, -3, 3, 13
 
-	map_attributes Route16NorthSouth, ROUTE_16_NORTH_SOUTH, $1f, SOUTH | EAST
-	connection south, Route17, ROUTE_17, 1, 0, 10
+	map_attributes Route16North, ROUTE_16_NORTH, $1f, WEST | EAST
+	connection west, Route16West, ROUTE_16_WEST, 0, 0, 15
+	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
+
+	map_attributes Route16South, ROUTE_16_SOUTH, $1f, SOUTH | WEST | EAST
+	connection south, Route17, ROUTE_17, 0, 0, 10
+	connection west, Route16West, ROUTE_16_WEST, 0, 0, 15
 	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
 
 	map_attributes Route16West, ROUTE_16_WEST, $1f, EAST
-	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
+	connection east, Route16North, ROUTE_16_NORTH, 0, 0, 12
 
 	map_attributes Route17, ROUTE_17, $49, NORTH | SOUTH
-	connection north, Route16NorthSouth, ROUTE_16_NORTH_SOUTH, 0, 1, 11
+	connection north, Route16South, ROUTE_16_SOUTH, 0, 0, 10
 	connection south, Route18West, ROUTE_18_WEST, 0, 0, 13
 
 	map_attributes Route18East, ROUTE_18_EAST, $f, WEST | EAST

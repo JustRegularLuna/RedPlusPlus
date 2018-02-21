@@ -224,11 +224,11 @@
 	tilecoll FLOOR, FLOOR, WALL, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, DOOR, WALL
+	tilecoll WALL, WALL, WATER, WATER
 	tilecoll WALL, WALL, WALL, WATER
 	tilecoll WALL, WALL, WATER, WALL
-	tilecoll WALL, WALL, WATER, WATER
+	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WATER, BUOY
 	tilecoll WALL, WATER, WALL, WATER
 	tilecoll WATER, WALL, WATER, WALL
