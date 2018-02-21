@@ -249,4 +249,3 @@
 	tilecoll WATER, WATER, WALL, WALL
 	tilecoll WALL, WALL, WATER, WATER
 	tilecoll WALL, WALL, WATER, WATER
-	tilecoll TV, TV, TV, TV

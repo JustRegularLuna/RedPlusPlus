@@ -226,3 +226,31 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, DOOR, WALL
+	tilecoll WALL, WALL, WALL, WATER
+	tilecoll WALL, WALL, WATER, WALL
+	tilecoll WALL, WALL, WATER, WATER
+	tilecoll WALL, WALL, WATER, BUOY
+	tilecoll WALL, WATER, WALL, WATER
+	tilecoll WATER, WALL, WATER, WALL
+	tilecoll FLOOR, FLOOR, WATER, WATER
+	tilecoll WALL, BUOY, WALL, WATER
+	tilecoll WALL, WATER, WATER, WATER
+	tilecoll WATER, WALL, WATER, WATER
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, FLOOR, WALL, FLOOR
+	tilecoll FLOOR, WALL, FLOOR, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, WALL
+	tilecoll FLOOR, FLOOR, WALL, FLOOR
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, WALL, WALL, WALL
+	tilecoll WALL, WALL, FLOOR, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, DOOR, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL

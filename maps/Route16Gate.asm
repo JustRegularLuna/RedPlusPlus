@@ -4,8 +4,8 @@ Route16Gate_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_event  0,  4, ROUTE_16_NORTH_SOUTH, 1
-	warp_event  0,  5, ROUTE_16_NORTH_SOUTH, 2
+	warp_event  0,  4, ROUTE_16_WEST, 3
+	warp_event  0,  5, ROUTE_16_WEST, 4
 	warp_event  9,  4, ROUTE_16_EAST, 3
 	warp_event  9,  5, ROUTE_16_EAST, 4
 
