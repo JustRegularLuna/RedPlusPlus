@@ -17,10 +17,8 @@ Pointers445f: ; 445f
 	dw SetFacingPuddleSplash,          SetFacingStanding          ; PERSON_ACTION_PUDDLE_SPLASH
 	dw SetFacingCutTree,               SetFacingCutTree           ; PERSON_ACTION_CUT_TREE
 	dw SetFacingSkyfall,               SetFacingCurrent           ; PERSON_ACTION_SKYFALL
-	dw SetFacingBigGyarados,           SetFacingFreezeBigGyarados ; PERSON_ACTION_BIG_GYARADOS
 	dw SetFacingStandFlip,             SetFacingStandFlip         ; PERSON_ACTION_STAND_FLIP
-	dw SetFacingPokecomNews,           SetFacingPokecomNews       ; PERSON_ACTION_POKECOM_NEWS
-	dw SetFacingArchTree,              SetFacingArchTree          ; PERSON_ACTION_ARCH_TREE
+	dw SetFacingTile,                  SetFacingTile              ; PERSON_ACTION_TILE
 ; 44a3
 
 SetFacingStanding: ; 44a3
@@ -47,10 +45,6 @@ SetFacingCutTree:
 	ld a, FACING_CUT_TREE
 	jr SetFixedFacing
 
-SetFacingPokecomNews:
-	ld a, FACING_POKECOM_NEWS
-	jr SetFixedFacing
-
 SetFacingBigDoll: ; 45c5
 	ld a, [VariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS]
 	cp -1 ; TODO: SPRITE_BIG_ONIX
@@ -69,11 +63,11 @@ SetFacingFish: ; 456e
 	jr SetFixedFacing
 ; 457b
 
-SetFacingArchTree:
+SetFacingTile:
 	call GetSpriteDirection
 	rrca
 	rrca
-	add FACING_ARCH_TREE_DOWN
+	add FACING_TILE_DOWN
 	jr SetFixedFacing
 
 SetFacingStandFlip:
@@ -224,20 +218,6 @@ SetFacingFreezeBounce: ; 45a4
 	xor a ; FACING_STEP_DOWN_0
 	jp SetFixedFacing
 ; 45ab
-
-SetFacingBigGyarados:
-	ld hl, OBJECT_STEP_FRAME
-	add hl, bc
-	ld a, [hl]
-	inc a
-	and %00001111
-	ld [hl], a
-	and %00001000
-	ld a, FACING_BIG_GYARADOS_2
-	jp nz, SetFixedFacing
-SetFacingFreezeBigGyarados:
-	ld a, FACING_BIG_GYARADOS_1
-	jp SetFixedFacing
 
 SetFacingWeirdTree: ; 45ab
 	ld hl, OBJECT_STEP_FRAME

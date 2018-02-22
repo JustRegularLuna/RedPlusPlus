@@ -13,6 +13,9 @@ Route12_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 3 ; object events
+	object_event 15, 56, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_SNORLAX, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	cuttree_event 13, 82, -1
+	cuttree_event 15, 93, -1
 
 	const_def 1 ; object constants

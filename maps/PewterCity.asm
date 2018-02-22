@@ -16,6 +16,9 @@ PewterCity_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 3 ; object events
+	fruittree_event 28,  7, FRUITTREE_PEWTER_CITY_1, ORAN_BERRY
+	fruittree_event 30,  7, FRUITTREE_PEWTER_CITY_2, ORAN_BERRY
+	cuttree_event 25,  9, -1
 
 	const_def 1 ; object constants

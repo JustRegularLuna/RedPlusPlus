@@ -101,11 +101,11 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL
 	tilecoll WALL, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, WALL, FLOOR, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, WALL
 	tilecoll FLOOR, WALL, FLOOR, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, FLOOR, WALL, FLOOR
@@ -168,8 +168,8 @@
 	tilecoll TV, TV, TV, TV
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll TV, TV, TV, TV
-	tilecoll TV, TV, TV, TV
+	tilecoll WALL, WALL, WALL, DOOR
+	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, POKECENTER_SIGN, WALL
 	tilecoll WALL, WALL, MART_SIGN, WALL

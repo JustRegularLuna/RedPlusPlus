@@ -178,11 +178,8 @@ GetSprite: ; 1423c
 	; load the sprite type into l
 	ld l, [hl]
 	ld h, a
-	; load the length into c
-	ld c, 15
 	ld a, l
-	cp BIG_GYARADOS_SPRITE
-	ret z
+	; load the length into c (always 12)
 	ld c, 12
 	ret
 ; 14259
@@ -512,8 +509,6 @@ GetSpriteLength: ; 14386
 	jr z, .AnyDirection
 	cp STILL_SPRITE
 	jr z, .OneDirection
-	cp BIG_GYARADOS_SPRITE
-	jr z, .BigGyarados
 ; MON_SPRITE
 	ld a, 8
 	ret
@@ -524,10 +519,6 @@ GetSpriteLength: ; 14386
 
 .OneDirection:
 	ld a, 4
-	ret
-
-.BigGyarados:
-	ld a, 16
 	ret
 ; 1439b
 

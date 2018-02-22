@@ -249,7 +249,7 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, WALL, WALL, WALL
+	tilecoll WALL, FLOOR, FLOOR, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, DOOR, WALL
 	tilecoll WALL, WALL, WALL, WALL

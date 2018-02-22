@@ -517,10 +517,8 @@ MapObjectMovementPattern: ; 47dd
 	dw .MovementShakingGrass         ; SPRITEMOVEFN_GRASS
 	dw .MovementSplashingPuddle      ; SPRITEMOVEFN_PUDDLE
 	dw .MovementCutTree              ; SPRITEMOVEFN_CUT_TREE
-	dw .MovementBigGyarados          ; SPRITEMOVEFN_BIG_GYARADOS
 	dw .StandingFlip                 ; SPRITEMOVEFN_STANDING_FLIP
-	dw .MovementPokecomNews          ; SPRITEMOVEFN_POKECOM_NEWS
-	dw .MovementArchTree             ; SPRITEMOVEFN_ARCH_TREE
+	dw .MovementTile                 ; SPRITEMOVEFN_TILE
 
 .RandomWalkY:
 	call Random
@@ -708,20 +706,12 @@ MapObjectMovementPattern: ; 47dd
 	ld a, PERSON_ACTION_BOUNCE
 	jr ._ActionA_StepType04
 
-.MovementBigGyarados:
-	ld a, PERSON_ACTION_BIG_GYARADOS
-	jr ._ActionA_StepType04
-
-.MovementPokecomNews:
-	ld a, PERSON_ACTION_POKECOM_NEWS
-	jr ._ActionA_StepType04
-
 .MovementCutTree:
 	ld a, PERSON_ACTION_CUT_TREE
 	jr ._ActionA_StepType04
 
-.MovementArchTree:
-	ld a, PERSON_ACTION_ARCH_TREE
+.MovementTile:
+	ld a, PERSON_ACTION_TILE
 	jr ._ActionA_StepType04
 
 .StandingFlip:

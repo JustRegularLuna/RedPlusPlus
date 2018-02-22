@@ -11,6 +11,7 @@ Route15_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	cuttree_event 53,  6, -1 ; visible on Route14
 
 	const_def 1 ; object constants

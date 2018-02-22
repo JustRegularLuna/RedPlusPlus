@@ -11,6 +11,7 @@ Route3North_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	fruittree_event  6,  5, FRUITTREE_ROUTE_3, ORAN_BERRY
 
 	const_def 1 ; object constants

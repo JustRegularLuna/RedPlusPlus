@@ -34,15 +34,12 @@ Facings:
 	dw FacingSplash1       ; FACING_SPLASH_1
 	dw FacingSplash2       ; FACING_SPLASH_2
 	dw FacingCutTree       ; FACING_CUT_TREE
-	dw FacingBigGyarados1  ; FACING_BIG_GYARADOS_1
-	dw FacingBigGyarados2  ; FACING_BIG_GYARADOS_2
 	dw FacingStepDownFlip  ; FACING_STEP_DOWN_FLIP
 	dw FacingStepUpFlip    ; FACING_STEP_UP_FLIP
-	dw FacingPokecomNews   ; FACING_POKECOM_NEWS
-	dw FacingArchTreeDown  ; FACING_ARCH_TREE_DOWN
-	dw FacingArchTreeUp    ; FACING_ARCH_TREE_UP
-	dw FacingArchTreeLeft  ; FACING_ARCH_TREE_LEFT
-	dw FacingArchTreeRight ; FACING_ARCH_TREE_RIGHT
+	dw FacingTileDown      ; FACING_TILE_DOWN
+	dw FacingTileUp        ; FACING_TILE_UP
+	dw FacingTileLeft      ; FACING_TILE_LEFT
+	dw FacingTileRight     ; FACING_TILE_RIGHT
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -290,44 +287,6 @@ FacingCutTree:
 	db 12,  0, 2, $06
 	db 12,  8, 2, $07
 
-FacingBigGyarados1:
-	db 16 ; #
-	db  0,  0, 0, $00
-	db  0,  8, 0, $01
-	db  8,  0, 0, $02
-	db  8,  8, 0, $03
-	db  0, 16, 0, $04
-	db  0, 24, 0, $05
-	db  8, 16, 0, $06
-	db  8, 24, 0, $07
-	db 16,  0, 0, $08
-	db 16,  8, 0, $09
-	db 24,  0, 0, $0a
-	db 24,  8, 0, $0b
-	db 16, 16, 0, $0c
-	db 16, 24, 0, $0d
-	db 24, 16, 0, $0e
-	db 24, 24, 0, $80
-
-FacingBigGyarados2:
-	db 16 ; #
-	db  0,  0, 0, $00
-	db  0,  8, 0, $01
-	db  8,  0, 0, $81
-	db  8,  8, 0, $82
-	db  0, 16, 0, $83
-	db  0, 24, 0, $84
-	db  8, 16, 0, $85
-	db  8, 24, 0, $86
-	db 16,  0, 0, $87
-	db 16,  8, 0, $88
-	db 24,  0, 0, $89
-	db 24,  8, 0, $8a
-	db 16, 16, 0, $8b
-	db 16, 24, 0, $8c
-	db 24, 16, 0, $8d
-	db 24, 24, 0, $8e
-
 FacingStepDownFlip:
 	db 4 ; #
 	db  0,  0, 0 | X_FLIP, $01
@@ -342,27 +301,30 @@ FacingStepUpFlip:
 	db  8,  0, 2 | X_FLIP, $07
 	db  8,  8, 2 | X_FLIP, $06
 
-FacingPokecomNews:
+FacingTileDown:
 	db 4 ; #
 	db  4,  0, 0, $00
 	db  4,  8, 0, $01
 	db 12,  0, 0, $02
 	db 12,  8, 0, $03
 
-FacingArchTreeDown:
-	db 2 ; #
-	db 12, 0, 0, $08
-	db 12, 8, 0, $0b
+FacingTileUp:
+	db 4 ; #
+	db  4,  0, 0, $04
+	db  4,  8, 0, $05
+	db 12,  0, 0, $06
+	db 12,  8, 0, $07
 
-FacingArchTreeUp:
-	db 2 ; #
-	db 12, 0, 0, $0a
-	db 12, 8, 0, $09
+FacingTileLeft:
+	db 4 ; #
+	db  4,  0, 0, $08
+	db  4,  8, 0, $09
+	db 12,  0, 0, $0a
+	db 12,  8, 0, $0b
 
-FacingArchTreeLeft:
-	db 1 ; #
-	db 12, 8, 0, $09
-
-FacingArchTreeRight:
-	db 1 ; #
-	db 12, 0, 0, $08
+FacingTileRight:
+	db 4 ; #
+	db  4,  8, 0 | X_FLIP, $08
+	db  4,  0, 0 | X_FLIP, $09
+	db 12,  8, 0 | X_FLIP, $0a
+	db 12,  0, 0 | X_FLIP, $0b

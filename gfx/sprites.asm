@@ -32,6 +32,7 @@ Fisher2Sprite::        INCBIN "gfx/sprites/fisher2.2bpp"
 BlackbeltSprite::      INCBIN "gfx/sprites/blackbelt.2bpp"
 GuardSprite::          INCBIN "gfx/sprites/guard.2bpp"
 
+
 SECTION "Overworld Sprites 2", ROMX
 
 BlueSprite::          INCBIN "gfx/sprites/blue.2bpp"
@@ -73,6 +74,7 @@ SlowbroSprite::        INCBIN "gfx/sprites/slowbro.2bpp"
 BirdSprite::           INCBIN "gfx/sprites/bird.2bpp"
 ClefairySprite::       INCBIN "gfx/sprites/clefairy.2bpp"
 
+
 SECTION "Overworld Sprites 3", ROMX
 
 BrockOverworld::       INCBIN "gfx/sprites/brock.2bpp"
@@ -96,8 +98,10 @@ HiroSprite::           INCBIN "gfx/sprites/hiro.2bpp"
 KrisSprite::           INCBIN "gfx/sprites/kris.2bpp"
 SilverSprite::         INCBIN "gfx/sprites/silver.2bpp"
 BillSprite::           INCBIN "gfx/sprites/bill.2bpp"
+
 BigSnorlaxSpriteGFX::          INCBIN "gfx/sprites/big_snorlax.2bpp"
 BallCutFruitSpriteGFX::        INCBIN "gfx/sprites/ball_cut_fruit.2bpp"
 BoulderRockFossilSpriteGFX::   INCBIN "gfx/sprites/boulder_rock_fossil.2bpp"
 BookPaperPokedexSpriteGFX::    INCBIN "gfx/sprites/book_paper_pokedex.2bpp"
-MapAmberLyingOldManSpriteGFX::       INCBIN "gfx/sprites/map_amber_lying_old_man.2bpp"
+MapAmberLyingOldManSpriteGFX:: INCBIN "gfx/sprites/map_amber_lying_old_man.2bpp"
+CableCarBikeSilphSpriteGFX::   INCBIN "gfx/sprites/cable_car_bike_silph.2bpp"

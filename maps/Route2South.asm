@@ -11,6 +11,9 @@ Route2South_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 3 ; object events
+	cuttree_event 11, 14, -1
+	cuttree_event 12, 22, -1
+	cuttree_event 12, 30, -1
 
 	const_def 1 ; object constants
