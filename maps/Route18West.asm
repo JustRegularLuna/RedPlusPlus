@@ -1,7 +1,8 @@
 Route18West_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, Route18West_AlwaysOnBike
 
 	db 2 ; warp events
 	warp_event 31,  8, ROUTE_18_GATE, 1
@@ -14,3 +15,7 @@ Route18West_MapScriptHeader:
 	db 0 ; object events
 
 	const_def 1 ; object constants
+
+Route18West_AlwaysOnBike:
+	setflag ENGINE_ALWAYS_ON_BIKE
+	return

@@ -1,7 +1,8 @@
 Route17_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, Route17_AlwaysOnBike
 
 	db 0 ; warp events
 
@@ -12,3 +13,8 @@ Route17_MapScriptHeader:
 	db 0 ; object events
 
 	const_def 1 ; object constants
+
+Route17_AlwaysOnBike:
+	setflag ENGINE_ALWAYS_ON_BIKE
+	setflag ENGINE_DOWNHILL
+	return
