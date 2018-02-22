@@ -31,7 +31,7 @@ TilesetViridianColl::
 INCLUDE "data/tilesets/viridian_collision.asm"
 
 TilesetForestGFX::
-INCBIN "gfx/tilesets/forest.2bpp.unique.lz"
+INCBIN "gfx/tilesets/forest.2bpp.lz"
 TilesetForestMeta::
 INCBIN "data/tilesets/forest_metatiles.bin"
 TilesetForestColl::
