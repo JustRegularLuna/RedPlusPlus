@@ -9,9 +9,11 @@
 	const TILESET_FUCHSIA
 	const TILESET_SAFFRON
 	const TILESET_ROUTES
+GENERIC_METATILES EQU const_value
 ; These tilesets just share the first 160 tiles, not any metatiles
 	const TILESET_CERULEAN
 	const TILESET_INDIGO
+GENERIC_GFX EQU const_value
 ; These are independent tilesets
 	const TILESET_FOREST
 	;------------------------------------

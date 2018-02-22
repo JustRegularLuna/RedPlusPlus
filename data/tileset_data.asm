@@ -5,10 +5,16 @@ tilecoll: MACRO
 ENDM
 
 
+SECTION "Generic Tileset Data", ROMX
+
+GenericTilesetGFX::
+INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.generic.lz"
+
+
 SECTION "Tileset Data 1", ROMX
 
 TilesetPalletCinnabarGFX::
-INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.lz"
+INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.unique.lz"
 TilesetPalletCinnabarMeta::
 INCBIN "data/tilesets/pallet_cinnabar_metatiles.bin"
 TilesetPalletCinnabarColl::
@@ -18,14 +24,14 @@ INCLUDE "data/tilesets/pallet_cinnabar_collision.asm"
 SECTION "Tileset Data 2", ROMX
 
 TilesetViridianGFX::
-INCBIN "gfx/tilesets/viridian.2bpp.lz"
+INCBIN "gfx/tilesets/viridian.2bpp.unique.lz"
 TilesetViridianMeta::
 INCBIN "data/tilesets/viridian_metatiles.bin"
 TilesetViridianColl::
 INCLUDE "data/tilesets/viridian_collision.asm"
 
 TilesetForestGFX::
-INCBIN "gfx/tilesets/forest.2bpp.lz"
+INCBIN "gfx/tilesets/forest.2bpp.unique.lz"
 TilesetForestMeta::
 INCBIN "data/tilesets/forest_metatiles.bin"
 TilesetForestColl::
@@ -35,7 +41,7 @@ INCLUDE "data/tilesets/forest_collision.asm"
 SECTION "Tileset Data 3", ROMX
 
 TilesetPewterGFX::
-INCBIN "gfx/tilesets/pewter.2bpp.lz"
+INCBIN "gfx/tilesets/pewter.2bpp.unique.lz"
 TilesetPewterMeta::
 INCBIN "data/tilesets/pewter_metatiles.bin"
 TilesetPewterColl::
@@ -45,7 +51,7 @@ INCLUDE "data/tilesets/pewter_collision.asm"
 SECTION "Tileset Data 4", ROMX
 
 TilesetCeruleanGFX::
-INCBIN "gfx/tilesets/cerulean.2bpp.lz"
+INCBIN "gfx/tilesets/cerulean.2bpp.unique.lz"
 TilesetCeruleanMeta::
 INCBIN "data/tilesets/cerulean_metatiles.bin"
 TilesetCeruleanColl::
@@ -56,7 +62,7 @@ INCLUDE "data/tilesets/cerulean_collision.asm"
 SECTION "Tileset Data 5", ROMX
 
 TilesetVermilionGFX::
-INCBIN "gfx/tilesets/vermilion.2bpp.lz"
+INCBIN "gfx/tilesets/vermilion.2bpp.unique.lz"
 TilesetVermilionMeta::
 INCBIN "data/tilesets/vermilion_metatiles.bin"
 TilesetVermilionColl::
@@ -66,7 +72,7 @@ INCLUDE "data/tilesets/vermilion_collision.asm"
 SECTION "Tileset Data 6", ROMX
 
 TilesetLavenderGFX::
-INCBIN "gfx/tilesets/lavender.2bpp.lz"
+INCBIN "gfx/tilesets/lavender.2bpp.unique.lz"
 TilesetLavenderMeta::
 INCBIN "data/tilesets/lavender_metatiles.bin"
 TilesetLavenderColl::
@@ -76,7 +82,7 @@ INCLUDE "data/tilesets/lavender_collision.asm"
 SECTION "Tileset Data 7", ROMX
 
 TilesetCeladonGFX::
-INCBIN "gfx/tilesets/celadon.2bpp.lz"
+INCBIN "gfx/tilesets/celadon.2bpp.unique.lz"
 TilesetCeladonMeta::
 INCBIN "data/tilesets/celadon_metatiles.bin"
 TilesetCeladonColl::
@@ -86,7 +92,7 @@ INCLUDE "data/tilesets/celadon_collision.asm"
 SECTION "Tileset Data 8", ROMX
 
 TilesetFuchsiaGFX::
-INCBIN "gfx/tilesets/fuchsia.2bpp.lz"
+INCBIN "gfx/tilesets/fuchsia.2bpp.unique.lz"
 TilesetFuchsiaMeta::
 INCBIN "data/tilesets/fuchsia_metatiles.bin"
 TilesetFuchsiaColl::
@@ -97,7 +103,7 @@ INCLUDE "data/tilesets/fuchsia_collision.asm"
 SECTION "Tileset Data 9", ROMX
 
 TilesetSaffronGFX::
-INCBIN "gfx/tilesets/saffron.2bpp.lz"
+INCBIN "gfx/tilesets/saffron.2bpp.unique.lz"
 TilesetSaffronMeta::
 INCBIN "data/tilesets/saffron_metatiles.bin"
 TilesetSaffronColl::
@@ -107,14 +113,14 @@ INCLUDE "data/tilesets/saffron_collision.asm"
 SECTION "Tileset Data 10", ROMX
 
 TilesetRoutesGFX::
-INCBIN "gfx/tilesets/routes.2bpp.lz"
+INCBIN "gfx/tilesets/routes.2bpp.unique.lz"
 TilesetRoutesMeta::
 INCBIN "data/tilesets/routes_metatiles.bin"
 TilesetRoutesColl::
 INCLUDE "data/tilesets/routes_collision.asm"
 
 TilesetIndigoGFX::
-INCBIN "gfx/tilesets/indigo.2bpp.lz"
+INCBIN "gfx/tilesets/indigo.2bpp.unique.lz"
 TilesetIndigoMeta::
 INCBIN "data/tilesets/indigo_metatiles.bin"
 TilesetIndigoColl::

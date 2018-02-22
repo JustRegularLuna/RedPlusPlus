@@ -109,6 +109,16 @@ $(roms_md5): rpp ; $(MD5) $(NAME)-$(VERSION).gbc > $@
 $(sorted_sym): rpp ; tail -n +3 $(NAME)-$(VERSION).sym | sort -o $@
 
 
+# Generic tileset support:
+# first 16*10 tiles are generic = 160 tiles = 10240 px = 20480 bits = 2560 bytes
+
+%.2bpp.generic: %.2bpp
+	head -c 2560 $< > $@
+
+%.2bpp.unique: %.2bpp
+	tail -c +2561 $< > $@
+
+
 %.o: dep = $(shell $(SCAN_INCLUDES) $(@D)/$*.asm)
 %.o: %.asm $$(dep)
 	$(RGBDS_DIR)rgbasm $(RGBASM_FLAGS) -o $@ $<

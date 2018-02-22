@@ -1291,6 +1291,10 @@ UpdateBGMapColumn:: ; 27f8
 ; 2816
 
 LoadTileset:: ; 2821
+	ld a, [wTileset]
+	cp GENERIC_GFX
+	jr c, LoadGenericTileset
+
 	ld hl, TilesetAddress
 	ld a, [hli]
 	ld h, [hl]
@@ -1320,6 +1324,74 @@ LoadTileset:: ; 2821
 	ld hl, wDecompressScratch + $80 tiles
 	ld de, VTiles2
 	ld bc, $80 tiles
+	call CopyBytes
+
+	pop af
+	ld [rVBK], a
+
+	pop af
+	ld [rSVBK], a
+
+	xor a
+	ld [hTileAnimFrame], a
+	ret
+
+LoadGenericTileset:
+	ld a, [rSVBK]
+	push af
+	ld a, $6
+	ld [rSVBK], a
+
+	ld hl, GenericTilesetGFX
+	ld a, BANK(GenericTilesetGFX)
+	ld de, wDecompressScratch
+	call FarDecompress
+
+	ld hl, wDecompressScratch
+	ld de, VTiles2
+	ld bc, $7f tiles
+	call CopyBytes
+
+	ld a, [rVBK]
+	push af
+	ld a, $1
+	ld [rVBK], a
+
+	ld hl, wDecompressScratch + $80 tiles
+	ld de, VTiles2
+	ld bc, $20 tiles
+	call CopyBytes
+
+	pop af
+	ld [rVBK], a
+
+	pop af
+	ld [rSVBK], a
+
+	ld hl, TilesetAddress
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [TilesetBank]
+	ld e, a
+
+	ld a, [rSVBK]
+	push af
+	ld a, $6
+	ld [rSVBK], a
+
+	ld a, e
+	ld de, wDecompressScratch
+	call FarDecompress
+
+	ld a, [rVBK]
+	push af
+	ld a, $1
+	ld [rVBK], a
+
+	ld hl, wDecompressScratch
+	ld de, VTiles2 + $20 tiles
+	ld bc, $60 tiles
 	call CopyBytes
 
 	pop af
