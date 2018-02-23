@@ -36,6 +36,31 @@ _AnimateTileset:: ; fc000
 
 
 Tileset00Anim:
+TilesetPalletCinnabarAnim:
+TilesetViridianAnim:
+TilesetPewterAnim:
+TilesetCeruleanAnim:
+TilesetVermilionAnim:
+TilesetLavenderAnim:
+TilesetCeladonAnim:
+TilesetFuchsiaAnim:
+TilesetSaffronAnim:
+TilesetIndigoAnim:
+TilesetRoutesAnim:
+	dw KantoWaterFrames1, AnimateFarawayWaterTile
+	dw KantoWaterFrames2, AnimateFarawayWaterTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateKantoFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
+
 TilesetJohto1Anim:
 	dw VTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
@@ -229,13 +254,13 @@ TilesetPCForestAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetSafariAnim:
-	dw VTiles2 tile $14, AnimateKantoWaterTile
+	dw VTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateKantoFlowerTile
+	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
@@ -300,17 +325,6 @@ TilesetValenciaAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
-TilesetPalletCinnabarAnim:
-TilesetViridianAnim:
-TilesetPewterAnim:
-TilesetCeruleanAnim:
-TilesetVermilionAnim:
-TilesetLavenderAnim:
-TilesetCeladonAnim:
-TilesetFuchsiaAnim:
-TilesetSaffronAnim:
-TilesetIndigoAnim:
-TilesetRoutesAnim:
 TilesetForestAnim:
 TilesetJohto3Anim:
 TilesetHouse1Anim:
@@ -610,43 +624,6 @@ AnimateRainWaterTile:
 
 RainWaterTileFrames:
 	INCBIN "gfx/tilesets/rain/rain_water.2bpp"
-
-
-AnimateKantoWaterTile:
-; Draw a Kanto water tile for the current frame in VRAM tile at de.
-
-; Save sp in bc (see WriteTile).
-	ld hl, sp+$0
-	ld b, h
-	ld c, l
-
-	ld a, [TileAnimationTimer]
-
-; 4 tile graphics, updated every other frame.
-	and 3 << 1
-
-; 2 x 8 = 16 bytes per tile
-	add a
-	add a
-	add a
-
-	add KantoWaterTileFrames % $100
-	ld l, a
-	ld a, 0 ; not xor a; preserve carry flag
-	adc KantoWaterTileFrames / $100
-	ld h, a
-
-; Stack now points to the start of the tile for this frame.
-	ld sp, hl
-
-	ld l, e
-	ld h, d
-
-	jp WriteTile
-; fc41c
-
-KantoWaterTileFrames:
-	INCBIN "gfx/tilesets/water/kanto_water.2bpp"
 
 
 AnimateFarawayWaterTile:
@@ -973,7 +950,7 @@ AnimateKantoFlowerTile:
 
 ; Alternate tile graphic every other frame
 	ld a, [TileAnimationTimer]
-	and %110
+	and %10
 	srl a
 
 	swap a ; << 4 (16 bytes)
@@ -983,15 +960,13 @@ AnimateKantoFlowerTile:
 	add hl, de
 	ld sp, hl
 
-	ld hl, VTiles2 tile $03
+	ld hl, VTiles2 tile $02
 
 	jp WriteTile
 
 KantoFlowerTileFrames:
 	INCBIN "gfx/tilesets/kanto-flower/1.2bpp"
 	INCBIN "gfx/tilesets/kanto-flower/2.2bpp"
-	INCBIN "gfx/tilesets/kanto-flower/3.2bpp"
-	INCBIN "gfx/tilesets/kanto-flower/1.2bpp"
 
 
 SafariFountainAnim1: ; fc5cc
@@ -1361,6 +1336,9 @@ LCDTiles:
 
 FarawayWaterFrames1: dw VTiles2 tile $14, FarawayWaterTiles1
 FarawayWaterFrames2: dw VTiles2 tile $15, FarawayWaterTiles2
+
+KantoWaterFrames1: dw VTiles2 tile $03, FarawayWaterTiles1
+KantoWaterFrames2: dw VTiles2 tile $04, FarawayWaterTiles2
 
 FarawayWaterTiles1: INCBIN "gfx/tilesets/water/faraway_water_1.2bpp"
 FarawayWaterTiles2: INCBIN "gfx/tilesets/water/faraway_water_2.2bpp"
