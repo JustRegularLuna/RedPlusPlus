@@ -352,6 +352,9 @@ def main():
 		print(usage % sys.argv[0], file=sys.stderr)
 		sys.exit(1)
 
+	if tileset.endswith('.2bpp.lz') and not os.path.exists(tileset):
+		tileset = tileset[:-3]
+
 	if not tileset.endswith('.png'):
 		os.system('python gfx.py png %s' % tileset)
 	if tileset.endswith('.2bpp'):
