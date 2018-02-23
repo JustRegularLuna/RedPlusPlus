@@ -16,6 +16,7 @@ GENERIC_METATILES EQU const_value
 GENERIC_GFX EQU const_value
 ; These are independent tilesets
 	const TILESET_FOREST
+	const TILESET_SAFARI_ZONE
 	;------------------------------------
 	const TILESET_PC_JOHTO_TRADITIONAL
 	const TILESET_PC_JOHTO_MODERN

@@ -43,6 +43,9 @@ INCLUDE "gfx/tilesets/indigo_palette_map.asm"
 TilesetForestPalMap:
 INCLUDE "gfx/tilesets/forest_palette_map.asm"
 
+TilesetSafariZonePalMap:
+INCLUDE "gfx/tilesets/safari_zone_palette_map.asm"
+
 ;------------------------------------
 
 Tileset00PalMap:
@@ -132,8 +135,8 @@ INCLUDE "gfx/tilesets/ice_path_palette_map.asm"
 TilesetPCForestPalMap:
 INCLUDE "gfx/tilesets/pc_forest_palette_map.asm"
 
-TilesetSafariPalMap:
-INCLUDE "gfx/tilesets/safari_palette_map.asm"
+TilesetPCSafariPalMap:
+INCLUDE "gfx/tilesets/pc_safari_palette_map.asm"
 
 TilesetPokemonMansionPalMap:
 INCLUDE "gfx/tilesets/pokemon_mansion_palette_map.asm"

@@ -215,6 +215,7 @@ class PaletteMap(object):
 		'fuchsia': lambda: load_palette('gfx/tilesets/palettes/fuchsia.pal')[8:16],
 		'saffron': lambda: load_palette('gfx/tilesets/palettes/saffron.pal')[8:16],
 		'forest': lambda: PaletteMap.nite_palette(),
+		'safari_zone': lambda: load_palette('gfx/tilesets/palettes/safari_zone.pal')[8:16],
 		########################################################################
 		'johto1': lambda: PaletteMap.day_palette(),
 		'johto2': lambda: PaletteMap.day_palette(),

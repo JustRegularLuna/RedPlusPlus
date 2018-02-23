@@ -62,8 +62,11 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, SaffronPalette
 	cp TILESET_SAFFRON
 	jp z, .load_eight_time_of_day_bg_palettes
-
 	ld hl, SafariZonePalette
+	cp TILESET_SAFARI_ZONE
+	jp z, .load_eight_time_of_day_bg_palettes
+
+	ld hl, PCSafariPalette
 	cp TILESET_PC_SAFARI_ZONE
 	jp z, .load_eight_time_of_day_bg_palettes
 	ld hl, FarawayIslandPalette
@@ -791,6 +794,39 @@ endc
 SafariZonePalette:
 if !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/safari_zone.pal"
+else
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 4
+	MONOCHROME_RGB_FOUR_NIGHT
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+	MONOCHROME_RGB_FOUR_NIGHT
+	MONOCHROME_RGB_FOUR_NIGHT
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
+
+PCSafariPalette:
+if !DEF(MONOCHROME)
+INCLUDE "gfx/tilesets/palettes/pc_safari.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
