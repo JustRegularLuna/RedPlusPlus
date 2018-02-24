@@ -35,11 +35,6 @@ DoAnimFrame: ; 8d24b
 	dw .FlyFrom            ; SPRITE_ANIM_SEQ_FLY_FROM
 	dw .FlyLeaf            ; SPRITE_ANIM_SEQ_FLY_LEAF
 	dw .FlyTo              ; SPRITE_ANIM_SEQ_FLY_TO
-	dw .IntroSuicune       ; SPRITE_ANIM_SEQ_INTRO_SUICUNE
-	dw .IntroPichuWooper   ; SPRITE_ANIM_SEQ_PICHU_WOOPER
-	dw .IntroUnown         ; SPRITE_ANIM_SEQ_UNOWN
-	dw .IntroUnownF        ; SPRITE_ANIM_SEQ_UNOWN_F
-	dw .IntroSuicuneAway   ; SPRITE_ANIM_SEQ_SUICUNE_AWAY
 	dw .Celebi             ; SPRITE_ANIM_SEQ_CELEBI
 
 .PartyMon ; 8d2a2 (23:52a2)
@@ -503,90 +498,6 @@ DoAnimFrame: ; 8d24b
 
 	ld hl, SPRITEANIMSTRUCT_XOFFSET
 	add hl, bc
-	ld [hl], a
-	ret
-
-.IntroSuicune ; 8d63e (23:563e)
-	ld a, [wcf65]
-	and a
-	ret z
-	ld hl, SPRITEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], $0
-
-	ld hl, SPRITEANIMSTRUCT_0D
-	add hl, bc
-	ld a, [hl]
-	add $2
-	ld [hl], a
-	cpl
-	inc a
-	ld d, $20
-	call .Sprites_Sine
-
-	ld hl, SPRITEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], a
-	ld a, SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_2
-	jp _ReinitSpriteAnimFrame
-
-.IntroPichuWooper ; 8d666 (23:5666)
-	ld hl, SPRITEANIMSTRUCT_0C
-	add hl, bc
-	ld a, [hl]
-	cp $14
-	ret nc
-	add $2
-	ld [hl], a
-	cpl
-	inc a
-	ld d, $20
-	call .Sprites_Sine
-
-	ld hl, SPRITEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], a
-	ret
-
-.IntroUnown ; 8d680 (23:5680)
-	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
-	add hl, bc
-	ld d, [hl]
-	inc [hl]
-	inc [hl]
-	inc [hl]
-
-	ld hl, SPRITEANIMSTRUCT_0C
-	add hl, bc
-	ld a, [hl]
-	push af
-	push de
-	call .Sprites_Sine
-
-	ld hl, SPRITEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], a
-	pop de
-	pop af
-	call .Sprites_Cosine
-
-	ld hl, SPRITEANIMSTRUCT_XOFFSET
-	add hl, bc
-	ld [hl], a
-	ret
-
-.IntroUnownF ; 8d6a2 (23:56a2)
-	ld a, [wcf64]
-	cp $40
-	ret nz
-	ld a, SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F_2
-	jp _ReinitSpriteAnimFrame
-
-.IntroSuicuneAway ; 8d6ae (23:56ae)
-	ld hl, SPRITEANIMSTRUCT_YCOORD
-	add hl, bc
-	ld a, [hl]
-	add $10
 	ld [hl], a
 	ret
 
