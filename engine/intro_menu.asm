@@ -1091,7 +1091,7 @@ Intro_PlacePlayerSprite: ; 61cd
 CrystalIntroSequence: ; 620b
 	farcall Copyright_GFPresents
 	jr c, StartTitleScreen
-	farcall CrystalIntro
+	;farcall RedIntro
 
 StartTitleScreen: ; 6219
 	ld a, [rSVBK]
