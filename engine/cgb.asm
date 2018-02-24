@@ -1180,8 +1180,8 @@ endc
 .TradeTubeRedPalette:
 if !DEF(MONOCHROME)
 	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 31, 07, 04
+	RGB 29, 16, 13
+	RGB 24, 06, 08
 	RGB 00, 00, 00
 else
 	MONOCHROME_RGB_FOUR

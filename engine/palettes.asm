@@ -1582,42 +1582,42 @@ PokegearOBPals:
 if !DEF(MONOCHROME)
 ; red
 	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 31, 07, 01
+	RGB 29, 23, 18
+	RGB 24, 07, 07
 	RGB 00, 00, 00
 ; blue
 	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 10, 09, 31
+	RGB 29, 23, 18
+	RGB 13, 10, 23
 	RGB 00, 00, 00
 ; green
 	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 07, 23, 03
+	RGB 29, 23, 18
+	RGB 07, 19, 00
 	RGB 00, 00, 00
 ; brown
 	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 15, 10, 03
+	RGB 29, 23, 18
+	RGB 16, 12, 00
 	RGB 00, 00, 00
 ; purple
 	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 18, 04, 18
+	RGB 29, 23, 18
+	RGB 20, 10, 16
 	RGB 00, 00, 00
 ; gray
 	RGB 27, 31, 27
-	RGB 31, 19, 10
+	RGB 29, 23, 18
 	RGB 13, 13, 13
 	RGB 00, 00, 00
 ; pink
 	RGB 27, 31, 27
-	RGB 31, 19, 10
+	RGB 29, 23, 18
 	RGB 31, 10, 11
 	RGB 00, 00, 00
 ; teal
 	RGB 27, 31, 27
-	RGB 31, 19, 10
+	RGB 29, 23, 18
 	RGB 03, 23, 21
 	RGB 00, 00, 00
 else
