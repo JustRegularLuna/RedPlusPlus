@@ -58,7 +58,6 @@ Tileset00End::
 	tileset TilesetTunnel
 	tileset TilesetPCForest
 	tileset TilesetPark
-	tileset TilesetPCSafari
 	tileset TilesetRuins
 	tileset TilesetAlph
 	tileset TilesetPokemonMansion

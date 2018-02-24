@@ -355,13 +355,6 @@ INCBIN "data/tilesets/johto3_metatiles.bin"
 TilesetJohto3Coll::
 INCLUDE "data/tilesets/johto3_collision.asm"
 
-TilesetPCSafariGFX::
-INCBIN "gfx/tilesets/pc_safari.2bpp.lz"
-TilesetPCSafariMeta::
-INCBIN "data/tilesets/pc_safari_metatiles.bin"
-TilesetPCSafariColl::
-INCLUDE "data/tilesets/pc_safari_collision.asm"
-
 
 SECTION "PC Tileset Data 10", ROMX
 

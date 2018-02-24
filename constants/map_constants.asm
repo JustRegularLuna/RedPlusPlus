@@ -212,6 +212,15 @@ MAP_NONE   EQU 0
 	mapconst SAFARI_ZONE_WARDENS_HOME,       4,  5 ;  6
 	mapconst FUCHSIA_BILL_SPEECH_HOUSE,      4,  4 ;  7
 	mapconst FUCHSIA_SAFARI_BALL_HOUSE,      4,  4 ;  8
+	mapconst SAFARI_ZONE_HUB,               18, 22 ;  9
+	mapconst SAFARI_ZONE_EAST,              19, 22 ; 10
+	mapconst SAFARI_ZONE_NORTH,             22, 27 ; 11
+	mapconst SAFARI_ZONE_WEST,              19, 23 ; 12
+	mapconst SAFARI_ZONE_HUB_REST_HOUSE,     4,  4 ; 13
+	mapconst SAFARI_ZONE_EAST_REST_HOUSE,    4,  4 ; 14
+	mapconst SAFARI_ZONE_NORTH_REST_HOUSE,   4,  4 ; 15
+	mapconst SAFARI_ZONE_WEST_REST_HOUSE_1,  4,  4 ; 16
+	mapconst SAFARI_ZONE_WEST_REST_HOUSE_2,  4,  4 ; 17
 
 	newgroup ; 17
 
@@ -570,34 +579,25 @@ MAP_NONE   EQU 0
 	mapconst DIM_CAVE_3F,                            17, 16 ; 18
 	mapconst DIM_CAVE_4F,                            16, 16 ; 19
 	mapconst DIM_CAVE_5F,                            17, 17 ; 20
-	mapconst SAFARI_ZONE_HUB,                        16, 17 ; 21
-	mapconst SAFARI_ZONE_EAST,                       15, 17 ; 22
-	mapconst SAFARI_ZONE_NORTH,                      20, 22 ; 23
-	mapconst SAFARI_ZONE_WEST,                       15, 17 ; 24
-	mapconst SAFARI_ZONE_HUB_REST_HOUSE,              4,  4 ; 25
-	mapconst SAFARI_ZONE_EAST_REST_HOUSE,             4,  4 ; 26
-	mapconst SAFARI_ZONE_NORTH_REST_HOUSE,            4,  4 ; 27
-	mapconst SAFARI_ZONE_WEST_REST_HOUSE_1,           4,  4 ; 28
-	mapconst SAFARI_ZONE_WEST_REST_HOUSE_2,           4,  4 ; 29
-	mapconst SILPH_CO_1F,                             4,  8 ; 30
-	mapconst SILPH_CO_2F,                             4,  8 ; 31
-	mapconst SILPH_CO_3F,                             4,  8 ; 32
-	mapconst SEAFOAM_ISLANDS_1F,                     18, 17 ; 33
-	mapconst SEAFOAM_ISLANDS_B1F,                    10, 20 ; 34
-	mapconst SEAFOAM_ISLANDS_B2F,                    10, 20 ; 35
-	mapconst SEAFOAM_ISLANDS_B3F,                    10, 20 ; 36
-	mapconst SEAFOAM_ISLANDS_B4F,                    10, 20 ; 37
-	mapconst POKEMON_MANSION_1F,                     14, 15 ; 38
-	mapconst POKEMON_MANSION_B1F,                    16, 17 ; 39
-	mapconst CINNABAR_VOLCANO_1F,                    14, 14 ; 40
-	mapconst CINNABAR_VOLCANO_B1F,                   18, 18 ; 41
-	mapconst CINNABAR_VOLCANO_B2F,                   14, 14 ; 42
-	mapconst VICTORY_ROAD_1F,                        13, 12 ; 43
-	mapconst VICTORY_ROAD_2F,                        11, 14 ; 44
-	mapconst VICTORY_ROAD_3F,                         9, 12 ; 45
-	mapconst CERULEAN_CAVE_1F,                       12, 17 ; 46
-	mapconst CERULEAN_CAVE_2F,                       11, 17 ; 47
-	mapconst CERULEAN_CAVE_B1F,                      11, 17 ; 48
+	mapconst SILPH_CO_1F,                             4,  8 ; 21
+	mapconst SILPH_CO_2F,                             4,  8 ; 22
+	mapconst SILPH_CO_3F,                             4,  8 ; 23
+	mapconst SEAFOAM_ISLANDS_1F,                     18, 17 ; 24
+	mapconst SEAFOAM_ISLANDS_B1F,                    10, 20 ; 25
+	mapconst SEAFOAM_ISLANDS_B2F,                    10, 20 ; 26
+	mapconst SEAFOAM_ISLANDS_B3F,                    10, 20 ; 27
+	mapconst SEAFOAM_ISLANDS_B4F,                    10, 20 ; 28
+	mapconst POKEMON_MANSION_1F,                     14, 15 ; 29
+	mapconst POKEMON_MANSION_B1F,                    16, 17 ; 30
+	mapconst CINNABAR_VOLCANO_1F,                    14, 14 ; 31
+	mapconst CINNABAR_VOLCANO_B1F,                   18, 18 ; 32
+	mapconst CINNABAR_VOLCANO_B2F,                   14, 14 ; 33
+	mapconst VICTORY_ROAD_1F,                        13, 12 ; 34
+	mapconst VICTORY_ROAD_2F,                        11, 14 ; 35
+	mapconst VICTORY_ROAD_3F,                         9, 12 ; 36
+	mapconst CERULEAN_CAVE_1F,                       12, 17 ; 37
+	mapconst CERULEAN_CAVE_2F,                       11, 17 ; 38
+	mapconst CERULEAN_CAVE_B1F,                      11, 17 ; 39
 
 	newgroup ; 50
 

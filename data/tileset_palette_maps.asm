@@ -135,9 +135,6 @@ INCLUDE "gfx/tilesets/ice_path_palette_map.asm"
 TilesetPCForestPalMap:
 INCLUDE "gfx/tilesets/pc_forest_palette_map.asm"
 
-TilesetPCSafariPalMap:
-INCLUDE "gfx/tilesets/pc_safari_palette_map.asm"
-
 TilesetPokemonMansionPalMap:
 INCLUDE "gfx/tilesets/pokemon_mansion_palette_map.asm"
 
