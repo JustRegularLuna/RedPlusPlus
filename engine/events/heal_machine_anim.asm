@@ -152,7 +152,7 @@ INCBIN "gfx/overworld/heal_machine.2bpp"
 .palettes ; 12451
 if !DEF(MONOCHROME)
 	RGB 31, 31, 31
-	RGB 31, 19, 10
+	RGB 29, 23, 18
 	RGB 31, 07, 01
 	RGB 00, 00, 00
 else

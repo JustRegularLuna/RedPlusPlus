@@ -2137,7 +2137,7 @@ endc
 PokecomCenterOfficeOBPalette_Purple:
 if !DEF(MONOCHROME)
 	RGB 28, 31, 16
-	RGB 31, 22, 10
+	RGB 29, 23, 18
 	RGB 07, 17, 21
 	RGB 00, 00, 00
 else
