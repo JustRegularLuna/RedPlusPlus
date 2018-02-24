@@ -20,6 +20,7 @@ Tileset00End::
 	tileset TilesetCerulean
 	tileset TilesetIndigo
 	tileset TilesetForest
+	tileset TilesetSafariZone
 	;------------------------------------
 	tileset TilesetJohto1
 	tileset TilesetJohto2
@@ -57,7 +58,6 @@ Tileset00End::
 	tileset TilesetTunnel
 	tileset TilesetPCForest
 	tileset TilesetPark
-	tileset TilesetSafari
 	tileset TilesetRuins
 	tileset TilesetAlph
 	tileset TilesetPokemonMansion

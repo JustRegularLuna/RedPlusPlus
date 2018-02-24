@@ -62,10 +62,10 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, SaffronPalette
 	cp TILESET_SAFFRON
 	jp z, .load_eight_time_of_day_bg_palettes
-
 	ld hl, SafariZonePalette
-	cp TILESET_PC_SAFARI_ZONE
+	cp TILESET_SAFARI_ZONE
 	jp z, .load_eight_time_of_day_bg_palettes
+
 	ld hl, FarawayIslandPalette
 	cp TILESET_PC_FARAWAY_ISLAND
 	jp z, .load_eight_time_of_day_bg_palettes
@@ -806,15 +806,9 @@ endr
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_BLACK
-rept 4
+rept 7
 	MONOCHROME_RGB_FOUR_NIGHT
 endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-	MONOCHROME_RGB_FOUR_NIGHT
-	MONOCHROME_RGB_FOUR_NIGHT
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
@@ -1939,9 +1933,7 @@ LoadSpecialMapOBPalette:
 .not_overcast
 	ld a, [wTileset]
 	cp TILESET_PC_SHAMOUTI_ISLAND
-	jr z, .load_bg_tree_palette
-	cp TILESET_PC_SAFARI_ZONE
-	jr nz, .not_shamouti_or_safari
+	jr nz, .not_shamouti_island
 .load_bg_tree_palette
 	ld hl, UnknBGPals palette PAL_BG_GREEN
 .load_tree_palette:
@@ -1952,7 +1944,7 @@ LoadSpecialMapOBPalette:
 	ld a, $5
 	jp FarCopyWRAM
 
-.not_shamouti_or_safari:
+.not_shamouti_island:
 	cp TILESET_CERULEAN
 	jr nz, .not_cerulean
 	ld hl, UnknBGPals palette PAL_BG_GRAY

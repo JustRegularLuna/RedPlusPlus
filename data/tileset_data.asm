@@ -30,13 +30,6 @@ INCBIN "data/tilesets/viridian_metatiles.bin"
 TilesetViridianColl::
 INCLUDE "data/tilesets/viridian_collision.asm"
 
-TilesetForestGFX::
-INCBIN "gfx/tilesets/forest.2bpp.lz"
-TilesetForestMeta::
-INCBIN "data/tilesets/forest_metatiles.bin"
-TilesetForestColl::
-INCLUDE "data/tilesets/forest_collision.asm"
-
 
 SECTION "Tileset Data 3", ROMX
 
@@ -125,6 +118,23 @@ TilesetIndigoMeta::
 INCBIN "data/tilesets/indigo_metatiles.bin"
 TilesetIndigoColl::
 INCLUDE "data/tilesets/indigo_collision.asm"
+
+
+SECTION "Tileset Data 11", ROMX
+
+TilesetForestGFX::
+INCBIN "gfx/tilesets/forest.2bpp.lz"
+TilesetForestMeta::
+INCBIN "data/tilesets/forest_metatiles.bin"
+TilesetForestColl::
+INCLUDE "data/tilesets/forest_collision.asm"
+
+TilesetSafariZoneGFX::
+INCBIN "gfx/tilesets/safari_zone.2bpp.lz"
+TilesetSafariZoneMeta::
+INCBIN "data/tilesets/safari_zone_metatiles.bin"
+TilesetSafariZoneColl::
+INCLUDE "data/tilesets/safari_zone_collision.asm"
 
 
 ;------------------------------------
@@ -344,13 +354,6 @@ TilesetJohto3Meta::
 INCBIN "data/tilesets/johto3_metatiles.bin"
 TilesetJohto3Coll::
 INCLUDE "data/tilesets/johto3_collision.asm"
-
-TilesetSafariGFX::
-INCBIN "gfx/tilesets/safari.2bpp.lz"
-TilesetSafariMeta::
-INCBIN "data/tilesets/safari_metatiles.bin"
-TilesetSafariColl::
-INCLUDE "data/tilesets/safari_collision.asm"
 
 
 SECTION "PC Tileset Data 10", ROMX

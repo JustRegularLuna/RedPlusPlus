@@ -5,7 +5,6 @@ CutGrassBlockPointers:
 	dbw TILESET_PC_JOHTO_OVERCAST, .johto_overcast
 	dbw TILESET_PC_PARK, .park
 	dbw TILESET_PC_FOREST, .forest
-	dbw TILESET_PC_SAFARI_ZONE, .safari_zone
 	dbw TILESET_PC_SHAMOUTI_ISLAND, .shamouti_island
 	dbw TILESET_PC_VALENCIA_ISLAND, .valencia_island
 	dbw TILESET_PC_FARAWAY_ISLAND, .faraway_island
@@ -35,24 +34,6 @@ CutGrassBlockPointers:
 	db $3b, $37, $01
 	db $4b, $47, $01
 	db $57, $0b, $01
-	db -1
-
-.safari_zone
-	db $03, $01, $01
-	db $07, $03, $01
-	db $24, $20, $01
-	db $25, $21, $01
-	db $26, $22, $01
-	db $27, $23, $01
-	db $28, $0a, $01
-	db $29, $0a, $01
-	db $2a, $0a, $01
-	db $2b, $0a, $01
-	db $2c, $28, $01
-	db $2d, $29, $01
-	db $2e, $2a, $01
-	db $2f, $2b, $01
-	db $4b, $27, $01
 	db -1
 
 .faraway_island

@@ -47,6 +47,8 @@ TilesetFuchsiaAnim:
 TilesetSaffronAnim:
 TilesetIndigoAnim:
 TilesetRoutesAnim:
+TilesetForestAnim:
+TilesetSafariZoneAnim:
 	dw KantoWaterFrames1, AnimateFarawayWaterTile
 	dw KantoWaterFrames2, AnimateFarawayWaterTile
 	dw NULL,  WaitTileAnimation
@@ -253,19 +255,6 @@ TilesetPCForestAnim:
 	dw VTiles2 tile $40, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 
-TilesetSafariAnim:
-	dw VTiles2 tile $14, AnimateWaterTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  StandingTileFrame8
-	dw NULL,  DoneTileAnimation
-
 TilesetFarawayAnim:
 	dw FarawayWaterFrames1, AnimateFarawayWaterTile
 	dw FarawayWaterFrames2, AnimateFarawayWaterTile
@@ -325,7 +314,6 @@ TilesetValenciaAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
-TilesetForestAnim:
 TilesetJohto3Anim:
 TilesetHouse1Anim:
 TilesetHouse2Anim:

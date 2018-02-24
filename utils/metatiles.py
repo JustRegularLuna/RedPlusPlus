@@ -215,6 +215,7 @@ class PaletteMap(object):
 		'fuchsia': lambda: load_palette('gfx/tilesets/palettes/fuchsia.pal')[8:16],
 		'saffron': lambda: load_palette('gfx/tilesets/palettes/saffron.pal')[8:16],
 		'forest': lambda: PaletteMap.nite_palette(),
+		'safari_zone': lambda: load_palette('gfx/tilesets/palettes/safari_zone.pal')[8:16],
 		########################################################################
 		'johto1': lambda: PaletteMap.day_palette(),
 		'johto2': lambda: PaletteMap.day_palette(),
@@ -351,6 +352,9 @@ def main():
        If a map is specified, its unique palette may be used.'''
 		print(usage % sys.argv[0], file=sys.stderr)
 		sys.exit(1)
+
+	if tileset.endswith('.2bpp.lz') and not os.path.exists(tileset):
+		tileset = tileset[:-3]
 
 	if not tileset.endswith('.png'):
 		os.system('python gfx.py png %s' % tileset)
