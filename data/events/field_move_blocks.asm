@@ -82,11 +82,11 @@ CutGrassBlockPointers:
 	db $15, $02
 	db $16, $02
 	db $17, $02
-	db $5f, $84
+	db $5f, $88
 	db $60, $1a
 	db $61, $1b
 	db $62, $48
-	db $63, $85
+	db $63, $89
 	db -1
 
 .shamouti_island
