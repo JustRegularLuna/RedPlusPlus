@@ -66,6 +66,7 @@ OutdoorSprites_Viridian:
 
 OutdoorSprites_Pewter:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_MountMoonSquare:

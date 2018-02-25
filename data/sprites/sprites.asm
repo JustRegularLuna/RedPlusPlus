@@ -95,3 +95,4 @@ SpriteHeaders:
 	overworld_sprite BookPaperPokedexSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite MapAmberLyingOldManSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite CableCarBikeSilphSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
+	overworld_sprite SignFenceTreetopSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
