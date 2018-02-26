@@ -533,7 +533,7 @@ MAP_NONE   EQU 0
 	newgroup ; 48
 
 	map_const ROUTE_1_VIRIDIAN_GATE,          5,  4 ;  3
-	map_const VIRIDIAN_FOREST_VIRIDIAN_GATE,  4,  5 ; 16
+	map_const VIRIDIAN_FOREST_VIRIDIAN_GATE,  5,  4 ; 16
 	map_const VIRIDIAN_FOREST_PEWTER_GATE,    5,  4 ; 17
 	map_const ROUTE_2_GATE,                   5,  4 ; 13
 	map_const ROUTE_5_SAFFRON_CITY_GATE,      5,  4 ; 14
