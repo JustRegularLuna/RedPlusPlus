@@ -105,7 +105,7 @@
 	tilecoll FLOOR, WALL, FLOOR, FLOOR
 	tilecoll WALL, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, FLOOR
+	tilecoll WALL, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll WALL, WALL, FLOOR, FLOOR
