@@ -60,6 +60,7 @@ OutdoorSprites_Cinnabar:
 	db SPRITE_OAK
 	db SPRITE_GIRL
 	db SPRITE_FISHER2
+	db SPRITE_CLERK
 	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL_CUT_FRUIT
 	db 0 ; end

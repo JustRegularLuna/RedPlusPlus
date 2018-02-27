@@ -18,8 +18,8 @@ PalletTown_MapScriptHeader:
 
 	db 3 ; object events
 	object_event  8,  6, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  3,  8, SPRITE_GIRL, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_COMMAND, jumptextfaceplayer, PalletTownText2, -1
-	object_event 11, 14, SPRITE_FISHER2, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_COMMAND, jumptextfaceplayer, PalletTownText3, -1
+	object_event  3,  8, SPRITE_GIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, PalletTownText2, -1
+	object_event 11, 15, SPRITE_FISHER2, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_GREEN, PERSONTYPE_COMMAND, jumptextfaceplayer, PalletTownText3, -1
 
 	const_def 1 ; object constants
 	const PALLETTOWN_OAK

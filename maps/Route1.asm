@@ -12,8 +12,8 @@ Route1_MapScriptHeader:
 	bg_event  9, 35, SIGNPOST_JUMPTEXT, Route1Text3
 
 	db 3 ; object events
-	object_event  5, 32, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 15, 21, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_SILVER, PERSONTYPE_COMMAND, jumptextfaceplayer, Route1Text2, -1
+	object_event  5, 32, SPRITE_CLERK, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 15, 21, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, PERSONTYPE_COMMAND, jumptextfaceplayer, Route1Text2, -1
 	fruittree_event  6, 11, FRUITTREE_ROUTE_1, ORAN_BERRY
 
 	const_def 1 ; object constants
