@@ -48,3 +48,6 @@ SpriteMovementData::
 	sprite_movement_data SPRITEMOVEFN_TILE,                  UP,     PERSON_ACTION_TILE,          $8e,    $02,    %0000 ; SPRITEMOVEDATA_OVERHEAD_TILE_UP
 	sprite_movement_data SPRITEMOVEFN_TILE,                  LEFT,   PERSON_ACTION_TILE,          $8e,    $02,    %0000 ; SPRITEMOVEDATA_OVERHEAD_TILE_LEFT
 	sprite_movement_data SPRITEMOVEFN_TILE,                  RIGHT,  PERSON_ACTION_TILE,          $8e,    $02,    %0000 ; SPRITEMOVEDATA_OVERHEAD_TILE_RIGHT
+	sprite_movement_data SPRITEMOVEFN_CABLE_SMALL,           DOWN,   PERSON_ACTION_CABLE_SMALL,   $8e,    $02,    %0000 ; SPRITEMOVEDATA_CABLE_SMALL
+	sprite_movement_data SPRITEMOVEFN_CABLE_LARGE,           DOWN,   PERSON_ACTION_CABLE_LARGE,   $8e,    $02,    %1100 ; SPRITEMOVEDATA_CABLE_LARGE
+	sprite_movement_data SPRITEMOVEFN_CABLE_SIDE,            DOWN,   PERSON_ACTION_CABLE_SIDE,    $8e,    $02,    %0000 ; SPRITEMOVEDATA_CABLE_SIDE

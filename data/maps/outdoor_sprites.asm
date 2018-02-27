@@ -76,8 +76,9 @@ OutdoorSprites_Cerulean:
 OutdoorSprites_CeruleanCape:
 OutdoorSprites_Route10:
 OutdoorSprites_Route5:
-	db SPRITE_CABLE_CAR_BIKE_SILPH
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_CABLE_CAR_POLE
+	db SPRITE_BIKE_BLANK_SILPH
 	db 0 ; end
 
 OutdoorSprites_Vermilion:
@@ -109,7 +110,7 @@ OutdoorSprites_Route19:
 	db 0 ; end
 
 OutdoorSprites_Saffron:
-	db SPRITE_CABLE_CAR_BIKE_SILPH
+	db SPRITE_BIKE_BLANK_SILPH
 	db 0 ; end
 
 OutdoorSprites_Indigo:

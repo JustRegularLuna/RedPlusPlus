@@ -118,6 +118,9 @@ MAPOBJECT_SCREEN_WIDTH EQU 12
 	const SPRITEMOVEDATA_OVERHEAD_TILE_UP     ; 28
 	const SPRITEMOVEDATA_OVERHEAD_TILE_LEFT   ; 29
 	const SPRITEMOVEDATA_OVERHEAD_TILE_RIGHT  ; 2a
+	const SPRITEMOVEDATA_CABLE_SMALL          ; 2b
+	const SPRITEMOVEDATA_CABLE_LARGE          ; 2c
+	const SPRITEMOVEDATA_CABLE_SIDE           ; 2d
 NUM_SPRITEMOVEDATA EQU const_value
 SPRITEMOVEDATA_FIELDS EQU 6
 
@@ -149,6 +152,9 @@ SPRITEMOVEDATA_FIELDS EQU 6
 	const SPRITEMOVEFN_CUT_TREE              ; 16
 	const SPRITEMOVEFN_STANDING_FLIP         ; 17
 	const SPRITEMOVEFN_TILE                  ; 18
+	const SPRITEMOVEFN_CABLE_SMALL           ; 19
+	const SPRITEMOVEFN_CABLE_LARGE           ; 1a
+	const SPRITEMOVEFN_CABLE_SIDE            ; 1b
 
 ; sprite step types
 ; see engine/map_objects.asm:StepTypesJumptable
@@ -198,6 +204,9 @@ SPRITEMOVEDATA_FIELDS EQU 6
 	const PERSON_ACTION_SKYFALL       ; 11
 	const PERSON_ACTION_STAND_FLIP    ; 12
 	const PERSON_ACTION_TILE          ; 13
+	const PERSON_ACTION_CABLE_SMALL   ; 14
+	const PERSON_ACTION_CABLE_LARGE   ; 15
+	const PERSON_ACTION_CABLE_SIDE    ; 16
 
 ; see data/sprites/facings.asm:Facings
 	const_def
@@ -242,3 +251,6 @@ SPRITEMOVEDATA_FIELDS EQU 6
 	const FACING_TILE_UP         ; 26
 	const FACING_TILE_LEFT       ; 27
 	const FACING_TILE_RIGHT      ; 28
+	const FACING_CABLE_SMALL     ; 29
+	const FACING_CABLE_LARGE     ; 2a
+	const FACING_CABLE_SIDE      ; 2b

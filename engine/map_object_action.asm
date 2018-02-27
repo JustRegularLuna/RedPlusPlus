@@ -19,6 +19,9 @@ Pointers445f: ; 445f
 	dw SetFacingSkyfall,               SetFacingCurrent           ; PERSON_ACTION_SKYFALL
 	dw SetFacingStandFlip,             SetFacingStandFlip         ; PERSON_ACTION_STAND_FLIP
 	dw SetFacingTile,                  SetFacingTile              ; PERSON_ACTION_TILE
+	dw SetFacingCableSmall,            SetFacingCableSmall        ; PERSON_ACTION_CABLE_SMALL
+	dw SetFacingCableLarge,            SetFacingCableLarge        ; PERSON_ACTION_CABLE_LARGE
+	dw SetFacingCableSide,             SetFacingCableSide         ; PERSON_ACTION_CABLE_SIDE
 ; 44a3
 
 SetFacingStanding: ; 44a3
@@ -43,6 +46,18 @@ SetFacingEmote: ; 4582 emote
 
 SetFacingCutTree:
 	ld a, FACING_CUT_TREE
+	jr SetFixedFacing
+
+SetFacingCableSmall:
+	ld a, FACING_CABLE_SMALL
+	jr SetFixedFacing
+
+SetFacingCableLarge:
+	ld a, FACING_CABLE_LARGE
+	jr SetFixedFacing
+
+SetFacingCableSide:
+	ld a, FACING_CABLE_SIDE
 	jr SetFixedFacing
 
 SetFacingBigDoll: ; 45c5

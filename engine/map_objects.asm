@@ -519,6 +519,9 @@ MapObjectMovementPattern: ; 47dd
 	dw .MovementCutTree              ; SPRITEMOVEFN_CUT_TREE
 	dw .StandingFlip                 ; SPRITEMOVEFN_STANDING_FLIP
 	dw .MovementTile                 ; SPRITEMOVEFN_TILE
+	dw .CableSmall                   ; SPRITEMOVEFN_CABLE_SMALL
+	dw .CableLarge                   ; SPRITEMOVEFN_CABLE_LARGE
+	dw .CableSide                    ; SPRITEMOVEFN_CABLE_SIDE
 
 .RandomWalkY:
 	call Random
@@ -712,6 +715,18 @@ MapObjectMovementPattern: ; 47dd
 
 .MovementTile:
 	ld a, PERSON_ACTION_TILE
+	jr ._ActionA_StepType04
+
+.CableSmall:
+	ld a, PERSON_ACTION_CABLE_SMALL
+	jr ._ActionA_StepType04
+
+.CableLarge:
+	ld a, PERSON_ACTION_CABLE_LARGE
+	jr ._ActionA_StepType04
+
+.CableSide:
+	ld a, PERSON_ACTION_CABLE_SIDE
 	jr ._ActionA_StepType04
 
 .StandingFlip:

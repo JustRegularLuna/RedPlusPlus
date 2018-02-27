@@ -21,9 +21,9 @@ CeruleanCity_MapScriptHeader:
 	db 0 ; bg events
 
 	db 4 ; object events
-	object_event 11, 20, SPRITE_CABLE_CAR_BIKE_SILPH, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptext, CeruleanCityBicycleText, -1
-	object_event 11, 21, SPRITE_CABLE_CAR_BIKE_SILPH, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptext, CeruleanCityBicycleText, -1
-	object_event 11, 22, SPRITE_CABLE_CAR_BIKE_SILPH, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptext, CeruleanCityBicycleText, -1
+	object_event 11, 20, SPRITE_BIKE_BLANK_SILPH, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, PERSONTYPE_COMMAND, jumptext, CeruleanCityBicycleText, -1
+	object_event 11, 21, SPRITE_BIKE_BLANK_SILPH, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, PERSONTYPE_COMMAND, jumptext, CeruleanCityBicycleText, -1
+	object_event 11, 22, SPRITE_BIKE_BLANK_SILPH, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, PERSONTYPE_COMMAND, jumptext, CeruleanCityBicycleText, -1
 	cuttree_event 25, 26, -1
 
 	const_def 1 ; object constants
