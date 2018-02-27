@@ -40,6 +40,9 @@ Facings:
 	dw FacingTileUp        ; FACING_TILE_UP
 	dw FacingTileLeft      ; FACING_TILE_LEFT
 	dw FacingTileRight     ; FACING_TILE_RIGHT
+	dw FacingCableSmall    ; FACING_CABLE_SMALL
+	dw FacingCableLarge    ; FACING_CABLE_LARGE
+	dw FacingCableSide     ; FACING_CABLE_SIDE
 FacingsEnd: dw 0
 
 NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -328,3 +331,22 @@ FacingTileRight:
 	db  4,  0, 0 | X_FLIP, $09
 	db 12,  8, 0 | X_FLIP, $0a
 	db 12,  0, 0 | X_FLIP, $0b
+
+FacingCableSmall:
+	db 1 ; #
+	db  4,  8, 0, $0a
+
+FacingCableLarge:
+	db 7 ; #
+	db  4,  0, 0, $08
+	db 12,  0, 0, $0a
+	db 12,  8, 0, $08
+	db 20,  8, 0, $0a
+	db 20, 16, 0, $08
+	db 28, 16, 0, $0a
+	db 28, 24, 0, $08
+
+FacingCableSide:
+	db 2 ; #
+	db  4,  0, 0, $0b
+	db  4,  8, 0, $0b

@@ -23,14 +23,13 @@ tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'vermilion', 'lavender
                  'celadon', 'fuchsia', 'saffron', 'routes', 'cerulean', 'indigo',
                  'forest', 'safari_zone',
                  ###############################################################
-                 'johto1', 'johto2', 'johto3', 'johto4',
-                 'shamouti', 'valencia', 'faraway', 'house1', 'house2', 'house3',
-                 'pokecenter', 'pokecom', 'mart', 'gate', 'gym1', 'gym2', 'gym3',
-                 'port', 'lab', 'facility', 'mansion', 'game_corner', 'decor',
-                 'museum', 'hotel', 'tower', 'battle_tower', 'radio_tower',
-                 'lighthouse', 'warehouse', 'cave', 'quiet_cave', 'ice_path',
-                 'tunnel', 'pc_forest', 'park', 'pc_safari', 'ruins', 'alph',
-                 'pokemon_mansion']
+                 'johto1', 'johto2', 'johto3', 'johto4', 'shamouti', 'valencia',
+                 'faraway', 'house1', 'house2', 'house3', 'pokecenter', 'pokecom',
+                 'mart', 'gate', 'gym1', 'gym2', 'gym3', 'port', 'lab', 'facility',
+                 'mansion', 'game_corner', 'decor', 'museum', 'hotel', 'tower',
+                 'battle_tower', 'radio_tower', 'lighthouse', 'warehouse', 'cave',
+                 'quiet_cave', 'ice_path', 'tunnel', 'pc_forest', 'park', 'ruins',
+                 'alph', 'pokemon_mansion']
 
 # {'TILESET_PC_JOHTO_1': 'johto1', ...}
 tileset_ids = {}

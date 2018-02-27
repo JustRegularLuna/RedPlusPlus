@@ -15,7 +15,11 @@ Route2North_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 7 ; object events
+	object_event  0, 13, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event  1, 13, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_RIGHT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event  2, 13, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event  3, 13, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_RIGHT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
 	fruittree_event  7, 11, FRUITTREE_ROUTE_2, ORAN_BERRY
 	cuttree_event  5,  8, -1
 	cuttree_event 15, 20, -1
