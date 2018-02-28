@@ -107,7 +107,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; EXP_SHARE
 	dw NoEffect         ; OAKS_PARCEL
 	dw SquirtBottle     ; SQUIRTBOTTLE
-	dw NoEffect         ; TOWN_MAP ** TODO: Give this the right effect
+	dw TownMapEffect    ; TOWN_MAP
 	dw NoEffect         ; LIFT_KEY
 	dw CardKey          ; CARD_KEY
 	dw NoEffect         ; SECRET_KEY
@@ -1398,6 +1398,8 @@ Text_AskNicknameNewlyCaughtMon: ; 0xedf5
 ReturnToBattle_UseBall: ; edfa (3:6dfa)
 	farjp _ReturnToBattle_UseBall
 
+TownMapEffect:
+	farjp Special_TownMapItem
 
 Bicycle: ; ee08
 	farjp BikeFunction
