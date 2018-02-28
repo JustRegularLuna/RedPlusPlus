@@ -105,27 +105,27 @@ ItemEffects: ; e73c
 	dw CoinCase         ; COIN_CASE
 	dw Itemfinder       ; ITEMFINDER
 	dw NoEffect         ; EXP_SHARE
-	dw NoEffect         ; MYSTERY_EGG
+	dw NoEffect         ; OAKS_PARCEL
 	dw SquirtBottle     ; SQUIRTBOTTLE
-	dw NoEffect         ; SECRETPOTION
-	dw NoEffect         ; RED_SCALE
+	dw NoEffect         ; TOWN_MAP ** TODO: Give this the right effect
+	dw NoEffect         ; LIFT_KEY
 	dw CardKey          ; CARD_KEY
-	dw BasementKey      ; BASEMENT_KEY
+	dw NoEffect         ; SECRET_KEY
 	dw NoEffect         ; S_S_TICKET
-	dw NoEffect         ; PASS
-	dw NoEffect         ; MACHINE_PART
-	dw NoEffect         ; LOST_ITEM
+	dw NoEffect         ; BIKE_VOUCHER
+	dw NoEffect         ; POKE_FLUTE ** TODO: Give this the right effect
+	dw NoEffect         ; GOLD_TEETH
 	dw NoEffect         ; RAINBOW_WING
 	dw NoEffect         ; SILVER_WING
 	dw NoEffect         ; CLEAR_BELL
 	dw BlueCard         ; GS_BALL
 	dw NoEffect         ; BLUE_CARD
-	dw NoEffect         ; ORANGETICKET
+	dw NoEffect         ; EON_TICKET
 	dw NoEffect         ; MYSTICTICKET
 	dw NoEffect         ; OLD_SEA_MAP
 	dw NoEffect         ; SHINY_CHARM
 	dw NoEffect         ; OVAL_CHARM
-	dw NoEffect         ; SILPHSCOPE2
+	dw NoEffect         ; SILPHSCOPE
 	dw ApricornBox      ; APRICORN_BOX
 	dw HealStatusEffect ; CHERI_BERRY
 	dw HealStatusEffect ; CHESTO_BERRY
@@ -2858,11 +2858,6 @@ SquirtBottle: ; f73e
 CardKey: ; f745
 	farjp _CardKey
 ; f74c
-
-
-BasementKey: ; f74c
-	farjp _BasementKey
-; f753
 
 
 SacredAsh: ; f753

@@ -480,7 +480,7 @@ _ChooseWildEncounter:
 	ld a, [MapNumber]
 	cp MAP_LAVENDER_TOWN ; first Ghost map in its group
 	jr c, .not_ghost
-	ld a, SILPHSCOPE2
+	ld a, SILPHSCOPE
 	ld [CurItem], a
 	ld hl, NumKeyItems
 	call CheckItem

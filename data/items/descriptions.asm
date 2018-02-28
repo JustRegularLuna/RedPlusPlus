@@ -90,27 +90,27 @@ ItemDescriptions:
 	dw CoinCaseDesc
 	dw ItemfinderDesc
 	dw ExpShareDesc
-	dw MysteryEggDesc
+	dw OaksParcelDesc
 	dw SquirtBottleDesc
-	dw SecretPotionDesc
-	dw RedScaleDesc
+	dw TownMapDesc
+	dw LiftKeyDesc
 	dw CardKeyDesc
-	dw BasementKeyDesc
+	dw SecretKeyDesc
 	dw SSTicketDesc
-	dw PassDesc
-	dw MachinePartDesc
-	dw LostItemDesc
+	dw BikeVoucherDesc
+	dw PokeFluteDesc
+	dw GoldTeethDesc
 	dw RainbowWingDesc
 	dw SilverWingDesc
 	dw ClearBellDesc
 	dw GSBallDesc
 	dw BlueCardDesc
-	dw OrangeTicketDesc
+	dw EonTicketDesc
 	dw MysticTicketDesc
 	dw OldSeaMapDesc
 	dw ShinyCharmDesc
 	dw OvalCharmDesc
-	dw SilphScope2Desc
+	dw SilphScopeDesc
 	dw ApricornBoxDesc
 	dw CheriBerryDesc
 	dw ChestoBerryDesc
@@ -596,44 +596,44 @@ ExpShareDesc:
 	db   "Shares battle Exp."
 	next "Points. (Hold)@"
 
-MysteryEggDesc:
-	db   "An Egg obtained"
-	next "from Mr.#mon.@"
+OaksParcelDesc:
+	db   "A parcel belonging"
+	next "to Prof. Oak.@"
 
 SquirtBottleDesc:
 	db   "A bottle used for"
 	next "watering plants.@"
 
-SecretPotionDesc:
-	db   "Fully heals any"
-	next "#mon.@"
+TownMapDesc:
+	db   "Shows your present"
+	next "location.@"
 
-RedScaleDesc:
-	db   "A scale from the"
-	next "red Gyarados.@"
+LiftKeyDesc:
+	db   "Key to the lift in"
+	next "the Rocket base.@"
 
 CardKeyDesc:
 	db   "Opens shutters in"
-	next "the Radio Tower.@"
+	next "Silph Co.@"
 
-BasementKeyDesc:
+SecretKeyDesc:
 	db   "Opens doors.@"
 
 SSTicketDesc:
 	db   "A ticket for the"
-	next "S.S.Aqua.@"
+	next "S.S.Anne.@"
 
-PassDesc:
-	db   "A ticket for the"
-	next "Magnet Train.@"
+BikeVoucherDesc:
+	db   "Exchange for a new"
+	next "Bicycle.@"
 
-MachinePartDesc:
-	db   "A machine part for"
-	next "the Power Plant.@"
+PokeFluteDesc:
+	db   "Instantly awakens"
+	next "any #mon.@"
 
-LostItemDesc:
-	db   "The # Doll lost"
-	next "by the Copycat.@"
+GoldTeethDesc:
+	db   "Gold dentures lost"
+	next "by the Warden.@"
 
 RainbowWingDesc:
 	db   "A mystical feather"
@@ -655,7 +655,7 @@ BlueCardDesc:
 	db   "Card to save"
 	next "points.@"
 
-OrangeTicketDesc:
+EonTicketDesc:
 MysticTicketDesc:
 	db   "A ticket for the"
 	next "Seagallop Ferry.@"
@@ -672,7 +672,7 @@ OvalCharmDesc:
 	db   "A charm for find-"
 	next "ing Eggs.@"
 
-SilphScope2Desc:
+SilphScopeDesc:
 	db   "A scope to see in-"
 	next "visible #mon.@"
 

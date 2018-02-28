@@ -108,27 +108,27 @@
 	const COIN_CASE    ; 59
 	const ITEMFINDER   ; 5a
 	const EXP_SHARE    ; 5b
-	const MYSTERY_EGG  ; 5c
+	const OAKS_PARCEL  ; 5c * Changed
 	const SQUIRTBOTTLE ; 5d
-	const SECRETPOTION ; 5e
-	const RED_SCALE    ; 5f
+	const TOWN_MAP     ; 5e * Changed
+	const LIFT_KEY     ; 5f * Changed
 	const CARD_KEY     ; 60
-	const BASEMENT_KEY ; 61
+	const SECRET_KEY   ; 61 * Changed
 	const S_S_TICKET   ; 62
-	const PASS         ; 63
-	const MACHINE_PART ; 64
-	const LOST_ITEM    ; 65
+	const BIKE_VOUCHER ; 63 * Changed
+	const POKE_FLUTE   ; 64 * Changed
+	const GOLD_TEETH   ; 65 * Changed
 	const RAINBOW_WING ; 66
 	const SILVER_WING  ; 67
 	const CLEAR_BELL   ; 68
 	const GS_BALL      ; 69
 	const BLUE_CARD    ; 6a
-	const ORANGETICKET ; 6b
+	const EON_TICKET   ; 6b * Changed
 	const MYSTICTICKET ; 6c
 	const OLD_SEA_MAP  ; 6d
 	const SHINY_CHARM  ; 6e
 	const OVAL_CHARM   ; 6f
-	const SILPHSCOPE2  ; 70
+	const SILPHSCOPE   ; 70 * Changed
 	const APRICORN_BOX ; 71
 
 	const CHERI_BERRY  ; 72
