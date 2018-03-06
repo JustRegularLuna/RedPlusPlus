@@ -57,14 +57,28 @@ OutdoorSprites: ; 144b8
 
 OutdoorSprites_Pallet:
 OutdoorSprites_Cinnabar:
+	db SPRITE_OAK
+	db SPRITE_GIRL
+	db SPRITE_FISHER2
+	db SPRITE_CLERK
+	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL_CUT_FRUIT
 	db 0 ; end
 
 OutdoorSprites_Viridian:
+	db SPRITE_BUG_CATCHER
+	db SPRITE_GAMBLER
+	db SPRITE_GIRL
+	db SPRITE_FISHER2
+	db SPRITE_MAP_AMBER_LYING_OLD_MAN
 	db SPRITE_BALL_CUT_FRUIT
 	db 0 ; end
 
 OutdoorSprites_Pewter:
+	db SPRITE_LASS
+	db SPRITE_BLACK_HAIR_BOY_1
+	db SPRITE_BLACK_HAIR_BOY_2
+	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
