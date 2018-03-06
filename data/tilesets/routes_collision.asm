@@ -236,16 +236,17 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll WALL, TOP_WALL, WALL, FLOOR
+	tilecoll TOP_WALL, WALL, FLOOR, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WATER, WALL
 	tilecoll WALL, WALL, WALL, WATER
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll WALL, WATER, WALL, WALL
+	tilecoll WATER, WALL, WALL, WALL
 	tilecoll WATER, WALL, WATER, WALL
 	tilecoll WALL, WATER, WALL, WATER
-	tilecoll FLOOR, FLOOR, FLOOR, WALL
-	tilecoll WATER, WALL, WATER, WATER
-	tilecoll WALL, WATER, WALL, WALL
-	tilecoll TV, TV, TV, TV
 	tilecoll WATER, WATER, WALL, WALL
 	tilecoll WALL, WALL, WATER, WATER
 	tilecoll WALL, WALL, WATER, WATER
+	tilecoll FLOOR, FLOOR, FLOOR, WALL

@@ -193,9 +193,10 @@ MAP_NONE   EQU 0
 
 	map_const ROUTE_16_NORTH,                10, 12 ;  1
 	map_const ROUTE_16_SOUTH,                10, 12 ;  2
-	map_const ROUTE_17,                      10, 68 ;  3
-	map_const ROUTE_18_WEST,                 16, 11 ;  4
-	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,  4,  4 ;  5
+	map_const ROUTE_17,                      10, 67 ;  3
+	map_const ROUTE_18_WEST,                 16, 12 ;  4
+	map_const URAGA_CHANNEL_EAST,            21,  9 ;  5
+	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,  4,  4 ;  6
 
 	newgroup ; 15
 
@@ -205,7 +206,7 @@ MAP_NONE   EQU 0
 	newgroup ; 16
 
 	map_const FUCHSIA_CITY,                  25, 18 ;  1
-	map_const ROUTE_18_EAST,                 10, 11 ;  2
+	map_const ROUTE_18_EAST,                 10,  9 ;  2
 	map_const FUCHSIA_POKECENTER_1F,          6,  4 ;  3
 	map_const FUCHSIA_MART,                   6,  4 ;  4
 	map_const FUCHSIA_GYM,                    5,  9 ;  5
@@ -248,9 +249,10 @@ MAP_NONE   EQU 0
 	map_const CINNABAR_ISLAND,        16, 16 ;  1
 	map_const ROUTE_20,               48, 10 ;  2
 	map_const ROUTE_21,               12, 41 ;  3
-	map_const CINNABAR_POKECENTER_1F,  6,  4 ;  4
-	map_const SEAFOAM_GYM,            12, 12 ;  5
-	map_const CINNABAR_LAB,           16,  9 ;  6
+	map_const URAGA_CHANNEL_WEST,     21,  9 ;  4
+	map_const CINNABAR_POKECENTER_1F,  6,  4 ;  5
+	map_const SEAFOAM_GYM,            12, 12 ;  6
+	map_const CINNABAR_LAB,           16,  9 ;  7
 
 	newgroup ; 20
 
