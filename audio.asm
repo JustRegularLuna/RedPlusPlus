@@ -18,155 +18,155 @@ INCLUDE "audio/sfx_pointers.asm"
 
 SECTION "Music 1", ROMX
 
-INCLUDE "audio/music/crystalopening.asm"
-INCLUDE "audio/music/titlescreen.asm"
+INCLUDE "audio/music/gsc/crystalopening.asm"
+INCLUDE "audio/music/gsc/titlescreen.asm"
 
 
 SECTION "Music 2", ROMX
 
-INCLUDE "audio/music/mainmenu.asm"
-INCLUDE "audio/music/newbarktown.asm"
-INCLUDE "audio/music/mom.asm"
-INCLUDE "audio/music/elmslab.asm"
-INCLUDE "audio/music/johtowildbattle.asm" ; shares with johtowildbattlenight.asm
-INCLUDE "audio/music/johtowildbattlenight.asm" ; shares with johtowildbattle.asm
-INCLUDE "audio/music/wildpokemonvictory.asm" ; shares with successfulcapture.asm
-INCLUDE "audio/music/successfulcapture.asm" ; shares with wildpokemonvictory.asm
+INCLUDE "audio/music/gsc/mainmenu.asm"
+INCLUDE "audio/music/gsc/newbarktown.asm"
+INCLUDE "audio/music/gsc/mom.asm"
+INCLUDE "audio/music/gsc/elmslab.asm"
+INCLUDE "audio/music/gsc/johtowildbattle.asm" ; shares with johtowildbattlenight.asm
+INCLUDE "audio/music/gsc/johtowildbattlenight.asm" ; shares with johtowildbattle.asm
+INCLUDE "audio/music/gsc/wildpokemonvictory.asm" ; shares with successfulcapture.asm
+INCLUDE "audio/music/gsc/successfulcapture.asm" ; shares with wildpokemonvictory.asm
 
 
 SECTION "Music 3", ROMX
 
-INCLUDE "audio/music/route29.asm"
-INCLUDE "audio/music/cherrygrovecity.asm"
-INCLUDE "audio/music/showmearound.asm"
-INCLUDE "audio/music/pokemoncenter.asm"
-INCLUDE "audio/music/healpokemon.asm"
-INCLUDE "audio/music/lookyoungster.asm"
-INCLUDE "audio/music/johtotrainerbattle.asm"
-INCLUDE "audio/music/trainervictory.asm"
+INCLUDE "audio/music/gsc/route29.asm"
+INCLUDE "audio/music/gsc/cherrygrovecity.asm"
+INCLUDE "audio/music/gsc/showmearound.asm"
+INCLUDE "audio/music/gsc/pokemoncenter.asm"
+INCLUDE "audio/music/gsc/healpokemon.asm"
+INCLUDE "audio/music/gsc/lookyoungster.asm"
+INCLUDE "audio/music/gsc/johtotrainerbattle.asm"
+INCLUDE "audio/music/gsc/trainervictory.asm"
 
 
 SECTION "Music 4", ROMX
 
-INCLUDE "audio/music/route30.asm"
-INCLUDE "audio/music/violetcity.asm"
-INCLUDE "audio/music/sprouttower.asm"
-INCLUDE "audio/music/looksage.asm"
-INCLUDE "audio/music/unioncave.asm"
-INCLUDE "audio/music/ruinsofalphinterior.asm"
-INCLUDE "audio/music/ruinsofalphradio.asm"
-INCLUDE "audio/music/azaleatown.asm"
+INCLUDE "audio/music/gsc/route30.asm"
+INCLUDE "audio/music/gsc/violetcity.asm"
+INCLUDE "audio/music/gsc/sprouttower.asm"
+INCLUDE "audio/music/gsc/looksage.asm"
+INCLUDE "audio/music/gsc/unioncave.asm"
+INCLUDE "audio/music/gsc/ruinsofalphinterior.asm"
+INCLUDE "audio/music/gsc/ruinsofalphradio.asm"
+INCLUDE "audio/music/gsc/azaleatown.asm"
 
 
 SECTION "Music 5", ROMX
 
-INCLUDE "audio/music/lookrocket.asm" ; shares with rockettheme.asm
-INCLUDE "audio/music/rockettheme.asm" ; shares with lookrocket.asm
-INCLUDE "audio/music/rocketbattle.asm"
-INCLUDE "audio/music/route36.asm"
-INCLUDE "audio/music/lookrival.asm" ; shares with aftertherivalfight.asm
-INCLUDE "audio/music/rivalbattle.asm"
-INCLUDE "audio/music/aftertherivalfight.asm" ; shares with lookrival.asm
-INCLUDE "audio/music/evolution.asm"
+INCLUDE "audio/music/gsc/lookrocket.asm" ; shares with rockettheme.asm
+INCLUDE "audio/music/gsc/rockettheme.asm" ; shares with lookrocket.asm
+INCLUDE "audio/music/gsc/rocketbattle.asm"
+INCLUDE "audio/music/gsc/route36.asm"
+INCLUDE "audio/music/gsc/lookrival.asm" ; shares with aftertherivalfight.asm
+INCLUDE "audio/music/gsc/rivalbattle.asm"
+INCLUDE "audio/music/gsc/aftertherivalfight.asm" ; shares with lookrival.asm
+INCLUDE "audio/music/gsc/evolution.asm"
 
 
 SECTION "Music 6", ROMX
 
-INCLUDE "audio/music/goldenrodcity.asm"
-INCLUDE "audio/music/pokecomcenter.asm"
-INCLUDE "audio/music/gym.asm"
-INCLUDE "audio/music/johtogymbattle.asm"
-INCLUDE "audio/music/gymleadervictory.asm"
-INCLUDE "audio/music/pokemonchannel.asm"
-INCLUDE "audio/music/buenaspassword.asm"
-INCLUDE "audio/music/gamecorner.asm"
+INCLUDE "audio/music/gsc/goldenrodcity.asm"
+INCLUDE "audio/music/gsc/pokecomcenter.asm"
+INCLUDE "audio/music/gsc/gym.asm"
+INCLUDE "audio/music/gsc/johtogymbattle.asm"
+INCLUDE "audio/music/gsc/gymleadervictory.asm"
+INCLUDE "audio/music/gsc/pokemonchannel.asm"
+INCLUDE "audio/music/gsc/buenaspassword.asm"
+INCLUDE "audio/music/gsc/gamecorner.asm"
 
 
 SECTION "Music 7", ROMX
 
-INCLUDE "audio/music/bicycle.asm"
-INCLUDE "audio/music/looklass.asm"
-INCLUDE "audio/music/nationalpark.asm"
-INCLUDE "audio/music/bugcatchingcontest.asm"
-INCLUDE "audio/music/contestresults.asm"
-INCLUDE "audio/music/ecruteakcity.asm"
-INCLUDE "audio/music/dancinghall.asm"
-INCLUDE "audio/music/lookkimonogirl.asm"
+INCLUDE "audio/music/gsc/bicycle.asm"
+INCLUDE "audio/music/gsc/looklass.asm"
+INCLUDE "audio/music/gsc/nationalpark.asm"
+INCLUDE "audio/music/gsc/bugcatchingcontest.asm"
+INCLUDE "audio/music/gsc/contestresults.asm"
+INCLUDE "audio/music/gsc/ecruteakcity.asm"
+INCLUDE "audio/music/gsc/dancinghall.asm"
+INCLUDE "audio/music/gsc/lookkimonogirl.asm"
 
 
 SECTION "Music 8", ROMX
 
-INCLUDE "audio/music/burnedtower.asm"
-INCLUDE "audio/music/lookmysticalman.asm"
-INCLUDE "audio/music/profoakspokemontalk.asm"
-INCLUDE "audio/music/route37.asm"
-INCLUDE "audio/music/pokemonmarch.asm"
-INCLUDE "audio/music/lighthouse.asm"
-INCLUDE "audio/music/surf.asm"
-INCLUDE "audio/music/lakeofrage.asm"
+INCLUDE "audio/music/gsc/burnedtower.asm"
+INCLUDE "audio/music/gsc/lookmysticalman.asm"
+INCLUDE "audio/music/gsc/profoakspokemontalk.asm"
+INCLUDE "audio/music/gsc/route37.asm"
+INCLUDE "audio/music/gsc/pokemonmarch.asm"
+INCLUDE "audio/music/gsc/lighthouse.asm"
+INCLUDE "audio/music/gsc/surf.asm"
+INCLUDE "audio/music/gsc/lakeofrage.asm"
 
 
 SECTION "Music 9", ROMX
 
-INCLUDE "audio/music/lakeofragerocketradio.asm"
-INCLUDE "audio/music/rockethideout.asm"
-INCLUDE "audio/music/lookpokemaniac.asm"
-INCLUDE "audio/music/darkcave.asm"
-INCLUDE "audio/music/dragonsden.asm"
-INCLUDE "audio/music/clair.asm"
-INCLUDE "audio/music/tintower.asm"
-INCLUDE "audio/music/suicunebattle.asm"
+INCLUDE "audio/music/gsc/lakeofragerocketradio.asm"
+INCLUDE "audio/music/gsc/rockethideout.asm"
+INCLUDE "audio/music/gsc/lookpokemaniac.asm"
+INCLUDE "audio/music/gsc/darkcave.asm"
+INCLUDE "audio/music/gsc/dragonsden.asm"
+INCLUDE "audio/music/gsc/clair.asm"
+INCLUDE "audio/music/gsc/tintower.asm"
+INCLUDE "audio/music/gsc/suicunebattle.asm"
 
 
 SECTION "Music 10", ROMX
 
-INCLUDE "audio/music/route26.asm"
-INCLUDE "audio/music/victoryroad.asm"
-INCLUDE "audio/music/indigoplateau.asm"
-INCLUDE "audio/music/championbattle.asm"
-INCLUDE "audio/music/halloffame.asm"
-INCLUDE "audio/music/ssaqua.asm"
-INCLUDE "audio/music/vermilioncity.asm"
-INCLUDE "audio/music/kantogymbattle.asm"
+INCLUDE "audio/music/gsc/route26.asm"
+INCLUDE "audio/music/gsc/victoryroad.asm"
+INCLUDE "audio/music/gsc/indigoplateau.asm"
+INCLUDE "audio/music/gsc/championbattle.asm"
+INCLUDE "audio/music/gsc/halloffame.asm"
+INCLUDE "audio/music/gsc/ssaqua.asm"
+INCLUDE "audio/music/gsc/vermilioncity.asm"
+INCLUDE "audio/music/gsc/kantogymbattle.asm"
 
 
 SECTION "Music 11", ROMX
 
-INCLUDE "audio/music/lavendertown.asm"
-INCLUDE "audio/music/kantowildbattle.asm"
-INCLUDE "audio/music/magnettrain.asm"
-INCLUDE "audio/music/pokemonlullaby.asm"
-INCLUDE "audio/music/celadoncity.asm"
-INCLUDE "audio/music/route12.asm"
-INCLUDE "audio/music/pokeflutechannel.asm"
-INCLUDE "audio/music/viridianforest.asm"
+INCLUDE "audio/music/gsc/lavendertown.asm"
+INCLUDE "audio/music/gsc/kantowildbattle.asm"
+INCLUDE "audio/music/gsc/magnettrain.asm"
+INCLUDE "audio/music/gsc/pokemonlullaby.asm"
+INCLUDE "audio/music/gsc/celadoncity.asm"
+INCLUDE "audio/music/gsc/route12.asm"
+INCLUDE "audio/music/gsc/pokeflutechannel.asm"
+INCLUDE "audio/music/gsc/viridianforest.asm"
 
 
 SECTION "Music 12", ROMX
 
-INCLUDE "audio/music/lookhiker.asm"
-INCLUDE "audio/music/viridiancity.asm"
-INCLUDE "audio/music/route3.asm"
-INCLUDE "audio/music/lookofficer.asm"
-INCLUDE "audio/music/mtmoon.asm"
-INCLUDE "audio/music/mtmoonsquare.asm"
-INCLUDE "audio/music/route1.asm"
-INCLUDE "audio/music/pallettown.asm"
+INCLUDE "audio/music/gsc/lookhiker.asm"
+INCLUDE "audio/music/gsc/viridiancity.asm"
+INCLUDE "audio/music/gsc/route3.asm"
+INCLUDE "audio/music/gsc/lookofficer.asm"
+INCLUDE "audio/music/gsc/mtmoon.asm"
+INCLUDE "audio/music/gsc/mtmoonsquare.asm"
+INCLUDE "audio/music/gsc/route1.asm"
+INCLUDE "audio/music/gsc/pallettown.asm"
 
 
 SECTION "Music 13", ROMX
 
-INCLUDE "audio/music/profoak.asm"
-INCLUDE "audio/music/lookbeauty.asm"
-INCLUDE "audio/music/kantotrainerbattle.asm"
-INCLUDE "audio/music/battletowertheme.asm"
-INCLUDE "audio/music/battletowerlobby.asm"
+INCLUDE "audio/music/gsc/profoak.asm"
+INCLUDE "audio/music/gsc/lookbeauty.asm"
+INCLUDE "audio/music/gsc/kantotrainerbattle.asm"
+INCLUDE "audio/music/gsc/battletowertheme.asm"
+INCLUDE "audio/music/gsc/battletowerlobby.asm"
 
 
 SECTION "Music 14", ROMX
 
-INCLUDE "audio/music/credits.asm"
-INCLUDE "audio/music/postcredits.asm"
+INCLUDE "audio/music/gsc/credits.asm"
+INCLUDE "audio/music/gsc/postcredits.asm"
 
 
 SECTION "RBY Music 1", ROMX
