@@ -17,7 +17,7 @@
 	const CRY_DROWZEE
 	const CRY_PIDGEY
 	const CRY_BULBASAUR
-	const CRY_FARFETCH_D
+	const CRY_SPEAROW
 	const CRY_RHYDON
 	const CRY_GOLEM
 	const CRY_BLASTOISE
@@ -25,7 +25,7 @@
 	const CRY_WEEDLE
 	const CRY_CATERPIE
 	const CRY_EKANS
-	const CRY_SHELLDER
+	const CRY_FEAROW
 	const CRY_CLEFAIRY
 	const CRY_VENONAT
 	const CRY_LAPRAS
@@ -45,11 +45,11 @@
 	const CRY_SPINARAK
 	const CRY_TOGEPI
 	const CRY_GIRAFARIG
-	const CRY_RAIKOU
+	const CRY_LARVITAR
 	const CRY_MAREEP
 	const CRY_TOGETIC
 	const CRY_HOOTHOOT
-	const CRY_SENTRET
+	const CRY_PHANPY
 	const CRY_SLOWKING
 	const CRY_CYNDAQUIL
 	const CRY_CHIKORITA
@@ -58,16 +58,16 @@
 	const CRY_BELLOSSOM
 	const CRY_SLUGMA
 	const CRY_LEDYBA
-	const CRY_ENTEI
+	const CRY_CELEBI
 	const CRY_WOOPER
 	const CRY_MANTINE
 	const CRY_TYPHLOSION
 	const CRY_NATU
 	const CRY_TEDDIURSA
-	const CRY_REMORAID
+	const CRY_SUNFLORA
 	const CRY_AMPHAROS
 	const CRY_MAGCARGO
-	const CRY_PICHU
-	const CRY_TYROGUE
-	const CRY_DUNSPARCE
+	const CRY_UNUSED
+	const CRY_STANTLER
+	const CRY_SNUBBULL
 	const CRY_DONPHAN
