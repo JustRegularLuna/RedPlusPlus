@@ -2019,7 +2019,7 @@ MarowakEvosAttacks:
 
 HitmonleeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DOUBLE_KICK ; evolution move
+	db 1, DOUBLE_KICK
 	db 1, BULK_UP ; Revenge → TM move
 	db 5, AGILITY ; Meditate → new move
 	db 9, PURSUIT ; Rolling Kick → egg move
@@ -2040,7 +2040,7 @@ HitmonleeEvosAttacks:
 
 HitmonchanEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DIZZY_PUNCH ; Comet Punch → Dizzy Punch ; evolution move
+	db 1, DIZZY_PUNCH ; Comet Punch → Dizzy Punch
 	db 1, BULK_UP ; Revenge → TM move
 	db 6, AGILITY
 	db 11, PURSUIT
@@ -4577,7 +4577,7 @@ TyrogueEvosAttacks:
 
 HitmontopEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LOW_KICK ; Rolling Kick → HGSS tutor move ; evolution move
+	db 1, LOW_KICK ; Rolling Kick → HGSS tutor move
 	db 1, BULK_UP ; Revenge → TM move
 	db 6, FOCUS_ENERGY
 	db 10, PURSUIT
@@ -4615,7 +4615,7 @@ ElekidEvosAttacks:
 
 ElectivireEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CROSS_CHOP ; evolution move
+	db 1, CLOSE_COMBAT ; evolution move
 	db 1, FIRE_PUNCH
 	db 1, QUICK_ATTACK
 	db 1, LEER
