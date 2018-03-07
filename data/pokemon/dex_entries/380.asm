@@ -1,6 +1,6 @@
 ; LatiasPokedexEntry:
 	db "Eon@" ; species name
-	dw 407, 8820 ; height, width
+	dw 407, 882 ; height, width
 
 	db   "It communicates"
 	next "using telepathy."
