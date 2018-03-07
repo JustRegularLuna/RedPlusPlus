@@ -24237,9 +24237,9 @@
 28:7F24 Route24_OverheadBridgeAsm
 28:7F5E Route24_UnderfootBridgeAsm
 28:7F98 Route24BridgeOverheadTrigger
-28:7FA1 Route24BridgeOverheadTrigger.asm_14961
+28:7FA1 Route24BridgeOverheadTrigger.asm_14706
 28:7FA4 Route24BridgeUnderfootTrigger
-28:7FAD Route24BridgeUnderfootTrigger.asm_14971
+28:7FAD Route24BridgeUnderfootTrigger.asm_14716
 28:7FB8 Route25_MapScriptHeader
 28:7FCB Route26_MapScriptHeader
 28:7FE0 Route26DayofWeekSiblingsHouse_MapScriptHeader
