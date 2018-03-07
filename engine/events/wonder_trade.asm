@@ -13,21 +13,9 @@ WonderTrade::
 
 	ld a, [CurPartySpecies]
 ;	cp EGG
-;	jr nz, .check_gs_ball
+;	jr nz, .continue
 ;	ld hl, .Text_WonderTradeCantTradeEgg
 ;	jp PrintText
-
-.check_gs_ball
-	ld hl, PartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	ld a, [CurPartyMon]
-	call AddNTimes
-	ld b, [hl]
-	ld a, GS_BALL
-	cp b
-	jr nz, .continue
-	ld hl, .Text_WonderTradeCantTradeGSBall
-	jp PrintText
 
 .continue
 	ld hl, PartyMonNicknames
@@ -54,24 +42,7 @@ WonderTrade::
 
 	ld hl, .Text_WonderTradeComplete
 	call PrintText
-
-	call RestartMapMusic
-
-	ld hl, PartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call Trade_GetAttributeOfLastPartymon
-	ld a, [de]
-	ld b, a
-	ld a, GS_BALL
-	cp b
-	ret nz
-
-	eventflagset EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
-	eventflagset EVENT_CAN_GIVE_GS_BALL_TO_KURT
-	ld de, MUSIC_SPIKY_EARED_PICHU_HGSS
-	call PlayMusic
-	ld hl, .Text_WonderTradeForGSBallPichuText
-	jp PrintText
+	jp RestartMapMusic
 
 .Text_WonderTradeQuestion:
 	text_jump WonderTradeQuestionText
@@ -84,10 +55,6 @@ WonderTrade::
 ;.Text_WonderTradeCantTradeEgg:
 ;	text_jump WonderTradeCantTradeEggText
 ;	db "@"
-
-.Text_WonderTradeCantTradeGSBall
-	text_jump WonderTradeCantTradeGSBallText
-	db "@"
 
 .Text_WonderTradeConfirm:
 	text_jump WonderTradeConfirmText
@@ -114,23 +81,9 @@ WonderTrade::
 	text_jump WonderTradeDoneFanfare
 	db "@"
 
-.Text_WonderTradeForGSBallPichuText:
-	text_jump WonderTradeForGSBallPichuText
-	db "@"
-
 DoWonderTrade:
 	ld a, [CurPartySpecies]
 	ld [wPlayerTrademonSpecies], a
-
-	; If you've beaten the Elite Four...
-	eventflagcheck EVENT_BEAT_ELITE_FOUR
-	jr z, .random_trademon
-	; ...and haven't gotten the GS Ball Pichu yet...
-	eventflagcheck EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
-	jr nz, .random_trademon
-	; ...then receive a spiky-eared Pichu holding a GS Ball
-	call GetGSBallPichu
-	jp .compute_trademon_stats
 
 .random_trademon
 	ld a, NUM_POKEMON
@@ -387,145 +340,6 @@ endr
 	pop af
 	ret
 
-
-GetGSBallPichu:
-	ld a, PICHU
-	ld [wOTTrademonSpecies], a
-
-	ld a, [wPlayerTrademonSpecies]
-	ld de, wPlayerTrademonSpeciesName
-	call GetTradeMonName
-	call CopyTradeName
-
-	ld a, [wOTTrademonSpecies]
-	ld de, wOTTrademonSpeciesName
-	call GetTradeMonName
-	call CopyTradeName
-
-	ld hl, PartyMonOT
-	ld bc, NAME_LENGTH
-	call Trade_GetAttributeOfCurrentPartymon
-	ld de, wPlayerTrademonOTName
-	call CopyTradeName
-
-	ld hl, PlayerName
-	ld de, wPlayerTrademonSenderName
-	call CopyTradeName
-
-	ld hl, PartyMon1ID
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call Trade_GetAttributeOfCurrentPartymon
-	ld de, wPlayerTrademonID
-	call Trade_CopyTwoBytes
-
-	ld hl, PartyMon1DVs
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call Trade_GetAttributeOfCurrentPartymon
-	ld de, wPlayerTrademonDVs
-	call Trade_CopyThreeBytes
-
-	ld hl, PartyMon1Personality
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call Trade_GetAttributeOfCurrentPartymon
-	ld de, wPlayerTrademonPersonality
-	call Trade_CopyTwoBytes
-
-	ld hl, PartyMon1Species
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call Trade_GetAttributeOfCurrentPartymon
-	ld b, h
-	ld c, l
-	farcall GetCaughtGender
-	ld a, c
-	ld [wPlayerTrademonCaughtData], a
-	ld [wOTTrademonCaughtData], a
-
-	ld hl, PartyMon1Level
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call Trade_GetAttributeOfCurrentPartymon
-	ld a, 30
-	ld [CurPartyLevel], a
-	ld a, [wOTTrademonSpecies]
-	ld [CurPartySpecies], a
-	xor a
-	ld [MonType], a
-	ld [wPokemonWithdrawDepositParameter], a
-	farcall RemoveMonFromPartyOrBox
-	predef TryAddMonToParty
-
-	ld b, MALE
-	ld a, [PlayerGender]
-	and a
-	jr z, .male_ot_pikachu
-	ld b, FEMALE
-.male_ot_pikachu
-	ld c, ULTRA_BALL
-	farcall SetGiftPartyMonCaughtData
-
-	ld a, [wOTTrademonSpecies]
-	ld de, wOTTrademonNickname
-	call GetTradeMonName
-	call CopyTradeName
-
-	ld hl, PartyMonNicknames
-	ld bc, PKMN_NAME_LENGTH
-	call Trade_GetAttributeOfLastPartymon
-	ld hl, wOTTrademonNickname
-	call CopyTradeName
-
-	ld hl, PlayerID
-	ld de, wOTTrademonID
-	call Trade_CopyTwoBytes
-
-	ld hl, PartyMon1ID
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call Trade_GetAttributeOfLastPartymon
-	ld hl, wOTTrademonID
-	call Trade_CopyTwoBytes
-
-	ld hl, PlayerName
-	push hl
-	ld de, wOTTrademonOTName
-	call CopyTradeName
-	pop hl
-	ld de, wOTTrademonSenderName
-	call CopyTradeName
-
-	ld hl, PartyMonOT
-	ld bc, NAME_LENGTH
-	call Trade_GetAttributeOfLastPartymon
-	ld hl, wOTTrademonOTName
-	call CopyTradeName
-
-	ld a, $ff
-	ld [wOTTrademonDVs], a
-	ld [wOTTrademonDVs + 1], a
-	ld [wOTTrademonDVs + 2], a
-
-	ld hl, PartyMon1DVs
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call Trade_GetAttributeOfLastPartymon
-	ld hl, wOTTrademonDVs
-	call Trade_CopyThreeBytes
-
-	ld a, HIDDEN_ABILITY | QUIRKY
-	ld [wOTTrademonPersonality], a
-	ld a, FEMALE | 2 ; spiky-eared variant
-	ld [wOTTrademonPersonality + 1], a
-
-	ld hl, PartyMon1Personality
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call Trade_GetAttributeOfLastPartymon
-	ld hl, wOTTrademonPersonality
-	call Trade_CopyTwoBytes
-
-	ld hl, PartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call Trade_GetAttributeOfLastPartymon
-	ld a, GS_BALL
-	ld [de], a
-
-	ret
 
 GetWonderTradeOTName:
 ; pick from WonderTradeOTNames1 if [wOTTrademonID] is even,

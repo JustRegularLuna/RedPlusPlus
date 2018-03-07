@@ -2463,7 +2463,7 @@ PlayVictoryMusic: ; 3d0ea
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
-	ld de, MUSIC_WILD_VICTORY
+	ld de, MUSIC_DEFEATED_WILD_MON
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .trainer_victory
@@ -2481,10 +2481,10 @@ PlayVictoryMusic: ; 3d0ea
 	jr .play_music
 
 .trainer_victory
-	ld de, MUSIC_GYM_VICTORY
+	ld de, MUSIC_DEFEATED_GYM_LEADER
 	call IsBossTrainer
 	jr c, .play_music
-	ld de, MUSIC_TRAINER_VICTORY
+	ld de, MUSIC_DEFEATED_TRAINER
 
 .play_music
 	call PlayMusic
@@ -2499,15 +2499,15 @@ PlayVictoryMusic: ; 3d0ea
 ; These functions check if the current opponent is a gym leader or one of a
 ; few other special trainers.
 
-; Note: KantoGymLeaders is a subset of JohtoGymLeaders. If you wish to
-; differentiate between the two, call IsKantoGymLeader first.
+; Note: PostgameGymLeaders is a subset of AllGymLeaders. If you wish to
+; differentiate between the two, call IsPostgameGymLeader first.
 
-IsKantoGymLeader: ; 0x3d123
-	ld hl, KantoGymLeaders
+IsAnyGymLeader: ; 0x3d123
+	ld hl, AllGymLeaders
 	jr IsBossTrainerCommon
 
-IsJohtoGymLeader: ; 0x3d128
-	ld hl, JohtoGymLeaders
+IsPostgameGymLeader: ; 0x3d128
+	ld hl, PostgameGymLeaders
 	jr IsBossTrainerCommon
 
 IsBossTrainer:
@@ -3219,7 +3219,7 @@ FinalPkmnMusicAndAnimation:
 	call DelayFrames
 	call SlideEnemyPicOut
 	; ...play the final Pokémon music...
-	call IsJohtoGymLeader
+	call IsAnyGymLeader
 	jr nc, .no_music
 	push de
 	ld de, MUSIC_NONE

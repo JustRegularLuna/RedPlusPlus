@@ -239,7 +239,6 @@ TryWildEncounter::
 
 .EncounterRate:
 	call GetMapEncounterRate
-	call ApplyMusicEffectOnEncounterRate
 	call ApplyCleanseTagEffectOnEncounterRate
 	call SetBattlerLevel
 	call ApplyAbilityEffectsOnEncounterMon
@@ -260,24 +259,6 @@ GetMapEncounterRate: ; 2a111
 	ld b, [hl]
 	ret
 ; 2a124
-
-ApplyMusicEffectOnEncounterRate:: ; 2a124
-; Pokemon March and Ruins of Alph signal double encounter rate.
-; Pokemon Lullaby halves encounter rate.
-	ld a, [wMapMusic]
-	cp MUSIC_POKEMON_MARCH
-	jr z, .double
-	cp MUSIC_RUINS_OF_ALPH_RADIO
-	jr z, .double
-	cp MUSIC_POKEMON_LULLABY
-	ret nz
-	srl b
-	ret
-
-.double
-	sla b
-	ret
-; 2a138
 
 ApplyCleanseTagEffectOnEncounterRate::
 ; Cleanse Tag halves encounter rate.

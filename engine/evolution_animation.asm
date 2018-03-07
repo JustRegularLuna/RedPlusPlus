@@ -79,7 +79,7 @@ EvolutionAnimation: ; 4e5e1
 	call PlayCry
 
 .skip_cry
-	ld de, MUSIC_EVOLUTION
+	ld de, MUSIC_SAFARI_ZONE
 	call PlayMusic
 
 	ld c, 80

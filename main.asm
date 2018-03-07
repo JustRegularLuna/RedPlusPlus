@@ -1744,8 +1744,8 @@ _ResetClock: ; 4d3b1
 	call GetCGBLayout
 	call LoadStandardFont
 	call LoadFontsExtra
-	ld de, MUSIC_MAIN_MENU
-	call PlayMusic
+;	ld de, MUSIC_MAIN_MENU
+;	call PlayMusic
 	ld hl, .text_askreset
 	call PrintText
 	ld hl, .NoYes_MenuDataHeader
@@ -1792,8 +1792,8 @@ _DeleteSaveData: ; 4d54c
 	call GetCGBLayout
 	call LoadStandardFont
 	call LoadFontsExtra
-	ld de, MUSIC_MAIN_MENU
-	call PlayMusic
+;	ld de, MUSIC_MAIN_MENU
+;	call PlayMusic
 	ld hl, .Text_ClearAllSaveData
 	call PrintText
 	ld hl, TitleScreenNoYesMenuDataHeader
@@ -1816,8 +1816,8 @@ _ResetInitialOptions:
 	call GetCGBLayout
 	call LoadStandardFont
 	call LoadFontsExtra
-	ld de, MUSIC_MAIN_MENU
-	call PlayMusic
+;	ld de, MUSIC_MAIN_MENU
+;	call PlayMusic
 	ld hl, .Text_ResetInitialOptions
 	call PrintText
 	ld hl, TitleScreenNoYesMenuDataHeader

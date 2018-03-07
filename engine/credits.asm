@@ -505,9 +505,9 @@ ParseCredits: ; 1099aa
 	set 7, [hl]
 	ld a, 32
 	ld [MusicFade], a
-	ld a, MUSIC_POST_CREDITS % $100
+	ld a, MUSIC_NONE % $100
 	ld [MusicFadeID], a
-	ld a, MUSIC_POST_CREDITS / $100
+	ld a, MUSIC_NONE / $100
 	ld [MusicFadeIDHi], a
 	ret
 

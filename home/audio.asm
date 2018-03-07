@@ -491,17 +491,12 @@ SpecialMapMusic:: ; 3d62
 	ret
 
 .bike
-	ld de, MUSIC_BICYCLE
-	scf
-	ret
-
-.cycling_road_bike
-	ld de, MUSIC_BICYCLE_XY
+	ld de, MUSIC_BIKE_RIDING
 	scf
 	ret
 
 .surf
-	ld de, MUSIC_SURF
+	ld de, MUSIC_SURFING
 	scf
 	ret
 

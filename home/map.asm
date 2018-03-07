@@ -2240,12 +2240,6 @@ GetMapHeaderMusic:: ; 2cbd
 	ld de, 6 ; music
 	call GetMapHeaderMember
 	ld a, c
-	cp MUSIC_RADIO_TOWER
-	jr z, .radiotower
-	cp MUSIC_MAHOGANY_MART
-	jr z, .mahoganymart
-	cp MUSIC_LAVENDER
-	jr z, .lavender
 	call Function8b342
 	ld e, c
 	ld d, 0
@@ -2253,39 +2247,6 @@ GetMapHeaderMusic:: ; 2cbd
 	pop bc
 	pop hl
 	ret
-
-.radiotower
-	ld a, [StatusFlags2]
-	bit 0, a ; ENGINE_ROCKETS_IN_RADIO_TOWER
-	jr z, .clearedradiotower
-	ld de, MUSIC_ROCKET_OVERTURE
-	jr .done
-
-.clearedradiotower
-	ld de, MUSIC_GOLDENROD_CITY
-	jr .done
-
-.mahoganymart
-	ld a, [StatusFlags2]
-	bit 7, a ; ENGINE_ROCKETS_IN_MAHOGANY
-	jr z, .clearedmahogany
-	ld de, MUSIC_ROCKET_HIDEOUT
-	jr .done
-
-.clearedmahogany
-	ld de, MUSIC_CHERRYGROVE_CITY
-	jr .done
-
-.lavender
-	ld a, [StatusFlags2]
-	bit 6, a ; ENGINE_EXORCISED_LAV_RADIO_TOWER
-	jr z, .exorcisedlavradiotower
-	ld de, MUSIC_LAVENDER_TOWN_RBY
-	jr .done
-
-.exorcisedlavradiotower
-	ld de, MUSIC_LAVENDER_TOWN
-	jr .done
 ; 2cff
 
 Function8b342: ; 8b342

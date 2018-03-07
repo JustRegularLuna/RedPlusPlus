@@ -1,23 +1,20 @@
-; Pokémon R/B/Y - Pokémon Tower
-; Ported by FroggestSpirit
-; https://github.com/froggestspirit/CrystalComplete/blob/master/audio/music/RBY/pokemontower.asm
+Music_PokemonTower:
+	musicheader 3, 1, Music_PokemonTower_Ch1
+	musicheader 1, 2, Music_PokemonTower_Ch2
+	musicheader 1, 3, Music_PokemonTower_Ch3
 
-Music_PokemonTowerRBY:
-	dbw $80, Music_PokemonTowerRBY_Ch1
-	dbw $01, Music_PokemonTowerRBY_Ch2
-	dbw $02, Music_PokemonTowerRBY_Ch3
-
-Music_PokemonTowerRBY_Ch1:
+Music_PokemonTower_Ch1: ; 7f04a (1f:704a)
 	tempo 152
 	volume 119
 	dutycycle 3
+
 	vibrato 12, 35
 	notetype 12, 128
 	note __, 4
 	octave 4
 	note B_, 12
 
-Music_PokemonTowerRBY_branch_7f05a:
+Music_PokemonTower_branch_7f05a:
 	notetype 12, 180
 	octave 4
 	note G_, 1
@@ -145,9 +142,10 @@ Music_PokemonTowerRBY_branch_7f05a:
 	octave 5
 	note C_, 16
 	note C_, 16
-	loopchannel 0, Music_PokemonTowerRBY_branch_7f05a
+	loopchannel 0, Music_PokemonTower_branch_7f05a
 
-Music_PokemonTowerRBY_Ch2:
+
+Music_PokemonTower_Ch2: ; 7f0e3 (1f:70e3)
 	vibrato 20, 52
 	dutycycle 3
 	notetype 12, 160
@@ -156,7 +154,7 @@ Music_PokemonTowerRBY_Ch2:
 	octave 4
 	note E_, 4
 
-Music_PokemonTowerRBY_branch_7f0ee:
+Music_PokemonTower_branch_7f0ee:
 	notetype 12, 193
 	octave 5
 	note C_, 8
@@ -296,16 +294,17 @@ Music_PokemonTowerRBY_branch_7f0ee:
 	vibrato 0, 52
 	notetype 12, 167
 	note C_, 16
-	loopchannel 0, Music_PokemonTowerRBY_branch_7f0ee
+	loopchannel 0, Music_PokemonTower_branch_7f0ee
 
-Music_PokemonTowerRBY_Ch3:
+
+Music_PokemonTower_Ch3: ; 7f19a (1f:719a)
 	vibrato 4, 17
-	notetype 12, $13
+	notetype 12, 19
 	note __, 8
 	octave 5
 	note G_, 8
 
-Music_PokemonTowerRBY_branch_7f1a2:
+Music_PokemonTower_branch_7f1a2:
 	note E_, 1
 	note __, 7
 	note E_, 1
@@ -430,7 +429,7 @@ Music_PokemonTowerRBY_branch_7f1a2:
 	note __, 3
 	note F#, 1
 	note __, 7
-	notetype 12, $13
+	notetype 12, 19
 	octave 6
 	note E_, 1
 	note __, 1
@@ -461,4 +460,4 @@ Music_PokemonTowerRBY_branch_7f1a2:
 	note __, 1
 	note D#, 1
 	note __, 1
-	loopchannel 0, Music_PokemonTowerRBY_branch_7f1a2
+	loopchannel 0, Music_PokemonTower_branch_7f1a2

@@ -24,13 +24,13 @@ InitIntroGradient::
 INCBIN "gfx/new_game/intro_gradient.2bpp"
 
 _MainMenu: ; 5ae8
-	ld de, MUSIC_NONE
-	call PlayMusic
-	call DelayFrame
-	ld de, MUSIC_MAIN_MENU
-	ld a, e
-	ld [wMapMusic], a
-	call PlayMusic
+;	ld de, MUSIC_NONE
+;	call PlayMusic
+;	call DelayFrame
+;	ld de, MUSIC_MAIN_MENU
+;	ld a, e
+;	ld [wMapMusic], a
+;	call PlayMusic
 	farcall MainMenu
 	jp StartTitleScreen
 ; 5b04
@@ -664,7 +664,7 @@ ProfOakSpeech: ; 0x5f99
 	call RotateFourPalettesLeft
 	call ClearTileMap
 
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_ROUTES2
 	call PlayMusic
 
 	call RotateFourPalettesRight
@@ -1236,15 +1236,7 @@ TitleScreenEntrance: ; 62bc
 	call CloseSRAM
 
 ; Play the title screen music.
-	ld de, MUSIC_TITLE
-	ld a, [wSaveFileExists]
-	and a
-	jr z, .ok
-	ld hl, StatusFlags
-	bit 6, [hl] ; hall of fame
-	jr z, .ok
-	ld de, MUSIC_TITLE_XY
-.ok
+	ld de, MUSIC_TITLE_SCREEN
 	call PlayMusic
 
 	ld a, $88
@@ -1259,24 +1251,8 @@ TitleScreenTimer: ; 62f6
 	ld hl, wJumptableIndex
 	inc [hl]
 
-	ld a, BANK(sPlayerData)
-	call GetSRAMBank
-	ld hl, sPlayerData + StatusFlags - wPlayerData
-	ld de, StatusFlags
-	ld a, [hl]
-	ld [de], a
-	call CloseSRAM
-
 ; Start a timer
-	ld de, 73 * 60 + 36
-	ld a, [wSaveFileExists]
-	and a
-	jr z, .ok
-	ld hl, StatusFlags
-	bit 6, [hl] ; hall of fame
-	jr z, .ok
-	ld de, 56 * 60
-.ok
+	ld de, (1 * 60 + 58) * 60
 	ld hl, wcf65
 	ld [hl], e
 	inc hl

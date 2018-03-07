@@ -1897,17 +1897,6 @@ BikeFunction: ; d0b3
 	ret
 
 GetBikeMusic::
-	ld de, MUSIC_BICYCLE_XY
-	ld a, [MapGroup]
-	cp GROUP_ROUTE_17 ; GROUP_ROUTE_18_WEST
-	jr nz, .not_cycling_road
-	ld a, [MapNumber]
-	cp MAP_ROUTE_17
-	ret z
-	cp MAP_ROUTE_18_WEST
-	ret z
-	ld a, [MapGroup]
-.not_cycling_road
 	ld de, MUSIC_NONE
 	cp GROUP_QUIET_CAVE_1F ; GROUP_QUIET_CAVE_B1F, GROUP_QUIET_CAVE_B2F, GROUP_QUIET_CAVE_B3F
 	jr nz, .not_quiet_cave
@@ -1920,7 +1909,7 @@ GetBikeMusic::
 	cp MAP_QUIET_CAVE_B3F
 	ret z
 .not_quiet_cave
-	ld de, MUSIC_BICYCLE
+	ld de, MUSIC_BIKE_RIDING
 	ret
 
 Script_GetOnBike: ; 0xd13e

@@ -1695,7 +1695,7 @@ RadioMusicRestartPokemonChannel: ; 91868 (24:5868)
 	ld de, MUSIC_NONE
 	call PlayMusic
 	pop de
-	ld de, MUSIC_POKEMON_CHANNEL
+	ld de, MUSIC_OAKS_LAB
 	jp PlayMusic
 
 NoRadioStation: ; 91888 (24:5888)
