@@ -20,8 +20,8 @@
 	const PIDGEOT    ; $12
 	const RATTATA    ; $13
 	const RATICATE   ; $14
-	const MARILL     ; $15
-	const AZUMARILL  ; $16
+	const SPEAROW    ; $15
+	const FEAROW     ; $16
 	const EKANS      ; $17
 	const ARBOK      ; $18
 	const PIKACHU    ; $19
@@ -107,18 +107,18 @@
 	const MAROWAK    ; $69
 	const HITMONLEE  ; $6a
 	const HITMONCHAN ; $6b
-	const KOFFING    ; $6c
-	const WEEZING    ; $6d
-	const RHYHORN    ; $6e
-	const RHYDON     ; $6f
-	const CHANSEY    ; $70
-	const TANGELA    ; $71
-	const KANGASKHAN ; $72
-	const HORSEA     ; $73
-	const SEADRA     ; $74
-	const TOGEPI     ; $75
-	const TOGETIC    ; $76
-	const TOGEKISS   ; $77
+	const LICKITUNG  ; $6c
+	const KOFFING    ; $6d
+	const WEEZING    ; $6e
+	const RHYHORN    ; $6f
+	const RHYDON     ; $70
+	const CHANSEY    ; $71
+	const TANGELA    ; $72
+	const KANGASKHAN ; $73
+	const HORSEA     ; $74
+	const SEADRA     ; $75
+	const GOLDEEN    ; $76
+	const SEAKING    ; $77
 	const STARYU     ; $78
 	const STARMIE    ; $79
 	const MR__MIME   ; $7a
@@ -160,8 +160,8 @@
 	const TOTODILE   ; $9e
 	const CROCONAW   ; $9f
 	const FERALIGATR ; $a0
-	const SENTRET    ; $a1
-	const FURRET     ; $a2
+	const ZIGZAGOON  ; $a1
+	const LINOONE    ; $a2
 	const HOOTHOOT   ; $a3
 	const NOCTOWL    ; $a4
 	const LEDYBA     ; $a5
@@ -171,46 +171,46 @@
 	const CROBAT     ; $a9
 	const CHINCHOU   ; $aa
 	const LANTURN    ; $ab
-	const PICHU      ; $ac
-	const MUNCHLAX   ; $ad
-	const MAGNEZONE  ; $ae
-	const TANGROWTH  ; $af
+	const TORKOAL    ; $ac
+	const TOGEPI     ; $ad
+	const TOGETIC    ; $ae
+	const TOGEKISS   ; $af
 	const NATU       ; $b0
 	const XATU       ; $b1
 	const MAREEP     ; $b2
 	const FLAAFFY    ; $b3
 	const AMPHAROS   ; $b4
 	const BELLOSSOM  ; $b5
-	const RHYPERIOR  ; $b6
-	const SUDOWOODO  ; $b7
+	const MARILL     ; $b6
+	const AZUMARILL  ; $b7
 	const POLITOED   ; $b8
-	const SUNKERN    ; $b9
-	const SUNFLORA   ; $ba
-	const YANMA      ; $bb
-	const YANMEGA    ; $bc
-	const WOOPER     ; $bd
-	const QUAGSIRE   ; $be
-	const ESPEON     ; $bf
-	const UMBREON    ; $c0
-	const LEAFEON    ; $c1
-	const GLACEON    ; $c2
-	const MURKROW    ; $c3
-	const HONCHKROW  ; $c4
-	const SLOWKING   ; $c5
-	const MISDREAVUS ; $c6
-	const MISMAGIUS  ; $c7
-	const UNOWN      ; $c8
-	const WOBBUFFET  ; $c9
-	const GIRAFARIG  ; $ca
-	const PINECO     ; $cb
-	const FORRETRESS ; $cc
-	const DUNSPARCE  ; $cd
-	const GLIGAR     ; $ce
-	const GLISCOR    ; $cf
-	const STEELIX    ; $d0
-	const SNUBBULL   ; $d1
-	const GRANBULL   ; $d2
-	const QWILFISH   ; $d3
+	const MAGNEZONE  ; $b9
+	const LICKILICKY ; $ba
+	const HOPPIP     ; $bb
+	const SKIPLOOM   ; $bc
+	const JUMPLUFF   ; $bd
+	const SUNKERN    ; $be
+	const SUNFLORA   ; $bf
+	const YANMA      ; $c0
+	const YANMEGA    ; $c1
+	const WOOPER     ; $c2
+	const QUAGSIRE   ; $c3
+	const ESPEON     ; $c4
+	const UMBREON    ; $c5
+	const MURKROW    ; $c6
+	const HONCHKROW  ; $c7
+	const SLOWKING   ; $c8
+	const MISDREAVUS ; $c9
+	const MISMAGIUS  ; $ca
+	const WOBBUFFET  ; $cb
+	const GIRAFARIG  ; $cc
+	const PINECO     ; $cd
+	const FORRETRESS ; $ce
+	const GLIGAR     ; $cf
+	const GLISCOR    ; $d0
+	const STEELIX    ; $d1
+	const SNUBBULL   ; $d2
+	const GRANBULL   ; $d3
 	const SCIZOR     ; $d4
 	const HERACROSS  ; $d5
 	const SNEASEL    ; $d6
@@ -233,37 +233,46 @@
 	const PHANPY     ; $e7
 	const DONPHAN    ; $e8
 	const PORYGON2   ; $e9
-	const SMEARGLE   ; $ea
-	const TYROGUE    ; $eb
+	const PORYGON_Z  ; $ea
+	const STANTLER   ; $eb
 	const HITMONTOP  ; $ec
-	const ELEKID     ; $ed
-	const ELECTIVIRE ; $ee
-	const MAGBY      ; $ef
+	const RHYPERIOR  ; $ed
+	const TANGROWTH  ; $ee
+	const ELECTIVIRE ; $ef
 	const MAGMORTAR  ; $f0
 	const MILTANK    ; $f1
 	const BLISSEY    ; $f2
-	const RAIKOU     ; $f3
-	const ENTEI      ; $f4
-	const SUICUNE    ; $f5
+	const LEAFEON    ; $f3
+	const GLACEON    ; $f4
+	const SYLVEON    ; $f5
 	const LARVITAR   ; $f6
 	const PUPITAR    ; $f7
 	const TYRANITAR  ; $f8
 	const LUGIA      ; $f9
 	const HO_OH      ; $fa
 	const CELEBI     ; $fb
-	const SYLVEON    ; $fc
-	const PORYGON_Z  ; $fd
+	const LATIAS     ; $fc
+	const LATIOS     ; $fd
 NUM_POKEMON EQU const_value +- 1
 	const EGG        ; $fe
 	const CANCEL     ; $ff
 
-; placeholders
-LICKITUNG EQU BULBASAUR
-SPEAROW EQU BULBASAUR
-FEAROW EQU BULBASAUR
-GOLDEEN EQU BULBASAUR
-SEAKING EQU BULBASAUR
-TORKOAL EQU BULBASAUR
+; TODO: delete these
+SENTRET    EQU ZIGZAGOON
+FURRET     EQU LINOONE
+PICHU      EQU SPEAROW
+MUNCHLAX   EQU FEAROW
+SUDOWOODO  EQU LICKITUNG
+UNOWN      EQU LICKILICKY
+DUNSPARCE  EQU GOLDEEN
+QWILFISH   EQU SEAKING
+SMEARGLE   EQU STANTLER
+TYROGUE    EQU LATIAS
+ELEKID     EQU LATIOS
+MAGBY      EQU TORKOAL
+RAIKOU     EQU HOPPIP
+ENTEI      EQU SKIPLOOM
+SUICUNE    EQU JUMPLUFF
 
 
 ; form values

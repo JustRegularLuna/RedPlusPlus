@@ -4,8 +4,8 @@ Route18East_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  6,  8, ROUTE_18_GATE, 3
-	warp_event  6,  9, ROUTE_18_GATE, 4
+	warp_event  6,  4, ROUTE_18_GATE, 3
+	warp_event  6,  5, ROUTE_18_GATE, 4
 
 	db 0 ; coord events
 

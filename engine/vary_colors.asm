@@ -186,10 +186,6 @@ VaryColorsByDVs::
 
 	ld bc, ColorVaryDVs
 
-	ld a, [ColorVarySpecies]
-	cp SMEARGLE
-	jr z, .Smeargle
-
 ;;; LiteRed ~ HPDV, aka, rrrrr ~ hhhh
 ; store HPDV in e
 	ld a, [bc]
@@ -223,7 +219,6 @@ VaryColorsByDVs::
 	inc hl
 	inc hl
 
-.Finish:
 ;;; DarkRed ~ SpdDV, aka, RRRRR ~ ssss
 ; store SpdDV in e
 	ld a, [bc]
@@ -256,128 +251,6 @@ VaryColorsByDVs::
 	ld [rSVBK], a
 	ret
 
-; TODO: vary paint color with unused DV bits
-; * DarkRed' = DarkRed + (HPDV & %0100 >> 2) - (HPDV & %1000 >> 3)
-; * DarkGrn' = DarkGrn + (AtkDV & %0100 >> 2) - (AtkDV & %1000 >> 3)
-; * DarkBlu' = DarkBlu + (DefDV & %0100 >> 2) - (DefDV & %1000 >> 3)
-.Smeargle:
-; a = (AtkDV & %11) << 2 | (DefDV & %11)
-	ld a, [bc]
-	and %11
-	add a
-	add a
-	ld d, a
-	inc bc
-	ld a, [bc]
-	swap a
-	and %11
-	or d
-; d, e = base paint color
-	ld e, a
-	ld d, 0
-	push hl
-	ld hl, .SmearglePals
-	ld a, [ColorVaryShiny]
-	and SHINY_MASK
-	jr z, .not_shiny
-	ld hl, .SmeargleShinyPals
-.not_shiny
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld d, a
-	ld a, [hl]
-	ld e, a
-	pop hl
-;;; DarkRGB = base paint color
-	inc hl
-	inc hl
-	inc hl
-	ld a, e
-	ld [hld], a
-	ld a, d
-	ld [hld], a
-	dec hl
-;;; LiteRGB ~ Spd,SAt,SDfDVs
-	jr .Finish
-
-; red and blue channels: no 0 or 31
-; green channel: no 0, 7, 8, 15, 16, 23, 24, or 31
-; need to be able to add or subtract 1 without overflow/underflow
-
-.SmearglePals:
-if !DEF(MONOCHROME)
-	RGB 14, 05, 06 ; maroon (fighting)
-	RGB 27, 09, 26 ; lavender (flying)
-	RGB 29, 05, 06 ; red (poison)
-	RGB 26, 26, 26 ; white (ground)
-	RGB 18, 11, 05 ; brown (rock)
-	RGB 16, 28, 01 ; lime (bug)
-	RGB 14, 06, 27 ; purple (ghost)
-	RGB 14, 14, 18 ; gray (steel)
-	RGB 29, 13, 02 ; orange (fire)
-	RGB 01, 09, 28 ; blue (water)
-	RGB 04, 19, 01 ; green (grass)
-	RGB 30, 25, 01 ; yellow (electric)
-	RGB 30, 10, 13 ; pink (psychic)
-	RGB 02, 22, 26 ; teal (ice)
-	RGB 07, 11, 30 ; indigo (dragon)
-	RGB 08, 06, 06 ; black (dark)
-else
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-endc
-
-.SmeargleShinyPals: ; TODO
-if !DEF(MONOCHROME)
-	RGB 14, 05, 06 ; maroon (fighting)
-	RGB 27, 09, 26 ; lavender (flying)
-	RGB 29, 05, 06 ; red (poison)
-	RGB 26, 26, 26 ; white (ground)
-	RGB 18, 11, 05 ; brown (rock)
-	RGB 16, 28, 01 ; lime (bug)
-	RGB 14, 06, 27 ; purple (ghost)
-	RGB 14, 14, 18 ; gray (steel)
-	RGB 29, 13, 02 ; orange (fire)
-	RGB 01, 09, 28 ; blue (water)
-	RGB 04, 19, 01 ; green (grass)
-	RGB 30, 25, 01 ; yellow (electric)
-	RGB 30, 10, 13 ; pink (psychic)
-	RGB 02, 22, 26 ; teal (ice)
-	RGB 07, 11, 30 ; indigo (dragon)
-	RGB 08, 06, 06 ; black (dark)
-else
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-endc
 
 VaryBGPal0ByTempMonDVs:
 	ld hl, TempMonDVs

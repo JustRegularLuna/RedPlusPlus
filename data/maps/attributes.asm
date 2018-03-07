@@ -93,7 +93,7 @@ ENDM
 
 	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, SOUTH | WEST | EAST
 	connection south, Route19, ROUTE_19, 5, 0, 10
-	connection west, Route18East, ROUTE_18_EAST, 4, 0, 11
+	connection west, Route18East, ROUTE_18_EAST, 6, 0, 9
 	connection east, Route15, ROUTE_15, 5, 0, 9
 
 	map_attributes SaffronCity, SAFFRON_CITY, $f, NORTH | SOUTH | WEST | EAST
@@ -253,12 +253,13 @@ ENDM
 	connection south, Route18West, ROUTE_18_WEST, 0, 0, 13
 
 	map_attributes Route18East, ROUTE_18_EAST, $f, WEST | EAST
-	connection west, Route18West, ROUTE_18_WEST, 0, 0, 11
-	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 1, 14
+	connection west, Route18West, ROUTE_18_WEST, -3, 0, 12
+	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 3, 12
 
-	map_attributes Route18West, ROUTE_18_WEST, $49, NORTH | EAST
+	map_attributes Route18West, ROUTE_18_WEST, $49, NORTH | WEST | EAST
 	connection north, Route17, ROUTE_17, 0, 0, 10
-	connection east, Route18East, ROUTE_18_EAST, 0, 0, 11
+	connection west, UragaChannelEast, URAGA_CHANNEL_EAST, 0, 0, 9
+	connection east, Route18East, ROUTE_18_EAST, 3, 0, 9
 
 	map_attributes Route19, ROUTE_19, $49, NORTH | WEST
 	connection north, FuchsiaCity, FUCHSIA_CITY, -3, 2, 16
@@ -268,9 +269,10 @@ ENDM
 	connection west, CinnabarIsland, CINNABAR_ISLAND, -3, 3, 13
 	connection east, Route19, ROUTE_19, -3, 21, 13
 
-	map_attributes Route21, ROUTE_21, $49, NORTH | SOUTH
+	map_attributes Route21, ROUTE_21, $49, NORTH | SOUTH | EAST
 	connection north, PalletTown, PALLET_TOWN, 2, 0, 10
 	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 15
+	connection east, UragaChannelWest, URAGA_CHANNEL_WEST, 8, 0, 9
 
 	map_attributes Route22, ROUTE_22, $55, EAST
 	connection east, ViridianCity, VIRIDIAN_CITY, -2, 1, 15
@@ -396,6 +398,12 @@ ENDM
 
 	map_attributes CeruleanCape, CERULEAN_CAPE, $f, WEST
 	connection west, Route25, ROUTE_25, 0, 0, 20
+
+	map_attributes UragaChannelEast, URAGA_CHANNEL_EAST, $49, EAST
+	connection east, Route18West, ROUTE_18_WEST, 0, 0, 12
+
+	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $49, WEST
+	connection west, Route21, ROUTE_21, -3, 5, 15
 
 	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $35, SOUTH | WEST | EAST
 	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15

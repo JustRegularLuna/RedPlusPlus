@@ -1070,6 +1070,10 @@ SafariZoneWestRestHouse1_BlockData:
 SafariZoneWestRestHouse2_BlockData:
 	INCBIN "maps/SafariZoneRestHouse.blk"
 
+UragaChannelEast_BlockData:
+UragaChannelWest_BlockData:
+	INCBIN "maps/UragaChannel.blk"
+
 CinnabarIsland_BlockData:
 	INCBIN "maps/CinnabarIsland.blk"
 

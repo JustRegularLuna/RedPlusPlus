@@ -43,23 +43,20 @@ AlphabeticalPokedexOrder:
 	db DRATINI
 	db DROWZEE
 	db DUGTRIO
-	db DUNSPARCE
 	db EEVEE
 	db EKANS
 	db ELECTABUZZ
 	db ELECTIVIRE
 	db ELECTRODE
-	db ELEKID
-	db ENTEI
 	db ESPEON
 	db EXEGGCUTE
 	db EXEGGUTOR
 	db FARFETCH_D
+	db FEAROW
 	db FERALIGATR
 	db FLAAFFY
 	db FLAREON
 	db FORRETRESS
-	db FURRET
 	db GASTLY
 	db GENGAR
 	db GEODUDE
@@ -69,6 +66,7 @@ AlphabeticalPokedexOrder:
 	db GLISCOR
 	db GLOOM
 	db GOLBAT
+	db GOLDEEN
 	db GOLDUCK
 	db GOLEM
 	db GRANBULL
@@ -84,6 +82,7 @@ AlphabeticalPokedexOrder:
 	db HO_OH
 	db HONCHKROW
 	db HOOTHOOT
+	db HOPPIP
 	db HORSEA
 	db HOUNDOOM
 	db HOUNDOUR
@@ -91,6 +90,7 @@ AlphabeticalPokedexOrder:
 	db IVYSAUR
 	db JIGGLYPUFF
 	db JOLTEON
+	db JUMPLUFF
 	db JYNX
 	db KABUTO
 	db KABUTOPS
@@ -104,14 +104,18 @@ AlphabeticalPokedexOrder:
 	db LANTURN
 	db LAPRAS
 	db LARVITAR
+	db LATIAS
+	db LATIOS
 	db LEAFEON
 	db LEDIAN
 	db LEDYBA
+	db LICKILICKY
+	db LICKITUNG
+	db LINOONE
 	db LUGIA
 	db MACHAMP
 	db MACHOKE
 	db MACHOP
-	db MAGBY
 	db MAGCARGO
 	db MAGIKARP
 	db MAGMAR
@@ -136,7 +140,6 @@ AlphabeticalPokedexOrder:
 	db MOLTRES
 	db MR__MIME
 	db MUK
-	db MUNCHLAX
 	db MURKROW
 	db NATU
 	db NIDOKING
@@ -156,7 +159,6 @@ AlphabeticalPokedexOrder:
 	db PARASECT
 	db PERSIAN
 	db PHANPY
-	db PICHU
 	db PIDGEOT
 	db PIDGEOTTO
 	db PIDGEY
@@ -177,9 +179,7 @@ AlphabeticalPokedexOrder:
 	db PUPITAR
 	db QUAGSIRE
 	db QUILAVA
-	db QWILFISH
 	db RAICHU
-	db RAIKOU
 	db RAPIDASH
 	db RATICATE
 	db RATTATA
@@ -192,25 +192,25 @@ AlphabeticalPokedexOrder:
 	db SCIZOR
 	db SCYTHER
 	db SEADRA
+	db SEAKING
 	db SEEL
-	db SENTRET
 	db SHELLDER
 	db SKARMORY
+	db SKIPLOOM
 	db SLOWBRO
 	db SLOWKING
 	db SLOWPOKE
 	db SLUGMA
-	db SMEARGLE
 	db SNEASEL
 	db SNORLAX
 	db SNUBBULL
+	db SPEAROW
 	db SPINARAK
 	db SQUIRTLE
+	db STANTLER
 	db STARMIE
 	db STARYU
 	db STEELIX
-	db SUDOWOODO
-	db SUICUNE
 	db SUNFLORA
 	db SUNKERN
 	db SWINUB
@@ -224,12 +224,11 @@ AlphabeticalPokedexOrder:
 	db TOGEKISS
 	db TOGEPI
 	db TOGETIC
+	db TORKOAL
 	db TOTODILE
 	db TYPHLOSION
 	db TYRANITAR
-	db TYROGUE
 	db UMBREON
-	db UNOWN
 	db URSARING
 	db VAPOREON
 	db VENOMOTH
@@ -251,4 +250,5 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db YANMEGA
 	db ZAPDOS
+	db ZIGZAGOON
 	db ZUBAT
