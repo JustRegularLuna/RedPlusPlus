@@ -20,8 +20,8 @@ IconPointers:
 	dw PidgeotIcon
 	dw RattataIcon
 	dw RaticateIcon
-	dw MarillIcon
-	dw AzumarillIcon
+	dw SpearowIcon
+	dw FearowIcon
 	dw EkansIcon
 	dw ArbokIcon
 	dw PikachuIcon
@@ -82,7 +82,7 @@ IconPointers:
 	dw SlowbroIcon
 	dw MagnemiteIcon
 	dw MagnetonIcon
-	dw FarfetchdIcon
+	dw FarfetchDIcon
 	dw DoduoIcon
 	dw DodrioIcon
 	dw SeelIcon
@@ -107,6 +107,7 @@ IconPointers:
 	dw MarowakIcon
 	dw HitmonleeIcon
 	dw HitmonchanIcon
+	dw LickitungIcon
 	dw KoffingIcon
 	dw WeezingIcon
 	dw RhyhornIcon
@@ -116,9 +117,8 @@ IconPointers:
 	dw KangaskhanIcon
 	dw HorseaIcon
 	dw SeadraIcon
-	dw TogepiIcon
-	dw TogeticIcon
-	dw TogekissIcon
+	dw GoldeenIcon
+	dw SeakingIcon
 	dw StaryuIcon
 	dw StarmieIcon
 	dw MrMimeIcon
@@ -160,8 +160,8 @@ IconPointers:
 	dw TotodileIcon
 	dw CroconawIcon
 	dw FeraligatrIcon
-	dw SentretIcon
-	dw FurretIcon
+	dw ZigzagoonIcon
+	dw LinooneIcon
 	dw HoothootIcon
 	dw NoctowlIcon
 	dw LedybaIcon
@@ -171,19 +171,24 @@ IconPointers:
 	dw CrobatIcon
 	dw ChinchouIcon
 	dw LanturnIcon
-	dw PichuIcon
-	dw MunchlaxIcon
-	dw MagnezoneIcon
-	dw TangrowthIcon
+	dw TorkoalIcon
+	dw TogepiIcon
+	dw TogeticIcon
+	dw TogekissIcon
 	dw NatuIcon
 	dw XatuIcon
 	dw MareepIcon
 	dw FlaaffyIcon
 	dw AmpharosIcon
 	dw BellossomIcon
-	dw RhyperiorIcon
-	dw SudowoodoIcon
+	dw MarillIcon
+	dw AzumarillIcon
 	dw PolitoedIcon
+	dw MagnezoneIcon
+	dw LickilickyIcon
+	dw HoppipIcon
+	dw SkiploomIcon
+	dw JumpluffIcon
 	dw SunkernIcon
 	dw SunfloraIcon
 	dw YanmaIcon
@@ -192,25 +197,20 @@ IconPointers:
 	dw QuagsireIcon
 	dw EspeonIcon
 	dw UmbreonIcon
-	dw LeafeonIcon
-	dw GlaceonIcon
 	dw MurkrowIcon
 	dw HonchkrowIcon
 	dw SlowkingIcon
 	dw MisdreavusIcon
 	dw MismagiusIcon
-	dw UnownIcon
 	dw WobbuffetIcon
 	dw GirafarigIcon
 	dw PinecoIcon
 	dw ForretressIcon
-	dw DunsparceIcon
 	dw GligarIcon
 	dw GliscorIcon
 	dw SteelixIcon
 	dw SnubbullIcon
 	dw GranbullIcon
-	dw QwilfishIcon
 	dw ScizorIcon
 	dw HeracrossIcon
 	dw SneaselIcon
@@ -233,24 +233,24 @@ IconPointers:
 	dw PhanpyIcon
 	dw DonphanIcon
 	dw Porygon2Icon
-	dw SmeargleIcon
-	dw TyrogueIcon
+	dw PorygonZIcon
+	dw StantlerIcon
 	dw HitmontopIcon
-	dw ElekidIcon
+	dw RhyperiorIcon
+	dw TangrowthIcon
 	dw ElectivireIcon
-	dw MagbyIcon
 	dw MagmortarIcon
 	dw MiltankIcon
 	dw BlisseyIcon
-	dw RaikouIcon
-	dw EnteiIcon
-	dw SuicuneIcon
+	dw LeafeonIcon
+	dw GlaceonIcon
+	dw SylveonIcon
 	dw LarvitarIcon
 	dw PupitarIcon
 	dw TyranitarIcon
 	dw LugiaIcon
 	dw HoOhIcon
 	dw CelebiIcon
-	dw SylveonIcon
-	dw PorygonZIcon
+	dw LatiasIcon
+	dw LatiosIcon
 	dw EggIcon

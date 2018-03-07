@@ -39,10 +39,10 @@ PicPointers::
 	dba RattataBackpic
 	dba RaticateFrontpic
 	dba RaticateBackpic
-	dba MarillFrontpic
-	dba MarillBackpic
-	dba AzumarillFrontpic
-	dba AzumarillBackpic
+	dba SpearowFrontpic
+	dba SpearowBackpic
+	dba FearowFrontpic
+	dba FearowBackpic
 	dba EkansFrontpic
 	dba EkansBackpic
 
@@ -218,6 +218,8 @@ PicPointers::
 	dba HitmonleeBackpic
 	dba HitmonchanFrontpic
 	dba HitmonchanBackpic
+	dba LickitungFrontpic
+	dba LickitungBackpic
 	dba KoffingFrontpic
 	dba KoffingBackpic
 	dba WeezingFrontpic
@@ -236,12 +238,10 @@ PicPointers::
 	dba HorseaBackpic
 	dba SeadraFrontpic
 	dba SeadraBackpic
-	dba TogepiFrontpic
-	dba TogepiBackpic
-	dba TogeticFrontpic
-	dba TogeticBackpic
-	dba TogekissFrontpic
-	dba TogekissBackpic
+	dba GoldeenFrontpic
+	dba GoldeenBackpic
+	dba SeakingFrontpic
+	dba SeakingBackpic
 	dba StaryuFrontpic
 	dba StaryuBackpic
 	dba StarmieFrontpic
@@ -332,10 +332,10 @@ PicPointers::
 	dba CroconawBackpic
 	dba FeraligatrFrontpic
 	dba FeraligatrBackpic
-	dba SentretFrontpic
-	dba SentretBackpic
-	dba FurretFrontpic
-	dba FurretBackpic
+	dba ZigzagoonFrontpic
+	dba ZigzagoonBackpic
+	dba LinooneFrontpic
+	dba LinooneBackpic
 	dba HoothootFrontpic
 	dba HoothootBackpic
 	dba NoctowlFrontpic
@@ -354,17 +354,14 @@ PicPointers::
 	dba ChinchouBackpic
 	dba LanturnFrontpic
 	dba LanturnBackpic
-
-	; see PichuPicPointers
-	dbw -1, -1
-	dbw -1, -1
-
-	dba MunchlaxFrontpic
-	dba MunchlaxBackpic
-	dba MagnezoneFrontpic
-	dba MagnezoneBackpic
-	dba TangrowthFrontpic
-	dba TangrowthBackpic
+	dba TorkoalFrontpic
+	dba TorkoalBackpic
+	dba TogepiFrontpic
+	dba TogepiBackpic
+	dba TogeticFrontpic
+	dba TogeticBackpic
+	dba TogekissFrontpic
+	dba TogekissBackpic
 	dba NatuFrontpic
 	dba NatuBackpic
 	dba XatuFrontpic
@@ -377,12 +374,22 @@ PicPointers::
 	dba AmpharosBackpic
 	dba BellossomFrontpic
 	dba BellossomBackpic
-	dba RhyperiorFrontpic
-	dba RhyperiorBackpic
-	dba SudowoodoFrontpic
-	dba SudowoodoBackpic
+	dba MarillFrontpic
+	dba MarillBackpic
+	dba AzumarillFrontpic
+	dba AzumarillBackpic
 	dba PolitoedFrontpic
 	dba PolitoedBackpic
+	dba MagnezoneFrontpic
+	dba MagnezoneBackpic
+	dba LickilickyFrontpic
+	dba LickilickyBackpic
+	dba HoppipFrontpic
+	dba HoppipBackpic
+	dba SkiploomFrontpic
+	dba SkiploomBackpic
+	dba JumpluffFrontpic
+	dba JumpluffBackpic
 	dba SunkernFrontpic
 	dba SunkernBackpic
 	dba SunfloraFrontpic
@@ -399,10 +406,6 @@ PicPointers::
 	dba EspeonBackpic
 	dba UmbreonFrontpic
 	dba UmbreonBackpic
-	dba LeafeonFrontpic
-	dba LeafeonBackpic
-	dba GlaceonFrontpic
-	dba GlaceonBackpic
 	dba MurkrowFrontpic
 	dba MurkrowBackpic
 	dba HonchkrowFrontpic
@@ -413,11 +416,6 @@ PicPointers::
 	dba MisdreavusBackpic
 	dba MismagiusFrontpic
 	dba MismagiusBackpic
-
-	; see UnownPicPointers
-	dbw -1, -1
-	dbw -1, -1
-
 	dba WobbuffetFrontpic
 	dba WobbuffetBackpic
 	dba GirafarigFrontpic
@@ -426,8 +424,6 @@ PicPointers::
 	dba PinecoBackpic
 	dba ForretressFrontpic
 	dba ForretressBackpic
-	dba DunsparceFrontpic
-	dba DunsparceBackpic
 	dba GligarFrontpic
 	dba GligarBackpic
 	dba GliscorFrontpic
@@ -438,8 +434,6 @@ PicPointers::
 	dba SnubbullBackpic
 	dba GranbullFrontpic
 	dba GranbullBackpic
-	dba QwilfishFrontpic
-	dba QwilfishBackpic
 	dba ScizorFrontpic
 	dba ScizorBackpic
 	dba HeracrossFrontpic
@@ -484,30 +478,30 @@ PicPointers::
 	dba DonphanBackpic
 	dba Porygon2Frontpic
 	dba Porygon2Backpic
-	dba SmeargleFrontpic
-	dba SmeargleBackpic
-	dba TyrogueFrontpic
-	dba TyrogueBackpic
+	dba PorygonZFrontpic
+	dba PorygonZBackpic
+	dba StantlerFrontpic
+	dba StantlerBackpic
 	dba HitmontopFrontpic
 	dba HitmontopBackpic
-	dba ElekidFrontpic
-	dba ElekidBackpic
+	dba RhyperiorFrontpic
+	dba RhyperiorBackpic
+	dba TangrowthFrontpic
+	dba TangrowthBackpic
 	dba ElectivireFrontpic
 	dba ElectivireBackpic
-	dba MagbyFrontpic
-	dba MagbyBackpic
 	dba MagmortarFrontpic
 	dba MagmortarBackpic
 	dba MiltankFrontpic
 	dba MiltankBackpic
 	dba BlisseyFrontpic
 	dba BlisseyBackpic
-	dba RaikouFrontpic
-	dba RaikouBackpic
-	dba EnteiFrontpic
-	dba EnteiBackpic
-	dba SuicuneFrontpic
-	dba SuicuneBackpic
+	dba LeafeonFrontpic
+	dba LeafeonBackpic
+	dba GlaceonFrontpic
+	dba GlaceonBackpic
+	dba SylveonFrontpic
+	dba SylveonBackpic
 	dba LarvitarFrontpic
 	dba LarvitarBackpic
 	dba PupitarFrontpic
@@ -520,8 +514,8 @@ PicPointers::
 	dba HoOhBackpic
 	dba CelebiFrontpic
 	dba CelebiBackpic
-	dba SylveonFrontpic
-	dba SylveonBackpic
-	dba PorygonZFrontpic
-	dba PorygonZBackpic
+	dba LatiasFrontpic
+	dba LatiasBackpic
+	dba LatiosFrontpic
+	dba LatiosBackpic
 	dba EggPic

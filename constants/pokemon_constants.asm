@@ -251,8 +251,8 @@
 	const LUGIA      ; $f9
 	const HO_OH      ; $fa
 	const CELEBI     ; $fb
-	const LATIOS     ; $fc
-	const LATIAS     ; $fd
+	const LATIAS     ; $fc
+	const LATIOS     ; $fd
 NUM_POKEMON EQU const_value +- 1
 	const EGG        ; $fe
 	const CANCEL     ; $ff
@@ -267,8 +267,8 @@ UNOWN      EQU LICKILICKY
 DUNSPARCE  EQU GOLDEEN
 QWILFISH   EQU SEAKING
 SMEARGLE   EQU STANTLER
-TYROGUE    EQU LATIOS
-ELEKID     EQU LATIAS
+TYROGUE    EQU LATIAS
+ELEKID     EQU LATIOS
 MAGBY      EQU TORKOAL
 RAIKOU     EQU HOPPIP
 ENTEI      EQU SKIPLOOM

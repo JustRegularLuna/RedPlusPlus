@@ -1,26 +1,21 @@
-	db 100,  75, 115,  85,  90, 115
+	db  75,  55,  70, 110,  55,  85
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER
-	db 3 ; catch rate
-	db 215 ; base exp
-	db LUM_BERRY ; item 1
+	db GRASS, FLYING
+	db 45 ; catch rate
+	db 176 ; base exp
+	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
-	dn GENDERLESS, 15 ; gender, step cycles to hatch
+	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
-	db PRESSURE ; ability 1
-if DEF(FAITHFUL)
-	db PRESSURE ; ability 2
-	db INNER_FOCUS ; hidden ability
-else
-	db INNER_FOCUS ; ability 2
-	db WATER_ABSORB ; hidden ability
-endc
-	db SLOW ; growth rate
-	dn NO_EGGS, NO_EGGS ; egg groups
+	db CHLOROPHYLL ; ability 1
+	db LEAF_GUARD ; ability 2
+	db INFILTRATOR ; hidden ability
+	db MEDIUM_SLOW ; growth rate
+	dn FAERY, PLANT ; egg groups
 
 	; ev_yield
-	ev_yield   0,   0,   1,   0,   0,   2
+	ev_yield   0,   0,   0,   3,   0,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm

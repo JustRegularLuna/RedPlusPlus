@@ -1,25 +1,16 @@
-if DEF(FAITHFUL)
-	db  85,  76,  64,  90,  45,  55
+	db  78,  70,  61, 100,  50,  61
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  85,  86,  64, 108,  45,  55
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db NORMAL, NORMAL
 	db 90 ; catch rate
-if DEF(FAITHFUL)
-	db 116 ; base exp
-else
-	db 126 ; base exp
-endc
+	db 128 ; base exp
 	db ORAN_BERRY ; item 1
 	db SITRUS_BERRY ; item 2
 	dn FEMALE_50, 2 ; gender, step cycles to hatch
 	dn 6, 6 ; frontpic dimensions
-	db RUN_AWAY ; ability 1
-	db KEEN_EYE ; ability 2
-	db FRISK ; hidden ability
+	db PICKUP ; ability 1
+	db GLUTTONY ; ability 2
+	db QUICK_FEET ; hidden ability
 	db MEDIUM_FAST ; growth rate
 	dn FIELD, FIELD ; egg groups
 

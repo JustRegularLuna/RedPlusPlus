@@ -1,26 +1,22 @@
-if DEF(FAITHFUL)
-	db  45,  63,  37,  95,  65,  55
+	db  80,  90,  80, 110, 130, 110
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  50,  63,  37, 100,  65,  55
-	;   hp  atk  def  spd  sat  sdf
-endc
 
-	db ELECTRIC, ELECTRIC
-	db 45 ; catch rate
-	db 106 ; base exp
-	db SITRUS_BERRY ; item 1
-	db ELECTIRIZER ; item 2
-	dn FEMALE_25, 4 ; gender, step cycles to hatch
+	db DRAGON, PSYCHIC
+	db 3 ; catch rate
+	db 211 ; base exp
+	; TODO: SOUL_DEW
+	db NO_ITEM ; item 1
+	db NO_ITEM ; item 2
+	dn GENDERLESS, 15 ; gender, step cycles to hatch
 	dn 6, 6 ; frontpic dimensions
-	db STATIC ; ability 1
-	db STATIC ; ability 2
-	db VITAL_SPIRIT ; hidden ability
-	db MEDIUM_FAST ; growth rate
+	db LEVITATE ; ability 1
+	db LEVITATE ; ability 2
+	db LEVITATE ; hidden ability
+	db SLOW ; growth rate
 	dn NO_EGGS, NO_EGGS ; egg groups
 
 	; ev_yield
-	ev_yield   0,   0,   0,   1,   0,   0
+	ev_yield   0,   0,   0,   0,   3,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm

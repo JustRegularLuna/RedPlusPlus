@@ -1,21 +1,22 @@
-	db  35,  35,  35,  35,  35,  35
+	db  80,  80,  90, 110, 110, 130
 	;   hp  atk  def  spd  sat  sdf
 
-	db FIGHTING, FIGHTING
-	db 75 ; catch rate
-	db 91 ; base exp
+	db DRAGON, PSYCHIC
+	db 3 ; catch rate
+	db 211 ; base exp
+	; TODO: SOUL_DEW
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
-	dn ALL_MALE, 4 ; gender, step cycles to hatch
+	dn GENDERLESS, 15 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
-	db GUTS ; ability 1
-	db STEADFAST ; ability 2
-	db VITAL_SPIRIT ; hidden ability
-	db MEDIUM_FAST ; growth rate
+	db LEVITATE ; ability 1
+	db LEVITATE ; ability 2
+	db LEVITATE ; hidden ability
+	db SLOW ; growth rate
 	dn NO_EGGS, NO_EGGS ; egg groups
 
 	; ev_yield
-	ev_yield   0,   1,   0,   0,   0,   0
+	ev_yield   0,   0,   0,   0,   0,   3
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm

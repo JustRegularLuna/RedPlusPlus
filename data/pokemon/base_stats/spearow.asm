@@ -1,18 +1,18 @@
-	db  20,  40,  15,  60,  35,  35
+	db  40,  60,  30,  70,  31,  31
 	;   hp  atk  def  spd  sat  sdf
 
-	db ELECTRIC, ELECTRIC
-	db 190 ; catch rate
-	db 42 ; base exp
+	db NORMAL, FLYING
+	db 255 ; catch rate
+	db 58 ; base exp
 	db NO_ITEM ; item 1
-	db LIGHT_BALL ; item 2
+	db SHARP_BEAK ; item 2
 	dn FEMALE_50, 1 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
-	db STATIC ; ability 1
-	db STATIC ; ability 2
-	db LIGHTNING_ROD ; hidden ability
+	db KEEN_EYE ; ability 1
+	db KEEN_EYE ; ability 2
+	db SNIPER ; hidden ability
 	db MEDIUM_FAST ; growth rate
-	dn NO_EGGS, NO_EGGS ; egg groups
+	dn AVIAN, AVIAN ; egg groups
 
 	; ev_yield
 	ev_yield   0,   0,   0,   1,   0,   0

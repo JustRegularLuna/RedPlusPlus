@@ -1,21 +1,21 @@
-	db 135,  85,  45,   5,  40,  85
+	db  65,  90,  65, 100,  61,  61
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, NORMAL
-	db 50 ; catch rate
-	db 94 ; base exp
+	db NORMAL, FLYING
+	db 90 ; catch rate
+	db 162 ; base exp
 	db NO_ITEM ; item 1
-	db LEFTOVERS ; item 2
-	dn FEMALE_12_5, 7 ; gender, step cycles to hatch
+	db SHARP_BEAK ; item 2
+	dn FEMALE_50, 1 ; gender, step cycles to hatch
 	dn 6, 6 ; frontpic dimensions
-	db PICKUP ; ability 1
-	db THICK_FAT ; ability 2
-	db GLUTTONY ; hidden ability
-	db SLOW ; growth rate
-	dn NO_EGGS, NO_EGGS ; egg groups
+	db KEEN_EYE ; ability 1
+	db KEEN_EYE ; ability 2
+	db SNIPER ; hidden ability
+	db MEDIUM_FAST ; growth rate
+	dn AVIAN, AVIAN ; egg groups
 
 	; ev_yield
-	ev_yield   1,   0,   0,   0,   0,   0
+	ev_yield   0,   0,   0,   2,   0,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm

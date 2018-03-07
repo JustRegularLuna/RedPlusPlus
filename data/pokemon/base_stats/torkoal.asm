@@ -1,26 +1,21 @@
-if DEF(FAITHFUL)
-	db  45,  75,  37,  83,  70,  55
+	db  70,  85, 140,  20,  85,  70
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  50,  75,  37,  83,  70,  55
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db FIRE, FIRE
 	db 45 ; catch rate
-	db 117 ; base exp
-	db ASPEAR_BERRY ; item 1
-	db MAGMARIZER ; item 2
-	dn FEMALE_25, 4 ; gender, step cycles to hatch
+	db 161 ; base exp
+	db NO_ITEM ; item 1
+	db CHARCOAL ; item 2
+	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 6, 6 ; frontpic dimensions
-	db FLAME_BODY ; ability 1
-	db FLAME_BODY ; ability 2
-	db VITAL_SPIRIT ; hidden ability
+	db CLEAR_BODY ; ability 1 ; TODO: WHITE_SMOKE
+	db DROUGHT ; ability 2
+	db SHELL_ARMOR ; hidden ability
 	db MEDIUM_FAST ; growth rate
-	dn NO_EGGS, NO_EGGS ; egg groups
+	dn FIELD, FIELD ; egg groups
 
 	; ev_yield
-	ev_yield   0,   0,   0,   1,   0,   0
+	ev_yield   0,   0,   2,   0,   0,   0
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
