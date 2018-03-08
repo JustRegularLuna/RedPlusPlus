@@ -2249,6 +2249,8 @@ BattleCommand_HitTargetNoSub: ; 34f60
 
 .fury_attack_users
 	db BEEDRILL
+	db SPEAROW
+	db FEAROW
 	db NIDORAN_M
 	db NIDORINO
 	db NIDOKING
@@ -2258,6 +2260,8 @@ BattleCommand_HitTargetNoSub: ; 34f60
 	db RHYHORN
 	db RHYDON
 	db RHYPERIOR
+	db GOLDEEN
+	db SEAKING
 	db PINSIR
 	db DUNSPARCE
 	db HERACROSS
@@ -2347,6 +2351,7 @@ BattleCommand_StatUpDownAnim: ; 34feb
 	db CLOYSTER
 	db OMANYTE
 	db OMASTAR
+	db TORKOAL
 	db -1
 
 .harden_users

@@ -65,6 +65,7 @@ SpearowEggMoves:
 	db TRI_ATTACK
 	db ASTONISH
 	db STEEL_WING
+	db GUST
 	db -1 ; end
 
 EkansEggMoves:
@@ -79,6 +80,10 @@ PikachuEggMoves:
 	db DOUBLE_SLAP
 	db ENCORE
 	db REVERSAL
+	db NASTY_PLOT
+	db SCARY_FACE
+	db SING
+	db PETAL_DANCE
 	db -1 ; end
 
 SandshrewEggMoves:
@@ -456,6 +461,7 @@ HorseaEggMoves:
 
 GoldeenEggMoves:
 	db PSYBEAM
+	db HAZE
 	db HYDRO_PUMP
 	db AQUA_TAIL
 	db BODY_SLAM
@@ -559,6 +565,9 @@ SnorlaxEggMoves:
 	db DOUBLE_EDGE
 	db LICK
 	db GUNK_SHOT
+	db SWEET_KISS
+	db METRONOME
+	db SCREECH
 	db -1 ; end
 
 DratiniEggMoves:
