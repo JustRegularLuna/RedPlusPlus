@@ -1012,31 +1012,13 @@ StatsScreen_PlaceFrontpic: ; 4e226 (13:6226)
 	ld hl, wcf64
 	set 5, [hl]
 	ld a, [CurPartySpecies]
-	cp UNOWN
-	jr z, .unown
 	hlcoord 0, 0
 	jp PrepMonFrontpic
 
-.unown
-	xor a
-	ld [wBoxAlignment], a
-	hlcoord 0, 0
-	jp _PrepMonFrontpic
-
 .AnimateEgg: ; 4e271 (13:6271)
 	ld a, [CurPartySpecies]
-	cp UNOWN
-	jr z, .unownegg
 	ld a, TRUE
 	ld [wBoxAlignment], a
-	jr .get_animation
-
-.unownegg
-	xor a
-	ld [wBoxAlignment], a
-	; fallthrough
-
-.get_animation ; 4e289 (13:6289)
 	ld a, [CurPartySpecies]
 	call IsAPokemon
 	ret c

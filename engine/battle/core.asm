@@ -3172,18 +3172,6 @@ LoadEnemyPkmnToSwitchTo:
 	call LoadEnemyMon
 
 	ld a, [CurPartySpecies]
-	cp UNOWN
-	jr nz, .skip_unown
-	ld a, [wFirstUnownSeen]
-	and a
-	jr nz, .skip_unown
-	ld hl, EnemyMonForm
-	predef GetVariant
-	ld a, [MonVariant]
-	ld [wFirstUnownSeen], a
-.skip_unown
-
-	ld a, [CurPartySpecies]
 	cp MAGIKARP
 	jr nz, .skip_magikarp
 	ld a, [wFirstMagikarpSeen]
@@ -6636,31 +6624,7 @@ endr
 	ld a, [bc]
 	ld [hl], a
 
-	; Unown
-	ld a, [TempEnemyMonSpecies]
-	cp UNOWN
-	jr nz, .EkansArbok
-
-.unown_letter
-	ld a, NUM_UNOWN
-	call BattleRandomRange
-	inc a
-	ld b, a
-	ld a, [EnemyMonForm]
-	and $ff - FORM_MASK
-	add b
-	ld [EnemyMonForm], a
-	; Get letter based on form
-	ld hl, EnemyMonForm
-	predef GetVariant
-	; Can't use any letters that haven't been unlocked
-	push de
-	call CheckUnownLetter
-	pop de
-	jr c, .unown_letter ; re-roll
-	jp .Happiness
-
-.EkansArbok:
+	; Species forms
 	ld a, [TempEnemyMonSpecies]
 	cp EKANS
 	jr z, .yes_ekans
@@ -6906,56 +6870,6 @@ CheckSleepingTreeMon: ; 3eb38
 	ret
 
 INCLUDE "data/wild/treemons_asleep.asm"
-
-
-CheckUnownLetter: ; 3eb75
-; Return carry if the Unown letter hasn't been unlocked yet
-
-	ld a, [UnlockedUnowns]
-	ld c, a
-	ld de, 0
-
-.loop
-
-; Don't check this set unless it's been unlocked
-	srl c
-	jr nc, .next
-
-; Is our letter in the set?
-	ld hl, UnlockedUnownLetterSets
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-
-	push de
-	ld a, [MonVariant]
-	ld de, 1
-	push bc
-	call IsInArray
-	pop bc
-	pop de
-
-	jr c, .match
-
-.next
-; Make sure we haven't gone past the end of the table
-	inc e
-	inc e
-	ld a, e
-	cp UnlockedUnownLetterSets.End - UnlockedUnownLetterSets
-	jr c, .loop
-
-; Hasn't been unlocked, or the letter is invalid
-	scf
-	ret
-
-.match
-; Valid letter
-	and a
-	ret
-
-INCLUDE "data/wild/unlocked_unowns.asm"
 
 
 FinalPkmnSlideInEnemyMonFrontpic:
@@ -8499,16 +8413,6 @@ InitEnemyWildmon: ; 3f607
 	call CopyBytes
 	ld hl, EnemyMonForm
 	predef GetVariant
-
-	ld a, [CurPartySpecies]
-	cp UNOWN
-	jr nz, .skip_unown
-	ld a, [wFirstUnownSeen]
-	and a
-	jr nz, .skip_unown
-	ld a, [MonVariant]
-	ld [wFirstUnownSeen], a
-.skip_unown
 
 	ld a, [CurPartySpecies]
 	cp MAGIKARP

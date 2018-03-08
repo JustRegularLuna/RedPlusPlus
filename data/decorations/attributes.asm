@@ -57,7 +57,7 @@ DecorationAttributes:
 	decoration DECO_DOLL,     DITTO,             SET_UP_DOLL,        EVENT_DECO_DITTO_DOLL,              SPRITE_NONE ; TODO: SPRITE_DITTO
 	decoration DECO_DOLL,     VOLTORB,           SET_UP_DOLL,        EVENT_DECO_VOLTORB_DOLL,            SPRITE_NONE ; TODO: SPRITE_VOLTORB
 	decoration DECO_DOLL,     ABRA,              SET_UP_DOLL,        EVENT_DECO_ABRA_DOLL,               SPRITE_NONE ; TODO: SPRITE_ABRA
-	decoration DECO_DOLL,     UNOWN,             SET_UP_DOLL,        EVENT_DECO_UNOWN_DOLL,              SPRITE_NONE ; TODO: SPRITE_UNOWN
+	decoration DECO_DOLL,     ZIGZAGOON,         SET_UP_DOLL,        EVENT_DECO_ZIGZAGOON_DOLL,          SPRITE_NONE ; TODO: SPRITE_ZIGZAGOON
 	decoration DECO_DOLL,     GEODUDE,           SET_UP_DOLL,        EVENT_DECO_GEODUDE_DOLL,            SPRITE_NONE ; TODO: SPRITE_GEODUDE
 	decoration DECO_DOLL,     PINECO,            SET_UP_DOLL,        EVENT_DECO_PINECO_DOLL,             SPRITE_NONE ; TODO: SPRITE_PINECO
 	decoration DECO_DOLL,     MARILL,            SET_UP_DOLL,        EVENT_DECO_MARILL_DOLL,             SPRITE_NONE ; TODO: SPRITE_MARILL

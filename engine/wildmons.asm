@@ -419,14 +419,6 @@ _ChooseWildEncounter:
 	call ValidateTempWildMonSpecies
 	jr c, .nowildbattle
 
-	cp UNOWN
-	jr nz, .unown_check_done
-
-	ld a, [UnlockedUnowns]
-	and a
-	jr z, .nowildbattle
-
-.unown_check_done
 	; Check if we're forcing type
 	ld [CurSpecies], a
 	push bc
@@ -705,9 +697,9 @@ InitRoamMons: ; 2a2a0
 ; initialize wRoamMon structs
 
 ; species
-	ld a, RAIKOU
+	ld a, LATIAS
 	ld [wRoamMon1Species], a
-	ld a, ENTEI
+	ld a, LATIOS
 	ld [wRoamMon2Species], a
 ;	ld a, SUICUNE
 ;	ld [wRoamMon3Species], a

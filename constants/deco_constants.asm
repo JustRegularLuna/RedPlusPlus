@@ -114,7 +114,7 @@ __enum__ = 0
 	deco  DITTO_DOLL
 	deco  VOLTORB_DOLL
 	deco  ABRA_DOLL
-	deco  UNOWN_DOLL
+	deco  ZIGZAGOON_DOLL
 	deco  GEODUDE_DOLL
 	deco  PINECO_DOLL
 	deco  MARILL_DOLL

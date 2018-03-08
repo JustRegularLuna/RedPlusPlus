@@ -2263,7 +2263,6 @@ BattleCommand_HitTargetNoSub: ; 34f60
 	db GOLDEEN
 	db SEAKING
 	db PINSIR
-	db DUNSPARCE
 	db HERACROSS
 	db PILOSWINE
 	db MAMOSWINE

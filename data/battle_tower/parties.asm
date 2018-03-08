@@ -112,9 +112,9 @@ BattleTowerPokemon2:
 	db $ff, $7f, $ff ; DVs
 	db ABILITY_1 | QUIRKY, MALE ; Personality
 
-	db UNOWN
+	db ABRA
 	db ORAN_BERRY
-	db HIDDEN_POWER, 0, 0, 0
+	db PSYCHIC_M, SHADOW_BALL, LIGHT_SCREEN, REFLECT
 	db $ff, $ff, $ff ; DVs
 	db ABILITY_1 | QUIRKY, MALE ; Personality
 

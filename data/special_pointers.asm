@@ -118,7 +118,6 @@ SpecialsPointers::
 	add_special SpecialBuenasPassword
 	add_special TeachDratiniExtremeSpeed
 	add_special Special_SampleKenjiBreakCountdown
-	add_special SpecialBeastsCheck
 	add_special SpecialBirdsCheck
 	add_special SpecialDuoCheck
 	add_special SpecialMonCheck

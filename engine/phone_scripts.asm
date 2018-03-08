@@ -812,7 +812,7 @@ Ralph_SetUpSwarm:
 	checkflag ENGINE_SPECIAL_WILDDATA
 	iftrue UnknownScript_0xbd55c
 	setflag ENGINE_SPECIAL_WILDDATA
-	pokenamemem QWILFISH, $1
+	pokenamemem CHINCHOU, $1
 	landmarktotext ROUTE_32, $2
 	writebyte FISHSWARM_QWILFISH
 	special Special_ActivateFishingSwarm
@@ -982,7 +982,7 @@ UnknownScript_0xbd6a6:
 	checkflag ENGINE_DUNSPARCE_SWARM
 	iftrue UnknownScript_0xbd6bd
 	setflag ENGINE_DUNSPARCE_SWARM
-	pokenamemem DUNSPARCE, $1
+	pokenamemem WOBBUFFET, $1
 	swarm SWARM_DUNSPARCE, DARK_CAVE_VIOLET_ENTRANCE
 	landmarktotext DARK_CAVE, $2
 	farjump UnknownScript_0xa05de
