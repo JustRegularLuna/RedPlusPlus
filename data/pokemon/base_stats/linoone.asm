@@ -7,7 +7,7 @@
 	db ORAN_BERRY ; item 1
 	db SITRUS_BERRY ; item 2
 	dn FEMALE_50, 2 ; gender, step cycles to hatch
-	dn 6, 6 ; frontpic dimensions
+	dn 7, 7 ; frontpic dimensions
 	db PICKUP ; ability 1
 	db GLUTTONY ; ability 2
 	db QUICK_FEET ; hidden ability
