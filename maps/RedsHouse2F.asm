@@ -110,52 +110,28 @@ DebugCheatScript:
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS
 	givepoke MEW, 100, LEFTOVERS
-	callasm TeachHMSlaveMoves
+	loadvar PartyMon1Moves+0, FLY
+	loadvar PartyMon1Moves+1, SURF
+	loadvar PartyMon1Moves+2, STRENGTH
+	loadvar PartyMon1Moves+3, CUT
+	loadvar PartyMon1PP+0, 15
+	loadvar PartyMon1PP+1, 15
+	loadvar PartyMon1PP+2, 15
+	loadvar PartyMon1PP+3, 30
+	loadvar PartyMon2Moves+0, FLASH
+	loadvar PartyMon2Moves+1, ROCK_SMASH
+	loadvar PartyMon2Moves+2, WHIRLPOOL
+	loadvar PartyMon2Moves+3, WATERFALL
+	loadvar PartyMon2PP+0, 20
+	loadvar PartyMon2PP+1, 15
+	loadvar PartyMon2PP+2, 15
+	loadvar PartyMon2PP+3, 15
 	; pokedex
 	callasm FillPokedex
 	; phone
 	addcellnum PHONE_MOM
 	closetext
 	end
-
-TeachHMSlaveMoves:
-	ld hl, PartyMon1Moves
-	ld a, FLY
-	ld [hli], a
-	ld a, SURF
-	ld [hli], a
-	ld a, STRENGTH
-	ld [hli], a
-	ld a, CUT
-	ld [hl], a
-	ld hl, PartyMon1PP
-	ld a, 15
-	ld [hli], a
-;	ld a, 15
-	ld [hli], a
-;	ld a, 15
-	ld [hli], a
-	ld a, 30
-	ld [hl], a
-	ld hl, PartyMon2Moves
-	ld a, FLASH
-	ld [hli], a
-	ld a, ROCK_SMASH
-	ld [hli], a
-	ld a, WHIRLPOOL
-	ld [hli], a
-	ld a, WATERFALL
-	ld [hl], a
-	ld hl, PartyMon2PP
-	ld a, 20
-	ld [hli], a
-	ld a, 15
-	ld [hli], a
-;	ld a, 15
-	ld [hli], a
-;	ld a, 15
-	ld [hl], a
-	ret
 
 FillPokedex:
 	ld a, 1
