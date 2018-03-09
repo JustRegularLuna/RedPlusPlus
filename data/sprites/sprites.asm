@@ -98,3 +98,4 @@ SpriteHeaders:
 	overworld_sprite BikeBlankSilphSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
 	overworld_sprite SignFenceTreetopSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
 	overworld_sprite BushForestTreeSpriteGFX, STANDING_SPRITE, PAL_OW_TREE
+	overworld_sprite SecretBaseGFX, STANDING_SPRITE, PAL_OW_TREE
