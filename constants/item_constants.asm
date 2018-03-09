@@ -122,8 +122,8 @@
 	const SILVER_WING  ; 67
 	const CLEAR_BELL   ; 68
 	const GS_BALL      ; 69
-	const BLUE_CARD    ; 6a
-	const EON_TICKET   ; 6b * Changed
+	const EON_TICKET   ; 6a * Changed
+	const ORANGETICKET ; 6b
 	const MYSTICTICKET ; 6c
 	const OLD_SEA_MAP  ; 6d
 	const SHINY_CHARM  ; 6e

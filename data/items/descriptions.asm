@@ -104,8 +104,8 @@ ItemDescriptions:
 	dw SilverWingDesc
 	dw ClearBellDesc
 	dw GSBallDesc
-	dw BlueCardDesc
 	dw EonTicketDesc
+	dw OrangeTicketDesc
 	dw MysticTicketDesc
 	dw OldSeaMapDesc
 	dw ShinyCharmDesc
@@ -651,10 +651,7 @@ GSBallDesc:
 	db   "The mysterious"
 	next "Ball.@"
 
-BlueCardDesc:
-	db   "Card to save"
-	next "points.@"
-
+OrangeTicketDesc:
 EonTicketDesc:
 MysticTicketDesc:
 	db   "A ticket for the"
