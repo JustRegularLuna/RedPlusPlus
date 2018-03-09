@@ -1131,8 +1131,6 @@ CheckFacingTileEvent: ; 97c5f
 	jr c, .done
 
 	ld a, [EngineBuffer1]
-	cp COLL_WHIRLPOOL
-	jr z, .whirlpool
 	cp COLL_WATERFALL
 	jr z, .waterfall
 	cp COLL_HEADBUTT_TREE
@@ -1144,10 +1142,6 @@ CheckFacingTileEvent: ; 97c5f
 	ld a, $ff
 	scf
 	ret
-
-.whirlpool
-	farcall TryWhirlpoolOW
-	jr .done
 
 .waterfall
 	farcall TryWaterfallOW

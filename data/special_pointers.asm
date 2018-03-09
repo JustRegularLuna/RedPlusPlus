@@ -172,7 +172,6 @@ SpecialsPointers::
 	add_special InitializeHiddenGrotto
 	add_special GetHiddenGrottoContents
 	add_special EmptiedHiddenGrotto
-	add_special Special_HiddenPowerGuru
 	add_special Special_GetOvercastIndex
 
 	add_special SpecialNone

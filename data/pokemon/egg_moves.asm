@@ -169,7 +169,6 @@ ParasEggMoves:
 
 VenonatEggMoves:
 	db AGILITY
-	db BATON_PASS
 	db HEALINGLIGHT
 	db SCREECH
 	db TOXIC_SPIKES
@@ -241,7 +240,6 @@ AbraEggMoves:
 	db BARRIER
 	db ENCORE
 	db LIGHT_SCREEN
-	db KNOCK_OFF
 	db -1 ; end
 
 MachopEggMoves:
@@ -251,7 +249,6 @@ MachopEggMoves:
 	db LIGHT_SCREEN
 	db MACH_PUNCH
 	db CLOSE_COMBAT
-	db KNOCK_OFF
 	db -1 ; end
 
 BellsproutEggMoves:
@@ -270,7 +267,6 @@ TentacoolEggMoves:
 	db MIRROR_COAT
 	db RAPID_SPIN
 	db SAFEGUARD
-	db KNOCK_OFF
 	db -1 ; end
 
 GeodudeEggMoves:
@@ -371,7 +367,6 @@ KrabbyEggMoves:
 	db AMNESIA
 	db DIG
 	db CALM_MIND
-	db KNOCK_OFF
 	db -1 ; end
 
 ExeggcuteEggMoves:
@@ -453,7 +448,6 @@ HorseaEggMoves:
 	db DISABLE
 	db DRAGON_RAGE
 	db DRAGONBREATH
-	db OCTAZOOKA
 	db SPLASH
 	db HAZE
 	db WATER_PULSE
@@ -473,11 +467,9 @@ MrMimeEggMoves:
 	db FUTURE_SIGHT
 	db HYPNOSIS
 	db NASTY_PLOT
-	db TRICK
 	db -1 ; end
 
 ScytherEggMoves:
-	db BATON_PASS
 	db BUG_BUZZ
 	db REVERSAL
 	db COUNTER
@@ -536,7 +528,6 @@ OmanyteEggMoves:
 	db TOXIC_SPIKES
 	db SUPERSONIC
 	db WATER_PULSE
-	db KNOCK_OFF
 	db -1 ; end
 
 KabutoEggMoves:
@@ -548,7 +539,6 @@ KabutoEggMoves:
 	db SCREECH
 	db TAKE_DOWN
 	db DIG
-	db KNOCK_OFF
 	db -1 ; end
 
 AerodactylEggMoves:
@@ -616,7 +606,6 @@ ZigzagoonEggMoves:
 	db CHARM
 	db EXTREMESPEED
 	db PURSUIT
-	db TRICK
 	db -1 ; end
 
 HoothootEggMoves:
@@ -634,12 +623,10 @@ LedybaEggMoves:
 	db PSYBEAM
 	db SCREECH
 	db LIGHT_SCREEN
-	db KNOCK_OFF
 	db DRAIN_PUNCH
 	db -1 ; end
 
 SpinarakEggMoves:
-	db BATON_PASS
 	db DISABLE
 	db MEGAHORN
 	db PSYBEAM
@@ -777,7 +764,6 @@ PinecoEggMoves:
 
 GligarEggMoves:
 	db AGILITY
-	db BATON_PASS
 	db METAL_CLAW
 	db WING_ATTACK
 	db COUNTER
@@ -831,7 +817,6 @@ SlugmaEggMoves:
 	db -1 ; end
 
 SwinubEggMoves:
-	db AVALANCHE
 	db BITE
 	db TAKE_DOWN
 	db BODY_SLAM
@@ -857,7 +842,6 @@ CorsolaEggMoves:
 RemoraidEggMoves:
 	db SPLASH
 	db HAZE
-	db OCTAZOOKA
 	db ROCK_BLAST
 	db SCREECH
 	db SUPERSONIC

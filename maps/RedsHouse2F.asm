@@ -40,7 +40,7 @@ DebugCheatScript:
 	givetmhm HM_SURF
 	givetmhm HM_STRENGTH
 	givetmhm HM_WATERFALL
-	givetmhm HM_WHIRLPOOL
+	givetmhm HM_DIVE
 	; max money
 	givemoney $0, 1000000
 	givemoney $0, 1000000
@@ -120,12 +120,12 @@ DebugCheatScript:
 	loadvar PartyMon1PP+3, 30
 	loadvar PartyMon2Moves+0, FLASH
 	loadvar PartyMon2Moves+1, ROCK_SMASH
-	loadvar PartyMon2Moves+2, WHIRLPOOL
-	loadvar PartyMon2Moves+3, WATERFALL
+	loadvar PartyMon2Moves+2, WATERFALL
+	loadvar PartyMon2Moves+3, DIVE
 	loadvar PartyMon2PP+0, 20
 	loadvar PartyMon2PP+1, 15
 	loadvar PartyMon2PP+2, 15
-	loadvar PartyMon2PP+3, 15
+	loadvar PartyMon2PP+3, 10
 	; pokedex
 	callasm FillPokedex
 	; phone

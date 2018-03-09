@@ -65,7 +65,7 @@ endm
 	command counter                 ; 3a
 	command encore                  ; 3b
 	command painsplit               ; 3c
-	command sketch                  ; 3d
+	command dracometeor             ; 3d
 	command sleeptalk               ; 3e
 	command destinybond             ; 3f
 	command falseswipe              ; 40
@@ -94,11 +94,11 @@ endm
 	command safeguard               ; 57
 	command checksafeguard          ; 58
 	command getmagnitude            ; 59
-	command batonpass               ; 5a
+	command batonpass               ; 5a ; unused
 	command pursuit                 ; 5b
 	command clearhazards            ; 5c
 	command healweather             ; 5d
-	command hiddenpower             ; 5e
+	command secretpower             ; 5e
 	command startrain               ; 5f
 	command startsun                ; 60
 	command attackup                ; 61
@@ -172,8 +172,8 @@ endm
 	command roost                   ; a5
 	command closecombat             ; a6
 	command skillswap               ; a7
-	command trick                   ; a8
-	command knockoff                ; a9
+	command trick                   ; a8 ; unused
+	command knockoff                ; a9 ; unused
 	command bugbite                 ; aa
 
 	enum_start -1, -1

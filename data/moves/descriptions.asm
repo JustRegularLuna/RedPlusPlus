@@ -29,7 +29,7 @@ MoveDescriptions::
 	dw ToxicSpikesDescription
 	dw HeadbuttDescription
 	dw HornAttackDescription
-	dw TrickDescription
+	dw DracoMeteorDescription
 	dw HexDescription
 	dw TackleDescription
 	dw BodySlamDescription
@@ -88,7 +88,7 @@ MoveDescriptions::
 	dw ThunderDescription
 	dw RockThrowDescription
 	dw EarthquakeDescription
-	dw AvalancheDescription
+	dw SecretPowerDescription
 	dw DigDescription
 	dw ToxicDescription
 	dw ConfusionDescription
@@ -164,7 +164,7 @@ MoveDescriptions::
 	dw SlashDescription
 	dw SubstituteDescription
 	dw GigaImpactDescription
-	dw SketchDescription
+	dw MistBallDescription
 	dw DrainPunchDescription
 	dw ThiefDescription
 	dw WillOWispDescription
@@ -188,7 +188,7 @@ MoveDescriptions::
 	dw BellyDrumDescription
 	dw SludgeBombDescription
 	dw MudSlapDescription
-	dw OctazookaDescription
+	dw HydroCannonDescription
 	dw SpikesDescription
 	dw ZapCannonDescription
 	dw ForesightDescription
@@ -196,7 +196,7 @@ MoveDescriptions::
 	dw PerishSongDescription
 	dw IcyWindDescription
 	dw PowerGemDescription
-	dw WildChargeDescription
+	dw VoltTackleDescription
 	dw PowerWhipDescription
 	dw OutrageDescription
 	dw SandstormDescription
@@ -206,7 +206,7 @@ MoveDescriptions::
 	dw RolloutDescription
 	dw FalseSwipeDescription
 	dw SwaggerDescription
-	dw MilkDrinkDescription
+	dw BlastBurnDescription
 	dw SparkDescription
 	dw BugBiteDescription
 	dw SteelWingDescription
@@ -224,7 +224,7 @@ MoveDescriptions::
 	dw DynamicpunchDescription
 	dw MegahornDescription
 	dw DragonbreathDescription
-	dw BatonPassDescription
+	dw CottonSporeDescription
 	dw EncoreDescription
 	dw PursuitDescription
 	dw RapidSpinDescription
@@ -234,8 +234,8 @@ MoveDescriptions::
 	dw AuraSphereDescription
 	dw HealingLightDescription
 	dw HurricaneDescription
-	dw KnockOffDescription
-	dw HiddenPowerDescription
+	dw FrenzyPlantDescription
+	dw LusterPurgeDescription
 	dw CrossChopDescription
 	dw AquaJetDescription
 	dw RainDanceDescription
@@ -248,7 +248,7 @@ MoveDescriptions::
 	dw ShadowBallDescription
 	dw FutureSightDescription
 	dw RockSmashDescription
-	dw WhirlpoolDescription
+	dw DiveDescription
 	dw DarkPulseDescription
 	dw MoonblastDescription
 	dw PlayRoughDescription
@@ -314,7 +314,7 @@ DoubleEdgeDescription:
 	next "hurts the user.@"
 
 FlareBlitzDescription:
-WildChargeDescription:
+VoltTackleDescription:
 BraveBirdDescription:
 	db   "A charge that also"
 	next "hurts the user.@"
@@ -394,6 +394,10 @@ AncientpowerDescription:
 	db   "An attack that may"
 	next "raise all stats.@"
 
+DracoMeteorDescription:
+	db   "Lowers the user's"
+	next "Spcl.Atk.@"
+
 CloseCombatDescription:
 	db   "Lowers the user's"
 	next "Def and Sp.Def.@"
@@ -422,6 +426,7 @@ IcyWindDescription:
 	next "lowers Speed.@"
 
 MoonblastDescription:
+MistBallDescription:
 	db   "An attack that may"
 	next "lower Spcl.Atk.@"
 
@@ -433,16 +438,13 @@ EarthPowerDescription:
 EnergyBallDescription:
 FlashCannonDescription:
 FocusBlastDescription:
+LusterPurgeDescription:
 	db   "An attack that may"
 	next "lower Spcl.Def.@"
 
 MudSlapDescription:
 	db   "An attack that"
 	next "lowers accuracy.@"
-
-OctazookaDescription:
-	db   "An attack that may"
-	next "lower accuracy.@"
 
 SonicboomDescription:
 	db   "Always inflicts"
@@ -573,6 +575,7 @@ ScreechDescription:
 	next "foe's Defense.@"
 
 ScaryFaceDescription:
+CottonSporeDescription:
 	db   "Sharply lowers the"
 	next "foe's Speed.@"
 
@@ -597,7 +600,6 @@ RecoverDescription:
 	next "the max HP.@"
 
 SoftboiledDescription:
-MilkDrinkDescription:
 	db   "Restores HP by 1/2"
 	next "the user's max HP.@"
 
@@ -612,7 +614,6 @@ OutrageDescription:
 	next "and confuses user.@"
 
 FireSpinDescription:
-WhirlpoolDescription:
 WrapDescription:
 	db   "Traps the foe for"
 	next "2-5 turns.@"
@@ -643,11 +644,18 @@ FlyDescription:
 
 HyperBeamDescription:
 GigaImpactDescription:
+HydroCannonDescription:
+BlastBurnDescription:
+FrenzyPlantDescription:
 	db   "1st turn: Attack"
 	next "2nd turn: Rest@"
 
 DigDescription:
 	db   "1st turn: Burrow"
+	next "2nd turn: Attack@"
+
+DiveDescription:
+	db   "1st turn: Dive"
 	next "2nd turn: Attack@"
 
 AcrobaticsDescription:
@@ -657,10 +665,6 @@ AcrobaticsDescription:
 HexDescription:
 	db   "Damage doubles if"
 	next "foe has status.@"
-
-AvalancheDescription:
-	db   "Damage doubles if"
-	next "user is hit first.@"
 
 VenoshockDescription:
 	db   "Damage doubles if"
@@ -900,10 +904,6 @@ StruggleDescription:
 	db   "Used only if all"
 	next "PP are exhausted.@"
 
-SketchDescription:
-	db   "Copies the foe's"
-	next "move permanently.@"
-
 ThiefDescription:
 	db   "An attack that may"
 	next "steal a held item.@"
@@ -1008,10 +1008,6 @@ DragonbreathDescription:
 	db   "A strong breath"
 	next "attack.@"
 
-BatonPassDescription:
-	db   "Switches while"
-	next "keeping effects.@"
-
 EncoreDescription:
 	db   "Makes the foe re-"
 	next "peat 2-6 times.@"
@@ -1028,14 +1024,6 @@ HealingLightDescription:
 	db   "Restores HP based"
 	next "on weather.@"
 
-KnockOffDescription:
-	db   "Slaps down the"
-	next "foe's held item.@"
-
-HiddenPowerDescription:
-	db   "The type varies"
-	next "with the #mon.@"
-
 FutureSightDescription:
 	db   "An attack that"
 	next "hits on 3rd turn.@"
@@ -1044,6 +1032,6 @@ GyroBallDescription:
 	db   "Does more damage"
 	next "at lower speed.@"
 
-TrickDescription:
-	db   "Swaps held items"
-	next "with the foe.@"
+SecretPowerDescription:
+	db   "A move that varies"
+	next "by location.@"

@@ -4043,7 +4043,6 @@ INCLUDE "engine/billspc.asm"
 
 SECTION "Code 23", ROMX
 
-INCLUDE "engine/battle/hidden_power.asm"
 INCLUDE "engine/battle/misc.asm"
 INCLUDE "engine/unowndex.asm"
 INCLUDE "engine/events/magikarp.asm"

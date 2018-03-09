@@ -1,5 +1,10 @@
 MoveEffects:
 
+Trick:
+KnockOff:
+; unused
+	endmove
+
 BugBite: ; TODO
 GyroBall: ; TODO
 NormalHit:
@@ -181,7 +186,6 @@ RecoilHit:
 DoubleEdge:
 Struggle:
 TakeDown:
-WildCharge:
 BraveBird:
 	checkobedience
 	usedmovetext
@@ -615,7 +619,6 @@ ShadowBall:
 
 AccuracyDownHit:
 MudSlap:
-Octazooka:
 	checkobedience
 	usedmovetext
 	doturn
@@ -681,6 +684,29 @@ CloseCombat:
 	criticaltext
 	supereffectivetext
 	closecombat
+	checkdestinybond
+	buildopponentrage
+	pickpocket
+	endmove
+
+DracoMeteor:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	dracometeor
 	checkdestinybond
 	buildopponentrage
 	pickpocket
@@ -1254,7 +1280,6 @@ Heal:
 Recover:
 Softboiled:
 Rest:
-MilkDrink:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1300,7 +1325,6 @@ Trap:
 Wrap:
 Bind:
 FireSpin:
-Whirlpool:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1385,15 +1409,6 @@ SkillSwap:
 	skillswap
 	endmove
 
-Trick:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	checkhit
-	trick
-	endmove
-
 Conversion:
 	checkobedience
 	usedmovetext
@@ -1418,29 +1433,6 @@ PayDay:
 	criticaltext
 	supereffectivetext
 	payday
-	checkdestinybond
-	buildopponentrage
-	pickpocket
-	endmove
-
-KnockOff:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	conditionalboost
-	hittarget
-	failuretext
-	checkfaint
-	criticaltext
-	supereffectivetext
-	knockoff
 	checkdestinybond
 	buildopponentrage
 	pickpocket
@@ -1591,14 +1583,6 @@ PainSplit:
 	pressure
 	checkhit
 	painsplit
-	endmove
-
-Sketch:
-	checkobedience
-	usedmovetext
-	doturn
-	pressure
-	sketch
 	endmove
 
 SleepTalk:
@@ -1967,13 +1951,6 @@ Magnitude:
 	pickpocket
 	endmove
 
-BatonPass:
-	checkobedience
-	usedmovetext
-	doturn
-	batonpass
-	endmove
-
 Pursuit:
 	checkobedience
 	usedmovetext
@@ -2025,17 +2002,18 @@ HealingLight:
 	healweather
 	endmove
 
-HiddenPower:
+SecretPower:
 	checkobedience
 	usedmovetext
 	doturn
 	pressure
 	critical
-	hiddenpower
+	damagestats
 	damagecalc
 	stab
 	damagevariation
 	checkhit
+	effectchance
 	hittarget
 	failuretext
 	checkfaint
@@ -2043,6 +2021,7 @@ HiddenPower:
 	supereffectivetext
 	checkdestinybond
 	buildopponentrage
+	secretpower
 	pickpocket
 	endmove
 
@@ -2223,6 +2202,7 @@ Teleport:
 
 Fly:
 Dig:
+Dive:
 	checkcharge
 	checkobedience
 	doturn
@@ -2281,5 +2261,29 @@ FlareBlitz:
 	checkdestinybond
 	buildopponentrage
 	burntarget
+	pickpocket
+	endmove
+
+VoltTackle:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	recoil
+	checkdestinybond
+	buildopponentrage
+	paralyzetarget
 	pickpocket
 	endmove

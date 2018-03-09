@@ -68,7 +68,7 @@ AI_Basic: ; 38591
 	db EFFECT_PARALYZE
 	db EFFECT_BURN
 	db EFFECT_FREEZE
-	db $ff
+	db -1
 ; 385e0
 
 
@@ -367,11 +367,9 @@ AI_Smart: ; 386be
 	dbw EFFECT_ATTRACT,           AI_Smart_Attract
 	dbw EFFECT_SAFEGUARD,         AI_Smart_Safeguard
 	dbw EFFECT_MAGNITUDE,         AI_Smart_Magnitude
-	dbw EFFECT_BATON_PASS,        AI_Smart_BatonPass
 	dbw EFFECT_PURSUIT,           AI_Smart_Pursuit
 	dbw EFFECT_RAPID_SPIN,        AI_Smart_RapidSpin
 	dbw EFFECT_HEALING_LIGHT,     AI_Smart_HealingLight
-	dbw EFFECT_HIDDEN_POWER,      AI_Smart_HiddenPower
 	dbw EFFECT_RAIN_DANCE,        AI_Smart_RainDance
 	dbw EFFECT_SUNNY_DAY,         AI_Smart_SunnyDay
 	dbw EFFECT_BELLY_DRUM,        AI_Smart_BellyDrum
@@ -384,7 +382,7 @@ AI_Smart: ; 386be
 	dbw EFFECT_THUNDER,           AI_Smart_Thunder
 	dbw EFFECT_FLY,               AI_Smart_Fly
 	dbw EFFECT_ROOST,             AI_Smart_Roost
-	db $ff
+	db -1
 ; 387e3
 
 
@@ -832,7 +830,7 @@ AI_Smart_Reflect: ; 38a54
 
 
 AI_Smart_Bind: ; 38a71
-; Wrap, Fire Spin, Whirlpool
+; Wrap, Fire Spin
 
 ; 50% chance to discourage this move if the player is already trapped.
 	ld a, [wPlayerWrapCount]
@@ -1201,8 +1199,7 @@ AI_Smart_Encore: ; 38c3b
 	db SUPER_FANG
 	db SWORDS_DANCE
 	db TELEPORT
-	db TRICK
-	db $ff
+	db -1
 ; 38ca4
 
 
@@ -1721,7 +1718,7 @@ AI_Smart_Sandstorm: ; 38f7a
 	db ROCK
 	db GROUND
 	db STEEL
-	db $ff
+	db -1
 ; 38fac
 
 
@@ -1879,29 +1876,6 @@ AI_Smart_Earthquake: ; 39044
 ; 39062
 
 
-AI_Smart_BatonPass: ; 39062
-; Changes scoring as follows:
-; +1: Don't bother
-; 0 or less: Good idea
-	push hl
-	farcall AIWantsSwitchCheck
-	pop hl
-	inc [hl]
-	ld a, [wEnemySwitchMonParam]
-	and $f0
-	push af
-	xor a
-	ld [wEnemySwitchMonParam], a
-	ld [wEnemyAISwitchScore], a
-	pop af
-	ret z
-.loop
-	dec [hl]
-	sub $10
-	ret z
-	jr .loop
-
-
 AI_Smart_Pursuit: ; 39072
 ; 50% chance to greatly encourage this move if player's HP is below 25%.
 ; 80% chance to discourage this move otherwise.
@@ -1949,46 +1923,6 @@ AI_Smart_RapidSpin: ; 39084
 ; 3909e
 
 
-AI_Smart_HiddenPower: ; 3909e
-	push hl
-	ld a, 1
-	ld [hBattleTurn], a
-
-; Calculate Hidden Power's type and base power based on enemy's DVs.
-	farcall HiddenPowerDamageStats
-	farcall BattleCheckTypeMatchup
-	pop hl
-
-; Discourage Hidden Power if not very effective.
-	ld a, [wd265]
-	cp 10
-	jr c, .bad
-
-; Discourage Hidden Power if its base power	is lower than 50.
-	ld a, d
-	cp 50
-	jr c, .bad
-
-; Encourage Hidden Power if super-effective.
-	ld a, [wd265]
-	cp 11
-	jr nc, .good
-
-; Encourage Hidden Power if its base power is 70.
-	ld a, d
-	cp 70
-	ret c
-
-.good
-	dec [hl]
-	ret
-
-.bad
-	inc [hl]
-	ret
-; 390cb
-
-
 AI_Smart_RainDance: ; 390cb
 
 ; Greatly discourage this move if it would favour the player type-wise.
@@ -2015,15 +1949,15 @@ RainDanceMoves: ; 390e7
 	db BUBBLE_BEAM
 	db CRABHAMMER
 	db HYDRO_PUMP
-	db OCTAZOOKA
 	db SCALD
 	db SURF
 	db THUNDER
 	db WATER_GUN
 	db WATER_PULSE
 	db WATERFALL
-	db WHIRLPOOL
-	db $ff
+	db DIVE
+	db HYDRO_CANNON
+	db -1
 ; 390f3
 
 
@@ -2112,7 +2046,8 @@ SunnyDayMoves: ; 39134
 	db SACRED_FIRE
 	db FLARE_BLITZ
 	db HEALINGLIGHT
-	db $ff
+	db BLAST_BURN
+	db -1
 ; 3913d
 
 
@@ -2554,7 +2489,7 @@ UsefulMoves: ; 39301
 	db MOONBLAST
 	db PLAY_ROUGH
 	db HURRICANE
-	db $ff
+	db -1
 ; 39315
 
 
@@ -2629,8 +2564,7 @@ AI_Opportunist: ; 39315
 	db SUBSTITUTE
 	db SWORDS_DANCE
 	db TRANSFORM
-	db TRICK
-	db $ff
+	db -1
 ; 39369
 
 
@@ -2743,7 +2677,7 @@ AI_Aggressive: ; 39369
 	db EFFECT_MULTI_HIT
 	db EFFECT_DOUBLE_HIT
 	db EFFECT_FURY_STRIKES
-	db $ff
+	db -1
 ; 393e7
 
 
@@ -2772,7 +2706,7 @@ AIDamageCalc: ; 393e7
 	db EFFECT_SUPER_FANG
 	db EFFECT_STATIC_DAMAGE
 	db EFFECT_LEVEL_DAMAGE
-	db $ff
+	db -1
 
 AI_Cautious: ; 39418
 ; 90% chance to discourage moves with residual effects after the first turn.
@@ -2824,7 +2758,7 @@ AI_Cautious: ; 39418
 	db THUNDER_WAVE
 	db TOXIC_SPIKES
 	db TRANSFORM
-	db $ff
+	db -1
 ; 39453
 
 
@@ -3041,7 +2975,7 @@ endr
 
 .RiskyMoves:
 	db EFFECT_EXPLOSION
-	db $ff
+	db -1
 ; 39502
 
 

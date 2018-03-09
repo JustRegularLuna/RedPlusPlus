@@ -2299,12 +2299,12 @@ GetHealingItemAmount: ; f395 (3:7395)
 	ld e, [hl]
 	ret
 
-Softboiled_MilkDrinkFunction: ; f3df (3:73df)
-; Softboiled/Milk Drink in the field
+SoftboiledFunction: ; f3df (3:73df)
+; Softboiled in the field
 	ld a, [wPartyMenuCursor]
 	dec a
 	ld b, a
-	call .SelectMilkDrinkRecipient ; select pokemon
+	call .SelectSoftboiledRecipient ; select pokemon
 	jr c, .skip
 	ld a, b
 	ld [CurPartyMon], a
@@ -2329,7 +2329,7 @@ Softboiled_MilkDrinkFunction: ; f3df (3:73df)
 	ld [wPartyMenuCursor], a
 	ret
 
-.SelectMilkDrinkRecipient: ; f419 (3:7419)
+.SelectSoftboiledRecipient: ; f419 (3:7419)
 .loop
 	push bc
 	ld a, PARTYMENUACTION_HEALING_ITEM
@@ -2623,17 +2623,12 @@ RestorePPEffect: ; f5bf
 	jp nz, Not_PP_Up
 
 .ppup2
-	ld a, [hl]
-	cp SKETCH
-	jr z, .CantUsePPUpOnSketch
-
 	ld bc, MON_PP - MON_MOVES
 	add hl, bc
 	ld a, [hl]
 	cp 3 << 6 ; have 3 PP Ups already been used?
 	jr c, .do_ppup
 
-.CantUsePPUpOnSketch:
 .pp_is_maxed_out
 	ld hl, TextJump_PPIsMaxedOut
 	call PrintText

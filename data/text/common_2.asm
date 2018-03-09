@@ -299,26 +299,38 @@ UnknownText_0x1c07f4::
 	line "able to move this."
 	done
 
-UnknownText_0x1c0816::
-	text_from_ram StringBuffer2
-	text " used"
-	line "Whirlpool!"
-	prompt
-
 UnknownText_0x1c082b::
 	text "It's a vicious"
 	line "whirlpool!"
-
-	para "A #mon may be"
-	line "able to pass it."
 	done
 
-UnknownText_0x1c0864::
-	text "A whirlpool is in"
-	line "the way."
+UnknownText_0x1c0816::
+	text_from_ram StringBuffer2
+	text " used"
+	line "Dive!"
+	prompt
 
-	para "Want to use"
-	line "Whirlpool?"
+_CantDiveText::
+	text "You can't Dive"
+	line "here."
+	prompt
+
+_AskDiveDownText::
+	text "The sea is deep."
+	line "Want to Dive?"
+	done
+
+_AskDiveUpText::
+	text "Light is filter-"
+	line "ing from above."
+	cont "Want to Dive?"
+	done
+
+_CanDiveText::
+	text "The sea is deep."
+
+	para "A #MON can"
+	line "DIVE here."
 	done
 
 UnknownText_0x1c0897::

@@ -91,7 +91,7 @@ MoveEffectsPointers:
 	dw Counter
 	dw Encore
 	dw PainSplit
-	dw Sketch
+	dw DracoMeteor
 	dw SleepTalk
 	dw DestinyBond
 	dw Reversal
@@ -116,11 +116,11 @@ MoveEffectsPointers:
 	dw Return
 	dw SacredFire
 	dw Magnitude
-	dw BatonPass
+	dw VoltTackle
 	dw Pursuit
 	dw RapidSpin
 	dw HealingLight
-	dw HiddenPower
+	dw SecretPower
 	dw RainDance
 	dw SunnyDay
 	dw BellyDrum
@@ -143,7 +143,7 @@ MoveEffectsPointers:
 	dw Roost
 	dw CloseCombat
 	dw SkillSwap
-	dw Trick
+	dw Trick ; unused
 	dw KnockOff
 	dw FuryStrikes
 	dw BugBite

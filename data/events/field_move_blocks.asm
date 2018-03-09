@@ -124,18 +124,3 @@ CutGrassBlockPointers:
 	db $0e, $02
 	db $0f, $02
 	db -1
-
-WhirlpoolBlockPointers:
-	dbw TILESET_PC_JOHTO_TRADITIONAL, .johto_traditional
-	dbw TILESET_PC_JOHTO_MODERN, .johto_modern
-	dbw TILESET_PC_JOHTO_OVERCAST, .johto_overcast
-	db -1
-
-.johto_traditional
-.johto_overcast
-	db $07, $07
-	db -1
-
-.johto_modern
-	db $83, $83
-	db -1
