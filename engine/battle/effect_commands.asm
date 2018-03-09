@@ -3226,10 +3226,6 @@ PlayerAttackDamage: ; 352e2
 	ld b, a
 	ld c, [hl]
 
-if !DEF(FAITHFUL)
-	call HailDefenseBoost
-endc
-
 	ld hl, BattleMonAttack
 	ld a, [EnemyAbility]
 	cp INFILTRATOR
@@ -3325,10 +3321,6 @@ EnemyAttackDamage: ; 353f6
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
-
-if !DEF(FAITHFUL)
-	call HailDefenseBoost
-endc
 
 	ld hl, EnemyMonAttack
 	ld a, [PlayerAbility]
@@ -3542,10 +3534,6 @@ SpeciesItemBoost: ; 353d1
 SandstormSpDefBoost:
 	push bc
 	lb bc, WEATHER_SANDSTORM, ROCK
-	jr WeatherDefenseBoost
-HailDefenseBoost:
-	push bc
-	lb bc, WEATHER_HAIL, ICE
 WeatherDefenseBoost:
 	call GetWeatherAfterCloudNine
 	cp b

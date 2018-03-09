@@ -9,11 +9,7 @@
 	dn FEMALE_12_5, 3 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
 	db OVERGROW ; ability 1
-if DEF(FAITHFUL)
 	db OVERGROW ; ability 2
-else
-	db NATURAL_CURE ; ability 2
-endc
 	db LEAF_GUARD ; hidden ability
 	db MEDIUM_SLOW ; growth rate
 	dn MONSTER, PLANT ; egg groups

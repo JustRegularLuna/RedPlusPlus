@@ -189,7 +189,7 @@ EvolutionMoves::
 	db NO_MOVE      ; SKIPLOOM
 	db NO_MOVE      ; JUMPLUFF
 	db NO_MOVE      ; SUNKERN
-	db EMBER        ; SUNFLORA
+	db NO_MOVE      ; SUNFLORA
 	db NO_MOVE      ; YANMA
 	db DRAGONBREATH ; YANMEGA
 	db NO_MOVE      ; WOOPER

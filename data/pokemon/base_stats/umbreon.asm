@@ -9,11 +9,7 @@
 	dn FEMALE_12_5, 6 ; gender, step cycles to hatch
 	dn 6, 6 ; frontpic dimensions
 	db SYNCHRONIZE ; ability 1
-if DEF(FAITHFUL)
 	db SYNCHRONIZE ; ability 2
-else
-	db MAGIC_GUARD ; ability 2
-endc
 	db INNER_FOCUS ; hidden ability
 	db MEDIUM_FAST ; growth rate
 	dn FIELD, FIELD ; egg groups

@@ -9,11 +9,7 @@
 	dn FEMALE_12_5, 3 ; gender, step cycles to hatch
 	dn 6, 6 ; frontpic dimensions
 	db TORRENT ; ability 1
-if DEF(FAITHFUL)
 	db TORRENT ; ability 2
-else
-	db GUTS ; ability 2
-endc
 	db SHEER_FORCE ; hidden ability
 	db MEDIUM_SLOW ; growth rate
 	dn MONSTER, AMPHIBIAN ; egg groups

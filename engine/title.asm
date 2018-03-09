@@ -126,13 +126,6 @@ _TitleScreen: ; 10ed67
 	lb de, $0c, 0
 	call DrawTitleGraphic
 
-IF DEF(FAITHFUL)
-	hlbgcoord 17, 0, VBGMap1
-	lb bc, 1, 1
-	lb de, $19, 0
-	call DrawTitleGraphic
-endc
-
 ; Initialize running Suicune?
 	ld d, $0
 	call LoadSuicuneFrame

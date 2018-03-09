@@ -1,11 +1,7 @@
 	db 100, 100, 100, 100, 100, 100
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
 	db PSYCHIC, GRASS
-else
-	db GRASS, FAIRY
-endc
 	db 45 ; catch rate
 	db 64 ; base exp
 	db LUM_BERRY ; item 1
@@ -14,11 +10,7 @@ endc
 	dn 5 , 5 ; frontpic dimensions
 	db NATURAL_CURE ; ability 1
 	db NATURAL_CURE ; ability 2
-if DEF(FAITHFUL)
 	db NATURAL_CURE ; hidden ability
-else
-	db MAGIC_GUARD ; hidden ability
-endc
 	db MEDIUM_SLOW ; growth rate
 	dn NO_EGGS, NO_EGGS ; egg groups
 
