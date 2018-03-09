@@ -5675,6 +5675,8 @@ BattleCommand_StatDown: ; 362e3
 	call GetOpponentAbilityAfterMoldBreaker
 	cp CLEAR_BODY
 	jp z, .Failed
+	cp WHITE_SMOKE
+	jp z, .Failed
 	cp HYPER_CUTTER
 	jr z, .atk
 	cp BIG_PECKS

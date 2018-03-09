@@ -8,7 +8,7 @@
 	db CHARCOAL ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
-	db CLEAR_BODY ; ability 1 ; TODO: WHITE_SMOKE
+	db WHITE_SMOKE ; ability 1
 	db DROUGHT ; ability 2
 	db SHELL_ARMOR ; hidden ability
 	db MEDIUM_FAST ; growth rate
