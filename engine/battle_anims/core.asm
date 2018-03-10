@@ -240,12 +240,12 @@ InitBattleAnimBuffer: ; ccaaa
 	ld d, a
 	ld a, [wBattleAnimTemp1]
 	cp $ff
-	jr nz, .check_psystrike_softboiled_milkdrink
+	jr nz, .check_psystrike_softboiled
 	ld a, 5 * 8
 	add d
 	jr .done
 
-.check_psystrike_softboiled_milkdrink
+.check_psystrike_softboiled
 	sub d
 	push af
 	ld a, [FXAnimIDHi]
@@ -255,8 +255,6 @@ InitBattleAnimBuffer: ; ccaaa
 	cp PSYSTRIKE
 	jr z, .sub_8
 	cp SOFTBOILED
-	jr z, .sub_8
-	cp MILK_DRINK
 	jr nz, .no_sub
 .sub_8
 	pop af

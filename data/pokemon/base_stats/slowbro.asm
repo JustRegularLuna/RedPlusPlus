@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db  95,  75, 110,  30, 100,  80
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  95,  75, 120,  30, 100,  80
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db WATER, PSYCHIC
 	db 75 ; catch rate

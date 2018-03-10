@@ -1,11 +1,7 @@
-; Pokémon Yellow - Surfing Pikachu
-; Ported by FroggestSpirit
-; https://github.com/froggestspirit/CrystalComplete/blob/master/audio/music/RBY/surfingpikachu.asm
-
 Music_SurfingPikachu:
-	dbw $80, Music_SurfingPikachu_Ch1
-	dbw $01, Music_SurfingPikachu_Ch2
-	dbw $02, Music_SurfingPikachu_Ch3
+	musicheader 3, 1, Music_SurfingPikachu_Ch1
+	musicheader 1, 2, Music_SurfingPikachu_Ch2
+	musicheader 1, 3, Music_SurfingPikachu_Ch3
 
 Music_SurfingPikachu_Ch1:
 	tempo 117

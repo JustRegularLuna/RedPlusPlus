@@ -257,57 +257,8 @@ NUM_POKEMON EQU const_value +- 1
 	const EGG        ; $fe
 	const CANCEL     ; $ff
 
-; TODO: delete these
-SENTRET    EQU ZIGZAGOON
-FURRET     EQU LINOONE
-PICHU      EQU SPEAROW
-MUNCHLAX   EQU FEAROW
-SUDOWOODO  EQU LICKITUNG
-UNOWN      EQU LICKILICKY
-DUNSPARCE  EQU GOLDEEN
-QWILFISH   EQU SEAKING
-SMEARGLE   EQU STANTLER
-TYROGUE    EQU LATIAS
-ELEKID     EQU LATIOS
-MAGBY      EQU TORKOAL
-RAIKOU     EQU HOPPIP
-ENTEI      EQU SKIPLOOM
-SUICUNE    EQU JUMPLUFF
-
 
 ; form values
-
-; unown
-	const_def 1
-	const UNOWN_A_FORM
-	const UNOWN_B_FORM
-	const UNOWN_C_FORM
-	const UNOWN_D_FORM
-	const UNOWN_E_FORM
-	const UNOWN_F_FORM
-	const UNOWN_G_FORM
-	const UNOWN_H_FORM
-	const UNOWN_I_FORM
-	const UNOWN_J_FORM
-	const UNOWN_K_FORM
-	const UNOWN_L_FORM
-	const UNOWN_M_FORM
-	const UNOWN_N_FORM
-	const UNOWN_O_FORM
-	const UNOWN_P_FORM
-	const UNOWN_Q_FORM
-	const UNOWN_R_FORM
-	const UNOWN_S_FORM
-	const UNOWN_T_FORM
-	const UNOWN_U_FORM
-	const UNOWN_V_FORM
-	const UNOWN_W_FORM
-	const UNOWN_X_FORM
-	const UNOWN_Y_FORM
-	const UNOWN_Z_FORM
-	const UNOWN_EXCLAMATION_FORM
-	const UNOWN_QUESTION_FORM
-NUM_UNOWN EQU const_value +- 1
 
 ; pikachu
 	const_def 1
@@ -317,11 +268,6 @@ NUM_UNOWN EQU const_value +- 1
 	const PIKACHU_RED_FORM
 	const PIKACHU_YELLOW_FORM
 	const PIKACHU_SPARK_FORM
-
-; pichu
-	const_def 1
-	const PICHU_PLAIN_FORM
-	const PICHU_SPIKY_EARED_FORM
 
 ; arbok
 	const_def 1

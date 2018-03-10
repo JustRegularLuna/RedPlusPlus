@@ -9,11 +9,7 @@
 	dn GENDERLESS, 15 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
 	db PRESSURE ; ability 1
-if DEF(FAITHFUL)
 	db PRESSURE ; ability 2
-else
-	db SNOW_WARNING ; ability 2
-endc
 	db SNOW_CLOAK ; hidden ability
 	db SLOW ; growth rate
 	dn NO_EGGS, NO_EGGS ; egg groups

@@ -1301,7 +1301,7 @@ Pokedex_DrawUnownModeBG: ; 409f1 (10:49f1)
 	hlcoord 6, 5
 	call Pokedex_PlaceFrontpicAtHL
 	ld de, 0
-	lb bc, 0, NUM_UNOWN
+	lb bc, 0, 28
 .loop
 	ld hl, UnownDex
 	add hl, de
@@ -2361,16 +2361,9 @@ Pokedex_LoadSelectedMonTiles: ; 4143b
 	call Pokedex_CheckSeen
 	jr z, .QuestionMark
 	call Pokedex_GetSelectedMon
-	cp UNOWN
-	jr z, .use_first_unown
 	cp MAGIKARP
-	jr z, .use_first_magikarp
 	ld a, 1
-	jr .continue
-.use_first_unown
-	ld a, [wFirstUnownSeen]
-	jr .continue
-.use_first_magikarp
+	jr nz, .continue
 	ld a, [wFirstMagikarpSeen]
 .continue
 	ld [MonVariant], a
@@ -2473,7 +2466,7 @@ Pokedex_LoadUnownFrontpicTiles: ; 41a58 (10:5a58)
 	add hl, de
 	ld a, [hl]
 	ld [MonVariant], a
-	ld a, UNOWN
+	ld a, MAGIKARP
 	ld [CurPartySpecies], a
 	call GetBaseData
 	ld de, VTiles2 tile $00

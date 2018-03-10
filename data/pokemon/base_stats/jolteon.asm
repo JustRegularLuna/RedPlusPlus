@@ -9,11 +9,7 @@
 	dn FEMALE_12_5, 6 ; gender, step cycles to hatch
 	dn 6, 6 ; frontpic dimensions
 	db VOLT_ABSORB ; ability 1
-if DEF(FAITHFUL)
 	db VOLT_ABSORB ; ability 2
-else
-	db STATIC ; ability 2
-endc
 	db QUICK_FEET ; hidden ability
 	db MEDIUM_FAST ; growth rate
 	dn FIELD, FIELD ; egg groups

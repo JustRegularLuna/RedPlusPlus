@@ -7,7 +7,7 @@
 	db NO_ITEM ; item 1
 	db PERSIM_BERRY ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
-	dn 6, 6 ; frontpic dimensions
+	dn 7, 7 ; frontpic dimensions
 	db OWN_TEMPO ; ability 1
 	db OBLIVIOUS ; ability 2
 	db CLOUD_NINE ; hidden ability

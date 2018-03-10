@@ -58,6 +58,7 @@ StdScripts::
 	dba VendingMachineScript
 	dba TreeGrottoScript
 	dba CaveGrottoScript
+	dba WhirlpoolOWScript
 
 PokeCenterNurseScript:
 	opentext
@@ -883,3 +884,6 @@ _HiddenGrottoBackupMap:
 	ld a, [MapNumber]
 	ld [BackupMapNumber], a
 	ret
+
+WhirlpoolOWScript:
+	farjumptext UnknownText_0x1c082b

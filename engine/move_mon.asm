@@ -439,7 +439,7 @@ endr
 	ld bc, 2 * 6 ; MaxHP + 5 Stats
 	call CopyBytes
 	pop hl
-	jr .next3
+	jr .done
 
 .generatestats
 	pop hl
@@ -461,21 +461,6 @@ endr
 	ld [hl], b
 	pop bc
 	pop hl
-
-.next3
-	ld a, [MonType]
-	and $f
-	jr nz, .done
-	ld a, [CurPartySpecies]
-	cp UNOWN
-	jr nz, .done
-	ld hl, PartyMon1Form
-	ld a, [PartyCount]
-	dec a
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	predef GetVariant
-	farcall UpdateUnownDex
 
 .done
 	scf ; When this function returns, the carry flag indicates success vs failure.
@@ -576,23 +561,6 @@ AddTempmonToParty: ; da96
 	call AddNTimes
 	ld [hl], BASE_HAPPINESS
 .egg
-
-	ld a, [CurPartySpecies]
-	cp UNOWN
-	jr nz, .not_unown
-	ld hl, PartyMon1Form
-	ld a, [PartyCount]
-	dec a
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	predef GetVariant
-	farcall UpdateUnownDex
-	ld a, [wFirstUnownSeen]
-	and a
-	jr nz, .done
-	ld a, [MonVariant]
-	ld [wFirstUnownSeen], a
-.not_unown
 
 	ld a, [CurPartySpecies]
 	cp MAGIKARP
@@ -1187,14 +1155,7 @@ SentPkmnIntoBox: ; de6e
 	ld a, [CurPartySpecies]
 	dec a
 	call SetSeenAndCaughtMon
-	ld a, [CurPartySpecies]
-	cp UNOWN
-	jr nz, .not_unown
-	ld hl, sBoxMon1Form
-	predef GetVariant
-	farcall UpdateUnownDex
 
-.not_unown
 	ld hl, sBoxMon1Moves
 	ld de, TempMonMoves
 	ld bc, NUM_MOVES

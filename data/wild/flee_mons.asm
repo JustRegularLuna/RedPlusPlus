@@ -14,14 +14,8 @@ SometimesFleeMons:
 	db DRAGONAIR
 	db ESPEON
 	db UMBREON
-	db UNOWN
 	db SNUBBULL
 	db HERACROSS
-	db PICHU
-	db MUNCHLAX
-	db TYROGUE
-	db ELEKID
-	db MAGBY
 	db LARVITAR
 	db -1
 
@@ -34,6 +28,4 @@ OftenFleeMons:
 	db -1
 
 AlwaysFleeMons:
-	db RAIKOU
-	db ENTEI
 	db -1

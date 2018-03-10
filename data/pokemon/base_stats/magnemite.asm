@@ -9,11 +9,7 @@
 	dn GENDERLESS, 3 ; gender, step cycles to hatch
 	dn 5, 5 ; frontpic dimensions
 	db MAGNET_PULL ; ability 1
-if DEF(FAITHFUL)
 	db STURDY ; ability 2
-else
-	db LEVITATE ; ability 2
-endc
 	db ANALYTIC ; hidden ability
 	db MEDIUM_FAST ; growth rate
 	dn INANIMATE, INANIMATE ; egg groups

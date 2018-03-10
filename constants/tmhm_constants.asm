@@ -32,9 +32,9 @@ ENDM
 	add_tm HAIL         ; $06
 	add_tm BULK_UP      ; $07
 	add_tm VENOSHOCK    ; $08
-	add_tm HIDDEN_POWER ; $09
+	add_tm HONE_CLAWS   ; $09
 	add_tm SUNNY_DAY    ; $0a
-	add_tm HONE_CLAWS   ; $0b
+	add_tm WATER_GUN    ; $0b
 	add_tm ICE_BEAM     ; $0c
 	add_tm BLIZZARD     ; $0d
 	add_tm HYPER_BEAM   ; $0e
@@ -65,7 +65,7 @@ ENDM
 	add_tm AERIAL_ACE   ; $27
 	add_tm SUBSTITUTE   ; $28
 	add_tm FACADE       ; $29
-	add_tm WILD_CHARGE  ; $2a
+	add_tm SECRET_POWER ; $2a
 	add_tm REST         ; $2b
 	add_tm ATTRACT      ; $2c
 	add_tm THIEF        ; $2d
@@ -89,7 +89,7 @@ ENDM
 	add_tm EXPLOSION    ; $3f
 	add_tm SHADOW_CLAW  ; $40
 	add_tm POISON_JAB   ; $41
-	add_tm AVALANCHE    ; $42
+	add_tm STRUGGLE     ; $42 (TODO)
 	add_tm GIGA_IMPACT  ; $43
 	add_tm U_TURN       ; $44
 	add_tm FLASH        ; $45
@@ -104,8 +104,8 @@ NUM_TMS = const_value - TM01
 	add_hm FLY          ; $4c
 	add_hm SURF         ; $4d
 	add_hm STRENGTH     ; $4e
-	add_hm WHIRLPOOL    ; $4f
-	add_hm WATERFALL    ; $50
+	add_hm WATERFALL    ; $4f
+	add_hm DIVE         ; $50
 NUM_HMS = const_value - HM01
 
 	add_mt AQUA_TAIL    ; $51
@@ -121,18 +121,32 @@ NUM_HMS = const_value - HM01
 	add_mt ICE_PUNCH    ; $5b
 	add_mt ICY_WIND     ; $5c
 	add_mt IRON_HEAD    ; $5d
-	add_mt KNOCK_OFF    ; $5e
-	add_mt PAY_DAY      ; $5f
-	add_mt ROLLOUT      ; $60
-	add_mt SEED_BOMB    ; $61
-	add_mt SEISMIC_TOSS ; $62
-	add_mt SKILL_SWAP   ; $63
-	add_mt SLEEP_TALK   ; $64
-	add_mt SUCKER_PUNCH ; $65
-	add_mt SWAGGER      ; $66
-	add_mt THUNDERPUNCH ; $67
-	add_mt TRICK        ; $68
-	add_mt ZAP_CANNON   ; $69
-	add_mt ZEN_HEADBUTT ; $6a
+	add_mt PAY_DAY      ; $5e
+	add_mt ROLLOUT      ; $5f
+	add_mt SEED_BOMB    ; $60
+	add_mt SEISMIC_TOSS ; $61
+	add_mt SKILL_SWAP   ; $62
+	add_mt SLEEP_TALK   ; $63
+	add_mt SUCKER_PUNCH ; $64
+	add_mt SWAGGER      ; $65
+	add_mt THUNDERPUNCH ; $66
+	add_mt ZAP_CANNON   ; $67
+	add_mt ZEN_HEADBUTT ; $68
+	add_mt FRENZY_PLANT ; $69
+	add_mt BLAST_BURN   ; $6a
+	add_mt HYDRO_CANNON ; $6b
+	add_mt DRACO_METEOR ; $6c
 
 NUM_TMHMS EQU __enum__ +- 1
+
+; placeholders (TODO: remove)
+TM_HIDDEN_POWER EQU TM_WATER_GUN
+HIDDEN_POWER_TMNUM EQU WATER_GUN_TMNUM
+TM_WILD_CHARGE EQU TM_SECRET_POWER
+WILD_CHARGE_TMNUM EQU SECRET_POWER_TMNUM
+TM_AVALANCHE EQU TM_STRUGGLE
+AVALANCHE_TMNUM EQU STRUGGLE_TMNUM
+HM_WHIRLPOOL EQU HM_DIVE
+WHIRLPOOL_TMNUM EQU DIVE_TMNUM
+KNOCK_OFF_TMNUM EQU FRENZY_PLANT_TMNUM
+TRICK_TMNUM EQU BLAST_BURN_TMNUM

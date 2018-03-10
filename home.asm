@@ -937,7 +937,7 @@ IsHMMove:: ; 34e7
 	db SURF
 	db STRENGTH
 	db WATERFALL
-	db WHIRLPOOL
+	db DIVE
 	db -1
 ; 34f8
 

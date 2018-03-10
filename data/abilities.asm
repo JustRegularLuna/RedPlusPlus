@@ -130,7 +130,7 @@ AbilityNames:
 	dw FurCoat
 	dw Competitive
 	dw Pixilate
-	dw TanglingHair
+	dw WhiteSmoke
 
 NoAbility:     db "---@"
 Stench:        db "Stench@"
@@ -263,7 +263,7 @@ SandForce:     db "San", "d Force@"
 FurCoat:       db "Fur Coat@"
 Competitive:   db "Competitive@"
 Pixilate:      db "Pixilate@"
-TanglingHair:  db "Tangling Hair@"
+WhiteSmoke:    db "White Smoke@"
 
 
 AbilityDescriptions:
@@ -398,7 +398,7 @@ AbilityDescriptions:
 	dw FurCoatDescription
 	dw CompetitiveDescription
 	dw PixilateDescription
-	dw TanglingHairDescription
+	dw WhiteSmokeDescription
 
 NoAbilityDescription:
 	db   "Abilities are"
@@ -507,6 +507,7 @@ SynchronizeDescription:
 	next "or Brn t", "o foes.@"
 
 ClearBodyDescription:
+WhiteSmokeDescription:
 	db   "Prevents foes from"
 	next "lowering stats.@"
 
@@ -914,7 +915,3 @@ CompetitiveDescription:
 PixilateDescription:
 	db   "Normal-type moves"
 	next "become Fairy-type.@"
-
-TanglingHairDescription:
-	db   "Contact may lower"
-	next "th", "e foe's Speed.@"

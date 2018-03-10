@@ -629,12 +629,6 @@ BattleText_UserWasReleasedFromStringBuffer1: ; 0x80df5
 	prompt
 ; 0x80e11
 
-WhirlpoolTrapText: ; 0x80e24
-	text "<TARGET>"
-	line "was trapped!"
-	prompt
-; 0x80e34
-
 FireSpinTrapText: ; 0x80e34
 	text "<TARGET>"
 	line "was trapped!"
@@ -868,20 +862,6 @@ SwappedAbilitiesText:
 	text "The battlers"
 	line "swapped abilities!"
 	prompt
-
-SwappedItemsText:
-	text "The battlers"
-	line "swapped items!"
-	prompt
-
-SketchedText: ; 0x81143
-	text "<USER>"
-	line "sketched"
-	cont "@"
-	text_from_ram StringBuffer1
-	text "!"
-	prompt
-; 0x81156
 
 DestinyBondEffectText: ; 0x81156
 	text "<USER> is"
@@ -1223,14 +1203,6 @@ StoleText:
 	text_from_ram StringBuffer1
 	text ""
 	cont "from its foe!"
-	prompt
-
-KnockedOffItemText:
-	text "<USER>"
-	line "knocked off"
-	cont "@"
-	text_from_ram StringBuffer1
-	text "!"
 	prompt
 
 CantEscapeNowText: ; 0x815f7

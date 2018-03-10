@@ -1,7 +1,7 @@
 UpdateUnownDex: ; fba18
 	ld a, [MonVariant]
 	ld c, a
-	ld b, NUM_UNOWN
+	ld b, 28
 	ld hl, UnownDex
 .loop
 	ld a, [hli]

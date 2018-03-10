@@ -40,7 +40,6 @@ AI_Redundant: ; 2c41a
 	dbw EFFECT_HEALING_LIGHT, .HealingLight
 	dbw EFFECT_SWAGGER,       .Swagger
 	dbw EFFECT_FUTURE_SIGHT,  .FutureSight
-	dbw EFFECT_BATON_PASS,    .BatonPass
 	dbw EFFECT_ROOST,         .Roost
 	db -1
 
@@ -172,11 +171,6 @@ AI_Redundant: ; 2c41a
 	ld a, [wEnemyFutureSightCount]
 	and a
 	ret
-
-.BatonPass:
-	farcall CheckAnyOtherAliveMons
-	jr z, .Redundant
-	jr .NotRedundant
 
 .Heal:
 .HealingLight:

@@ -259,7 +259,7 @@ RenderMusicPlayer:
 	and a
 	jr nz, _RedrawMusicPlayer
 .bad_selection
-	ld a, MUSIC_MAIN_MENU
+	ld a, MUSIC_NONE
 ; fallthrough
 
 _RedrawMusicPlayer:

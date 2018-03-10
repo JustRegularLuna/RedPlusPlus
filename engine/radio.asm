@@ -619,7 +619,7 @@ OaksPkmnTalk14:
 	ld hl, wRadioTextDelay
 	dec [hl]
 	ret nz
-	ld de, MUSIC_POKEMON_TALK
+	ld de, MUSIC_OAKS_LAB
 	farcall RadioMusicRestartDE
 	ld hl, .terminator
 	call PrintText
@@ -893,11 +893,11 @@ BenFernMusic7:
 StartPokemonMusicChannel:
 	call RadioTerminator
 	call PrintText
-	ld de, MUSIC_POKEMON_MARCH
+	ld de, MUSIC_TRICK_HOUSE_RSE
 	call GetWeekday
 	and 1
 	jr z, .SunTueThurSun
-	ld de, MUSIC_POKEMON_LULLABY
+	ld de, MUSIC_TRICK_HOUSE_RSE
 .SunTueThurSun:
 	farjp RadioMusicRestartDE
 

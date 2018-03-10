@@ -100,7 +100,7 @@ HealMachineAnim: ; 12324
 ; 123bf
 
 .PlayHealMusic: ; 123bf
-	ld de, MUSIC_HEAL
+	ld de, MUSIC_PKMN_HEALED
 	call PlayMusic
 	jp .FlashPalettes8Times
 ; 123c8

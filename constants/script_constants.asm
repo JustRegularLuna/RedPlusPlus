@@ -18,23 +18,22 @@ LAST_TALKED EQU -2
 	const VAR_WEEKDAY          ; 0b
 	const VAR_MAPGROUP         ; 0c
 	const VAR_MAPNUMBER        ; 0d
-	const VAR_UNOWNCOUNT       ; 0e
-	const VAR_ROOFPALETTE      ; 0f
-	const VAR_BOXSPACE         ; 10
-	const VAR_CONTESTMINUTES   ; 11
-	const VAR_XCOORD           ; 12
-	const VAR_YCOORD           ; 13
-	const VAR_SPECIALPHONECALL ; 14
-	const VAR_BT_WIN_STREAK    ; 15
-	const VAR_KURT_APRICORNS   ; 16
-	const VAR_CALLERID         ; 17
-	const VAR_BLUECARDBALANCE  ; 18
-	const VAR_BUENASPASSWORD   ; 19
-	const VAR_KENJI_BREAK      ; 1a
-	const VAR_BATTLEPOINTS     ; 1b
-	const VAR_PKMN_JOURNALS    ; 1c
-	const VAR_TRAINER_STARS    ; 1d
-NUM_VARS EQU const_value       ; 1e
+	const VAR_ROOFPALETTE      ; 0e
+	const VAR_BOXSPACE         ; 0f
+	const VAR_CONTESTMINUTES   ; 10
+	const VAR_XCOORD           ; 11
+	const VAR_YCOORD           ; 12
+	const VAR_SPECIALPHONECALL ; 13
+	const VAR_BT_WIN_STREAK    ; 14
+	const VAR_KURT_APRICORNS   ; 15
+	const VAR_CALLERID         ; 16
+	const VAR_BLUECARDBALANCE  ; 17
+	const VAR_BUENASPASSWORD   ; 18
+	const VAR_KENJI_BREAK      ; 19
+	const VAR_BATTLEPOINTS     ; 1a
+	const VAR_PKMN_JOURNALS    ; 1b
+	const VAR_TRAINER_STARS    ; 1c
+NUM_VARS EQU const_value       ; 1d
 
 RETVAR_STRBUF2 EQU (0 << 6)
 RETVAR_ADDR_DE EQU (1 << 6)

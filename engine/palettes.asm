@@ -1134,13 +1134,9 @@ TMHMTypes:
 	db ICE      ; HAIL
 	db FIGHTING ; BULK_UP
 	db POISON   ; VENOSHOCK
-if DEF(FAITHFUL)
-	db NORMAL   ; HIDDEN_POWER
-else
-	db UNKNOWN_T ; HIDDEN_POWER
-endc
-	db FIRE     ; SUNNY_DAY
 	db DARK     ; HONE_CLAWS
+	db FIRE     ; SUNNY_DAY
+	db WATER    ; WATER_GUN
 	db ICE      ; ICE_BEAM
 	db ICE      ; BLIZZARD
 	db NORMAL   ; HYPER_BEAM
@@ -1171,7 +1167,7 @@ endc
 	db FLYING   ; AERIAL_ACE
 	db NORMAL   ; SUBSTITUTE
 	db NORMAL   ; FACADE
-	db ELECTRIC ; WILD_CHARGE
+	db NORMAL   ; SECRET_POWER
 	db PSYCHIC  ; REST
 	db NORMAL   ; ATTRACT
 	db DARK     ; THIEF
@@ -1195,7 +1191,7 @@ endc
 	db NORMAL   ; EXPLOSION
 	db GHOST    ; SHADOW_CLAW
 	db POISON   ; POISON_JAB
-	db ICE      ; AVALANCHE
+	db NORMAL   ; STRUGGLE (TODO)
 	db FIGHTING ; GIGA_IMPACT
 	db BUG      ; U_TURN
 	db NORMAL   ; FLASH
@@ -1204,20 +1200,12 @@ endc
 	db ELECTRIC ; THUNDER_WAVE
 	db STEEL    ; GYRO_BALL
 	db NORMAL   ; SWORDS_DANCE
-if DEF(FAITHFUL)
 	db NORMAL   ; CUT
-else
-	db STEEL    ; CUT
-endc
 	db FLYING   ; FLY
 	db WATER    ; SURF
-if DEF(FAITHFUL)
 	db NORMAL   ; STRENGTH
-else
-	db FIGHTING ; STRENGTH
-endc
-	db WATER    ; WHIRLPOOL
 	db WATER    ; WATERFALL
+	db WATER    ; DIVE
 
 
 PokegearPals:

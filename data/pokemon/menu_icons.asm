@@ -194,7 +194,7 @@ MarillIcon:     INCBIN "gfx/icons/marill.2bpp"
 AzumarillIcon:  INCBIN "gfx/icons/azumarill.2bpp"
 PolitoedIcon:   INCBIN "gfx/icons/politoed.2bpp"
 MagnezoneIcon:  INCBIN "gfx/icons/magnezone.2bpp"
-LickilickyIcon: INCBIN "gfx/icons/lickitung.2bpp" ; TODO: design Lickilicky icon
+LickilickyIcon: INCBIN "gfx/icons/lickilicky.2bpp"
 HoppipIcon:     INCBIN "gfx/icons/hoppip.2bpp"
 SkiploomIcon:   INCBIN "gfx/icons/skiploom.2bpp"
 JumpluffIcon:   INCBIN "gfx/icons/jumpluff.2bpp"

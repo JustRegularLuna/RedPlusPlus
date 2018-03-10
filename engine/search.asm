@@ -1,30 +1,4 @@
-SpecialBeastsCheck: ; 0x4a6e8
-; Check if the player owns all three legendary beasts.
-; They must exist in either party or PC, and have the player's OT and ID.
-; Return the result in ScriptVar.
-
-	ld a, RAIKOU
-	ld [ScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
-
-	ld a, ENTEI
-	ld [ScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
-
-	ld a, SUICUNE
-	ld [ScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, SpecialMonCheckFailed
-
-	; they exist
-	ld a, 1
-	ld [ScriptVar], a
-	ret
-
-
-SpecialBirdsCheck:
+SpecialBirdsCheck: ; 0x4a6e8
 ; Check if the player owns all three legendary birds.
 ; They must exist in either party or PC, and have the player's OT and ID.
 ; Return the result in ScriptVar.

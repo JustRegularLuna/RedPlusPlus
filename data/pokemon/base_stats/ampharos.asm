@@ -1,20 +1,9 @@
-if DEF(FAITHFUL)
 	db  90,  75,  85,  55, 115,  90
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  90,  75,  85,  45, 125,  90
-	;   hp  atk  def  spd  sat  sdf
-endc
 
-if DEF(FAITHFUL)
 	db ELECTRIC, ELECTRIC
 	db 45 ; catch rate
 	db 194 ; base exp
-else
-	db ELECTRIC, DRAGON
-	db 40 ; catch rate
-	db 204 ; base exp
-endc
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch

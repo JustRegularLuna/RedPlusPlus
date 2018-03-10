@@ -1,11 +1,7 @@
 	db 106,  90, 130, 110,  90, 154
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
 	db PSYCHIC, FLYING
-else
-	db FLYING, PSYCHIC
-endc
 	db 3 ; catch rate
 	db 220 ; base exp
 	db LUM_BERRY ; item 1
@@ -13,11 +9,7 @@ endc
 	dn GENDERLESS, 15 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
 	db PRESSURE ; ability 1
-if DEF(FAITHFUL)
 	db PRESSURE ; ability 2
-else
-	db CLOUD_NINE ; ability 2
-endc
 	db MULTISCALE ; hidden ability
 	db SLOW ; growth rate
 	dn NO_EGGS, NO_EGGS ; egg groups

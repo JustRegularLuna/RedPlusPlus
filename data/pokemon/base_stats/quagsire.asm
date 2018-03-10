@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db  95,  85,  85,  35,  65,  65
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  95,  95,  95,  35,  65,  65
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db WATER, GROUND
 	db 90 ; catch rate

@@ -112,9 +112,9 @@ BattleTowerPokemon2:
 	db $ff, $7f, $ff ; DVs
 	db ABILITY_1 | QUIRKY, MALE ; Personality
 
-	db UNOWN
+	db ABRA
 	db ORAN_BERRY
-	db HIDDEN_POWER, 0, 0, 0
+	db PSYCHIC_M, SHADOW_BALL, LIGHT_SCREEN, REFLECT
 	db $ff, $ff, $ff ; DVs
 	db ABILITY_1 | QUIRKY, MALE ; Personality
 
@@ -548,8 +548,8 @@ BattleTowerMons5:
 
 	db JOLTEON
 	db KINGS_ROCK
-	db THUNDERBOLT, THUNDER_WAVE, SHADOW_BALL, HIDDEN_POWER
-	db $fe, $df, $ee ; DVs
+	db THUNDERBOLT, THUNDER_WAVE, SHADOW_BALL, PIN_MISSILE
+	db $dd, $dd, $dd ; DVs
 	db ABILITY_1 | QUIRKY, MALE ; Personality
 
 	db SCIZOR
@@ -864,7 +864,7 @@ BattleTowerMons7:
 
 	db GIRAFARIG
 	db SITRUS_BERRY
-	db AGILITY, BATON_PASS, CRUNCH, EARTHQUAKE
+	db AGILITY, PSYCHIC_M, CRUNCH, EARTHQUAKE
 	db $ff, $ef, $ff ; DVs
 	db ABILITY_1 | QUIRKY, MALE ; Personality
 
@@ -1138,7 +1138,7 @@ BattleTowerMons9:
 
 	db MILTANK
 	db LEFTOVERS
-	db MILK_DRINK, EARTHQUAKE, ATTRACT, BODY_SLAM
+	db SOFTBOILED, EARTHQUAKE, ATTRACT, BODY_SLAM
 	db $54, $75, $44 ; DVs
 	db ABILITY_1 | QUIRKY, MALE ; Personality
 

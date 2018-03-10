@@ -138,7 +138,6 @@ BATTLEMON_STRUCT_LENGTH EQUS "(BattleMonStructEnd - BattleMonSpecies)"
 	const EVOLVE_ITEM
 	const EVOLVE_HOLDING
 	const EVOLVE_HAPPINESS
-	const EVOLVE_STAT
 	const EVOLVE_LOCATION
 	const EVOLVE_MOVE
 	const EVOLVE_EVS
@@ -151,12 +150,6 @@ HAPPINESS_TO_EVOLVE EQU 220
 	const TR_NITE
 
 EVS_TO_EVOLVE EQU 50
-
-; stat evolution triggers
-	const_def 1
-	const ATK_GT_DEF
-	const ATK_LT_DEF
-	const ATK_EQ_DEF
 
 
 PARTY_LENGTH EQU 6

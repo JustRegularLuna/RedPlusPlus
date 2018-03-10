@@ -47,10 +47,9 @@ MetronomeExcepts: ; 37454
 	db METRONOME
 	db MIRROR_COAT
 	db PROTECT
-	db SKETCH
 	db SLEEP_TALK
-	db STRUGGLE
 	db THIEF
 	db TRANSFORM
+	db STRUGGLE
 	db -1
 ; 37462

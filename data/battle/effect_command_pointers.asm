@@ -59,7 +59,7 @@ BattleCommandPointers:
 	dw BattleCommand_Counter
 	dw BattleCommand_Encore
 	dw BattleCommand_PainSplit
-	dw BattleCommand_Sketch
+	dw BattleCommand_DracoMeteor
 	dw BattleCommand_SleepTalk
 	dw BattleCommand_DestinyBond
 	dw BattleCommand_FalseSwipe
@@ -88,11 +88,11 @@ BattleCommandPointers:
 	dw BattleCommand_Safeguard
 	dw BattleCommand_CheckSafeguard
 	dw BattleCommand_GetMagnitude
-	dw BattleCommand_BatonPass
+	dw BattleCommand_BatonPass ; unused
 	dw BattleCommand_Pursuit
 	dw BattleCommand_ClearHazards
 	dw BattleCommand_HealWeather
-	dw BattleCommand_HiddenPower
+	dw BattleCommand_SecretPower
 	dw BattleCommand_StartRain
 	dw BattleCommand_StartSun
 	dw BattleCommand_AttackUp
@@ -166,6 +166,6 @@ BattleCommandPointers:
 	dw BattleCommand_Roost
 	dw BattleCommand_CloseCombat
 	dw BattleCommand_SkillSwap
-	dw BattleCommand_Trick
+	dw BattleCommand_Trick ; unused
 	dw BattleCommand_KnockOff
 	dw BattleCommand_BugBite

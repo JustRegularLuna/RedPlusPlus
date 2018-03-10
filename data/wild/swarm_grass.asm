@@ -5,28 +5,28 @@
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 3, GEODUDE
-	db 3, DUNSPARCE
+	db 3, WOBBUFFET
 	db 2, ZUBAT
 	db 2, GEODUDE
-	db 2, DUNSPARCE
-	db 4, DUNSPARCE
-	db 4, DUNSPARCE
+	db 2, WOBBUFFET
+	db 4, WOBBUFFET
+	db 4, WOBBUFFET
 	; day
 	db 3, GEODUDE
-	db 3, DUNSPARCE
+	db 3, WOBBUFFET
 	db 2, ZUBAT
 	db 2, GEODUDE
-	db 2, DUNSPARCE
-	db 4, DUNSPARCE
-	db 4, DUNSPARCE
+	db 2, WOBBUFFET
+	db 4, WOBBUFFET
+	db 4, WOBBUFFET
 	; nite
 	db 3, GEODUDE
-	db 3, DUNSPARCE
+	db 3, WOBBUFFET
 	db 2, ZUBAT
 	db 2, GEODUDE
-	db 2, DUNSPARCE
-	db 4, DUNSPARCE
-	db 4, DUNSPARCE
+	db 2, WOBBUFFET
+	db 4, WOBBUFFET
+	db 4, WOBBUFFET
 
 ; Yanma swarm
 	map_id ROUTE_35

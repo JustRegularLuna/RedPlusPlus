@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db 105, 130, 120,  40,  45,  45
 	;   hp  atk  def  spd  sat  sdf
-else
-	db 110, 135, 125,  40,  48,  48
-	;   hp  atk  def  spd  sat  sdf
-endc
 
 	db GROUND, ROCK
 	db 60 ; catch rate
@@ -13,13 +8,8 @@ endc
 	db PROTECTOR ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
-if DEF(FAITHFUL)
 	db LIGHTNING_ROD ; ability 1
 	db ROCK_HEAD ; ability 2
-else
-	db ROCK_HEAD ; ability 1
-	db SOLID_ROCK ; ability 2
-endc
 	db RECKLESS ; hidden ability
 	db SLOW ; growth rate
 	dn MONSTER, FIELD ; egg groups

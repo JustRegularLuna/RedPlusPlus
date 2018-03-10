@@ -9,11 +9,7 @@
 	dn FEMALE_12_5, 6 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
 	db LEAF_GUARD ; ability 1
-if DEF(FAITHFUL)
 	db LEAF_GUARD ; ability 2
-else
-	db NATURAL_CURE ; ability 2
-endc
 	db CHLOROPHYLL ; hidden ability
 	db MEDIUM_FAST ; growth rate
 	dn FIELD, FIELD ; egg groups

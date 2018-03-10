@@ -1,11 +1,7 @@
 	db  86,  76,  86,  95, 116,  56
 	;   hp  atk  def  spd  sat  sdf
 
-if DEF(FAITHFUL)
 	db BUG, FLYING
-else
-	db BUG, DRAGON
-endc
 	db 30 ; catch rate
 	db 198 ; base exp
 	db NO_ITEM ; item 1
@@ -14,11 +10,7 @@ endc
 	dn 7, 7 ; frontpic dimensions
 	db SPEED_BOOST ; ability 1
 	db TINTED_LENS ; ability 2
-if DEF(FAITHFUL)
 	db FRISK ; hidden ability
-else
-	db LEVITATE ; hidden ability
-endc
 	db MEDIUM_FAST ; growth rate
 	dn INSECT, INSECT ; egg groups
 

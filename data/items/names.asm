@@ -53,11 +53,7 @@ ItemNames::
 	db "Soda Pop@"
 	db "Lemonade@"
 	db "Moomoo Milk@"
-if DEF(FAITHFUL)
 	db "RageCandyBar@"
-else
-	db "Cake of Rage@"
-endc
 	db "Sacred Ash@"
 	db "EnergyPowder@"
 	db "Energy Root@"
@@ -70,11 +66,7 @@ endc
 	db "X Spcl.Def@"
 	db "X Accuracy@"
 	db "Dire Hit@"
-if DEF(FAITHFUL)
 	db "Guard Spec.@"
-else
-	db "Guard Stats@"
-endc
 	db "Repel@"
 	db "Super Repel@"
 	db "Max Repel@"
@@ -112,8 +104,8 @@ endc
 	db "Silver Wing@"
 	db "Clear Bell@"
 	db "GS Ball@"
-	db "Blue Card@"
 	db "Eon Ticket@"
+	db "OrangeTicket@"
 	db "MysticTicket@"
 	db "Old Sea Map@"
 	db "Shiny Charm@"

@@ -9,11 +9,7 @@
 	dn FEMALE_50, 7 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
 	db SAND_STREAM ; ability 1
-if DEF(FAITHFUL)
 	db SAND_STREAM ; ability 2
-else
-	db BATTLE_ARMOR ; ability 2
-endc
 	db UNNERVE ; hidden ability
 	db SLOW ; growth rate
 	dn MONSTER, MONSTER ; egg groups

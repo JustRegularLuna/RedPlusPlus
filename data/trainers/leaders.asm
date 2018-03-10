@@ -4,9 +4,7 @@ BossTrainers:
 	db AGATHA
 	db BRUNO
 	db LORELEI
-JohtoGymLeaders:
-;	db FALKNER - CLAIR
-KantoGymLeaders:
+AllGymLeaders:
 	db BROCK
 	db MISTY
 	db LT_SURGE
@@ -15,4 +13,6 @@ KantoGymLeaders:
 	db SABRINA
 	db BLAINE
 	db GIOVANNI_2
+PostgameGymLeaders:
+;	db FALKNER - CLAIR
 	db -1

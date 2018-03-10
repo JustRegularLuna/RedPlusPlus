@@ -89,36 +89,7 @@ EvolveAfterBattle_MasterLoop
 	cp EVOLVE_LEVEL
 	jp z, .level
 	cp EVOLVE_HAPPINESS
-	jp z, .happiness
-
-; EVOLVE_STAT
-	ld a, [TempMonLevel]
-	cp [hl]
-	jp c, .dont_evolve_1
-
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_1
-
-	push hl
-	ld de, TempMonAttack
-	ld hl, TempMonDefense
-	ld c, 2
-	call StringCmp
-	ld a, ATK_EQ_DEF
-	jr z, .got_tyrogue_evo
-	ld a, ATK_LT_DEF
-	jr c, .got_tyrogue_evo
-	ld a, ATK_GT_DEF
-.got_tyrogue_evo
-	pop hl
-
-	inc hl
-	cp [hl]
-	jp nz, .dont_evolve_2
-
-	inc hl
-	jp .proceed
-
+	jp nz, .dont_evolve_1
 
 .happiness
 	ld a, [TempMonHappiness]
@@ -128,16 +99,6 @@ EvolveAfterBattle_MasterLoop
 	call IsMonHoldingEverstone
 	jp z, .dont_evolve_2
 
-	; Spiky-eared Pichu cannot evolve
-	ld a, [TempMonSpecies]
-	cp PICHU
-	jr nz, .not_spiky_eared_pichu
-	ld a, [TempMonForm]
-	and FORM_MASK
-	cp 2
-	jp z, .dont_evolve_2
-
-.not_spiky_eared_pichu
 	ld a, [hli]
 	cp TR_ANYTIME
 	jp z, .proceed
@@ -350,15 +311,6 @@ endr
 	dec a
 	call SetSeenAndCaughtMon
 
-	ld a, [wd265]
-	cp UNOWN
-	jr nz, .skip_unown
-
-	ld hl, TempMonForm
-	predef GetVariant
-	farcall UpdateUnownDex
-
-.skip_unown
 	pop de
 	pop hl
 	ld a, [TempMonSpecies]
@@ -724,11 +676,6 @@ GetPreEvolution: ; 42581
 	ld a, [hli]
 	and a
 	jr z, .no_evolve ; If we jump, this Pokemon does not evolve into CurPartySpecies.
-	cp EVOLVE_STAT ; This evolution type has the extra parameter of stat comparison.
-	jr nz, .not_tyrogue
-	inc hl
-
-.not_tyrogue
 	inc hl
 	ld a, [CurPartySpecies]
 	cp [hl]

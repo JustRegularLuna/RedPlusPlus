@@ -152,7 +152,7 @@ MagntTrain_LoadGFX_PlayMusic: ; 8ccc9
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
-	ld de, MUSIC_MAGNET_TRAIN
+	ld de, MUSIC_PKMN_HEALED
 	jp PlayMusic2
 ; 8cd27
 

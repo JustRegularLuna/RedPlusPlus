@@ -1366,13 +1366,7 @@ HandleLeppaBerry:
 	ret
 
 .restore
-	; lousy hack
-	ld a, [hl]
-	cp SKETCH
-	ld b, 1
-	jr z, .sketch
 	ld b, 5
-.sketch
 	ld a, [de]
 	add b
 	ld [de], a
@@ -2463,7 +2457,7 @@ PlayVictoryMusic: ; 3d0ea
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
-	ld de, MUSIC_WILD_VICTORY
+	ld de, MUSIC_DEFEATED_WILD_MON
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .trainer_victory
@@ -2481,10 +2475,10 @@ PlayVictoryMusic: ; 3d0ea
 	jr .play_music
 
 .trainer_victory
-	ld de, MUSIC_GYM_VICTORY
+	ld de, MUSIC_DEFEATED_GYM_LEADER
 	call IsBossTrainer
 	jr c, .play_music
-	ld de, MUSIC_TRAINER_VICTORY
+	ld de, MUSIC_DEFEATED_TRAINER
 
 .play_music
 	call PlayMusic
@@ -2499,15 +2493,15 @@ PlayVictoryMusic: ; 3d0ea
 ; These functions check if the current opponent is a gym leader or one of a
 ; few other special trainers.
 
-; Note: KantoGymLeaders is a subset of JohtoGymLeaders. If you wish to
-; differentiate between the two, call IsKantoGymLeader first.
+; Note: PostgameGymLeaders is a subset of AllGymLeaders. If you wish to
+; differentiate between the two, call IsPostgameGymLeader first.
 
-IsKantoGymLeader: ; 0x3d123
-	ld hl, KantoGymLeaders
+IsAnyGymLeader: ; 0x3d123
+	ld hl, AllGymLeaders
 	jr IsBossTrainerCommon
 
-IsJohtoGymLeader: ; 0x3d128
-	ld hl, JohtoGymLeaders
+IsPostgameGymLeader: ; 0x3d128
+	ld hl, PostgameGymLeaders
 	jr IsBossTrainerCommon
 
 IsBossTrainer:
@@ -3172,18 +3166,6 @@ LoadEnemyPkmnToSwitchTo:
 	call LoadEnemyMon
 
 	ld a, [CurPartySpecies]
-	cp UNOWN
-	jr nz, .skip_unown
-	ld a, [wFirstUnownSeen]
-	and a
-	jr nz, .skip_unown
-	ld hl, EnemyMonForm
-	predef GetVariant
-	ld a, [MonVariant]
-	ld [wFirstUnownSeen], a
-.skip_unown
-
-	ld a, [CurPartySpecies]
 	cp MAGIKARP
 	jr nz, .skip_magikarp
 	ld a, [wFirstMagikarpSeen]
@@ -3219,7 +3201,7 @@ FinalPkmnMusicAndAnimation:
 	call DelayFrames
 	call SlideEnemyPicOut
 	; ...play the final Pokémon music...
-	call IsJohtoGymLeader
+	call IsAnyGymLeader
 	jr nc, .no_music
 	push de
 	ld de, MUSIC_NONE
@@ -3537,7 +3519,6 @@ InitBattleMon: ; 3da0d
 	ld a, [BaseType2]
 	ld [BattleMonType2], a
 
-if !DEF(FAITHFUL)
 	; Armored Mewtwo is Psychic/Steel
 	ld a, [BattleMonSpecies]
 	cp MEWTWO
@@ -3548,7 +3529,6 @@ if !DEF(FAITHFUL)
 	ld a, STEEL
 	ld [BattleMonType2], a
 .not_armored_mewtwo
-endc
 
 	ld hl, PartyMonNicknames
 	ld a, [CurBattleMon]
@@ -3655,7 +3635,6 @@ InitEnemyMon: ; 3dabd
 	ld a, [hl]
 	ld [de], a
 
-if !DEF(FAITHFUL)
 	; Armored Mewtwo is Psychic/Steel
 	ld a, [EnemyMonSpecies]
 	cp MEWTWO
@@ -3666,7 +3645,6 @@ if !DEF(FAITHFUL)
 	ld a, STEEL
 	ld [EnemyMonType2], a
 .not_armored_mewtwo
-endc
 
 	ld hl, BaseStats
 	ld de, EnemyMonBaseStats
@@ -6376,17 +6354,8 @@ LoadEnemyMon: ; 3e8eb
 	; Failing that, it's all up to chance
 
 	call GetLeadAbility
-if DEF(FAITHFUL)
 	cp COMPOUND_EYES
-	jr nz, .no_compound_eyes_or_amulet_coin
-else
-	cp COMPOUND_EYES
-	jr z, .compound_eyes
-	; If the party lead holds an Amulet Coin, chances are increased
-	ld a, [PartyMon1Item]
-	cp AMULET_COIN
-	jr nz, .no_compound_eyes_or_amulet_coin
-endc
+	jr nz, .no_compound_eyes
 
 .compound_eyes:
 	; 60% chance of getting Item1
@@ -6405,7 +6374,7 @@ endc
 	ld a, NO_ITEM
 	jr .UpdateItem
 
-.no_compound_eyes_or_amulet_coin:
+.no_compound_eyes:
 	; 50% chance of getting Item1
 	call BattleRandom
 	cp 50 percent
@@ -6636,31 +6605,7 @@ endr
 	ld a, [bc]
 	ld [hl], a
 
-	; Unown
-	ld a, [TempEnemyMonSpecies]
-	cp UNOWN
-	jr nz, .EkansArbok
-
-.unown_letter
-	ld a, NUM_UNOWN
-	call BattleRandomRange
-	inc a
-	ld b, a
-	ld a, [EnemyMonForm]
-	and $ff - FORM_MASK
-	add b
-	ld [EnemyMonForm], a
-	; Get letter based on form
-	ld hl, EnemyMonForm
-	predef GetVariant
-	; Can't use any letters that haven't been unlocked
-	push de
-	call CheckUnownLetter
-	pop de
-	jr c, .unown_letter ; re-roll
-	jp .Happiness
-
-.EkansArbok:
+	; Species forms
 	ld a, [TempEnemyMonSpecies]
 	cp EKANS
 	jr z, .yes_ekans
@@ -6809,7 +6754,6 @@ endr
 	ld a, [hl]
 	ld [de], a
 
-if !DEF(FAITHFUL)
 	; Armored Mewtwo is Psychic/Steel
 	ld a, [EnemyMonSpecies]
 	cp MEWTWO
@@ -6820,7 +6764,6 @@ if !DEF(FAITHFUL)
 	ld a, STEEL
 	ld [EnemyMonType2], a
 .not_armored_mewtwo
-endc
 
 	; Get moves
 	ld de, EnemyMonMoves
@@ -6906,56 +6849,6 @@ CheckSleepingTreeMon: ; 3eb38
 	ret
 
 INCLUDE "data/wild/treemons_asleep.asm"
-
-
-CheckUnownLetter: ; 3eb75
-; Return carry if the Unown letter hasn't been unlocked yet
-
-	ld a, [UnlockedUnowns]
-	ld c, a
-	ld de, 0
-
-.loop
-
-; Don't check this set unless it's been unlocked
-	srl c
-	jr nc, .next
-
-; Is our letter in the set?
-	ld hl, UnlockedUnownLetterSets
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-
-	push de
-	ld a, [MonVariant]
-	ld de, 1
-	push bc
-	call IsInArray
-	pop bc
-	pop de
-
-	jr c, .match
-
-.next
-; Make sure we haven't gone past the end of the table
-	inc e
-	inc e
-	ld a, e
-	cp UnlockedUnownLetterSets.End - UnlockedUnownLetterSets
-	jr c, .loop
-
-; Hasn't been unlocked, or the letter is invalid
-	scf
-	ret
-
-.match
-; Valid letter
-	and a
-	ret
-
-INCLUDE "data/wild/unlocked_unowns.asm"
 
 
 FinalPkmnSlideInEnemyMonFrontpic:
@@ -8499,16 +8392,6 @@ InitEnemyWildmon: ; 3f607
 	call CopyBytes
 	ld hl, EnemyMonForm
 	predef GetVariant
-
-	ld a, [CurPartySpecies]
-	cp UNOWN
-	jr nz, .skip_unown
-	ld a, [wFirstUnownSeen]
-	and a
-	jr nz, .skip_unown
-	ld a, [MonVariant]
-	ld [wFirstUnownSeen], a
-.skip_unown
 
 	ld a, [CurPartySpecies]
 	cp MAGIKARP

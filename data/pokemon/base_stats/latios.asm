@@ -8,7 +8,7 @@
 	db NO_ITEM ; item 1
 	db NO_ITEM ; item 2
 	dn GENDERLESS, 15 ; gender, step cycles to hatch
-	dn 6, 6 ; frontpic dimensions
+	dn 7, 7 ; frontpic dimensions
 	db LEVITATE ; ability 1
 	db LEVITATE ; ability 2
 	db LEVITATE ; hidden ability

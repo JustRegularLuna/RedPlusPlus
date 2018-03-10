@@ -1192,7 +1192,7 @@ TryStrengthOW: ; cd78
 	ld [ScriptVar], a
 	ret
 
-WhirlpoolFunction: ; cd9d
+DiveFunction: ; cd9d
 	call FieldMoveJumptableReset
 .loop
 	ld hl, Jumptable_cdae
@@ -1203,15 +1203,13 @@ WhirlpoolFunction: ; cd9d
 	ret
 
 Jumptable_cdae: ; cdae
-	dw .TryWhirlpool
-	dw .DoWhirlpool
-	dw .FailWhirlpool
+	dw .TryDive
+	dw .DoDive
+	dw .FailDive
 
-.TryWhirlpool: ; cdb4
-	ld de, ENGINE_GLACIERBADGE
-	call CheckBadge
-	jr c, .noglacierbadge
-	call TryWhirlpoolMenu
+.TryDive: ; cdb4
+	jr .nobadge ; TODO: Dive conditions
+	call TryDiveMenu
 	jr c, .failed
 	ld a, $1
 	ret
@@ -1220,141 +1218,86 @@ Jumptable_cdae: ; cdae
 	ld a, $2
 	ret
 
-.noglacierbadge
+.nobadge
 	ld a, $80
 	ret
 
-.DoWhirlpool: ; cdca
-	ld hl, Script_WhirlpoolFromMenu
+.DoDive: ; cdca
+	ld hl, Script_DiveFromMenu
 	call QueueScript
 	ld a, $81
 	ret
 
-.FailWhirlpool: ; cdd3
+.FailDive: ; cdd3
 	call FieldMoveFailed
 	ld a, $80
 	ret
 
-Text_UsedWhirlpool: ; 0xcdd9
-	; used WHIRLPOOL!
+Text_UsedDive: ; 0xcdd9
+	; used DIVE!
 	text_jump UnknownText_0x1c0816
 	db "@"
 
-TryWhirlpoolMenu: ; cdde
-	call GetFacingTileCoord
-	ld c, a
-	cp COLL_WHIRLPOOL
-	jr nz, .failed
-	call GetBlockLocation
-	ld c, [hl]
-	push hl
-	ld hl, WhirlpoolBlockPointers
-	call CheckOverworldTileArrays
-	pop hl
-	jr nc, .failed
-	ld a, l
-	ld [Buffer3], a
-	ld a, h
-	ld [Buffer4], a
-	ld a, b
-	ld [Buffer5], a
-	xor a
-	ld [Buffer6], a
+TryDiveMenu: ; cdde
+	jr .failed ; TODO: implement Dive
 	ret
 
 .failed
 	scf
 	ret
 
-Script_WhirlpoolFromMenu: ; 0xce0b
+Script_DiveFromMenu: ; 0xce0b
 	reloadmappart
 	special UpdateTimePals
 
-Script_UsedWhirlpool: ; 0xce0f
+Script_UsedDive: ; 0xce0f
 	callasm PrepareOverworldMove
-	writetext Text_UsedWhirlpool
+	writetext Text_UsedDive
 	closetext
 	scall FieldMovePokepicScript
 
 	waitsfx
 	playsound SFX_SURF
-	checkcode VAR_FACING
-	ifequal UP, .Up
-	ifequal DOWN, .Down
-	ifequal RIGHT, .Right
-	applymovement PLAYER, .LeftMovementData
+	; TODO: implement Dive
 	end
 
-.Up:
-	applymovement PLAYER, .UpMovementData
-	end
-
-.Right:
-	applymovement PLAYER, .RightMovementData
-	end
-
-.Down:
-	applymovement PLAYER, .DownMovementData
-	end
-
-.UpMovementData:
-	slow_step_up
-	slow_step_up
-	step_end
-
-.RightMovementData:
-	slow_step_right
-	slow_step_right
-	step_end
-
-.DownMovementData:
-	slow_step_down
-	slow_step_down
-	step_end
-
-.LeftMovementData:
-	slow_step_left
-	slow_step_left
-	step_end
-
-TryWhirlpoolOW:: ; ce3e
-	ld d, WHIRLPOOL
+TryDiveOW:: ; ce3e
+	ld d, DIVE
 	call CheckPartyMove
 	jr c, .failed
 	ld de, ENGINE_GLACIERBADGE
 	call CheckEngineFlag
 	jr c, .failed
-	call TryWhirlpoolMenu
+	call TryDiveMenu
 	jr c, .failed
-	ld a, BANK(Script_AskWhirlpoolOW)
-	ld hl, Script_AskWhirlpoolOW
+	ld a, BANK(Script_AskDiveOW)
+	ld hl, Script_AskDiveOW
 	call CallScript
 	scf
 	ret
 
 .failed
-	ld a, BANK(Script_MightyWhirlpool)
-	ld hl, Script_MightyWhirlpool
+	ld a, BANK(Script_TheSeaIsDeep)
+	ld hl, Script_TheSeaIsDeep
 	call CallScript
 	scf
 	ret
 
-Script_MightyWhirlpool: ; 0xce66
-	jumptext .MightyWhirlpoolText
+Script_TheSeaIsDeep: ; 0xce66
+	thistext
 
-.MightyWhirlpoolText: ; 0xce69
-	text_jump UnknownText_0x1c082b
+	text_jump _CanDiveText
 	db "@"
 
-Script_AskWhirlpoolOW: ; 0xce6e
+Script_AskDiveOW: ; 0xce6e
 	opentext
 	writetext UnknownText_0xce78
 	yesorno
-	iftrue Script_UsedWhirlpool
+	iftrue Script_UsedDive
 	endtext
 
 UnknownText_0xce78: ; 0xce78
-	text_jump UnknownText_0x1c0864
+	text_jump _AskDiveDownText
 	db "@"
 
 HeadbuttFunction: ; ce7d
@@ -1897,17 +1840,6 @@ BikeFunction: ; d0b3
 	ret
 
 GetBikeMusic::
-	ld de, MUSIC_BICYCLE_XY
-	ld a, [MapGroup]
-	cp GROUP_ROUTE_17 ; GROUP_ROUTE_18_WEST
-	jr nz, .not_cycling_road
-	ld a, [MapNumber]
-	cp MAP_ROUTE_17
-	ret z
-	cp MAP_ROUTE_18_WEST
-	ret z
-	ld a, [MapGroup]
-.not_cycling_road
 	ld de, MUSIC_NONE
 	cp GROUP_QUIET_CAVE_1F ; GROUP_QUIET_CAVE_B1F, GROUP_QUIET_CAVE_B2F, GROUP_QUIET_CAVE_B3F
 	jr nz, .not_quiet_cave
@@ -1920,7 +1852,7 @@ GetBikeMusic::
 	cp MAP_QUIET_CAVE_B3F
 	ret z
 .not_quiet_cave
-	ld de, MUSIC_BICYCLE
+	ld de, MUSIC_BIKE_RIDING
 	ret
 
 Script_GetOnBike: ; 0xd13e

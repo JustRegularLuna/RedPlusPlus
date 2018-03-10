@@ -1,16 +1,7 @@
-if DEF(FAITHFUL)
 	db  75, 123,  67,  95,  95,  85
 	;   hp  atk  def  spd  sat  sdf
-else
-	db  75, 123,  67, 105,  95,  85
-	;   hp  atk  def  spd  sat  sdf
-endc
 
-if DEF(FAITHFUL)
 	db ELECTRIC, ELECTRIC
-else
-	db ELECTRIC, FIGHTING
-endc
 	db 30 ; catch rate
 	db 199 ; base exp
 	db SITRUS_BERRY ; item 1

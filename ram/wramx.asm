@@ -1119,8 +1119,8 @@ EndPokedexCaught::
 PokedexSeen:: flag_array NUM_POKEMON
 EndPokedexSeen::
 
-UnownDex:: ds NUM_UNOWN
-UnlockedUnowns:: ds 1
+UnownDex:: ds 28
+	ds 1
 
 wFirstUnownSeen:: ds 1
 wFirstMagikarpSeen:: ds 1

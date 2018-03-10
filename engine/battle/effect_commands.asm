@@ -2249,6 +2249,8 @@ BattleCommand_HitTargetNoSub: ; 34f60
 
 .fury_attack_users
 	db BEEDRILL
+	db SPEAROW
+	db FEAROW
 	db NIDORAN_M
 	db NIDORINO
 	db NIDOKING
@@ -2258,8 +2260,9 @@ BattleCommand_HitTargetNoSub: ; 34f60
 	db RHYHORN
 	db RHYDON
 	db RHYPERIOR
+	db GOLDEEN
+	db SEAKING
 	db PINSIR
-	db DUNSPARCE
 	db HERACROSS
 	db PILOSWINE
 	db MAMOSWINE
@@ -2347,6 +2350,7 @@ BattleCommand_StatUpDownAnim: ; 34feb
 	db CLOYSTER
 	db OMANYTE
 	db OMASTAR
+	db TORKOAL
 	db -1
 
 .harden_users
@@ -3222,10 +3226,6 @@ PlayerAttackDamage: ; 352e2
 	ld b, a
 	ld c, [hl]
 
-if !DEF(FAITHFUL)
-	call HailDefenseBoost
-endc
-
 	ld hl, BattleMonAttack
 	ld a, [EnemyAbility]
 	cp INFILTRATOR
@@ -3321,10 +3321,6 @@ EnemyAttackDamage: ; 353f6
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
-
-if !DEF(FAITHFUL)
-	call HailDefenseBoost
-endc
 
 	ld hl, EnemyMonAttack
 	ld a, [PlayerAbility]
@@ -3538,10 +3534,6 @@ SpeciesItemBoost: ; 353d1
 SandstormSpDefBoost:
 	push bc
 	lb bc, WEATHER_SANDSTORM, ROCK
-	jr WeatherDefenseBoost
-HailDefenseBoost:
-	push bc
-	lb bc, WEATHER_HAIL, ICE
 WeatherDefenseBoost:
 	call GetWeatherAfterCloudNine
 	cp b
@@ -4378,132 +4370,6 @@ BattleCommand_PainSplit:
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
-
-
-BattleCommand_Sketch: ; 35a74
-; sketch
-
-	call ClearLastMove
-; Don't sketch during a link battle
-	ld a, [wLinkMode]
-	and a
-	jr z, .not_linked
-	call AnimateFailedMove
-	jp PrintNothingHappened
-
-.not_linked
-; If the opponent has a substitute up, fail.
-	call CheckSubstituteOpp
-	jp nz, .fail
-; If the opponent is transformed, fail.
-	ld a, BATTLE_VARS_SUBSTATUS2_OPP
-	call GetBattleVarAddr
-	bit SUBSTATUS_TRANSFORMED, [hl]
-	jp nz, .fail
-; If the user is transformed, fail.
-	ld a, BATTLE_VARS_SUBSTATUS2
-	call GetBattleVarAddr
-	bit SUBSTATUS_TRANSFORMED, [hl]
-	jp nz, .fail
-; Get the user's moveset in its party struct.
-; This move replacement shall be permanent.
-; Pointer will be in de.
-	ld a, MON_MOVES
-	call UserPartyAttr
-	ld d, h
-	ld e, l
-; Get the battle move structs.
-	ld hl, BattleMonMoves
-	ld a, [hBattleTurn]
-	and a
-	jr z, .get_last_move
-	ld hl, EnemyMonMoves
-.get_last_move
-	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
-	call GetBattleVar
-	ld [wTypeMatchup], a
-	ld b, a
-; Fail if move is invalid or is Struggle.
-	and a
-	jr z, .fail
-	cp STRUGGLE
-	jr z, .fail
-; Fail if user already knows that move
-	ld c, NUM_MOVES
-.does_user_already_know_move
-	ld a, [hli]
-	cp b
-	jr z, .fail
-	dec c
-	jr nz, .does_user_already_know_move
-; Find Sketch in the user's moveset.
-; Pointer in hl, and index in c.
-	dec hl
-	ld c, NUM_MOVES
-.find_sketch
-	dec c
-	ld a, [hld]
-	cp SKETCH
-	jr nz, .find_sketch
-	inc hl
-; The Sketched move is loaded to that slot.
-	ld a, b
-	ld [hl], a
-; Copy the base PP from that move.
-	push bc
-	push hl
-	dec a
-	ld hl, Moves + MOVE_PP
-	call GetMoveAttr
-	pop hl
-	ld bc, BattleMonPP - BattleMonMoves
-	add hl, bc
-	ld [hl], a
-	pop bc
-
-	ld a, [hBattleTurn]
-	and a
-	jr z, .user_trainer
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .user_trainer
-; wildmon
-	ld a, [hl]
-	push bc
-	ld hl, wWildMonPP
-	ld b, 0
-	add hl, bc
-	ld [hl], a
-	ld hl, wWildMonMoves
-	add hl, bc
-	pop bc
-	ld [hl], b
-	jr .done_copy
-
-.user_trainer
-	ld a, [hl]
-	push af
-	ld l, c
-	ld h, 0
-	add hl, de
-	ld a, b
-	ld [hl], a
-	pop af
-	ld de, MON_PP - MON_MOVES
-	add hl, de
-	ld [hl], a
-.done_copy
-	call GetMoveName
-	call AnimateCurrentMove
-
-	ld hl, SketchedText
-	jp StdBattleTextBox
-
-.fail
-	call AnimateFailedMove
-	jp PrintDidntAffect
-
-; 35b16
 
 
 BattleCommand_SleepTalk: ; 35b33
@@ -5474,6 +5340,17 @@ BattleCommand_ParalyzeTarget:
 	call PrintParalyze
 	jp PostStatusWithSynchronize
 
+
+BattleCommand_DracoMeteor:
+; dracometeor
+
+	ld a, [AttackMissed]
+	and a
+	ret nz
+
+	lb bc, ($10 | SP_ATTACK), 0
+	jr BattleCommand_SelfStatDownHit
+
 BattleCommand_CloseCombat:
 	ld a, [AttackMissed]
 	and a
@@ -5797,6 +5674,8 @@ BattleCommand_StatDown: ; 362e3
 	ld c, a
 	call GetOpponentAbilityAfterMoldBreaker
 	cp CLEAR_BODY
+	jp z, .Failed
+	cp WHITE_SMOKE
 	jp z, .Failed
 	cp HYPER_CUTTER
 	jr z, .atk
@@ -6998,7 +6877,6 @@ BattleCommand_TrapTarget: ; 36c2d
 .Traps:
 	dbw WRAP,      WrappedByText     ; 'was WRAPPED by'
 	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
-	dbw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
 ; 36c7e
 
 
@@ -7517,47 +7395,6 @@ BattleCommand_Disable: ; 36fed
 
 ; 3705c
 
-BattleCommand_KnockOff:
-	ld a, [AttackMissed]
-	and a
-	ret nz
-
-	; Maybe Substitute/Sheer Force prevents the steal
-	call CheckSubstituteOpp
-	ret nz
-
-	; Sticky Hold prevents item loss
-	call GetOpponentAbilityAfterMoldBreaker
-	cp STICKY_HOLD
-	ret z
-
-	; Check if target has an item to knock off
-	call GetOpponentItem
-	ld a, [hl]
-	and a
-	ret z
-
-	; Armor Suit can't be knocked off
-	cp ARMOR_SUIT
-	ret z
-
-	; Mail can't be knocked off
-	ld d, a
-	call ItemIsMail
-	ret c
-
-	ld [wNamedObjectIndexBuffer], a
-	xor a
-	ld [hl], a
-	call GetItemName
-	ld hl, KnockedOffItemText
-	call StdBattleTextBox
-	ld a, MON_ITEM
-	call OpponentPartyAttr
-	ret z
-	xor a
-	ld [hl], a
-	ret
 
 BattleCommand_BugBite:
 ; TODO: bugbite
@@ -7626,55 +7463,6 @@ BattleCommand_SkillSwap:
 	call AnimateFailedMove
 	jp PrintButItFailed
 
-BattleCommand_Trick:
-	ld a, [AttackMissed]
-	and a
-	jr nz, .failed
-
-	call CheckSubstituteOpp
-	jr nz, .failed
-
-	call GetOpponentAbilityAfterMoldBreaker
-	cp STICKY_HOLD
-	jr z, .ability_failed
-
-	call GetUserItem
-	ld a, [hl]
-	and a
-	jr z, .failed
-	push hl
-	call GetOpponentItem
-	ld a, [hl]
-	and a
-	pop de
-	jr z, .failed
-
-	ld a, [de]
-	ld b, [hl]
-	ld [hl], a
-	ld a, b
-	ld [de], a
-
-	ld hl, SwappedItemsText
-	call StdBattleTextBox
-
-	ld a, MON_ITEM
-	call BattlePartyAttr
-	ld a, [BattleMonItem]
-	ld [hl], a
-
-	ld a, MON_ITEM
-	call OTPartyAttr
-	ret z
-	ld a, [EnemyMonItem]
-	ld [hl], a
-	ret
-
-.ability_failed
-	call ShowEnemyAbilityActivation
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
 
 BattleCommand_Conversion: ; 3707f
 ; conversion
@@ -8272,12 +8060,10 @@ INCLUDE "engine/battle/effect_commands/perish_song.asm"
 INCLUDE "engine/battle/effect_commands/rollout.asm"
 
 BoostJumptable:
-	dbw AVALANCHE, DoAvalanche
 	dbw ACROBATICS, DoAcrobatics
 	dbw FACADE, DoFacade
 	dbw HEX, DoHex
 	dbw VENOSHOCK, DoVenoshock
-	dbw KNOCK_OFF, DoKnockOff
 	dbw -1, -1
 
 BattleCommand_ConditionalBoost:
@@ -8285,10 +8071,6 @@ BattleCommand_ConditionalBoost:
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
 	jp BattleJumptable
-
-DoAvalanche:
-	call CheckOpponentWentFirst
-	jr DoubleDamageIfNZ
 
 DoAcrobatics:
 	ld a, [hBattleTurn]
@@ -8343,30 +8125,6 @@ DoubleDamage:
 	ld a, $ff
 	ld [hli], a
 	ld [hl], a
-	ret
-
-DoKnockOff:
-	call CheckSubstituteOpp
-	ret nz
-
-	call GetOpponentItem
-	ld a, [hl]
-	and a
-	ret z
-
-	ld hl, CurDamage
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	push bc
-	srl b
-	rr c
-	pop hl
-	add hl, bc
-	ld a, h
-	ld [CurDamage], a
-	ld a, l
-	ld [CurDamage + 1], a
 	ret
 
 INCLUDE "engine/battle/effect_commands/attract.asm"
@@ -8617,19 +8375,7 @@ BattleCommand_SwitchOut:
 	farcall NewEnemyMonStatus
 	farjp ResetEnemyStatLevels
 
-BattleCommand_BatonPass:
-	call CheckAnyOtherAliveMons
-	jp z, FailedBatonPass
 
-	call AnimateCurrentMove
-	ld c, 30
-	call DelayFrames
-	call UpdateUserInParty
-
-	ld a, [hBattleTurn]
-	and a
-	jr nz, DoEnemyBatonPass
-	; fallthrough
 DoPlayerBatonPass:
 	; Transition into switchmon menu
 	call LoadStandardMenuDataHeader
@@ -8884,13 +8630,12 @@ BattleCommand_HealWeather:
 	ld hl, HPIsFullText
 	jp StdBattleTextBox
 
-BattleCommand_HiddenPower: ; 37be8
-; hiddenpower
 
-	ld a, [AttackMissed]
-	and a
-	ret nz
-	farjp HiddenPowerDamageStats
+BattleCommand_SecretPower: ; 37be8
+; secretpower
+
+	; TODO: Secret Power effect
+	jp BattleCommand_ParalyzeTarget
 
 ; 37bf4
 
@@ -9455,4 +9200,14 @@ _CheckBattleEffects: ; 37ed5
 	pop bc
 	pop de
 	pop hl
+	ret
+
+
+; unused
+BattleCommand_BatonPass:
+; batonpass
+BattleCommand_Trick:
+; trick
+BattleCommand_KnockOff:
+; knockoff
 	ret
