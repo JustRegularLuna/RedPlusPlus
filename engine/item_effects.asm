@@ -119,8 +119,8 @@ ItemEffects: ; e73c
 	dw NoEffect         ; SILVER_WING
 	dw NoEffect         ; CLEAR_BELL
 	dw BlueCard         ; GS_BALL
-	dw NoEffect         ; BLUE_CARD
 	dw NoEffect         ; EON_TICKET
+	dw NoEffect         ; ORANGETICKET
 	dw NoEffect         ; MYSTICTICKET
 	dw NoEffect         ; OLD_SEA_MAP
 	dw NoEffect         ; SHINY_CHARM
