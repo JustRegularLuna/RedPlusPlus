@@ -1142,6 +1142,8 @@ Pokedex_DrawDexEntryScreenRightEdge: ; 1de247
 	ld b, 15
 	call Pokedex_FillColumn
 	ld [hl], $62
+	hlcoord 19, 9
+	ld [hl], $56
 	hlcoord 19, 17
 	ld [hl], $3c
 	xor a

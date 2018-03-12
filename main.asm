@@ -1221,17 +1221,12 @@ DisplayDexEntry: ; 4424d
 	jp FarString
 
 DrawPokedexHorizontalDivider:
-	hlcoord 1, 9
-	ld b, 9
-.loop
-	ld a, $55
+	hlcoord 0, 9
+	ld a, $56
 	ld [hli], a
-	inc a
-	ld [hli], a
-	dec b
-	jr nz, .loop
 	dec a
-	ld [hl], a
+	ld bc, SCREEN_WIDTH - 1
+	call ByteFill
 	ret
 
 ; Metric conversion code by TPP Anniversary Crystal 251
