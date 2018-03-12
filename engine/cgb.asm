@@ -372,7 +372,15 @@ _CGB_Pokedex: ; 8f70
 	call LoadPalette_White_Col1_Col2_Black
 .got_palette
 
+	ld hl, .EdgePalette
+	call LoadHLPaletteIntoDE
+
 	call WipeAttrMap
+
+	hlcoord 0, 0, AttrMap
+	lb bc, 9, 9
+	ld a, $2
+	call FillBoxCGB
 
 	hlcoord 1, 1, AttrMap
 	lb bc, 7, 7
@@ -407,11 +415,24 @@ endc
 .CursorPalette: ; 8fc2
 if !DEF(MONOCHROME)
 	RGB 31, 31, 31
-	RGB 24, 22, 17
-	RGB 19, 17, 13
-	RGB 15, 12, 07
+	RGB 22, 22, 22
+	RGB 17, 17, 17
+	RGB 12, 12, 12
 else
 	MONOCHROME_RGB_FOUR
+endc
+
+.EdgePalette:
+if !DEF(MONOCHROME)
+	RGB 31, 31, 31
+	RGB 28, 27, 24
+	RGB 26, 10, 06
+	RGB 00, 00, 00
+else
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
 endc
 ; 8fca
 
