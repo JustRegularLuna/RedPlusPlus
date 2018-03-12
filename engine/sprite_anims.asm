@@ -175,7 +175,7 @@ DoAnimFrame: ; 8d24b
 ;	ret
 
 .PokegearModeArrow ; 8d475 (23:5475)
-	farjp AnimatePokegearModeIndicatorArrow
+	ret
 
 .TradePokeBall ; 8d483 (23:5483)
 	call .anonymous_dw
@@ -361,7 +361,7 @@ DoAnimFrame: ; 8d24b
 	jp DeinitializeSprite
 
 .RadioTuningKnob: ; 8d578 (23:5578)
-	farjp AnimateTuningKnob
+	ret
 
 .CutGrassLeaves ; 8d57f (23:557f)
 	ld hl, SPRITEANIMSTRUCT_0D

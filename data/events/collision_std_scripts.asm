@@ -5,7 +5,7 @@ TileCollisionStdScripts:
 	dbw COLL_BOOKSHELF,       magazinebookshelf
 	dbw COLL_TRASH_CAN,       trashcan
 	dbw COLL_PC,              pcscript
-	dbw COLL_RADIO,           radio1
+	dbw COLL_RADIO,           radio
 	dbw COLL_TOWN_MAP,        townmap
 	dbw COLL_MART_SHELF,      merchandiseshelf
 	dbw COLL_TV,              tv

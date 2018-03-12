@@ -41,7 +41,6 @@ SpecialsPointers::
 	add_special SpecialTrendyPhrase
 	add_special Special_SetDayOfWeek
 	add_special Special_TownMap
-	add_special MapRadio
 	add_special Special_UnownPuzzle
 	add_special Special_SlotMachine
 	add_special Special_CardFlip
