@@ -1,3 +1,5 @@
+VISIBLE_PHONE_LIST_SIZE EQU 5
+
 VsSeeker: ; 90b8d (24:4b8d)
 	ld hl, Options1
 	ld a, [hl]
@@ -161,20 +163,6 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	hlcoord 0, 12
 	lb bc, 4, 18
 	call TextBox
-	hlcoord 17, 1
-	ld a, $41
-	ld [hli], a
-	inc a
-	ld [hl], a
-	hlcoord 17, 2
-	inc a
-	ld [hli], a
-	call GetMapHeaderPhoneServiceNybble
-	and a
-	jr nz, .no_service
-	hlcoord 18, 2
-	ld [hl], $44
-.no_service
 	call PokegearPhone_UpdateDisplayList
 	call TownMapPals
 	ld a, [wcf65]
@@ -437,9 +425,9 @@ PokegearPhone_Joypad: ; 91171 (24:5171)
 	and a
 	ret z
 	ld [wPokegearPhoneSelectedPerson], a
-	hlcoord 1, 4
+	hlcoord 1, 2
 	ld a, [wPokegearPhoneCursorPosition]
-	ld bc, 20 * 2
+	ld bc, SCREEN_WIDTH * 2
 	call AddNTimes
 	ld [hl], "▷"
 	call PokegearPhoneContactSubmenu
@@ -549,7 +537,7 @@ PokegearPhone_GetDPad: ; 9126d (24:526d)
 .down
 	ld hl, wPokegearPhoneCursorPosition
 	ld a, [hl]
-	cp $3
+	cp VISIBLE_PHONE_LIST_SIZE - 1
 	jr nc, .scroll_page_down
 	inc [hl]
 	jr .done_joypad_same_page
@@ -557,7 +545,7 @@ PokegearPhone_GetDPad: ; 9126d (24:526d)
 .scroll_page_down
 	ld hl, wPokegearPhoneScrollPosition
 	ld a, [hl]
-	cp CONTACT_LIST_SIZE - 4
+	cp CONTACT_LIST_SIZE - VISIBLE_PHONE_LIST_SIZE
 	ret nc
 	inc [hl]
 	jr .done_joypad_update_page
@@ -576,6 +564,8 @@ PokegearPhone_GetDPad: ; 9126d (24:526d)
 
 PokegearPhone_UpdateCursor: ; 912b7 (24:52b7)
 	ld a, " "
+	hlcoord 1, 2
+	ld [hl], a
 	hlcoord 1, 4
 	ld [hl], a
 	hlcoord 1, 6
@@ -584,7 +574,7 @@ PokegearPhone_UpdateCursor: ; 912b7 (24:52b7)
 	ld [hl], a
 	hlcoord 1, 10
 	ld [hl], a
-	hlcoord 1, 4
+	hlcoord 1, 2
 	ld a, [wPokegearPhoneCursorPosition]
 	ld bc, 2 * SCREEN_WIDTH
 	call AddNTimes
@@ -592,8 +582,8 @@ PokegearPhone_UpdateCursor: ; 912b7 (24:52b7)
 	ret
 
 PokegearPhone_UpdateDisplayList: ; 912d8 (24:52d8)
-	hlcoord 1, 3
-	ld b, 9
+	hlcoord 1, 1
+	ld b, 11
 	ld a, " "
 .row
 	ld c, 18
@@ -605,6 +595,12 @@ PokegearPhone_UpdateDisplayList: ; 912d8 (24:52d8)
 	inc hl
 	dec b
 	jr nz, .row
+	call GetMapHeaderPhoneServiceNybble
+	and a
+	jr nz, .no_service
+	hlcoord 18, 1
+	ld [hl], $40 ; phone service icon
+.no_service
 	ld a, [wPokegearPhoneScrollPosition]
 	ld e, a
 	ld d, $0
@@ -616,7 +612,7 @@ PokegearPhone_UpdateDisplayList: ; 912d8 (24:52d8)
 	ld a, [hli]
 	push hl
 	push af
-	hlcoord 2, 4
+	hlcoord 2, 2
 	ld a, [wPokegearPhoneLoadNameBuffer]
 	ld bc, 2 * SCREEN_WIDTH
 	call AddNTimes
@@ -629,7 +625,7 @@ PokegearPhone_UpdateDisplayList: ; 912d8 (24:52d8)
 	ld a, [wPokegearPhoneLoadNameBuffer]
 	inc a
 	ld [wPokegearPhoneLoadNameBuffer], a
-	cp $4 ; 4 entries fit on the screen
+	cp VISIBLE_PHONE_LIST_SIZE
 	jr c, .loop
 	jp PokegearPhone_UpdateCursor
 

@@ -127,6 +127,8 @@ DebugCheatScript:
 	callasm FillPokedex
 	; phone
 	addcellnum PHONE_MOM
+	addcellnum PHONE_OAK
+	addcellnum PHONE_BILL
 	closetext
 	end
 
