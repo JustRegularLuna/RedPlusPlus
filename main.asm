@@ -1045,14 +1045,14 @@ DoDexSearchSlowpokeFrame: ; 44207
 
 DisplayDexEntry: ; 4424d
 	call GetPokemonName
-	hlcoord 9, 3
+	hlcoord 9, 2
 	call PlaceString ; mon species
 	ld a, [wd265]
 	ld b, a
 	call GetDexEntryPointer
 	ld a, b
 	push af
-	hlcoord 9, 5
+	hlcoord 9, 4
 	call FarString ; dex species
 	ld h, b
 	ld l, c
@@ -1122,7 +1122,7 @@ DisplayDexEntry: ; 4424d
 	ld de, 16646 ; 0.254 << 16
 	call Mul16
 	ld de, hTmpd
-	hlcoord 11, 7
+	hlcoord 11, 6
 	lb bc, 2, PRINTNUM_RIGHTALIGN | 5
 	call PrintNum
 	pop hl
@@ -1134,10 +1134,10 @@ DisplayDexEntry: ; 4424d
 	ld hl, sp+$0
 	ld d, h
 	ld e, l
-	hlcoord 12, 7
+	hlcoord 12, 6
 	lb bc, 2, PRINTNUM_MONEY | 4
 	call PrintNum
-	hlcoord 14, 7
+	hlcoord 14, 6
 	ld [hl], "′"
 	pop af
 	pop hl
@@ -1163,7 +1163,7 @@ DisplayDexEntry: ; 4424d
 	ld de, 29726 ; 0.45359237 << 16
 	call Mul16
 	ld de, hTmpd
-	hlcoord 11, 9
+	hlcoord 11, 8
 	lb bc, 2, PRINTNUM_RIGHTALIGN | 5
 	call PrintNum
 	jr .skip_weight
@@ -1173,7 +1173,7 @@ DisplayDexEntry: ; 4424d
 	ld hl, sp+$0
 	ld d, h
 	ld e, l
-	hlcoord 11, 9
+	hlcoord 11, 8
 	lb bc, 2, PRINTNUM_RIGHTALIGN | 5
 	call PrintNum
 	pop de
@@ -1183,17 +1183,11 @@ DisplayDexEntry: ; 4424d
 	lb bc, 5, SCREEN_WIDTH - 2
 	hlcoord 2, 11
 	call ClearBox
-	hlcoord 1, 10
-	ld bc, SCREEN_WIDTH - 1
-	ld a, $5f ; horizontal divider
-	call ByteFill
+	call DrawPokedexHorizontalDivider
+
 	; page number
-	hlcoord 1, 9
-	ld [hl], $55
-	inc hl
-	ld [hl], $55
 	hlcoord 1, 10
-	ld [hl], $56 ; P.
+	ld [hl], $5f ; P.
 	inc hl
 	ld [hl], $57 ; 1
 	pop de
@@ -1213,17 +1207,11 @@ DisplayDexEntry: ; 4424d
 	lb bc, 5, SCREEN_WIDTH - 2
 	hlcoord 2, 11
 	call ClearBox
-	hlcoord 1, 10
-	ld bc, SCREEN_WIDTH - 1
-	ld a, $5f ; horizontal divider
-	call ByteFill
+	call DrawPokedexHorizontalDivider
+
 	; page number
-	hlcoord 1, 9
-	ld [hl], $55
-	inc hl
-	ld [hl], $55
 	hlcoord 1, 10
-	ld [hl], $56 ; P.
+	ld [hl], $5f ; P.
 	inc hl
 	ld [hl], $58 ; 2
 	pop de
@@ -1231,6 +1219,20 @@ DisplayDexEntry: ; 4424d
 	pop af
 	hlcoord 2, 11
 	jp FarString
+
+DrawPokedexHorizontalDivider:
+	hlcoord 1, 9
+	ld b, 9
+.loop
+	ld a, $55
+	ld [hli], a
+	inc a
+	ld [hli], a
+	dec b
+	jr nz, .loop
+	dec a
+	ld [hl], a
+	ret
 
 ; Metric conversion code by TPP Anniversary Crystal 251
 ; https://github.com/TwitchPlaysPokemon/tppcrystal251pub/blob/public/main.asm

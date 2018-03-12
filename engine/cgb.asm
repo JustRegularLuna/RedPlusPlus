@@ -254,7 +254,7 @@ _CGB_PokedexAreaPals:
 	ld a, $5
 	call FarCopyWRAM
 
-	ld hl, .InvertedGrayPalette
+	ld hl, .GrayPalette
 	ld de, UnknBGPals palette 0
 	ld bc, 1 palettes
 	ld a, $5
@@ -265,12 +265,12 @@ _CGB_PokedexAreaPals:
 	ld [hCGBPalUpdate], a
 	ret
 
-.InvertedGrayPalette:
+.GrayPalette:
 if !DEF(MONOCHROME)
-	RGB 00, 00, 00
+	RGB 31, 31, 31
 	RGB 21, 00, 21
 	RGB 13, 00, 13
-	RGB 31, 31, 31
+	RGB 00, 00, 00
 else
 	RGB_MONOCHROME_BLACK
 	RGB_MONOCHROME_LIGHT
@@ -363,7 +363,7 @@ _CGB_Pokedex: ; 8f70
 	ld a, [CurPartySpecies]
 	cp $ff
 	jr nz, .is_pokemon
-	ld hl, .GreenPicPalette
+	ld hl, .SepiaPicPalette
 	call LoadHLPaletteIntoDE
 	jr .got_palette
 .is_pokemon
@@ -394,22 +394,22 @@ _CGB_Pokedex: ; 8f70
 	jp _CGB_FinishLayout
 ; 8fba
 
-.GreenPicPalette: ; 8fba
+.SepiaPicPalette: ; 8fba
 if !DEF(MONOCHROME)
-	RGB 11, 23, 00
-	RGB 07, 17, 00
-	RGB 06, 16, 03
-	RGB 05, 12, 01
+	RGB 28, 27, 24
+	RGB 24, 22, 17
+	RGB 19, 17, 13
+	RGB 15, 12, 07
 else
 	MONOCHROME_RGB_FOUR
 endc
 
 .CursorPalette: ; 8fc2
 if !DEF(MONOCHROME)
-	RGB 00, 00, 00
-	RGB 11, 23, 00
-	RGB 07, 17, 00
-	RGB 00, 00, 00
+	RGB 31, 31, 31
+	RGB 24, 22, 17
+	RGB 19, 17, 13
+	RGB 15, 12, 07
 else
 	MONOCHROME_RGB_FOUR
 endc

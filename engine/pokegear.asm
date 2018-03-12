@@ -2439,7 +2439,7 @@ _Area: ; 91d11
 
 .UpdateGFX:
 	call ClearSprites
-	farcall _Pokedex_JustBlackOutBG
+	farcall _Pokedex_JustWhiteOutBG
 	ld a, [wTownMapCursorLandmark]
 	cp KANTO_REGION
 	jr z, .KantoGFX
