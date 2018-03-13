@@ -4006,7 +4006,8 @@ SECTION "Code 18", ROMX
 
 INCLUDE "engine/phone.asm"
 INCLUDE "engine/timeset.asm"
-INCLUDE "engine/pokegear.asm"
+INCLUDE "engine/vs_seeker.asm"
+INCLUDE "engine/town_map.asm"
 INCLUDE "engine/events/fish.asm"
 INCLUDE "engine/slot_machine.asm"
 
