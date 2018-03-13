@@ -91,27 +91,27 @@ ItemIconPointers:
 	dw CoinCaseIcon
 	dw ItemfinderIcon
 	dw ExpShareIcon
-	dw MysteryEggIcon
+	dw OaksParcelIcon
 	dw SquirtBottleIcon
-	dw SecretPotionIcon
-	dw RedScaleIcon
+	dw TownMapIcon
+	dw LiftKeyIcon
 	dw CardKeyIcon
-	dw BasementKeyIcon
+	dw SecretKeyIcon
 	dw SSTicketIcon
-	dw PassIcon
-	dw MachinePartIcon
-	dw LostItemIcon
+	dw BikeVoucherIcon
+	dw PokeFluteIcon
+	dw GoldTeethIcon
 	dw RainbowWingIcon
 	dw SilverWingIcon
 	dw ClearBellIcon
 	dw GSBallIcon
-	dw BlueCardIcon
+	dw EonTicketIcon
 	dw OrangeTicketIcon
 	dw MysticTicketIcon
 	dw OldSeaMapIcon
 	dw ShinyCharmIcon
 	dw OvalCharmIcon
-	dw SilphScope2Icon
+	dw SilphScopeIcon
 	dw ApricornBoxIcon
 	dw VsSeekerIcon
 	dw CheriBerryIcon
