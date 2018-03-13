@@ -1116,9 +1116,8 @@ PokedexSeen:: flag_array NUM_POKEMON
 EndPokedexSeen::
 
 UnownDex:: ds 28
-	ds 1
+	ds 2 ; unused
 
-wFirstUnownSeen:: ds 1
 wFirstMagikarpSeen:: ds 1
 
 wDaycareMan::

@@ -102,6 +102,7 @@ DebugCheatScript:
 	giveitem TOWN_MAP
 	giveitem POKE_FLUTE
 	giveitem VS_SEEKER
+	giveitem MAX_REPEL, 99
 	giveitem ESCAPE_ROPE, 99
 	; shiny dex
 	setflag ENGINE_CREDITS_SKIP
@@ -137,7 +138,6 @@ DebugCheatScript:
 
 FillPokedex:
 	ld a, 1
-	ld [wFirstUnownSeen], a
 	ld [wFirstMagikarpSeen], a
 	ld hl, PokedexSeen
 	call .Fill
