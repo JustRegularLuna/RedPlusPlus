@@ -883,11 +883,7 @@ PCItemsEnd::
 
 Apricorns:: ds NUM_APRICORNS
 
-wPokegearFlags::
-; bit 0: map
-; bit 1: radio
-; bit 2: phone
-; bit 3: expn
+wVsSeekerFlags::
 ; bit 7: on/off
 	ds 1
 wRadioTuningKnob:: ds 1
@@ -1022,7 +1018,7 @@ wBlueCardBalance:: ds 1
 
 wBugContestOfficerPrize:: ds 1
 
-wInPokegear:: ds 1
+wInVsSeeker:: ds 1
 wWalkingOnBridge:: ds 1
 
 wDailyRematchFlags:: ds 4

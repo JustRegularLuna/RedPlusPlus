@@ -26,14 +26,9 @@ DebugCheatScript:
 	; time
 	special Special_SetDayOfWeek
 	special Special_InitialClearDSTFlag
-	; full pokegear
-	setflag ENGINE_POKEGEAR
-	setflag ENGINE_PHONE_CARD
-	setflag ENGINE_MAP_CARD
-	setflag ENGINE_RADIO_CARD
-	setflag ENGINE_EXPN_CARD
-	; pokedex
+	; gear
 	setflag ENGINE_POKEDEX
+	setflag ENGINE_VS_SEEKER
 	; all hms
 	givetmhm HM_CUT
 	givetmhm HM_FLY
@@ -104,6 +99,7 @@ DebugCheatScript:
 	giveitem BICYCLE
 	giveitem TOWN_MAP
 	giveitem POKE_FLUTE
+	giveitem VS_SEEKER
 	giveitem ESCAPE_ROPE, 99
 	; shiny dex
 	setflag ENGINE_CREDITS_SKIP
@@ -132,6 +128,8 @@ DebugCheatScript:
 	callasm FillPokedex
 	; phone
 	addcellnum PHONE_MOM
+	addcellnum PHONE_OAK
+	addcellnum PHONE_BILL
 	closetext
 	end
 

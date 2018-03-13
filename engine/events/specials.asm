@@ -173,12 +173,6 @@ BugContestJudging: ; c34a
 	ret
 ; c355
 
-MapRadio: ; c355
-	ld a, [ScriptVar]
-	ld e, a
-	farjp PlayRadio
-; c360
-
 Special_UnownPuzzle: ; c360
 	call FadeToMenu
 	farcall UnownPuzzle

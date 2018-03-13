@@ -167,7 +167,7 @@ StartMenu:: ; 125cd
 	dw StartMenu_Save,     .SaveString,     .NullDesc
 	dw StartMenu_Option,   .OptionString,   .NullDesc
 	dw StartMenu_Exit,     .ExitString,     .NullDesc
-	dw StartMenu_Pokegear, .PokegearString, .NullDesc
+	dw StartMenu_VsSeeker, .VsSeekerString, .NullDesc
 	dw StartMenu_Quit,     .QuitString,     .NullDesc
 
 .PokedexString: 	db "#dex@"
@@ -177,7 +177,7 @@ StartMenu:: ; 125cd
 .SaveString:    	db "Save@"
 .OptionString:  	db "Options@"
 .ExitString:    	db "Exit@"
-.PokegearString:	db "<PO><KE>gear@"
+.VsSeekerString:	db "Phone@"
 .QuitString:    	db "Quit@"
 
 ; Menu accounts are removed; this is vestigial
@@ -248,12 +248,12 @@ endr
 	call .AppendMenuList
 .no_pack
 
-	ld hl, wPokegearFlags
+	ld hl, wVsSeekerFlags
 	bit 7, [hl]
-	jr z, .no_pokegear
-	ld a, 7 ; pokegear
+	jr z, .no_vs_seeker
+	ld a, 7 ; vs_seeker
 	call .AppendMenuList
-.no_pokegear
+.no_vs_seeker
 
 	ld a, 3 ; status
 	call .AppendMenuList
@@ -397,11 +397,11 @@ StartMenu_Pokedex: ; 12937
 ; 1294c
 
 
-StartMenu_Pokegear: ; 1294c
+StartMenu_VsSeeker: ; 1294c
 
 	call FadeToMenu
 	farcall InitPokegearPalettes
-	farcall PokeGear
+	farcall VsSeeker
 	call CloseSubmenu
 	call WaitBGMap
 	call SetPalettes

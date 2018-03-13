@@ -7,12 +7,8 @@ EngineFlags: ; 80462
 
 	; location, bit
 
-	; pokegear
-	engine_flag wPokegearFlags, 1 ; radio card ; $0
-	engine_flag wPokegearFlags, 0 ; map card
-	engine_flag wPokegearFlags, 2 ; phone card
-	engine_flag wPokegearFlags, 3 ; expn card
-	engine_flag wPokegearFlags, 7 ; on/off
+	; vs seeker
+	engine_flag wVsSeekerFlags, 7 ; on/off
 
 	;   wDaycareMan, 7 ; daycare 1 on
 	engine_flag wDaycareMan, 6 ; egg is ready

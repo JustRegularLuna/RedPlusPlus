@@ -121,7 +121,7 @@ PlaceTwoChoiceBox:
 	ld [wMenuBorderTopCoord], a
 	add 4
 	ld [wMenuBorderBottomCoord], a
-	ld a, [wInPokegear]
+	ld a, [wInVsSeeker]
 	and a
 	ld a, SCREEN_WIDTH - 6
 	jr z, .ok

@@ -49,13 +49,13 @@ TilesetIndigoAnim:
 TilesetRoutesAnim:
 TilesetForestAnim:
 TilesetSafariZoneAnim:
-	dw KantoWaterFrames1, AnimateFarawayWaterTile
-	dw KantoWaterFrames2, AnimateFarawayWaterTile
+	dw KantoWaterFrames, AnimateFarawayWaterTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateKantoFlowerTile
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -256,8 +256,8 @@ TilesetPCForestAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetFarawayAnim:
-	dw FarawayWaterFrames1, AnimateFarawayWaterTile
-	dw FarawayWaterFrames2, AnimateFarawayWaterTile
+	dw FarawayWaterFrames, AnimateFarawayWaterTiles
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -300,14 +300,14 @@ TilesetTunnelAnim:
 
 TilesetShamoutiAnim:
 TilesetValenciaAnim:
-	dw FarawayWaterFrames1, AnimateFarawayWaterTile
-	dw FarawayWaterFrames2, AnimateFarawayWaterTile
+	dw FarawayWaterFrames, AnimateFarawayWaterTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -614,16 +614,16 @@ RainWaterTileFrames:
 	INCBIN "gfx/tilesets/rain/rain_water.2bpp"
 
 
-AnimateFarawayWaterTile:
-; Draw a faraway water tile for the current frame in VRAM tile at de.
+AnimateFarawayWaterTiles:
+; Draw both faraway water tiles for the current frame in VRAM tiles at de.
 
 ; Struct:
-; 	VRAM address
+;	VRAM address
 ;	Address of the first tile
 
-; Only does one of 2 tiles at a time.
+; Does two tiles at a time.
 
-; Save sp in bc (see WriteTile).
+; Save sp in bc (see WriteTwoTiles).
 	ld hl, sp+$0
 	ld b, h
 	ld c, l
@@ -641,6 +641,7 @@ AnimateFarawayWaterTile:
 	ld a, [TileAnimationTimer]
 	and %111 ; 8 frames x2
 	swap a  ; * 16 bytes per tile
+	sla a   ; * 2 tiles
 
 	add [hl]
 	inc hl
@@ -656,7 +657,7 @@ AnimateFarawayWaterTile:
 	ld l, e
 	ld h, d
 
-	jp WriteTile
+	jp WriteTwoTiles
 
 
 ForestTreeLeftAnimation: ; fc45c
@@ -1049,7 +1050,7 @@ SafariFountainFrames: ; fc605
 
 AnimateSproutPillarTile: ; fc645
 ; Read from struct at de:
-; 	Destination (VRAM)
+;	Destination (VRAM)
 ;	Address of the first tile in the frame array
 
 	ld hl, sp+$0
@@ -1106,7 +1107,7 @@ AnimateWhirlpoolTile: ; fc678
 ; Update whirlpool tile using struct at de.
 
 ; Struct:
-; 	VRAM address
+;	VRAM address
 ;	Address of the first tile
 
 ; Only does one of 4 tiles at a time.
@@ -1226,6 +1227,7 @@ WriteTile: ; fc6ac
 	inc hl
 	ld [hl], d
 
+_FinishWritingSecondTile:
 rept 7
 	pop de
 	inc hl
@@ -1240,6 +1242,26 @@ endr
 	ld sp, hl
 	ret
 ; fc6d7
+
+
+WriteTwoTiles:
+; Write two 8x8 tile ($20 bytes) from sp to hl.
+
+; Warning: sp is saved in bc so we can abuse pop.
+; sp is restored to address bc. Save sp in bc before calling.
+
+	pop de
+	ld [hl], e
+	inc hl
+	ld [hl], d
+rept 8
+	pop de
+	inc hl
+	ld [hl], e
+	inc hl
+	ld [hl], d
+endr
+	jr _FinishWritingSecondTile
 
 
 FlickeringCaveEntrancePalette: ; fc71e
@@ -1317,16 +1339,7 @@ WhirlpoolTiles4: INCBIN "gfx/tilesets/whirlpool/4.2bpp"
 ; fcba8
 
 
-LCDFrames: dw VTiles2 tile $6d, LCDTiles
+FarawayWaterFrames: dw VTiles2 tile $14, RSEWaterTiles
+KantoWaterFrames: dw VTiles2 tile $03, RSEWaterTiles
 
-LCDTiles:
-
-
-FarawayWaterFrames1: dw VTiles2 tile $14, FarawayWaterTiles1
-FarawayWaterFrames2: dw VTiles2 tile $15, FarawayWaterTiles2
-
-KantoWaterFrames1: dw VTiles2 tile $03, FarawayWaterTiles1
-KantoWaterFrames2: dw VTiles2 tile $04, FarawayWaterTiles2
-
-FarawayWaterTiles1: INCBIN "gfx/tilesets/water/faraway_water_1.2bpp"
-FarawayWaterTiles2: INCBIN "gfx/tilesets/water/faraway_water_2.2bpp"
+RSEWaterTiles: INCBIN "gfx/tilesets/water/rse_water.2bpp"

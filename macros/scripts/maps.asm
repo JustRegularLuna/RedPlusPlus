@@ -107,6 +107,18 @@ else
 endc
 ENDM
 
+cavebase_event: MACRO
+	object_event \1, \2, SPRITE_SECRET_BASE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, PERSONTYPE_COMMAND, jumpstd, cavegrotto, \3, \4
+ENDM
+
+treebase_event: MACRO
+	object_event \1, \2, SPRITE_SECRET_BASE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, jumpstd, treegrotto, \3, \4
+ENDM
+
+treebase_made_event: MACRO
+	object_event \1, \2, SPRITE_SECRET_BASE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, jumpstd, treegrotto, \3, \4
+ENDM
+
 pc_nurse_event: MACRO
 	object_event \1, \2, SPRITE_BOWING_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumpstd, pokecenternurse, -1
 ENDM
