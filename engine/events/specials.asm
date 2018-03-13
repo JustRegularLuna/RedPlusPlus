@@ -133,14 +133,22 @@ Special_DisplayLinkRecord: ; c2da
 	jp ExitAllMenus
 ; c2e7
 
-Special_KrissHousePC: ; c2e7
+Special_PlayersHousePC: ; c2e7
 	xor a
 	ld [ScriptVar], a
-	farcall _KrissHousePC
+	farcall _PlayersHousePC
 	ld a, c
 	ld [ScriptVar], a
 	ret
 ; c2f6
+
+Special_SecretBasePC:
+	xor a
+	ld [ScriptVar], a
+	farcall _SecretBasePC
+	ld a, c
+	ld [ScriptVar], a
+	ret
 
 BugContestJudging: ; c34a
 	farcall _BugContestJudging

@@ -8,11 +8,13 @@ RedsHouse2F_MapScriptHeader:
 
 	db 0 ; coord events
 
+
+	db 2 ; bg events
+	bg_event  0,  1, SIGNPOST_READ, RedsHouse2FPCScript
 if DEF(DEBUG)
-	db 1 ; bg events
 	bg_event  3,  5, SIGNPOST_READ, DebugCheatScript
 else
-	db 0 ; bg events
+	bg_event  3,  5, SIGNPOST_JUMPTEXT, RedsHouse2FSNESText
 endc
 
 	db 0 ; object events
@@ -149,3 +151,20 @@ FillPokedex:
 	ret
 
 endc
+
+RedsHouse2FPCScript:
+	opentext
+	special Special_PlayersHousePC
+	iftrue .Warp
+	endtext
+.Warp:
+	warp NONE, 0, 0
+	end
+
+RedsHouse2FSNESText:
+	text "<PLAYER> is"
+	line "playing the SNES."
+
+	para "…Okay!"
+	line "It's time to go!"
+	done

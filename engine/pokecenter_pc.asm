@@ -169,7 +169,28 @@ PC_WaitPlaySFX: ; 156d0
 	jp PlaySFX
 ; 156d9
 
-_KrissHousePC: ; 156d9
+_PlayersHousePC: ; does not have decoration
+	call PC_PlayBootSound
+	ld hl, UnknownText_0x156ff
+	call PC_DisplayText
+	ld b, $0
+	call _PlayersPC
+	and a
+	jr nz, .asm_156f9
+	call OverworldTextModeSwitch
+	call ApplyTilemap
+	call UpdateSprites
+	call PC_PlayShutdownSound
+	ld c, $0
+	ret
+
+.asm_156f9
+	call ClearBGPalettes
+	ld c, $1
+	ret
+; 156ff
+
+_SecretBasePC: ; has decorations
 	call PC_PlayBootSound
 	ld hl, UnknownText_0x156ff
 	call PC_DisplayText
