@@ -559,7 +559,7 @@ OaksPkmnTalk9:
 	db "@"
 
 OaksPkmnTalk10:
-	farcall RadioMusicRestartPokemonChannel
+	call RadioMusicRestartPokemonChannel
 	ld hl, OPT_RestartText
 	call PrintText
 	call WaitBGMap
@@ -620,7 +620,7 @@ OaksPkmnTalk14:
 	dec [hl]
 	ret nz
 	ld de, MUSIC_OAKS_LAB
-	farcall RadioMusicRestartDE
+	call RadioMusicRestartDE
 	ld hl, .terminator
 	call PrintText
 	ld a, OAKS_POKEMON_TALK_4
@@ -1744,8 +1744,8 @@ BuenasPassword19:
 BuenasPassword20:
 	ld a, [hBGMapMode]
 	push af
-	farcall NoRadioMusic
-	farcall NoRadioName
+	call NoRadioMusic
+	call NoRadioName
 	pop af
 	ld [hBGMapMode], a
 	ld hl, WeeklyFlags
@@ -1900,3 +1900,34 @@ NextRadioLine:
 	call CopyRadioTextToRAM
 	pop af
 	jp PrintRadioLine
+
+RadioMusicRestartDE: ; 91854 (24:5854)
+	push de
+	call NoRadioMusic
+	pop de
+	ld a, e
+	ld [wMapMusic], a
+	jp PlayMusic
+
+RadioMusicRestartPokemonChannel: ; 91868 (24:5868)
+	push de
+	call NoRadioMusic
+	pop de
+	ld de, MUSIC_OAKS_LAB
+	jp PlayMusic
+
+NoRadioMusic: ; 9189d (24:589d)
+	ld de, MUSIC_NONE
+	jp PlayMusic
+
+NoRadioName: ; 918a9 (24:58a9)
+	xor a
+	ld [hBGMapMode], a
+	hlcoord 1, 8
+	lb bc, 3, 18
+	call ClearBox
+	hlcoord 0, 12
+	ld bc, $412
+	jp TextBox
+
+; 918bf

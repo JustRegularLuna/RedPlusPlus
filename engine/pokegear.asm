@@ -45,7 +45,7 @@ VsSeeker: ; 90b8d (24:4b8d)
 	ld [hBGMapAddress + 1], a
 	ld a, $90
 	ld [hWY], a
-	jp ExitPokegearRadio_HandleMusic
+	ret
 
 .InitTilemap: ; 90bea (24:4bea)
 	call ClearBGPalettes
@@ -392,7 +392,6 @@ PokegearPhone_Init: ; 91156 (24:5156)
 	call SetPalettes
 
 	call InitPokegearTilemap
-	call ExitPokegearRadio_HandleMusic
 	ld hl, PokegearText_WhomToCall
 	jp PrintText
 
@@ -858,24 +857,6 @@ PokegearPhoneContactSubmenu: ; 91342 (24:5342)
 
 ; 9146e
 
-ExitPokegearRadio_HandleMusic: ; 91492
-	ld a, [wPokegearRadioMusicPlaying]
-	cp $fe
-	jr z, .restart_map_music
-	cp $ff
-	call z, EnterMapMusic
-	xor a
-	ld [wPokegearRadioMusicPlaying], a
-	ret
-
-.restart_map_music
-	call RestartMapMusic
-	xor a
-	ld [wPokegearRadioMusicPlaying], a
-	ret
-
-; 914ab
-
 DeleteSpriteAnimStruct2ToEnd: ; 914ab (24:54ab)
 	ld hl, SpriteAnim2
 	ld bc, wSpriteAnimationStructsEnd - SpriteAnim2
@@ -935,57 +916,6 @@ INCBIN "gfx/pokegear/pokegear_sprites.2bpp.lz"
 PhoneTilemapRLE: ; 9158a
 INCBIN "gfx/pokegear/phone.tilemap.rle"
 ; 9163e
-
-RadioMusicRestartDE: ; 91854 (24:5854)
-	push de
-	ld a, e
-	ld [wPokegearRadioMusicPlaying], a
-	ld de, MUSIC_NONE
-	call PlayMusic
-	pop de
-	ld a, e
-	ld [wMapMusic], a
-	jp PlayMusic
-
-RadioMusicRestartPokemonChannel: ; 91868 (24:5868)
-	push de
-	ld a, $fe
-	ld [wPokegearRadioMusicPlaying], a
-	ld de, MUSIC_NONE
-	call PlayMusic
-	pop de
-	ld de, MUSIC_OAKS_LAB
-	jp PlayMusic
-
-NoRadioMusic: ; 9189d (24:589d)
-	ld de, MUSIC_NONE
-	call PlayMusic
-	ld a, $ff
-	ld [wPokegearRadioMusicPlaying], a
-	ret
-
-NoRadioName: ; 918a9 (24:58a9)
-	xor a
-	ld [hBGMapMode], a
-	hlcoord 1, 8
-	lb bc, 3, 18
-	call ClearBox
-	hlcoord 0, 12
-	ld bc, $412
-	jp TextBox
-
-; 918bf
-
-OaksPkmnTalkName:     db "Oak's <PK><MN> Talk@"
-PokedexShowName:      db "#dex Show@"
-PokemonMusicName:     db "#mon Music@"
-LuckyChannelName:     db "Lucky Channel@"
-UnknownStationName:   db "?????@"
-
-PlacesAndPeopleName:  db "Places & People@"
-LetsAllSingName:      db "Let's All Sing!@"
-PokeFluteStationName: db "# Flute@"
-; 9191c
 
 _TownMap: ; 9191c
 	ld hl, Options1
