@@ -92,7 +92,7 @@ Pokegear_LoadGFX: ; 90c4e
 	ld a, BANK(PokegearGFX)
 	call Decompress
 	ld hl, PokegearSpritesGFX
-	ld de, VTiles0
+	ld de, VTiles0 tile $04
 	ld a, BANK(PokegearSpritesGFX)
 	call Decompress
 	ld a, [MapGroup]
