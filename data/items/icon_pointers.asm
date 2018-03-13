@@ -113,7 +113,7 @@ ItemIconPointers:
 	dw OvalCharmIcon
 	dw SilphScope2Icon
 	dw ApricornBoxIcon
-	dw NoItemIcon
+	dw VsSeekerIcon
 	dw CheriBerryIcon
 	dw ChestoBerryIcon
 	dw PechaBerryIcon

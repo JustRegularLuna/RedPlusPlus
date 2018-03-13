@@ -112,7 +112,7 @@ ItemNames::
 	db "Oval Charm@"
 	db "SilphScope@"
 	db "Apricorn Box@"
-	db "Teru-sama@"
+	db "Vs.Seeker@"
 	db "Cheri Berry@"
 	db "Chesto Berry@"
 	db "Pecha Berry@"

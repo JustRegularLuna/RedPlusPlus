@@ -127,7 +127,7 @@ ItemEffects: ; e73c
 	dw NoEffect         ; OVAL_CHARM
 	dw NoEffect         ; SILPHSCOPE
 	dw ApricornBox      ; APRICORN_BOX
-	dw NoEffect         ; TERU_SAMA
+	dw NoEffect         ; VS_SEEKER ** TODO: Give this the right effect
 	dw HealStatusEffect ; CHERI_BERRY
 	dw HealStatusEffect ; CHESTO_BERRY
 	dw HealStatusEffect ; PECHA_BERRY

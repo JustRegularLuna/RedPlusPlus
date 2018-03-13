@@ -130,8 +130,7 @@
 	const OVAL_CHARM   ; 6f
 	const SILPHSCOPE   ; 70 * Changed
 	const APRICORN_BOX ; 71
-
-	const TERU_SAMA    ; 72
+	const VS_SEEKER    ; 72 * Changed
 
 	const CHERI_BERRY  ; 73
 	const CHESTO_BERRY ; 74

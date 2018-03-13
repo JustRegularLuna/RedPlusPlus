@@ -99,6 +99,7 @@ DebugCheatScript:
 	giveitem BICYCLE
 	giveitem TOWN_MAP
 	giveitem POKE_FLUTE
+	giveitem VS_SEEKER
 	giveitem ESCAPE_ROPE, 99
 	; shiny dex
 	setflag ENGINE_CREDITS_SKIP

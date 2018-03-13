@@ -112,7 +112,7 @@ ItemDescriptions:
 	dw OvalCharmDesc
 	dw SilphScopeDesc
 	dw ApricornBoxDesc
-	dw TeruSamaDesc
+	dw VsSeekerDesc
 	dw CheriBerryDesc
 	dw ChestoBerryDesc
 	dw PechaBerryDesc
@@ -676,6 +676,10 @@ SilphScopeDesc:
 ApricornBoxDesc:
 	db   "Holds up to 99 of"
 	next "each Apricorn.@"
+
+VsSeekerDesc:
+	db   "Device that calls"
+	next "trainers.@"
 
 CheriBerryDesc:
 	db   "A self-cure for"
