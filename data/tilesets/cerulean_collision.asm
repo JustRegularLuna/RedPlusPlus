@@ -162,6 +162,10 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, DOOR, WALL
 	tilecoll WALL, WALL, WALL, WALL
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, WALL, WALL
@@ -173,10 +177,6 @@
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, POKECENTER_SIGN, WALL
 	tilecoll WALL, WALL, MART_SIGN, WALL
-	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN
-	tilecoll TV, TV, TV, TV
-	tilecoll TV, TV, TV, TV
-	tilecoll TV, TV, TV, TV
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
