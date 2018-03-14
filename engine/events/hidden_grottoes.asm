@@ -108,7 +108,7 @@ TryResetHiddenGrottoes:
 	ret nz
 	xor a
 	ld hl, HiddenGrottoContents
-	ld bc, NUM_HIDDEN_GROTTOES * 2
+	ld bc, NUM_SECRET_BASES * 2
 	call ByteFill
 	ld hl, DailyFlags4
 	set 5, [hl] ; ENGINE_ALL_HIDDEN_GROTTOES

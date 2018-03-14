@@ -16,10 +16,12 @@ PalletTown_MapScriptHeader:
 	bg_event  3,  5, SIGNPOST_JUMPTEXT, PalletTownText6
 	bg_event 11,  5, SIGNPOST_JUMPTEXT, PalletTownText7
 
-	db 3 ; object events
+	db 5 ; object events
 	object_event  8,  6, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  3,  8, SPRITE_GIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, PalletTownText2, -1
 	object_event 11, 15, SPRITE_FISHER2, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, PERSONTYPE_COMMAND, jumptextfaceplayer, PalletTownText3, -1
+	treebase_left_event_1 10, 21, SECRET_BASE_ROUTE_21, EVENT_SECRET_BASE_ROUTE_21 ; visible on Route21
+	treebase_left_event_2 10, 21, SECRET_BASE_ROUTE_21, EVENT_SECRET_BASE_ROUTE_21_ESTABLISHED ; visible on Route21
 
 	const_def 1 ; object constants
 	const PALLETTOWN_OAK

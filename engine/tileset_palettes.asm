@@ -2008,6 +2008,12 @@ LoadSpecialMapOBPalette:
 	jp FarCopyWRAM
 
 .not_overcast
+	ld a, [MapGroup]
+	cp GROUP_CERULEAN_CITY
+	jr z, .maybe_cerulean
+	cp GROUP_MOUNT_MOON_SQUARE
+	jr z, .maybe_mount_moon_square
+.not_cable_car:
 	ld a, [wTileset]
 	cp TILESET_PC_SHAMOUTI_ISLAND
 	jr nz, .not_shamouti_island
@@ -2021,13 +2027,24 @@ LoadSpecialMapOBPalette:
 	ld a, $5
 	jp FarCopyWRAM
 
-.not_shamouti_island:
-	cp TILESET_CERULEAN
-	jr nz, .not_cerulean
+.maybe_cerulean:
+	ld a, [MapNumber]
+	cp MAP_ROUTE_4
+	jr z, .cable_car
+	cp MAP_CERULEAN_CITY
+	jr nz, .not_cable_car
+.cable_car:
 	ld hl, UnknBGPals palette PAL_BG_GRAY
-	jp .load_rock_palette
+	ld de, UnknOBPals palette PAL_OW_PURPLE
+	jp .load_single_palette
 
-.not_cerulean:
+.maybe_mount_moon_square:
+	ld a, [MapNumber]
+	cp MAP_MOUNT_MOON_SQUARE
+	jr z, .cable_car
+	jr .not_cable_car
+
+.not_shamouti_island:
 	cp TILESET_SAFFRON
 	jr nz, .not_saffron
 	ld hl, UnknBGPals palette PAL_BG_YELLOW
@@ -2083,7 +2100,7 @@ LoadSpecialMapOBPalette:
 	cp MAP_ROCK_TUNNEL_2F
 	jr nz, .not_rock_tunnel_2f
 	ld hl, RockTunnelOBPalette_Tree
-	jr .load_tree_palette
+	jp .load_tree_palette
 
 .not_rock_tunnel_2f:
 	ld a, [MapGroup]

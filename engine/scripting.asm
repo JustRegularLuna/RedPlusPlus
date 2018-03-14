@@ -688,7 +688,7 @@ GetTMHMPocketName:
 	jp CopyName2
 
 .TMHMPocket:
-	db "TM Pocket@"
+	db "TM Case@"
 
 CurItemName:
 	ld a, [CurItem]

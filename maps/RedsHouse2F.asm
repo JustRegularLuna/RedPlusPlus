@@ -1,25 +1,33 @@
 RedsHouse2F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, RedsHouse2FInitializeEvents
 
 	db 1 ; warp events
 	warp_event  7,  0, REDS_HOUSE_1F, 3
 
 	db 0 ; coord events
 
-
 	db 2 ; bg events
-	bg_event  0,  1, SIGNPOST_READ, RedsHouse2FPCScript
+	bg_event  0,  1, SIGNPOST_UP, RedsHouse2FPCScript
 if DEF(DEBUG)
 	bg_event  3,  5, SIGNPOST_READ, DebugCheatScript
 else
-	bg_event  3,  5, SIGNPOST_JUMPTEXT, RedsHouse2FSNESText
+	bg_event  3,  5, SIGNPOST_UP, RedsHouse2FSNESScipt
 endc
 
 	db 0 ; object events
 
 	const_def 1 ; object constants
+
+RedsHouse2FInitializeEvents:
+	checkevent EVENT_INITIALIZED_EVENTS
+	iftrue .SkipInizialization
+	jumpstd initializeevents
+
+.SkipInizialization:
+	return
 
 if DEF(DEBUG)
 
@@ -155,13 +163,11 @@ endc
 RedsHouse2FPCScript:
 	opentext
 	special Special_PlayersHousePC
-	iftrue .Warp
 	endtext
-.Warp:
-	warp NONE, 0, 0
-	end
 
-RedsHouse2FSNESText:
+RedsHouse2FSNESScipt:
+	thistext
+
 	text "<PLAYER> is"
 	line "playing the SNES."
 

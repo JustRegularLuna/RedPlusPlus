@@ -1003,7 +1003,7 @@ NuzlockeLandmarkFlags:: flag_array NUM_LANDMARKS
 
 HiddenGrottoContents::
 ; content type, content id
-	ds NUM_HIDDEN_GROTTOES * 2
+	ds NUM_SECRET_BASES * 2
 
 CurHiddenGrotto:: ds 1
 

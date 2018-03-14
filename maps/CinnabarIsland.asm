@@ -3,17 +3,19 @@ CinnabarIsland_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 5 ; warp events
+	db 6 ; warp events
 	warp_event 19, 17, CINNABAR_POKECENTER_1F, 1
 	warp_event 18, 11, CINNABAR_VOLCANO_1F, 1
 	warp_event 10, 15, POKEMON_MANSION_1F, 1
 	warp_event 10, 21, CINNABAR_LAB, 1
 	warp_event 22,  7, SEAFOAM_GYM, 1
+	warp_event 26, 14, HIDDEN_CAVE_GROTTO, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	cavebase_event 26, 13, SECRET_BASE_CINNABAR_ISLAND, EVENT_SECRET_BASE_CINNABAR_ISLAND
 
 	const_def 1 ; object constants
