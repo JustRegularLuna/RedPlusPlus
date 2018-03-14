@@ -150,7 +150,7 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll TV, TV, TV, TV
+	tilecoll WALL, WALL, CAVE, WALL
 	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll WALL, DOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, FLOOR, WALL
@@ -158,14 +158,14 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, BOTTOM_WALL, WALL, CAVE
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, DOOR, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, WALL, WALL, DOOR

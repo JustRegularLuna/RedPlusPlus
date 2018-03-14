@@ -4,7 +4,8 @@ Route24_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route24TileScript
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_event 18,  6, HIDDEN_CAVE_GROTTO, 1
 
 	db 10 ; coord events
 	coord_event 19, 17, 1, Route24BridgeOverheadTrigger
@@ -20,7 +21,8 @@ Route24_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	cavebase_event 18,  5, SECRET_BASE_ROUTE_24, EVENT_SECRET_BASE_ROUTE_24
 
 	const_def 1 ; object constants
 

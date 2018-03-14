@@ -221,3 +221,4 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, DOOR, WALL
 	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, BOTTOM_WALL, WALL, CAVE

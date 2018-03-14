@@ -63,6 +63,7 @@ OutdoorSprites_Cinnabar:
 	db SPRITE_CLERK
 	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Viridian:
@@ -72,6 +73,7 @@ OutdoorSprites_Viridian:
 	db SPRITE_FISHER2
 	db SPRITE_MAP_AMBER_LYING_OLD_MAN
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Pewter:
@@ -80,10 +82,13 @@ OutdoorSprites_Pewter:
 	db SPRITE_BLACK_HAIR_BOY_2
 	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_MountMoonSquare:
+	db SPRITE_SECRET_BASE
+	db SPRITE_CABLE_CAR_POLE
 	db 0 ; end
 
 OutdoorSprites_Cerulean:
@@ -91,36 +96,43 @@ OutdoorSprites_CeruleanCape:
 OutdoorSprites_Route10:
 OutdoorSprites_Route5:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db SPRITE_CABLE_CAR_POLE
 	db SPRITE_BIKE_BLANK_SILPH
 	db 0 ; end
 
 OutdoorSprites_Vermilion:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Celadon:
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Lavender:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_SilenceBridge:
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_CyclingRoad:
 OutdoorSprites_Route16:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Fuchsia:
 OutdoorSprites_Route19:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Saffron:

@@ -21,7 +21,9 @@ PewterCity_MapScriptHeader:
 	bg_event 10, 21, SIGNPOST_JUMPTEXT, PewterCityText11
 	bg_event 25, 27, SIGNPOST_JUMPTEXT, PewterCityText12
 
-	db 8 ; object events
+	db 10 ; object events
+	treebase_right_event_1 25, 41, SECRET_BASE_ROUTE_2_NORTH, EVENT_SECRET_BASE_ROUTE_2_NORTH ; visible on Route2North
+	treebase_right_event_2 25, 41, SECRET_BASE_ROUTE_2_NORTH, EVENT_SECRET_BASE_ROUTE_2_NORTH_ESTABLISHED ; visible on Route2North
 	object_event  6, 18, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_COMMAND, jumptextfaceplayer, PewterCityText1, -1
 	object_event 14, 33, SPRITE_BLACK_HAIR_BOY_1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_COMMAND, jumptextfaceplayer, PewterCityText2, -1
 	object_event 29, 21, SPRITE_BLACK_HAIR_BOY_2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1

@@ -9,12 +9,12 @@ ItemPocketNames:
 .Item:
 	db "Item Pocket@"
 .Medicine:
-	db "Med.Pocket@"
+	db "Medicine Box@"
 .Ball:
 	db "Ball Pocket@"
 .TM:
-	db "TM Pocket@"
+	db "TM Case@"
 .Berry:
-	db "Berry Pocket@"
+	db "Berry Pouch@"
 .Key:
 	db "Key Pocket@"

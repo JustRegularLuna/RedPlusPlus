@@ -172,33 +172,36 @@ EMOTE_MEM EQU -1
 	const FRUITTREE_ROUTE_49        ; 27
 NUM_FRUIT_TREES EQU const_value +- 1
 
-; hidden grottoes
+; secret bases
 ; see engine/hidden_grottoes.asm:HiddenGrottoData
 	const_def 1
-	const HIDDENGROTTO_ROUTE_32           ; 01
-	const HIDDENGROTTO_ROUTE_35           ; 02
-	const HIDDENGROTTO_LAKE_OF_RAGE       ; 03
-	const HIDDENGROTTO_04                 ; 04
-	const HIDDENGROTTO_05                 ; 05
-	const HIDDENGROTTO_06                 ; 06
-	const HIDDENGROTTO_07                 ; 07
-	const HIDDENGROTTO_08                 ; 08
-	const HIDDENGROTTO_09                 ; 09
-	const HIDDENGROTTO_0A                 ; 0a
-	const HIDDENGROTTO_0B                 ; 0b
-	const HIDDENGROTTO_0C                 ; 0c
-	const HIDDENGROTTO_0D                 ; 0d
-	const HIDDENGROTTO_0E                 ; 0e
-	const HIDDENGROTTO_0F                 ; 0f
-	const HIDDENGROTTO_10                 ; 10
-	const HIDDENGROTTO_11                 ; 11
-	const HIDDENGROTTO_12                 ; 12
-	const HIDDENGROTTO_13                 ; 13
-	const HIDDENGROTTO_14                 ; 14
-	const HIDDENGROTTO_15                 ; 15
-	const HIDDENGROTTO_16                 ; 16
-	const HIDDENGROTTO_17                 ; 17
-NUM_HIDDEN_GROTTOES EQU const_value +- 1
+	const SECRET_BASE_ROUTE_2_SOUTH
+	const SECRET_BASE_ROUTE_2_NORTH
+	const SECRET_BASE_ROUTE_3_TREE
+	const SECRET_BASE_ROUTE_3_CAVE
+	const SECRET_BASE_ROUTE_4_TREE
+	const SECRET_BASE_ROUTE_4_CAVE
+	const SECRET_BASE_MT_MOON_SQUARE
+	const SECRET_BASE_ROUTE_6
+	const SECRET_BASE_ROUTE_7
+	const SECRET_BASE_CELADON_CITY
+	const SECRET_BASE_ROUTE_8
+	const SECRET_BASE_ROUTE_9
+	const SECRET_BASE_ROUTE_10_NORTH
+	const SECRET_BASE_ROUTE_10_SOUTH
+	const SECRET_BASE_ROUTE_11
+	const SECRET_BASE_ROUTE_13
+	const SECRET_BASE_ROUTE_15
+	const SECRET_BASE_ROUTE_16_TREE_1
+	const SECRET_BASE_ROUTE_16_TREE_2
+	const SECRET_BASE_ROUTE_16_CAVE
+	const SECRET_BASE_URAGA_CHANNEL
+	const SECRET_BASE_CINNABAR_ISLAND
+	const SECRET_BASE_ROUTE_21
+	const SECRET_BASE_ROUTE_22
+	const SECRET_BASE_ROUTE_24
+	const SECRET_BASE_CERULEAN_CAPE
+NUM_SECRET_BASES EQU const_value +- 1
 
 ; swarm arguments
 ; StoreSwarmMapIndices arguments

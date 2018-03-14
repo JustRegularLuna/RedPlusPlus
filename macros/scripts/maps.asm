@@ -108,15 +108,23 @@ endc
 ENDM
 
 cavebase_event: MACRO
-	object_event \1, \2, SPRITE_SECRET_BASE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, PERSONTYPE_COMMAND, jumpstd, cavegrotto, \3, \4
+	object_event \1, \2, SPRITE_SECRET_BASE, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_NPC_ROCK, PERSONTYPE_COMMAND, jumpstd, cavegrotto, \3, \4
 ENDM
 
-treebase_event: MACRO
+treebase_left_event_1: MACRO
 	object_event \1, \2, SPRITE_SECRET_BASE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, jumpstd, treegrotto, \3, \4
 ENDM
 
-treebase_made_event: MACRO
+treebase_left_event_2: MACRO
 	object_event \1, \2, SPRITE_SECRET_BASE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, jumpstd, treegrotto, \3, \4
+ENDM
+
+treebase_right_event_1: MACRO
+	object_event \1, \2, SPRITE_SECRET_BASE, SPRITEMOVEDATA_STANDING_UP_FLIP, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, jumpstd, treegrotto, \3, \4
+ENDM
+
+treebase_right_event_2: MACRO
+	object_event \1, \2, SPRITE_SECRET_BASE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, jumpstd, treegrotto, \3, \4
 ENDM
 
 pc_nurse_event: MACRO

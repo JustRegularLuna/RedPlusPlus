@@ -21,19 +21,19 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll TV, TV, TV, TV
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll TV, TV, TV, TV
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll TV, TV, TV, TV
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, FLOOR, FLOOR
+	tilecoll FLOOR, WALL, FLOOR, FLOOR
+	tilecoll WALL, WALL, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, DOOR, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, FLOOR
 	tilecoll WALL, WALL, FLOOR, WALL
 	tilecoll FLOOR, WALL, WALL, FLOOR
@@ -48,12 +48,12 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL
 	tilecoll WALL, FLOOR, WALL, FLOOR
 	tilecoll FLOOR, WALL, FLOOR, WALL
+	tilecoll FLOOR, FLOOR, WALL, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, WALL
-	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, FLOOR, WALL, FLOOR
 	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll FLOOR, WALL, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, FLOOR, TOP_WALL, WALL
+	tilecoll FLOOR, WALL, WALL, TOP_WALL
 	tilecoll TALL_GRASS, WALL, TALL_GRASS, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, TALL_GRASS, WALL, TALL_GRASS
@@ -75,7 +75,7 @@
 	tilecoll WATER, WATER, WATER, WATER
 	tilecoll WATER, WATER, WATER, WATER
 	tilecoll TV, TV, TV, TV
-	tilecoll TV, TV, TV, TV
+	tilecoll FLOOR, FLOOR, FLOOR, WALL
 	tilecoll WALL, TOP_WALL, WALL, FLOOR
 	tilecoll TOP_WALL, WALL, FLOOR, WALL
 	tilecoll WALL, FLOOR, WALL, FLOOR
@@ -110,3 +110,6 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, FLOOR, WALL, WALL
 	tilecoll FLOOR, WALL, WALL, WALL
+	tilecoll FLOOR, WALL, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, TOP_WALL, TOP_WALL
+	tilecoll WALL, FLOOR, FLOOR, FLOOR
