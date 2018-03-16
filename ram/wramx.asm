@@ -435,8 +435,9 @@ TilesetBlocksBank:: ds 1
 TilesetBlocksAddress:: ds 2
 TilesetCollisionBank:: ds 1
 TilesetCollisionAddress:: ds 2
+TilesetAttributesBank:: ds 1
+TilesetAttributesAddress:: ds 2
 TilesetAnim:: ds 2 ; bank 3f
-TilesetPalettes:: ds 2 ; bank 3f
 
 EvolvableFlags:: flag_array PARTY_LENGTH
 
@@ -1230,6 +1231,11 @@ BT_OTTrainer6:: battle_tower_struct BT_OTTrainer6
 BT_OTTrainer7:: battle_tower_struct BT_OTTrainer7
 
 wBTChoiceOfLvlGroup:: ds 1
+
+
+SECTION "Tileset Attributes", WRAMX
+
+wMiscAttributes:: ds WMISC_WIDTH * WMISC_HEIGHT
 
 
 SECTION "Sound Stack", WRAMX

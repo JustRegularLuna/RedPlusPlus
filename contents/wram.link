@@ -31,6 +31,10 @@ WRAMX $2
 	align 8
 	"Battle Tower"
 
+WRAMX $3
+	org $d000
+	"Tileset Attributes"
+
 WRAMX $4
 	org $d000
 	"Sound Stack"

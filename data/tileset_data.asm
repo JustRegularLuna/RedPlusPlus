@@ -19,6 +19,8 @@ TilesetPalletCinnabarMeta::
 INCBIN "data/tilesets/pallet_cinnabar_metatiles.bin"
 TilesetPalletCinnabarColl::
 INCLUDE "data/tilesets/pallet_cinnabar_collision.asm"
+TilesetPalletCinnabarAttr::
+INCBIN "data/tilesets/pallet_cinnabar_attributes.bin"
 
 
 SECTION "Tileset Data 2", ROMX
@@ -29,6 +31,8 @@ TilesetViridianMeta::
 INCBIN "data/tilesets/viridian_metatiles.bin"
 TilesetViridianColl::
 INCLUDE "data/tilesets/viridian_collision.asm"
+TilesetViridianAttr::
+INCBIN "data/tilesets/viridian_attributes.bin"
 
 
 SECTION "Tileset Data 3", ROMX
@@ -39,6 +43,8 @@ TilesetPewterMeta::
 INCBIN "data/tilesets/pewter_metatiles.bin"
 TilesetPewterColl::
 INCLUDE "data/tilesets/pewter_collision.asm"
+TilesetPewterAttr::
+INCBIN "data/tilesets/pewter_attributes.bin"
 
 
 SECTION "Tileset Data 4", ROMX
@@ -49,7 +55,8 @@ TilesetCeruleanMeta::
 INCBIN "data/tilesets/cerulean_metatiles.bin"
 TilesetCeruleanColl::
 INCLUDE "data/tilesets/cerulean_collision.asm"
-
+TilesetCeruleanAttr::
+INCBIN "data/tilesets/cerulean_attributes.bin"
 
 
 SECTION "Tileset Data 5", ROMX
@@ -60,6 +67,8 @@ TilesetVermilionMeta::
 INCBIN "data/tilesets/vermilion_metatiles.bin"
 TilesetVermilionColl::
 INCLUDE "data/tilesets/vermilion_collision.asm"
+TilesetVermilionAttr::
+INCBIN "data/tilesets/vermilion_attributes.bin"
 
 
 SECTION "Tileset Data 6", ROMX
@@ -70,6 +79,8 @@ TilesetLavenderMeta::
 INCBIN "data/tilesets/lavender_metatiles.bin"
 TilesetLavenderColl::
 INCLUDE "data/tilesets/lavender_collision.asm"
+TilesetLavenderAttr::
+INCBIN "data/tilesets/lavender_attributes.bin"
 
 
 SECTION "Tileset Data 7", ROMX
@@ -80,6 +91,8 @@ TilesetCeladonMeta::
 INCBIN "data/tilesets/celadon_metatiles.bin"
 TilesetCeladonColl::
 INCLUDE "data/tilesets/celadon_collision.asm"
+TilesetCeladonAttr::
+INCBIN "data/tilesets/celadon_attributes.bin"
 
 
 SECTION "Tileset Data 8", ROMX
@@ -90,7 +103,8 @@ TilesetFuchsiaMeta::
 INCBIN "data/tilesets/fuchsia_metatiles.bin"
 TilesetFuchsiaColl::
 INCLUDE "data/tilesets/fuchsia_collision.asm"
-
+TilesetFuchsiaAttr::
+INCBIN "data/tilesets/fuchsia_attributes.bin"
 
 
 SECTION "Tileset Data 9", ROMX
@@ -101,6 +115,8 @@ TilesetSaffronMeta::
 INCBIN "data/tilesets/saffron_metatiles.bin"
 TilesetSaffronColl::
 INCLUDE "data/tilesets/saffron_collision.asm"
+TilesetSaffronAttr::
+INCBIN "data/tilesets/saffron_attributes.bin"
 
 
 SECTION "Tileset Data 10", ROMX
@@ -111,6 +127,11 @@ TilesetRoutesMeta::
 INCBIN "data/tilesets/routes_metatiles.bin"
 TilesetRoutesColl::
 INCLUDE "data/tilesets/routes_collision.asm"
+TilesetRoutesAttr::
+INCBIN "data/tilesets/routes_attributes.bin"
+
+
+SECTION "Tileset Data 11", ROMX
 
 TilesetIndigoGFX::
 INCBIN "gfx/tilesets/indigo.2bpp.unique.lz"
@@ -118,9 +139,11 @@ TilesetIndigoMeta::
 INCBIN "data/tilesets/indigo_metatiles.bin"
 TilesetIndigoColl::
 INCLUDE "data/tilesets/indigo_collision.asm"
+TilesetIndigoAttr::
+INCBIN "data/tilesets/indigo_attributes.bin"
 
 
-SECTION "Tileset Data 11", ROMX
+SECTION "Tileset Data 12", ROMX
 
 TilesetForestGFX::
 INCBIN "gfx/tilesets/forest.2bpp.lz"
@@ -128,6 +151,11 @@ TilesetForestMeta::
 INCBIN "data/tilesets/forest_metatiles.bin"
 TilesetForestColl::
 INCLUDE "data/tilesets/forest_collision.asm"
+TilesetForestAttr::
+INCBIN "data/tilesets/forest_attributes.bin"
+
+
+SECTION "Tileset Data 13", ROMX
 
 TilesetSafariZoneGFX::
 INCBIN "gfx/tilesets/safari_zone.2bpp.lz"
@@ -135,7 +163,8 @@ TilesetSafariZoneMeta::
 INCBIN "data/tilesets/safari_zone_metatiles.bin"
 TilesetSafariZoneColl::
 INCLUDE "data/tilesets/safari_zone_collision.asm"
-
+TilesetSafariZoneAttr::
+INCBIN "data/tilesets/safari_zone_attributes.bin"
 
 ;------------------------------------
 
@@ -462,3 +491,152 @@ TilesetJohto4Meta::
 INCBIN "data/tilesets/johto4_metatiles.bin"
 TilesetJohto4Coll::
 INCLUDE "data/tilesets/johto4_collision.asm"
+
+
+SECTION "PC Tileset Data 16", ROMX
+
+Tileset00Attr::
+TilesetJohto1Attr::
+INCBIN "data/tilesets/johto1_attributes.bin"
+
+TilesetJohto2Attr::
+INCBIN "data/tilesets/johto2_attributes.bin"
+
+TilesetJohto3Attr::
+INCBIN "data/tilesets/johto3_attributes.bin"
+
+TilesetJohto4Attr::
+INCBIN "data/tilesets/johto4_attributes.bin"
+
+
+SECTION "PC Tileset Data 17", ROMX
+
+TilesetShamoutiAttr::
+INCBIN "data/tilesets/shamouti_attributes.bin"
+
+TilesetValenciaAttr::
+INCBIN "data/tilesets/valencia_attributes.bin"
+
+TilesetFarawayAttr::
+INCBIN "data/tilesets/faraway_attributes.bin"
+
+
+SECTION "PC Tileset Data 18", ROMX
+
+TilesetHouse1Attr::
+INCBIN "data/tilesets/house1_attributes.bin"
+
+TilesetHouse2Attr::
+INCBIN "data/tilesets/house2_attributes.bin"
+
+TilesetHouse3Attr::
+INCBIN "data/tilesets/house3_attributes.bin"
+
+
+SECTION "PC Tileset Data 19", ROMX
+
+TilesetPokeCenterAttr::
+INCBIN "data/tilesets/pokecenter_attributes.bin"
+
+TilesetPokeComAttr::
+INCBIN "data/tilesets/pokecom_attributes.bin"
+
+TilesetMartAttr::
+INCBIN "data/tilesets/mart_attributes.bin"
+
+TilesetGateAttr::
+INCBIN "data/tilesets/gate_attributes.bin"
+
+
+SECTION "PC Tileset Data 20", ROMX
+
+TilesetGym1Attr::
+INCBIN "data/tilesets/gym1_attributes.bin"
+
+TilesetGym2Attr::
+INCBIN "data/tilesets/gym2_attributes.bin"
+
+TilesetGym3Attr::
+INCBIN "data/tilesets/gym3_attributes.bin"
+
+
+SECTION "PC Tileset Data 21", ROMX
+
+TilesetPortAttr::
+INCBIN "data/tilesets/port_attributes.bin"
+
+TilesetLabAttr::
+INCBIN "data/tilesets/lab_attributes.bin"
+
+TilesetFacilityAttr::
+INCBIN "data/tilesets/facility_attributes.bin"
+
+TilesetMansionAttr::
+INCBIN "data/tilesets/mansion_attributes.bin"
+
+
+SECTION "PC Tileset Data 22", ROMX
+
+TilesetGameCornerAttr::
+INCBIN "data/tilesets/game_corner_attributes.bin"
+
+TilesetDecorAttr::
+INCBIN "data/tilesets/decor_attributes.bin"
+
+TilesetMuseumAttr::
+INCBIN "data/tilesets/museum_attributes.bin"
+
+TilesetHotelAttr::
+INCBIN "data/tilesets/hotel_attributes.bin"
+
+
+SECTION "PC Tileset Data 23", ROMX
+
+TilesetTowerAttr::
+INCBIN "data/tilesets/tower_attributes.bin"
+
+TilesetBattleTowerAttr::
+INCBIN "data/tilesets/battle_tower_attributes.bin"
+
+TilesetRadioTowerAttr::
+INCBIN "data/tilesets/radio_tower_attributes.bin"
+
+TilesetLighthouseAttr::
+INCBIN "data/tilesets/lighthouse_attributes.bin"
+
+TilesetWarehouseAttr::
+INCBIN "data/tilesets/warehouse_attributes.bin"
+
+
+SECTION "PC Tileset Data 24", ROMX
+
+TilesetCaveAttr::
+TilesetQuietCaveAttr::
+INCBIN "data/tilesets/cave_attributes.bin"
+
+TilesetIcePathAttr::
+INCBIN "data/tilesets/ice_path_attributes.bin"
+
+TilesetTunnelAttr::
+INCBIN "data/tilesets/tunnel_attributes.bin"
+
+
+SECTION "PC Tileset Data 25", ROMX
+
+TilesetPCForestAttr::
+INCBIN "data/tilesets/pc_forest_attributes.bin"
+
+TilesetParkAttr::
+INCBIN "data/tilesets/park_attributes.bin"
+
+
+SECTION "PC Tileset Data 26", ROMX
+
+TilesetRuinsAttr::
+INCBIN "data/tilesets/ruins_attributes.bin"
+
+TilesetAlphAttr::
+INCBIN "data/tilesets/alph_attributes.bin"
+
+TilesetPokemonMansionAttr::
+INCBIN "data/tilesets/pokemon_mansion_attributes.bin"

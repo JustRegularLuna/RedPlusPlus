@@ -291,7 +291,7 @@ SECTION "Battle", WRAM0
 
 UNION
 ; miscellaneous
-wMisc:: ds (SCREEN_WIDTH + 4) * (SCREEN_HEIGHT + 2)
+wMisc:: ds WMISC_WIDTH * WMISC_HEIGHT
 wMiscEnd::
 
 NEXTU
