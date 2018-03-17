@@ -137,6 +137,7 @@ OutdoorSprites_Route19:
 
 OutdoorSprites_Saffron:
 	db SPRITE_BIKE_BLANK_SILPH
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Indigo:
