@@ -139,7 +139,6 @@ class Attributes(object):
 		load_palette('gfx/tilesets/palettes/bg.pal')[32:40])
 
 	map_palettes = {
-		'maps/VermilionCity.blk': lambda: load_palette('gfx/tilesets/palettes/vermilion_city.pal')[8:16],
 		'maps/ViridianForest.blk': lambda: load_palette('gfx/tilesets/palettes/viridian_forest.pal'),
 		########################################################################
 		'maps/BellchimeTrail.blk': lambda: load_palette('gfx/tilesets/palettes/bellchime_trail.pal')[8:16],
@@ -216,7 +215,6 @@ class Attributes(object):
 	}
 
 	tileset_palettes = {
-		'lavender': lambda: load_palette('gfx/tilesets/palettes/lavender.pal')[8:16],
 		'celadon': lambda: load_palette('gfx/tilesets/palettes/celadon.pal')[8:16],
 		'fuchsia': lambda: load_palette('gfx/tilesets/palettes/fuchsia.pal')[8:16],
 		'saffron': lambda: load_palette('gfx/tilesets/palettes/saffron.pal')[8:16],
