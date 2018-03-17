@@ -145,14 +145,10 @@
 	charmap "'v",       $c7
 
 	charmap "é",        $c8
-	charmap "É",        $c9
-	charmap "á",        $ca
-	charmap "ê",        $cb
-	charmap "í",        $cc
-	charmap "ó",        $cd
 
-	charmap "¿",        $ce
-	charmap "¡",        $cf
+; unused: c8-ce
+
+	charmap "␣",        $cf ; fake space for location names
 
 	charmap "<PO>",     $d0
 	charmap "<KE>",     $d1

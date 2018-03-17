@@ -174,7 +174,7 @@ InitMapNameFrame: ; b80d3
 .FillMiddle: ; b815b
 	ld [hli], a
 	push af
-	ld a, " "
+	ld a, "␣"
 	ld c, SCREEN_WIDTH - 2
 .middle_loop
 	ld [hli], a
@@ -238,23 +238,14 @@ GiveFontOpaqueBackground:
 	;call DisableLCD
 	ld hl, VTiles1
 	ld bc, (106 tiles) / 2 ; only from "A" to "9"
-.loop1
+.loop
 	ld a, $ff
 	ld [hli], a
 	inc hl
 	dec bc
 	ld a, b
 	or c
-	jr nz, .loop1
-	ld hl, VTiles1 tile $ff
-	ld a, (1 tiles) / 2
-.loop2
-	ld [hl], $ff
-	inc hl
-	ld [hl], $0
-	inc hl
-	dec a
-	jr nz, .loop2
+	jr nz, .loop
 	;call EnableLCD
 	ret
 
