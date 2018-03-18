@@ -14,7 +14,7 @@ CeruleanCity_MapScriptHeader:
 	warp_event 13, 23, CERULEAN_BIKE_SHOP, 1
 	warp_event 17,  9, CERULEAN_BERRY_POWDER_HOUSE, 1
 	warp_event 21, 23, CERULEAN_COUPLE_HOUSE, 1
-	warp_event 37,  9, CERULEAN_WATER_SHOW_SPEECH_HOUSE, 1
+	warp_event 37,  8, CERULEAN_WATER_SHOW_SPEECH_HOUSE, 1
 
 	db 0 ; coord events
 
