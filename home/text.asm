@@ -229,7 +229,7 @@ endm
 	dict "with",     PlaceWith
 	dict "and",      PlaceAnd
 	dict "this",     PlaceThis
-	dict2 "¯", " "
+	dict2 "¯", "␣"
 
 	ld [hli], a
 	call PrintLetterDelay
