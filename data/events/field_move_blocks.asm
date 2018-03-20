@@ -4,11 +4,11 @@ CutGrassBlockPointers:
 	dbw TILESET_VIRIDIAN, .viridian
 	dbw TILESET_PEWTER, .pewter
 	dbw TILESET_VERMILION, .vermilion
-	dbw TILESET_LAVENDER, .lavender
 	dbw TILESET_CELADON, .celadon
+	dbw TILESET_LAVENDER, .lavender
+	dbw TILESET_CYCLING_ROAD, .cycling_road
 	dbw TILESET_FUCHSIA, .fuchsia
 	dbw TILESET_SAFFRON, .saffron
-	dbw TILESET_ROUTES, .routes
 	dbw TILESET_CERULEAN, .cerulean
 	dbw TILESET_INDIGO, .indigo
 	dbw TILESET_FOREST, .forest
@@ -25,16 +25,16 @@ CutGrassBlockPointers:
 
 ; Which meta tile are we facing, and which should we replace it with?
 
-.routes
-	db $c4, $0b
-	db $c6, $02
+.lavender
+	db $dc, $0b
+	db $de, $02
 .pallet_cinnabar
 .viridian
 .pewter
 .cerulean
 .vermilion
-.lavender
 .celadon
+.cycling_road
 .fuchsia
 .saffron
 	db $03, $02

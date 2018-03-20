@@ -4,11 +4,11 @@
 	const TILESET_VIRIDIAN
 	const TILESET_PEWTER
 	const TILESET_VERMILION
-	const TILESET_LAVENDER
 	const TILESET_CELADON
+	const TILESET_LAVENDER
+	const TILESET_CYCLING_ROAD
 	const TILESET_FUCHSIA
 	const TILESET_SAFFRON
-	const TILESET_ROUTES
 GENERIC_METATILES EQU const_value
 ; These tilesets just share the first 160 tiles, not any metatiles
 	const TILESET_CERULEAN

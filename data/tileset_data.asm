@@ -73,18 +73,6 @@ INCBIN "data/tilesets/vermilion_attributes.bin"
 
 SECTION "Tileset Data 6", ROMX
 
-TilesetLavenderGFX::
-INCBIN "gfx/tilesets/lavender.2bpp.unique.lz"
-TilesetLavenderMeta::
-INCBIN "data/tilesets/lavender_metatiles.bin"
-TilesetLavenderColl::
-INCLUDE "data/tilesets/lavender_collision.asm"
-TilesetLavenderAttr::
-INCBIN "data/tilesets/lavender_attributes.bin"
-
-
-SECTION "Tileset Data 7", ROMX
-
 TilesetCeladonGFX::
 INCBIN "gfx/tilesets/celadon.2bpp.unique.lz"
 TilesetCeladonMeta::
@@ -95,7 +83,31 @@ TilesetCeladonAttr::
 INCBIN "data/tilesets/celadon_attributes.bin"
 
 
+SECTION "Tileset Data 7", ROMX
+
+TilesetLavenderGFX::
+INCBIN "gfx/tilesets/lavender.2bpp.unique.lz"
+TilesetLavenderMeta::
+INCBIN "data/tilesets/lavender_metatiles.bin"
+TilesetLavenderColl::
+INCLUDE "data/tilesets/lavender_collision.asm"
+TilesetLavenderAttr::
+INCBIN "data/tilesets/lavender_attributes.bin"
+
+
 SECTION "Tileset Data 8", ROMX
+
+TilesetCyclingRoadGFX::
+INCBIN "gfx/tilesets/cycling_road.2bpp.unique.lz"
+TilesetCyclingRoadMeta::
+INCBIN "data/tilesets/cycling_road_metatiles.bin"
+TilesetCyclingRoadColl::
+INCLUDE "data/tilesets/cycling_road_collision.asm"
+TilesetCyclingRoadAttr::
+INCBIN "data/tilesets/cycling_road_attributes.bin"
+
+
+SECTION "Tileset Data 9", ROMX
 
 TilesetFuchsiaGFX::
 INCBIN "gfx/tilesets/fuchsia.2bpp.unique.lz"
@@ -107,7 +119,7 @@ TilesetFuchsiaAttr::
 INCBIN "data/tilesets/fuchsia_attributes.bin"
 
 
-SECTION "Tileset Data 9", ROMX
+SECTION "Tileset Data 10", ROMX
 
 TilesetSaffronGFX::
 INCBIN "gfx/tilesets/saffron.2bpp.unique.lz"
@@ -117,18 +129,6 @@ TilesetSaffronColl::
 INCLUDE "data/tilesets/saffron_collision.asm"
 TilesetSaffronAttr::
 INCBIN "data/tilesets/saffron_attributes.bin"
-
-
-SECTION "Tileset Data 10", ROMX
-
-TilesetRoutesGFX::
-INCBIN "gfx/tilesets/routes.2bpp.unique.lz"
-TilesetRoutesMeta::
-INCBIN "data/tilesets/routes_metatiles.bin"
-TilesetRoutesColl::
-INCLUDE "data/tilesets/routes_collision.asm"
-TilesetRoutesAttr::
-INCBIN "data/tilesets/routes_attributes.bin"
 
 
 SECTION "Tileset Data 11", ROMX

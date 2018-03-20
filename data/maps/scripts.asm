@@ -885,7 +885,8 @@ INCLUDE "maps/Route11Gate2F.asm"
 
 SECTION "Routes 12-14 Scripts", ROMX
 
-INCLUDE "maps/Route12.asm"
+INCLUDE "maps/Route12North.asm"
+INCLUDE "maps/Route12South.asm"
 INCLUDE "maps/Route12Gate.asm"
 INCLUDE "maps/Route12Gate2F.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"

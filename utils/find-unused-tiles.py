@@ -19,9 +19,9 @@ block_data_filename    = 'data/maps/blocks.asm'
 block_filename_fmt     = 'maps/%s.blk'
 metatile_filename_fmt  = 'data/tilesets/%s_metatiles.bin'
 
-tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'vermilion', 'lavender',
-                 'celadon', 'fuchsia', 'saffron', 'routes', 'cerulean', 'indigo',
-                 'forest', 'safari_zone',
+tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'vermilion', 'celadon',
+                 'lavender', 'cycling_road', 'fuchsia', 'saffron', 'cerulean',
+                 'indigo', 'forest', 'safari_zone',
                  ###############################################################
                  'johto1', 'johto2', 'johto3', 'johto4', 'shamouti', 'valencia',
                  'faraway', 'house1', 'house2', 'house3', 'pokecenter', 'pokecom',

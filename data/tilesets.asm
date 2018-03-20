@@ -11,11 +11,11 @@ Tileset00End::
 	tileset TilesetViridian
 	tileset TilesetPewter
 	tileset TilesetVermilion
-	tileset TilesetLavender
 	tileset TilesetCeladon
+	tileset TilesetLavender
+	tileset TilesetCyclingRoad
 	tileset TilesetFuchsia
 	tileset TilesetSaffron
-	tileset TilesetRoutes
 	tileset TilesetCerulean
 	tileset TilesetIndigo
 	tileset TilesetForest
