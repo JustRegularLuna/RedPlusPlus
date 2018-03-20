@@ -222,11 +222,11 @@ ENDM
 
 	map_attributes Route12South, ROUTE_12_SOUTH, $49, NORTH | SOUTH | WEST
 	connection north, Route12North, ROUTE_12_NORTH, 0, 0, 15
-	connection south, Route13, ROUTE_13, 0, 20, 13
+	connection south, Route13, ROUTE_13, 0, 27, 13
 	connection west, Route11, ROUTE_11, 15, 0, 13
 
 	map_attributes Route13, ROUTE_13, $49, NORTH | SOUTH
-	connection north, Route12South, ROUTE_12_SOUTH, 20, 0, 13
+	connection north, Route12South, ROUTE_12_SOUTH, 27, 0, 13
 	connection south, Route14, ROUTE_14, 0, 0, 10
 
 	map_attributes Route14, ROUTE_14, $49, NORTH | WEST
