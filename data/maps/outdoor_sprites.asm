@@ -15,7 +15,6 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_Lavender
 	dw OutdoorSprites_SilenceBridge
 	dw OutdoorSprites_CyclingRoad
-	dw OutdoorSprites_Route16
 	dw OutdoorSprites_Fuchsia
 	dw OutdoorSprites_Route19
 	dw OutdoorSprites_Saffron
@@ -124,7 +123,6 @@ OutdoorSprites_SilenceBridge:
 	db 0 ; end
 
 OutdoorSprites_CyclingRoad:
-OutdoorSprites_Route16:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
 	db 0 ; end

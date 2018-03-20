@@ -150,14 +150,14 @@
 	tilecoll WALL, WALL, DOOR, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, WALL, DOOR
-	tilecoll WALL, WALL, POKECENTER_SIGN, WALL
-	tilecoll WALL, WALL, WALL, DOOR
-	tilecoll WALL, WALL, MART_SIGN, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, DOOR, WALL
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
@@ -210,14 +210,14 @@
 	tilecoll FLOOR, WALL, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WATER
-	tilecoll WALL, WALL, WATER, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, TOP_WALL, WALL, FLOOR
 	tilecoll TOP_WALL, WALL, FLOOR, WALL
+	tilecoll BOTTOM_WALL, WALL, CAVE, WALL
+	tilecoll WALL, WALL, WALL, CAVE
+	tilecoll WALL, WALL, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WATER, WALL
@@ -234,5 +234,23 @@
 	tilecoll WALL, WALL, WATER, WATER
 	tilecoll WALL, WALL, WATER, WATER
 	tilecoll WATER, WATER, WATER, WATER
-	tilecoll BOTTOM_WALL, WALL, CAVE, WALL
+	tilecoll WALL, WALL, WALL, WATER
+	tilecoll WALL, WALL, WATER, WALL
 	tilecoll WARP_CARPET_LEFT, FLOOR, WARP_CARPET_LEFT, FLOOR
+	tilecoll WALL, WALL, FLOOR, WALL
+	tilecoll WALL, WALL, WALL, WATER
+	tilecoll FLOOR, FLOOR, WATER, WATER
+	tilecoll WALL, WALL, WATER, WATER
+	tilecoll WALL, WALL, WATER, BUOY
+	tilecoll WALL, WATER, WALL, WATER
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, WALL
+	tilecoll WALL, WALL, FLOOR, WALL
+	tilecoll WALL, WATER, WATER, WATER
+	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, WALL, FLOOR, WALL
+	tilecoll WALL, BUOY, WALL, WATER
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, WALL, WALL, WALL
