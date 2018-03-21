@@ -37,31 +37,31 @@ Route24TileScript:
 	return
 
 Route24_OverheadBridgeAsm:
-	changebridgeblock 20, 18, $8c, ROUTE_24
-	changebridgeblock 20, 20, $8a, ROUTE_24
-	changebridgeblock 20, 22, $8a, ROUTE_24
-	changebridgeblock 20, 24, $8a, ROUTE_24
-	changebridgeblock 20, 26, $8a, ROUTE_24
-	changebridgeblock 20, 28, $8a, ROUTE_24
-	changebridgeblock 20, 30, $8a, ROUTE_24
-	changebridgeblock 20, 32, $8a, ROUTE_24
-	changebridgeblock 20, 34, $8a, ROUTE_24
-	changebridgeblock 20, 36, $8a, ROUTE_24
-	changebridgeblock 20, 38, $8e, ROUTE_24
+	changebridgeblock 20, 18, $e0, ROUTE_24
+	changebridgeblock 20, 20, $de, ROUTE_24
+	changebridgeblock 20, 22, $de, ROUTE_24
+	changebridgeblock 20, 24, $de, ROUTE_24
+	changebridgeblock 20, 26, $de, ROUTE_24
+	changebridgeblock 20, 28, $de, ROUTE_24
+	changebridgeblock 20, 30, $de, ROUTE_24
+	changebridgeblock 20, 32, $de, ROUTE_24
+	changebridgeblock 20, 34, $de, ROUTE_24
+	changebridgeblock 20, 36, $de, ROUTE_24
+	changebridgeblock 20, 38, $e2, ROUTE_24
 	jp BufferScreen
 
 Route24_UnderfootBridgeAsm:
-	changebridgeblock 20, 18, $86, ROUTE_24
-	changebridgeblock 20, 20, $86, ROUTE_24
-	changebridgeblock 20, 22, $86, ROUTE_24
-	changebridgeblock 20, 24, $86, ROUTE_24
-	changebridgeblock 20, 26, $86, ROUTE_24
-	changebridgeblock 20, 28, $86, ROUTE_24
-	changebridgeblock 20, 30, $86, ROUTE_24
-	changebridgeblock 20, 32, $86, ROUTE_24
-	changebridgeblock 20, 34, $86, ROUTE_24
-	changebridgeblock 20, 36, $86, ROUTE_24
-	changebridgeblock 20, 38, $5f, ROUTE_24
+	changebridgeblock 20, 18, $da, ROUTE_24
+	changebridgeblock 20, 20, $da, ROUTE_24
+	changebridgeblock 20, 22, $da, ROUTE_24
+	changebridgeblock 20, 24, $da, ROUTE_24
+	changebridgeblock 20, 26, $da, ROUTE_24
+	changebridgeblock 20, 28, $da, ROUTE_24
+	changebridgeblock 20, 30, $da, ROUTE_24
+	changebridgeblock 20, 32, $da, ROUTE_24
+	changebridgeblock 20, 34, $da, ROUTE_24
+	changebridgeblock 20, 36, $da, ROUTE_24
+	changebridgeblock 20, 38, $57, ROUTE_24
 	jp BufferScreen
 
 Route24BridgeOverheadTrigger:
