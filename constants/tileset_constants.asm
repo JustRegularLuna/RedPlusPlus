@@ -1,5 +1,5 @@
 	const_def 1
-; These tilesets share the first 160 tiles and the first 176 metatiles
+; These tilesets share the first 160 tiles and the first 148 metatiles
 	const TILESET_PALLET_CINNABAR
 	const TILESET_VIRIDIAN
 	const TILESET_PEWTER
