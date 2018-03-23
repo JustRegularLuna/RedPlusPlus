@@ -123,3 +123,5 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
