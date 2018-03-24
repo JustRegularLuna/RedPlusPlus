@@ -146,7 +146,7 @@ INCBIN "data/tilesets/indigo_attributes.bin"
 SECTION "Tileset Data 12", ROMX
 
 TilesetForestGFX::
-INCBIN "gfx/tilesets/forest.2bpp.lz"
+INCBIN "gfx/tilesets/forest.2bpp.unique.lz"
 TilesetForestMeta::
 INCBIN "data/tilesets/forest_metatiles.bin"
 TilesetForestColl::

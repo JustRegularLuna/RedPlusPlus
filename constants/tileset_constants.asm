@@ -13,9 +13,9 @@ GENERIC_METATILES EQU const_value
 ; These tilesets just share the first 160 tiles, not any metatiles
 	const TILESET_CERULEAN
 	const TILESET_INDIGO
+	const TILESET_FOREST
 GENERIC_GFX EQU const_value
 ; These are independent tilesets
-	const TILESET_FOREST
 	const TILESET_SAFARI_ZONE
 	;------------------------------------
 	const TILESET_PC_JOHTO_TRADITIONAL
