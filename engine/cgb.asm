@@ -266,13 +266,12 @@ _CGB_PokedexAreaPals:
 	ret
 
 .GrayPalette:
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 21, 00, 21
-	RGB 13, 00, 13
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 09, 05, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 21,00,21, 13,00,13, 00,00,00
 endc
 
 
@@ -400,36 +399,33 @@ _CGB_Pokedex: ; 8f70
 ; 8fba
 
 .SepiaPicPalette: ; 8fba
-if !DEF(MONOCHROME)
-	RGB 28, 27, 24
-	RGB 24, 22, 17
-	RGB 19, 17, 13
-	RGB 15, 12, 07
-else
+if DEF(NOIR)
+	GRAYSCALE 27, 22, 17, 12
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 28,27,24, 24,22,17, 19,17,13, 15,12,07
 endc
 
 .CursorPalette: ; 8fc2
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 22, 22, 22
-	RGB 17, 17, 17
-	RGB 12, 12, 12
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 22, 17, 12
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 22,22,22, 17,17,17, 12,12,12
 endc
 
 .EdgePalette:
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 28, 27, 24
-	RGB 26, 10, 06
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 27, 14, 00
+elif DEF(MONOCHROME)
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_BLACK
+else
+	RGB 31,31,31, 28,27,24, 26,10,06, 00,00,00
 endc
 ; 8fca
 
@@ -513,13 +509,12 @@ _CGB_Diploma: ; 91ad
 ; 91c8
 
 .DiplomaPalette
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 30, 22, 17
-	RGB 16, 14, 19
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 24, 15, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 30,22,17, 16,14,19, 00,00,00
 endc
 
 _CGB_MapPals: ; 91c8
@@ -557,13 +552,12 @@ _CGB_PartyMenu: ; 91d1
 ; 91e4
 
 .PartyMenuBGPalette:
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 17, 19, 31
-	RGB 14, 16, 31
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 20, 17, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 17,19,31, 14,16,31, 00,00,00
 endc
 
 _CGB_Evolution: ; 91e4
@@ -766,6 +760,9 @@ _CGB_PackPals: ; 93d3
 _CGB_TrainerCard:
 	call LoadFirstTwoTrainerCardPals
 
+	ld hl, GreenTrainerCardPals
+	call LoadPalette_White_Col1_Col2_Black
+
 	ld hl, BronzeTrainerCardPals
 	call LoadPalette_White_Col1_Col2_Black
 
@@ -775,18 +772,15 @@ _CGB_TrainerCard:
 	ld hl, GoldTrainerCardPals
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld hl, CrystalTrainerCardPals
-	call LoadPalette_White_Col1_Col2_Black
-
 	; Trainer stars
 	hlcoord 2, 16, AttrMap
-	ld a, $2 ; bronze
+	ld a, $2 ; green
+	ld [hli], a
+	inc a ; bronze
 	ld [hli], a
 	inc a ; silver
 	ld [hli], a
 	inc a ; gold
-	ld [hli], a
-	inc a ; crystal
 	ld [hl], a
 
 	jp _CGB_FinishLayout
@@ -1058,23 +1052,21 @@ _CGB_BillsPC: ; 8fca
 ; 9009
 
 .MenuPalette:
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 31, 20, 10
-	RGB 26, 10, 06
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 22, 14, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 31,20,10, 26,10,06, 00,00,00
 endc
 
 .OrangePalette: ; 9036
-if !DEF(MONOCHROME)
-	RGB 31, 15, 00
-	RGB 23, 12, 00
-	RGB 15, 07, 00
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 18, 14, 09, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,15,00, 23,12,00, 15,07,00, 00,00,00
 endc
 ; 903e
 
@@ -1093,16 +1085,22 @@ _CGB_UnownPuzzle: ; 925e
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, UnknOBPals
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+	; GRAYSCALE 09
+	ld a, $29
+	ld [hli], a
+	ld a, $25
+	ld [hl], a
+elif DEF(MONOCHROME)
+	ld a, PAL_MONOCHROME_WHITE % $100
+	ld [hli], a
+	ld a, PAL_MONOCHROME_WHITE / $100
+	ld [hl], a
+else
 	; RGB 31, 00, 00
 	ld a, $1f
 	ld [hli], a
 	xor a
-	ld [hl], a
-else
-	ld a, PAL_MONOCHROME_WHITE % $100
-	ld [hli], a
-	ld a, PAL_MONOCHROME_WHITE / $100
 	ld [hl], a
 endc
 	pop af
@@ -1113,13 +1111,12 @@ endc
 ; 9289
 
 .UnownPuzzlePalette:
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 24, 20, 11
-	RGB 18, 13, 11
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 20, 14, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 24,20,11, 18,13,11, 00,00,00
 endc
 
 
@@ -1140,29 +1137,27 @@ endr
 ; 9521
 
 .GameFreakLogoPalette:
-if !DEF(MONOCHROME)
-	RGB 00, 00, 00
-	RGB 08, 11, 11
-	RGB 21, 21, 21
-	RGB 31, 31, 31
-else
+if DEF(NOIR)
+	GRAYSCALE 00, 10, 21, 31
+elif DEF(MONOCHROME)
 	RGB_MONOCHROME_BLACK
 	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_LIGHT
 	RGB_MONOCHROME_WHITE
+else
+	RGB 00,00,00, 08,11,11, 21,21,21, 31,31,31
 endc
 
 .GameFreakDittoPalette: ; 9521
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 13, 11, 00
-	RGB 23, 12, 28
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 10, 17, 00
+elif DEF(MONOCHROME)
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_LIGHT
 	RGB_MONOCHROME_BLACK
+else
+	RGB 31,31,31, 13,11,00, 23,12,28, 00,00,00
 endc
 ; 9529
 
@@ -1186,23 +1181,21 @@ _CGB_TradeTube: ; 9555
 ; 9578
 
 .TradeTubeBluePalette:
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 18, 20, 27
-	RGB 11, 15, 23
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 20, 15, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 18,20,27, 11,15,23, 00,00,00
 endc
 
 .TradeTubeRedPalette:
-if !DEF(MONOCHROME)
-	RGB 27, 31, 27
-	RGB 29, 16, 13
-	RGB 24, 06, 08
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 29, 20, 12, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 27,31,27, 29,16,13, 24,06,08, 00,00,00
 endc
 
 
@@ -1233,13 +1226,12 @@ _CGB_IntroPals: ; 9591
 ; 95e0
 
 .IntroGradientPalette:
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 22, 26, 25
-	RGB 16, 22, 21
-	RGB 08, 17, 16
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 25, 20, 14
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 22,26,25, 16,22,21, 08,17,16
 endc
 
 

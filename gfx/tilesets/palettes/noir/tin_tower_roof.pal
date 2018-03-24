@@ -1,0 +1,27 @@
+; morn
+	GRAYSCALE 28, 21, 13, 07 ; gray
+	GRAYSCALE 28, 19, 20, 15 ; red
+	GRAYSCALE 19, 15, 20, 07 ; green
+	GRAYSCALE 31, 13, 06, 07 ; water
+	GRAYSCALE 28, 28, 19, 07 ; yellow
+	GRAYSCALE 28, 19, 15, 07 ; brown
+	GRAYSCALE 28, 19, 20, 07 ; roof
+	GRAYSCALE 29, 29, 09, 00 ; text
+; day
+	GRAYSCALE 29, 21, 13, 07 ; gray
+	GRAYSCALE 29, 19, 19, 15 ; red
+	GRAYSCALE 19, 15, 19, 07 ; green
+	GRAYSCALE 31, 13, 06, 07 ; water
+	GRAYSCALE 29, 28, 19, 07 ; yellow
+	GRAYSCALE 29, 19, 15, 07 ; brown
+	GRAYSCALE 29, 19, 19, 07 ; roof
+	GRAYSCALE 29, 19, 09, 00 ; text
+; nite
+	GRAYSCALE 15, 12, 08, 00 ; gray
+	GRAYSCALE 15, 11, 02, 05 ; red
+	GRAYSCALE 11, 05, 02, 00 ; green
+	GRAYSCALE 15, 06, 04, 00 ; water
+	GRAYSCALE 15, 14, 09, 00 ; yellow
+	GRAYSCALE 15, 11, 05, 00 ; brown
+	GRAYSCALE 15, 11, 02, 00 ; roof
+	GRAYSCALE 29, 29, 09, 00 ; text

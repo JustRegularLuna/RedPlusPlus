@@ -7,13 +7,12 @@ LoadBlindingFlashPalette:: ; 49409
 ; 49418
 
 BlindingFlashPalette: ; 49418
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 08, 19, 28
-	RGB 05, 05, 16
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 17, 06, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 08,19,28, 05,05,16, 00,00,00
 endc
 ; 49420
 
@@ -546,7 +545,9 @@ LoadSpecialMapPalette: ; 494ac
 	ret
 
 PokeComPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/pokecom.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/pokecom.pal"
 else
 rept 7
@@ -559,7 +560,9 @@ endr
 endc
 
 BattleTowerPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/battle_tower.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/battle_tower.pal"
 else
 rept 5
@@ -577,7 +580,9 @@ endr
 endc
 
 IcePathPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/ice_path.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/ice_path.pal"
 else
 	MONOCHROME_RGB_FOUR
@@ -596,7 +601,9 @@ endr
 endc
 
 GatePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/gate.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/gate.pal"
 else
 rept 7
@@ -609,7 +616,9 @@ endr
 endc
 
 HotelPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/hotel.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/hotel.pal"
 else
 rept 7
@@ -622,7 +631,9 @@ endr
 endc
 
 QuietCavePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/quiet_cave.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/quiet_cave.pal"
 else
 rept 4
@@ -641,7 +652,9 @@ endr
 endc
 
 RuinsPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/ruins.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/ruins.pal"
 else
 rept 7
@@ -654,7 +667,9 @@ endr
 endc
 
 CeladonPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/celadon.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/celadon.pal"
 else
 rept 7
@@ -687,7 +702,9 @@ endr
 endc
 
 FuchsiaPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/fuchsia.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/fuchsia.pal"
 else
 rept 7
@@ -720,7 +737,9 @@ endr
 endc
 
 SaffronPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/saffron.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/saffron.pal"
 else
 rept 7
@@ -753,7 +772,9 @@ endr
 endc
 
 SafariZonePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/safari_zone.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/safari_zone.pal"
 else
 rept 4
@@ -798,7 +819,9 @@ endr
 endc
 
 PokeCenterPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/pokecenter.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/pokecenter.pal"
 else
 rept 6
@@ -815,7 +838,9 @@ endr
 endc
 
 ShamoutiPokeCenterPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/shamouti_pokecenter.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/shamouti_pokecenter.pal"
 else
 rept 6
@@ -832,7 +857,9 @@ endr
 endc
 
 FarawayIslandPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/faraway_island.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/faraway_island.pal"
 else
 rept 6
@@ -881,7 +908,9 @@ endr
 endc
 
 ShamoutiIslandPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/shamouti_island.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/shamouti_island.pal"
 else
 rept 7
@@ -924,7 +953,9 @@ endr
 endc
 
 ValenciaIslandPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/valencia_island.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/valencia_island.pal"
 else
 rept 7
@@ -957,7 +988,9 @@ endr
 endc
 
 RadioTowerPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/radio_tower.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/radio_tower.pal"
 else
 	MONOCHROME_RGB_FOUR
@@ -976,7 +1009,9 @@ endr
 endc
 
 WillsRoomPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/wills_room.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/wills_room.pal"
 else
 rept 7
@@ -989,7 +1024,9 @@ endr
 endc
 
 KogasRoomPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/kogas_room.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/kogas_room.pal"
 else
 rept 7
@@ -1002,7 +1039,9 @@ endr
 endc
 
 BrunosRoomPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/brunos_room.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/brunos_room.pal"
 else
 rept 7
@@ -1015,7 +1054,9 @@ endr
 endc
 
 KarensRoomPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/karens_room.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/karens_room.pal"
 else
 rept 7
@@ -1028,7 +1069,9 @@ endr
 endc
 
 LancesRoomPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/lances_room.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/lances_room.pal"
 else
 rept 7
@@ -1041,7 +1084,9 @@ endr
 endc
 
 CeruleanGymPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/cerulean_gym.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/cerulean_gym.pal"
 else
 rept 7
@@ -1054,7 +1099,9 @@ endr
 endc
 
 SaffronGymPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/saffron_gym.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/saffron_gym.pal"
 else
 rept 7
@@ -1067,7 +1114,9 @@ endr
 endc
 
 ViridianGymPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/viridian_gym.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/viridian_gym.pal"
 else
 	MONOCHROME_RGB_FOUR
@@ -1093,7 +1142,9 @@ else
 endc
 
 FuchsiaGymPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/fuchsia_gym.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/fuchsia_gym.pal"
 else
 rept 6
@@ -1110,7 +1161,9 @@ endr
 endc
 
 GameCornerPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/game_corner.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/game_corner.pal"
 else
 rept 7
@@ -1123,7 +1176,9 @@ endr
 endc
 
 OaksLabPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/oaks_lab.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/oaks_lab.pal"
 else
 rept 7
@@ -1136,7 +1191,9 @@ endr
 endc
 
 IvysLabPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/ivys_lab.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/ivys_lab.pal"
 else
 rept 7
@@ -1149,7 +1206,9 @@ endr
 endc
 
 DragonShrinePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/dragon_shrine.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/dragon_shrine.pal"
 else
 rept 7
@@ -1162,7 +1221,9 @@ endr
 endc
 
 LightningIslandPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/lightning_island.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/lightning_island.pal"
 else
 	MONOCHROME_RGB_FOUR_NIGHT
@@ -1181,7 +1242,9 @@ endr
 endc
 
 MagnetTunnelPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/magnet_tunnel.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/magnet_tunnel.pal"
 else
 	MONOCHROME_RGB_FOUR_NIGHT
@@ -1204,7 +1267,9 @@ else
 endc
 
 MystriStagePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/mystri_stage.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/mystri_stage.pal"
 else
 rept 7
@@ -1217,7 +1282,9 @@ endr
 endc
 
 EmbeddedTowerPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/embedded_tower.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/embedded_tower.pal"
 else
 rept 4
@@ -1236,7 +1303,9 @@ endr
 endc
 
 TinTowerRoofPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/tin_tower_roof.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/tin_tower_roof.pal"
 else
 	MONOCHROME_RGB_FOUR
@@ -1290,7 +1359,9 @@ endr
 endc
 
 CinnabarLabPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/cinnabar_lab.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/cinnabar_lab.pal"
 else
 rept 7
@@ -1303,7 +1374,9 @@ endr
 endc
 
 GoldenrodMuseumPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/goldenrod_museum.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/goldenrod_museum.pal"
 else
 rept 7
@@ -1316,7 +1389,9 @@ endr
 endc
 
 CeladonMansionRoofPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/celadon_mansion_roof.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/celadon_mansion_roof.pal"
 else
 rept 7
@@ -1349,7 +1424,9 @@ endr
 endc
 
 MartPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/mart.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/mart.pal"
 else
 rept 7
@@ -1362,7 +1439,9 @@ endr
 endc
 
 GoldenrodDeptStoreRoofPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/goldenrod_dept_store_roof.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/goldenrod_dept_store_roof.pal"
 else
 rept 6
@@ -1403,7 +1482,9 @@ endr
 endc
 
 CeladonHomeDecorStore4FPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/celadon_home_decor_store_4f.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/celadon_home_decor_store_4f.pal"
 else
 rept 4
@@ -1422,7 +1503,9 @@ endr
 endc
 
 SinjohRuinsPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/sinjoh_ruins.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/sinjoh_ruins.pal"
 else
 rept 7
@@ -1455,7 +1538,9 @@ endr
 endc
 
 VioletEcruteakPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/violet_ecruteak.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/violet_ecruteak.pal"
 else
 rept 7
@@ -1488,7 +1573,9 @@ endr
 endc
 
 BellchimeTrailPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/bellchime_trail.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/bellchime_trail.pal"
 else
 rept 7
@@ -1521,7 +1608,9 @@ endr
 endc
 
 ViridianForestPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/viridian_forest.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/viridian_forest.pal"
 else
 rept 7
@@ -1534,7 +1623,9 @@ endr
 endc
 
 YellowForestPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/yellow_forest.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/yellow_forest.pal"
 else
 rept 7
@@ -1561,7 +1652,9 @@ endr
 endc
 
 MurkySwampPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/murky_swamp.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/murky_swamp.pal"
 else
 rept 7
@@ -1574,7 +1667,9 @@ endr
 endc
 
 HiddenTreeGrottoPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/hidden_tree_grotto.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/hidden_tree_grotto.pal"
 else
 rept 7
@@ -1587,7 +1682,9 @@ endr
 endc
 
 HiddenCaveGrottoPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/hidden_cave_grotto.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/hidden_cave_grotto.pal"
 else
 rept 7
@@ -1600,7 +1697,9 @@ endr
 endc
 
 DimCavePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/dim_cave.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/dim_cave.pal"
 else
 rept 4
@@ -1619,7 +1718,9 @@ endr
 endc
 
 WhirlIslandsPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/whirl_islands.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/whirl_islands.pal"
 else
 rept 4
@@ -1638,7 +1739,9 @@ endr
 endc
 
 ScaryCavePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/scary_cave.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/scary_cave.pal"
 else
 rept 4
@@ -1657,7 +1760,9 @@ endr
 endc
 
 CinnabarVolcanoPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/cinnabar_volcano.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/cinnabar_volcano.pal"
 else
 	MONOCHROME_RGB_FOUR_NIGHT
@@ -1680,7 +1785,9 @@ else
 endc
 
 CeruleanCavePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/cerulean_cave.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/cerulean_cave.pal"
 else
 rept 4
@@ -1699,7 +1806,9 @@ endr
 endc
 
 SilverCavePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/silver_cave.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/silver_cave.pal"
 else
 rept 4
@@ -1718,7 +1827,9 @@ endr
 endc
 
 DarkCavePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/dark_cave.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/dark_cave.pal"
 else
 rept 4
@@ -1744,7 +1855,9 @@ endr
 endc
 
 NavelRockPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/navel_rock.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/navel_rock.pal"
 else
 	MONOCHROME_RGB_FOUR
@@ -1786,27 +1899,30 @@ endr
 endc
 
 OvercastBGPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/bg_overcast.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/bg_overcast.pal"
 else
 INCLUDE "gfx/tilesets/palettes/monochrome/ob.pal"
 endc
 
 OvercastOBPalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/ob_overcast.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/ob_overcast.pal"
 else
 INCLUDE "gfx/tilesets/palettes/monochrome/ob_overcast.pal"
 endc
 
 MartBluePalette:
-if !DEF(MONOCHROME)
-	RGB 20, 27, 28
-	RGB 06, 22, 25
-	RGB 04, 17, 19
-	RGB 07, 07, 07
-else
+if DEF(NOIR)
+	GRAYSCALE 25, 18, 13, 07
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 20,27,28, 06,22,25, 04,17,19, 07,07,07
 endc
 
 LinkTrade_Layout_FillBox: ; 49336
@@ -1887,7 +2003,9 @@ LoadLinkTradePalette: ; 49811
 ; 49826
 
 LinkTradePalette:
-if !DEF(MONOCHROME)
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/link_trade.pal"
+elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/link_trade.pal"
 else
 rept 8
@@ -2084,77 +2202,64 @@ LoadSpecialMapOBPalette:
 	jp .load_single_palette
 
 VermilionGymOBPalette_Tree:
-if !DEF(MONOCHROME)
-	RGB 27, 31, 27
-	RGB 31, 31, 30
-	RGB 19, 24, 31
-	RGB 05, 10, 27
-else
+if DEF(NOIR)
+	GRAYSCALE 29, 31, 23, 10
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR_OW
+else
+	RGB 27,31,27, 31,31,30, 19,24,31, 05,10,27
 endc
 
 LightningIslandOBPalette_Tree:
-if !DEF(MONOCHROME)
-	RGB 19, 15, 10
-	RGB 31, 31, 31
-	RGB 31, 27, 01
-	RGB 31, 16, 01
-else
+if DEF(NOIR)
+	GRAYSCALE 16, 31, 25, 19
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR_OW
+else
+	RGB 19,15,10, 31,31,31, 31,27,01, 31,16,01
 endc
 
 RockTunnelOBPalette_Tree:
-if !DEF(MONOCHROME)
-	RGB 15, 14, 24
-	RGB 31, 30, 31
-	RGB 24, 18, 31
-	RGB 12, 08, 18
-else
+if DEF(NOIR)
+	GRAYSCALE 15, 30, 21, 10
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR_OW
+else
+	RGB 15,14,24, 31,30,31, 24,18,31, 12,08,18
 endc
 
 LyrasHouse2FOBPalette_Rock:
-if !DEF(MONOCHROME)
-	RGB 30, 28, 26
-	RGB 30, 28, 02
-	RGB 08, 14, 24
-	RGB 07, 07, 07
-else
+if DEF(NOIR)
+	GRAYSCALE 28, 26, 13, 07
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 30,28,26, 30,28,02, 08,14,24, 07,07,07
 endc
 
 PokecomCenter1FOBPalette_Rock:
-if !DEF(MONOCHROME)
-	RGB 30, 28, 26
-	RGB 30, 28, 26
-	RGB 11, 13, 31
-	RGB 07, 07, 07
-else
+if DEF(NOIR)
+	GRAYSCALE 28, 28, 14, 07
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 30,28,26, 30,28,26, 11,13,31, 07,07,07
 endc
 
 PokecomCenterOfficeOBPalette_Purple:
-if !DEF(MONOCHROME)
-	RGB 28, 31, 16
-	RGB 29, 23, 18
-	RGB 07, 17, 21
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 28, 24, 14, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR_OW
+else
+	RGB 28,31,16, 29,23,18, 07,17,21, 00,00,00
 endc
 
 GoldenrodMuseumOBPalettes_TreeRock:
-if !DEF(MONOCHROME)
-	RGB 30, 28, 26
-	RGB 30, 28, 26
-	RGB 13, 13, 13
-	RGB 07, 07, 07
-
-	RGB 30, 28, 26
-	RGB 31, 28, 28
-	RGB 22, 27, 26
-	RGB 09, 10, 10
-else
+if DEF(NOIR)
+	GRAYSCALE 28, 28, 13, 07
+	GRAYSCALE 28, 29, 25, 10
+elif DEF(MONOCHROME)
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
@@ -2164,4 +2269,7 @@ else
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_LIGHT
 	RGB_MONOCHROME_DARK
+else
+	RGB 30,28,26, 30,28,26, 13,13,13, 07,07,07
+	RGB 30,28,26, 31,28,28, 22,27,26, 09,10,10
 endc

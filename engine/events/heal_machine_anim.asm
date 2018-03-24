@@ -150,13 +150,12 @@ INCBIN "gfx/overworld/heal_machine.2bpp"
 ; 12451
 
 .palettes ; 12451
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 29, 23, 18
-	RGB 31, 07, 01
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 24, 13, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 29,23,18, 31,07,01, 00,00,00
 endc
 ; 12459
 

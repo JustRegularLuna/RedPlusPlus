@@ -813,31 +813,39 @@ endr
 INCLUDE "data/maps/environment_colors.asm"
 
 TilesetBGPalette:
-if !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/bg.pal"
-else
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/bg.pal"
+elif DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/monochrome/bg.pal"
+else
+INCLUDE "gfx/tilesets/palettes/bg.pal"
 endc
 
 MapObjectPals:
-if !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/ob.pal"
-else
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/ob.pal"
+elif DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/monochrome/ob.pal"
+else
+INCLUDE "gfx/tilesets/palettes/ob.pal"
 endc
 
 RoofPals:
-if !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/roof.pal"
-else
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/roof.pal"
+elif DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/monochrome/roof.pal"
+else
+INCLUDE "gfx/tilesets/palettes/roof.pal"
 endc
 
 OvercastRoofPals:
-if !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/roof_overcast.pal"
-else
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/roof_overcast.pal"
+elif DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/monochrome/roof_overcast.pal"
+else
+INCLUDE "gfx/tilesets/palettes/roof_overcast.pal"
 endc
 
 

@@ -337,33 +337,26 @@ GameFreakLogoPalettes: ; e47ac
 ; Ditto's color as it turns into the Game Freak logo.
 ; Fade from pink to orange.
 ; One color per step.
-if !DEF(MONOCHROME)
-	RGB 23, 12, 28
-	RGB 23, 12, 27
-	RGB 23, 13, 26
-	RGB 23, 13, 24
+if DEF(NOIR)
+	GRAYSCALE 17, 17, 17, 17
+	GRAYSCALE 18, 18, 18, 18
+	GRAYSCALE 18, 18, 19, 18
+	GRAYSCALE 19, 19, 19, 19
 
-	RGB 24, 14, 22
-	RGB 24, 14, 20
-	RGB 24, 15, 18
-	RGB 24, 15, 16
-
-	RGB 25, 16, 14
-	RGB 25, 16, 12
-	RGB 25, 17, 10
-	RGB 25, 17, 08
-
-	RGB 26, 18, 06
-	RGB 26, 18, 04
-	RGB 26, 19, 02
-	RGB 26, 19, 00
-else
+elif DEF(MONOCHROME)
 rept 4
 	RGB_MONOCHROME_LIGHT
 	RGB_MONOCHROME_LIGHT
 	RGB_MONOCHROME_LIGHT
 	RGB_MONOCHROME_LIGHT
 endr
+
+else
+	RGB 23,12,28, 23,12,27, 23,13,26, 23,13,24
+	RGB 24,14,22, 24,14,20, 24,15,18, 24,15,16
+	RGB 25,16,14, 25,16,12, 25,17,10, 25,17,08
+	RGB 26,18,06, 26,18,04, 26,19,02, 26,19,00
+
 endc
 ; e47cc
 

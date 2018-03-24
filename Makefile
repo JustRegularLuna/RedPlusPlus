@@ -22,13 +22,16 @@ CFLAGS = -O3 -std=c11 -Wall -Wextra -pedantic
 ifeq ($(filter debug,$(MAKECMDGOALS)),debug)
 RGBASM_FLAGS += -DDEBUG
 endif
+ifeq ($(filter noir,$(MAKECMDGOALS)),noir)
+RGBASM_FLAGS += -DNOIR
+endif
 ifeq ($(filter monochrome,$(MAKECMDGOALS)),monochrome)
 RGBASM_FLAGS += -DMONOCHROME
 endif
 
 
 .SUFFIXES:
-.PHONY: all clean rpp debug monochrome bankfree freespace compare tools
+.PHONY: all clean rpp debug noir monochrome bankfree freespace compare tools
 .SECONDEXPANSION:
 .PRECIOUS: %.2bpp %.1bpp %.lz %.o
 
@@ -74,6 +77,7 @@ rpp: ROM_NAME = $(NAME)-$(VERSION)
 rpp: $(NAME)-$(VERSION).gbc
 
 debug: rpp
+noir: rpp
 monochrome: rpp
 
 bankfree: FILLER = 0xff

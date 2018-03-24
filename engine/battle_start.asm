@@ -709,44 +709,34 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 ; 8c6a1 (23:46a1)
 
 .RocketTrainerClasses
-;	db GRUNTM
-;	db GRUNTF
-;	db ROCKET_SCIENTIST
-;	db JESSIE_JAMES
-;	db PROTON
-;	db PETREL
-;	db ARCHER
-;	db ARIANA
-;	db GIOVANNI
+	db ROCKET_F
+	db SCIENTIST
+	db GIOVANNI
+	db ROCKET
+	db EXECUTIVE_F
+	db EXECUTIVE_M
+	db JESSIE_JAMES
+	db JESSIE
+	db JAMES
+	db GIOVANNI_2
 	db -1
 
 .timepals
-if !DEF(MONOCHROME)
-; morn
-	RGB 31, 24, 18
-	RGB 31, 15, 17
-	RGB 31, 05, 05
-	RGB 07, 07, 07
-; day
-	RGB 31, 18, 29
-	RGB 31, 11, 15
-	RGB 31, 05, 05
-	RGB 07, 07, 07
-; nite
-	RGB 15, 09, 22
-	RGB 15, 05, 11
-	RGB 15, 02, 04
-	RGB 00, 00, 00
-; dark
-	RGB 11, 07, 07
-	RGB 07, 03, 03
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 25, 20, 13, 07
+	GRAYSCALE 23, 17, 13, 07
+	GRAYSCALE 12, 09, 06, 00
+	GRAYSCALE 08, 04, 00, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
 	MONOCHROME_RGB_FOUR
 	MONOCHROME_RGB_FOUR
 	MONOCHROME_RGB_FOUR_NIGHT
+else
+	RGB 31,24,18, 31,15,17, 31,05,05, 07,07,07 ; morn
+	RGB 31,18,29, 31,11,15, 31,05,05, 07,07,07 ; day
+	RGB 15,09,22, 15,05,11, 15,02,04, 00,00,00 ; nite
+	RGB 11,07,07, 07,03,03, 00,00,00, 00,00,00 ; dark
 endc
 
 PokeBallTransition:
