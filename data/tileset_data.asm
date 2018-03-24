@@ -158,7 +158,7 @@ INCBIN "data/tilesets/forest_attributes.bin"
 SECTION "Tileset Data 13", ROMX
 
 TilesetSafariZoneGFX::
-INCBIN "gfx/tilesets/safari_zone.2bpp.lz"
+INCBIN "gfx/tilesets/safari_zone.2bpp.unique.lz"
 TilesetSafariZoneMeta::
 INCBIN "data/tilesets/safari_zone_metatiles.bin"
 TilesetSafariZoneColl::
