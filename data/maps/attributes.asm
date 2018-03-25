@@ -113,10 +113,10 @@ ENDM
 	connection west, Route29, ROUTE_29, 0, 0, 11
 ;	connection east, Route27, ROUTE_27, 0, 0, 9
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | WEST
-	connection north, Route30, ROUTE_30, 5, 0, 10
-	connection west, CherrygroveBay, CHERRYGROVE_BAY, -1, 14, 10
-;	connection east, Route29, ROUTE_29, 0, 0, 9
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $41, EAST
+;	connection north, Route30, ROUTE_30, 5, 0, 10
+;	connection west, CherrygroveBay, CHERRYGROVE_BAY, -1, 14, 10
+	connection east, Route29, ROUTE_29, 0, 0, 11
 
 	map_attributes VioletCity, VIOLET_CITY, $5, NORTH | SOUTH | WEST | EAST
 	connection north, VioletOutskirts, VIOLET_OUTSKIRTS, 0, 0, 20
@@ -299,14 +299,14 @@ ENDM
 	map_attributes Route28, ROUTE_28, $71, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -3, 3, 12
 
-	map_attributes Route29, ROUTE_29, $f, EAST
+	map_attributes Route29, ROUTE_29, $f, WEST | EAST
 ;	connection north, Route46, ROUTE_46, 10, 0, 10
-;	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0, 0, 9
+	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0, 0, 11
 	connection east, NewBarkTown, NEW_BARK_TOWN, 0, 0, 11
 
-	map_attributes Route30, ROUTE_30, $5, NORTH | SOUTH
+	map_attributes Route30, ROUTE_30, $5, NORTH
 	connection north, Route31, ROUTE_31, -3, 7, 13
-	connection south, CherrygroveCity, CHERRYGROVE_CITY, -3, 2, 16
+;	connection south, CherrygroveCity, CHERRYGROVE_CITY, -3, 2, 16
 
 	map_attributes Route31, ROUTE_31, $5, SOUTH | WEST
 	connection south, Route30, ROUTE_30, 10, 0, 10
@@ -406,10 +406,10 @@ ENDM
 	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $41, WEST
 	connection west, Route21, ROUTE_21, -3, 5, 15
 
-	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $35, SOUTH | WEST | EAST
+	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $35, SOUTH | WEST
 	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15
 	connection west, Route32, ROUTE_32, -2, 10, 26
-	connection east, CherrygroveCity, CHERRYGROVE_CITY, 15, 0, 10
+;	connection east, CherrygroveCity, CHERRYGROVE_CITY, 15, 0, 10
 
 	map_attributes VioletOutskirts, VIOLET_OUTSKIRTS, $5, NORTH | SOUTH
 	connection north, Route42, ROUTE_42, -3, 2, 20

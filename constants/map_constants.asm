@@ -285,7 +285,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 22
 
-	map_const CHERRYGROVE_CITY,                   20, 10 ;  1
+	map_const CHERRYGROVE_CITY,                   20, 11 ;  1
 	map_const ROUTE_30,                           10, 27 ;  2
 	map_const ROUTE_31,                           22,  9 ;  3
 	map_const CHERRYGROVE_BAY,                    15, 25 ;  4

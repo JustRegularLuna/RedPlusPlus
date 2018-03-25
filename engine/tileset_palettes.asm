@@ -74,6 +74,8 @@ LoadSpecialMapPalette: ; 494ac
 
 	cp TILESET_FOREST
 	jp z, .tileset_forest
+	cp TILESET_NEW_BARK_CHERRYGROVE
+	jp z, .tileset_new_bark_cherrygrove
 
 	cp TILESET_PC_POKECENTER
 	jp z, .pokecenter
@@ -453,6 +455,16 @@ LoadSpecialMapPalette: ; 494ac
 	jp nz, .do_nothing
 	ld hl, ViridianForestPalette
 	jp .load_eight_bg_palettes
+
+.tileset_new_bark_cherrygrove
+	ld a, [MapGroup]
+	cp GROUP_CHERRYGROVE_CITY
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	cp MAP_CHERRYGROVE_CITY
+	jp nz, .do_nothing
+	ld hl, CherrygroveCityPalette
+	jp .load_eight_time_of_day_bg_palettes
 
 .maybe_special_forest
 	ld a, [MapGroup]
@@ -1615,6 +1627,35 @@ INCLUDE "gfx/tilesets/palettes/viridian_forest.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
+
+CherrygroveCityPalette:
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/cherrygrove_city.pal"
+elif !DEF(MONOCHROME)
+INCLUDE "gfx/tilesets/palettes/cherrygrove_city.pal"
+else
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 7
+	MONOCHROME_RGB_FOUR_NIGHT
 endr
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE
