@@ -140,9 +140,12 @@ OutdoorSprites_Saffron:
 OutdoorSprites_Indigo:
 	db 0 ; end
 
+OutdoorSprites_NewBark:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_Special:
 OutdoorSprites_Route26:
-OutdoorSprites_NewBark:
 OutdoorSprites_Cherrygrove:
 OutdoorSprites_Route32:
 OutdoorSprites_Violet:

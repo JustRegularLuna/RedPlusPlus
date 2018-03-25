@@ -10,6 +10,9 @@ Route29_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 3 ; object events
+	cuttree_event 30,  9, -1
+	cuttree_event 21, 11, -1
+	fruittree_event 12,  3, FRUITTREE_ROUTE_29, ORAN_BERRY
 
 	const_def 1 ; object constants
