@@ -273,7 +273,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 21
 
-	map_const NEW_BARK_TOWN,         10,  9 ;  1
+	map_const NEW_BARK_TOWN,         11, 11 ;  1
 	map_const ROUTE_29,              30,  9 ;  2
 	map_const KRISS_HOUSE_1F,         5,  4 ;  3
 	map_const KRISS_HOUSE_2F,         4,  3 ;  4

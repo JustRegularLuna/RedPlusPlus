@@ -21,7 +21,7 @@ SpawnPoints: ; 0x152ab
 	spawn CINNABAR_ISLAND,            19, 18
 	spawn INDIGO_PLATEAU,              9,  6
 
-	spawn NEW_BARK_TOWN,              15,  6
+	spawn NEW_BARK_TOWN,              17,  6
 	spawn CHERRYGROVE_CITY,           29,  4
 	spawn VIOLET_CITY,                31, 30
 	spawn ROUTE_32,                   11, 74
