@@ -138,14 +138,14 @@
 	tilecoll WALL, WALL, DOOR, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, DOOR, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, WALL, WALL, DOOR
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, POKECENTER_SIGN, WALL
+	tilecoll WALL, WALL, WALL, DOOR
+	tilecoll WALL, WALL, MART_SIGN, WALL
 	tilecoll WALL, WATER, WALL, WALL
 	tilecoll WATER, WALL, WALL, WALL
 	tilecoll WATER, WALL, WATER, WALL
@@ -224,3 +224,11 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WATER, WALL
 	tilecoll WALL, WALL, WALL, WATER
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, DOOR
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, DOOR, WALL
