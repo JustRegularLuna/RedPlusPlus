@@ -6,7 +6,7 @@ NewBarkTown_MapScriptHeader:
 	db 5 ; warp events
 	warp_event  8,  3, ELMS_LAB, 1
 	warp_event 17,  5, KRISS_HOUSE_1F, 1
-	warp_event  5, 13, KRISS_NEIGHBORS_HOUSE, 1
+	warp_event  5, 12, KRISS_NEIGHBORS_HOUSE, 1
 	warp_event 13, 13, LYRAS_HOUSE_1F, 1
 	warp_event 12,  2, ELMS_HOUSE, 2
 
