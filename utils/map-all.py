@@ -20,7 +20,7 @@ block_filename_fmt   = 'maps/%s.blk'
  
 tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'vermilion', 'celadon',
                  'lavender', 'cycling_road', 'fuchsia', 'saffron', 'cerulean',
-                 'indigo', 'forest', 'safari_zone']
+                 'indigo', 'forest', 'safari_zone', 'new_bark_cherrygrove']
 
 # {'TILESET_PC_JOHTO_1': 1, ...}
 tileset_ids = {}

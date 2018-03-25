@@ -166,6 +166,19 @@ INCLUDE "data/tilesets/safari_zone_collision.asm"
 TilesetSafariZoneAttr::
 INCBIN "data/tilesets/safari_zone_attributes.bin"
 
+
+SECTION "Tileset Data 14", ROMX
+
+TilesetNewBarkCherrygroveGFX::
+INCBIN "gfx/tilesets/new_bark_cherrygrove.2bpp.unique.lz"
+TilesetNewBarkCherrygroveMeta::
+INCBIN "data/tilesets/new_bark_cherrygrove_metatiles.bin"
+TilesetNewBarkCherrygroveColl::
+INCLUDE "data/tilesets/new_bark_cherrygrove_collision.asm"
+TilesetNewBarkCherrygroveAttr::
+INCBIN "data/tilesets/new_bark_cherrygrove_attributes.bin"
+
+
 ;------------------------------------
 
 

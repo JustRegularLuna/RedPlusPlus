@@ -9,6 +9,7 @@
 	const TILESET_CYCLING_ROAD
 	const TILESET_FUCHSIA
 	const TILESET_SAFFRON
+	const TILESET_NEW_BARK_CHERRYGROVE
 GENERIC_METATILES EQU const_value
 ; These tilesets just share the first 160 tiles, not any metatiles
 	const TILESET_CERULEAN
