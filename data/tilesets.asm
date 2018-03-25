@@ -16,6 +16,7 @@ Tileset00End::
 	tileset TilesetCyclingRoad
 	tileset TilesetFuchsia
 	tileset TilesetSaffron
+	tileset TilesetNewBarkCherrygrove
 	tileset TilesetCerulean
 	tileset TilesetIndigo
 	tileset TilesetForest

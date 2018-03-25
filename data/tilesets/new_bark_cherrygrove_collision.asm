@@ -161,3 +161,12 @@
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll TV, TV, TV, TV
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, DOOR, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WARP_CARPET_LEFT, WALL, FLOOR, WALL
