@@ -5,7 +5,8 @@ endm
 
 TreeMonMaps:
 	treemon_map ROUTE_26, 4
-	treemon_map ROUTE_27, 4
+	treemon_map ROUTE_27_EAST, 4
+	treemon_map ROUTE_27_WEST, 4
 	treemon_map ROUTE_28, 1
 	treemon_map ROUTE_29, 3
 	treemon_map ROUTE_30, 3

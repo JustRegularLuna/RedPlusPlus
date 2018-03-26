@@ -1,11 +1,10 @@
-Route27RestHouse_MapScriptHeader:
+Route27West_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
-	warp_event  2,  7, ROUTE_27_EAST, 2
-	warp_event  3,  7, ROUTE_27_EAST, 2
+	db 1 ; warp events
+	warp_event 24,  5, TOHJO_FALLS, 1
 
 	db 0 ; coord events
 

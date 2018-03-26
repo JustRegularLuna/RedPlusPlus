@@ -109,9 +109,9 @@ ENDM
 	map_attributes IndigoPlateau, INDIGO_PLATEAU, $4d, SOUTH
 	connection south, Route23, ROUTE_23, 0, 0, 10
 
-	map_attributes NewBarkTown, NEW_BARK_TOWN, $f, WEST
+	map_attributes NewBarkTown, NEW_BARK_TOWN, $f, WEST | EAST
 	connection west, Route29, ROUTE_29, 0, 0, 11
-;	connection east, Route27, ROUTE_27, 0, 0, 9
+	connection east, Route27West, ROUTE_27_WEST, 0, 0, 9
 
 	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $41, EAST
 ;	connection north, Route30, ROUTE_30, 5, 0, 10
@@ -289,12 +289,16 @@ ENDM
 	connection west, Route24, ROUTE_24, 0, 0, 20
 	connection east, CeruleanCape, CERULEAN_CAPE, 0, 0, 19
 
-	map_attributes Route26, ROUTE_26, $5, WEST
-	connection west, Route27, ROUTE_27, 45, 0, 9
+	map_attributes Route26, ROUTE_26, $d, WEST
+	connection west, Route27East, ROUTE_27_EAST, 45, 0, 9
 
-	map_attributes Route27, ROUTE_27, $35, EAST
-;	connection west, NewBarkTown, NEW_BARK_TOWN, 0, 0, 9
+	map_attributes Route27East, ROUTE_27_EAST, $41, WEST | EAST
+	connection west, Route27West, ROUTE_27_WEST, 0, 0, 9
 	connection east, Route26, ROUTE_26, -3, 42, 12
+
+	map_attributes Route27West, ROUTE_27_WEST, $f, WEST | EAST
+	connection west, NewBarkTown, NEW_BARK_TOWN, 0, 0, 11
+	connection east, Route27East, ROUTE_27_EAST, 0, 0, 9
 
 	map_attributes Route28, ROUTE_28, $71, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -3, 3, 12

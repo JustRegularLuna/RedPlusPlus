@@ -939,7 +939,8 @@ INCLUDE "maps/Route26HealSpeechHouse.asm"
 
 SECTION "Routes 27-29 Scripts", ROMX
 
-INCLUDE "maps/Route27.asm"
+INCLUDE "maps/Route27East.asm"
+INCLUDE "maps/Route27West.asm"
 INCLUDE "maps/Route27RestHouse.asm"
 INCLUDE "maps/Route28.asm"
 INCLUDE "maps/Route28FamousSpeechHouse.asm"

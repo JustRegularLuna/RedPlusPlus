@@ -266,7 +266,7 @@ MAP_NONE   EQU 0
 	newgroup ; 20
 
 	map_const ROUTE_26,                            10, 54 ;  1
-	map_const ROUTE_27,                            40,  9 ;  2
+	map_const ROUTE_27_EAST,                       25,  9 ;  2
 	map_const ROUTE_26_HEAL_SPEECH_HOUSE,           4,  4 ;  3
 	map_const ROUTE_26_DAY_OF_WEEK_SIBLINGS_HOUSE,  4,  4 ;  4
 	map_const ROUTE_27_REST_HOUSE,                  4,  4 ;  5
@@ -274,14 +274,15 @@ MAP_NONE   EQU 0
 	newgroup ; 21
 
 	map_const NEW_BARK_TOWN,         11, 11 ;  1
-	map_const ROUTE_29,              30, 11 ;  2
-	map_const KRISS_HOUSE_1F,         5,  4 ;  3
-	map_const KRISS_HOUSE_2F,         4,  3 ;  4
-	map_const LYRAS_HOUSE_1F,         5,  4 ;  5
-	map_const LYRAS_HOUSE_2F,         4,  3 ;  6
-	map_const ELMS_HOUSE,             4,  4 ;  7
-	map_const KRISS_NEIGHBORS_HOUSE,  4,  4 ;  8
-	map_const ELMS_LAB,               5,  6 ;  9
+	map_const ROUTE_27_WEST,         15,  9 ;  2
+	map_const ROUTE_29,              30, 11 ;  3
+	map_const KRISS_HOUSE_1F,         5,  4 ;  4
+	map_const KRISS_HOUSE_2F,         4,  3 ;  5
+	map_const LYRAS_HOUSE_1F,         5,  4 ;  6
+	map_const LYRAS_HOUSE_2F,         4,  3 ;  7
+	map_const ELMS_HOUSE,             4,  4 ;  8
+	map_const KRISS_NEIGHBORS_HOUSE,  4,  4 ;  9
+	map_const ELMS_LAB,               5,  6 ; 10
 
 	newgroup ; 22
 
