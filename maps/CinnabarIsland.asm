@@ -15,7 +15,9 @@ CinnabarIsland_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 3 ; object events
 	cavebase_event 26, 13, SECRET_BASE_CINNABAR_ISLAND, EVENT_SECRET_BASE_CINNABAR_ISLAND
+	smashrock_event 18,  9
+	smashrock_event 27,  8
 
 	const_def 1 ; object constants

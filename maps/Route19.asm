@@ -11,6 +11,9 @@ Route19_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 3 ; object events
+	smashrock_event  6,  6
+	smashrock_event 11,  5
+	smashrock_event 12, 12
 
 	const_def 1 ; object constants

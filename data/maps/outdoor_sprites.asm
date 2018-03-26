@@ -62,6 +62,7 @@ OutdoorSprites_Cinnabar:
 	db SPRITE_CLERK
 	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
@@ -81,11 +82,13 @@ OutdoorSprites_Pewter:
 	db SPRITE_BLACK_HAIR_BOY_2
 	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_MountMoonSquare:
+	db SPRITE_PEARL_METEORITE_LODESTONE
 	db SPRITE_SECRET_BASE
 	db SPRITE_CABLE_CAR_SILPH
 	db 0 ; end
@@ -101,6 +104,7 @@ OutdoorSprites_Route5:
 
 OutdoorSprites_Vermilion:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
@@ -129,6 +133,7 @@ OutdoorSprites_CyclingRoad:
 OutdoorSprites_Fuchsia:
 OutdoorSprites_Route19:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
