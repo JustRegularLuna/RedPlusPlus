@@ -23,12 +23,10 @@ _TitleScreen: ; 10ed67
 	ld a, 1
 	ld [rVBK], a
 
-
-; Decompress running Suicune gfx
-	ld hl, TitleSuicuneGFX
-	ld de, VTiles1
+; Decompress Charizard and Trainers gfx
+	ld hl, TitleCharizardGFX
+	ld de, VTiles4
 	call Decompress
-
 
 ; Clear screen palettes
 	hlbgcoord 0, 0
@@ -44,7 +42,7 @@ _TitleScreen: ; 10ed67
 ; line 0 (copyright)
 	hlbgcoord 0, 0, VBGMap1
 	ld bc, BG_MAP_WIDTH
-	ld a, 7 ; palette
+	ld a, 3 ; palette
 	call ByteFill
 
 
@@ -52,50 +50,44 @@ _TitleScreen: ; 10ed67
 
 ; Apply logo gradient:
 
-; lines 3-4
-	hlbgcoord 0, 3
-	ld bc, 2 * BG_MAP_WIDTH
-	ld a, 2
-	call ByteFill
-; line 5
-	hlbgcoord 0, 5
-	ld bc, BG_MAP_WIDTH
-	ld a, 3
-	call ByteFill
-; line 6
-	hlbgcoord 0, 6
-	ld bc, BG_MAP_WIDTH
-	ld a, 4
-	call ByteFill
-; line 7
-	hlbgcoord 0, 7
-	ld bc, BG_MAP_WIDTH
-	ld a, 5
-	call ByteFill
-; lines 8-9
-	hlbgcoord 0, 8
-	ld bc, 2 * BG_MAP_WIDTH
-	ld a, 6
-	call ByteFill
-
-
-; 'CRYSTAL VERSION'
-	hlbgcoord 5, 9
-	ld bc, NAME_LENGTH ; length of version text
+; Pokémon Logo
+	hlbgcoord 0, 2
+	ld bc, 7 * BG_MAP_WIDTH
 	ld a, 1
 	call ByteFill
 
-; Suicune gfx
+; 'Red++ Version'
+	hlbgcoord 5, 8
+	ld bc, NAME_LENGTH ; length of version text
+	ld a, 2
+	call ByteFill
+
+; Charizard
 	hlbgcoord 0, 12
-	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
+	ld bc, 7 * BG_MAP_WIDTH ; the rest of the screen
 	ld a, 8
 	call ByteFill
+
+; Trainers
+	hlbgcoord 11, 12
+	lb bc, 7, 8
+	ld a, 12
+.row
+	push bc
+.col
+	ld [hli], a
+	dec c
+	jr nz, .col
+	ld bc, BG_MAP_WIDTH - 8
+	add hl, bc
+	pop bc
+	dec b
+	jr nz, .row
 
 
 ; Back to VRAM bank 0
 	xor a
 	ld [rVBK], a
-
 
 ; Decompress logo
 	ld hl, TitleLogoGFX
@@ -109,9 +101,21 @@ _TitleScreen: ; 10ed67
 	call ByteFill
 
 ; Draw Pokemon logo
-	hlcoord 0, 3
+	hlcoord 0, 2
 	lb bc, 7, SCREEN_WIDTH
 	lb de, $80, SCREEN_WIDTH
+	call DrawTitleGraphic
+
+; Draw Charizard
+	hlbgcoord 0, 12, VBGMap1
+	lb bc, 7, 9
+	lb de, $80, $11
+	call DrawTitleGraphic
+
+; Draw Trainers
+	hlbgcoord 11, 12, VBGMap1
+	lb bc, 7, 8
+	lb de, $89, $11
 	call DrawTitleGraphic
 
 ; Draw copyright text
@@ -119,10 +123,6 @@ _TitleScreen: ; 10ed67
 	lb bc, 1, 13
 	lb de, $0c, 0
 	call DrawTitleGraphic
-
-; Initialize running Suicune?
-	ld d, $0
-	call LoadSuicuneFrame
 
 ; Save WRAM bank
 	ld a, [rSVBK]
@@ -202,68 +202,6 @@ _TitleScreen: ; 10ed67
 	ret
 ; 10eea7
 
-SuicuneFrameIterator: ; 10eea7
-	ld hl, UnknBGPals palette 0 + 2
-	ld a, [hl]
-	ld c, a
-	inc [hl]
-
-; Only do this once every eight frames
-	and (1 << 3) - 1
-	ret nz
-
-	ld a, c
-	and 3 << 3
-	sla a
-	swap a
-	ld e, a
-	ld d, $0
-	ld hl, .Frames
-	add hl, de
-	ld d, [hl]
-	xor a
-	ld [hBGMapMode], a
-	call LoadSuicuneFrame
-	ld a, $1
-	ld [hBGMapMode], a
-	ld a, $3
-	ld [hBGMapThird], a
-	ret
-; 10eece
-
-.Frames: ; 10eece
-	db $80 ; VTiles4 tile $00
-	db $88 ; VTiles4 tile $08
-	db $00 ; VTiles5 tile $00
-	db $08 ; VTiles5 tile $08
-; 10eed2
-
-
-LoadSuicuneFrame: ; 10eed2
-	hlcoord 6, 12
-	ld b, 6
-.bgrows
-	ld c, 8
-.col
-	ld a, d
-	ld [hli], a
-	inc d
-	dec c
-	jr nz, .col
-	ld a, SCREEN_WIDTH - 8
-	add l
-	ld l, a
-	ld a, 0 ; not xor a; preserve carry flag
-	adc h
-	ld h, a
-	ld a, 8
-	add d
-	ld d, a
-	dec b
-	jr nz, .bgrows
-	ret
-; 10eeef
-
 DrawTitleGraphic: ; 10eeef
 ; input:
 ;   hl: draw location
@@ -294,13 +232,11 @@ DrawTitleGraphic: ; 10eeef
 	ret
 ; 10ef06
 
-TitleSuicuneGFX: ; 10ef46
-INCBIN "gfx/title/suicune.w128.2bpp.lz"
-; 10f326
+TitleCharizardGFX:
+INCBIN "gfx/title/charizard.w136.2bpp.lz"
 
-TitleLogoGFX: ; 10f326
+TitleLogoGFX:
 INCBIN "gfx/title/logo.w160.t4.2bpp.lz"
-; 10fcee
 
 TitleScreenPalettes:
 if DEF(NOIR)
@@ -323,99 +259,150 @@ if DEF(NOIR)
 	GRAYSCALE 31, 00, 00, 00
 	GRAYSCALE 31, 00, 00, 00
 elif DEF(MONOCHROME)
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-
-	RGB_MONOCHROME_BLACK
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_LIGHT
 	RGB_MONOCHROME_DARK
-
 	RGB_MONOCHROME_BLACK
+
+	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
-
 	RGB_MONOCHROME_BLACK
+
+	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
-
 	RGB_MONOCHROME_BLACK
+
+	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
-
 	RGB_MONOCHROME_BLACK
+
+	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
-
 	RGB_MONOCHROME_BLACK
+
+	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
-
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_BLACK
 
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_LIGHT
-	RGB_MONOCHROME_WHITE
-
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
+	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_BLACK
 
 	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_BLACK
 
 	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
-
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_BLACK
 
 	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_BLACK
-	RGB_MONOCHROME_BLACK
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_BLACK
 
 	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_BLACK
+
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_BLACK
+
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
 	RGB_MONOCHROME_BLACK
 
 else
-; BG
-	RGB 00,00,00, 19,00,00, 15,08,31, 15,08,31
-	RGB 00,00,00, 31,31,31, 15,16,31, 31,01,13
-	RGB 00,00,00, 07,07,07, 31,31,31, 02,03,30
-	RGB 00,00,00, 13,13,13, 31,31,18, 02,03,30
-	RGB 00,00,00, 19,19,19, 29,28,12, 02,03,30
-	RGB 00,00,00, 25,25,25, 28,25,06, 02,03,30
-	RGB 00,00,00, 31,31,31, 26,21,00, 02,03,30
-	RGB 00,00,00, 11,11,19, 31,31,31, 00,00,00
+; BG Pals mostly from pokered-gbc
+; PAL_CHARIZARD *** TODO: Scrolling mons, their pals overwrite this
+	RGB 31, 31, 31
+	RGB 31, 11, 00
+	RGB 06, 09, 15
+	RGB 00, 00, 00
+	
+; PAL_LOGO2
+	RGB 31, 31, 31
+	RGB 28, 24, 00
+	RGB 18, 19, 18
+	RGB 05, 12, 22
+
+; PAL_LOGO1
+	RGB 31, 31, 31
+	RGB 30, 30, 17
+	RGB 17, 23, 10
+	RGB 21, 00, 04
+
+; PAL_BLACK
+	RGB 31, 31, 31
+	RGB 07, 07, 07
+	RGB 02, 03, 03
+	RGB 00, 00, 00
+
+; PAL_PROF_OAK *** TODO: Sprite Oak instead of BG Oak, so mons can scroll in
+	RGB 31, 31, 31
+	RGB 24, 19, 11
+	RGB 10, 08, 14
+	RGB 00, 00, 00
+
+; PAL_PROF_OAK *** Unused
+	RGB 31, 31, 31
+	RGB 24, 19, 11
+	RGB 10, 08, 14
+	RGB 00, 00, 00
+
+; PAL_PROF_OAK *** Unused
+	RGB 31, 31, 31
+	RGB 24, 19, 11
+	RGB 10, 08, 14
+	RGB 00, 00, 00
+
+; PAL_PROF_OAK *** Unused
+	RGB 31, 31, 31
+	RGB 24, 19, 11
+	RGB 10, 08, 14
+	RGB 00, 00, 00
+
 ; OBJ
-	RGB 00,00,00, 10,00,15, 17,05,22, 19,09,31
-	RGB 31,31,31, 00,00,00, 00,00,00, 00,00,00
+; PAL_PROF_OAK *** TODO: Sprite Oak
+	RGB 31, 31, 31
+	RGB 24, 19, 11
+	RGB 10, 08, 14
+	RGB 00, 00, 00
+
+; PAL_REDBAR *** TODO: Sprite pokeball
+	RGB 31, 31, 31
+	RGB 29, 25, 15
+	RGB 26, 10, 06
+	RGB 00, 00, 00
+
+; original unused pals
 	RGB 31,31,31, 00,00,00, 00,00,00, 00,00,00
 	RGB 31,31,31, 00,00,00, 00,00,00, 00,00,00
 	RGB 31,31,31, 00,00,00, 00,00,00, 00,00,00
