@@ -15,7 +15,6 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_Lavender
 	dw OutdoorSprites_SilenceBridge
 	dw OutdoorSprites_CyclingRoad
-	dw OutdoorSprites_Route16
 	dw OutdoorSprites_Fuchsia
 	dw OutdoorSprites_Route19
 	dw OutdoorSprites_Saffron
@@ -63,6 +62,7 @@ OutdoorSprites_Cinnabar:
 	db SPRITE_CLERK
 	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
@@ -82,13 +82,15 @@ OutdoorSprites_Pewter:
 	db SPRITE_BLACK_HAIR_BOY_2
 	db SPRITE_BUG_CATCHER
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_MountMoonSquare:
+	db SPRITE_PEARL_METEORITE_LODESTONE
 	db SPRITE_SECRET_BASE
-	db SPRITE_CABLE_CAR_POLE
+	db SPRITE_CABLE_CAR_SILPH
 	db 0 ; end
 
 OutdoorSprites_Cerulean:
@@ -97,12 +99,12 @@ OutdoorSprites_Route10:
 OutdoorSprites_Route5:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
-	db SPRITE_CABLE_CAR_POLE
-	db SPRITE_BIKE_BLANK_SILPH
+	db SPRITE_CABLE_CAR_SILPH
 	db 0 ; end
 
 OutdoorSprites_Vermilion:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
@@ -124,7 +126,6 @@ OutdoorSprites_SilenceBridge:
 	db 0 ; end
 
 OutdoorSprites_CyclingRoad:
-OutdoorSprites_Route16:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
 	db 0 ; end
@@ -132,20 +133,28 @@ OutdoorSprites_Route16:
 OutdoorSprites_Fuchsia:
 OutdoorSprites_Route19:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Saffron:
-	db SPRITE_BIKE_BLANK_SILPH
+	db SPRITE_CABLE_CAR_SILPH
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Indigo:
 	db 0 ; end
 
-OutdoorSprites_Special:
-OutdoorSprites_Route26:
 OutdoorSprites_NewBark:
 OutdoorSprites_Cherrygrove:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
+OutdoorSprites_Route26:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
+OutdoorSprites_Special:
 OutdoorSprites_Route32:
 OutdoorSprites_Violet:
 OutdoorSprites_RuinsOfAlph:

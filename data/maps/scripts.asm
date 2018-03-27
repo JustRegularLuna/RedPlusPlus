@@ -885,7 +885,8 @@ INCLUDE "maps/Route11Gate2F.asm"
 
 SECTION "Routes 12-14 Scripts", ROMX
 
-INCLUDE "maps/Route12.asm"
+INCLUDE "maps/Route12North.asm"
+INCLUDE "maps/Route12South.asm"
 INCLUDE "maps/Route12Gate.asm"
 INCLUDE "maps/Route12Gate2F.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
@@ -903,8 +904,7 @@ INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/Route1617Gate.asm"
 INCLUDE "maps/Route1617Gate2F.asm"
 INCLUDE "maps/Route16East.asm"
-INCLUDE "maps/Route16North.asm"
-INCLUDE "maps/Route16South.asm"
+INCLUDE "maps/Route16Middle.asm"
 INCLUDE "maps/Route16West.asm"
 INCLUDE "maps/Route17.asm"
 
@@ -939,7 +939,8 @@ INCLUDE "maps/Route26HealSpeechHouse.asm"
 
 SECTION "Routes 27-29 Scripts", ROMX
 
-INCLUDE "maps/Route27.asm"
+INCLUDE "maps/Route27East.asm"
+INCLUDE "maps/Route27West.asm"
 INCLUDE "maps/Route27RestHouse.asm"
 INCLUDE "maps/Route28.asm"
 INCLUDE "maps/Route28FamousSpeechHouse.asm"

@@ -88,8 +88,7 @@ GetMapTrigger:: ; 2147
 ; 2173
 
 OverworldTextModeSwitch:: ; 2173
-	call LoadMapPart
-	jp FarCallSwapTextboxPalettes
+	; fallthrough
 ; 217a
 
 LoadMapPart:: ; 217a
@@ -98,8 +97,11 @@ LoadMapPart:: ; 217a
 
 	ld a, [TilesetBlocksBank]
 	rst Bankswitch
-
 	call LoadMetatiles
+
+	ld a, [TilesetAttributesBank]
+	rst Bankswitch
+	call LoadMetatileAttributes
 
 	ld a, BANK(_LoadMapPart)
 	rst Bankswitch
@@ -155,6 +157,7 @@ endr
 rept 3
 rept 4
 	ld a, [hli]
+	and $7f
 	ld [de], a
 	inc de
 endr
@@ -167,6 +170,7 @@ endr
 endr
 rept 4
 	ld a, [hli]
+	and $7f
 	ld [de], a
 	inc de
 endr
@@ -194,6 +198,99 @@ endr
 	jp nz, .row
 	ret
 ; 222a
+
+LoadMetatileAttributes::
+	; de <- wOverworldMapAnchor
+	ld a, [wOverworldMapAnchor]
+	ld e, a
+	ld a, [wOverworldMapAnchor + 1]
+	ld d, a
+	ld hl, wMiscAttributes
+	ld b, WMISC_HEIGHT / 4 ; 5
+
+.row
+	push de
+	push hl
+	ld c, WMISC_WIDTH / 4 ; 6
+
+.col
+	push de
+	push hl
+	; Load the current map block.
+	; If the current map block is a border block, load the border block.
+	ld a, [de]
+	and a
+	jr nz, .ok
+	ld a, [MapBorderBlock]
+
+.ok
+	; Load the current wMiscAttributes address into de.
+	ld e, l
+	ld d, h
+	; Set hl to the address of the current metatile attr data ([TilesetAttributesAddress] + (a) tiles).
+	ld l, a
+	ld h, 0
+rept 4
+	add hl, hl
+endr
+	ld a, [TilesetAttributesAddress]
+	add l
+	ld l, a
+	ld a, [TilesetAttributesAddress + 1]
+	adc h
+	ld h, a
+
+	ld a, [rSVBK]
+	push af
+	ld a, BANK(wMiscAttributes)
+	ld [rSVBK], a
+
+	; copy the 4x4 metatile
+rept 3
+rept 4
+	ld a, [hli]
+	ld [de], a
+	inc de
+endr
+	ld a, e
+	add WMISC_WIDTH - 4
+	ld e, a
+	jr nc, .next\@
+	inc d
+.next\@
+endr
+rept 4
+	ld a, [hli]
+	ld [de], a
+	inc de
+endr
+
+	pop af
+	ld [rSVBK], a
+
+	; Next metatile
+	pop hl
+	ld de, 4
+	add hl, de
+	pop de
+	inc de
+	dec c
+	jp nz, .col
+	; Next metarow
+	pop hl
+	ld de, WMISC_WIDTH * 4
+	add hl, de
+	pop de
+	ld a, [MapWidth]
+	add 6
+	add e
+	ld e, a
+	jr nc, .ok2
+	inc d
+.ok2
+	dec b
+	jp nz, .row
+	ret
 
 ReturnToMapFromSubmenu:: ; 222a
 	ld a, MAPSETUP_SUBMENU
@@ -1124,8 +1221,9 @@ ScrollMapDown:: ; 272a
 	hlcoord 0, 0
 	ld de, BGMapBuffer
 	call BackupBGMapRow
-	ld c, 2 * SCREEN_WIDTH
-	call FarCallScrollBGMapPalettes
+	hlcoord 0, 0, AttrMap
+	ld de, BGMapPalBuffer
+	call BackupBGMapRow
 	ld a, [wBGMapAnchor]
 	ld e, a
 	ld a, [wBGMapAnchor + 1]
@@ -1140,8 +1238,9 @@ ScrollMapUp:: ; 2748
 	hlcoord 0, SCREEN_HEIGHT - 2
 	ld de, BGMapBuffer
 	call BackupBGMapRow
-	ld c, 2 * SCREEN_WIDTH
-	call FarCallScrollBGMapPalettes
+	hlcoord 0, SCREEN_HEIGHT - 2, AttrMap
+	ld de, BGMapPalBuffer
+	call BackupBGMapRow
 	ld a, [wBGMapAnchor]
 	ld l, a
 	ld a, [wBGMapAnchor + 1]
@@ -1164,8 +1263,9 @@ ScrollMapRight:: ; 2771
 	hlcoord 0, 0
 	ld de, BGMapBuffer
 	call BackupBGMapColumn
-	ld c, 2 * SCREEN_HEIGHT
-	call FarCallScrollBGMapPalettes
+	hlcoord 0, 0, AttrMap
+	ld de, BGMapPalBuffer
+	call BackupBGMapColumn
 	ld a, [wBGMapAnchor]
 	ld e, a
 	ld a, [wBGMapAnchor + 1]
@@ -1180,8 +1280,9 @@ ScrollMapLeft:: ; 278f
 	hlcoord SCREEN_WIDTH - 2, 0
 	ld de, BGMapBuffer
 	call BackupBGMapColumn
-	ld c, 2 * SCREEN_HEIGHT
-	call FarCallScrollBGMapPalettes
+	hlcoord SCREEN_WIDTH - 2, 0, AttrMap
+	ld de, BGMapPalBuffer
+	call BackupBGMapColumn
 	ld a, [wBGMapAnchor]
 	ld e, a
 	and %11100000

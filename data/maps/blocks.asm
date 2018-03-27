@@ -1262,8 +1262,11 @@ Route10South_BlockData:
 Route11_BlockData:
 	INCBIN "maps/Route11.blk"
 
-Route12_BlockData:
-	INCBIN "maps/Route12.blk"
+Route12North_BlockData:
+	INCBIN "maps/Route12North.blk"
+
+Route12South_BlockData:
+	INCBIN "maps/Route12South.blk"
 
 Route13_BlockData:
 	INCBIN "maps/Route13.blk"
@@ -1277,9 +1280,8 @@ Route15_BlockData:
 Route16East_BlockData:
 	INCBIN "maps/Route16East.blk"
 
-Route16North_BlockData:
-Route16South_BlockData:
-	INCBIN "maps/Route16NorthSouth.blk"
+Route16Middle_BlockData:
+	INCBIN "maps/Route16Middle.blk"
 
 Route16West_BlockData:
 	INCBIN "maps/Route16West.blk"
@@ -1317,8 +1319,11 @@ Route25_BlockData:
 Route26_BlockData:
 	INCBIN "maps/Route26.blk"
 
-Route27_BlockData:
-	INCBIN "maps/Route27.blk"
+Route27East_BlockData:
+	INCBIN "maps/Route27East.blk"
+
+Route27West_BlockData:
+	INCBIN "maps/Route27West.blk"
 
 Route28_BlockData:
 	INCBIN "maps/Route28.blk"

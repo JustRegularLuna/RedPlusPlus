@@ -86,9 +86,9 @@ ENDM
 	connection west, Route16East, ROUTE_16_EAST, 6, 0, 7
 	connection east, Route7, ROUTE_7, 0, 0, 24
 
-	map_attributes LavenderTown, LAVENDER_TOWN, $55, NORTH | SOUTH | WEST
+	map_attributes LavenderTown, LAVENDER_TOWN, $4d, NORTH | SOUTH | WEST
 	connection north, Route10South, ROUTE_10_SOUTH, 0, 0, 11
-	connection south, Route12, ROUTE_12, -1, 1, 13
+	connection south, Route12North, ROUTE_12_NORTH, -1, 1, 15
 	connection west, Route8, ROUTE_8, 0, 0, 11
 
 	map_attributes FuchsiaCity, FUCHSIA_CITY, $f, SOUTH | WEST | EAST
@@ -102,21 +102,21 @@ ENDM
 	connection west, Route7, ROUTE_7, 0, 0, 22
 	connection east, Route8, ROUTE_8, 5, 0, 11
 
-	map_attributes CinnabarIsland, CINNABAR_ISLAND, $49, NORTH | EAST
+	map_attributes CinnabarIsland, CINNABAR_ISLAND, $41, NORTH | EAST
 	connection north, Route21, ROUTE_21, 0, 0, 12
 	connection east, Route20, ROUTE_20, 6, 0, 10
 
-	map_attributes IndigoPlateau, INDIGO_PLATEAU, $55, SOUTH
+	map_attributes IndigoPlateau, INDIGO_PLATEAU, $4d, SOUTH
 	connection south, Route23, ROUTE_23, 0, 0, 10
 
-	map_attributes NewBarkTown, NEW_BARK_TOWN, $5, WEST | EAST
-	connection west, Route29, ROUTE_29, 0, 0, 9
-	connection east, Route27, ROUTE_27, 0, 0, 9
+	map_attributes NewBarkTown, NEW_BARK_TOWN, $f, WEST | EAST
+	connection west, Route29, ROUTE_29, 0, 0, 11
+	connection east, Route27West, ROUTE_27_WEST, 0, 0, 9
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | WEST | EAST
-	connection north, Route30, ROUTE_30, 5, 0, 10
-	connection west, CherrygroveBay, CHERRYGROVE_BAY, -1, 14, 10
-	connection east, Route29, ROUTE_29, 0, 0, 9
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $41, EAST
+;	connection north, Route30, ROUTE_30, 5, 0, 10
+;	connection west, CherrygroveBay, CHERRYGROVE_BAY, -1, 14, 10
+	connection east, Route29, ROUTE_29, 0, 0, 11
 
 	map_attributes VioletCity, VIOLET_CITY, $5, NORTH | SOUTH | WEST | EAST
 	connection north, VioletOutskirts, VIOLET_OUTSKIRTS, 0, 0, 20
@@ -172,15 +172,15 @@ ENDM
 	connection north, Route2North, ROUTE_2_NORTH, 0, 0, 13
 	connection south, ViridianCity, VIRIDIAN_CITY, -3, 2, 19
 
-	map_attributes Route3South, ROUTE_3_SOUTH, $55, NORTH | WEST
+	map_attributes Route3South, ROUTE_3_SOUTH, $4d, NORTH | WEST
 	connection north, Route3North, ROUTE_3_NORTH, 25, 0, 12
 	connection west, PewterCity, PEWTER_CITY, -3, 3, 16
 
-	map_attributes Route3North, ROUTE_3_NORTH, $55, SOUTH | EAST
+	map_attributes Route3North, ROUTE_3_NORTH, $4d, SOUTH | EAST
 	connection south, Route3South, ROUTE_3_SOUTH, 0, 25, 11
 	connection east, Route4, ROUTE_4, -1, 0, 11
 
-	map_attributes Route4, ROUTE_4, $55, WEST | EAST
+	map_attributes Route4, ROUTE_4, $4d, WEST | EAST
 	connection west, Route3North, ROUTE_3_NORTH, 1, 0, 9
 	connection east, CeruleanCity, CERULEAN_CITY, -2, 0, 15
 
@@ -196,36 +196,40 @@ ENDM
 	connection west, CeladonCity, CELADON_CITY, 0, 0, 24
 	connection east, SaffronCity, SAFFRON_CITY, 0, 0, 22
 
-	map_attributes Route8, ROUTE_8, $55, WEST | EAST
+	map_attributes Route8, ROUTE_8, $4d, WEST | EAST
 	connection west, SaffronCity, SAFFRON_CITY, -3, 2, 14
 	connection east, LavenderTown, LAVENDER_TOWN, 0, 0, 11
 
-	map_attributes Route9, ROUTE_9, $55, WEST | EAST
+	map_attributes Route9, ROUTE_9, $4d, WEST | EAST
 	connection west, CeruleanCity, CERULEAN_CITY, -1, 1, 14
 	connection east, Route10North, ROUTE_10_NORTH, 0, 4, 11
 
-	map_attributes Route10North, ROUTE_10_NORTH, $55, SOUTH | WEST
+	map_attributes Route10North, ROUTE_10_NORTH, $4d, SOUTH | WEST
 	connection south, Route10South, ROUTE_10_SOUTH, 1, 0, 11
 	connection west, Route9, ROUTE_9, 4, 0, 11
 
-	map_attributes Route10South, ROUTE_10_SOUTH, $55, NORTH | SOUTH
+	map_attributes Route10South, ROUTE_10_SOUTH, $4d, NORTH | SOUTH
 	connection north, Route10North, ROUTE_10_NORTH, -1, 0, 12
 	connection south, LavenderTown, LAVENDER_TOWN, 0, 0, 11
 
 	map_attributes Route11, ROUTE_11, $f, WEST | EAST
 	connection west, VermilionCity, VERMILION_CITY, -1, 1, 15
-	connection east, Route12, ROUTE_12, -3, 19, 19
+	connection east, Route12South, ROUTE_12_SOUTH, -3, 12, 19
 
-	map_attributes Route12, ROUTE_12, $49, NORTH | SOUTH | WEST
-	connection north, LavenderTown, LAVENDER_TOWN, 2, 0, 13
+	map_attributes Route12North, ROUTE_12_NORTH, $41, NORTH | SOUTH
+	connection north, LavenderTown, LAVENDER_TOWN, 2, 0, 11
+	connection south, Route12South, ROUTE_12_SOUTH, 0, 0, 13
+
+	map_attributes Route12South, ROUTE_12_SOUTH, $41, NORTH | SOUTH | WEST
+	connection north, Route12North, ROUTE_12_NORTH, 0, 0, 15
 	connection south, Route13, ROUTE_13, 0, 27, 13
-	connection west, Route11, ROUTE_11, 22, 0, 13
+	connection west, Route11, ROUTE_11, 15, 0, 13
 
-	map_attributes Route13, ROUTE_13, $49, NORTH | SOUTH
-	connection north, Route12, ROUTE_12, 27, 0, 13
+	map_attributes Route13, ROUTE_13, $41, NORTH | SOUTH
+	connection north, Route12South, ROUTE_12_SOUTH, 27, 0, 13
 	connection south, Route14, ROUTE_14, 0, 0, 10
 
-	map_attributes Route14, ROUTE_14, $49, NORTH | WEST
+	map_attributes Route14, ROUTE_14, $41, NORTH | WEST
 	connection north, Route13, ROUTE_13, 0, 0, 13
 	connection west, Route15, ROUTE_15, 9, 0, 9
 
@@ -233,48 +237,45 @@ ENDM
 	connection west, FuchsiaCity, FUCHSIA_CITY, -3, 2, 12
 	connection east, Route14, ROUTE_14, -3, 6, 12
 
-	map_attributes Route16East, ROUTE_16_EAST, $1f, EAST
+	map_attributes Route16East, ROUTE_16_EAST, $1f, WEST | EAST
+	connection west, Route16Middle, ROUTE_16_MIDDLE, 0, 0, 12
 	connection east, CeladonCity, CELADON_CITY, -3, 3, 13
 
-	map_attributes Route16North, ROUTE_16_NORTH, $1f, WEST | EAST
-	connection west, Route16West, ROUTE_16_WEST, 0, 0, 15
-	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
-
-	map_attributes Route16South, ROUTE_16_SOUTH, $1f, SOUTH | WEST | EAST
+	map_attributes Route16Middle, ROUTE_16_MIDDLE, $1f, SOUTH | WEST | EAST
 	connection south, Route17, ROUTE_17, 0, 0, 10
 	connection west, Route16West, ROUTE_16_WEST, 0, 0, 15
 	connection east, Route16East, ROUTE_16_EAST, 0, 0, 7
 
 	map_attributes Route16West, ROUTE_16_WEST, $1f, EAST
-	connection east, Route16North, ROUTE_16_NORTH, 0, 0, 12
+	connection east, Route16Middle, ROUTE_16_MIDDLE, 0, 0, 12
 
-	map_attributes Route17, ROUTE_17, $49, NORTH | SOUTH
-	connection north, Route16South, ROUTE_16_SOUTH, 0, 0, 10
+	map_attributes Route17, ROUTE_17, $41, NORTH | SOUTH
+	connection north, Route16Middle, ROUTE_16_MIDDLE, 0, 0, 10
 	connection south, Route18West, ROUTE_18_WEST, 0, 0, 13
 
 	map_attributes Route18East, ROUTE_18_EAST, $f, WEST | EAST
 	connection west, Route18West, ROUTE_18_WEST, -3, 0, 12
 	connection east, FuchsiaCity, FUCHSIA_CITY, -3, 3, 12
 
-	map_attributes Route18West, ROUTE_18_WEST, $49, NORTH | WEST | EAST
+	map_attributes Route18West, ROUTE_18_WEST, $41, NORTH | WEST | EAST
 	connection north, Route17, ROUTE_17, 0, 0, 10
 	connection west, UragaChannelEast, URAGA_CHANNEL_EAST, 0, 0, 9
 	connection east, Route18East, ROUTE_18_EAST, 3, 0, 9
 
-	map_attributes Route19, ROUTE_19, $49, NORTH | WEST
+	map_attributes Route19, ROUTE_19, $41, NORTH | WEST
 	connection north, FuchsiaCity, FUCHSIA_CITY, -3, 2, 16
 	connection west, Route20, ROUTE_20, 24, 0, 10
 
-	map_attributes Route20, ROUTE_20, $49, WEST | EAST
+	map_attributes Route20, ROUTE_20, $41, WEST | EAST
 	connection west, CinnabarIsland, CINNABAR_ISLAND, -3, 3, 13
 	connection east, Route19, ROUTE_19, -3, 21, 13
 
-	map_attributes Route21, ROUTE_21, $49, NORTH | SOUTH | EAST
+	map_attributes Route21, ROUTE_21, $41, NORTH | SOUTH | EAST
 	connection north, PalletTown, PALLET_TOWN, 2, 0, 10
 	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 15
 	connection east, UragaChannelWest, URAGA_CHANNEL_WEST, 8, 0, 9
 
-	map_attributes Route22, ROUTE_22, $55, EAST
+	map_attributes Route22, ROUTE_22, $4d, EAST
 	connection east, ViridianCity, VIRIDIAN_CITY, -2, 1, 15
 
 	map_attributes Route23, ROUTE_23, $f, NORTH
@@ -288,24 +289,28 @@ ENDM
 	connection west, Route24, ROUTE_24, 0, 0, 20
 	connection east, CeruleanCape, CERULEAN_CAPE, 0, 0, 19
 
-	map_attributes Route26, ROUTE_26, $5, WEST
-	connection west, Route27, ROUTE_27, 45, 0, 9
+	map_attributes Route26, ROUTE_26, $d, WEST
+	connection west, Route27East, ROUTE_27_EAST, 45, 0, 9
 
-	map_attributes Route27, ROUTE_27, $35, WEST | EAST
-	connection west, NewBarkTown, NEW_BARK_TOWN, 0, 0, 9
+	map_attributes Route27East, ROUTE_27_EAST, $41, WEST | EAST
+	connection west, Route27West, ROUTE_27_WEST, 0, 0, 9
 	connection east, Route26, ROUTE_26, -3, 42, 12
+
+	map_attributes Route27West, ROUTE_27_WEST, $f, WEST | EAST
+	connection west, NewBarkTown, NEW_BARK_TOWN, 0, 0, 11
+	connection east, Route27East, ROUTE_27_EAST, 0, 0, 9
 
 	map_attributes Route28, ROUTE_28, $71, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -3, 3, 12
 
-	map_attributes Route29, ROUTE_29, $5, NORTH | WEST | EAST
-	connection north, Route46, ROUTE_46, 10, 0, 10
-	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0, 0, 9
-	connection east, NewBarkTown, NEW_BARK_TOWN, 0, 0, 9
+	map_attributes Route29, ROUTE_29, $f, WEST | EAST
+;	connection north, Route46, ROUTE_46, 10, 0, 10
+	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0, 0, 11
+	connection east, NewBarkTown, NEW_BARK_TOWN, 0, 0, 11
 
-	map_attributes Route30, ROUTE_30, $5, NORTH | SOUTH
+	map_attributes Route30, ROUTE_30, $5, NORTH
 	connection north, Route31, ROUTE_31, -3, 7, 13
-	connection south, CherrygroveCity, CHERRYGROVE_CITY, -3, 2, 16
+;	connection south, CherrygroveCity, CHERRYGROVE_CITY, -3, 2, 16
 
 	map_attributes Route31, ROUTE_31, $5, SOUTH | WEST
 	connection south, Route30, ROUTE_30, 10, 0, 10
@@ -399,16 +404,16 @@ ENDM
 	map_attributes CeruleanCape, CERULEAN_CAPE, $f, WEST
 	connection west, Route25, ROUTE_25, 0, 0, 20
 
-	map_attributes UragaChannelEast, URAGA_CHANNEL_EAST, $49, EAST
+	map_attributes UragaChannelEast, URAGA_CHANNEL_EAST, $41, EAST
 	connection east, Route18West, ROUTE_18_WEST, 0, 0, 12
 
-	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $49, WEST
+	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $41, WEST
 	connection west, Route21, ROUTE_21, -3, 5, 15
 
-	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $35, SOUTH | WEST | EAST
+	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $35, SOUTH | WEST
 	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15
 	connection west, Route32, ROUTE_32, -2, 10, 26
-	connection east, CherrygroveCity, CHERRYGROVE_CITY, 15, 0, 10
+;	connection east, CherrygroveCity, CHERRYGROVE_CITY, 15, 0, 10
 
 	map_attributes VioletOutskirts, VIOLET_OUTSKIRTS, $5, NORTH | SOUTH
 	connection north, Route42, ROUTE_42, -3, 2, 20
@@ -690,7 +695,7 @@ ENDM
 	map_attributes FastShipCabins_SE_SSE_CaptainsCabin, FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN, $0, 0
 	map_attributes FastShipB1F, FAST_SHIP_B1F, $0, 0
 	map_attributes OlivinePortPassage, OLIVINE_PORT_PASSAGE, $0, 0
-	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $55, 0
+	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $4d, 0
 	map_attributes MountMoonGiftShop, MOUNT_MOON_GIFT_SHOP, $0, 0
 	map_attributes TinTowerRoof, TIN_TOWER_ROOF, $1, 0
 	map_attributes IndigoPlateauPokeCenter1F, INDIGO_PLATEAU_POKECENTER_1F, $0, 0

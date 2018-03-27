@@ -4,8 +4,8 @@ Route27RestHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  2,  7, ROUTE_27, 1
-	warp_event  3,  7, ROUTE_27, 1
+	warp_event  2,  7, ROUTE_27_EAST, 2
+	warp_event  3,  7, ROUTE_27_EAST, 2
 
 	db 0 ; coord events
 

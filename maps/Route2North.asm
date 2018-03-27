@@ -7,7 +7,7 @@ Route2North_MapScriptHeader:
 	warp_event 15, 17, ROUTE_2_NUGGET_SPEECH_HOUSE, 1
 	warp_event 16, 33, ROUTE_2_GATE, 1
 	warp_event 17, 33, ROUTE_2_GATE, 2
-	warp_event 12,  7, DIGLETTS_CAVE, 3
+	warp_event 13,  7, DIGLETTS_CAVE, 3
 	warp_event  1,  9, VIRIDIAN_FOREST_PEWTER_GATE, 3
 	warp_event  2,  9, VIRIDIAN_FOREST_PEWTER_GATE, 4
 	warp_event 15,  0, HIDDEN_TREE_GROTTO, 1

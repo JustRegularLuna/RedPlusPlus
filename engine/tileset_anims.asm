@@ -41,14 +41,15 @@ TilesetViridianAnim:
 TilesetPewterAnim:
 TilesetCeruleanAnim:
 TilesetVermilionAnim:
-TilesetLavenderAnim:
 TilesetCeladonAnim:
+TilesetLavenderAnim:
+TilesetCyclingRoadAnim:
 TilesetFuchsiaAnim:
 TilesetSaffronAnim:
 TilesetIndigoAnim:
-TilesetRoutesAnim:
 TilesetForestAnim:
 TilesetSafariZoneAnim:
+TilesetNewBarkCherrygroveAnim:
 	dw KantoWaterFrames, AnimateFarawayWaterTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

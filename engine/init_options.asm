@@ -112,13 +112,12 @@ SetInitialOptions:
 	db "@"
 
 .BGPalette:
-if !DEF(MONOCHROME)
-	RGB 31, 31, 31
-	RGB 00, 15, 24
-	RGB 00, 09, 15
-	RGB 00, 00, 00
-else
+if DEF(NOIR)
+	GRAYSCALE 31, 12, 07, 00
+elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
+else
+	RGB 31,31,31, 00,15,24, 00,09,15, 00,00,00
 endc
 
 .BGTile:

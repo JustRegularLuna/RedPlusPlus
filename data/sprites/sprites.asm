@@ -94,8 +94,8 @@ SpriteHeaders:
 	overworld_sprite BoulderRockFossilSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
 	overworld_sprite BookPaperPokedexSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite MapAmberLyingOldManSpriteGFX, STANDING_SPRITE, PAL_OW_RED
-	overworld_sprite CableCarPoleSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
-	overworld_sprite BikeBlankSilphSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
+	overworld_sprite PearlMeteoriteLodestoneSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
+	overworld_sprite CableCarSilphSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
 	overworld_sprite SignFenceTreetopSpriteGFX, STANDING_SPRITE, PAL_OW_ROCK
 	overworld_sprite BushForestTreeSpriteGFX, STANDING_SPRITE, PAL_OW_TREE
 	overworld_sprite SecretBaseGFX, STANDING_SPRITE, PAL_OW_TREE

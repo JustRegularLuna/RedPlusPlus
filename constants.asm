@@ -1,3 +1,7 @@
+if DEF(MONOCHROME) && DEF(NOIR)
+fail "'make monochrome' and 'make noir' are incompatible."
+endc
+
 INCLUDE "charmap.asm"
 
 INCLUDE "macros.asm"

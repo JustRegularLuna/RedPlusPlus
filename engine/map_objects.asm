@@ -2319,11 +2319,12 @@ CheckCurSpriteCoveredByTextBox: ; 56cd
 	jr nc, .ok8
 	ld c, a
 	push bc
-	call Coord2Tile
+	call Coord2Attr
 	pop bc
 	ld a, [hl]
-	cp $7f ; hide sprites standing on tiles $$7f or $ff
-	jr nc, .nope
+	and OAM_PALETTE
+	cp PAL_BG_TEXT
+	jr z, .nope
 .ok8
 	dec d
 	jr nz, .next

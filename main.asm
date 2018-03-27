@@ -1619,16 +1619,39 @@ _LoadMapPart:: ; 4d15b
 	jr z, .top_row
 	ld bc, WMISC_WIDTH * 2
 	add hl, bc
-
 .top_row
 	ld a, [wMetatileStandingX]
 	and a
 	jr z, .left_column
 	inc hl
 	inc hl
-
 .left_column
 	decoord 0, 0
+	call .copy
+	ld hl, wMiscAttributes
+	ld a, [wMetatileStandingY]
+	and a
+	jr z, .top_row2
+	ld bc, WMISC_WIDTH * 2
+	add hl, bc
+.top_row2
+	ld a, [wMetatileStandingX]
+	and a
+	jr z, .left_column2
+	inc hl
+	inc hl
+.left_column2
+	decoord 0, 0, AttrMap
+	ld a, [rSVBK]
+	push af
+	ld a, BANK(wMiscAttributes)
+	ld [rSVBK], a
+	call .copy
+	pop af
+	ld [rSVBK], a
+	ret
+
+.copy:
 	ld b, SCREEN_HEIGHT
 .loop
 	ld c, SCREEN_WIDTH
@@ -1643,7 +1666,6 @@ _LoadMapPart:: ; 4d15b
 	ld l, a
 	jr nc, .carry
 	inc h
-
 .carry
 	dec b
 	jr nz, .loop
@@ -4083,9 +4105,9 @@ SECTION "Diploma", ROMX
 INCLUDE "engine/diploma.asm"
 
 
-SECTION "Palette Maps", ROMX
+SECTION "Collision Permissions", ROMX
 
-INCLUDE "engine/map_palettes.asm"
+INCLUDE "data/collision_permissions.asm"
 
 
 SECTION "Typefaces", ROMX

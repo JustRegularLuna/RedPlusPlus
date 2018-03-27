@@ -334,19 +334,19 @@ FacingTileRight:
 
 FacingCableSmall:
 	db 1 ; #
-	db  4,  8, 0, $0a
+	db  4,  8, 0, $06
 
 FacingCableLarge:
 	db 7 ; #
-	db  4,  0, 0, $08
-	db 12,  0, 0, $0a
-	db 12,  8, 0, $08
-	db 20,  8, 0, $0a
-	db 20, 16, 0, $08
-	db 28, 16, 0, $0a
-	db 28, 24, 0, $08
+	db  4,  0, 0, $04
+	db 12,  0, 0, $06
+	db 12,  8, 0, $04
+	db 20,  8, 0, $06
+	db 20, 16, 0, $04
+	db 28, 16, 0, $06
+	db 28, 24, 0, $04
 
 FacingCableSide:
 	db 2 ; #
-	db  4,  0, 0, $0b
-	db  4,  8, 0, $0b
+	db  4,  0, 0, $07
+	db  4,  8, 0, $07

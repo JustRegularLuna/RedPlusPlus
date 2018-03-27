@@ -1,22 +1,23 @@
 	const_def 1
-; These tilesets share the first 160 tiles and the first 176 metatiles
+; These tilesets share the first 160 tiles and the first 148 metatiles
 	const TILESET_PALLET_CINNABAR
 	const TILESET_VIRIDIAN
 	const TILESET_PEWTER
 	const TILESET_VERMILION
-	const TILESET_LAVENDER
 	const TILESET_CELADON
+	const TILESET_LAVENDER
+	const TILESET_CYCLING_ROAD
 	const TILESET_FUCHSIA
 	const TILESET_SAFFRON
-	const TILESET_ROUTES
+	const TILESET_NEW_BARK_CHERRYGROVE
 GENERIC_METATILES EQU const_value
 ; These tilesets just share the first 160 tiles, not any metatiles
 	const TILESET_CERULEAN
 	const TILESET_INDIGO
-GENERIC_GFX EQU const_value
-; These are independent tilesets
 	const TILESET_FOREST
 	const TILESET_SAFARI_ZONE
+GENERIC_GFX EQU const_value
+; These are independent tilesets
 	;------------------------------------
 	const TILESET_PC_JOHTO_TRADITIONAL
 	const TILESET_PC_JOHTO_MODERN

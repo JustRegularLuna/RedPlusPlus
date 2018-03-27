@@ -14,21 +14,13 @@ CeruleanCity_MapScriptHeader:
 	warp_event 13, 23, CERULEAN_BIKE_SHOP, 1
 	warp_event 17,  9, CERULEAN_BERRY_POWDER_HOUSE, 1
 	warp_event 21, 23, CERULEAN_COUPLE_HOUSE, 1
-	warp_event 37,  9, CERULEAN_WATER_SHOW_SPEECH_HOUSE, 1
+	warp_event 37,  8, CERULEAN_WATER_SHOW_SPEECH_HOUSE, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 1 ; object events
 	cuttree_event 25, 26, -1
-	object_event 11, 20, SPRITE_BIKE_BLANK_SILPH, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_COMMAND, jumptext, CeruleanCityBicycleText, -1
-	object_event 11, 21, SPRITE_BIKE_BLANK_SILPH, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_COMMAND, jumptext, CeruleanCityBicycleText, -1
-	object_event 11, 22, SPRITE_BIKE_BLANK_SILPH, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_COMMAND, jumptext, CeruleanCityBicycleText, -1
 
 	const_def 1 ; object constants
-
-CeruleanCityBicycleText:
-	text "A shiny new"
-	line "Bicycle!"
-	done
