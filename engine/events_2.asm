@@ -107,7 +107,6 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	jr nz, .skip2
 	call InitMapNameFrame
 	call PlaceMapNameCenterAlign
-	call GiveFontOpaqueBackground
 	farcall HDMATransfer_OnlyTopFourRows
 .skip2
 	ld a, $70
@@ -229,26 +228,6 @@ PlaceMapNameCenterAlign: ; b80e1 (2e:40e1)
 .stop
 	pop hl
 	ret
-
-GiveFontOpaqueBackground:
-; Two bytes in VRAM define eight pixels (2 bits/pixel)
-; Bits are paired from the bytes, e.g. %ABCDEFGH %abcdefgh defines pixels
-; %Aa, %Bb, %Cc, %Dd, %Ee, %Ff, %Gg, %Hh
-; %00 = white, %11 = black, %10 = light, %01 = dark
-	;call DisableLCD
-	ld hl, VTiles1
-	ld bc, (106 tiles) / 2 ; only from "A" to "9"
-.loop
-	ld a, $ff
-	ld [hli], a
-	inc hl
-	dec bc
-	ld a, b
-	or c
-	jr nz, .loop
-	;call EnableLCD
-	ret
-
 
 CheckForHiddenItems: ; b8172
 ; Checks to see if there are hidden items on the screen that have not yet been found.  If it finds one, returns carry.
