@@ -102,12 +102,6 @@ _TitleScreen: ; 10ed67
 	ld de, VTiles1
 	call Decompress
 
-; Decompress background crystal
-	ld hl, TitleCrystalGFX
-	ld de, VTiles0
-	call Decompress
-
-
 ; Clear screen tiles
 	hlbgcoord 0, 0
 	ld bc, 64 * BG_MAP_WIDTH
@@ -129,9 +123,6 @@ _TitleScreen: ; 10ed67
 ; Initialize running Suicune?
 	ld d, $0
 	call LoadSuicuneFrame
-
-; Initialize background crystal
-	call InitializeBackground
 
 ; Save WRAM bank
 	ld a, [rSVBK]
@@ -303,68 +294,6 @@ DrawTitleGraphic: ; 10eeef
 	ret
 ; 10ef06
 
-InitializeBackground: ; 10ef06
-	ld hl, Sprites
-	lb de, -$22, $0
-	ld c, 5
-.loop
-	push bc
-	call .InitColumn
-	pop bc
-	ld a, $10
-	add d
-	ld d, a
-	dec c
-	jr nz, .loop
-	ret
-; 10ef1c
-
-.InitColumn: ; 10ef1c
-	lb bc, $40, $6
-.loop2
-	ld a, d
-	ld [hli], a
-	ld a, b
-	ld [hli], a
-	add $8
-	ld b, a
-	ld a, e
-	ld [hli], a
-	inc e
-	inc e
-	ld a, $80
-	ld [hli], a
-	dec c
-	jr nz, .loop2
-	ret
-; 10ef32
-
-
-AnimateTitleCrystal: ; 10ef32
-; Move the title screen crystal downward until it's fully visible
-
-; Stop at y=6
-; y is really from the bottom of the sprite, which is two tiles high
-	ld hl, Sprites
-	ld a, [hl]
-	cp 6 + $10
-	ret z
-
-; Move all 30 parts of the crystal down by 2
-	ld c, 30
-.loop
-	ld a, [hl]
-	add 2
-	ld [hli], a
-	inc hl
-	inc hl
-	inc hl
-	dec c
-	jr nz, .loop
-
-	ret
-; 10ef46
-
 TitleSuicuneGFX: ; 10ef46
 INCBIN "gfx/title/suicune.w128.2bpp.lz"
 ; 10f326
@@ -372,10 +301,6 @@ INCBIN "gfx/title/suicune.w128.2bpp.lz"
 TitleLogoGFX: ; 10f326
 INCBIN "gfx/title/logo.w160.t4.2bpp.lz"
 ; 10fcee
-
-TitleCrystalGFX: ; 10fcee
-INCBIN "gfx/title/crystal.w48.interleave.2bpp.lz"
-; 10fede
 
 TitleScreenPalettes:
 if DEF(NOIR)

@@ -1216,8 +1216,7 @@ TitleScreenEntrance: ; 62bc
 	inc hl
 	dec b
 	jr nz, .loop
-
-	farjp AnimateTitleCrystal
+	ret
 
 .done
 ; Next scene
