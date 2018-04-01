@@ -462,7 +462,10 @@ LoadSpecialMapPalette: ; 494ac
 	jp nz, .do_nothing
 	ld a, [MapNumber]
 	cp MAP_CHERRYGROVE_CITY
+	jr z, .cherrygrove_city
+	cp MAP_ROUTE_30
 	jp nz, .do_nothing
+.cherrygrove_city
 	ld hl, CherrygroveCityPalette
 	jp .load_eight_time_of_day_bg_palettes
 
