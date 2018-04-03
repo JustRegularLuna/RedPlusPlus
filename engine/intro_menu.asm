@@ -660,7 +660,8 @@ ProfOakSpeech: ; 0x5f99
 	ld hl, PCItems
 	call ReceiveItem
 
-	farcall InitClock
+	call ClearTileMap
+	farcall RestartClock;InitClock
 	call RotateFourPalettesLeft
 	call ClearTileMap
 
