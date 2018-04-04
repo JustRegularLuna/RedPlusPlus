@@ -12,7 +12,9 @@ Route31_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 7 ; object events
+	db 9 ; object events
+	itemball_event 29,  5, POKE_BALL, 1, -1
+	itemball_event 19, 15, POKE_BALL, 1, -1
 	cuttree_event 13,  5, -1
 	cuttree_event 25, 10, -1
 	fruittree_event 16,  7, FRUITTREE_ROUTE_31, ORAN_BERRY

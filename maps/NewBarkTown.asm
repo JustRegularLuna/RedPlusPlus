@@ -12,7 +12,8 @@ NewBarkTown_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event  5,  2, SIGNPOST_ITEM + POTION, -1
 
 	db 0 ; object events
 

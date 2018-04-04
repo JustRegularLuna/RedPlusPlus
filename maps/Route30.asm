@@ -9,9 +9,11 @@ Route30_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 14,  9, SIGNPOST_ITEM + POTION, -1
 
-	db 3 ; object events
+	db 4 ; object events
+	itemball_event  8, 37, POKE_BALL, 1, -1
 	cuttree_event  8,  5, -1
 	fruittree_event 10, 41, FRUITTREE_ROUTE_30_1, ORAN_BERRY
 	fruittree_event 11,  4, FRUITTREE_ROUTE_30_2, ORAN_BERRY

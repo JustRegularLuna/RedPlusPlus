@@ -113,9 +113,9 @@ ENDM
 	connection west, Route29, ROUTE_29, 0, 0, 11
 	connection east, Route27West, ROUTE_27_WEST, 0, 0, 9
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $41, NORTH | EAST
-	connection north, Route30, ROUTE_30, 5, 0, 12
-;	connection west, CherrygroveBay, CHERRYGROVE_BAY, -1, 14, 10
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $f, NORTH | WEST | EAST
+	connection north, Route30, ROUTE_30, 5, 0, 17
+	connection west, CherrygroveBay, CHERRYGROVE_BAY, -1, 14, 10
 	connection east, Route29, ROUTE_29, 0, 0, 11
 
 	map_attributes VioletCity, VIOLET_CITY, $5, NORTH | SOUTH | WEST | EAST
@@ -305,7 +305,7 @@ ENDM
 
 	map_attributes Route29, ROUTE_29, $f, WEST | EAST
 ;	connection north, Route46, ROUTE_46, 10, 0, 10
-	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0, 0, 11
+	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0, 0, 12
 	connection east, NewBarkTown, NEW_BARK_TOWN, 0, 0, 11
 
 	map_attributes Route30, ROUTE_30, $f, NORTH | SOUTH
@@ -313,17 +313,17 @@ ENDM
 	connection south, CherrygroveCity, CHERRYGROVE_CITY, -3, 2, 18
 
 	map_attributes Route31, ROUTE_31, $f, SOUTH
-	connection south, Route30, ROUTE_30, 10, 0, 12
+	connection south, Route30, ROUTE_30, 10, 0, 17
 ;	connection west, VioletCity, VIOLET_CITY, -2, 6, 12
 
-	map_attributes Route32, ROUTE_32, $5, NORTH | SOUTH | WEST | EAST
+	map_attributes Route32, ROUTE_32, $5, NORTH | SOUTH | WEST
 	connection north, VioletCity, VIOLET_CITY, 0, 0, 13
 	connection south, Route33, ROUTE_33, 0, 0, 10
 	connection west, MagnetTunnelEast, MAGNET_TUNNEL_EAST, 9, 0, 11
-	connection east, CherrygroveBay, CHERRYGROVE_BAY, 12, 0, 26
+;	connection east, CherrygroveBay, CHERRYGROVE_BAY, 12, 0, 26
 
-	map_attributes Route32Coast, ROUTE_32_COAST, $35, NORTH
-	connection north, CherrygroveBay, CHERRYGROVE_BAY, 0, 0, 15
+	map_attributes Route32Coast, ROUTE_32_COAST, $35, 0
+;	connection north, CherrygroveBay, CHERRYGROVE_BAY, 0, 0, 15
 
 	map_attributes Route33, ROUTE_33, $5, NORTH | WEST
 	connection north, Route32, ROUTE_32, 0, 0, 10
@@ -410,10 +410,10 @@ ENDM
 	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $41, WEST
 	connection west, Route21, ROUTE_21, -3, 5, 15
 
-	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $35, SOUTH | WEST
-	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15
-	connection west, Route32, ROUTE_32, -2, 10, 26
-;	connection east, CherrygroveCity, CHERRYGROVE_CITY, 15, 0, 10
+	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $41, EAST
+;	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15
+;	connection west, Route32, ROUTE_32, -2, 10, 26
+	connection east, CherrygroveCity, CHERRYGROVE_CITY, 15, 0, 12
 
 	map_attributes VioletOutskirts, VIOLET_OUTSKIRTS, $5, NORTH | SOUTH
 	connection north, Route42, ROUTE_42, -3, 2, 20

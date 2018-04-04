@@ -463,6 +463,8 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [MapNumber]
 	cp MAP_CHERRYGROVE_CITY
 	jr z, .cherrygrove_city
+	cp MAP_CHERRYGROVE_BAY
+	jr z, .cherrygrove_city
 	cp MAP_ROUTE_30
 	jp nz, .do_nothing
 .cherrygrove_city
