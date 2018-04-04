@@ -1396,12 +1396,7 @@ LoadTileset:: ; 2821
 	cp GENERIC_GFX
 	jr c, LoadGenericTileset
 
-	ld hl, TilesetAddress
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [TilesetBank]
-	ld e, a
+	call GetTilesetPointer
 
 	ld a, [rSVBK]
 	push af
@@ -1412,23 +1407,8 @@ LoadTileset:: ; 2821
 	ld de, wDecompressScratch
 	call FarDecompress
 
-	ld hl, wDecompressScratch
-	ld de, VTiles2
-	ld bc, $7f tiles
-	call CopyBytes
-
-	ld a, [rVBK]
-	push af
-	ld a, $1
-	ld [rVBK], a
-
-	ld hl, wDecompressScratch + $80 tiles
-	ld de, VTiles2
 	ld bc, $80 tiles
-	call CopyBytes
-
-	pop af
-	ld [rVBK], a
+	call LoadTilesetGFXBank0
 
 	pop af
 	ld [rSVBK], a
@@ -1438,43 +1418,27 @@ LoadTileset:: ; 2821
 	ret
 
 LoadGenericTileset:
+	cp GENERIC_KANTO_GFX
+	jr c, .Kanto
+
 	ld a, [rSVBK]
 	push af
 	ld a, $6
 	ld [rSVBK], a
 
-	ld hl, GenericTilesetGFX
-	ld a, BANK(GenericTilesetGFX)
+	ld hl, GenericJohtoTilesetGFX
+	ld a, BANK(GenericJohtoTilesetGFX)
+.Continue:
 	ld de, wDecompressScratch
 	call FarDecompress
 
-	ld hl, wDecompressScratch
-	ld de, VTiles2
-	ld bc, $7f tiles
-	call CopyBytes
-
-	ld a, [rVBK]
-	push af
-	ld a, $1
-	ld [rVBK], a
-
-	ld hl, wDecompressScratch + $80 tiles
-	ld de, VTiles2
 	ld bc, $20 tiles
-	call CopyBytes
-
-	pop af
-	ld [rVBK], a
+	call LoadTilesetGFXBank0
 
 	pop af
 	ld [rSVBK], a
 
-	ld hl, TilesetAddress
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [TilesetBank]
-	ld e, a
+	call GetTilesetPointer
 
 	ld a, [rSVBK]
 	push af
@@ -1504,7 +1468,47 @@ LoadGenericTileset:
 	xor a
 	ld [hTileAnimFrame], a
 	ret
+
+.Kanto:
+	ld a, [rSVBK]
+	push af
+	ld a, $6
+	ld [rSVBK], a
+
+	ld hl, GenericKantoTilesetGFX
+	ld a, BANK(GenericKantoTilesetGFX)
+	jr .Continue
 ; 2879
+
+GetTilesetPointer:
+	ld hl, TilesetAddress
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [TilesetBank]
+	ld e, a
+	ret
+
+LoadTilesetGFXBank0:
+	push bc
+	ld hl, wDecompressScratch
+	ld de, VTiles2
+	ld bc, $7f tiles
+	call CopyBytes
+	pop bc
+
+	ld a, [rVBK]
+	push af
+	ld a, $1
+	ld [rVBK], a
+
+	ld hl, wDecompressScratch + $80 tiles
+	ld de, VTiles2
+	call CopyBytes
+
+	pop af
+	ld [rVBK], a
+	ret
 
 BufferScreen:: ; 2879
 	ld hl, wOverworldMapAnchor
