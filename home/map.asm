@@ -1396,26 +1396,19 @@ LoadTileset:: ; 2821
 	cp GENERIC_GFX
 	jr c, LoadGenericTileset
 
-	call DecompressTilesetGFX
+	call GetTilesetPointer
 
-	ld hl, wDecompressScratch
-	ld de, VTiles2
-	ld bc, $7f tiles
-	call CopyBytes
-
-	ld a, [rVBK]
+	ld a, [rSVBK]
 	push af
-	ld a, $1
-	ld [rVBK], a
+	ld a, $6
+	ld [rSVBK], a
 
-	ld hl, wDecompressScratch + $80 tiles
-	ld de, VTiles2
+	ld a, e
+	ld de, wDecompressScratch
+	call FarDecompress
+
 	ld bc, $80 tiles
-	call CopyBytes
-
-.Finish:
-	pop af
-	ld [rVBK], a
+	call LoadTilesetGFXBank0
 
 	pop af
 	ld [rSVBK], a
@@ -1439,28 +1432,22 @@ LoadGenericTileset:
 	ld de, wDecompressScratch
 	call FarDecompress
 
-	ld hl, wDecompressScratch
-	ld de, VTiles2
-	ld bc, $7f tiles
-	call CopyBytes
-
-	ld a, [rVBK]
-	push af
-	ld a, $1
-	ld [rVBK], a
-
-	ld hl, wDecompressScratch + $80 tiles
-	ld de, VTiles2
 	ld bc, $20 tiles
-	call CopyBytes
-
-	pop af
-	ld [rVBK], a
+	call LoadTilesetGFXBank0
 
 	pop af
 	ld [rSVBK], a
 
-	call DecompressTilesetGFX
+	call GetTilesetPointer
+
+	ld a, [rSVBK]
+	push af
+	ld a, $6
+	ld [rSVBK], a
+
+	ld a, e
+	ld de, wDecompressScratch
+	call FarDecompress
 
 	ld a, [rVBK]
 	push af
@@ -1472,7 +1459,15 @@ LoadGenericTileset:
 	ld bc, $60 tiles
 	call CopyBytes
 
-	jr LoadTileset.Finish
+	pop af
+	ld [rVBK], a
+
+	pop af
+	ld [rSVBK], a
+
+	xor a
+	ld [hTileAnimFrame], a
+	ret
 
 .Kanto:
 	ld a, [rSVBK]
@@ -1485,22 +1480,35 @@ LoadGenericTileset:
 	jr .Continue
 ; 2879
 
-DecompressTilesetGFX:
+GetTilesetPointer:
 	ld hl, TilesetAddress
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
 	ld a, [TilesetBank]
 	ld e, a
+	ret
 
-	ld a, [rSVBK]
+LoadTilesetGFXBank0:
+	push bc
+	ld hl, wDecompressScratch
+	ld de, VTiles2
+	ld bc, $7f tiles
+	call CopyBytes
+	pop bc
+
+	ld a, [rVBK]
 	push af
-	ld a, $6
-	ld [rSVBK], a
+	ld a, $1
+	ld [rVBK], a
 
-	ld a, e
-	ld de, wDecompressScratch
-	jp FarDecompress
+	ld hl, wDecompressScratch + $80 tiles
+	ld de, VTiles2
+	call CopyBytes
+
+	pop af
+	ld [rVBK], a
+	ret
 
 BufferScreen:: ; 2879
 	ld hl, wOverworldMapAnchor
