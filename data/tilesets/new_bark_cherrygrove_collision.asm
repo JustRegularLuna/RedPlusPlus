@@ -198,18 +198,19 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll TALL_GRASS, TALL_GRASS, FLOOR, FLOOR
+	tilecoll TV, TV, TV, TV
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, TALL_GRASS, TALL_GRASS
 	tilecoll FLOOR, WALL, WALL, WALL
 	tilecoll FLOOR, WALL, FLOOR, WALL
 	tilecoll WALL, WALL, FLOOR, WALL
-	tilecoll TALL_GRASS, TALL_GRASS, FLOOR, FLOOR
+	tilecoll TV, TV, TV, TV
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, TALL_GRASS, TALL_GRASS
-	tilecoll TALL_GRASS, TALL_GRASS, FLOOR, FLOOR
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
+	tilecoll TV, TV, TV, TV
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS
 	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
