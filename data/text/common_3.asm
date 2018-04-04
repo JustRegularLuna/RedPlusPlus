@@ -46,10 +46,7 @@ endc
 	done
 
 UnknownText_0x1c40e6::
-	text "The clock's time"
-	line "may be wrong."
-
-	para "Please reset the"
+	text "Please set the"
 	line "time."
 	prompt
 
@@ -67,7 +64,7 @@ UnknownText_0x1c415b::
 
 UnknownText_0x1c4168::
 	text "The clock has been"
-	line "reset."
+	line "set."
 	done
 
 UnknownText_0x1c4183::

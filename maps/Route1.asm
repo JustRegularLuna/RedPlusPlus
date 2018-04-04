@@ -12,11 +12,29 @@ Route1_MapScriptHeader:
 	bg_event  9, 35, SIGNPOST_JUMPTEXT, Route1Text3
 
 	db 3 ; object events
-	object_event  5, 32, SPRITE_CLERK, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  5, 32, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, Route1Text1, -1
 	object_event 15, 21, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, PERSONTYPE_COMMAND, jumptextfaceplayer, Route1Text2, -1
 	fruittree_event  6, 11, FRUITTREE_ROUTE_1, ORAN_BERRY
 
 	const_def 1 ; object constants
+
+Route1Text1:
+	checkevent EVENT_GOT_POTION_ROUTE_1
+	iftrue_jumptextfaceplayer Route1ViridianMartSampleReceivedText
+	faceplayer
+	opentext
+	writetext Route1ViridianMartSampleText
+	buttonsound
+	verbosegiveitem POTION
+	iffalse_endtext
+	setevent EVENT_GOT_POTION_ROUTE_1
+	thisopenedtext
+
+Route1ViridianMartSampleReceivedText:
+	text "We also carry"
+	line "# Balls for"
+	cont "catching #mon!"
+	done
 
 Route1ViridianMartSampleText:
 	text "Hi! I work at a"
@@ -30,17 +48,6 @@ Route1ViridianMartSampleText:
 	para "I know, I'll give"
 	line "you a sample!"
 	cont "Here you go!"
-	prompt
-
-Route1Text_1caee:
-	text "We also carry"
-	line "# Balls for"
-	cont "catching #mon!"
-	done
-
-Route1Text_1caf3:
-	text "You have too much"
-	line "stuff with you!"
 	done
 
 Route1Text2:
