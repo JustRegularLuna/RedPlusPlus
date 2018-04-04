@@ -7,8 +7,11 @@ ENDM
 
 SECTION "Generic Tileset Data", ROMX
 
-GenericTilesetGFX::
+GenericKantoTilesetGFX::
 INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.generic.lz"
+
+GenericJohtoTilesetGFX::
+INCBIN "gfx/tilesets/new_bark_cherrygrove.2bpp.generic.lz"
 
 
 SECTION "Tileset Data 1", ROMX
@@ -121,6 +124,18 @@ INCBIN "data/tilesets/fuchsia_attributes.bin"
 
 SECTION "Tileset Data 10", ROMX
 
+TilesetSafariZoneGFX::
+INCBIN "gfx/tilesets/safari_zone.2bpp.unique.lz"
+TilesetSafariZoneMeta::
+INCBIN "data/tilesets/safari_zone_metatiles.bin"
+TilesetSafariZoneColl::
+INCLUDE "data/tilesets/safari_zone_collision.asm"
+TilesetSafariZoneAttr::
+INCBIN "data/tilesets/safari_zone_attributes.bin"
+
+
+SECTION "Tileset Data 11", ROMX
+
 TilesetSaffronGFX::
 INCBIN "gfx/tilesets/saffron.2bpp.unique.lz"
 TilesetSaffronMeta::
@@ -131,7 +146,7 @@ TilesetSaffronAttr::
 INCBIN "data/tilesets/saffron_attributes.bin"
 
 
-SECTION "Tileset Data 11", ROMX
+SECTION "Tileset Data 12", ROMX
 
 TilesetIndigoGFX::
 INCBIN "gfx/tilesets/indigo.2bpp.unique.lz"
@@ -143,7 +158,7 @@ TilesetIndigoAttr::
 INCBIN "data/tilesets/indigo_attributes.bin"
 
 
-SECTION "Tileset Data 12", ROMX
+SECTION "Tileset Data 13", ROMX
 
 TilesetForestGFX::
 INCBIN "gfx/tilesets/forest.2bpp.unique.lz"
@@ -153,18 +168,6 @@ TilesetForestColl::
 INCLUDE "data/tilesets/forest_collision.asm"
 TilesetForestAttr::
 INCBIN "data/tilesets/forest_attributes.bin"
-
-
-SECTION "Tileset Data 13", ROMX
-
-TilesetSafariZoneGFX::
-INCBIN "gfx/tilesets/safari_zone.2bpp.unique.lz"
-TilesetSafariZoneMeta::
-INCBIN "data/tilesets/safari_zone_metatiles.bin"
-TilesetSafariZoneColl::
-INCLUDE "data/tilesets/safari_zone_collision.asm"
-TilesetSafariZoneAttr::
-INCBIN "data/tilesets/safari_zone_attributes.bin"
 
 
 SECTION "Tileset Data 14", ROMX

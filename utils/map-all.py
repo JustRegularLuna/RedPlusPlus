@@ -17,11 +17,10 @@ maps_filename        = 'constants/map_constants.asm'
 map_headers_filename = 'data/maps/maps.asm'
 block_data_filename  = 'data/maps/blocks.asm'
 block_filename_fmt   = 'maps/%s.blk'
- 
-tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'vermilion', 'celadon',
-                 'lavender', 'cycling_road', 'fuchsia', 'saffron',
-                 'new_bark_cherrygrove',
-                 'cerulean', 'indigo', 'forest', 'safari_zone']
+
+tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'vermilion',
+                 'celadon', 'lavender', 'cycling_road', 'fuchsia', 'safari_zone',
+                 'saffron', 'indigo', 'forest', 'new_bark_cherrygrove']
 
 # {'TILESET_PC_JOHTO_1': 1, ...}
 tileset_ids = {}

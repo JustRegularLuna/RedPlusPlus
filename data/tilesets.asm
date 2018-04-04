@@ -10,17 +10,17 @@ Tileset00End::
 	tileset TilesetPalletCinnabar
 	tileset TilesetViridian
 	tileset TilesetPewter
+	tileset TilesetCerulean
 	tileset TilesetVermilion
 	tileset TilesetCeladon
 	tileset TilesetLavender
 	tileset TilesetCyclingRoad
 	tileset TilesetFuchsia
+	tileset TilesetSafariZone
 	tileset TilesetSaffron
-	tileset TilesetNewBarkCherrygrove
-	tileset TilesetCerulean
 	tileset TilesetIndigo
 	tileset TilesetForest
-	tileset TilesetSafariZone
+	tileset TilesetNewBarkCherrygrove
 	;------------------------------------
 	tileset TilesetJohto1
 	tileset TilesetJohto2
