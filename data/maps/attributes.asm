@@ -115,7 +115,7 @@ ENDM
 
 	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $f, NORTH | WEST | EAST
 	connection north, Route30, ROUTE_30, 5, 0, 17
-	connection west, CherrygroveBay, CHERRYGROVE_BAY, -1, 14, 10
+	connection west, CherrygroveBay, CHERRYGROVE_BAY, -1, 14, 12
 	connection east, Route29, ROUTE_29, 0, 0, 11
 
 	map_attributes VioletCity, VIOLET_CITY, $f, SOUTH | EAST
