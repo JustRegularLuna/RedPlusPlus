@@ -288,7 +288,7 @@ ENDM
 	connection west, Route24, ROUTE_24, 0, 0, 20
 	connection east, CeruleanCape, CERULEAN_CAPE, 0, 0, 19
 
-	map_attributes Route26, ROUTE_26, $d, WEST
+	map_attributes Route26, ROUTE_26, $f, WEST
 	connection west, Route27East, ROUTE_27_EAST, 45, 0, 9
 
 	map_attributes Route27East, ROUTE_27_EAST, $41, WEST | EAST
