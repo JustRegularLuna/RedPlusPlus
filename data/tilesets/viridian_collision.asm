@@ -204,7 +204,7 @@
 	tilecoll WATER, WATER, WATER, WATER
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll TV, TV, TV, TV
+	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WATER, WATER, WATER, WATER
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, WALL, WALL
