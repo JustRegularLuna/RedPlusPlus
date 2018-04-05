@@ -144,20 +144,25 @@ OutdoorSprites_Saffron:
 OutdoorSprites_Indigo:
 	db 0 ; end
 
+OutdoorSprites_Route26:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
 OutdoorSprites_NewBark:
 OutdoorSprites_Cherrygrove:
+OutdoorSprites_Route32:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
 	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
-OutdoorSprites_Route26:
+OutdoorSprites_Violet:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
+	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_Special:
-OutdoorSprites_Route32:
-OutdoorSprites_Violet:
 OutdoorSprites_RuinsOfAlph:
 OutdoorSprites_Azalea:
 OutdoorSprites_Goldenrod:

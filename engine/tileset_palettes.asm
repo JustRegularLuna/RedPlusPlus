@@ -98,7 +98,7 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PC_LAB
 	jp z, .maybe_lab_or_dragon_shrine
 	cp TILESET_PC_TUNNEL
-	jp z, .maybe_lightning_island_or_magnet_tunnel
+	jp z, .maybe_lightning_island
 	cp TILESET_PC_SPROUT_TOWER
 	jp z, .maybe_mystri_or_tower
 	cp TILESET_PC_POKEMON_MANSION
@@ -287,24 +287,14 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, DragonShrinePalette
 	jp .load_eight_bg_palettes
 
-.maybe_lightning_island_or_magnet_tunnel
+.maybe_lightning_island
 	ld a, [MapGroup]
 	cp GROUP_LIGHTNING_ISLAND
-	jr nz, .not_lightning_island
+	jp nz, .do_nothing
 	ld a, [MapNumber]
 	cp MAP_LIGHTNING_ISLAND
-	jr nz, .not_lightning_island
+	jp nz, .do_nothing
 	ld hl, LightningIslandPalette
-	jp .load_eight_bg_palettes
-
-.not_lightning_island
-	ld a, [MapGroup]
-	cp GROUP_MAGNET_TUNNEL_INSIDE
-	jp nz, .do_nothing
-	ld a, [MapNumber]
-	cp MAP_MAGNET_TUNNEL_INSIDE
-	jp nz, .do_nothing
-	ld hl, MagnetTunnelPalette
 	jp .load_eight_bg_palettes
 
 .maybe_viridian_gym
@@ -1258,31 +1248,6 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-MagnetTunnelPalette:
-if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/magnet_tunnel.pal"
-elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/magnet_tunnel.pal"
-else
-	MONOCHROME_RGB_FOUR_NIGHT
-	MONOCHROME_RGB_FOUR_NIGHT
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-	MONOCHROME_RGB_FOUR_NIGHT
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-	MONOCHROME_RGB_FOUR_NIGHT
-	MONOCHROME_RGB_FOUR_NIGHT
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-endc
-
 MystriStagePalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/mystri_stage.pal"
@@ -2216,16 +2181,6 @@ LoadSpecialMapOBPalette:
 	jr .load_rock_palette
 
 .not_mount_moon_square:
-	ld a, [MapGroup]
-	cp GROUP_MAGNET_TUNNEL_INSIDE
-	jr nz, .not_magnet_tunnel
-	ld a, [MapNumber]
-	cp MAP_MAGNET_TUNNEL_INSIDE
-	jr nz, .not_magnet_tunnel
-	ld hl, UnknBGPals palette PAL_BG_GRAY
-	jr .load_rock_palette
-
-.not_magnet_tunnel
 	ld a, [MapGroup]
 	ld b, a
 	ld a, [MapNumber]

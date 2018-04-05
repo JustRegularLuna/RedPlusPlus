@@ -182,6 +182,18 @@ TilesetNewBarkCherrygroveAttr::
 INCBIN "data/tilesets/new_bark_cherrygrove_attributes.bin"
 
 
+SECTION "Tileset Data 15", ROMX
+
+TilesetVioletMahoganyGFX::
+INCBIN "gfx/tilesets/violet_mahogany.2bpp.unique.lz"
+TilesetVioletMahoganyMeta::
+INCBIN "data/tilesets/violet_mahogany_metatiles.bin"
+TilesetVioletMahoganyColl::
+INCLUDE "data/tilesets/violet_mahogany_collision.asm"
+TilesetVioletMahoganyAttr::
+INCBIN "data/tilesets/violet_mahogany_attributes.bin"
+
+
 ;------------------------------------
 
 

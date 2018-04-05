@@ -448,15 +448,6 @@ GoldenrodMuseum2F_BlockData:
 WarehouseEntrance_BlockData:
 	INCBIN "maps/WarehouseEntrance.blk"
 
-MagnetTunnelEast_BlockData:
-	INCBIN "maps/MagnetTunnelEast.blk"
-
-MagnetTunnelWest_BlockData:
-	INCBIN "maps/MagnetTunnelWest.blk"
-
-MagnetTunnelInside_BlockData:
-	INCBIN "maps/MagnetTunnelInside.blk"
-
 NationalPark_BlockData:
 NationalParkBugContest_BlockData:
 	INCBIN "maps/NationalPark.blk"

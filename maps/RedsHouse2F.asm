@@ -33,9 +33,6 @@ if DEF(DEBUG)
 
 DebugCheatScript:
 	opentext
-	; time
-	special Special_SetDayOfWeek
-	special Special_InitialClearDSTFlag
 	; gear
 	setflag ENGINE_POKEDEX
 	setflag ENGINE_VS_SEEKER

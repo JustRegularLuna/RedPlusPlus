@@ -15,6 +15,7 @@
 	const TILESET_FOREST ; does not share metatiles
 GENERIC_KANTO_GFX EQU const_value
 	const TILESET_NEW_BARK_CHERRYGROVE
+	const TILESET_VIOLET_MAHOGANY
 GENERIC_GFX EQU const_value
 ; These are independent tilesets
 	;------------------------------------
