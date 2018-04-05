@@ -320,8 +320,8 @@ ENDM
 ;	connection south, Route33, ROUTE_33, 0, 0, 10
 	connection east, CherrygroveBay, CHERRYGROVE_BAY, 14, 0, 26
 
-	map_attributes Route32Coast, ROUTE_32_COAST, $35, 0
-;	connection north, CherrygroveBay, CHERRYGROVE_BAY, 0, 0, 15
+	map_attributes Route32Coast, ROUTE_32_COAST, $41, NORTH
+	connection north, CherrygroveBay, CHERRYGROVE_BAY, 0, 0, 15
 
 	map_attributes Route33, ROUTE_33, $5, NORTH | WEST
 	connection north, Route32, ROUTE_32, 0, 0, 10
@@ -408,8 +408,8 @@ ENDM
 	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $41, WEST
 	connection west, Route21, ROUTE_21, -3, 5, 15
 
-	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $41, WEST | EAST
-;	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15
+	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $41, SOUTH | WEST | EAST
+	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15
 	connection west, Route32, ROUTE_32, -2, 12, 26
 	connection east, CherrygroveCity, CHERRYGROVE_CITY, 15, 0, 12
 
