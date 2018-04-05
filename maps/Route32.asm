@@ -15,9 +15,11 @@ Route32_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 6 ; object events
 	itemball_event 17, 71, POKE_BALL, 1, -1
+	itemball_event 19, 89, POKE_BALL, 1, -1
 	cuttree_event 14, 23, -1
+	smashrock_event 18, 89
 	treebase_right_event_1  9, 28, SECRET_BASE_ROUTE_32, EVENT_SECRET_BASE_ROUTE_32
 	treebase_right_event_2  9, 28, SECRET_BASE_ROUTE_32, EVENT_SECRET_BASE_ROUTE_32_ESTABLISHED
 
