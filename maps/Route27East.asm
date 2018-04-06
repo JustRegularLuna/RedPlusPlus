@@ -11,6 +11,7 @@ Route27East_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	fruittree_event 28, 13, FRUITTREE_ROUTE_27, LUM_BERRY
 
 	const_def 1 ; object constants
