@@ -164,7 +164,7 @@
 	tilecoll WALL, WALL, FLOOR, WALL
 	tilecoll WALL, WALL, WALL, WATER
 	tilecoll FLOOR, FLOOR, WATER, WATER
-	tilecoll WALL, FLOOR, WALL, WALL
+	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL
 	tilecoll WALL, WALL, WATER, BUOY
 	tilecoll WALL, WATER, WALL, WATER
 	tilecoll WALL, WALL, WALL, WALL
@@ -234,3 +234,5 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, DOOR, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll LEDGE_DOWN, WALL, WALL, WALL

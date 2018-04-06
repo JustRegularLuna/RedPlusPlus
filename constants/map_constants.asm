@@ -193,10 +193,10 @@ MAP_NONE   EQU 0
 	newgroup ; 14
 
 	map_const ROUTE_16_MIDDLE,               10, 12 ;  1
-	map_const ROUTE_16_WEST,                 23, 15 ;  2
+	map_const ROUTE_16_WEST,                 25, 15 ;  2
 	map_const ROUTE_17,                      10, 67 ;  3
 	map_const ROUTE_18_WEST,                 16, 12 ;  4
-	map_const URAGA_CHANNEL_EAST,            21,  9 ;  5
+	map_const URAGA_CHANNEL_EAST,            23,  9 ;  5
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,  4,  4 ;  6
 	map_const PSYCHIC_INVERS_HOUSE,           4,  4 ;  7
 
@@ -244,9 +244,9 @@ MAP_NONE   EQU 0
 	newgroup ; 18
 
 	map_const CINNABAR_ISLAND,        16, 16 ;  1
-	map_const ROUTE_20,               48, 10 ;  2
+	map_const ROUTE_20,               50, 10 ;  2
 	map_const ROUTE_21,               12, 41 ;  3
-	map_const URAGA_CHANNEL_WEST,     21,  9 ;  4
+	map_const URAGA_CHANNEL_WEST,     23,  9 ;  4
 	map_const CINNABAR_POKECENTER_1F,  6,  4 ;  5
 	map_const SEAFOAM_GYM,            12, 12 ;  6
 	map_const CINNABAR_LAB,           16,  9 ;  7
