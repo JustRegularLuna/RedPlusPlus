@@ -11,7 +11,6 @@ Route27East_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	cuttree_event 19, 12, -1
+	db 0 ; object events
 
 	const_def 1 ; object constants
