@@ -149,7 +149,10 @@ OutdoorSprites_Indigo:
 
 OutdoorSprites_Route26:
 OutdoorSprites_CeriseWest:
+	db SPRITE_MOLTRES
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_NewBark:
