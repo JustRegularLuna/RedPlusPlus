@@ -269,7 +269,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 21
 
-	map_const ROUTE_26,                            11, 54 ;  1
+	map_const ROUTE_26,                            13, 54 ;  1
 	map_const ROUTE_27_EAST,                       25,  9 ;  2
 	map_const ROUTE_26_HEAL_SPEECH_HOUSE,           4,  4 ;  3
 	map_const ROUTE_26_DAY_OF_WEEK_SIBLINGS_HOUSE,  4,  4 ;  4
