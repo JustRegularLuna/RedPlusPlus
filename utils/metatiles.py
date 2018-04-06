@@ -143,6 +143,7 @@ class Attributes(object):
 		'maps/CherrygroveBay.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
 		'maps/CherrygroveCity.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
 		'maps/Route30.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
+		'maps/CeriseIsland.blk': lambda: load_palette('gfx/tilesets/palettes/cerise_island.pal')[8:16],
 		########################################################################
 		'maps/BellchimeTrail.blk': lambda: load_palette('gfx/tilesets/palettes/bellchime_trail.pal')[8:16],
 		'maps/BrunosRoom.blk': lambda: load_palette('gfx/tilesets/palettes/brunos_room.pal'),

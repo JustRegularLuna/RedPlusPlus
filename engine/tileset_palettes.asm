@@ -72,6 +72,8 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PC_VALENCIA_ISLAND
 	jp z, .load_eight_time_of_day_bg_palettes
 
+	cp TILESET_VIRIDIAN
+	jp z, .tileset_viridian
 	cp TILESET_FOREST
 	jp z, .tileset_forest
 	cp TILESET_NEW_BARK_CHERRYGROVE
@@ -435,6 +437,16 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .load_eight_time_of_day_bg_palettes
 .not_bellchime_trail
 	jp .do_nothing
+
+.tileset_viridian
+	ld a, [MapGroup]
+	cp GROUP_CERISE_ISLAND_WEST
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	cp MAP_CERISE_ISLAND_WEST
+	jp nz, .do_nothing
+	ld hl, CeriseIslandWestPalette
+	jp .load_eight_time_of_day_bg_palettes
 
 .tileset_forest
 	ld a, [MapGroup]
@@ -1583,6 +1595,35 @@ endr
 	RGB_MONOCHROME_BLACK
 	MONOCHROME_RGB_FOUR_NIGHT
 	MONOCHROME_RGB_FOUR_NIGHT
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
+
+CeriseIslandWestPalette:
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/cerise_island.pal"
+elif !DEF(MONOCHROME)
+INCLUDE "gfx/tilesets/palettes/cerise_island.pal"
+else
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 7
+	MONOCHROME_RGB_FOUR_NIGHT
+endr
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
