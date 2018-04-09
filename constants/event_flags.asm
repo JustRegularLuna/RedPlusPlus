@@ -35,6 +35,9 @@
 ; Kanto Items
 	const EVENT_GOT_POTION_ROUTE_1
 
+; Kanto Hide/Show Events
+	const EVENT_HIDE_PALLETTOWN_OAK
+
 ; Decorations
 	const EVENT_DECO_BED_1
 	const EVENT_DECO_BED_2
