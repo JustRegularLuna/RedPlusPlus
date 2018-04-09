@@ -13,6 +13,18 @@ Route1ViridianGate_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  0,  4, SPRITE_GUARD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, Route1ViridianGateGuardText, -1
 
 	const_def 1 ; object constants
+
+Route1ViridianGateGuardText:
+	text "Viridian City gets"
+	line "visitors from all"
+	cont "over!"
+
+	para "I know most of"
+	line "them are just"
+	cont "passing through,"
+	cont "but that's ok."
+	done
