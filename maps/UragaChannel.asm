@@ -1,9 +1,11 @@
 UragaChannelEast_MapScriptHeader:
+UragaChannelWest_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 3 ; warp events
+	warp_event 10,  9, URAGA_CHANNEL_EAST, 2
 	warp_event 16, 11, URAGA_CHANNEL_WEST, 1
 	warp_event 20, 10, HIDDEN_CAVE_GROTTO, 1
 
