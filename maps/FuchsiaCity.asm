@@ -1,7 +1,8 @@
 FuchsiaCity_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, FuchsiaCityFlyPoint
 
 	db 11 ; warp events
 	warp_event  5, 13, FUCHSIA_MART, 2
@@ -27,3 +28,7 @@ FuchsiaCity_MapScriptHeader:
 	cuttree_event 18, 19, -1
 
 	const_def 1 ; object constants
+
+FuchsiaCityFlyPoint:
+	setflag ENGINE_FLYPOINT_FUCHSIA
+	return

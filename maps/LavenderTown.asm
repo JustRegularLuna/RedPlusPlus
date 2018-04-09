@@ -1,7 +1,8 @@
 LavenderTown_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, LavenderTownFlyPoint
 
 	db 5 ; warp events
 	warp_event  3,  5, LAVENDER_POKECENTER_1F, 1
@@ -17,3 +18,7 @@ LavenderTown_MapScriptHeader:
 	db 0 ; object events
 
 	const_def 1 ; object constants
+
+LavenderTownFlyPoint:
+	setflag ENGINE_FLYPOINT_LAVENDER
+	return

@@ -1,7 +1,8 @@
 PewterCity_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, PewterCityFlyPoint
 
 	db 7 ; warp events
 	warp_event 29, 15, PEWTER_NIDORAN_SPEECH_HOUSE, 1
@@ -34,6 +35,10 @@ PewterCity_MapScriptHeader:
 	cuttree_event 25,  9, -1
 
 	const_def 1 ; object constants
+
+PewterCityFlyPoint:
+	setflag ENGINE_FLYPOINT_PEWTER
+	return
 
 PewterCityText1:
 	text "It's rumored that"

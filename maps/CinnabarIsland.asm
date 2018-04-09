@@ -1,7 +1,8 @@
 CinnabarIsland_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, CinnabarIslandFlyPoint
 
 	db 6 ; warp events
 	warp_event 19, 17, CINNABAR_POKECENTER_1F, 1
@@ -21,3 +22,7 @@ CinnabarIsland_MapScriptHeader:
 	smashrock_event 27,  8
 
 	const_def 1 ; object constants
+
+CinnabarIslandFlyPoint:
+	setflag ENGINE_FLYPOINT_CINNABAR
+	return

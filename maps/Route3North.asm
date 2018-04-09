@@ -1,7 +1,8 @@
 Route3North_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, MtMoonFlyPoint
 
 	db 2 ; warp events
 	warp_event 18,  5, MOUNT_MOON_1F, 1
@@ -22,3 +23,7 @@ Route3North_MapScriptHeader:
 	smashrock_event 18, 12
 
 	const_def 1 ; object constants
+
+MtMoonFlyPoint:
+	setflag ENGINE_FLYPOINT_MT_MOON
+	return

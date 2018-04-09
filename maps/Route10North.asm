@@ -1,7 +1,8 @@
 Route10North_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, RockTunnelFlyPoint
 
 	db 6 ; warp events
 	warp_event 15, 33, ROUTE_10_POKECENTER_1F, 1
@@ -23,3 +24,7 @@ Route10North_MapScriptHeader:
 	cuttree_event 15, 21, -1
 
 	const_def 1 ; object constants
+
+RockTunnelFlyPoint:
+	setflag ENGINE_FLYPOINT_ROCK_TUNNEL
+	return

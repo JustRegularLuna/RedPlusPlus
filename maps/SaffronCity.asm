@@ -1,7 +1,8 @@
 SaffronCity_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, SaffronCityFlyPoint
 
 	db 21 ; warp events
 	warp_event 28,  7, FIGHTING_DOJO, 1
@@ -37,3 +38,7 @@ SaffronCity_MapScriptHeader:
 	object_event 24, 13, SPRITE_CABLE_CAR_SILPH, SPRITEMOVEDATA_OVERHEAD_TILE_RIGHT, 0, 0, -1, -1, PAL_NPC_ROCK, PERSONTYPE_COMMAND, end, NULL, -1
 
 	const_def 1 ; object constants
+
+SaffronCityFlyPoint:
+	setflag ENGINE_FLYPOINT_SAFFRON
+	return

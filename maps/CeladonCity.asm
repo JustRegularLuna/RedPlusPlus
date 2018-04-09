@@ -1,7 +1,8 @@
 CeladonCity_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, CeladonCityFlyPoint
 
 	db 17 ; warp events
 	warp_event  8, 15, CELADON_DEPT_STORE_1F, 1
@@ -33,3 +34,7 @@ CeladonCity_MapScriptHeader:
 	cuttree_event 35, 38, -1
 
 	const_def 1 ; object constants
+
+CeladonCityFlyPoint:
+	setflag ENGINE_FLYPOINT_CELADON
+	return

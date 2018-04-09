@@ -1,7 +1,8 @@
 VermilionCity_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, VermilionCityFlyPoint
 
 	db 14 ; warp events
 	warp_event 11,  3, VERMILION_HOUSE_FISHING_SPEECH_HOUSE, 1
@@ -31,3 +32,7 @@ VermilionCity_MapScriptHeader:
 	smashrock_event 30, 10
 
 	const_def 1 ; object constants
+
+VermilionCityFlyPoint:
+	setflag ENGINE_FLYPOINT_VERMILION
+	return

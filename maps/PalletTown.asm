@@ -1,7 +1,8 @@
 PalletTown_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, PalletTownFlyPoint
 
 	db 3 ; warp events
 	warp_event  5,  5, REDS_HOUSE_1F, 1
@@ -25,6 +26,10 @@ PalletTown_MapScriptHeader:
 
 	const_def 1 ; object constants
 	const PALLETTOWN_OAK
+
+PalletTownFlyPoint:
+	setflag ENGINE_FLYPOINT_PALLET
+	return
 
 OakAppearsText:
 	text "Oak: Hey! Wait!"

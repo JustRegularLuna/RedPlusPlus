@@ -1,7 +1,8 @@
 ViridianCity_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, ViridianCityFlyPoint
 
 	db 7 ; warp events
 	warp_event 30,  7, VIRIDIAN_GYM, 1
@@ -33,6 +34,10 @@ ViridianCity_MapScriptHeader:
 	cuttree_event 22, -4, -1 ; visible on Route2South
 
 	const_def 1 ; object constants
+
+ViridianCityFlyPoint:
+	setflag ENGINE_FLYPOINT_VIRIDIAN
+	return
 
 ViridianCityText1:
 	text "Those # Balls"
