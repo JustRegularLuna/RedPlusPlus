@@ -448,15 +448,6 @@ GoldenrodMuseum2F_BlockData:
 WarehouseEntrance_BlockData:
 	INCBIN "maps/WarehouseEntrance.blk"
 
-MagnetTunnelEast_BlockData:
-	INCBIN "maps/MagnetTunnelEast.blk"
-
-MagnetTunnelWest_BlockData:
-	INCBIN "maps/MagnetTunnelWest.blk"
-
-MagnetTunnelInside_BlockData:
-	INCBIN "maps/MagnetTunnelInside.blk"
-
 NationalPark_BlockData:
 NationalParkBugContest_BlockData:
 	INCBIN "maps/NationalPark.blk"
@@ -1112,6 +1103,10 @@ SeafoamIslandsB4F_BlockData:
 
 SilverCaveOutside_BlockData:
 	INCBIN "maps/SilverCaveOutside.blk"
+
+CeriseIslandEast_BlockData:
+CeriseIslandWest_BlockData:
+	INCBIN "maps/CeriseIsland.blk"
 
 SilverCaveRoom1_BlockData:
 	INCBIN "maps/SilverCaveRoom1.blk"

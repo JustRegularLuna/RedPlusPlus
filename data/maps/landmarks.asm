@@ -29,7 +29,6 @@ Landmarks: ; 0x1ca8c3
 	landmark  60, 108, GoldenrodCityName
 	landmark  58, 108, RadioTowerName
 	landmark  52, 108, GoldenrodHarborName
-	landmark  76, 108, MagnetTunnelName
 	landmark  60,  92, Route35Name
 	landmark  52,  92, Route35CoastName
 	landmark  60,  76, NationalParkName
@@ -122,6 +121,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  60, 148, CinnabarIslandName
 	landmark  58, 146, PokemonMansionName
 	landmark  62, 146, CinnabarVolcanoName
+	landmark  44, 124, CeriseIslandName
 	landmark  60, 132, Route21Name
 	landmark  48,  92, Route22Name
 	landmark  28, 116, Route27Name
@@ -200,6 +200,7 @@ SafariZoneName:        db "Safari␣Zone@"
 SeafoamIslandsName:    db "Seafoam¯Islands@"
 PokemonMansionName:    db "Pokémon¯Mansion@"
 CinnabarVolcanoName:   db "Cinnabar¯Volcano@"
+CeriseIslandName:      db "Cerise¯Island@"
 CeruleanCaveName:      db "Cerulean¯Cave@"
 CeruleanCapeName:      db "Cerulean¯Cape@"
 LuckyIslandName:       db "Lucky¯Island@"
@@ -266,7 +267,6 @@ YellowForestName:      db "Yellow¯Forest@"
 QuietCaveName:         db "Quiet␣Cave@"
 CherrygroveBayName:    db "Cherrygrove¯Bay@"
 GoldenrodHarborName:   db "Goldenrod¯Harbor@"
-MagnetTunnelName:      db "Magnet¯Tunnel@"
 Route32CoastName:      db "Route␣32¯Coast@"
 Route34CoastName:      db "Route␣34¯Coast@"
 Route35CoastName:      db "Route␣35¯Coast@"

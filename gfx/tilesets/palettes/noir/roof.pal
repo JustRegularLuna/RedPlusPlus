@@ -18,11 +18,13 @@
 	GRAYSCALE 22, 13, 11, 06 ; Route 19
 	GRAYSCALE 21, 12, 10, 06 ; Saffron City
 	GRAYSCALE 25, 16, 13, 08 ; Cinnabar Island
+	GRAYSCALE 20, 12, 10, 06 ; Cerise Island East
 	GRAYSCALE 15, 11, 08, 06 ; Indigo Plateau
-	GRAYSCALE 21, 11, 21, 11 ; Route 26
+	GRAYSCALE 25, 15, 12, 08 ; Route 26
+	GRAYSCALE 20, 12, 10, 06 ; Cerise Island West
 	GRAYSCALE 26, 17, 11, 08 ; New Bark Town
 	GRAYSCALE 21, 11, 10, 05 ; Cherrygrove City
-	GRAYSCALE 21, 11, 21, 11 ; Route 32
+	GRAYSCALE 25, 15, 12, 08 ; Route 32
 	GRAYSCALE 19, 10, 07, 06 ; Violet City
 	GRAYSCALE 16, 12, 09, 05 ; Ruins of Alph
 	GRAYSCALE 19, 14, 10, 09 ; Azalea Town

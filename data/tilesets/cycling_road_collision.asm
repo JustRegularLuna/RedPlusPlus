@@ -164,7 +164,7 @@
 	tilecoll WALL, WALL, FLOOR, WALL
 	tilecoll WALL, WALL, WALL, WATER
 	tilecoll FLOOR, FLOOR, WATER, WATER
-	tilecoll WALL, FLOOR, WALL, WALL
+	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL
 	tilecoll WALL, WALL, WATER, BUOY
 	tilecoll WALL, WATER, WALL, WATER
 	tilecoll WALL, WALL, WALL, WALL
@@ -196,10 +196,10 @@
 	tilecoll WALL, WALL, WATER, WATER
 	tilecoll WALL, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, WALL, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, TOP_WALL, WALL, FLOOR
 	tilecoll TOP_WALL, WALL, FLOOR, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll BOTTOM_WALL, WALL, CAVE, WALL
 	tilecoll WALL, WALL, WALL, CAVE
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
@@ -216,14 +216,16 @@
 	tilecoll FLOOR, FLOOR, FLOOR, WALL
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WATER, WATER, WALL, WALL
 	tilecoll WALL, WALL, WATER, WATER
 	tilecoll WALL, WALL, WATER, WATER
 	tilecoll WALL, WALL, WATER, WATER
 	tilecoll WALL, WALL, WALL, WATER
 	tilecoll WALL, WALL, WATER, WALL
+	tilecoll WALL, WALL, FLOOR, FLOOR
+	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
@@ -232,3 +234,5 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, DOOR, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll LEDGE_DOWN, WALL, WALL, WALL

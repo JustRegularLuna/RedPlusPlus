@@ -251,13 +251,6 @@ INCLUDE "maps/UndergroundPathSwitchRoomEntrances.asm"
 INCLUDE "maps/WarehouseEntrance.asm"
 
 
-SECTION "Magnet Tunnel Scripts", ROMX
-
-INCLUDE "maps/MagnetTunnelEast.asm"
-INCLUDE "maps/MagnetTunnelWest.asm"
-INCLUDE "maps/MagnetTunnelInside.asm"
-
-
 SECTION "National Park Scripts", ROMX
 
 INCLUDE "maps/NationalPark.asm"
@@ -756,6 +749,11 @@ INCLUDE "maps/SeafoamIslandsB1F.asm"
 INCLUDE "maps/SeafoamIslandsB2F.asm"
 INCLUDE "maps/SeafoamIslandsB3F.asm"
 INCLUDE "maps/SeafoamIslandsB4F.asm"
+
+
+SECTION "Cerise Island Scripts", ROMX
+
+INCLUDE "maps/CeriseIsland.asm"
 
 
 SECTION "Silver Cave Scripts", ROMX

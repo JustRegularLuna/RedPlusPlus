@@ -11,6 +11,7 @@ Route32Coast_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	fruittree_event 21, 51, FRUITTREE_ROUTE_32_COAST, ORAN_BERRY
 
 	const_def 1 ; object constants

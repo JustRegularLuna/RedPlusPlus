@@ -21,6 +21,7 @@ Tileset00End::
 	tileset TilesetIndigo
 	tileset TilesetForest
 	tileset TilesetNewBarkCherrygrove
+	tileset TilesetVioletMahogany
 	;------------------------------------
 	tileset TilesetJohto1
 	tileset TilesetJohto2

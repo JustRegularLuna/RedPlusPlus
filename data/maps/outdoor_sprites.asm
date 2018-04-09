@@ -19,8 +19,10 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_Route19
 	dw OutdoorSprites_Saffron
 	dw OutdoorSprites_Cinnabar
+	dw OutdoorSprites_CeriseEast
 	dw OutdoorSprites_Indigo
 	dw OutdoorSprites_Route26
+	dw OutdoorSprites_CeriseWest
 	dw OutdoorSprites_NewBark
 	dw OutdoorSprites_Cherrygrove
 	dw OutdoorSprites_Route32
@@ -56,6 +58,7 @@ OutdoorSprites: ; 144b8
 
 OutdoorSprites_Pallet:
 OutdoorSprites_Cinnabar:
+OutdoorSprites_CeriseEast:
 	db SPRITE_OAK
 	db SPRITE_GIRL
 	db SPRITE_FISHER2
@@ -144,19 +147,30 @@ OutdoorSprites_Saffron:
 OutdoorSprites_Indigo:
 	db 0 ; end
 
+OutdoorSprites_Route26:
+OutdoorSprites_CeriseWest:
+	db SPRITE_MOLTRES
+	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
+	db SPRITE_SECRET_BASE
+	db 0 ; end
+
 OutdoorSprites_NewBark:
 OutdoorSprites_Cherrygrove:
+OutdoorSprites_Route32:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
+	db SPRITE_SECRET_BASE
 	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
-OutdoorSprites_Route26:
+OutdoorSprites_Violet:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
+	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_Special:
-OutdoorSprites_Route32:
-OutdoorSprites_Violet:
 OutdoorSprites_RuinsOfAlph:
 OutdoorSprites_Azalea:
 OutdoorSprites_Goldenrod:

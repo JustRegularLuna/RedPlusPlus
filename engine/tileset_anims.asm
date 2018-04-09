@@ -50,6 +50,7 @@ TilesetIndigoAnim:
 TilesetForestAnim:
 TilesetSafariZoneAnim:
 TilesetNewBarkCherrygroveAnim:
+TilesetVioletMahoganyAnim:
 	dw KantoWaterFrames, AnimateFarawayWaterTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
