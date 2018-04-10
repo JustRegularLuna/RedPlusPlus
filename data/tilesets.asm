@@ -22,6 +22,7 @@ Tileset00End::
 	tileset TilesetForest
 	tileset TilesetNewBarkCherrygrove
 	tileset TilesetVioletMahogany
+	tileset TilesetOlivineCianwood
 	;------------------------------------
 	tileset TilesetJohto1
 	tileset TilesetJohto2
