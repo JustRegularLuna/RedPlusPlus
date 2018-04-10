@@ -7,7 +7,7 @@ PalletTown_MapScriptHeader:
 	db 3 ; warp events
 	warp_event  5,  5, REDS_HOUSE_1F, 1
 	warp_event 13,  5, BLUES_HOUSE_1F, 1
-	warp_event 12, 11, OAKS_LAB, 1
+	warp_event 12, 11, OAKS_LAB, 2
 
 	db 2 ; coord events
 	coord_event 10, 1, 0, PalletTown_OakStopsYouTrigger1
@@ -74,23 +74,23 @@ PalletTown_OakStopsYouTrigger2:
 	end
 
 Movement_OakWalksToYou1:
-	step_up
-	step_up
-	step_right
-	step_up
-	step_up
-	step_right
+	slow_step_up
+	slow_step_up
+	slow_step_right
+	slow_step_up
+	slow_step_up
+	slow_step_right
 	turn_head_up
 	step_end
 
 Movement_OakWalksToYou2:
-	step_up
-	step_up
-	step_right
-	step_up
-	step_up
-	step_right
-	step_right
+	slow_step_up
+	slow_step_up
+	slow_step_right
+	slow_step_up
+	slow_step_up
+	slow_step_right
+	slow_step_right
 	turn_head_up
 	step_end
 
