@@ -37,6 +37,8 @@
 
 ; Kanto Hide/Show Events
 	const EVENT_HIDE_PALLETTOWN_OAK
+	const EVENT_HIDE_OAKSLAB_OAK
+	const EVENT_HIDE_OAKSLAB_BLUE
 
 ; Decorations
 	const EVENT_DECO_BED_1

@@ -906,6 +906,7 @@ FarfetchdPosition:: ds 1
 ; map triggers
 wAlways0Trigger:: ds 1
 wPalletTownTrigger:: ds 1
+wOaksLabTrigger:: ds 1
 wRoute24Trigger:: ds 1
 
 ; fight counts

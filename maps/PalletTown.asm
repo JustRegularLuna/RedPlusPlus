@@ -48,6 +48,8 @@ PalletTown_OakStopsYouTrigger1:
 	disappear PALLETTOWN_OAK
 	applyonemovement PLAYER, step_up
 	setscene $1
+	setmapscene OAKS_LAB, $1
+	clearevent EVENT_HIDE_OAKSLAB_OAK
 	warpcheck
 	end
 
@@ -66,65 +68,67 @@ PalletTown_OakStopsYouTrigger2:
 	disappear PALLETTOWN_OAK
 	applyonemovement PLAYER, step_up
 	setscene $1
+	setmapscene OAKS_LAB, $1
+	clearevent EVENT_HIDE_OAKSLAB_OAK
 	warpcheck
 	end
 
 Movement_OakWalksToYou1:
-	slow_step_up
-	slow_step_up
-	slow_step_right
-	slow_step_up
-	slow_step_up
-	slow_step_right
+	step_up
+	step_up
+	step_right
+	step_up
+	step_up
+	step_right
 	turn_head_up
 	step_end
 
 Movement_OakWalksToYou2:
-	slow_step_up
-	slow_step_up
-	slow_step_right
-	slow_step_up
-	slow_step_up
-	slow_step_right
-	slow_step_right
+	step_up
+	step_up
+	step_right
+	step_up
+	step_up
+	step_right
+	step_right
 	turn_head_up
 	step_end
 
 Movement_OakWalksToLab1:
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_left
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_right
-	slow_step_right
-	slow_step_right
-	slow_step_up
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_left
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_right
+	step_right
+	step_right
+	step_up
 	step_end
 
 Movement_OakWalksToLab2:
-	slow_step_left
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_left
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_down
-	slow_step_right
-	slow_step_right
-	slow_step_right
-	slow_step_up
+	step_left
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_left
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_right
+	step_right
+	step_right
+	step_up
 	step_end
 
 OakAppearsText:
