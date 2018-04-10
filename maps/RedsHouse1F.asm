@@ -81,7 +81,7 @@ RedsHouse1FText2:
 
 RedsHouse1FText3:
 	text "Let's see what's"
-	line "in the fridge..."
+	line "in the fridge…"
 	
 	para "Fresh Water and"
 	line "tasty Lemonade!"

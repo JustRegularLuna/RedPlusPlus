@@ -95,6 +95,7 @@ EngineFlags: ; 80462
 	engine_flag DailyFlags, 4 ; all fruit trees
 	engine_flag DailyFlags, 5 ; wobbuffet given
 	engine_flag DailyFlags, 6 ; goldenrod underground merchant closed
+	engine_flag DailyFlags, 7 ; tea in blue's house
 
 	engine_flag DailyFlags4, 5 ; all hidden grottoes
 

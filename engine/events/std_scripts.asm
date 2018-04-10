@@ -449,6 +449,10 @@ BugContestResults_CopyContestantsToResults ; 0xbc380
 	end
 
 InitializeEventsScript:
+; Hidden-By-Default NPC events
+	setevent EVENT_HIDE_PALLETTOWN_OAK
+	setevent EVENT_HIDE_OAKSLAB_OAK
+; Secret Base Events
 	setevent EVENT_SECRET_BASE_ROUTE_2_SOUTH_ESTABLISHED
 	setevent EVENT_SECRET_BASE_ROUTE_2_NORTH_ESTABLISHED
 	setevent EVENT_SECRET_BASE_ROUTE_3_TREE_ESTABLISHED

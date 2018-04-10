@@ -7,9 +7,11 @@ PalletTown_MapScriptHeader:
 	db 3 ; warp events
 	warp_event  5,  5, REDS_HOUSE_1F, 1
 	warp_event 13,  5, BLUES_HOUSE_1F, 1
-	warp_event 12, 11, OAKS_LAB, 1
+	warp_event 12, 11, OAKS_LAB, 2
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 10, 1, 0, PalletTown_OakStopsYouTrigger1
+	coord_event 11, 1, 0, PalletTown_OakStopsYouTrigger2
 
 	db 4 ; bg events
 	bg_event 13, 13, SIGNPOST_JUMPTEXT, PalletTownText4
@@ -18,7 +20,7 @@ PalletTown_MapScriptHeader:
 	bg_event 11,  5, SIGNPOST_JUMPTEXT, PalletTownText7
 
 	db 5 ; object events
-	object_event  8,  6, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  8,  6, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_PALLETTOWN_OAK
 	object_event  3,  8, SPRITE_GIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, PERSONTYPE_COMMAND, jumptextfaceplayer, PalletTownText2, -1
 	object_event 11, 15, SPRITE_FISHER2, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, PERSONTYPE_COMMAND, jumptextfaceplayer, PalletTownText3, -1
 	treebase_left_event_1 10, 21, SECRET_BASE_ROUTE_21, EVENT_SECRET_BASE_ROUTE_21 ; visible on Route21
@@ -30,6 +32,104 @@ PalletTown_MapScriptHeader:
 PalletTownFlyPoint:
 	setflag ENGINE_FLYPOINT_PALLET
 	return
+
+PalletTown_OakStopsYouTrigger1:
+	playmusic MUSIC_MEET_PROF_OAK
+	turnobject PLAYER, DOWN
+	showtext OakAppearsText
+	showemote EMOTE_SHOCK, PLAYER, 15
+	appear PALLETTOWN_OAK
+	applymovement PALLETTOWN_OAK, Movement_OakWalksToYou1
+	showtext OakWalksUpText
+	follow PALLETTOWN_OAK, PLAYER
+	applymovement PALLETTOWN_OAK, Movement_OakWalksToLab1
+	stopfollow
+	playsound SFX_EXIT_BUILDING
+	disappear PALLETTOWN_OAK
+	applyonemovement PLAYER, step_up
+	setscene $1
+	setmapscene OAKS_LAB, $1
+	clearevent EVENT_HIDE_OAKSLAB_OAK
+	warpcheck
+	end
+
+PalletTown_OakStopsYouTrigger2:
+	playmusic MUSIC_MEET_PROF_OAK
+	turnobject PLAYER, DOWN
+	showtext OakAppearsText
+	showemote EMOTE_SHOCK, PLAYER, 15
+	appear PALLETTOWN_OAK
+	applymovement PALLETTOWN_OAK, Movement_OakWalksToYou2
+	showtext OakWalksUpText
+	follow PALLETTOWN_OAK, PLAYER
+	applymovement PALLETTOWN_OAK, Movement_OakWalksToLab2
+	stopfollow
+	playsound SFX_EXIT_BUILDING
+	disappear PALLETTOWN_OAK
+	applyonemovement PLAYER, step_up
+	setscene $1
+	setmapscene OAKS_LAB, $1
+	clearevent EVENT_HIDE_OAKSLAB_OAK
+	warpcheck
+	end
+
+Movement_OakWalksToYou1:
+	slow_step_up
+	slow_step_up
+	slow_step_right
+	slow_step_up
+	slow_step_up
+	slow_step_right
+	turn_head_up
+	step_end
+
+Movement_OakWalksToYou2:
+	slow_step_up
+	slow_step_up
+	slow_step_right
+	slow_step_up
+	slow_step_up
+	slow_step_right
+	slow_step_right
+	turn_head_up
+	step_end
+
+Movement_OakWalksToLab1:
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_left
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_right
+	step_right
+	step_right
+	step_up
+	step_end
+
+Movement_OakWalksToLab2:
+	step_left
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_left
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_right
+	step_right
+	step_right
+	step_up
+	step_end
 
 OakAppearsText:
 	text "Oak: Hey! Wait!"
