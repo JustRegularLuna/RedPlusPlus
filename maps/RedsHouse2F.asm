@@ -133,7 +133,6 @@ DebugCheatScript:
 	loadvar PartyMon2PP+2, 15
 	loadvar PartyMon2PP+3, 10
 	; pokedex
-	setevent EVENT_GOT_STARTER
 	callasm FillPokedex
 	; phone
 	addcellnum PHONE_MOM
