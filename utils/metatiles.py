@@ -140,10 +140,11 @@ class Attributes(object):
 
 	map_palettes = {
 		'maps/ViridianForest.blk': lambda: load_palette('gfx/tilesets/palettes/viridian_forest.pal'),
-		'maps/CherrygroveBay.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
-		'maps/CherrygroveCity.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
 		'maps/Route30.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
 		'maps/CeriseIsland.blk': lambda: load_palette('gfx/tilesets/palettes/cerise_island.pal')[8:16],
+		'maps/CherrygroveBay.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
+		'maps/CherrygroveCity.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
+		'maps/VioletCity.blk': lambda: load_palette('gfx/tilesets/palettes/violet_ecruteak.pal')[8:16],
 		########################################################################
 		'maps/BellchimeTrail.blk': lambda: load_palette('gfx/tilesets/palettes/bellchime_trail.pal')[8:16],
 		'maps/BrunosRoom.blk': lambda: load_palette('gfx/tilesets/palettes/brunos_room.pal'),

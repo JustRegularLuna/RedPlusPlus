@@ -23,7 +23,7 @@ SpawnPoints: ; 0x152ab
 
 	spawn NEW_BARK_TOWN,              17,  6
 	spawn CHERRYGROVE_CITY,           29,  4
-	spawn VIOLET_CITY,                31, 30
+	spawn VIOLET_CITY,                31, 32
 	spawn ROUTE_32,                   15, 78
 	spawn AZALEA_TOWN,                15, 10
 	spawn CIANWOOD_CITY,              23, 44

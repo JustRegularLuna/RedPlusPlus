@@ -315,7 +315,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 26
 
-	map_const VIOLET_CITY,                  20, 20 ;  1
+	map_const VIOLET_CITY,                  20, 21 ;  1
 	map_const VIOLET_OUTSKIRTS,             20,  8 ;  2
 	map_const VIOLET_POKECENTER_1F,          6,  4 ;  3
 	map_const VIOLET_MART,                   6,  4 ;  4

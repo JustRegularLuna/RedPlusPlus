@@ -122,7 +122,7 @@ ENDM
 ;	connection north, VioletOutskirts, VIOLET_OUTSKIRTS, 0, 0, 20
 	connection south, Route32, ROUTE_32, -2, 0, 12
 ;	connection west, Route36, ROUTE_36, 0, -2, 9
-	connection east, Route31, ROUTE_31, 11, 0, 9
+	connection east, Route31, ROUTE_31, 12, 0, 9
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $5, WEST | EAST
 	connection west, Route34, ROUTE_34, -3, 15, 12
