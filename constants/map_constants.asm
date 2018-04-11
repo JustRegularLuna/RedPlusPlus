@@ -403,14 +403,14 @@ MAP_NONE   EQU 0
 
 	newgroup ; 34
 
-	map_const GOLDENROD_HARBOR, 24, 18 ;  1
+	map_const GOLDENROD_HARBOR, 20, 18 ;  1
 
 	newgroup ; 35
 
-	map_const OLIVINE_CITY,                    33, 16 ;  1
-	map_const ROUTE_38,                        20,  9 ;  2
-	map_const ROUTE_39,                        10, 20 ;  3
-	map_const ROUTE_35_COAST,                  26, 14 ;  4
+	map_const OLIVINE_CITY,                    31, 16 ;  1
+	map_const ROUTE_38,                        20, 13 ;  2
+	map_const ROUTE_39,                        12, 23 ;  3
+	map_const ROUTE_35_COAST,                  24, 14 ;  4
 	map_const OLIVINE_PORT,                    10, 16 ;  5
 	map_const OLIVINE_POKECENTER_1F,            6,  4 ;  6
 	map_const OLIVINE_MART,                     6,  4 ;  7

@@ -135,8 +135,8 @@ ENDM
 	connection north, Route35, ROUTE_35, 5, 0, 12
 	connection south, Route34, ROUTE_34, 7, 0, 10
 
-	map_attributes OlivineCity, OLIVINE_CITY, $35, NORTH | SOUTH | WEST
-	connection north, Route39, ROUTE_39, 5, 0, 10
+	map_attributes OlivineCity, OLIVINE_CITY, $41, NORTH | SOUTH | WEST
+	connection north, Route39, ROUTE_39, 3, 0, 12
 	connection south, Route35Coast, ROUTE_35_COAST, 0, -7, 32
 	connection west, Route40, ROUTE_40, 7, 0, 12
 
@@ -340,9 +340,9 @@ ENDM
 	connection north, Route36, ROUTE_36, 0, 0, 14
 	connection south, GoldenrodCity, GOLDENROD_CITY, -2, 3, 16
 
-	map_attributes Route35Coast, ROUTE_35_COAST, $35, NORTH | SOUTH
+	map_attributes Route35Coast, ROUTE_35_COAST, $35, NORTH
 	connection north, OlivineCity, OLIVINE_CITY, 0, 7, 32
-	connection south, GoldenrodHarbor, GOLDENROD_HARBOR, 0, 0, 24
+;	connection south, GoldenrodHarbor, GOLDENROD_HARBOR, 0, 0, 24
 
 	map_attributes Route36, ROUTE_36, $5, NORTH | SOUTH | EAST
 	connection north, Route37, ROUTE_37, 12, 0, 10
@@ -353,13 +353,13 @@ ENDM
 	connection north, EcruteakCity, ECRUTEAK_CITY, -3, 2, 16
 	connection south, Route36, ROUTE_36, -3, 9, 16
 
-	map_attributes Route38, ROUTE_38, $5, WEST | EAST
+	map_attributes Route38, ROUTE_38, $f, WEST
 	connection west, Route39, ROUTE_39, 0, 0, 12
-	connection east, EcruteakCity, ECRUTEAK_CITY, -3, 2, 15
+;	connection east, EcruteakCity, ECRUTEAK_CITY, -3, 2, 15
 
-	map_attributes Route39, ROUTE_39, $5, SOUTH | EAST
-	connection south, OlivineCity, OLIVINE_CITY, -3, 2, 16
-	connection east, Route38, ROUTE_38, 0, 0, 9
+	map_attributes Route39, ROUTE_39, $f, SOUTH | EAST
+	connection south, OlivineCity, OLIVINE_CITY, -3, 0, 18
+	connection east, Route38, ROUTE_38, 0, 0, 12
 
 	map_attributes Route40, ROUTE_40, $35, SOUTH | EAST
 	connection south, Route41, ROUTE_41, -3, 12, 13
