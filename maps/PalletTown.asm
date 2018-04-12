@@ -87,33 +87,16 @@ Movement_OakWalksToYou2:
 	slow_step_up
 	slow_step_up
 	slow_step_right
-	slow_step_up
-	slow_step_up
 	slow_step_right
+	slow_step_up
+	slow_step_up
 	slow_step_right
 	turn_head_up
 	step_end
 
-Movement_OakWalksToLab1:
-	step_down
-	step_down
-	step_down
-	step_down
-	step_down
-	step_left
-	step_down
-	step_down
-	step_down
-	step_down
-	step_down
-	step_right
-	step_right
-	step_right
-	step_up
-	step_end
-
 Movement_OakWalksToLab2:
 	step_left
+Movement_OakWalksToLab1:
 	step_down
 	step_down
 	step_down
