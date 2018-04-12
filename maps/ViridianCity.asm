@@ -24,7 +24,7 @@ ViridianCity_MapScriptHeader:
 	db 10 ; object events
 	object_event 13, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, PERSONTYPE_COMMAND, jumptextfaceplayer, ViridianCityText1, -1
 	object_event 30,  8, SPRITE_GAMBLER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 30, 24, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 30, 24, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, ViridianCityCaterpillarNerdScript, -1
 	object_event 17,  9, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 18,  9, SPRITE_MAP_AMBER_LYING_OLD_MAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  6, 23, SPRITE_FISHER2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -38,6 +38,17 @@ ViridianCity_MapScriptHeader:
 ViridianCityFlyPoint:
 	setflag ENGINE_FLYPOINT_VIRIDIAN
 	return
+
+ViridianCityCaterpillarNerdScript:
+	faceplayer
+	opentext
+	writetext ViridianCityText_1914d
+	yesorno
+	iftrue_jumpopenedtext ViridianCityText_19157
+	thisopenedtext
+ViridianCityText_19152:
+	text "Oh, OK then!"
+	done
 
 ViridianCityText1:
 	text "Those # Balls"
@@ -106,10 +117,6 @@ ViridianCityText_1914d:
 	line "about the 2 kinds"
 	cont "of caterpillar"
 	cont "#mon?"
-	done
-
-ViridianCityText_19152:
-	text "Oh, OK then!"
 	done
 
 ViridianCityText_19157:
