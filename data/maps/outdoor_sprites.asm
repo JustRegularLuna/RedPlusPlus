@@ -176,6 +176,7 @@ OutdoorSprites_Route39:
 OutdoorSprites_Olivine:
 OutdoorSprites_Cianwood:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 

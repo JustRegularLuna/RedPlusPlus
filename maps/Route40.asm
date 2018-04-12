@@ -10,6 +10,9 @@ Route40_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 3 ; object events
+	smashrock_event  7, 11
+	smashrock_event  6, 9
+	smashrock_event  7, 8
 
 	const_def 1 ; object constants
