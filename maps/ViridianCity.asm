@@ -13,7 +13,9 @@ ViridianCity_MapScriptHeader:
 	warp_event 20, 33, ROUTE_1_VIRIDIAN_GATE, 1
 	warp_event 21, 33, ROUTE_1_VIRIDIAN_GATE, 2
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 19, 9, 0, ViridianCityLyingOldManTrigger
+	coord_event 30, 8, 1, ViridianCityGymDoorLockTrigger
 
 	db 4 ; bg events
 	bg_event 17, 17, SIGNPOST_JUMPTEXT, ViridianCityText8
@@ -23,12 +25,12 @@ ViridianCity_MapScriptHeader:
 
 	db 10 ; object events
 	object_event 13, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, PERSONTYPE_COMMAND, jumptextfaceplayer, ViridianCityText1, -1
-	object_event 30,  8, SPRITE_GAMBLER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 29,  8, SPRITE_GAMBLER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, ViridianCityGamblerScript, -1
 	object_event 30, 24, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, ViridianCityCaterpillarNerdScript, -1
-	object_event 17,  9, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 18,  9, SPRITE_MAP_AMBER_LYING_OLD_MAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  6, 23, SPRITE_FISHER2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 17,  5, SPRITE_GAMBLER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 17,  9, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, ViridianCityGirlScript, -1
+	object_event 18,  9, SPRITE_MAP_AMBER_LYING_OLD_MAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_COMMAND, jumptext, ViridianCityText_19191, EVENT_GOT_POKEDEX
+	object_event  6, 23, SPRITE_FISHER2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, ViridianCitySleepyGuyScript, -1
+	object_event 17,  5, SPRITE_GAMBLER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, ViridianCityCatchTutorialScript, EVENT_HIDE_VIRIDIAN_CITY_OLD_MAN
 	cuttree_event  8, 22, -1
 	cuttree_event 15,  4, -1
 	cuttree_event 22, -4, -1 ; visible on Route2South
@@ -38,6 +40,97 @@ ViridianCity_MapScriptHeader:
 ViridianCityFlyPoint:
 	setflag ENGINE_FLYPOINT_VIRIDIAN
 	return
+
+ViridianCityLyingOldManTrigger:
+	showtext ViridianCityText_19191
+	applyonemovement PLAYER, step_down
+	end
+
+ViridianCityGymDoorLockTrigger:
+	checkcode VAR_BADGES
+	ifgreater 6, .AllOtherBadges
+	turnobject PLAYER, UP
+	showtext ViridianCityText14
+	applyonemovement PLAYER, jump_step_down
+.AllOtherBadges
+	end
+
+ViridianCitySleepyGuyScript:
+	faceplayer
+	opentext
+	checkevent EVENT_LISTENED_TO_DREAM_EATER_INTRO
+	iftrue ViridianCityTutorDreamEaterScript
+	writetext UnknownText_0x1a9cc4
+	waitbutton
+	setevent EVENT_LISTENED_TO_DREAM_EATER_INTRO
+ViridianCityTutorDreamEaterScript:
+	writetext Text_ViridianCityTutorDreamEater
+	waitbutton
+	checkitem SILVER_LEAF
+	iffalse .NoSilverLeaf
+	writetext Text_ViridianCityTutorQuestion
+	yesorno
+	iffalse .TutorRefused
+	writebyte DREAM_EATER
+	writetext Text_ViridianCityTutorClear
+	special Special_MoveTutor
+	ifequal $0, .TeachMove
+.TutorRefused
+	jumpopenedtext Text_ViridianCityTutorRefused
+
+.NoSilverLeaf
+	jumpopenedtext Text_ViridianCityTutorNoSilverLeaf
+
+.TeachMove
+	takeitem SILVER_LEAF
+	jumpopenedtext Text_ViridianCityTutorTaught
+
+ViridianCityCatchTutorialScript:
+	faceplayer
+	opentext
+	writetext ViridianCityText_1920a
+	yesorno
+	iftrue_jumpopenedtext ViridianCityText_19214
+	writetext ViridianCityText_1920f
+	waitbutton
+	closetext
+	loadwildmon WEEDLE, 5
+	catchtutorial BATTLETYPE_TUTORIAL
+	opentext
+	writetext ViridianCityText_19219
+	waitbutton
+	closetext
+	; TODO - enable Missingno? haha
+	end
+
+ViridianCityGamblerScript:
+	faceplayer
+	opentext
+	checkcode VAR_BADGES
+	ifgreater 6, .GymLeaderHasReturned
+	thisopenedtext
+;ViridianCityText_19122:
+	text "This #mon Gym"
+	line "is always closed."
+
+	para "I wonder who the"
+	line "Leader is?"
+	done
+.GymLeaderHasReturned
+	jumpopenedtext ViridianCityText_19127
+
+ViridianCityGirlScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_POKEDEX
+	iftrue_jumpopenedtext ViridianCityText_1917a
+	thisopenedtext
+;ViridianCityText_19175:
+	text "Oh Grandpa! Don't"
+	line "be so mean!"
+	cont "He hasn't had his"
+	cont "coffee yet."
+	done
 
 ViridianCityCaterpillarNerdScript:
 	faceplayer
@@ -99,14 +192,6 @@ ViridianCityText9:
 	cont "to fight!"
 	done
 
-ViridianCityText_19122:
-	text "This #mon Gym"
-	line "is always closed."
-
-	para "I wonder who the"
-	line "Leader is?"
-	done
-
 ViridianCityText_19127:
 	text "Viridian Gym's"
 	line "Leader returned!"
@@ -128,13 +213,6 @@ ViridianCityText_19157:
 	line "Poison Sting!"
 	done
 
-ViridianCityText_19175:
-	text "Oh Grandpa! Don't"
-	line "be so mean!"
-	cont "He hasn't had his"
-	cont "coffee yet."
-	done
-
 ViridianCityText_1917a:
 	text "When I go shop in"
 	line "Pewter City, I"
@@ -149,34 +227,6 @@ ViridianCityText_19191:
 
 	para "This is private"
 	line "property!"
-	done
-
-ViridianCityText_191ca:
-	text "Yawn!"
-	line "I must have dozed"
-	cont "off in the sun."
-
-	para "I had this dream"
-	line "about a Drowzee"
-	cont "eating my dream."
-	cont "What's this?"
-	cont "Where did this TM"
-	cont "come from?"
-
-	para "This is spooky!"
-	line "Here, you can"
-	cont "have this TM."
-	prompt
-
-TM42Explanation:
-	text "TM42 contains"
-	line "Dream Eater…"
-	cont "…Snore…"
-	done
-
-TM42NoRoomText:
-	text "You have too much"
-	line "stuff already."
 	done
 
 ViridianCityText_1920a:
@@ -222,4 +272,61 @@ ViridianCityText_19219:
 ViridianCityText14:
 	text "The Gym's doors"
 	line "are locked…"
+	done
+
+UnknownText_0x1a9cc4:
+	text "Yawn!"
+
+	para "I must have dozed"
+	line "off in the sun."
+
+	para "…I had this dream"
+	line "about a Drowzee"
+
+	para "eating my dream."
+	line "And…"
+
+	para "I learned how to"
+	line "eat dreams…"
+
+	para "Ooh, this is too"
+	line "spooky!"
+	cont "But now…"
+	done
+
+Text_ViridianCityTutorDreamEater:
+	text "I can teach your"
+	line "#mon to eat"
+	cont "dreams."
+
+	para "I just want a"
+	line "Silver Leaf in"
+	cont "exchange."
+	done
+
+Text_ViridianCityTutorNoSilverLeaf:
+	text "You don't have any"
+	line "Silver Leaves…"
+	done
+
+Text_ViridianCityTutorQuestion:
+	text "Should I teach"
+	line "your #mon"
+	cont "Dream Eater?"
+	done
+
+Text_ViridianCityTutorRefused:
+	text "OK…"
+	done
+
+Text_ViridianCityTutorClear:
+	text ""
+	done
+
+Text_ViridianCityTutorTaught:
+	text "Now your #mon"
+	line "knows how to use"
+	cont "Dream Eater…"
+
+	para "…Zzzzz…"
 	done
