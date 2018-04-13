@@ -214,11 +214,7 @@ TownMap_GetJohtoLandmarkLimits:
 	ret
 
 TownMap_GetKantoLandmarkLimits: ; 910e8
-	lb de, ROUTE_28, ROUTE_27
-	ld a, [StatusFlags]
-	bit 6, a
-	ret z
-	ld e, PALLET_TOWN
+	lb de, ROUTE_28, PALLET_TOWN
 	ret
 
 TownMap_GetOrangeLandmarkLimits:
