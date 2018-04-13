@@ -38,6 +38,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_Route39
 	dw OutdoorSprites_Olivine
 	dw OutdoorSprites_BattleTower
+	dw OutdoorSprites_Route41
 	dw OutdoorSprites_Cianwood
 	dw OutdoorSprites_Route47
 	dw OutdoorSprites_Mahogany
@@ -174,6 +175,7 @@ OutdoorSprites_Violet:
 OutdoorSprites_GoldenrodHarbor:
 OutdoorSprites_Route39:
 OutdoorSprites_Olivine:
+OutdoorSprites_Route41:
 OutdoorSprites_Cianwood:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_BOULDER_ROCK_FOSSIL

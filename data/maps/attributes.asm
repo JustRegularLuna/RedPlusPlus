@@ -128,7 +128,7 @@ ENDM
 	connection west, Route34, ROUTE_34, -3, 15, 12
 	connection east, Route33, ROUTE_33, 0, 0, 9
 
-	map_attributes CianwoodCity, CIANWOOD_CITY, $35, EAST
+	map_attributes CianwoodCity, CIANWOOD_CITY, $41, EAST
 	connection east, Route41, ROUTE_41, 0, 0, 27
 
 	map_attributes GoldenrodCity, GOLDENROD_CITY, $35, NORTH | SOUTH
@@ -137,7 +137,7 @@ ENDM
 
 	map_attributes OlivineCity, OLIVINE_CITY, $41, NORTH | SOUTH | WEST
 	connection north, Route39, ROUTE_39, 3, 0, 12
-	connection south, Route35Coast, ROUTE_35_COAST, 0, -7, 32
+	connection south, Route35Coast, ROUTE_35_COAST, 7, 0, 24
 	connection west, Route40, ROUTE_40, 7, 0, 12
 
 	map_attributes EcruteakCity, ECRUTEAK_CITY, $5, SOUTH | WEST | EAST
@@ -340,9 +340,9 @@ ENDM
 	connection north, Route36, ROUTE_36, 0, 0, 14
 	connection south, GoldenrodCity, GOLDENROD_CITY, -2, 3, 16
 
-	map_attributes Route35Coast, ROUTE_35_COAST, $35, NORTH
-	connection north, OlivineCity, OLIVINE_CITY, 0, 7, 32
-;	connection south, GoldenrodHarbor, GOLDENROD_HARBOR, 0, 0, 24
+	map_attributes Route35Coast, ROUTE_35_COAST, $41, NORTH | SOUTH
+	connection north, OlivineCity, OLIVINE_CITY, 0, 7, 24
+	connection south, GoldenrodHarbor, GOLDENROD_HARBOR, 0, 0, 24
 
 	map_attributes Route36, ROUTE_36, $5, NORTH | SOUTH | EAST
 	connection north, Route37, ROUTE_37, 12, 0, 10
@@ -353,7 +353,7 @@ ENDM
 	connection north, EcruteakCity, ECRUTEAK_CITY, -3, 2, 16
 	connection south, Route36, ROUTE_36, -3, 9, 16
 
-	map_attributes Route38, ROUTE_38, $f, WEST
+	map_attributes Route38, ROUTE_38, $1f, WEST
 	connection west, Route39, ROUTE_39, 0, 0, 12
 ;	connection east, EcruteakCity, ECRUTEAK_CITY, -3, 2, 15
 
@@ -361,11 +361,11 @@ ENDM
 	connection south, OlivineCity, OLIVINE_CITY, -3, 0, 18
 	connection east, Route38, ROUTE_38, 0, 0, 12
 
-	map_attributes Route40, ROUTE_40, $35, SOUTH | EAST
+	map_attributes Route40, ROUTE_40, $41, SOUTH | EAST
 	connection south, Route41, ROUTE_41, -3, 12, 13
 	connection east, OlivineCity, OLIVINE_CITY, -3, 4, 12
 
-	map_attributes Route41, ROUTE_41, $35, NORTH | WEST | EAST
+	map_attributes Route41, ROUTE_41, $41, NORTH | WEST | EAST
 	connection north, Route40, ROUTE_40, 15, 0, 10
 	connection west, CianwoodCity, CIANWOOD_CITY, 0, 0, 27
 	connection east, GoldenrodHarbor, GOLDENROD_HARBOR, 3, 0, 20
@@ -428,7 +428,7 @@ ENDM
 	map_attributes StormyBeach, STORMY_BEACH, $35, NORTH
 	connection north, Route34Coast, ROUTE_34_COAST, 0, 0, 9
 
-	map_attributes GoldenrodHarbor, GOLDENROD_HARBOR, $35, NORTH | WEST
+	map_attributes GoldenrodHarbor, GOLDENROD_HARBOR, $41, NORTH | WEST
 	connection north, Route35Coast, ROUTE_35_COAST, 0, 0, 24
 	connection west, Route41, ROUTE_41, -3, 0, 20
 
