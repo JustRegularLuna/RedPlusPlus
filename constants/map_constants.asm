@@ -315,7 +315,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 26
 
-	map_const VIOLET_CITY,                  20, 20 ;  1
+	map_const VIOLET_CITY,                  20, 21 ;  1
 	map_const VIOLET_OUTSKIRTS,             20,  8 ;  2
 	map_const VIOLET_POKECENTER_1F,          6,  4 ;  3
 	map_const VIOLET_MART,                   6,  4 ;  4
@@ -403,27 +403,30 @@ MAP_NONE   EQU 0
 
 	newgroup ; 34
 
-	map_const GOLDENROD_HARBOR, 24, 18 ;  1
+	map_const GOLDENROD_HARBOR, 20, 18 ;  1
 
 	newgroup ; 35
 
-	map_const OLIVINE_CITY,                    33, 16 ;  1
-	map_const ROUTE_38,                        20,  9 ;  2
-	map_const ROUTE_39,                        10, 20 ;  3
-	map_const ROUTE_35_COAST,                  26, 14 ;  4
-	map_const OLIVINE_PORT,                    10, 16 ;  5
-	map_const OLIVINE_POKECENTER_1F,            6,  4 ;  6
-	map_const OLIVINE_MART,                     6,  4 ;  7
-	map_const OLIVINE_GYM,                      5,  8 ;  8
-	map_const OLIVINE_PORT_PASSAGE,             4, 15 ;  9
-	map_const OLIVINE_CAFE,                     5,  4 ; 10
-	map_const OLIVINE_TIMS_HOUSE,               4,  4 ; 11
-	map_const OLIVINE_PUNISHMENT_SPEECH_HOUSE,  4,  4 ; 12
-	map_const OLIVINE_GOOD_ROD_HOUSE,           4,  4 ; 13
-	map_const ROUTE_39_BARN,                    4,  4 ; 14
-	map_const ROUTE_39_FARMHOUSE,               4,  4 ; 15
+	map_const ROUTE_38,           20, 13 ;  1
+	map_const ROUTE_39,           12, 23 ;  2
+	map_const ROUTE_39_BARN,       4,  4 ;  3
+	map_const ROUTE_39_FARMHOUSE,  4,  4 ;  4
 
 	newgroup ; 36
+
+	map_const OLIVINE_CITY,                    31, 16 ;  1
+	map_const ROUTE_35_COAST,                  24, 14 ;  2
+	map_const OLIVINE_PORT,                    10, 16 ;  3
+	map_const OLIVINE_POKECENTER_1F,            6,  4 ;  4
+	map_const OLIVINE_MART,                     6,  4 ;  5
+	map_const OLIVINE_GYM,                      5,  8 ;  6
+	map_const OLIVINE_PORT_PASSAGE,             4, 15 ;  7
+	map_const OLIVINE_CAFE,                     5,  4 ;  8
+	map_const OLIVINE_TIMS_HOUSE,               4,  4 ;  9
+	map_const OLIVINE_PUNISHMENT_SPEECH_HOUSE,  4,  4 ; 10
+	map_const OLIVINE_GOOD_ROD_HOUSE,           4,  4 ; 11
+
+	newgroup ; 37
 
 	map_const BATTLE_TOWER_OUTSIDE,     10, 13 ;  1
 	map_const BATTLE_TOWER_1F,          11,  7 ;  2
@@ -432,25 +435,28 @@ MAP_NONE   EQU 0
 	map_const BATTLE_TOWER_HALLWAY,     11,  2 ;  5
 	map_const BATTLE_TOWER_BATTLE_ROOM,  4,  4 ;  6
 
-	newgroup ; 37
+	newgroup ; 38
+
+	map_const ROUTE_41, 32, 27 ;  1
+
+	newgroup ; 39
 
 	map_const CIANWOOD_CITY,               15, 27 ;  1
 	map_const ROUTE_40,                    10, 20 ;  2
-	map_const ROUTE_41,                    32, 27 ;  3
-	map_const CIANWOOD_POKECENTER_1F,       6,  4 ;  4
-	map_const CIANWOOD_GYM,                 5,  9 ;  5
-	map_const CIANWOOD_PHARMACY,            4,  4 ;  6
-	map_const MANIAS_HOUSE,                 4,  4 ;  7
-	map_const STATS_JUDGES_HOUSE,           4,  4 ;  8
-	map_const CIANWOOD_CITY_PHOTO_STUDIO,   4,  4 ;  9
-	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,  4,  4 ; 10
+	map_const CIANWOOD_POKECENTER_1F,       6,  4 ;  3
+	map_const CIANWOOD_GYM,                 5,  9 ;  4
+	map_const CIANWOOD_PHARMACY,            4,  4 ;  5
+	map_const MANIAS_HOUSE,                 4,  4 ;  6
+	map_const STATS_JUDGES_HOUSE,           4,  4 ;  7
+	map_const CIANWOOD_CITY_PHOTO_STUDIO,   4,  4 ;  8
+	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,  4,  4 ;  9
 
-	newgroup ; 38
+	newgroup ; 40
 
 	map_const ROUTE_47, 39, 19 ;  1
 	map_const ROUTE_48, 18, 11 ;  2
 
-	newgroup ; 39
+	newgroup ; 41
 
 	map_const MAHOGANY_TOWN,                      10,  9 ;  1
 	map_const ROUTE_42,                           30,  9 ;  2
@@ -459,14 +465,14 @@ MAP_NONE   EQU 0
 	map_const MAHOGANY_GYM,                        5,  9 ;  5
 	map_const MAHOGANY_RED_GYARADOS_SPEECH_HOUSE,  4,  4 ;  6
 
-	newgroup ; 40
+	newgroup ; 42
 
 	map_const LAKE_OF_RAGE,                    20, 18 ;  1
 	map_const ROUTE_43,                        10, 27 ;  2
 	map_const LAKE_OF_RAGE_MAGIKARP_HOUSE,      4,  4 ;  3
 	map_const LAKE_OF_RAGE_HIDDEN_POWER_HOUSE,  4,  4 ;  4
 
-	newgroup ; 41
+	newgroup ; 43
 
 	map_const BLACKTHORN_CITY,                20, 19 ;  1
 	map_const ROUTE_45,                       12, 46 ;  2
@@ -479,14 +485,14 @@ MAP_NONE   EQU 0
 	map_const BLACKTHORN_DRAGON_SPEECH_HOUSE,  4,  4 ;  9
 	map_const BLACKTHORN_EMYS_HOUSE,           4,  4 ; 10
 
-	newgroup ; 42
+	newgroup ; 44
 
 	map_const SILVER_CAVE_OUTSIDE,          20, 15 ;  1
 	map_const ROUTE_28,                     19,  9 ;  2
 	map_const SILVER_CAVE_POKECENTER_1F,     6,  4 ;  3
 	map_const ROUTE_28_FAMOUS_SPEECH_HOUSE,  4,  4 ;  4
 
-	newgroup ; 43
+	newgroup ; 45
 
 	map_const SHAMOUTI_ISLAND,           18, 15 ;  1
 	map_const BEAUTIFUL_BEACH,           21, 15 ;  2
@@ -506,18 +512,18 @@ MAP_NONE   EQU 0
 	map_const BEAUTIFUL_BEACH_VILLA,      6,  4 ; 16
 	map_const ROCKY_BEACH_HOUSE,          4,  4 ; 17
 
-	newgroup ; 44
+	newgroup ; 46
 
 	map_const SHAMOUTI_SHRINE_RUINS, 12, 17 ;  1
 
-	newgroup ; 45
+	newgroup ; 47
 
 	map_const WARM_BEACH,       12, 13 ;  1
 	map_const SHAMOUTI_COAST,   48, 10 ;  2
 	map_const WARM_BEACH_SHACK,  4,  4 ;  3
 	map_const WARM_BEACH_HOUSE,  4,  4 ;  4
 
-	newgroup ; 46
+	newgroup ; 48
 
 	map_const VALENCIA_ISLAND, 14, 12 ;  1
 	map_const ROUTE_49,        20, 11 ;  2
@@ -526,17 +532,17 @@ MAP_NONE   EQU 0
 	map_const VALENCIA_HOUSE,   4,  4 ;  5
 	map_const VALENCIA_PORT,   11,  9 ;  6
 
-	newgroup ; 47
+	newgroup ; 49
 
 	map_const NAVEL_ROCK_OUTSIDE, 13, 16 ;  1
 	map_const FARAWAY_ISLAND,     17, 23 ;  2
 
-	newgroup ; 48
+	newgroup ; 50
 
 	map_const SINJOH_RUINS,        9, 13 ;  1
 	map_const SINJOH_RUINS_HOUSE,  4,  4 ;  2
 
-	newgroup ; 49
+	newgroup ; 51
 
 	map_const ROUTE_1_VIRIDIAN_GATE,          5,  4 ;  3
 	map_const VIRIDIAN_FOREST_VIRIDIAN_GATE,  5,  4 ; 16
@@ -563,7 +569,7 @@ MAP_NONE   EQU 0
 	map_const SAFARI_ZONE_FUCHSIA_GATE,       5,  4 ;  9
 	map_const POKEMON_LEAGUE_GATE,           11,  9 ; 14
 
-	newgroup ; 50
+	newgroup ; 52
 
 	map_const VIRIDIAN_FOREST,                        21, 28 ;  1
 	map_const MOUNT_MOON_1F,                          15, 13 ;  2
@@ -605,7 +611,7 @@ MAP_NONE   EQU 0
 	map_const CERULEAN_CAVE_2F,                       17, 11 ; 38
 	map_const CERULEAN_CAVE_B1F,                      17, 11 ; 39
 
-	newgroup ; 51
+	newgroup ; 53
 
 	map_const ROUTE_29_46_GATE,             5,  4 ;  1
 	map_const ROUTE_31_VIOLET_GATE,         5,  4 ;  2
@@ -626,7 +632,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_43_MAHOGANY_GATE,       5,  4 ; 17
 	map_const ROUTE_43_GATE,                5,  4 ; 18
 
-	newgroup ; 52
+	newgroup ; 54
 
 	map_const TOHJO_FALLS,                            15,  9 ;  1
 	map_const GIOVANNIS_CAVE,                         10, 24 ;  2
@@ -725,13 +731,13 @@ MAP_NONE   EQU 0
 	map_const SILVER_CAVE_ROOM_3,                     10, 17 ; 95
 	map_const SILVER_CAVE_ITEM_ROOMS,                 20, 18 ; 96
 
-	newgroup ; 53
+	newgroup ; 55
 
 	map_const SEAGALLOP_FERRY_VERMILION_GATE,  7,  6 ;  1
 	map_const SEAGALLOP_FERRY_NAVEL_GATE,      7,  6 ;  2
 	map_const SEAGALLOP_FERRY_SHAMOUTI_GATE,   7,  6 ;  3
 
-	newgroup ; 54
+	newgroup ; 56
 
 	map_const NOISY_FOREST,          22, 20 ;  1
 	map_const SHAMOUTI_TUNNEL,       18, 10 ;  2

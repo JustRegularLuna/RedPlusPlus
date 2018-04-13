@@ -718,8 +718,7 @@ INCLUDE "maps/SafariZoneFuchsiaGate.asm"
 
 SECTION "Uraga Channel Scripts", ROMX
 
-INCLUDE "maps/UragaChannelEast.asm"
-INCLUDE "maps/UragaChannelWest.asm"
+INCLUDE "maps/UragaChannel.asm"
 
 
 SECTION "Cinnabar Scripts", ROMX

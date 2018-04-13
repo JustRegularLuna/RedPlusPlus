@@ -115,8 +115,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .maybe_olivine_lighthouse_roof
 	cp TILESET_PC_HOME_DECOR_STORE
 	jp z, .maybe_celadon_home_decor_store_4f
-	cp TILESET_PC_JOHTO_TRADITIONAL
-	jp z, .maybe_special_johto_1
+	cp TILESET_VIOLET_MAHOGANY
+	jp z, .maybe_traditional_johto
 	cp TILESET_PC_FOREST
 	jp z, .maybe_special_forest
 	cp TILESET_PC_CAVE
@@ -412,7 +412,7 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, SinjohRuinsPalette
 	jp .load_eight_time_of_day_bg_palettes
 
-.maybe_special_johto_1
+.maybe_traditional_johto
 	ld hl, VioletEcruteakPalette
 	ld a, [MapGroup]
 	cp GROUP_VIOLET_CITY

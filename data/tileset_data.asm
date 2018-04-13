@@ -194,6 +194,18 @@ TilesetVioletMahoganyAttr::
 INCBIN "data/tilesets/violet_mahogany_attributes.bin"
 
 
+SECTION "Tileset Data 16", ROMX
+
+TilesetOlivineCianwoodGFX::
+INCBIN "gfx/tilesets/olivine_cianwood.2bpp.unique.lz"
+TilesetOlivineCianwoodMeta::
+INCBIN "data/tilesets/olivine_cianwood_metatiles.bin"
+TilesetOlivineCianwoodColl::
+INCLUDE "data/tilesets/olivine_cianwood_collision.asm"
+TilesetOlivineCianwoodAttr::
+INCBIN "data/tilesets/olivine_cianwood_attributes.bin"
+
+
 ;------------------------------------
 
 

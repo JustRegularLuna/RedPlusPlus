@@ -35,8 +35,10 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_EcruteakShrine
 	dw OutdoorSprites_BellchimeTrail
 	dw OutdoorSprites_GoldenrodHarbor
+	dw OutdoorSprites_Route39
 	dw OutdoorSprites_Olivine
 	dw OutdoorSprites_BattleTower
+	dw OutdoorSprites_Route41
 	dw OutdoorSprites_Cianwood
 	dw OutdoorSprites_Route47
 	dw OutdoorSprites_Mahogany
@@ -170,6 +172,16 @@ OutdoorSprites_Violet:
 	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
+OutdoorSprites_GoldenrodHarbor:
+OutdoorSprites_Route39:
+OutdoorSprites_Olivine:
+OutdoorSprites_Route41:
+OutdoorSprites_Cianwood:
+	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
+	db SPRITE_SECRET_BASE
+	db 0 ; end
+
 OutdoorSprites_Special:
 OutdoorSprites_RuinsOfAlph:
 OutdoorSprites_Azalea:
@@ -178,10 +190,7 @@ OutdoorSprites_Route35:
 OutdoorSprites_Ecruteak:
 OutdoorSprites_EcruteakShrine:
 OutdoorSprites_BellchimeTrail:
-OutdoorSprites_GoldenrodHarbor:
-OutdoorSprites_Olivine:
 OutdoorSprites_BattleTower:
-OutdoorSprites_Cianwood:
 OutdoorSprites_Route47:
 OutdoorSprites_Mahogany:
 OutdoorSprites_LakeOfRage:

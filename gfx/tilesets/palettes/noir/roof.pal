@@ -25,7 +25,7 @@
 	GRAYSCALE 26, 17, 11, 08 ; New Bark Town
 	GRAYSCALE 21, 11, 10, 05 ; Cherrygrove City
 	GRAYSCALE 25, 15, 12, 08 ; Route 32
-	GRAYSCALE 19, 10, 07, 06 ; Violet City
+	GRAYSCALE 15, 11, 08, 06 ; Violet City
 	GRAYSCALE 16, 12, 09, 05 ; Ruins of Alph
 	GRAYSCALE 19, 14, 10, 09 ; Azalea Town
 	GRAYSCALE 22, 17, 11, 09 ; Goldenrod City
@@ -34,9 +34,11 @@
 	GRAYSCALE 23, 18, 12, 09 ; Ecruteak Shrine
 	GRAYSCALE 21, 11, 21, 11 ; Bellchime Trail
 	GRAYSCALE 22, 17, 11, 09 ; Goldenrod Harbor
-	GRAYSCALE 18, 10, 10, 07 ; Olivine City
+	GRAYSCALE 18, 12, 09, 06 ; Route 39
+	GRAYSCALE 16, 12, 08, 06 ; Olivine City
 	GRAYSCALE 21, 11, 21, 11 ; Battle Tower
-	GRAYSCALE 14, 07, 07, 03 ; Cianwood City
+	GRAYSCALE 13, 05, 07, 03 ; Route 41
+	GRAYSCALE 16, 12, 08, 06 ; Cianwood City
 	GRAYSCALE 24, 15, 12, 05 ; Route 47
 	GRAYSCALE 15, 08, 08, 05 ; Mahogany Town
 	GRAYSCALE 14, 09, 09, 09 ; Lake of Rage
