@@ -456,6 +456,8 @@ OaksLabOakScript:
 	applymovement OAKSLAB_BLUE, Movement_BlueRunsOut
 	disappear OAKSLAB_BLUE
 	setevent EVENT_GOT_POKEDEX
+	clearevent EVENT_HIDE_VIRIDIAN_CITY_OLD_MAN
+	setmapscene VIRIDIAN_CITY, $1
 	special RestartMapMusic
 	end
 	
