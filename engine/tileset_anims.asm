@@ -51,6 +51,7 @@ TilesetForestAnim:
 TilesetSafariZoneAnim:
 TilesetNewBarkCherrygroveAnim:
 TilesetVioletMahoganyAnim:
+TilesetAzaleaBlackthornAnim:
 TilesetOlivineCianwoodAnim:
 	dw KantoWaterFrames, AnimateFarawayWaterTiles
 	dw NULL,  WaitTileAnimation

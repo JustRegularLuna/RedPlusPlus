@@ -308,7 +308,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 25
 
-	map_const ROUTE_32,               12, 47 ;  1
+	map_const ROUTE_32,               12, 46 ;  1
 	map_const ROUTE_32_COAST,         15, 36 ;  2
 	map_const ROUTE_32_POKECENTER_1F,  6,  4 ;  3
 	map_const ROUTE_32_COAST_HOUSE,    4,  4 ;  4
@@ -331,8 +331,8 @@ MAP_NONE   EQU 0
 
 	newgroup ; 28
 
-	map_const AZALEA_TOWN,          20,  9 ;  1
-	map_const ROUTE_33,             10,  9 ;  2
+	map_const AZALEA_TOWN,          20, 13 ;  1
+	map_const ROUTE_33,             10, 12 ;  2
 	map_const AZALEA_POKECENTER_1F,  6,  4 ;  3
 	map_const AZALEA_MART,           6,  4 ;  4
 	map_const AZALEA_GYM,            5,  8 ;  5

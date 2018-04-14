@@ -124,9 +124,9 @@ ENDM
 ;	connection west, Route36, ROUTE_36, 0, -2, 9
 	connection east, Route31, ROUTE_31, 12, 0, 9
 
-	map_attributes AzaleaTown, AZALEA_TOWN, $5, WEST | EAST
-	connection west, Route34, ROUTE_34, -3, 15, 12
-	connection east, Route33, ROUTE_33, 0, 0, 9
+	map_attributes AzaleaTown, AZALEA_TOWN, $f, EAST
+;	connection west, Route34, ROUTE_34, -3, 15, 12
+	connection east, Route33, ROUTE_33, 0, 0, 12
 
 	map_attributes CianwoodCity, CIANWOOD_CITY, $41, EAST
 	connection east, Route41, ROUTE_41, 0, 0, 27
@@ -315,17 +315,17 @@ ENDM
 	connection south, Route30, ROUTE_30, 10, 0, 17
 	connection west, VioletCity, VIOLET_CITY, -2, 6, 12
 
-	map_attributes Route32, ROUTE_32, $1f, NORTH | EAST
+	map_attributes Route32, ROUTE_32, $1f, NORTH | SOUTH | EAST
 	connection north, VioletCity, VIOLET_CITY, 2, 0, 15
-;	connection south, Route33, ROUTE_33, 0, 0, 10
+	connection south, Route33, ROUTE_33, 2, 0, 10
 	connection east, CherrygroveBay, CHERRYGROVE_BAY, 14, 0, 26
 
 	map_attributes Route32Coast, ROUTE_32_COAST, $41, NORTH
 	connection north, CherrygroveBay, CHERRYGROVE_BAY, 0, 0, 15
 
-	map_attributes Route33, ROUTE_33, $5, NORTH | WEST
-	connection north, Route32, ROUTE_32, 0, 0, 10
-	connection west, AzaleaTown, AZALEA_TOWN, 0, 0, 9
+	map_attributes Route33, ROUTE_33, $f, NORTH | WEST
+	connection north, Route32, ROUTE_32, -2, 0, 10
+	connection west, AzaleaTown, AZALEA_TOWN, 0, 0, 13
 
 	map_attributes Route34, ROUTE_34, $5, NORTH | WEST | EAST
 	connection north, GoldenrodCity, GOLDENROD_CITY, -3, 4, 16

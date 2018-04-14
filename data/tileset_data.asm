@@ -196,6 +196,18 @@ INCBIN "data/tilesets/violet_mahogany_attributes.bin"
 
 SECTION "Tileset Data 16", ROMX
 
+TilesetAzaleaBlackthornGFX::
+INCBIN "gfx/tilesets/azalea_blackthorn.2bpp.unique.lz"
+TilesetAzaleaBlackthornMeta::
+INCBIN "data/tilesets/azalea_blackthorn_metatiles.bin"
+TilesetAzaleaBlackthornColl::
+INCLUDE "data/tilesets/azalea_blackthorn_collision.asm"
+TilesetAzaleaBlackthornAttr::
+INCBIN "data/tilesets/azalea_blackthorn_attributes.bin"
+
+
+SECTION "Tileset Data 17", ROMX
+
 TilesetOlivineCianwoodGFX::
 INCBIN "gfx/tilesets/olivine_cianwood.2bpp.unique.lz"
 TilesetOlivineCianwoodMeta::

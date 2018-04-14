@@ -25,7 +25,7 @@ SpawnPoints: ; 0x152ab
 	spawn CHERRYGROVE_CITY,           29,  4
 	spawn VIOLET_CITY,                31, 32
 	spawn ROUTE_32,                   15, 78
-	spawn AZALEA_TOWN,                15, 10
+	spawn AZALEA_TOWN,                15, 12
 	spawn CIANWOOD_CITY,              23, 44
 	spawn GOLDENROD_CITY,             18, 28
 	spawn OLIVINE_CITY,               13, 18

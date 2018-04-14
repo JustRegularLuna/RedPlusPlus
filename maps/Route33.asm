@@ -4,7 +4,7 @@ Route33_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_event 11,  9, UNION_CAVE_1F, 3
+	warp_event 11, 11, UNION_CAVE_1F, 3
 
 	db 0 ; coord events
 
