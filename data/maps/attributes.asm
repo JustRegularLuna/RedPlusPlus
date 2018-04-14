@@ -153,7 +153,7 @@ ENDM
 	map_attributes LakeofRage, LAKE_OF_RAGE, $5, SOUTH
 	connection south, Route43, ROUTE_43, 5, 0, 10
 
-	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, SOUTH
+	map_attributes BlackthornCity, BLACKTHORN_CITY, $4d, SOUTH
 	connection south, Route45, ROUTE_45, -2, 0, 12
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $71, EAST
@@ -302,8 +302,8 @@ ENDM
 	map_attributes Route28, ROUTE_28, $71, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -3, 3, 12
 
-	map_attributes Route29, ROUTE_29, $f, WEST | EAST
-;	connection north, Route46, ROUTE_46, 10, 0, 10
+	map_attributes Route29, ROUTE_29, $f, NORTH | WEST | EAST
+	connection north, Route46, ROUTE_46, 8, 0, 12
 	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0, 0, 12
 	connection east, NewBarkTown, NEW_BARK_TOWN, 0, 0, 11
 
@@ -382,12 +382,12 @@ ENDM
 	map_attributes Route44, ROUTE_44, $71, WEST
 	connection west, MahoganyTown, MAHOGANY_TOWN, 0, 0, 9
 
-	map_attributes Route45, ROUTE_45, $71, NORTH | WEST
+	map_attributes Route45, ROUTE_45, $4d, NORTH | WEST
 	connection north, BlackthornCity, BLACKTHORN_CITY, 1, -1, 12
 	connection west, Route46, ROUTE_46, 37, 0, 12
 
-	map_attributes Route46, ROUTE_46, $5, SOUTH | EAST
-	connection south, Route29, ROUTE_29, -3, 7, 16
+	map_attributes Route46, ROUTE_46, $4d, SOUTH | EAST
+	connection south, Route29, ROUTE_29, -3, 5, 18
 	connection east, Route45, ROUTE_45, -3, 34, 12
 
 	map_attributes Route47, ROUTE_47, $35, NORTH
