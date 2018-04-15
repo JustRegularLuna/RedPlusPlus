@@ -118,11 +118,11 @@ ENDM
 	connection west, CherrygroveBay, CHERRYGROVE_BAY, -1, 14, 12
 	connection east, Route29, ROUTE_29, 0, 0, 11
 
-	map_attributes VioletCity, VIOLET_CITY, $f, SOUTH | EAST
-;	connection north, VioletOutskirts, VIOLET_OUTSKIRTS, 0, 0, 20
+	map_attributes VioletCity, VIOLET_CITY, $f, NORTH | SOUTH | EAST
+	connection north, VioletOutskirts, VIOLET_OUTSKIRTS, 0, 0, 20
 	connection south, Route32, ROUTE_32, -2, 0, 12
 ;	connection west, Route36, ROUTE_36, 0, -2, 9
-	connection east, Route31, ROUTE_31, 12, 0, 9
+	connection east, Route31, ROUTE_31, 11, 0, 9
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $f, EAST
 ;	connection west, Route34, ROUTE_34, -3, 15, 12
@@ -145,16 +145,17 @@ ENDM
 	connection west, Route38, ROUTE_38, 5, 0, 9
 	connection east, Route42, ROUTE_42, 9, 0, 9
 
-	map_attributes MahoganyTown, MAHOGANY_TOWN, $71, NORTH | WEST | EAST
+	map_attributes MahoganyTown, MAHOGANY_TOWN, $4d, NORTH | WEST | EAST
 	connection north, Route43, ROUTE_43, 0, 0, 10
-	connection west, Route42, ROUTE_42, 0, 0, 9
-	connection east, Route44, ROUTE_44, 0, 0, 9
+	connection west, Route42, ROUTE_42, 1, 0, 9
+	connection east, Route44, ROUTE_44, 0, 0, 11
 
-	map_attributes LakeofRage, LAKE_OF_RAGE, $5, SOUTH
+	map_attributes LakeofRage, LAKE_OF_RAGE, $f, SOUTH
 	connection south, Route43, ROUTE_43, 5, 0, 10
 
-	map_attributes BlackthornCity, BLACKTHORN_CITY, $4d, SOUTH
-	connection south, Route45, ROUTE_45, -2, 0, 12
+	map_attributes BlackthornCity, BLACKTHORN_CITY, $4d, SOUTH | WEST
+	connection south, Route45, ROUTE_45, -1, 0, 13
+	connection west, Route44, ROUTE_44, 8, 0, 11
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $71, EAST
 	connection east, Route28, ROUTE_28, 6, 0, 9
@@ -313,19 +314,21 @@ ENDM
 
 	map_attributes Route31, ROUTE_31, $f, SOUTH | WEST
 	connection south, Route30, ROUTE_30, 10, 0, 17
-	connection west, VioletCity, VIOLET_CITY, -2, 6, 12
+	connection west, VioletCity, VIOLET_CITY, -2, 5, 12
 
-	map_attributes Route32, ROUTE_32, $1f, NORTH | SOUTH | EAST
+	map_attributes Route32, ROUTE_32, $f, NORTH | SOUTH | EAST
 	connection north, VioletCity, VIOLET_CITY, 2, 0, 15
 	connection south, Route33, ROUTE_33, 2, 0, 10
 	connection east, CherrygroveBay, CHERRYGROVE_BAY, 14, 0, 26
 
-	map_attributes Route32Coast, ROUTE_32_COAST, $41, NORTH
+	map_attributes Route32Coast, ROUTE_32_COAST, $41, NORTH | WEST
 	connection north, CherrygroveBay, CHERRYGROVE_BAY, 0, 0, 15
+	connection west, Route33, ROUTE_33, 7, 0, 12
 
-	map_attributes Route33, ROUTE_33, $f, NORTH | WEST
+	map_attributes Route33, ROUTE_33, $f, NORTH | WEST | EAST
 	connection north, Route32, ROUTE_32, -2, 0, 10
 	connection west, AzaleaTown, AZALEA_TOWN, 0, 0, 13
+	connection east, Route32Coast, ROUTE_32_COAST, -3, 4, 15
 
 	map_attributes Route34, ROUTE_34, $5, NORTH | WEST | EAST
 	connection north, GoldenrodCity, GOLDENROD_CITY, -3, 4, 16
@@ -370,20 +373,21 @@ ENDM
 	connection west, CianwoodCity, CIANWOOD_CITY, 0, 0, 27
 	connection east, GoldenrodHarbor, GOLDENROD_HARBOR, 3, 0, 20
 
-	map_attributes Route42, ROUTE_42, $5, SOUTH | WEST | EAST
+	map_attributes Route42, ROUTE_42, $4d, SOUTH | WEST | EAST
 	connection south, VioletOutskirts, VIOLET_OUTSKIRTS, 5, 0, 14
-	connection west, EcruteakCity, ECRUTEAK_CITY, -3, 6, 12
-	connection east, MahoganyTown, MAHOGANY_TOWN, 0, 0, 9
+	connection west, EcruteakCity, ECRUTEAK_CITY, -3, 7, 12
+	connection east, MahoganyTown, MAHOGANY_TOWN, -1, 0, 9
 
-	map_attributes Route43, ROUTE_43, $5, NORTH | SOUTH
+	map_attributes Route43, ROUTE_43, $f, NORTH | SOUTH
 	connection north, LakeofRage, LAKE_OF_RAGE, -3, 2, 16
 	connection south, MahoganyTown, MAHOGANY_TOWN, 0, 0, 10
 
-	map_attributes Route44, ROUTE_44, $71, WEST
-	connection west, MahoganyTown, MAHOGANY_TOWN, 0, 0, 9
+	map_attributes Route44, ROUTE_44, $4d, WEST | EAST
+	connection west, MahoganyTown, MAHOGANY_TOWN, 0, 0, 12
+	connection east, BlackthornCity, BLACKTHORN_CITY, -3, 5, 14
 
 	map_attributes Route45, ROUTE_45, $4d, NORTH | WEST
-	connection north, BlackthornCity, BLACKTHORN_CITY, 1, -1, 12
+	connection north, BlackthornCity, BLACKTHORN_CITY, 1, 0, 16
 	connection west, Route46, ROUTE_46, 37, 0, 12
 
 	map_attributes Route46, ROUTE_46, $4d, SOUTH | EAST
@@ -421,7 +425,7 @@ ENDM
 	connection west, Route32, ROUTE_32, -2, 12, 26
 	connection east, CherrygroveCity, CHERRYGROVE_CITY, 15, 0, 12
 
-	map_attributes VioletOutskirts, VIOLET_OUTSKIRTS, $5, NORTH | SOUTH
+	map_attributes VioletOutskirts, VIOLET_OUTSKIRTS, $f, NORTH | SOUTH
 	connection north, Route42, ROUTE_42, -3, 2, 20
 	connection south, VioletCity, VIOLET_CITY, 0, 0, 20
 

@@ -315,8 +315,8 @@ MAP_NONE   EQU 0
 
 	newgroup ; 26
 
-	map_const VIOLET_CITY,                  20, 21 ;  1
-	map_const VIOLET_OUTSKIRTS,             20,  8 ;  2
+	map_const VIOLET_CITY,                  20, 20 ;  1
+	map_const VIOLET_OUTSKIRTS,             20,  9 ;  2
 	map_const VIOLET_POKECENTER_1F,          6,  4 ;  3
 	map_const VIOLET_MART,                   6,  4 ;  4
 	map_const VIOLET_GYM,                    5,  8 ;  5
@@ -458,9 +458,9 @@ MAP_NONE   EQU 0
 
 	newgroup ; 41
 
-	map_const MAHOGANY_TOWN,                      10,  9 ;  1
+	map_const MAHOGANY_TOWN,                      10, 12 ;  1
 	map_const ROUTE_42,                           30,  9 ;  2
-	map_const ROUTE_44,                           30,  9 ;  3
+	map_const ROUTE_44,                           31, 11 ;  3
 	map_const MAHOGANY_POKECENTER_1F,              6,  4 ;  4
 	map_const MAHOGANY_GYM,                        5,  9 ;  5
 	map_const MAHOGANY_RED_GYARADOS_SPEECH_HOUSE,  4,  4 ;  6
@@ -468,14 +468,14 @@ MAP_NONE   EQU 0
 	newgroup ; 42
 
 	map_const LAKE_OF_RAGE,                    20, 18 ;  1
-	map_const ROUTE_43,                        10, 27 ;  2
+	map_const ROUTE_43,                        10, 26 ;  2
 	map_const LAKE_OF_RAGE_MAGIKARP_HOUSE,      4,  4 ;  3
 	map_const LAKE_OF_RAGE_HIDDEN_POWER_HOUSE,  4,  4 ;  4
 
 	newgroup ; 43
 
-	map_const BLACKTHORN_CITY,                20, 19 ;  1
-	map_const ROUTE_45,                       12, 46 ;  2
+	map_const BLACKTHORN_CITY,                23, 20 ;  1
+	map_const ROUTE_45,                       13, 46 ;  2
 	map_const ROUTE_46,                       12, 19 ;  3
 	map_const BLACKTHORN_POKECENTER_1F,        6,  4 ;  4
 	map_const BLACKTHORN_MART,                 6,  4 ;  5

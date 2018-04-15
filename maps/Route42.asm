@@ -14,6 +14,10 @@ Route42_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 4 ; object events
+	fruittree_event 27, 16, FRUITTREE_ROUTE_42_1, PNK_APRICORN
+	fruittree_event 28, 16, FRUITTREE_ROUTE_42_1, GRN_APRICORN
+	fruittree_event 29, 16, FRUITTREE_ROUTE_42_1, YLW_APRICORN
+	cuttree_event 24, 13, -1
 
 	const_def 1 ; object constants

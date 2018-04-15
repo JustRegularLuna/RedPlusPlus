@@ -122,6 +122,7 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PC_CAVE
 	jp z, .maybe_special_cave
 
+.maybe_overcast
 	call GetOvercastIndex
 	and a
 	jp z, .maybe_sinjoh_ruins
@@ -436,7 +437,7 @@ LoadSpecialMapPalette: ; 494ac
 	cp MAP_BELLCHIME_TRAIL
 	jp z, .load_eight_time_of_day_bg_palettes
 .not_bellchime_trail
-	jp .do_nothing
+	jp .maybe_overcast
 
 .tileset_viridian
 	ld a, [MapGroup]
@@ -1956,7 +1957,7 @@ INCLUDE "gfx/tilesets/palettes/noir/bg_overcast.pal"
 elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/bg_overcast.pal"
 else
-INCLUDE "gfx/tilesets/palettes/monochrome/ob.pal"
+INCLUDE "gfx/tilesets/palettes/monochrome/bg_overcast.pal"
 endc
 
 OvercastOBPalette:

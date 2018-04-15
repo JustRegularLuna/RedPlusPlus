@@ -1,7 +1,8 @@
 AzaleaTown_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, AzaleaTownRainScript
 
 	db 8 ; warp events
 	warp_event 15, 11, AZALEA_POKECENTER_1F, 1
@@ -17,6 +18,17 @@ AzaleaTown_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	fruittree_event  8,  3, FRUITTREE_AZALEA_TOWN, WHT_APRICORN
 
 	const_def 1 ; object constants
+
+AzaleaTownRainScript:
+	special Special_GetOvercastIndex
+	ifequal AZALEA_OVERCAST, .rain
+	changemap AzaleaTown_BlockData
+	return
+
+.rain
+	changemap AzaleaTownRaining_BlockData
+	return
