@@ -17,7 +17,7 @@ GENERIC_KANTO_GFX EQU const_value
 	const TILESET_NEW_BARK_CHERRYGROVE
 	const TILESET_VIOLET_MAHOGANY
 	const TILESET_AZALEA_BLACKTHORN
-	const TILESET_OLIVINE_CIANWOOD
+	const TILESET_OLIVINE_CIANWOOD ; does not share all metatiles
 GENERIC_GFX EQU const_value
 ; These are independent tilesets
 	;------------------------------------
