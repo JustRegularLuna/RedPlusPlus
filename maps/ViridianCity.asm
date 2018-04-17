@@ -31,6 +31,7 @@ ViridianCity_MapScriptHeader:
 	object_event 18,  9, SPRITE_MAP_AMBER_LYING_OLD_MAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_COMMAND, jumptext, ViridianCityText_19191, EVENT_GOT_POKEDEX
 	object_event  6, 23, SPRITE_FISHER2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, ViridianCitySleepyGuyScript, -1
 	object_event 17,  5, SPRITE_GAMBLER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, ViridianCityCatchTutorialScript, EVENT_HIDE_VIRIDIAN_CITY_OLD_MAN
+	itemball_event 14, 4, POTION, 1, EVENT_GOT_VIRIDIAN_CITY_POTION
 	cuttree_event  8, 22, -1
 	cuttree_event 15,  4, -1
 	cuttree_event 22, -4, -1 ; visible on Route2South
