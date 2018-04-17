@@ -245,6 +245,7 @@
 	tilecoll FLOOR, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, DOOR, POKECENTER_SIGN
-	tilecoll WALL, FLOOR, WALL, FLOOR
+	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, FLOOR, WALL, FLOOR
 	tilecoll FLOOR, WALL, FLOOR, WALL
+	tilecoll FLOOR, FLOOR, WALL, WALL
