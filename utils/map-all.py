@@ -21,7 +21,8 @@ block_filename_fmt   = 'maps/%s.blk'
 tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'vermilion',
                  'celadon', 'lavender', 'cycling_road', 'fuchsia', 'safari_zone',
                  'saffron', 'indigo', 'forest', 'new_bark_cherrygrove',
-                 'violet_mahogany', 'azalea_blackthorn', 'olivine_cianwood']
+                 'violet_mahogany', 'azalea_blackthorn', 'goldenrod', 'ecruteak',
+                 'olivine_cianwood', 'battle_tower_outside', 'shrines_and_ruins']
 
 # {'TILESET_PC_JOHTO_1': 1, ...}
 tileset_ids = {}

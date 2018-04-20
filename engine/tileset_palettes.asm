@@ -102,7 +102,7 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PC_TUNNEL
 	jp z, .maybe_lightning_island
 	cp TILESET_PC_SPROUT_TOWER
-	jp z, .maybe_mystri_or_tower
+	jp z, .maybe_embedded_tower
 	cp TILESET_PC_POKEMON_MANSION
 	jp z, .maybe_cinnabar_lab
 	cp TILESET_PC_MUSEUM
@@ -116,7 +116,9 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PC_HOME_DECOR_STORE
 	jp z, .maybe_celadon_home_decor_store_4f
 	cp TILESET_VIOLET_MAHOGANY
-	jp z, .maybe_traditional_johto
+	jp z, .maybe_violet_city
+	cp TILESET_ECRUTEAK
+	jp z, .maybe_ecruteak
 	cp TILESET_PC_FOREST
 	jp z, .maybe_special_forest
 	cp TILESET_PC_CAVE
@@ -125,7 +127,7 @@ LoadSpecialMapPalette: ; 494ac
 .maybe_overcast
 	call GetOvercastIndex
 	and a
-	jp z, .maybe_sinjoh_ruins
+	jr z, .do_nothing
 	ld hl, OvercastBGPalette
 	jp .load_eight_time_of_day_bg_palettes
 
@@ -310,16 +312,6 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, ViridianGymPalette
 	jp .load_eight_bg_palettes
 
-.maybe_mystri_or_tower
-	ld a, [MapGroup]
-	cp GROUP_MYSTRI_STAGE
-	jr nz, .maybe_embedded_tower
-	ld a, [MapNumber]
-	cp MAP_MYSTRI_STAGE
-	jr nz, .maybe_embedded_tower
-	ld hl, MystriStagePalette
-	jp .load_eight_bg_palettes
-
 .maybe_embedded_tower
 	ld a, [MapGroup]
 	cp GROUP_EMBEDDED_TOWER
@@ -403,41 +395,29 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, CeladonHomeDecorStore4FPalette
 	jp .load_eight_bg_palettes
 
-.maybe_sinjoh_ruins
-	ld a, [MapGroup]
-	cp GROUP_SINJOH_RUINS
-	jp nz, .do_nothing
-	ld a, [MapNumber]
-	cp MAP_SINJOH_RUINS
-	jp nz, .do_nothing
-	ld hl, SinjohRuinsPalette
-	jp .load_eight_time_of_day_bg_palettes
-
-.maybe_traditional_johto
-	ld hl, VioletEcruteakPalette
+.maybe_violet_city
 	ld a, [MapGroup]
 	cp GROUP_VIOLET_CITY
-	jr nz, .not_violet_city
+	jp nz, .maybe_overcast
 	ld a, [MapNumber]
 	cp MAP_VIOLET_CITY
-	jp z, .load_eight_time_of_day_bg_palettes
-.not_violet_city
+	jp nz, .maybe_overcast
+	ld hl, VioletCityPalette
+	jp .load_eight_time_of_day_bg_palettes
+
+.maybe_ecruteak
 	ld a, [MapGroup]
 	cp GROUP_ECRUTEAK_CITY
-	jr nz, .not_ecruteak_city
+	jp nz, .do_nothing
 	ld a, [MapNumber]
+	ld hl, EcruteakPalette
 	cp MAP_ECRUTEAK_CITY
 	jp z, .load_eight_time_of_day_bg_palettes
-.not_ecruteak_city
-	ld hl, BellchimeTrailPalette
-	ld a, [MapGroup]
-	cp GROUP_BELLCHIME_TRAIL
-	jr nz, .not_bellchime_trail
-	ld a, [MapNumber]
+	cp MAP_ECRUTEAK_SHRINE_OUTSIDE
+	jp z, .load_eight_time_of_day_bg_palettes
 	cp MAP_BELLCHIME_TRAIL
 	jp z, .load_eight_time_of_day_bg_palettes
-.not_bellchime_trail
-	jp .maybe_overcast
+	jp .do_nothing
 
 .tileset_viridian
 	ld a, [MapGroup]
@@ -1261,21 +1241,6 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-MystriStagePalette:
-if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/mystri_stage.pal"
-elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/mystri_stage.pal"
-else
-rept 7
-	MONOCHROME_RGB_FOUR_NIGHT
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-endc
-
 EmbeddedTowerPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/embedded_tower.pal"
@@ -1497,11 +1462,11 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-SinjohRuinsPalette:
+VioletCityPalette:
 if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/sinjoh_ruins.pal"
+INCLUDE "gfx/tilesets/palettes/noir/violet_city.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/sinjoh_ruins.pal"
+INCLUDE "gfx/tilesets/palettes/violet_city.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -1532,46 +1497,11 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-VioletEcruteakPalette:
+EcruteakPalette:
 if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/violet_ecruteak.pal"
+INCLUDE "gfx/tilesets/palettes/noir/ecruteak.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/violet_ecruteak.pal"
-else
-rept 7
-	MONOCHROME_RGB_FOUR
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-rept 7
-	MONOCHROME_RGB_FOUR
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-rept 4
-	MONOCHROME_RGB_FOUR_NIGHT
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-	MONOCHROME_RGB_FOUR_NIGHT
-	MONOCHROME_RGB_FOUR_NIGHT
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-endc
-
-BellchimeTrailPalette:
-if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/bellchime_trail.pal"
-elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/bellchime_trail.pal"
+INCLUDE "gfx/tilesets/palettes/ecruteak.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR

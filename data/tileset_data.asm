@@ -16,12 +16,16 @@ INCBIN "gfx/tilesets/new_bark_cherrygrove.2bpp.generic.lz"
 
 SECTION "Tileset Data 1", ROMX
 
+Tileset00GFX::
 TilesetPalletCinnabarGFX::
 INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.unique.lz"
+Tileset00Meta::
 TilesetPalletCinnabarMeta::
 INCBIN "data/tilesets/pallet_cinnabar_metatiles.bin"
+Tileset00Coll::
 TilesetPalletCinnabarColl::
 INCLUDE "data/tilesets/pallet_cinnabar_collision.asm"
+Tileset00Attr::
 TilesetPalletCinnabarAttr::
 INCBIN "data/tilesets/pallet_cinnabar_attributes.bin"
 
@@ -208,6 +212,30 @@ INCBIN "data/tilesets/azalea_blackthorn_attributes.bin"
 
 SECTION "Tileset Data 17", ROMX
 
+TilesetGoldenrodGFX::
+INCBIN "gfx/tilesets/goldenrod.2bpp.unique.lz"
+TilesetGoldenrodMeta::
+INCBIN "data/tilesets/goldenrod_metatiles.bin"
+TilesetGoldenrodColl::
+INCLUDE "data/tilesets/goldenrod_collision.asm"
+TilesetGoldenrodAttr::
+INCBIN "data/tilesets/goldenrod_attributes.bin"
+
+
+SECTION "Tileset Data 18", ROMX
+
+TilesetEcruteakGFX::
+INCBIN "gfx/tilesets/ecruteak.2bpp.unique.lz"
+TilesetEcruteakMeta::
+INCBIN "data/tilesets/ecruteak_metatiles.bin"
+TilesetEcruteakColl::
+INCLUDE "data/tilesets/ecruteak_collision.asm"
+TilesetEcruteakAttr::
+INCBIN "data/tilesets/ecruteak_attributes.bin"
+
+
+SECTION "Tileset Data 19", ROMX
+
 TilesetOlivineCianwoodGFX::
 INCBIN "gfx/tilesets/olivine_cianwood.2bpp.unique.lz"
 TilesetOlivineCianwoodMeta::
@@ -218,20 +246,31 @@ TilesetOlivineCianwoodAttr::
 INCBIN "data/tilesets/olivine_cianwood_attributes.bin"
 
 
+SECTION "Tileset Data 20", ROMX
+
+TilesetBattleTowerOutsideGFX::
+INCBIN "gfx/tilesets/battle_tower_outside.2bpp.unique.lz"
+TilesetBattleTowerOutsideMeta::
+INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
+TilesetBattleTowerOutsideColl::
+INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
+TilesetBattleTowerOutsideAttr::
+INCBIN "data/tilesets/battle_tower_outside_attributes.bin"
+
+
+SECTION "Tileset Data 21", ROMX
+
+TilesetShrinesAndRuinsGFX::
+INCBIN "gfx/tilesets/shrines_and_ruins.2bpp.unique.lz"
+TilesetShrinesAndRuinsMeta::
+INCBIN "data/tilesets/shrines_and_ruins_metatiles.bin"
+TilesetShrinesAndRuinsColl::
+INCLUDE "data/tilesets/shrines_and_ruins_collision.asm"
+TilesetShrinesAndRuinsAttr::
+INCBIN "data/tilesets/shrines_and_ruins_attributes.bin"
+
+
 ;------------------------------------
-
-
-SECTION "PC Tileset Data 1", ROMX
-
-Tileset00GFX::
-TilesetJohto1GFX::
-INCBIN "gfx/tilesets/johto1.2bpp.lz"
-Tileset00Meta::
-TilesetJohto1Meta::
-INCBIN "data/tilesets/johto1_metatiles.bin"
-Tileset00Coll::
-TilesetJohto1Coll::
-INCLUDE "data/tilesets/johto1_collision.asm"
 
 
 SECTION "PC Tileset Data 2", ROMX
@@ -420,23 +459,6 @@ TilesetValenciaGFX::
 INCBIN "gfx/tilesets/valencia.2bpp.lz"
 
 
-SECTION "PC Tileset Data 9", ROMX
-
-TilesetJohto2GFX::
-INCBIN "gfx/tilesets/johto2.2bpp.lz"
-TilesetJohto2Meta::
-INCBIN "data/tilesets/johto2_metatiles.bin"
-TilesetJohto2Coll::
-INCLUDE "data/tilesets/johto2_collision.asm"
-
-TilesetJohto3GFX::
-INCBIN "gfx/tilesets/johto3.2bpp.lz"
-TilesetJohto3Meta::
-INCBIN "data/tilesets/johto3_metatiles.bin"
-TilesetJohto3Coll::
-INCLUDE "data/tilesets/johto3_collision.asm"
-
-
 SECTION "PC Tileset Data 10", ROMX
 
 TilesetHouse2GFX::
@@ -536,29 +558,6 @@ SECTION "PC Tileset Data 15", ROMX
 TilesetRuinsGFX::
 TilesetAlphGFX::
 INCBIN "gfx/tilesets/ruins.2bpp.lz"
-
-TilesetJohto4GFX::
-INCBIN "gfx/tilesets/johto4.2bpp.lz"
-TilesetJohto4Meta::
-INCBIN "data/tilesets/johto4_metatiles.bin"
-TilesetJohto4Coll::
-INCLUDE "data/tilesets/johto4_collision.asm"
-
-
-SECTION "PC Tileset Data 16", ROMX
-
-Tileset00Attr::
-TilesetJohto1Attr::
-INCBIN "data/tilesets/johto1_attributes.bin"
-
-TilesetJohto2Attr::
-INCBIN "data/tilesets/johto2_attributes.bin"
-
-TilesetJohto3Attr::
-INCBIN "data/tilesets/johto3_attributes.bin"
-
-TilesetJohto4Attr::
-INCBIN "data/tilesets/johto4_attributes.bin"
 
 
 SECTION "PC Tileset Data 17", ROMX

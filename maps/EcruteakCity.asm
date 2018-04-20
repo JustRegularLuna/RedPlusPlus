@@ -7,8 +7,8 @@ EcruteakCity_MapScriptHeader:
 	warp_event 35, 26, ROUTE_42_ECRUTEAK_GATE, 1
 	warp_event 35, 27, ROUTE_42_ECRUTEAK_GATE, 2
 	warp_event 23, 11, ECRUTEAK_HOUSE, 1
-	warp_event 17, 11, ECRUTEAK_SHRINE_OUTSIDE, 3
-	warp_event 18, 11, ECRUTEAK_SHRINE_OUTSIDE, 4
+	warp_event 17, 11, ECRUTEAK_SHRINE_OUTSIDE, 2
+	warp_event 18, 11, ECRUTEAK_SHRINE_OUTSIDE, 3
 	warp_event 23, 27, ECRUTEAK_POKECENTER_1F, 1
 	warp_event  5, 21, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1
 	warp_event 23, 21, DANCE_THEATRE, 1

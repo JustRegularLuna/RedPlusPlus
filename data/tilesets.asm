@@ -23,12 +23,12 @@ Tileset00End::
 	tileset TilesetNewBarkCherrygrove
 	tileset TilesetVioletMahogany
 	tileset TilesetAzaleaBlackthorn
+	tileset TilesetGoldenrod
+	tileset TilesetEcruteak
 	tileset TilesetOlivineCianwood
+	tileset TilesetBattleTowerOutside
+	tileset TilesetShrinesAndRuins
 	;------------------------------------
-	tileset TilesetJohto1
-	tileset TilesetJohto2
-	tileset TilesetJohto3
-	tileset TilesetJohto4
 	tileset TilesetShamouti
 	tileset TilesetValencia
 	tileset TilesetFaraway

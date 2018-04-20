@@ -1,9 +1,0 @@
-
-	GRAYSCALE 15, 12, 08, 01 ; gray
-	GRAYSCALE 15, 10, 05, 01 ; red
-	GRAYSCALE 06, 04, 02, 01 ; green
-	GRAYSCALE 05, 04, 02, 01 ; water
-	GRAYSCALE 28, 15, 14, 01 ; yellow
-	GRAYSCALE 15, 11, 05, 01 ; brown
-	GRAYSCALE 11, 05, 02, 01 ; roof
-	GRAYSCALE 29, 29, 09, 00 ; text

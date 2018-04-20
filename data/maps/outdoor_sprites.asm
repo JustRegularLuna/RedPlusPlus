@@ -30,10 +30,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_RuinsOfAlph
 	dw OutdoorSprites_Azalea
 	dw OutdoorSprites_Goldenrod
-	dw OutdoorSprites_Route35
 	dw OutdoorSprites_Ecruteak
-	dw OutdoorSprites_EcruteakShrine
-	dw OutdoorSprites_BellchimeTrail
 	dw OutdoorSprites_GoldenrodHarbor
 	dw OutdoorSprites_Route39
 	dw OutdoorSprites_Olivine
@@ -50,7 +47,6 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_ShamoutiCoast
 	dw OutdoorSprites_Valencia
 	dw OutdoorSprites_NavelFaraway
-	dw OutdoorSprites_SinjohRuins
 	dw OutdoorSprites_KantoGates
 	dw OutdoorSprites_KantoDungeons
 	dw OutdoorSprites_JohtoGates
@@ -177,6 +173,14 @@ OutdoorSprites_Azalea:
 	db SPRITE_BALL_CUT_FRUIT
 	db 0 ; end
 
+OutdoorSprites_Goldenrod:
+	db 0 ; end
+
+OutdoorSprites_Ecruteak:
+	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
+	db 0 ; end
+
 OutdoorSprites_GoldenrodHarbor:
 OutdoorSprites_Route39:
 OutdoorSprites_Olivine:
@@ -198,11 +202,6 @@ OutdoorSprites_Blackthorn:
 
 OutdoorSprites_Special:
 OutdoorSprites_RuinsOfAlph:
-OutdoorSprites_Goldenrod:
-OutdoorSprites_Route35:
-OutdoorSprites_Ecruteak:
-OutdoorSprites_EcruteakShrine:
-OutdoorSprites_BellchimeTrail:
 OutdoorSprites_BattleTower:
 OutdoorSprites_Route47:
 OutdoorSprites_SilverCave:
@@ -211,7 +210,6 @@ OutdoorSprites_ShamoutiShrine:
 OutdoorSprites_ShamoutiCoast:
 OutdoorSprites_Valencia:
 OutdoorSprites_NavelFaraway:
-OutdoorSprites_SinjohRuins:
 OutdoorSprites_KantoGates:
 OutdoorSprites_KantoDungeons:
 OutdoorSprites_JohtoGates:

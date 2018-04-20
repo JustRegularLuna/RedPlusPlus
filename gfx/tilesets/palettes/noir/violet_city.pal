@@ -5,7 +5,7 @@
 	GRAYSCALE 28, 19, 12, 07 ; water
 	GRAYSCALE 29, 24, 18, 07 ; yellow
 	GRAYSCALE 28, 19, 14, 07 ; brown
-	GRAYSCALE 28, 26, 15, 07 ; roof
+	GRAYSCALE 28, 15, 11, 07 ; roof
 	GRAYSCALE 28, 31, 13, 00 ; text
 ; day
 	GRAYSCALE 30, 21, 13, 07 ; gray
@@ -14,7 +14,7 @@
 	GRAYSCALE 30, 19, 12, 07 ; water
 	GRAYSCALE 30, 24, 18, 07 ; yellow
 	GRAYSCALE 30, 19, 14, 07 ; brown
-	GRAYSCALE 30, 26, 15, 07 ; roof
+	GRAYSCALE 30, 15, 11, 07 ; roof
 	GRAYSCALE 30, 31, 13, 00 ; text
 ; nite
 	GRAYSCALE 15, 12, 08, 00 ; gray
@@ -23,5 +23,5 @@
 	GRAYSCALE 15, 10, 06, 00 ; water
 	GRAYSCALE 28, 13, 10, 00 ; yellow
 	GRAYSCALE 15, 10, 07, 00 ; brown
-	GRAYSCALE 15, 14, 11, 00 ; roof
+	GRAYSCALE 15, 08, 06, 00 ; roof
 	GRAYSCALE 15, 31, 13, 00 ; text

@@ -118,10 +118,10 @@ ENDM
 	connection west, CherrygroveBay, CHERRYGROVE_BAY, -1, 14, 12
 	connection east, Route29, ROUTE_29, 0, 0, 11
 
-	map_attributes VioletCity, VIOLET_CITY, $f, NORTH | SOUTH | EAST
+	map_attributes VioletCity, VIOLET_CITY, $f, NORTH | SOUTH | WEST | EAST
 	connection north, VioletOutskirts, VIOLET_OUTSKIRTS, 0, 0, 20
 	connection south, Route32, ROUTE_32, -2, 0, 12
-;	connection west, Route36, ROUTE_36, 0, -2, 9
+	connection west, Route36, ROUTE_36, 1, 0, 10
 	connection east, Route31, ROUTE_31, 11, 0, 9
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $f, EAST
@@ -140,9 +140,9 @@ ENDM
 	connection south, Route35Coast, ROUTE_35_COAST, 7, 0, 24
 	connection west, Route40, ROUTE_40, 7, 0, 12
 
-	map_attributes EcruteakCity, ECRUTEAK_CITY, $5, SOUTH | WEST | EAST
+	map_attributes EcruteakCity, ECRUTEAK_CITY, $1f, SOUTH | WEST | EAST
 	connection south, Route37, ROUTE_37, 5, 0, 10
-	connection west, Route38, ROUTE_38, 5, 0, 9
+	connection west, Route38, ROUTE_38, 2, 0, 14
 	connection east, Route42, ROUTE_42, 9, 0, 9
 
 	map_attributes MahoganyTown, MAHOGANY_TOWN, $4d, NORTH | WEST | EAST
@@ -339,29 +339,29 @@ ENDM
 	connection south, StormyBeach, STORMY_BEACH, 0, 0, 9
 	connection east, Route34, ROUTE_34, 0, 0, 27
 
-	map_attributes Route35, ROUTE_35, $5, NORTH | SOUTH
-	connection north, Route36, ROUTE_36, 0, 0, 14
+	map_attributes Route35, ROUTE_35, $f, NORTH | SOUTH
+	connection north, Route36, ROUTE_36, 8, 0, 8
 	connection south, GoldenrodCity, GOLDENROD_CITY, -2, 3, 16
 
 	map_attributes Route35Coast, ROUTE_35_COAST, $41, NORTH | SOUTH
 	connection north, OlivineCity, OLIVINE_CITY, 0, 7, 24
 	connection south, GoldenrodHarbor, GOLDENROD_HARBOR, 0, 0, 24
 
-	map_attributes Route36, ROUTE_36, $5, NORTH | SOUTH | EAST
-	connection north, Route37, ROUTE_37, 12, 0, 10
-	connection south, Route35, ROUTE_35, 0, 0, 12
-	connection east, VioletCity, VIOLET_CITY, -2, 0, 12
+	map_attributes Route36, ROUTE_36, $1f, NORTH | SOUTH | EAST
+	connection north, Route37, ROUTE_37, 4, 0, 10
+	connection south, Route35, ROUTE_35, -3, 5, 8
+	connection east, VioletCity, VIOLET_CITY, -1, 0, 13
 
-	map_attributes Route37, ROUTE_37, $5, NORTH | SOUTH
+	map_attributes Route37, ROUTE_37, $1f, NORTH | SOUTH
 	connection north, EcruteakCity, ECRUTEAK_CITY, -3, 2, 16
-	connection south, Route36, ROUTE_36, -3, 9, 16
+	connection south, Route36, ROUTE_36, -3, 1, 16
 
-	map_attributes Route38, ROUTE_38, $1f, WEST
-	connection west, Route39, ROUTE_39, 0, 0, 12
-;	connection east, EcruteakCity, ECRUTEAK_CITY, -3, 2, 15
+	map_attributes Route38, ROUTE_38, $1f, WEST | EAST
+	connection west, Route39, ROUTE_39, 1, 0, 12
+	connection east, EcruteakCity, ECRUTEAK_CITY, -2, 0, 18
 
 	map_attributes Route39, ROUTE_39, $f, SOUTH | EAST
-	connection south, OlivineCity, OLIVINE_CITY, -3, 0, 18
+	connection south, OlivineCity, OLIVINE_CITY, -2, 0, 18
 	connection east, Route38, ROUTE_38, 0, 0, 12
 
 	map_attributes Route40, ROUTE_40, $41, SOUTH | EAST
@@ -375,7 +375,7 @@ ENDM
 
 	map_attributes Route42, ROUTE_42, $4d, SOUTH | WEST | EAST
 	connection south, VioletOutskirts, VIOLET_OUTSKIRTS, 5, 0, 14
-	connection west, EcruteakCity, ECRUTEAK_CITY, -3, 7, 12
+	connection west, EcruteakCity, ECRUTEAK_CITY, -3, 6, 12
 	connection east, MahoganyTown, MAHOGANY_TOWN, -1, 0, 9
 
 	map_attributes Route43, ROUTE_43, $f, NORTH | SOUTH
@@ -477,7 +477,7 @@ ENDM
 	map_attributes RadioTower3F, RADIO_TOWER_3F, $0, 0
 	map_attributes RadioTower4F, RADIO_TOWER_4F, $0, 0
 	map_attributes RadioTower5F, RADIO_TOWER_5F, $0, 0
-	map_attributes RuinsofAlphOutside, RUINS_OF_ALPH_OUTSIDE, $5, 0
+	map_attributes RuinsofAlphOutside, RUINS_OF_ALPH_OUTSIDE, $f, 0
 	map_attributes RuinsofAlphHoOhChamber, RUINS_OF_ALPH_HO_OH_CHAMBER, $0, 0
 	map_attributes RuinsofAlphKabutoChamber, RUINS_OF_ALPH_KABUTO_CHAMBER, $0, 0
 	map_attributes RuinsofAlphOmanyteChamber, RUINS_OF_ALPH_OMANYTE_CHAMBER, $0, 0
@@ -493,7 +493,6 @@ ENDM
 	map_attributes RuinsofAlphKabutoWordRoom, RUINS_OF_ALPH_KABUTO_WORD_ROOM, $0, 0
 	map_attributes RuinsofAlphOmanyteWordRoom, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, $0, 0
 	map_attributes RuinsofAlphAerodactylWordRoom, RUINS_OF_ALPH_AERODACTYL_WORD_ROOM, $0, 0
-	map_attributes RuinsofAlphSinjohChamber, RUINS_OF_ALPH_SINJOH_CHAMBER, $0, 0
 	map_attributes UnionCave1F, UNION_CAVE_1F, $9, 0
 	map_attributes UnionCaveB1FNorth, UNION_CAVE_B1F_NORTH, $9, 0
 	map_attributes UnionCaveB1FSouth, UNION_CAVE_B1F_SOUTH, $9, 0
@@ -541,7 +540,7 @@ ENDM
 	map_attributes DarkCaveVioletEntrance, DARK_CAVE_VIOLET_ENTRANCE, $9, 0
 	map_attributes DarkCaveBlackthornEntrance, DARK_CAVE_BLACKTHORN_ENTRANCE, $9, 0
 	map_attributes DragonsDen1F, DRAGONS_DEN_1F, $9, 0
-	map_attributes DragonsDenB1F, DRAGONS_DEN_B1F, $71, 0
+	map_attributes DragonsDenB1F, DRAGONS_DEN_B1F, $4d, 0
 	map_attributes DragonShrine, DRAGON_SHRINE, $0, 0
 	map_attributes TohjoFalls, TOHJO_FALLS, $9, 0
 	map_attributes GiovannisCave, GIOVANNIS_CAVE, $9, 0
@@ -581,7 +580,7 @@ ENDM
 	map_attributes ValeriesHouse, VALERIES_HOUSE, $0, 0
 	map_attributes EcruteakCherishBallHouse, ECRUTEAK_CHERISH_BALL_HOUSE, $0, 0
 	map_attributes EcruteakDestinyKnotHouse, ECRUTEAK_DESTINY_KNOT_HOUSE, $0, 0
-	map_attributes EcruteakShrineOutside, ECRUTEAK_SHRINE_OUTSIDE, $5, 0
+	map_attributes EcruteakShrineOutside, ECRUTEAK_SHRINE_OUTSIDE, $1f, 0
 	map_attributes EcruteakShrineInside, ECRUTEAK_SHRINE_INSIDE, $0, 0
 	map_attributes BlackthornGym1F, BLACKTHORN_GYM_1F, $0, 0
 	map_attributes BlackthornGym2F, BLACKTHORN_GYM_2F, $0, 0
@@ -621,9 +620,6 @@ ENDM
 	map_attributes LakeofRageMagikarpHouse, LAKE_OF_RAGE_MAGIKARP_HOUSE, $0, 0
 	map_attributes Route43MahoganyGate, ROUTE_43_MAHOGANY_GATE, $0, 0
 	map_attributes Route43Gate, ROUTE_43_GATE, $0, 0
-	map_attributes SinjohRuins, SINJOH_RUINS, $d5, 0
-	map_attributes SinjohRuinsHouse, SINJOH_RUINS_HOUSE, $0, 0
-	map_attributes MystriStage, MYSTRI_STAGE, $0, 0
 	map_attributes EmbeddedTower, EMBEDDED_TOWER, $0, 0
 	map_attributes VioletMart, VIOLET_MART, $0, 0
 	map_attributes VioletGym, VIOLET_GYM, $0, 0
@@ -847,7 +843,7 @@ ENDM
 	map_attributes Route30BerrySpeechHouse, ROUTE_30_BERRY_SPEECH_HOUSE, $0, 0
 	map_attributes MrPokemonsHouse, MR_POKEMONS_HOUSE, $0, 0
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $0, 0
-	map_attributes BellchimeTrail, BELLCHIME_TRAIL, $5, 0
+	map_attributes BellchimeTrail, BELLCHIME_TRAIL, $cb, 0
 	map_attributes PewterMuseumOfScience1F, PEWTER_MUSEUM_OF_SCIENCE_1F, $0, 0
 	map_attributes PewterMuseumOfScience2F, PEWTER_MUSEUM_OF_SCIENCE_2F, $0, 0
 	map_attributes ViridianForest, VIRIDIAN_FOREST, $0, 0

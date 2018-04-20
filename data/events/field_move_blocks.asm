@@ -13,9 +13,6 @@ CutGrassBlockPointers:
 	dbw TILESET_INDIGO, .indigo
 	dbw TILESET_FOREST, .forest
 	dbw TILESET_SAFARI_ZONE, .safari_zone
-	dbw TILESET_PC_JOHTO_TRADITIONAL, .johto_traditional
-	dbw TILESET_PC_JOHTO_MODERN, .johto_modern
-	dbw TILESET_PC_JOHTO_OVERCAST, .johto_overcast
 	dbw TILESET_PC_PARK, .park
 	dbw TILESET_PC_FOREST, .pc_forest
 	dbw TILESET_PC_SHAMOUTI_ISLAND, .shamouti_island
@@ -91,9 +88,6 @@ CutGrassBlockPointers:
 
 .shamouti_island
 	db $95, $4c
-.johto_traditional
-.johto_modern
-.johto_overcast
 .valencia_island
 	db $03, $02
 	db -1
