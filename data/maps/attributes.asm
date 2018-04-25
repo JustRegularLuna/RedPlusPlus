@@ -394,10 +394,10 @@ ENDM
 	connection south, Route29, ROUTE_29, -3, 5, 18
 	connection east, Route45, ROUTE_45, -3, 34, 12
 
-	map_attributes Route47, ROUTE_47, $35, NORTH
+	map_attributes Route47, ROUTE_47, $25, NORTH
 	connection north, Route48, ROUTE_48, 0, 0, 36
 
-	map_attributes Route48, ROUTE_48, $35, SOUTH
+	map_attributes Route48, ROUTE_48, $25, SOUTH
 	connection south, Route47, ROUTE_47, 0, 0, 36
 
 	map_attributes Route49, ROUTE_49, $0, EAST
@@ -540,7 +540,7 @@ ENDM
 	map_attributes DarkCaveVioletEntrance, DARK_CAVE_VIOLET_ENTRANCE, $9, 0
 	map_attributes DarkCaveBlackthornEntrance, DARK_CAVE_BLACKTHORN_ENTRANCE, $9, 0
 	map_attributes DragonsDen1F, DRAGONS_DEN_1F, $9, 0
-	map_attributes DragonsDenB1F, DRAGONS_DEN_B1F, $4d, 0
+	map_attributes DragonsDenB1F, DRAGONS_DEN_B1F, $31, 0
 	map_attributes DragonShrine, DRAGON_SHRINE, $0, 0
 	map_attributes TohjoFalls, TOHJO_FALLS, $9, 0
 	map_attributes GiovannisCave, GIOVANNIS_CAVE, $9, 0
@@ -580,7 +580,7 @@ ENDM
 	map_attributes ValeriesHouse, VALERIES_HOUSE, $0, 0
 	map_attributes EcruteakCherishBallHouse, ECRUTEAK_CHERISH_BALL_HOUSE, $0, 0
 	map_attributes EcruteakDestinyKnotHouse, ECRUTEAK_DESTINY_KNOT_HOUSE, $0, 0
-	map_attributes EcruteakShrineOutside, ECRUTEAK_SHRINE_OUTSIDE, $1f, 0
+	map_attributes EcruteakShrineOutside, ECRUTEAK_SHRINE_OUTSIDE, $0e, 0
 	map_attributes EcruteakShrineInside, ECRUTEAK_SHRINE_INSIDE, $0, 0
 	map_attributes BlackthornGym1F, BLACKTHORN_GYM_1F, $0, 0
 	map_attributes BlackthornGym2F, BLACKTHORN_GYM_2F, $0, 0
