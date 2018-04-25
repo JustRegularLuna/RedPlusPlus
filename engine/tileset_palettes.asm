@@ -119,6 +119,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .maybe_violet_city
 	cp TILESET_ECRUTEAK
 	jp z, .maybe_ecruteak
+	cp TILESET_SHRINES_AND_RUINS
+	jp z, .maybe_ecruteak_shrine
 	cp TILESET_PC_FOREST
 	jp z, .maybe_special_forest
 	cp TILESET_PC_CAVE
@@ -413,11 +415,19 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, EcruteakPalette
 	cp MAP_ECRUTEAK_CITY
 	jp z, .load_eight_time_of_day_bg_palettes
-	cp MAP_ECRUTEAK_SHRINE_OUTSIDE
-	jp z, .load_eight_time_of_day_bg_palettes
 	cp MAP_BELLCHIME_TRAIL
 	jp z, .load_eight_time_of_day_bg_palettes
 	jp .do_nothing
+
+.maybe_ecruteak_shrine
+	ld a, [MapGroup]
+	cp GROUP_ECRUTEAK_SHRINE_OUTSIDE
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	cp MAP_ECRUTEAK_SHRINE_OUTSIDE
+	jp nz, .do_nothing
+	ld hl, EcruteakShrinePalette
+	jp .load_eight_time_of_day_bg_palettes
 
 .tileset_viridian
 	ld a, [MapGroup]
@@ -1502,6 +1512,41 @@ if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/ecruteak.pal"
 elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/ecruteak.pal"
+else
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 4
+	MONOCHROME_RGB_FOUR_NIGHT
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+	MONOCHROME_RGB_FOUR_NIGHT
+	MONOCHROME_RGB_FOUR_NIGHT
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
+
+EcruteakShrinePalette:
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/ecruteak_shrine.pal"
+elif !DEF(MONOCHROME)
+INCLUDE "gfx/tilesets/palettes/ecruteak_shrine.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR

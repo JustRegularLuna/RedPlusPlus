@@ -147,7 +147,7 @@ class Attributes(object):
 		'maps/VioletCity.blk': lambda: load_palette('gfx/tilesets/palettes/violet_city.pal')[8:16],
 		'maps/EcruteakCity.blk': lambda: load_palette('gfx/tilesets/palettes/ecruteak.pal')[8:16],
 		'maps/BellchimeTrail.blk': lambda: load_palette('gfx/tilesets/palettes/ecruteak.pal')[8:16],
-		'maps/EcruteakShrineOutside.blk': lambda: load_palette('gfx/tilesets/palettes/ecruteak.pal')[8:16],
+		'maps/EcruteakShrineOutside.blk': lambda: load_palette('gfx/tilesets/palettes/ecruteak_shrine.pal')[8:16],
 		########################################################################
 		'maps/BrunosRoom.blk': lambda: load_palette('gfx/tilesets/palettes/brunos_room.pal'),
 		'maps/CeladonHomeDecorStore4F.blk': lambda: load_palette('gfx/tilesets/palettes/celadon_home_decor_store_4f.pal'),
