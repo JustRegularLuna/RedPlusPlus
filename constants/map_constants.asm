@@ -481,8 +481,8 @@ MAP_NONE   EQU 0
 
 	newgroup ; 42
 
-	map_const SILVER_CAVE_OUTSIDE,          20, 15 ;  1
-	map_const ROUTE_28,                     19,  9 ;  2
+	map_const SILVER_CAVE_OUTSIDE,          20, 16 ;  1
+	map_const ROUTE_28,                     20, 11 ;  2
 	map_const SILVER_CAVE_POKECENTER_1F,     6,  4 ;  3
 	map_const ROUTE_28_FAMOUS_SPEECH_HOUSE,  4,  4 ;  4
 

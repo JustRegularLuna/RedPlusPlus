@@ -157,8 +157,8 @@ ENDM
 	connection south, Route45, ROUTE_45, -1, 0, 13
 	connection west, Route44, ROUTE_44, 8, 0, 11
 
-	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $71, EAST
-	connection east, Route28, ROUTE_28, 6, 0, 9
+	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $4d, EAST
+	connection east, Route28, ROUTE_28, 5, 0, 11
 
 	map_attributes Route1, ROUTE_1, $f, NORTH | SOUTH
 	connection north, ViridianCity, VIRIDIAN_CITY, -3, 2, 16
@@ -300,8 +300,8 @@ ENDM
 	connection west, NewBarkTown, NEW_BARK_TOWN, 0, 0, 11
 	connection east, Route27East, ROUTE_27_EAST, 0, 0, 9
 
-	map_attributes Route28, ROUTE_28, $71, WEST
-	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -3, 3, 12
+	map_attributes Route28, ROUTE_28, $4d, WEST
+	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -3, 2, 14
 
 	map_attributes Route29, ROUTE_29, $f, NORTH | WEST | EAST
 	connection north, Route46, ROUTE_46, 8, 0, 12
