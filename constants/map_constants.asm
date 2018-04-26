@@ -419,7 +419,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 34
 
-	map_const BATTLE_TOWER_OUTSIDE,     10, 13 ;  1
+	map_const BATTLE_TOWER_OUTSIDE,     13, 13 ;  1
 	map_const BATTLE_TOWER_1F,          11,  7 ;  2
 	map_const BATTLE_TOWER_2F,          11,  5 ;  3
 	map_const BATTLE_TOWER_ELEVATOR,     2,  2 ;  4
