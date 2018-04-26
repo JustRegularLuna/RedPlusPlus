@@ -145,9 +145,9 @@ class Attributes(object):
 		'maps/CherrygroveBay.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
 		'maps/CherrygroveCity.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
 		'maps/VioletCity.blk': lambda: load_palette('gfx/tilesets/palettes/violet_city.pal')[8:16],
-		'maps/EcruteakCity.blk': lambda: load_palette('gfx/tilesets/palettes/ecruteak.pal')[8:16],
-		'maps/BellchimeTrail.blk': lambda: load_palette('gfx/tilesets/palettes/ecruteak.pal')[8:16],
-		'maps/EcruteakShrineOutside.blk': lambda: load_palette('gfx/tilesets/palettes/ecruteak_shrine.pal')[8:16],
+		'maps/EcruteakCity.blk': lambda: load_palette('gfx/tilesets/palettes/ecruteak_city.pal')[8:16],
+		'maps/BellchimeTrail.blk': lambda: load_palette('gfx/tilesets/palettes/bellchime_trail.pal')[8:16],
+		'maps/EcruteakShrineOutside.blk': lambda: load_palette('gfx/tilesets/palettes/bellchime_trail.pal')[8:16],
 		'maps/Route48.blk': lambda: load_palette('gfx/tilesets/palettes/yellow_forest.pal')[8:16],
 		########################################################################
 		'maps/BrunosRoom.blk': lambda: load_palette('gfx/tilesets/palettes/brunos_room.pal'),

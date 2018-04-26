@@ -182,14 +182,21 @@ LoadSpecialMapPalette: ; 494ac
 .tileset_ecruteak
 	ld a, [MapGroup]
 	cp GROUP_ECRUTEAK_CITY
+	jr nz, .not_ecruteak_city
+	ld a, [MapNumber]
+	cp MAP_ECRUTEAK_CITY
+	jr nz, .not_ecruteak_city
+	ld hl, EcruteakCityPalette
+	jp .load_eight_time_of_day_bg_palettes
+.not_ecruteak_city
+	ld a, [MapGroup]
+	cp GROUP_BELLCHIME_TRAIL
 	jp nz, .do_nothing
 	ld a, [MapNumber]
-	ld hl, EcruteakPalette
-	cp MAP_ECRUTEAK_CITY
-	jp z, .load_eight_time_of_day_bg_palettes
 	cp MAP_BELLCHIME_TRAIL
-	jp z, .load_eight_time_of_day_bg_palettes
-	jp .do_nothing
+	jp nz, .do_nothing
+	ld hl, BellchimeTrailPalette
+	jp .load_eight_time_of_day_bg_palettes
 
 .tileset_shrines_and_ruins
 	ld a, [MapGroup]
@@ -198,7 +205,7 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [MapNumber]
 	cp MAP_ECRUTEAK_SHRINE_OUTSIDE
 	jr nz, .not_ecruteak_shrine
-	ld hl, EcruteakShrinePalette
+	ld hl, BellchimeTrailPalette
 	jp .load_eight_time_of_day_bg_palettes
 .not_ecruteak_shrine
 	ld a, [MapGroup]
@@ -1524,11 +1531,11 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-EcruteakPalette:
+EcruteakCityPalette:
 if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/ecruteak.pal"
+INCLUDE "gfx/tilesets/palettes/noir/ecruteak_city.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/ecruteak.pal"
+INCLUDE "gfx/tilesets/palettes/ecruteak_city.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -1559,11 +1566,11 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-EcruteakShrinePalette:
+BellchimeTrailPalette:
 if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/ecruteak_shrine.pal"
+INCLUDE "gfx/tilesets/palettes/noir/bellchime_trail.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/ecruteak_shrine.pal"
+INCLUDE "gfx/tilesets/palettes/bellchime_trail.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
