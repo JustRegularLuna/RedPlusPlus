@@ -48,6 +48,7 @@ MapGroupPointers::
 	dw MapGroup_Route41
 	dw MapGroup_Cianwood
 	dw MapGroup_Route47
+	dw MapGroup_Route48
 	dw MapGroup_Mahogany
 	dw MapGroup_LakeOfRage
 	dw MapGroup_Blackthorn
@@ -454,6 +455,8 @@ MapGroup_Cianwood:
 
 MapGroup_Route47:
 	map Route47, TILESET_SHRINES_AND_RUINS, ROUTE, ROUTE_47, MUSIC_ROUTE_47_HGSS, 0, PALETTE_AUTO, FISHGROUP_LAKE
+
+MapGroup_Route48:
 	map Route48, TILESET_SHRINES_AND_RUINS, ROUTE, ROUTE_48, MUSIC_ROUTE_47_HGSS, 0, PALETTE_AUTO, FISHGROUP_LAKE
 
 MapGroup_Mahogany:

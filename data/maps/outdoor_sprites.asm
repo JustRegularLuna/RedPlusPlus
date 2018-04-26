@@ -38,6 +38,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_Route41
 	dw OutdoorSprites_Cianwood
 	dw OutdoorSprites_Route47
+	dw OutdoorSprites_Route48
 	dw OutdoorSprites_Mahogany
 	dw OutdoorSprites_LakeOfRage
 	dw OutdoorSprites_Blackthorn
@@ -169,6 +170,12 @@ OutdoorSprites_Mahogany:
 	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
+OutdoorSprites_RuinsOfAlph:
+	db SPRITE_BOULDER_ROCK_FOSSIL
+	db SPRITE_SECRET_BASE
+	db SPRITE_SIGN_FENCE_TREETOP
+	db 0 ; end
+
 OutdoorSprites_Azalea:
 	db SPRITE_BALL_CUT_FRUIT
 	db 0 ; end
@@ -191,6 +198,14 @@ OutdoorSprites_Cianwood:
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
+OutdoorSprites_BattleTower:
+	db 0 ; end
+
+OutdoorSprites_Route47:
+OutdoorSprites_Route48:
+	db SPRITE_SECRET_BASE
+	db 0 ; end
+
 OutdoorSprites_LakeOfRage:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
@@ -198,12 +213,10 @@ OutdoorSprites_LakeOfRage:
 
 OutdoorSprites_Blackthorn:
 	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Special:
-OutdoorSprites_RuinsOfAlph:
-OutdoorSprites_BattleTower:
-OutdoorSprites_Route47:
 OutdoorSprites_SilverCave:
 OutdoorSprites_Shamouti:
 OutdoorSprites_ShamoutiShrine:
