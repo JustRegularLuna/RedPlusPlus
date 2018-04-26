@@ -300,8 +300,9 @@ ENDM
 	connection west, NewBarkTown, NEW_BARK_TOWN, 0, 0, 11
 	connection east, Route27East, ROUTE_27_EAST, 0, 0, 9
 
-	map_attributes Route28, ROUTE_28, $4d, WEST
+	map_attributes Route28, ROUTE_28, $4d, WEST | EAST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -3, 2, 14
+	connection east, Route26, ROUTE_26, 1, 0, 11
 
 	map_attributes Route29, ROUTE_29, $f, NORTH | WEST | EAST
 	connection north, Route46, ROUTE_46, 8, 0, 12
