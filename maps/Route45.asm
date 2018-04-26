@@ -10,6 +10,7 @@ Route45_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	fruittree_event 20, 80, FRUITTREE_ROUTE_45, ORAN_BERRY
 
 	const_def 1 ; object constants

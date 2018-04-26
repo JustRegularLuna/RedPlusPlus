@@ -276,9 +276,6 @@ RuinsofAlphEntranceChamber_BlockData:
 RuinsofAlphInnerChamber_BlockData:
 	INCBIN "maps/RuinsofAlphInnerChamber.blk"
 
-RuinsofAlphSinjohChamber_BlockData:
-	INCBIN "maps/RuinsofAlphSinjohChamber.blk"
-
 RuinsofAlphAerodactylChamber_BlockData:
 RuinsofAlphHoOhChamber_BlockData:
 RuinsofAlphKabutoChamber_BlockData:
@@ -302,15 +299,6 @@ RuinsofAlphKabutoWordRoom_BlockData:
 
 RuinsofAlphOmanyteWordRoom_BlockData:
 	INCBIN "maps/RuinsofAlphOmanyteWordRoom.blk"
-
-SinjohRuins_BlockData:
-	INCBIN "maps/SinjohRuins.blk"
-
-MystriStage_BlockData:
-	INCBIN "maps/MystriStage.blk"
-
-SinjohRuinsHouse_BlockData:
-	INCBIN "maps/SinjohRuinsHouse.blk"
 
 UnionCave1F_BlockData:
 GiovannisCave_BlockData:

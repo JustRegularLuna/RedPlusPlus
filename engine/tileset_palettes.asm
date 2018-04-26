@@ -28,6 +28,21 @@ LoadSpecialMapPalette: ; 494ac
 
 	ld a, [wTileset]
 
+; palettes for entire tilesets
+
+	ld hl, CeladonPalette
+	cp TILESET_CELADON
+	jp z, .load_eight_time_of_day_bg_palettes
+	ld hl, FuchsiaPalette
+	cp TILESET_FUCHSIA
+	jp z, .load_eight_time_of_day_bg_palettes
+	ld hl, SaffronPalette
+	cp TILESET_SAFFRON
+	jp z, .load_eight_time_of_day_bg_palettes
+	ld hl, SafariZonePalette
+	cp TILESET_SAFARI_ZONE
+	jp z, .load_eight_time_of_day_bg_palettes
+
 	ld hl, PokeComPalette
 	cp TILESET_PC_POKECOM_CENTER
 	jp z, .load_eight_bg_palettes
@@ -49,19 +64,6 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PC_ALPH_WORD_ROOM
 	jp z, .load_eight_bg_palettes
 
-	ld hl, CeladonPalette
-	cp TILESET_CELADON
-	jp z, .load_eight_time_of_day_bg_palettes
-	ld hl, FuchsiaPalette
-	cp TILESET_FUCHSIA
-	jp z, .load_eight_time_of_day_bg_palettes
-	ld hl, SaffronPalette
-	cp TILESET_SAFFRON
-	jp z, .load_eight_time_of_day_bg_palettes
-	ld hl, SafariZonePalette
-	cp TILESET_SAFARI_ZONE
-	jp z, .load_eight_time_of_day_bg_palettes
-
 	ld hl, FarawayIslandPalette
 	cp TILESET_PC_FARAWAY_ISLAND
 	jp z, .load_eight_time_of_day_bg_palettes
@@ -72,12 +74,20 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PC_VALENCIA_ISLAND
 	jp z, .load_eight_time_of_day_bg_palettes
 
+; special cases for tilesets
+
 	cp TILESET_VIRIDIAN
 	jp z, .tileset_viridian
-	cp TILESET_FOREST
-	jp z, .tileset_forest
 	cp TILESET_NEW_BARK_CHERRYGROVE
 	jp z, .tileset_new_bark_cherrygrove
+	cp TILESET_VIOLET_MAHOGANY
+	jp z, .tileset_violet_mahogany
+	cp TILESET_ECRUTEAK
+	jp z, .tileset_ecruteak
+	cp TILESET_SHRINES_AND_RUINS
+	jp z, .tileset_shrines_and_ruins
+	cp TILESET_FOREST
+	jp z, .tileset_forest
 
 	cp TILESET_PC_POKECENTER
 	jp z, .pokecenter
@@ -102,7 +112,7 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PC_TUNNEL
 	jp z, .maybe_lightning_island
 	cp TILESET_PC_SPROUT_TOWER
-	jp z, .maybe_mystri_or_tower
+	jp z, .maybe_embedded_tower
 	cp TILESET_PC_POKEMON_MANSION
 	jp z, .maybe_cinnabar_lab
 	cp TILESET_PC_MUSEUM
@@ -115,16 +125,15 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .maybe_olivine_lighthouse_roof
 	cp TILESET_PC_HOME_DECOR_STORE
 	jp z, .maybe_celadon_home_decor_store_4f
-	cp TILESET_VIOLET_MAHOGANY
-	jp z, .maybe_traditional_johto
 	cp TILESET_PC_FOREST
 	jp z, .maybe_special_forest
 	cp TILESET_PC_CAVE
 	jp z, .maybe_special_cave
 
+.maybe_overcast
 	call GetOvercastIndex
 	and a
-	jp z, .maybe_sinjoh_ruins
+	jr z, .do_nothing
 	ld hl, OvercastBGPalette
 	jp .load_eight_time_of_day_bg_palettes
 
@@ -132,6 +141,86 @@ LoadSpecialMapPalette: ; 494ac
 	and a
 	ret
 ; 494f2
+
+
+
+.tileset_viridian
+	ld a, [MapGroup]
+	cp GROUP_CERISE_ISLAND_WEST
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	cp MAP_CERISE_ISLAND_WEST
+	jp nz, .do_nothing
+	ld hl, CeriseIslandWestPalette
+	jp .load_eight_time_of_day_bg_palettes
+
+.tileset_new_bark_cherrygrove
+	ld a, [MapGroup]
+	cp GROUP_CHERRYGROVE_CITY
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	cp MAP_CHERRYGROVE_CITY
+	jr z, .cherrygrove_city
+	cp MAP_CHERRYGROVE_BAY
+	jr z, .cherrygrove_city
+	cp MAP_ROUTE_30
+	jp nz, .do_nothing
+.cherrygrove_city
+	ld hl, CherrygroveCityPalette
+	jp .load_eight_time_of_day_bg_palettes
+
+.tileset_violet_mahogany
+	ld a, [MapGroup]
+	cp GROUP_VIOLET_CITY
+	jp nz, .maybe_overcast
+	ld a, [MapNumber]
+	cp MAP_VIOLET_CITY
+	jp nz, .maybe_overcast
+	ld hl, VioletCityPalette
+	jp .load_eight_time_of_day_bg_palettes
+
+.tileset_ecruteak
+	ld a, [MapGroup]
+	cp GROUP_ECRUTEAK_CITY
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	ld hl, EcruteakPalette
+	cp MAP_ECRUTEAK_CITY
+	jp z, .load_eight_time_of_day_bg_palettes
+	cp MAP_BELLCHIME_TRAIL
+	jp z, .load_eight_time_of_day_bg_palettes
+	jp .do_nothing
+
+.tileset_shrines_and_ruins
+	ld a, [MapGroup]
+	cp GROUP_ECRUTEAK_SHRINE_OUTSIDE
+	jr nz, .not_ecruteak_shrine
+	ld a, [MapNumber]
+	cp MAP_ECRUTEAK_SHRINE_OUTSIDE
+	jr nz, .not_ecruteak_shrine
+	ld hl, EcruteakShrinePalette
+	jp .load_eight_time_of_day_bg_palettes
+.not_ecruteak_shrine
+	ld a, [MapGroup]
+	cp GROUP_ROUTE_48
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	cp MAP_ROUTE_48
+	jp nz, .do_nothing
+	ld hl, YellowForestPalette
+	jp .load_eight_time_of_day_bg_palettes
+
+.tileset_forest
+	ld a, [MapGroup]
+	cp GROUP_VIRIDIAN_FOREST
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	cp MAP_VIRIDIAN_FOREST
+	jp nz, .do_nothing
+	ld hl, ViridianForestPalette
+	jp .load_eight_bg_palettes
+
+
 
 .pokecenter
 	ld a, [MapGroup]
@@ -309,16 +398,6 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, ViridianGymPalette
 	jp .load_eight_bg_palettes
 
-.maybe_mystri_or_tower
-	ld a, [MapGroup]
-	cp GROUP_MYSTRI_STAGE
-	jr nz, .maybe_embedded_tower
-	ld a, [MapNumber]
-	cp MAP_MYSTRI_STAGE
-	jr nz, .maybe_embedded_tower
-	ld hl, MystriStagePalette
-	jp .load_eight_bg_palettes
-
 .maybe_embedded_tower
 	ld a, [MapGroup]
 	cp GROUP_EMBEDDED_TOWER
@@ -401,77 +480,6 @@ LoadSpecialMapPalette: ; 494ac
 	jp nz, .do_nothing
 	ld hl, CeladonHomeDecorStore4FPalette
 	jp .load_eight_bg_palettes
-
-.maybe_sinjoh_ruins
-	ld a, [MapGroup]
-	cp GROUP_SINJOH_RUINS
-	jp nz, .do_nothing
-	ld a, [MapNumber]
-	cp MAP_SINJOH_RUINS
-	jp nz, .do_nothing
-	ld hl, SinjohRuinsPalette
-	jp .load_eight_time_of_day_bg_palettes
-
-.maybe_traditional_johto
-	ld hl, VioletEcruteakPalette
-	ld a, [MapGroup]
-	cp GROUP_VIOLET_CITY
-	jr nz, .not_violet_city
-	ld a, [MapNumber]
-	cp MAP_VIOLET_CITY
-	jp z, .load_eight_time_of_day_bg_palettes
-.not_violet_city
-	ld a, [MapGroup]
-	cp GROUP_ECRUTEAK_CITY
-	jr nz, .not_ecruteak_city
-	ld a, [MapNumber]
-	cp MAP_ECRUTEAK_CITY
-	jp z, .load_eight_time_of_day_bg_palettes
-.not_ecruteak_city
-	ld hl, BellchimeTrailPalette
-	ld a, [MapGroup]
-	cp GROUP_BELLCHIME_TRAIL
-	jr nz, .not_bellchime_trail
-	ld a, [MapNumber]
-	cp MAP_BELLCHIME_TRAIL
-	jp z, .load_eight_time_of_day_bg_palettes
-.not_bellchime_trail
-	jp .do_nothing
-
-.tileset_viridian
-	ld a, [MapGroup]
-	cp GROUP_CERISE_ISLAND_WEST
-	jp nz, .do_nothing
-	ld a, [MapNumber]
-	cp MAP_CERISE_ISLAND_WEST
-	jp nz, .do_nothing
-	ld hl, CeriseIslandWestPalette
-	jp .load_eight_time_of_day_bg_palettes
-
-.tileset_forest
-	ld a, [MapGroup]
-	cp GROUP_VIRIDIAN_FOREST
-	jp nz, .do_nothing
-	ld a, [MapNumber]
-	cp MAP_VIRIDIAN_FOREST
-	jp nz, .do_nothing
-	ld hl, ViridianForestPalette
-	jp .load_eight_bg_palettes
-
-.tileset_new_bark_cherrygrove
-	ld a, [MapGroup]
-	cp GROUP_CHERRYGROVE_CITY
-	jp nz, .do_nothing
-	ld a, [MapNumber]
-	cp MAP_CHERRYGROVE_CITY
-	jr z, .cherrygrove_city
-	cp MAP_CHERRYGROVE_BAY
-	jr z, .cherrygrove_city
-	cp MAP_ROUTE_30
-	jp nz, .do_nothing
-.cherrygrove_city
-	ld hl, CherrygroveCityPalette
-	jp .load_eight_time_of_day_bg_palettes
 
 .maybe_special_forest
 	ld a, [MapGroup]
@@ -1260,21 +1268,6 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-MystriStagePalette:
-if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/mystri_stage.pal"
-elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/mystri_stage.pal"
-else
-rept 7
-	MONOCHROME_RGB_FOUR_NIGHT
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-endc
-
 EmbeddedTowerPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/embedded_tower.pal"
@@ -1496,11 +1489,11 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-SinjohRuinsPalette:
+VioletCityPalette:
 if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/sinjoh_ruins.pal"
+INCLUDE "gfx/tilesets/palettes/noir/violet_city.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/sinjoh_ruins.pal"
+INCLUDE "gfx/tilesets/palettes/violet_city.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -1531,11 +1524,11 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-VioletEcruteakPalette:
+EcruteakPalette:
 if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/violet_ecruteak.pal"
+INCLUDE "gfx/tilesets/palettes/noir/ecruteak.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/violet_ecruteak.pal"
+INCLUDE "gfx/tilesets/palettes/ecruteak.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -1566,11 +1559,11 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-BellchimeTrailPalette:
+EcruteakShrinePalette:
 if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/bellchime_trail.pal"
+INCLUDE "gfx/tilesets/palettes/noir/ecruteak_shrine.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/bellchime_trail.pal"
+INCLUDE "gfx/tilesets/palettes/ecruteak_shrine.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -1956,7 +1949,7 @@ INCLUDE "gfx/tilesets/palettes/noir/bg_overcast.pal"
 elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/bg_overcast.pal"
 else
-INCLUDE "gfx/tilesets/palettes/monochrome/ob.pal"
+INCLUDE "gfx/tilesets/palettes/monochrome/bg_overcast.pal"
 endc
 
 OvercastOBPalette:

@@ -30,10 +30,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_RuinsOfAlph
 	dw OutdoorSprites_Azalea
 	dw OutdoorSprites_Goldenrod
-	dw OutdoorSprites_Route35
 	dw OutdoorSprites_Ecruteak
-	dw OutdoorSprites_EcruteakShrine
-	dw OutdoorSprites_BellchimeTrail
 	dw OutdoorSprites_GoldenrodHarbor
 	dw OutdoorSprites_Route39
 	dw OutdoorSprites_Olivine
@@ -41,6 +38,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_Route41
 	dw OutdoorSprites_Cianwood
 	dw OutdoorSprites_Route47
+	dw OutdoorSprites_Route48
 	dw OutdoorSprites_Mahogany
 	dw OutdoorSprites_LakeOfRage
 	dw OutdoorSprites_Blackthorn
@@ -50,7 +48,6 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_ShamoutiCoast
 	dw OutdoorSprites_Valencia
 	dw OutdoorSprites_NavelFaraway
-	dw OutdoorSprites_SinjohRuins
 	dw OutdoorSprites_KantoGates
 	dw OutdoorSprites_KantoDungeons
 	dw OutdoorSprites_JohtoGates
@@ -167,9 +164,28 @@ OutdoorSprites_Route32:
 	db 0 ; end
 
 OutdoorSprites_Violet:
+OutdoorSprites_Mahogany:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
 	db SPRITE_SIGN_FENCE_TREETOP
+	db 0 ; end
+
+OutdoorSprites_RuinsOfAlph:
+	db SPRITE_BOULDER_ROCK_FOSSIL
+	db SPRITE_SECRET_BASE
+	db SPRITE_SIGN_FENCE_TREETOP
+	db 0 ; end
+
+OutdoorSprites_Azalea:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
+OutdoorSprites_Goldenrod:
+	db 0 ; end
+
+OutdoorSprites_Ecruteak:
+	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_GoldenrodHarbor:
@@ -182,26 +198,31 @@ OutdoorSprites_Cianwood:
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
-OutdoorSprites_Special:
-OutdoorSprites_RuinsOfAlph:
-OutdoorSprites_Azalea:
-OutdoorSprites_Goldenrod:
-OutdoorSprites_Route35:
-OutdoorSprites_Ecruteak:
-OutdoorSprites_EcruteakShrine:
-OutdoorSprites_BellchimeTrail:
 OutdoorSprites_BattleTower:
+	db 0 ; end
+
 OutdoorSprites_Route47:
-OutdoorSprites_Mahogany:
+OutdoorSprites_Route48:
+	db SPRITE_SECRET_BASE
+	db 0 ; end
+
 OutdoorSprites_LakeOfRage:
+	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
+	db 0 ; end
+
 OutdoorSprites_Blackthorn:
+	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
+	db 0 ; end
+
+OutdoorSprites_Special:
 OutdoorSprites_SilverCave:
 OutdoorSprites_Shamouti:
 OutdoorSprites_ShamoutiShrine:
 OutdoorSprites_ShamoutiCoast:
 OutdoorSprites_Valencia:
 OutdoorSprites_NavelFaraway:
-OutdoorSprites_SinjohRuins:
 OutdoorSprites_KantoGates:
 OutdoorSprites_KantoDungeons:
 OutdoorSprites_JohtoGates:

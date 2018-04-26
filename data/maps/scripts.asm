@@ -133,7 +133,6 @@ SECTION "Ruins of Alph Scripts 2", ROMX
 
 INCLUDE "maps/RuinsofAlphEntranceChamber.asm"
 INCLUDE "maps/RuinsofAlphInnerChamber.asm"
-INCLUDE "maps/RuinsofAlphSinjohChamber.asm"
 INCLUDE "maps/RuinsofAlphAerodactylChamber.asm"
 INCLUDE "maps/RuinsofAlphHoOhChamber.asm"
 INCLUDE "maps/RuinsofAlphKabutoChamber.asm"
@@ -146,13 +145,6 @@ INCLUDE "maps/RuinsofAlphAerodactylWordRoom.asm"
 INCLUDE "maps/RuinsofAlphHoOhWordRoom.asm"
 INCLUDE "maps/RuinsofAlphKabutoWordRoom.asm"
 INCLUDE "maps/RuinsofAlphOmanyteWordRoom.asm"
-
-
-SECTION "Sinjoh Ruins Scripts", ROMX
-
-INCLUDE "maps/SinjohRuins.asm"
-INCLUDE "maps/SinjohRuinsHouse.asm"
-INCLUDE "maps/MystriStage.asm"
 
 
 SECTION "Union Cave Scripts", ROMX

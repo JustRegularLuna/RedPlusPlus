@@ -5,8 +5,8 @@
 	GRAYSCALE 20, 17, 07, 00 ; brown
 	GRAYSCALE 20, 17, 07, 00 ; purple
 	GRAYSCALE 31, 31, 10, 00 ; silver
-	GRAYSCALE 18, 13, 07, 04 ; tree
-	GRAYSCALE 20, 13, 11, 04 ; rock
+	GRAYSCALE 14, 46, 08, 04 ; tree
+	GRAYSCALE 19, 13, 09, 04 ; rock
 ; day
 	GRAYSCALE 22, 15, 09, 00 ; red
 	GRAYSCALE 22, 15, 08, 00 ; blue
@@ -14,8 +14,8 @@
 	GRAYSCALE 22, 15, 07, 00 ; brown
 	GRAYSCALE 22, 15, 07, 00 ; purple
 	GRAYSCALE 31, 31, 10, 00 ; silver
-	GRAYSCALE 18, 13, 07, 04 ; tree
-	GRAYSCALE 22, 13, 11, 04 ; rock
+	GRAYSCALE 18, 46, 08, 04 ; tree
+	GRAYSCALE 22, 13, 09, 04 ; rock
 ; nite
 	GRAYSCALE 10, 08, 05, 00 ; red
 	GRAYSCALE 10, 08, 05, 00 ; blue
@@ -23,5 +23,5 @@
 	GRAYSCALE 10, 08, 04, 00 ; brown
 	GRAYSCALE 10, 08, 04, 00 ; purple
 	GRAYSCALE 31, 31, 10, 00 ; silver
-	GRAYSCALE 10, 07, 04, 00 ; tree
-	GRAYSCALE 10, 07, 05, 00 ; rock
+	GRAYSCALE 08, 05, 04, 00 ; tree
+	GRAYSCALE 11, 06, 04, 00 ; rock
