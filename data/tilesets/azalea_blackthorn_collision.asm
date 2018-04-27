@@ -235,7 +235,7 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, WALL
+	tilecoll TV, TV, TV, TV
 	tilecoll FLOOR, WALL, FLOOR, WALL
 	tilecoll WATER, WATER, WATER, WATER
 	tilecoll WALL, WALL, WARP_CARPET_UP, WARP_CARPET_UP
