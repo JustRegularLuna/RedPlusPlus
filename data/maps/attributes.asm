@@ -124,8 +124,8 @@ ENDM
 	connection west, Route36, ROUTE_36, 1, 0, 10
 	connection east, Route31, ROUTE_31, 11, 0, 9
 
-	map_attributes AzaleaTown, AZALEA_TOWN, $f, EAST
-;	connection west, Route34, ROUTE_34, -3, 15, 12
+	map_attributes AzaleaTown, AZALEA_TOWN, $f, WEST | EAST
+	connection west, Route34, ROUTE_34, -3, 16, 13
 	connection east, Route33, ROUTE_33, 0, 0, 12
 
 	map_attributes CianwoodCity, CIANWOOD_CITY, $41, EAST
@@ -331,14 +331,14 @@ ENDM
 	connection west, AzaleaTown, AZALEA_TOWN, 0, 0, 13
 	connection east, Route32Coast, ROUTE_32_COAST, -3, 4, 15
 
-	map_attributes Route34, ROUTE_34, $5, NORTH | WEST | EAST
+	map_attributes Route34, ROUTE_34, $f, NORTH | WEST | EAST
 	connection north, GoldenrodCity, GOLDENROD_CITY, -3, 4, 16
-	connection west, Route34Coast, ROUTE_34_COAST, 0, 0, 27
+	connection west, Route34Coast, ROUTE_34_COAST, 0, 0, 29
 	connection east, AzaleaTown, AZALEA_TOWN, 18, 0, 9
 
-	map_attributes Route34Coast, ROUTE_34_COAST, $35, SOUTH | EAST
+	map_attributes Route34Coast, ROUTE_34_COAST, $41, SOUTH | EAST
 	connection south, StormyBeach, STORMY_BEACH, 0, 0, 9
-	connection east, Route34, ROUTE_34, 0, 0, 27
+	connection east, Route34, ROUTE_34, 0, 0, 29
 
 	map_attributes Route35, ROUTE_35, $f, NORTH | SOUTH
 	connection north, Route36, ROUTE_36, 8, 0, 8
@@ -430,7 +430,7 @@ ENDM
 	connection north, Route42, ROUTE_42, -3, 2, 20
 	connection south, VioletCity, VIOLET_CITY, 0, 0, 20
 
-	map_attributes StormyBeach, STORMY_BEACH, $35, NORTH
+	map_attributes StormyBeach, STORMY_BEACH, $41, NORTH
 	connection north, Route34Coast, ROUTE_34_COAST, 0, 0, 9
 
 	map_attributes GoldenrodHarbor, GOLDENROD_HARBOR, $41, NORTH | WEST

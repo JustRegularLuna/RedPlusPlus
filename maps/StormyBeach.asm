@@ -4,8 +4,8 @@ StormyBeach_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event 30,  4, MURKY_SWAMP, 1
-	warp_event 31,  4, MURKY_SWAMP, 2
+	warp_event 30,  5, MURKY_SWAMP, 1
+	warp_event 31,  5, MURKY_SWAMP, 2
 
 	db 0 ; coord events
 
