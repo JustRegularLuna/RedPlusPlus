@@ -637,7 +637,6 @@ ENDM
 	map_attributes Route36NationalParkGate, ROUTE_36_NATIONAL_PARK_GATE, $0, 0
 	map_attributes Route36VioletGate, ROUTE_36_VIOLET_GATE, $0, 0
 	map_attributes GoldenrodGym, GOLDENROD_GYM, $0, 0
-	map_attributes GoldenrodBikeShop, GOLDENROD_BIKE_SHOP, $0, 0
 	map_attributes GoldenrodHappinessRater, GOLDENROD_HAPPINESS_RATER, $0, 0
 	map_attributes GoldenrodBillsHouse, GOLDENROD_BILLS_HOUSE, $0, 0
 	map_attributes GoldenrodMagnetTrainStation, GOLDENROD_MAGNET_TRAIN_STATION, $0, 0
@@ -661,7 +660,6 @@ ENDM
 	map_attributes DayCare, DAYCARE, $0, 0
 	map_attributes GoldenrodHPUpHouse, GOLDENROD_HP_UP_HOUSE, $0, 0
 	map_attributes GoldenrodNetBallHouse, GOLDENROD_NET_BALL_HOUSE, $0, 0
-	map_attributes GoldenrodBandHouse, GOLDENROD_BAND_HOUSE, $0, 0
 	map_attributes GoldenrodMuseum1F, GOLDENROD_MUSEUM_1F, $0, 0
 	map_attributes GoldenrodMuseum2F, GOLDENROD_MUSEUM_2F, $0, 0
 	map_attributes VermilionHouseFishingSpeechHouse, VERMILION_HOUSE_FISHING_SPEECH_HOUSE, $0, 0

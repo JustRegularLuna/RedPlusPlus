@@ -137,7 +137,6 @@ BlackthornEmysHouse_BlockData:
 MoveDeletersHouse_BlockData:
 LakeofRageMagikarpHouse_BlockData:
 GoldenrodNameRater_BlockData:
-GoldenrodBandHouse_BlockData:
 ManiasHouse_BlockData:
 CianwoodLugiaSpeechHouse_BlockData:
 StatsJudgesHouse_BlockData:
@@ -360,9 +359,6 @@ GoldenrodGym_BlockData:
 
 GoldenrodCity_BlockData:
 	INCBIN "maps/GoldenrodCity.blk"
-
-GoldenrodBikeShop_BlockData:
-	INCBIN "maps/GoldenrodBikeShop.blk"
 
 GoldenrodFlowerShop_BlockData:
 	INCBIN "maps/GoldenrodFlowerShop.blk"

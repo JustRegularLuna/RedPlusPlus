@@ -149,6 +149,7 @@ class Attributes(object):
 		'maps/BellchimeTrail.blk': lambda: load_palette('gfx/tilesets/palettes/bellchime_trail.pal')[8:16],
 		'maps/EcruteakShrineOutside.blk': lambda: load_palette('gfx/tilesets/palettes/bellchime_trail.pal')[8:16],
 		'maps/Route48.blk': lambda: load_palette('gfx/tilesets/palettes/yellow_forest.pal')[8:16],
+		'maps/StormyBeach.blk': lambda: load_palette('gfx/tilesets/palettes/bg_overcast.pal')[8:16],
 		########################################################################
 		'maps/BrunosRoom.blk': lambda: load_palette('gfx/tilesets/palettes/brunos_room.pal'),
 		'maps/CeladonHomeDecorStore4F.blk': lambda: load_palette('gfx/tilesets/palettes/celadon_home_decor_store_4f.pal'),
