@@ -1,8 +1,10 @@
+# generated
+*.tx
+*.o
+
 # precompiled python
 *.pyc
-
-# compiled object file
-*.o
+*$py.class
 
 # no binaries
 *.exe
@@ -11,35 +13,22 @@
 *.gbc
 *.gb
 
-# rgbds extras
-*.sym
-
-# converted image data
-*.2bpp
-*.1bpp
-*.pic
-
-# swap files for vim
-.*.swp
-
-# no data from extras/
-*.json
-
 # for any of the poor souls with save game files in their working directory
 *.sgm
 *.sav
-*.sys
+*.rtc
+
+# rgbds extras
+*.map
+*.sym
 
 # for vim configuration
 # url: http://www.vim.org/scripts/script.php?script_id=441
 .lvimrc
 
-# ignore GlitchMap files, since that shouldn't really be out and about yet
-GlitchMap/data.js
+# swap files for vim
+.*.swp
 
-# ignore .map files in main folder
-pokered.map
-pokeblue.map
+# swap files for gedit
+*~
 
-# ignore local rgbds
-rgbds/*

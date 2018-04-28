@@ -1,75 +1,82 @@
-; These routines manage gradual fading
-; (e.g., entering a doorway)
-LoadGBPal::
-	ld a, [wMapPalOffset] ;tells if wCurMap is dark (requires HM5_FLASH?)
-	ld b, a
-	ld hl, FadePal4
-	ld a, l
-	sub b
-	ld l, a
-	jr nc, .ok
-	dec h
-.ok
-	ld a, [hli]
-	ld [rBGP], a
-	ld a, [hli]
-	ld [rOBP0], a
-	ld a, [hli]
-	ld [rOBP1], a
-	ret
+; Functions to fade the screen in and out.
 
-GBFadeInFromBlack::
-	ld hl, FadePal1
+RotateFourPalettesRight:: ; 4a3
+	ld hl, IncGradGBPalTable_00
 	ld b, 4
-	jr GBFadeIncCommon
+	jr RotatePalettesRight
+; 4b6
 
-GBFadeOutToWhite::
-	ld hl, FadePal6
+RotateThreePalettesRight:: ; 4b6
+	ld hl, IncGradGBPalTable_05
 	ld b, 3
-
-GBFadeIncCommon:
+RotatePalettesRight:: ; 4c7
+; Rotate palettes to the right and fill with loaded colors from the left
+; If we're already at the leftmost color, fill with the leftmost color
+	push de
 	ld a, [hli]
-	ld [rBGP], a
+	call DmgToCgbBGPals
 	ld a, [hli]
-	ld [rOBP0], a
+	ld e, a
 	ld a, [hli]
-	ld [rOBP1], a
+	ld d, a
+	call DmgToCgbObjPals
 	ld c, 8
 	call DelayFrames
+	pop de
 	dec b
-	jr nz, GBFadeIncCommon
+	jr nz, RotatePalettesRight
 	ret
+; 4dd
 
-GBFadeOutToBlack::
-	ld hl, FadePal4 + 2
+RotateFourPalettesLeft:: ; 4dd
+	ld hl, IncGradGBPalTable_04 - 1
 	ld b, 4
-	jr GBFadeDecCommon
+	jr RotatePalettesLeft
+; 4f0
 
-GBFadeInFromWhite::
-	ld hl, FadePal7 + 2
+RotateThreePalettesLeft:: ; 4f0
+	ld hl, IncGradGBPalTable_07 - 1
 	ld b, 3
-
-GBFadeDecCommon:
+RotatePalettesLeft:: ; 501
+; Rotate palettes to the left and fill with loaded colors from the right
+; If we're already at the rightmost color, fill with the rightmost color
+	push de
 	ld a, [hld]
-	ld [rOBP1], a
+	ld d, a
 	ld a, [hld]
-	ld [rOBP0], a
+	ld e, a
+	call DmgToCgbObjPals
 	ld a, [hld]
-	ld [rBGP], a
+	call DmgToCgbBGPals
 	ld c, 8
 	call DelayFrames
+	pop de
 	dec b
-	jr nz, GBFadeDecCommon
+	jr nz, RotatePalettesLeft
 	ret
+; 517
 
-; HAX: some of these palettes have been modified, mostly to make BGP/OBP0/OBP1 consistent
-; with each other.
-FadePal1:: db %11111111, %11111111, %11111111
-FadePal2:: db %11111110, %11111110, %11111110 ; This is used in dark areas
-FadePal3:: db %11111001, %11111001, %11111001
-FadePal4:: db %11100100, %11100100, %11100100 ; This is the "standard" palette
-;                rBGP      rOBP0      rOBP1
-FadePal5:: db %11100100, %11100100, %11100100
-FadePal6:: db %10010000, %10010000, %10010000
-FadePal7:: db %01000000, %01000000, %01000000
-FadePal8:: db %00000000, %00000000, %00000000
+
+; 517
+IncGradGBPalTable_00:: db %11111111, %11111111, %11111111
+IncGradGBPalTable_01:: db %11111110, %11111110, %11111110
+IncGradGBPalTable_02:: db %11111001, %11111001, %11111001
+IncGradGBPalTable_03:: db %11100100, %11100100, %11100100
+
+IncGradGBPalTable_04:: db %11100100, %11100100, %11100100
+IncGradGBPalTable_05:: db %10010000, %10010000, %10010000
+IncGradGBPalTable_06:: db %01000000, %01000000, %01000000
+
+IncGradGBPalTable_07:: db %00000000, %00000000, %00000000
+;                           bgp       obp1       obp2
+IncGradGBPalTable_08:: db %11111111, %11111111, %11111111
+IncGradGBPalTable_09:: db %11111110, %11111110, %11111000
+IncGradGBPalTable_10:: db %11111001, %11100100, %11100100
+IncGradGBPalTable_11:: db %11100100, %11010000, %11100000
+
+IncGradGBPalTable_12:: db %11100100, %11010000, %11100000
+IncGradGBPalTable_13:: db %10010000, %10000000, %10010000
+IncGradGBPalTable_14:: db %01000000, %01000000, %01000000
+
+IncGradGBPalTable_15:: db %00000000, %00000000, %00000000
+; 547

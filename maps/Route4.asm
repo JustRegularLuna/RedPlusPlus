@@ -1,0 +1,27 @@
+Route4_MapScriptHeader:
+	db 0 ; scene scripts
+
+	db 0 ; callbacks
+
+	db 4 ; warp events
+	warp_event  4,  7, MOUNT_MOON_B1F, 8
+	warp_event 19,  5, MOUNT_MOON_SQUARE, 1 ; TODO: Cable Car Building
+	warp_event 56,  8, HIDDEN_TREE_GROTTO, 1
+	warp_event 28,  4, HIDDEN_CAVE_GROTTO, 1
+
+	db 0 ; coord events
+
+	db 0 ; bg events
+
+	db 9 ; object events
+	treebase_left_event_1 56,  7, SECRET_BASE_ROUTE_4_TREE, EVENT_SECRET_BASE_ROUTE_4_TREE
+	treebase_left_event_2 56,  7, SECRET_BASE_ROUTE_4_TREE, EVENT_SECRET_BASE_ROUTE_4_TREE_ESTABLISHED
+	cavebase_event 28,  3, SECRET_BASE_ROUTE_4_CAVE, EVENT_SECRET_BASE_ROUTE_4_CAVE
+	fruittree_event 37,  6, FRUITTREE_ROUTE_4, ORAN_BERRY
+	object_event 12,  0, SPRITE_CABLE_CAR_SILPH, SPRITEMOVEDATA_CABLE_LARGE, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 13,  2, SPRITE_CABLE_CAR_SILPH, SPRITEMOVEDATA_CABLE_SMALL, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 14,  2, SPRITE_CABLE_CAR_SILPH, SPRITEMOVEDATA_CABLE_LARGE, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 15,  4, SPRITE_CABLE_CAR_SILPH, SPRITEMOVEDATA_CABLE_SMALL, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 17,  4, SPRITE_CABLE_CAR_SILPH, SPRITEMOVEDATA_CABLE_SIDE, 0, 0, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_COMMAND, end, NULL, -1
+
+	const_def 1 ; object constants

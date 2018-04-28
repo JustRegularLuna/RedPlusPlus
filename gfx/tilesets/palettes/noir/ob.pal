@@ -1,0 +1,36 @@
+; morn
+	GRAYSCALE 28, 24, 12, 00 ; red
+	GRAYSCALE 28, 24, 12, 00 ; blue
+	GRAYSCALE 28, 24, 13, 00 ; green
+	GRAYSCALE 28, 24, 12, 00 ; brown
+	GRAYSCALE 28, 24, 14, 00 ; purple
+	GRAYSCALE 31, 31, 13, 00 ; silver
+	GRAYSCALE 20, 14, 11, 07 ; tree
+	GRAYSCALE 28, 19, 14, 07 ; rock
+; day
+	GRAYSCALE 30, 24, 12, 00 ; red
+	GRAYSCALE 30, 24, 12, 00 ; blue
+	GRAYSCALE 30, 24, 13, 00 ; green
+	GRAYSCALE 30, 24, 12, 00 ; brown
+	GRAYSCALE 30, 24, 14, 00 ; purple
+	GRAYSCALE 31, 31, 13, 00 ; silver
+	GRAYSCALE 21, 14, 11, 07 ; tree
+	GRAYSCALE 30, 19, 14, 07 ; rock
+; nite
+	GRAYSCALE 15, 12, 06, 00 ; red
+	GRAYSCALE 15, 12, 07, 00 ; blue
+	GRAYSCALE 15, 12, 07, 00 ; green
+	GRAYSCALE 15, 12, 06, 00 ; brown
+	GRAYSCALE 15, 12, 07, 00 ; purple
+	GRAYSCALE 31, 31, 13, 00 ; silver
+	GRAYSCALE 11, 08, 06, 00 ; tree
+	GRAYSCALE 15, 10, 07, 00 ; rock
+; dark
+	GRAYSCALE 01, 04, 02, 00 ; red
+	GRAYSCALE 01, 04, 02, 00 ; blue
+	GRAYSCALE 01, 04, 02, 00 ; green
+	GRAYSCALE 01, 04, 02, 00 ; brown
+	GRAYSCALE 01, 04, 02, 00 ; purple
+	GRAYSCALE 31, 31, 13, 00 ; silver
+	GRAYSCALE 01, 00, 00, 00 ; tree
+	GRAYSCALE 01, 00, 00, 00 ; rock

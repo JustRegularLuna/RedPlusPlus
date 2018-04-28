@@ -1,142 +1,216 @@
-SoftReset_orig:: ; HAX: "SoftReset" label moved elsewhere (calls this after)
-	call StopAllSounds
-	call GBPalWhiteOut
+SoftReset:: ; 150
+	di
+	call MapSetup_Sound_Off
+	xor a
+	ld [hMapAnims], a
+	call ClearPalettes
+	xor a
+	ld [rIF], a
+	ld a, 1 ; VBlank int
+	ld [rIE], a
+	ei
+
+	ld hl, InputFlags
+	set 7, [hl]
+
 	ld c, 32
 	call DelayFrames
-	; fallthrough
 
-Init::
-;  Program init.
+	jr Init
+; 16e
 
-rLCDC_DEFAULT EQU %11100011
-; * LCD enabled
-; * Window tile map at $9C00
-; * Window display enabled
-; * BG and window tile data at $8800
-; * BG tile map at $9800
-; * 8x8 OBJ size
-; * OBJ display enabled
-; * BG display enabled
+
+_Start:: ; 16e
+	cp $11
+	jr z, .cgb
+	xor a
+	jr .load
+
+.cgb
+	ld a, $1
+
+.load
+	ld [hCGB], a
+
+
+Init:: ; 17d
 
 	di
 
 	xor a
 	ld [rIF], a
 	ld [rIE], a
+	ld [rRP], a
 	ld [rSCX], a
 	ld [rSCY], a
 	ld [rSB], a
 	ld [rSC], a
 	ld [rWX], a
 	ld [rWY], a
-	ld [rTMA], a
-	ld [rTAC], a
 	ld [rBGP], a
 	ld [rOBP0], a
 	ld [rOBP1], a
+	ld [rTMA], a
+	ld [rTAC], a
+	ld [wRAM1Start], a
 
-	ld a, rLCDC_ENABLE_MASK
+	ld a, %100 ; Start timer at 4096Hz
+	ld [rTAC], a
+
+.wait
+	ld a, [rLY]
+	cp 145
+	jr nz, .wait
+
+	xor a
 	ld [rLCDC], a
-	call DisableLCD
 
-	ld sp, wStack
-
-	ld hl, $c000 ; start of WRAM
-	ld bc, $2000 ; size of WRAM
-.loop
+; Clear WRAM bank 0
+	ld hl, wRAM0Start
+	ld bc, wRAM0End - wRAM0Start
+.ByteFill:
 	ld [hl], 0
 	inc hl
 	dec bc
 	ld a, b
 	or c
-	jr nz, .loop
+	jr nz, .ByteFill
 
-	call ClearVram
+	ld sp, Stack
 
-	ld hl, $ff80
-	ld bc, $ffff - $ff80
-	call FillMemory
+; Clear HRAM
+	ld a, [hCGB]
+	push af
+	xor a
+	ld hl, HRAM_START
+	ld bc, HRAM_END - HRAM_START
+	call ByteFill
+	pop af
+	ld [hCGB], a
 
+	call ClearWRAM
+	ld a, 1
+	ld [rSVBK], a
+	call ClearVRAM
 	call ClearSprites
+	call ClearsScratch
 
-	ld a, Bank(WriteDMACodeToHRAM)
-	ld [H_LOADEDROMBANK], a
-	ld [MBC1RomBank], a
-	call WriteDMACodeToHRAM
+; Initialize the RNG state. It can be initialized to anything but zero; this is just a simple way of doing it.
+	ld hl, wRNGState
+	ld a, "R"
+	ld [hli], a
+	ld a, "N"
+	ld [hli], a
+	ld a, "G"
+	ld [hli], a
+	ld [hl], "!"
+
+	ld a, BANK(LoadPushOAM)
+	rst Bankswitch
+
+	call LoadPushOAM
 
 	xor a
-	ld [hTilesetType], a
-	ld [rSTAT], a
+	ld [hMapAnims], a
 	ld [hSCX], a
 	ld [hSCY], a
-	ld [rIF], a
-	ld a, 1 << VBLANK + 1 << TIMER + 1 << SERIAL
-	ld [rIE], a
+	ld [rJOYP], a
 
-	ld a, 144 ; move the window off-screen
+	ld a, $8 ; HBlank int enable
+	ld [rSTAT], a
+
+	ld a, $90
 	ld [hWY], a
 	ld [rWY], a
+
 	ld a, 7
+	ld [hWX], a
 	ld [rWX], a
+
+	ld a, %11100011
+	; LCD on
+	; Win tilemap 1
+	; Win on
+	; BG/Win tiledata 0
+	; BG Tilemap 0
+	; OBJ 8x8
+	; OBJ on
+	; BG on
+	ld [rLCDC], a
 
 	ld a, CONNECTION_NOT_ESTABLISHED
 	ld [hSerialConnectionStatus], a
 
-	ld h, vBGMap0 / $100
-	call ClearBgMap
-	ld h, vBGMap1 / $100
-	call ClearBgMap
+	farcall InitCGBPals
 
-	ld a, rLCDC_DEFAULT
-	ld [rLCDC], a
-	ld a, 16
-	ld [hSoftReset], a
-	call StopAllSounds
+	ld a, VBGMap1 / $100
+	ld [hBGMapAddress + 1], a
+	xor a ; VBGMap1 % $100
+	ld [hBGMapAddress], a
 
+	farcall StartClock
+
+	xor a
+	ld [MBC3LatchClock], a
+	ld [MBC3SRamEnable], a
+
+	call NormalSpeed
+
+	xor a
+	ld [rIF], a
+	ld a, %1111 ; VBlank, LCDStat, Timer, Serial interrupts
+	ld [rIE], a
 	ei
 
-	predef LoadSGB
+	call DelayFrame
 
-	ld a, 0 ; BANK(SFX_Shooting_Star)
-	ld [wAudioROMBank], a
-	ld [wAudioSavedROMBank], a
-	ld a, $9c
-	ld [H_AUTOBGTRANSFERDEST + 1], a
+	call MapSetup_Sound_Off
 	xor a
-	ld [H_AUTOBGTRANSFERDEST], a
-	dec a
-	ld [wUpdateSpritesEnabled], a
+	ld [wMapMusic], a
+	jp GameInit
+; 245
 
-	predef PlayIntro
 
-	call DisableLCD
-	call ClearVram
-	call GBPalNormal
-	call ClearSprites
-	ld a, rLCDC_DEFAULT
-	ld [rLCDC], a
+ClearVRAM:: ; 245
+; Wipe VRAM banks 0 and 1
 
-	jp SetDefaultNamesBeforeTitlescreen
+	ld a, 1
+	ld [rVBK], a
+	call .clear
 
-ClearVram:
-	ld hl, $8000
+	xor a
+	ld [rVBK], a
+.clear
+	ld hl, VTiles0
 	ld bc, $2000
 	xor a
-	jp FillMemory
+	jp ByteFill
+; 25a
 
+ClearWRAM:: ; 25a
+; Wipe swappable WRAM banks (1-7)
 
-StopAllSounds::
-    call OpenSRAMForSound
-    ld hl, MusicPlaying
-	ld bc, (wChannelSelectorSwitches+8) - Crysaudio
-	call FillMemory
-
-	ld a, 0 ; BANK(Audio1_UpdateMusic)
-	ld [wAudioROMBank], a
-	ld [wAudioSavedROMBank], a
+	ld a, 1
+.bank_loop
+	push af
+	ld [rSVBK], a
 	xor a
-	ld [wAudioFadeOutControl], a
-	ld [wNewSoundID], a
-	ld [wLastMusicSoundID], a
-	dec a
-	jp PlaySound
+	ld hl, wRAM1Start
+	ld bc, $1000
+	call ByteFill
+	pop af
+	inc a
+	cp 8
+	jr c, .bank_loop
+	ret
+; 270
+
+ClearsScratch:: ; 270
+	xor a
+	call GetSRAMBank
+	ld hl, sScratch
+	ld bc, $20
+	xor a
+	call ByteFill
+	jp CloseSRAM
+; 283
