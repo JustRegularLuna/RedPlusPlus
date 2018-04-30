@@ -910,6 +910,7 @@ wViridianCityTrigger:: ds 1
 wOaksLabTrigger:: ds 1
 wViridianMartTrigger:: ds 1
 wRoute24Trigger:: ds 1
+wRoute47Trigger:: ds 1
 
 ; fight counts
 wJackFightCount::    ds 1

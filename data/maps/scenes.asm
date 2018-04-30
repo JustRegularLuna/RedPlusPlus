@@ -12,4 +12,5 @@ MapTriggers::
 	scene_var VIRIDIAN_MART, wViridianMartTrigger
 	scene_var ROUTE_18_WEST, wAlways0Trigger
 	scene_var ROUTE_24, wRoute24Trigger
+	scene_var ROUTE_47, wRoute47Trigger
 	db -1
