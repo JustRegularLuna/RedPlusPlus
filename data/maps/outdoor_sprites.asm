@@ -29,6 +29,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_Violet
 	dw OutdoorSprites_RuinsOfAlph
 	dw OutdoorSprites_Azalea
+	dw OutdoorSprites_StormyBeach
 	dw OutdoorSprites_Goldenrod
 	dw OutdoorSprites_Ecruteak
 	dw OutdoorSprites_GoldenrodHarbor
@@ -178,6 +179,11 @@ OutdoorSprites_RuinsOfAlph:
 
 OutdoorSprites_Azalea:
 	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
+OutdoorSprites_StormyBeach:
+	db SPRITE_SIGN_FENCE_TREETOP
+	db SPRITE_SECRET_BASE
 	db 0 ; end
 
 OutdoorSprites_Goldenrod:

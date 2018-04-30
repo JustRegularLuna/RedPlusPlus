@@ -85,6 +85,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .tileset_new_bark_cherrygrove
 	cp TILESET_VIOLET_MAHOGANY
 	jp z, .tileset_violet_mahogany
+	cp TILESET_AZALEA_BLACKTHORN
+	jp z, .tileset_azalea_blackthorn
 	cp TILESET_ECRUTEAK
 	jp z, .tileset_ecruteak
 	cp TILESET_SHRINES_AND_RUINS
@@ -175,11 +177,21 @@ LoadSpecialMapPalette: ; 494ac
 .tileset_violet_mahogany
 	ld a, [MapGroup]
 	cp GROUP_VIOLET_CITY
-	jp nz, .maybe_overcast
+	jp nz, .maybe_overcast ; could be Lake of Rage
 	ld a, [MapNumber]
 	cp MAP_VIOLET_CITY
-	jp nz, .maybe_overcast
+	jp nz, .maybe_overcast ; could be Lake of Rage
 	ld hl, VioletCityPalette
+	jp .load_eight_time_of_day_bg_palettes
+
+.tileset_azalea_blackthorn
+	ld a, [MapGroup]
+	cp GROUP_STORMY_BEACH
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	cp MAP_STORMY_BEACH
+	jp nz, .do_nothing
+	ld hl, StormyBeachPalette
 	jp .load_eight_time_of_day_bg_palettes
 
 .tileset_ecruteak
@@ -1563,6 +1575,54 @@ endr
 	RGB_MONOCHROME_BLACK
 	MONOCHROME_RGB_FOUR_NIGHT
 	MONOCHROME_RGB_FOUR_NIGHT
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
+
+StormyBeachPalette:
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/stormy_beach.pal"
+elif !DEF(MONOCHROME)
+INCLUDE "gfx/tilesets/palettes/stormy_beach.pal"
+else
+rept 6
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+; Day
+rept 6
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_LIGHT
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+; Nite
+rept 4
+	MONOCHROME_RGB_FOUR_NIGHT
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+	MONOCHROME_RGB_FOUR_NIGHT
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
