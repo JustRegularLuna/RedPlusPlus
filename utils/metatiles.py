@@ -148,6 +148,7 @@ class Attributes(object):
 		'maps/EcruteakCity.blk': lambda: load_palette('gfx/tilesets/palettes/ecruteak_city.pal')[8:16],
 		'maps/BellchimeTrail.blk': lambda: load_palette('gfx/tilesets/palettes/bellchime_trail.pal')[8:16],
 		'maps/EcruteakShrineOutside.blk': lambda: load_palette('gfx/tilesets/palettes/bellchime_trail.pal')[8:16],
+		'maps/BattleTowerOutside.blk': lambda: load_palette('gfx/tilesets/palettes/battle_tower_outside.pal')[8:16],
 		'maps/Route48.blk': lambda: load_palette('gfx/tilesets/palettes/yellow_forest.pal')[8:16],
 		'maps/StormyBeach.blk': lambda: load_palette('gfx/tilesets/palettes/bg_overcast.pal')[8:16],
 		########################################################################
