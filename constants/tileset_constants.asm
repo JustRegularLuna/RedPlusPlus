@@ -9,8 +9,8 @@
 	const TILESET_LAVENDER
 	const TILESET_CYCLING_ROAD
 	const TILESET_FUCHSIA
-	const TILESET_SAFFRON
 	const TILESET_SAFARI_ZONE ; does not share metatiles
+	const TILESET_SAFFRON
 	const TILESET_INDIGO ; does not share metatiles
 	const TILESET_FOREST ; does not share metatiles
 GENERIC_KANTO_GFX EQU const_value
