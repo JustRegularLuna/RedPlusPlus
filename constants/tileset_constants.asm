@@ -16,7 +16,7 @@
 GENERIC_KANTO_GFX EQU const_value
 	const TILESET_NEW_BARK_CHERRYGROVE
 	const TILESET_VIOLET_MAHOGANY
-	const TILESET_AZALEA_BLACKTHORN
+	const TILESET_AZALEA_BLACKTHORN ; does not share all metatiles
 	const TILESET_GOLDENROD
 	const TILESET_ECRUTEAK ; does not share all metatiles
 	const TILESET_OLIVINE_CIANWOOD ; does not share all metatiles

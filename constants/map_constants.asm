@@ -344,7 +344,7 @@ MAP_NONE   EQU 0
 	map_const GOLDENROD_CITY,                             24, 18 ;  1
 	map_const ROUTE_34,                                   10, 29 ;  2
 	map_const ROUTE_34_COAST,                              9, 34 ;  3
-	map_const STORMY_BEACH,                               22, 11 ;  4
+	map_const STORMY_BEACH,                               22, 12 ;  4
 	map_const GOLDENROD_POKECOM_CENTER_1F,                16,  8 ;  5
 	map_const GOLDENROD_POKECOM_CENTER_OFFICE,             4,  4 ;  6
 	map_const GOLDENROD_GYM,                              10,  9 ;  7

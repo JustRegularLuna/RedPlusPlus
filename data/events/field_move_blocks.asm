@@ -3,16 +3,23 @@ CutGrassBlockPointers:
 	dbw TILESET_PALLET_CINNABAR, .pallet_cinnabar
 	dbw TILESET_VIRIDIAN, .viridian
 	dbw TILESET_PEWTER, .pewter
+	dbw TILESET_CERULEAN, .cerulean
 	dbw TILESET_VERMILION, .vermilion
 	dbw TILESET_CELADON, .celadon
 	dbw TILESET_LAVENDER, .lavender
 	dbw TILESET_CYCLING_ROAD, .cycling_road
 	dbw TILESET_FUCHSIA, .fuchsia
 	dbw TILESET_SAFFRON, .saffron
-	dbw TILESET_CERULEAN, .cerulean
+	dbw TILESET_SAFARI_ZONE, .safari_zone
 	dbw TILESET_INDIGO, .indigo
 	dbw TILESET_FOREST, .forest
-	dbw TILESET_SAFARI_ZONE, .safari_zone
+	dbw TILESET_NEW_BARK_CHERRYGROVE, .new_bark_cherrygrove
+	dbw TILESET_VIOLET_MAHOGANY, .violet_mahogany
+	dbw TILESET_AZALEA_BLACKTHORN, .azalea_blackthorn
+	dbw TILESET_GOLDENROD, .goldenrod
+	dbw TILESET_ECRUTEAK, .ecruteak
+	dbw TILESET_OLIVINE_CIANWOOD, .olivine_cianwood
+	dbw TILESET_SHRINES_AND_RUINS, .shrines_and_ruins
 	dbw TILESET_PC_PARK, .park
 	dbw TILESET_PC_FOREST, .pc_forest
 	dbw TILESET_PC_SHAMOUTI_ISLAND, .shamouti_island
@@ -35,6 +42,23 @@ CutGrassBlockPointers:
 .fuchsia
 .saffron
 	db $03, $02
+	db -1
+
+.safari_zone
+	db $03, $02
+	db $10, $02
+	db $11, $02
+	db $12, $02
+	db $13, $02
+	db $14, $02
+	db $15, $02
+	db $16, $02
+	db $17, $02
+	db $5f, $88
+	db $60, $1a
+	db $61, $1b
+	db $62, $48
+	db $63, $89
 	db -1
 
 .indigo
@@ -69,21 +93,34 @@ CutGrassBlockPointers:
 	db $57, $20
 	db -1
 
-.safari_zone
+.new_bark_cherrygrove
+	db $96, $02
+	db $97, $02
+	db $f6, $56
+	db $f7, $57
+.violet_mahogany
+.azalea_blackthorn
+.goldenrod
+.ecruteak
 	db $03, $02
-	db $10, $02
-	db $11, $02
-	db $12, $02
-	db $13, $02
-	db $14, $02
-	db $15, $02
-	db $16, $02
-	db $17, $02
-	db $5f, $88
-	db $60, $1a
-	db $61, $1b
-	db $62, $48
-	db $63, $89
+	db $74, $24
+	db $75, $23
+	db $76, $0b
+	db $77, $1b
+	db -1
+
+.olivine_cianwood
+	db $03, $02
+	db $76, $0b
+	db -1
+
+.shrines_and_ruins
+	db $03, $02
+	db $11, $0b
+	db $a6, $c8
+	db $b6, $c9
+	db $b7, $ca
+	db $bb, $a8
 	db -1
 
 .shamouti_island

@@ -5,7 +5,7 @@ GoldenrodCity_MapScriptHeader:
 
 	db 20 ; warp events
 	warp_event 28,  8, GOLDENROD_GYM, 1
-	warp_event 30, 15, GOLDENROD_MUSEUM_1F, 2
+	warp_event 28, 15, GOLDENROD_MUSEUM_1F, 2
 	warp_event 35, 15, GOLDENROD_HAPPINESS_RATER, 1
 	warp_event  9, 25, GOLDENROD_BILLS_HOUSE, 1
 	warp_event 18, 14, GOLDENROD_MAGNET_TRAIN_STATION, 2
