@@ -137,3 +137,4 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR
 	tilecoll WALL, FLOOR, WALL, FLOOR
 	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll WALL, TOP_WALL, WALL, FLOOR
