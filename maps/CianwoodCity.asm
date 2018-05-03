@@ -20,7 +20,7 @@ CianwoodCity_MapScriptHeader:
 
 	db 6 ; object events
 	cavebase_event 12, 13, SECRET_BASE_CIANWOOD_CITY, EVENT_SECRET_BASE_CIANWOOD_CITY
-	smashrock_event  6, 21
+	smashrock_event  6, 22
 	smashrock_event  9, 20
 	smashrock_event  4, 29
 	smashrock_event 10, 27

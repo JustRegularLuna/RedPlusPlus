@@ -13,10 +13,11 @@ LakeofRage_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 9 ; object events
+	db 10 ; object events
 	itemball_event 13,  2, POKE_BALL, 1, -1
-	itemball_event  6, 10, POKE_BALL, 1, -1
+	itemball_event  7, 10, POKE_BALL, 1, -1
 	itemball_event 35,  2, POKE_BALL, 1, -1
+	cuttree_event 23,  4, -1
 	cuttree_event 18,  9, -1
 	cuttree_event 11, 12, -1
 	cuttree_event  5, 14, -1

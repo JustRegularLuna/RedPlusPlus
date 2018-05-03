@@ -172,6 +172,7 @@ OutdoorSprites_Mahogany:
 	db 0 ; end
 
 OutdoorSprites_RuinsOfAlph:
+	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db SPRITE_SIGN_FENCE_TREETOP
@@ -182,8 +183,9 @@ OutdoorSprites_Azalea:
 	db 0 ; end
 
 OutdoorSprites_StormyBeach:
-	db SPRITE_SIGN_FENCE_TREETOP
+	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
+	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_Goldenrod:
@@ -192,6 +194,7 @@ OutdoorSprites_Goldenrod:
 OutdoorSprites_Ecruteak:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
+	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_GoldenrodHarbor:

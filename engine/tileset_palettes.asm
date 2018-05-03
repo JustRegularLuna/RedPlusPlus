@@ -187,10 +187,10 @@ LoadSpecialMapPalette: ; 494ac
 .tileset_azalea_blackthorn
 	ld a, [MapGroup]
 	cp GROUP_STORMY_BEACH
-	jp nz, .do_nothing
+	jp nz, .maybe_overcast ; could be Azalea Town
 	ld a, [MapNumber]
 	cp MAP_STORMY_BEACH
-	jp nz, .do_nothing
+	jp nz, .maybe_overcast ; could be Azalea Town
 	ld hl, StormyBeachPalette
 	jp .load_eight_time_of_day_bg_palettes
 
