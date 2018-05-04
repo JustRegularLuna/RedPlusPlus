@@ -6,7 +6,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, FLOOR
+	tilecoll WALL, LEDGE_DOWN, WALL, WALL
 	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll WALL, WALL, FLOOR, WALL
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
@@ -14,13 +14,13 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, WALL, FLOOR, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, FLOOR, WALL, WALL
+	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, WALL, WALL, WALL
+	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, FLOOR, FLOOR, FLOOR
+	tilecoll LEDGE_DOWN, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, FLOOR
+	tilecoll WALL, FLOOR, WALL, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, WALL
 	tilecoll BUOY, BUOY, BUOY, WATER
 	tilecoll BUOY, BUOY, WATER, WATER
