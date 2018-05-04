@@ -6,7 +6,7 @@ Route2South_MapScriptHeader:
 	db 3 ; warp events
 	warp_event 16,  1, ROUTE_2_GATE, 3
 	warp_event  3,  5, VIRIDIAN_FOREST_VIRIDIAN_GATE, 3
-	warp_event 12,  6, HIDDEN_TREE_GROTTO, 1
+	warp_event 12,  7, HIDDEN_TREE_GROTTO, 1
 
 	db 0 ; coord events
 
@@ -14,13 +14,13 @@ Route2South_MapScriptHeader:
 	bg_event  5, 27, SIGNPOST_JUMPTEXT, Route2Text3
 
 	db 7 ; object events
-	treebase_left_event_1 12,  5, SECRET_BASE_ROUTE_2_SOUTH, EVENT_SECRET_BASE_ROUTE_2_SOUTH
-	treebase_left_event_2 12,  5, SECRET_BASE_ROUTE_2_SOUTH, EVENT_SECRET_BASE_ROUTE_2_SOUTH_ESTABLISHED
-	itemball_event 14, 16, MOON_STONE, 1, -1
-	itemball_event 13,  7, HP_UP, 1, -1
-	cuttree_event 11, 14, -1
+	treebase_left_event_1 12,  6, SECRET_BASE_ROUTE_2_SOUTH, EVENT_SECRET_BASE_ROUTE_2_SOUTH
+	treebase_left_event_2 12,  6, SECRET_BASE_ROUTE_2_SOUTH, EVENT_SECRET_BASE_ROUTE_2_SOUTH_ESTABLISHED
+	itemball_event 14, 17, MOON_STONE, 1, -1
+	itemball_event 13,  8, HP_UP, 1, -1
+	cuttree_event 12, 15, -1
 	cuttree_event 12, 22, -1
-	cuttree_event 12, 30, -1
+	cuttree_event 12, 31, -1
 
 	const_def 1 ; object constants
 

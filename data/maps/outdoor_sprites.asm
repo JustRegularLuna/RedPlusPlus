@@ -86,7 +86,6 @@ OutdoorSprites_Pewter:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
-	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_MountMoonSquare:

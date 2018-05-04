@@ -23,7 +23,7 @@ ViridianCity_MapScriptHeader:
 	bg_event 19, 27, SIGNPOST_JUMPTEXT, ViridianCityText10
 	bg_event 28,  7, SIGNPOST_JUMPTEXT, ViridianCityText13
 
-	db 10 ; object events
+	db 11 ; object events
 	object_event 13, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, PERSONTYPE_COMMAND, jumptextfaceplayer, ViridianCityText1, -1
 	object_event 29,  8, SPRITE_GAMBLER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, ViridianCityGamblerScript, -1
 	object_event 30, 24, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, ViridianCityCaterpillarNerdScript, -1
@@ -34,7 +34,7 @@ ViridianCity_MapScriptHeader:
 	itemball_event 14, 4, POTION, 1, EVENT_GOT_VIRIDIAN_CITY_POTION
 	cuttree_event  8, 22, -1
 	cuttree_event 15,  4, -1
-	cuttree_event 22, -4, -1 ; visible on Route2South
+	cuttree_event 22, -3, -1 ; visible on Route2South
 
 	const_def 1 ; object constants
 
