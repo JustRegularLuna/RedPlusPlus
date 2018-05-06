@@ -15,6 +15,12 @@ Route36_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 6 ; object events
+	cuttree_event 22, 10, -1
+	fruittree_event  9,  6, FRUITTREE_ROUTE_36, ORAN_BERRY
+	object_event 44, 11, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 45, 11, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_RIGHT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 46, 11, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 47, 11, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_RIGHT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
 
 	const_def 1 ; object constants

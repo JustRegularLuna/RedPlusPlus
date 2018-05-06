@@ -29,6 +29,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_Violet
 	dw OutdoorSprites_RuinsOfAlph
 	dw OutdoorSprites_Azalea
+	dw OutdoorSprites_StormyBeach
 	dw OutdoorSprites_Goldenrod
 	dw OutdoorSprites_Ecruteak
 	dw OutdoorSprites_GoldenrodHarbor
@@ -85,7 +86,6 @@ OutdoorSprites_Pewter:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
-	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_MountMoonSquare:
@@ -171,6 +171,7 @@ OutdoorSprites_Mahogany:
 	db 0 ; end
 
 OutdoorSprites_RuinsOfAlph:
+	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_BOULDER_ROCK_FOSSIL
 	db SPRITE_SECRET_BASE
 	db SPRITE_SIGN_FENCE_TREETOP
@@ -180,12 +181,20 @@ OutdoorSprites_Azalea:
 	db SPRITE_BALL_CUT_FRUIT
 	db 0 ; end
 
+OutdoorSprites_StormyBeach:
+	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_BOULDER_ROCK_FOSSIL
+	db SPRITE_SECRET_BASE
+	db SPRITE_SIGN_FENCE_TREETOP
+	db 0 ; end
+
 OutdoorSprites_Goldenrod:
 	db 0 ; end
 
 OutdoorSprites_Ecruteak:
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
+	db SPRITE_SIGN_FENCE_TREETOP
 	db 0 ; end
 
 OutdoorSprites_GoldenrodHarbor:

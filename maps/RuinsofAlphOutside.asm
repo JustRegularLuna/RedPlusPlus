@@ -20,6 +20,16 @@ RuinsofAlphOutside_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 10 ; object events
+	itemball_event  4, 23, POKE_BALL, 1, -1
+	smashrock_event  9, 13
+	smashrock_event 12, 14
+	smashrock_event  6, 15
+	smashrock_event 11, 15
+	smashrock_event  8, 16
+	object_event 18, 33, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 19, 33, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_RIGHT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 20, 33, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 21, 33, SPRITE_SIGN_FENCE_TREETOP, SPRITEMOVEDATA_TILE_RIGHT, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
 
 	const_def 1 ; object constants

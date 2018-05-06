@@ -2429,7 +2429,7 @@ GetOvercastIndex::
 	jr z, .azalea_route_33
 	cp GROUP_LAKE_OF_RAGE ; GROUP_ROUTE_43
 	jr z, .lake_of_rage_route_43
-	cp GROUP_STORMY_BEACH ; GROUP_GOLDENROD_CITY, GROUP_ROUTE_34, GROUP_ROUTE_34_COAST
+	cp GROUP_STORMY_BEACH ; GROUP_ROUTE_34, GROUP_ROUTE_34_COAST
 	jr z, .stormy_beach
 .not_overcast:
 	xor a ; NOT_OVERCAST
@@ -2475,7 +2475,7 @@ GetOvercastIndex::
 	ret
 
 .stormy_beach:
-; Stormy Beach or Goldenrod City, Route 34, and ROute 34 Coast
+; Stormy Beach, Route 34, and Route 34 Coast
 	ld a, [MapNumber]
 ; Stormy Beach is always overcast
 	cp MAP_STORMY_BEACH
