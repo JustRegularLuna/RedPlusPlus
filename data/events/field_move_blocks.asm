@@ -19,8 +19,8 @@ CutGrassBlockPointers:
 	dbw TILESET_GOLDENROD, .goldenrod
 	dbw TILESET_ECRUTEAK, .ecruteak
 	dbw TILESET_OLIVINE_CIANWOOD, .olivine_cianwood
+	dbw TILESET_NATIONAL_PARK, .national_park
 	dbw TILESET_SHRINES_AND_RUINS, .shrines_and_ruins
-	dbw TILESET_PC_PARK, .park
 	dbw TILESET_PC_FOREST, .pc_forest
 	dbw TILESET_PC_SHAMOUTI_ISLAND, .shamouti_island
 	dbw TILESET_PC_VALENCIA_ISLAND, .valencia_island
@@ -114,6 +114,12 @@ CutGrassBlockPointers:
 	db $76, $0b
 	db -1
 
+.national_park
+	db $03, $02
+	db $07, $03
+	db $0b, $03
+	db -1
+
 .shrines_and_ruins
 	db $03, $02
 	db $11, $0b
@@ -127,11 +133,6 @@ CutGrassBlockPointers:
 	db $95, $4c
 .valencia_island
 	db $03, $02
-	db -1
-
-.park
-	db $03, $04
-	db $13, $03
 	db -1
 
 .pc_forest
