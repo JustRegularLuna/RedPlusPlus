@@ -225,6 +225,12 @@ OutdoorSprites_Blackthorn:
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
+OutdoorSprites_JohtoDungeons:
+	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
+	db SPRITE_SIGN_FENCE_TREETOP
+	db 0 ; end
+
 OutdoorSprites_Special:
 OutdoorSprites_SilverCave:
 OutdoorSprites_Shamouti:
@@ -235,7 +241,6 @@ OutdoorSprites_NavelFaraway:
 OutdoorSprites_KantoGates:
 OutdoorSprites_KantoDungeons:
 OutdoorSprites_JohtoGates:
-OutdoorSprites_JohtoDungeons:
 OutdoorSprites_IslandGates:
 OutdoorSprites_IslandDungeons:
 	db 0 ; end

@@ -260,6 +260,18 @@ INCBIN "data/tilesets/battle_tower_outside_attributes.bin"
 
 SECTION "Tileset Data 21", ROMX
 
+TilesetNationalParkGFX::
+INCBIN "gfx/tilesets/national_park.2bpp.unique.lz"
+TilesetNationalParkMeta::
+INCBIN "data/tilesets/national_park_metatiles.bin"
+TilesetNationalParkColl::
+INCLUDE "data/tilesets/national_park_collision.asm"
+TilesetNationalParkAttr::
+INCBIN "data/tilesets/national_park_attributes.bin"
+
+
+SECTION "Tileset Data 22", ROMX
+
 TilesetShrinesAndRuinsGFX::
 INCBIN "gfx/tilesets/shrines_and_ruins.2bpp.unique.lz"
 TilesetShrinesAndRuinsMeta::
@@ -268,6 +280,7 @@ TilesetShrinesAndRuinsColl::
 INCLUDE "data/tilesets/shrines_and_ruins_collision.asm"
 TilesetShrinesAndRuinsAttr::
 INCBIN "data/tilesets/shrines_and_ruins_attributes.bin"
+
 
 
 ;------------------------------------
@@ -344,13 +357,6 @@ TilesetGym2Meta::
 INCBIN "data/tilesets/gym2_metatiles.bin"
 TilesetGym2Coll::
 INCLUDE "data/tilesets/gym2_collision.asm"
-
-TilesetParkGFX::
-INCBIN "gfx/tilesets/park.2bpp.lz"
-TilesetParkMeta::
-INCBIN "data/tilesets/park_metatiles.bin"
-TilesetParkColl::
-INCLUDE "data/tilesets/park_collision.asm"
 
 
 SECTION "PC Tileset Data 5", ROMX
@@ -676,9 +682,6 @@ SECTION "PC Tileset Data 25", ROMX
 
 TilesetPCForestAttr::
 INCBIN "data/tilesets/pc_forest_attributes.bin"
-
-TilesetParkAttr::
-INCBIN "data/tilesets/park_attributes.bin"
 
 
 SECTION "PC Tileset Data 26", ROMX
