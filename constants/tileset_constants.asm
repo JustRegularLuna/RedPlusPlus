@@ -21,6 +21,7 @@ GENERIC_KANTO_GFX EQU const_value
 	const TILESET_ECRUTEAK ; does not share all metatiles
 	const TILESET_OLIVINE_CIANWOOD ; does not share all metatiles
 	const TILESET_BATTLE_TOWER_OUTSIDE
+	const TILESET_NATIONAL_PARK
 	const TILESET_SHRINES_AND_RUINS
 GENERIC_GFX EQU const_value
 ; These are independent tilesets
@@ -56,7 +57,6 @@ GENERIC_GFX EQU const_value
 	const TILESET_PC_ICE_PATH
 	const TILESET_PC_TUNNEL
 	const TILESET_PC_FOREST
-	const TILESET_PC_PARK
 	const TILESET_PC_RUINS_OF_ALPH
 	const TILESET_PC_ALPH_WORD_ROOM
 	const TILESET_PC_POKEMON_MANSION

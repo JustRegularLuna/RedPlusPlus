@@ -27,6 +27,7 @@ Tileset00End::
 	tileset TilesetEcruteak
 	tileset TilesetOlivineCianwood
 	tileset TilesetBattleTowerOutside
+	tileset TilesetNationalPark
 	tileset TilesetShrinesAndRuins
 	;------------------------------------
 	tileset TilesetShamouti
@@ -60,7 +61,6 @@ Tileset00End::
 	tileset TilesetIcePath
 	tileset TilesetTunnel
 	tileset TilesetPCForest
-	tileset TilesetPark
 	tileset TilesetRuins
 	tileset TilesetAlph
 	tileset TilesetPokemonMansion

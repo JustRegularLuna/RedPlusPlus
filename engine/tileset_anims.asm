@@ -39,9 +39,9 @@ Tileset00Anim:
 TilesetPalletCinnabarAnim:
 TilesetViridianAnim:
 TilesetPewterAnim:
-TilesetCeruleanAnim:
+TilesetCeruleanAnim: ; TODO: waterfall $ec
 TilesetVermilionAnim:
-TilesetCeladonAnim:
+TilesetCeladonAnim: ; TODO: AnimateFountain $ff
 TilesetLavenderAnim:
 TilesetCyclingRoadAnim:
 TilesetFuchsiaAnim:
@@ -50,13 +50,14 @@ TilesetIndigoAnim:
 TilesetForestAnim:
 TilesetSafariZoneAnim:
 TilesetNewBarkCherrygroveAnim:
-TilesetVioletMahoganyAnim:
-TilesetAzaleaBlackthornAnim:
+TilesetVioletMahoganyAnim: ; TODO: AnimateRainPuddleTile $ec
+TilesetAzaleaBlackthornAnim: ; TODO: waterfall $9a, AnimateRainPuddleTile $e8
 TilesetGoldenrodAnim:
-TilesetEcruteakAnim:
+TilesetEcruteakAnim: ; TODO: waterfall $9a
 TilesetOlivineCianwoodAnim:
 TilesetBattleTowerOutsideAnim:
-TilesetShrinesAndRuinsAnim:
+TilesetNationalParkAnim: ; TODO: AnimateFountain $ca
+TilesetShrinesAndRuinsAnim: ; TODO: waterfall $9a
 	dw KantoWaterFrames, AnimateFarawayWaterTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -210,19 +211,6 @@ TilesetQuietCaveAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw VTiles2 tile $26, WriteTileFromBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw NULL,  DoneTileAnimation
-
-TilesetParkAnim:
-	dw VTiles2 tile $14, AnimateWaterTile
-	dw NULL,  WaitTileAnimation
-	dw VTiles2 tile $15, AnimateFountain
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
 TilesetIcePathAnim:

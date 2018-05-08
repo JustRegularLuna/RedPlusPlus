@@ -399,12 +399,17 @@ MAP_NONE   EQU 0
 
 	newgroup ; 33
 
+	map_const NATIONAL_PARK,             21, 27 ;  1
+	map_const NATIONAL_PARK_BUG_CONTEST, 21, 27 ;  2
+
+	newgroup ; 34
+
 	map_const ROUTE_38,           20, 14 ;  1
 	map_const ROUTE_39,           12, 23 ;  2
 	map_const ROUTE_39_BARN,       4,  4 ;  3
 	map_const ROUTE_39_FARMHOUSE,  4,  4 ;  4
 
-	newgroup ; 34
+	newgroup ; 35
 
 	map_const OLIVINE_CITY,                    31, 16 ;  1
 	map_const ROUTE_35_COAST,                  24, 14 ;  2
@@ -418,7 +423,7 @@ MAP_NONE   EQU 0
 	map_const OLIVINE_PUNISHMENT_SPEECH_HOUSE,  4,  4 ; 10
 	map_const OLIVINE_GOOD_ROD_HOUSE,           4,  4 ; 11
 
-	newgroup ; 35
+	newgroup ; 36
 
 	map_const BATTLE_TOWER_OUTSIDE,     13, 13 ;  1
 	map_const BATTLE_TOWER_1F,          11,  7 ;  2
@@ -427,11 +432,11 @@ MAP_NONE   EQU 0
 	map_const BATTLE_TOWER_HALLWAY,     11,  2 ;  5
 	map_const BATTLE_TOWER_BATTLE_ROOM,  4,  4 ;  6
 
-	newgroup ; 36
+	newgroup ; 37
 
 	map_const ROUTE_41, 32, 27 ;  1
 
-	newgroup ; 37
+	newgroup ; 38
 
 	map_const CIANWOOD_CITY,               15, 27 ;  1
 	map_const ROUTE_40,                    10, 20 ;  2
@@ -443,15 +448,15 @@ MAP_NONE   EQU 0
 	map_const CIANWOOD_CITY_PHOTO_STUDIO,   4,  4 ;  8
 	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,  4,  4 ;  9
 
-	newgroup ; 38
+	newgroup ; 39
 
 	map_const ROUTE_47, 39, 19 ;  1
 
-	newgroup ; 39
+	newgroup ; 40
 
 	map_const ROUTE_48, 18, 11 ;  2
 
-	newgroup ; 40
+	newgroup ; 41
 
 	map_const MAHOGANY_TOWN,                      10, 12 ;  1
 	map_const ROUTE_42,                           30,  9 ;  2
@@ -460,14 +465,14 @@ MAP_NONE   EQU 0
 	map_const MAHOGANY_GYM,                        5,  9 ;  5
 	map_const MAHOGANY_RED_GYARADOS_SPEECH_HOUSE,  4,  4 ;  6
 
-	newgroup ; 41
+	newgroup ; 42
 
 	map_const LAKE_OF_RAGE,                    20, 18 ;  1
 	map_const ROUTE_43,                        10, 26 ;  2
 	map_const LAKE_OF_RAGE_MAGIKARP_HOUSE,      4,  4 ;  3
 	map_const LAKE_OF_RAGE_HIDDEN_POWER_HOUSE,  4,  4 ;  4
 
-	newgroup ; 42
+	newgroup ; 43
 
 	map_const BLACKTHORN_CITY,                23, 20 ;  1
 	map_const ROUTE_45,                       13, 46 ;  2
@@ -480,14 +485,14 @@ MAP_NONE   EQU 0
 	map_const BLACKTHORN_DRAGON_SPEECH_HOUSE,  4,  4 ;  9
 	map_const BLACKTHORN_EMYS_HOUSE,           4,  4 ; 10
 
-	newgroup ; 43
+	newgroup ; 44
 
 	map_const SILVER_CAVE_OUTSIDE,          20, 16 ;  1
 	map_const ROUTE_28,                     20, 11 ;  2
 	map_const SILVER_CAVE_POKECENTER_1F,     6,  4 ;  3
 	map_const ROUTE_28_FAMOUS_SPEECH_HOUSE,  4,  4 ;  4
 
-	newgroup ; 44
+	newgroup ; 45
 
 	map_const SHAMOUTI_ISLAND,           18, 15 ;  1
 	map_const BEAUTIFUL_BEACH,           21, 15 ;  2
@@ -507,18 +512,18 @@ MAP_NONE   EQU 0
 	map_const BEAUTIFUL_BEACH_VILLA,      6,  4 ; 16
 	map_const ROCKY_BEACH_HOUSE,          4,  4 ; 17
 
-	newgroup ; 45
+	newgroup ; 46
 
 	map_const SHAMOUTI_SHRINE_RUINS, 12, 17 ;  1
 
-	newgroup ; 46
+	newgroup ; 47
 
 	map_const WARM_BEACH,       12, 13 ;  1
 	map_const SHAMOUTI_COAST,   48, 10 ;  2
 	map_const WARM_BEACH_SHACK,  4,  4 ;  3
 	map_const WARM_BEACH_HOUSE,  4,  4 ;  4
 
-	newgroup ; 47
+	newgroup ; 48
 
 	map_const VALENCIA_ISLAND, 14, 12 ;  1
 	map_const ROUTE_49,        20, 11 ;  2
@@ -527,12 +532,12 @@ MAP_NONE   EQU 0
 	map_const VALENCIA_HOUSE,   4,  4 ;  5
 	map_const VALENCIA_PORT,   11,  9 ;  6
 
-	newgroup ; 48
+	newgroup ; 49
 
 	map_const NAVEL_ROCK_OUTSIDE, 13, 16 ;  1
 	map_const FARAWAY_ISLAND,     17, 23 ;  2
 
-	newgroup ; 49
+	newgroup ; 50
 
 	map_const ROUTE_1_VIRIDIAN_GATE,          5,  4 ;  3
 	map_const VIRIDIAN_FOREST_VIRIDIAN_GATE,  5,  4 ; 16
@@ -559,7 +564,7 @@ MAP_NONE   EQU 0
 	map_const SAFARI_ZONE_FUCHSIA_GATE,       5,  4 ;  9
 	map_const POKEMON_LEAGUE_GATE,           11,  9 ; 14
 
-	newgroup ; 50
+	newgroup ; 51
 
 	map_const VIRIDIAN_FOREST,                        21, 28 ;  1
 	map_const MOUNT_MOON_1F,                          15, 13 ;  2
@@ -601,7 +606,7 @@ MAP_NONE   EQU 0
 	map_const CERULEAN_CAVE_2F,                       17, 11 ; 38
 	map_const CERULEAN_CAVE_B1F,                      17, 11 ; 39
 
-	newgroup ; 51
+	newgroup ; 52
 
 	map_const ROUTE_29_46_GATE,             5,  4 ;  1
 	map_const ROUTE_31_VIOLET_GATE,         5,  4 ;  2
@@ -622,7 +627,7 @@ MAP_NONE   EQU 0
 	map_const ROUTE_43_MAHOGANY_GATE,       5,  4 ; 17
 	map_const ROUTE_43_GATE,                5,  4 ; 18
 
-	newgroup ; 52
+	newgroup ; 53
 
 	map_const TOHJO_FALLS,                            15,  9 ;  1
 	map_const GIOVANNIS_CAVE,                         10, 24 ;  2
@@ -662,71 +667,69 @@ MAP_NONE   EQU 0
 	map_const RADIO_TOWER_3F,                          9,  4 ; 36
 	map_const RADIO_TOWER_4F,                          9,  4 ; 37
 	map_const RADIO_TOWER_5F,                          9,  4 ; 38
-	map_const NATIONAL_PARK,                          21, 27 ; 39
-	map_const NATIONAL_PARK_BUG_CONTEST,              21, 27 ; 40
-	map_const BURNED_TOWER_1F,                         8,  8 ; 41
-	map_const BURNED_TOWER_B1F,                       10,  9 ; 42
-	map_const TIN_TOWER_1F,                            8,  8 ; 43
-	map_const TIN_TOWER_2F,                            8,  8 ; 44
-	map_const TIN_TOWER_3F,                            8,  8 ; 45
-	map_const TIN_TOWER_4F,                            8,  8 ; 46
-	map_const TIN_TOWER_5F,                            8,  8 ; 47
-	map_const TIN_TOWER_6F,                            8,  8 ; 48
-	map_const TIN_TOWER_7F,                            8,  8 ; 49
-	map_const TIN_TOWER_8F,                            8,  8 ; 50
-	map_const TIN_TOWER_9F,                            8,  8 ; 51
-	map_const TIN_TOWER_10F,                           8,  8 ; 52
-	map_const TIN_TOWER_ROOF,                          7,  9 ; 53
-	map_const OLIVINE_LIGHTHOUSE_1F,                  10,  9 ; 54
-	map_const OLIVINE_LIGHTHOUSE_2F,                  10,  9 ; 55
-	map_const OLIVINE_LIGHTHOUSE_3F,                  10,  9 ; 56
-	map_const OLIVINE_LIGHTHOUSE_4F,                  10,  9 ; 57
-	map_const OLIVINE_LIGHTHOUSE_5F,                  10,  9 ; 58
-	map_const OLIVINE_LIGHTHOUSE_6F,                  10,  9 ; 59
-	map_const OLIVINE_LIGHTHOUSE_ROOF,                10, 10 ; 60
-	map_const WHIRL_ISLAND_NW,                        17, 18 ; 61
-	map_const WHIRL_ISLAND_NE,                        10,  9 ; 62
-	map_const WHIRL_ISLAND_SW,                        10,  9 ; 63
-	map_const WHIRL_ISLAND_CAVE,                      20, 45 ; 64
-	map_const WHIRL_ISLAND_SE,                         5,  9 ; 65
-	map_const WHIRL_ISLAND_B1F,                       20, 18 ; 66
-	map_const WHIRL_ISLAND_B2F,                       10, 18 ; 67
-	map_const WHIRL_ISLAND_LUGIA_CHAMBER,             10,  9 ; 68
-	map_const CLIFF_CAVE,                              6, 18 ; 69
-	map_const YELLOW_FOREST,                          29, 26 ; 70
-	map_const QUIET_CAVE_1F,                          18, 18 ; 71
-	map_const QUIET_CAVE_B1F,                         18, 18 ; 72
-	map_const QUIET_CAVE_B2F,                         18, 18 ; 73
-	map_const QUIET_CAVE_B3F,                         18, 18 ; 74
-	map_const EMBEDDED_TOWER,                          7, 12 ; 75
-	map_const MOUNT_MORTAR_1F_OUTSIDE,                20, 18 ; 76
-	map_const MOUNT_MORTAR_1F_INSIDE,                 20, 25 ; 77
-	map_const MOUNT_MORTAR_2F_INSIDE,                 20, 18 ; 78
-	map_const MOUNT_MORTAR_B1F,                       20, 18 ; 79
-	map_const MAHOGANY_MART_1F,                        4,  4 ; 80
-	map_const TEAM_ROCKET_BASE_B1F,                   15,  9 ; 81
-	map_const TEAM_ROCKET_BASE_B2F,                   15,  9 ; 82
-	map_const TEAM_ROCKET_BASE_B3F,                   15,  9 ; 83
-	map_const ICE_PATH_1F,                            20, 15 ; 84
-	map_const ICE_PATH_B1F,                           10, 18 ; 85
-	map_const ICE_PATH_B2F_MAHOGANY_SIDE,             10,  9 ; 86
-	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,            5,  9 ; 87
-	map_const ICE_PATH_B3F,                           10,  5 ; 88
-	map_const DRAGONS_DEN_1F,                         20, 45 ; 89
-	map_const DRAGONS_DEN_B1F,                        20, 18 ; 90
-	map_const DRAGON_SHRINE,                           5,  5 ; 91
-	map_const SILVER_CAVE_ROOM_1,                     10, 18 ; 92
-	map_const SILVER_CAVE_ROOM_2,                     15, 17 ; 93
-	map_const SILVER_CAVE_ROOM_3,                     10, 17 ; 94
-	map_const SILVER_CAVE_ITEM_ROOMS,                 20, 18 ; 95
+	map_const BURNED_TOWER_1F,                         8,  8 ; 39
+	map_const BURNED_TOWER_B1F,                       10,  9 ; 40
+	map_const TIN_TOWER_1F,                            8,  8 ; 41
+	map_const TIN_TOWER_2F,                            8,  8 ; 42
+	map_const TIN_TOWER_3F,                            8,  8 ; 43
+	map_const TIN_TOWER_4F,                            8,  8 ; 44
+	map_const TIN_TOWER_5F,                            8,  8 ; 45
+	map_const TIN_TOWER_6F,                            8,  8 ; 46
+	map_const TIN_TOWER_7F,                            8,  8 ; 47
+	map_const TIN_TOWER_8F,                            8,  8 ; 48
+	map_const TIN_TOWER_9F,                            8,  8 ; 49
+	map_const TIN_TOWER_10F,                           8,  8 ; 50
+	map_const TIN_TOWER_ROOF,                          7,  9 ; 51
+	map_const OLIVINE_LIGHTHOUSE_1F,                  10,  9 ; 52
+	map_const OLIVINE_LIGHTHOUSE_2F,                  10,  9 ; 53
+	map_const OLIVINE_LIGHTHOUSE_3F,                  10,  9 ; 54
+	map_const OLIVINE_LIGHTHOUSE_4F,                  10,  9 ; 55
+	map_const OLIVINE_LIGHTHOUSE_5F,                  10,  9 ; 56
+	map_const OLIVINE_LIGHTHOUSE_6F,                  10,  9 ; 57
+	map_const OLIVINE_LIGHTHOUSE_ROOF,                10, 10 ; 58
+	map_const WHIRL_ISLAND_NW,                        17, 18 ; 59
+	map_const WHIRL_ISLAND_NE,                        10,  9 ; 60
+	map_const WHIRL_ISLAND_SW,                        10,  9 ; 61
+	map_const WHIRL_ISLAND_CAVE,                      20, 45 ; 62
+	map_const WHIRL_ISLAND_SE,                         5,  9 ; 63
+	map_const WHIRL_ISLAND_B1F,                       20, 18 ; 64
+	map_const WHIRL_ISLAND_B2F,                       10, 18 ; 65
+	map_const WHIRL_ISLAND_LUGIA_CHAMBER,             10,  9 ; 66
+	map_const CLIFF_CAVE,                              6, 18 ; 67
+	map_const YELLOW_FOREST,                          29, 26 ; 68
+	map_const QUIET_CAVE_1F,                          18, 18 ; 69
+	map_const QUIET_CAVE_B1F,                         18, 18 ; 70
+	map_const QUIET_CAVE_B2F,                         18, 18 ; 71
+	map_const QUIET_CAVE_B3F,                         18, 18 ; 72
+	map_const EMBEDDED_TOWER,                          7, 12 ; 73
+	map_const MOUNT_MORTAR_1F_OUTSIDE,                20, 18 ; 74
+	map_const MOUNT_MORTAR_1F_INSIDE,                 20, 25 ; 75
+	map_const MOUNT_MORTAR_2F_INSIDE,                 20, 18 ; 76
+	map_const MOUNT_MORTAR_B1F,                       20, 18 ; 77
+	map_const MAHOGANY_MART_1F,                        4,  4 ; 78
+	map_const TEAM_ROCKET_BASE_B1F,                   15,  9 ; 79
+	map_const TEAM_ROCKET_BASE_B2F,                   15,  9 ; 80
+	map_const TEAM_ROCKET_BASE_B3F,                   15,  9 ; 81
+	map_const ICE_PATH_1F,                            20, 15 ; 82
+	map_const ICE_PATH_B1F,                           10, 18 ; 83
+	map_const ICE_PATH_B2F_MAHOGANY_SIDE,             10,  9 ; 84
+	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,            5,  9 ; 85
+	map_const ICE_PATH_B3F,                           10,  5 ; 86
+	map_const DRAGONS_DEN_1F,                         20, 45 ; 87
+	map_const DRAGONS_DEN_B1F,                        20, 18 ; 88
+	map_const DRAGON_SHRINE,                           5,  5 ; 89
+	map_const SILVER_CAVE_ROOM_1,                     10, 18 ; 90
+	map_const SILVER_CAVE_ROOM_2,                     15, 17 ; 91
+	map_const SILVER_CAVE_ROOM_3,                     10, 17 ; 92
+	map_const SILVER_CAVE_ITEM_ROOMS,                 20, 18 ; 93
 
-	newgroup ; 53
+	newgroup ; 54
 
 	map_const SEAGALLOP_FERRY_VERMILION_GATE,  7,  6 ;  1
 	map_const SEAGALLOP_FERRY_NAVEL_GATE,      7,  6 ;  2
 	map_const SEAGALLOP_FERRY_SHAMOUTI_GATE,   7,  6 ;  3
 
-	newgroup ; 54
+	newgroup ; 55
 
 	map_const NOISY_FOREST,          22, 20 ;  1
 	map_const SHAMOUTI_TUNNEL,       18, 10 ;  2

@@ -45,6 +45,9 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, BattleTowerOutsidePalette
 	cp TILESET_BATTLE_TOWER_OUTSIDE
 	jp z, .load_eight_time_of_day_bg_palettes
+	ld hl, NationalParkPalette
+	cp TILESET_NATIONAL_PARK
+	jp z, .load_eight_time_of_day_bg_palettes
 
 	ld hl, PokeComPalette
 	cp TILESET_PC_POKECOM_CENTER
@@ -872,6 +875,41 @@ if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/battle_tower_outside.pal"
 elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/battle_tower_outside.pal"
+else
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+rept 4
+	MONOCHROME_RGB_FOUR_NIGHT
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+	MONOCHROME_RGB_FOUR_NIGHT
+	MONOCHROME_RGB_FOUR_NIGHT
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
+
+NationalParkPalette:
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/national_park.pal"
+elif !DEF(MONOCHROME)
+INCLUDE "gfx/tilesets/palettes/national_park.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
