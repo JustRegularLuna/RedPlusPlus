@@ -33,6 +33,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_Goldenrod
 	dw OutdoorSprites_Ecruteak
 	dw OutdoorSprites_GoldenrodHarbor
+	dw OutdoorSprites_NationalPark
 	dw OutdoorSprites_Route39
 	dw OutdoorSprites_Olivine
 	dw OutdoorSprites_BattleTower
@@ -207,6 +208,12 @@ OutdoorSprites_Cianwood:
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
+OutdoorSprites_NationalPark:
+	db SPRITE_BALL_CUT_FRUIT
+	db SPRITE_SECRET_BASE
+	db SPRITE_SIGN_FENCE_TREETOP
+	db 0 ; end
+
 OutdoorSprites_BattleTower:
 	db 0 ; end
 
@@ -225,12 +232,6 @@ OutdoorSprites_Blackthorn:
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
-OutdoorSprites_JohtoDungeons:
-	db SPRITE_BALL_CUT_FRUIT
-	db SPRITE_SECRET_BASE
-	db SPRITE_SIGN_FENCE_TREETOP
-	db 0 ; end
-
 OutdoorSprites_Special:
 OutdoorSprites_SilverCave:
 OutdoorSprites_Shamouti:
@@ -241,6 +242,7 @@ OutdoorSprites_NavelFaraway:
 OutdoorSprites_KantoGates:
 OutdoorSprites_KantoDungeons:
 OutdoorSprites_JohtoGates:
+OutdoorSprites_JohtoDungeons:
 OutdoorSprites_IslandGates:
 OutdoorSprites_IslandDungeons:
 	db 0 ; end
