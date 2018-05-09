@@ -56,7 +56,7 @@ TilesetGoldenrodAnim:
 TilesetEcruteakAnim: ; TODO: waterfall $9a
 TilesetOlivineCianwoodAnim:
 TilesetBattleTowerOutsideAnim:
-TilesetNationalParkAnim: ; TODO: AnimateFountain $ca
+TilesetNationalParkAnim: ; TODO: AnimateFountain $bc
 TilesetShrinesAndRuinsAnim: ; TODO: waterfall $9a
 	dw KantoWaterFrames, AnimateFarawayWaterTiles
 	dw NULL,  WaitTileAnimation
