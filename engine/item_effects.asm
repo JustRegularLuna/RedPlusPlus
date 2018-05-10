@@ -1399,7 +1399,12 @@ ReturnToBattle_UseBall: ; edfa (3:6dfa)
 	farjp _ReturnToBattle_UseBall
 
 TownMapEffect:
-	farjp Special_TownMapItem
+	call FadeToMenu
+	farcall _TownMap
+	farcall Pack_InitGFX
+	farcall WaitBGMap_DrawPackGFX
+	farcall Pack_InitColors
+	jp Call_ExitMenu
 
 Bicycle: ; ee08
 	farjp BikeFunction
