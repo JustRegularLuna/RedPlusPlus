@@ -120,13 +120,6 @@ Special_TownMap: ; c2c0
 	jp ExitAllMenus
 ; c2cd
 
-Special_TownMapItem:
-	call FadeToMenu
-	farcall _TownMap
-	farcall Pack_InitGFX
-	farcall Pack_InitColors
-	jp Call_ExitMenu
-
 Special_DisplayLinkRecord: ; c2da
 	call FadeToMenu
 	farcall DisplayLinkRecord
