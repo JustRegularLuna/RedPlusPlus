@@ -96,6 +96,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .tileset_shrines_and_ruins
 	cp TILESET_FOREST
 	jp z, .tileset_forest
+	cp TILESET_LAB
+	jp z, .tileset_lab
 
 	cp TILESET_PC_POKECENTER
 	jp z, .pokecenter
@@ -116,7 +118,7 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_PC_UNDERGROUND
 	jp z, .maybe_fuchsia_gym
 	cp TILESET_PC_LAB
-	jp z, .maybe_lab_or_dragon_shrine
+	jp z, .maybe_dragon_shrine
 	cp TILESET_PC_TUNNEL
 	jp z, .maybe_lightning_island
 	cp TILESET_PC_SPROUT_TOWER
@@ -243,6 +245,34 @@ LoadSpecialMapPalette: ; 494ac
 	cp MAP_VIRIDIAN_FOREST
 	jp nz, .do_nothing
 	ld hl, ViridianForestPalette
+	jp .load_eight_bg_palettes
+
+.tileset_lab
+	ld a, [MapGroup]
+	cp GROUP_OAKS_LAB
+	jr nz, .not_oaks_lab
+	ld a, [MapNumber]
+	cp MAP_OAKS_LAB
+	jr nz, .not_oaks_lab
+	ld hl, OaksLabPalette
+	jp .load_eight_bg_palettes
+.not_oaks_lab
+	ld a, [MapGroup]
+	cp GROUP_ELMS_LAB
+	jr nz, .not_elms_lab
+	ld a, [MapNumber]
+	cp MAP_ELMS_LAB
+	jr nz, .not_elms_lab
+	ld hl, ElmsLabPalette
+	jp .load_eight_bg_palettes
+.not_elms_lab
+	ld a, [MapGroup]
+	cp GROUP_IVYS_LAB
+	jp nz, .do_nothing
+	ld a, [MapNumber]
+	cp GROUP_IVYS_LAB
+	jp nz, .do_nothing
+	ld hl, IvysLabPalette
 	jp .load_eight_bg_palettes
 
 
@@ -373,27 +403,7 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, FuchsiaGymPalette
 	jp .load_eight_bg_palettes
 
-.maybe_lab_or_dragon_shrine
-	ld a, [MapGroup]
-	cp GROUP_OAKS_LAB
-	jp nz, .not_oaks_lab
-	ld a, [MapNumber]
-	cp MAP_OAKS_LAB
-	jp nz, .not_oaks_lab
-	ld hl, OaksLabPalette
-	jp .load_eight_bg_palettes
-
-.not_oaks_lab
-	ld a, [MapGroup]
-	cp GROUP_IVYS_LAB
-	jp nz, .not_ivys_lab
-	ld a, [MapNumber]
-	cp MAP_IVYS_LAB
-	jp nz, .not_ivys_lab
-	ld hl, IvysLabPalette
-	jp .load_eight_bg_palettes
-
-.not_ivys_lab
+.maybe_dragon_shrine
 	ld a, [MapGroup]
 	cp GROUP_DRAGON_SHRINE
 	jp nz, .do_nothing
@@ -1302,6 +1312,21 @@ if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/oaks_lab.pal"
 elif !DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/oaks_lab.pal"
+else
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
+
+ElmsLabPalette:
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/elms_lab.pal"
+elif !DEF(MONOCHROME)
+INCLUDE "gfx/tilesets/palettes/elms_lab.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
