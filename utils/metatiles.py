@@ -152,6 +152,9 @@ class Attributes(object):
 		'maps/NationalPark.blk': lambda: load_palette('gfx/tilesets/palettes/national_park.pal')[8:16],
 		'maps/Route48.blk': lambda: load_palette('gfx/tilesets/palettes/yellow_forest.pal')[8:16],
 		'maps/StormyBeach.blk': lambda: load_palette('gfx/tilesets/palettes/stormy_beach.pal')[8:16],
+		'maps/OaksLab.blk': lambda: load_palette('gfx/tilesets/palettes/oaks_lab.pal'),
+		'maps/ElmsLab.blk': lambda: load_palette('gfx/tilesets/palettes/elms_lab.pal'),
+		'maps/IvysLab.blk': lambda: load_palette('gfx/tilesets/palettes/ivys_lab.pal'),
 		########################################################################
 		'maps/BrunosRoom.blk': lambda: load_palette('gfx/tilesets/palettes/brunos_room.pal'),
 		'maps/CeladonHomeDecorStore4F.blk': lambda: load_palette('gfx/tilesets/palettes/celadon_home_decor_store_4f.pal'),
@@ -186,7 +189,6 @@ class Attributes(object):
 		'maps/HauntedRadioTower6F.blk': lambda: load_palette('gfx/tilesets/palettes/haunted_pokemon_tower.pal'),
 		'maps/HiddenCaveGrotto.blk': lambda: load_palette('gfx/tilesets/palettes/hidden_cave_grotto.pal'),
 		'maps/HiddenTreeGrotto.blk': lambda: load_palette('gfx/tilesets/palettes/hidden_tree_grotto.pal'),
-		'maps/IvysLab.blk': lambda: load_palette('gfx/tilesets/palettes/ivys_lab.pal'),
 		'maps/KarensRoom.blk': lambda: load_palette('gfx/tilesets/palettes/karens_room.pal'),
 		'maps/KogasRoom.blk': lambda: load_palette('gfx/tilesets/palettes/kogas_room.pal'),
 		'maps/LancesRoom.blk': lambda: load_palette('gfx/tilesets/palettes/lances_room.pal'),
@@ -199,7 +201,6 @@ class Attributes(object):
 		'maps/NavelRockInside.blk': lambda: load_palette('gfx/tilesets/palettes/navel_rock.pal')[8:16],
 		'maps/NavelRockRoof.blk': lambda: load_palette('gfx/tilesets/palettes/navel_rock.pal')[8:16],
 		'maps/NoisyForest.blk': lambda: load_palette('gfx/tilesets/palettes/shamouti_island.pal')[16:24],
-		'maps/OaksLab.blk': lambda: load_palette('gfx/tilesets/palettes/oaks_lab.pal'),
 		'maps/OlivineLighthouseRoof.blk': lambda: load_palette('gfx/tilesets/palettes/goldenrod_dept_store_roof.pal')[8:16],
 		'maps/SaffronGym.blk': lambda: load_palette('gfx/tilesets/palettes/saffron_gym.pal'),
 		'maps/ScaryCave1F.blk': lambda: load_palette('gfx/tilesets/palettes/scary_cave.pal'),
@@ -227,6 +228,7 @@ class Attributes(object):
 		'saffron': lambda: load_palette('gfx/tilesets/palettes/saffron.pal')[8:16],
 		'forest': lambda: Attributes.nite_palette(),
 		'safari_zone': lambda: load_palette('gfx/tilesets/palettes/safari_zone.pal')[8:16],
+		'lab': lambda: Attributes.indoor_palette(),
 		########################################################################
 		'johto1': lambda: Attributes.day_palette(),
 		'johto2': lambda: Attributes.day_palette(),

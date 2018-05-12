@@ -35,14 +35,14 @@
 	GRAYSCALE 01, 00, 00, 00 ; roof
 	GRAYSCALE 01, 31, 13, 00 ; text
 ; indoor
-	GRAYSCALE 28, 19, 13, 07 ; gray
-	GRAYSCALE 28, 23, 16, 07 ; red
-	GRAYSCALE 20, 16, 10, 07 ; green
-	GRAYSCALE 28, 17, 12, 07 ; water
-	GRAYSCALE 28, 28, 19, 07 ; yellow
-	GRAYSCALE 24, 17, 13, 07 ; brown
-	GRAYSCALE 28, 20, 17, 07 ; roof
-	GRAYSCALE 28, 31, 13, 00 ; text
+	GRAYSCALE 29, 19, 13, 07 ; gray
+	GRAYSCALE 29, 21, 16, 07 ; red
+	GRAYSCALE 29, 27, 20, 07 ; green
+	GRAYSCALE 29, 25, 17, 07 ; water
+	GRAYSCALE 29, 24, 18, 07 ; yellow
+	GRAYSCALE 29, 18, 14, 07 ; brown
+	GRAYSCALE 29, 18, 12, 07 ; roof
+	GRAYSCALE 28, 31, 16, 00 ; text
 ; water
 	GRAYSCALE 28, 17, 10, 07 ; morn
 	GRAYSCALE 30, 17, 10, 07 ; day
