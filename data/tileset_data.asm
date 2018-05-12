@@ -282,6 +282,16 @@ TilesetShrinesAndRuinsAttr::
 INCBIN "data/tilesets/shrines_and_ruins_attributes.bin"
 
 
+SECTION "Tileset Data 23", ROMX
+
+TilesetLabGFX::
+INCBIN "gfx/tilesets/lab.2bpp.lz"
+TilesetLabMeta::
+INCBIN "data/tilesets/lab_metatiles.bin"
+TilesetLabColl::
+INCLUDE "data/tilesets/lab_collision.asm"
+TilesetLabAttr::
+INCBIN "data/tilesets/lab_attributes.bin"
 
 ;------------------------------------
 
@@ -541,12 +551,12 @@ INCLUDE "data/tilesets/hotel_collision.asm"
 
 SECTION "PC Tileset Data 14", ROMX
 
-TilesetLabGFX::
-INCBIN "gfx/tilesets/lab.2bpp.lz"
-TilesetLabMeta::
-INCBIN "data/tilesets/lab_metatiles.bin"
-TilesetLabColl::
-INCLUDE "data/tilesets/lab_collision.asm"
+TilesetPCLabGFX::
+INCBIN "gfx/tilesets/pc_lab.2bpp.lz"
+TilesetPCLabMeta::
+INCBIN "data/tilesets/pc_lab_metatiles.bin"
+TilesetPCLabColl::
+INCLUDE "data/tilesets/pc_lab_collision.asm"
 
 TilesetFarawayGFX::
 INCBIN "gfx/tilesets/faraway.2bpp.lz"
@@ -622,8 +632,8 @@ SECTION "PC Tileset Data 21", ROMX
 TilesetPortAttr::
 INCBIN "data/tilesets/port_attributes.bin"
 
-TilesetLabAttr::
-INCBIN "data/tilesets/lab_attributes.bin"
+TilesetPCLabAttr::
+INCBIN "data/tilesets/pc_lab_attributes.bin"
 
 TilesetFacilityAttr::
 INCBIN "data/tilesets/facility_attributes.bin"

@@ -316,6 +316,7 @@ TilesetHouse2Anim:
 TilesetPokeCenterAnim:
 TilesetGateAnim:
 TilesetLabAnim:
+TilesetPCLabAnim:
 TilesetFacilityAnim:
 TilesetMartAnim:
 TilesetMansionAnim:

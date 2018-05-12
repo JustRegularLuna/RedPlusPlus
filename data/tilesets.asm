@@ -29,6 +29,7 @@ Tileset00End::
 	tileset TilesetBattleTowerOutside
 	tileset TilesetNationalPark
 	tileset TilesetShrinesAndRuins
+	tileset TilesetLab
 	;------------------------------------
 	tileset TilesetShamouti
 	tileset TilesetValencia
@@ -44,7 +45,7 @@ Tileset00End::
 	tileset TilesetGym2
 	tileset TilesetGym3
 	tileset TilesetPort
-	tileset TilesetLab
+	tileset TilesetPCLab
 	tileset TilesetFacility
 	tileset TilesetMansion
 	tileset TilesetGameCorner

@@ -25,6 +25,7 @@ GENERIC_KANTO_GFX EQU const_value
 	const TILESET_SHRINES_AND_RUINS
 GENERIC_GFX EQU const_value
 ; These are independent tilesets
+	const TILESET_LAB
 	;------------------------------------
 	const TILESET_PC_SHAMOUTI_ISLAND
 	const TILESET_PC_VALENCIA_ISLAND
