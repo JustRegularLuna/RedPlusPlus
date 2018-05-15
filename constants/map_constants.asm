@@ -243,13 +243,16 @@ MAP_NONE   EQU 0
 
 	newgroup ; 18
 
-	map_const CINNABAR_ISLAND,        16, 16 ;  1
-	map_const ROUTE_20,               50, 10 ;  2
-	map_const ROUTE_21,               12, 41 ;  3
-	map_const URAGA_CHANNEL_WEST,     23,  9 ;  4
-	map_const CINNABAR_POKECENTER_1F,  6,  4 ;  5
-	map_const SEAFOAM_GYM,            12, 12 ;  6
-	map_const CINNABAR_LAB,           16,  9 ;  7
+	map_const CINNABAR_ISLAND,           16, 16 ;  1
+	map_const ROUTE_20,                  50, 10 ;  2
+	map_const ROUTE_21,                  12, 41 ;  3
+	map_const URAGA_CHANNEL_WEST,        23,  9 ;  4
+	map_const CINNABAR_POKECENTER_1F,     6,  4 ;  5
+	map_const SEAFOAM_GYM,               12, 12 ;  6
+	map_const CINNABAR_LAB_ENTRANCE,     10,  4 ;  7
+	map_const CINNABAR_LAB_MEETING_ROOM,  4,  4 ;  8
+	map_const CINNABAR_LAB_DEV_ROOM,      4,  4 ;  9
+	map_const CINNABAR_LAB_TESTING_ROOM,  4, 4  ; 10
 
 	newgroup ; 19
 

@@ -1052,8 +1052,17 @@ UragaChannelWest_BlockData:
 CinnabarIsland_BlockData:
 	INCBIN "maps/CinnabarIsland.blk"
 
-CinnabarLab_BlockData:
-	INCBIN "maps/CinnabarLab.blk"
+CinnabarLabEntrance_BlockData:
+	INCBIN "maps/CinnabarLabEntrance.blk"
+
+CinnabarLabMeetingRoom_BlockData:
+	INCBIN "maps/CinnabarLabMeetingRoom.blk"
+
+CinnabarLabDevRoom_BlockData:
+	INCBIN "maps/CinnabarLabDevRoom.blk"
+
+CinnabarLabTestingRoom_BlockData:
+	INCBIN "maps/CinnabarLabTestingRoom.blk"
 
 PokemonMansion1F_BlockData:
 	INCBIN "maps/PokemonMansion1F.blk"

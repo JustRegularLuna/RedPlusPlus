@@ -123,8 +123,6 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .maybe_lightning_island
 	cp TILESET_PC_SPROUT_TOWER
 	jp z, .maybe_embedded_tower
-	cp TILESET_PC_POKEMON_MANSION
-	jp z, .maybe_cinnabar_lab
 	cp TILESET_PC_MUSEUM
 	jp z, .maybe_goldenrod_museum
 	cp TILESET_PC_CELADON_MANSION
@@ -452,16 +450,6 @@ LoadSpecialMapPalette: ; 494ac
 	jp nz, .do_nothing
 	ld hl, TinTowerRoofPalette
 	jp .load_eight_time_of_day_bg_palettes
-
-.maybe_cinnabar_lab
-	ld a, [MapGroup]
-	cp GROUP_CINNABAR_LAB
-	jp nz, .do_nothing
-	ld a, [MapNumber]
-	cp MAP_CINNABAR_LAB
-	jp nz, .do_nothing
-	ld hl, CinnabarLabPalette
-	jp .load_eight_bg_palettes
 
 .maybe_goldenrod_museum
 	ld a, [MapGroup]
@@ -1458,21 +1446,6 @@ endr
 	RGB_MONOCHROME_BLACK
 rept 7
 	MONOCHROME_RGB_FOUR_NIGHT
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-endc
-
-CinnabarLabPalette:
-if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/cinnabar_lab.pal"
-elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/cinnabar_lab.pal"
-else
-rept 7
-	MONOCHROME_RGB_FOUR
 endr
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE

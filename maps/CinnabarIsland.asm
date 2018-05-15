@@ -8,7 +8,7 @@ CinnabarIsland_MapScriptHeader:
 	warp_event 19, 17, CINNABAR_POKECENTER_1F, 1
 	warp_event 18, 11, CINNABAR_VOLCANO_1F, 1
 	warp_event 10, 15, POKEMON_MANSION_1F, 1
-	warp_event 10, 21, CINNABAR_LAB, 1
+	warp_event 10, 21, CINNABAR_LAB_ENTRANCE, 1
 	warp_event 22,  7, SEAFOAM_GYM, 1
 	warp_event 26, 14, HIDDEN_CAVE_GROTTO, 1
 

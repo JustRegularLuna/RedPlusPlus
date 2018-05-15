@@ -886,7 +886,10 @@ ENDM
 	map_attributes SeagallopFerryShamoutiGate, SEAGALLOP_FERRY_SHAMOUTI_GATE, $0, 0
 	map_attributes PokemonMansion1F, POKEMON_MANSION_1F, $0, 0
 	map_attributes PokemonMansionB1F, POKEMON_MANSION_B1F, $45, 0
-	map_attributes CinnabarLab, CINNABAR_LAB, $0, 0
+	map_attributes CinnabarLabEntrance, CINNABAR_LAB_ENTRANCE, $0, 0
+	map_attributes CinnabarLabMeetingRoom, CINNABAR_LAB_MEETING_ROOM, $0, 0
+	map_attributes CinnabarLabDevRoom, CINNABAR_LAB_DEV_ROOM, $0, 0
+	map_attributes CinnabarLabTestingRoom, CINNABAR_LAB_TESTING_ROOM, $0, 0
 	map_attributes Route19BeachHouse, ROUTE_19_BEACH_HOUSE, $0, 0
 	map_attributes ShamoutiTunnel, SHAMOUTI_TUNNEL, $9, 0
 	map_attributes NoisyForest, NOISY_FOREST, $0, 0

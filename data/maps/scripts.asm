@@ -714,7 +714,10 @@ INCLUDE "maps/UragaChannel.asm"
 SECTION "Cinnabar Scripts", ROMX
 
 INCLUDE "maps/CinnabarIsland.asm"
-INCLUDE "maps/CinnabarLab.asm"
+INCLUDE "maps/CinnabarLabEntrance.asm"
+INCLUDE "maps/CinnabarLabMeetingRoom.asm"
+INCLUDE "maps/CinnabarLabDevRoom.asm"
+INCLUDE "maps/CinnabarLabTestingRoom.asm"
 
 
 SECTION "Pokemon Mansion Scripts", ROMX
