@@ -28,8 +28,10 @@ Tileset00End::
 	tileset TilesetOlivineCianwood
 	tileset TilesetBattleTowerOutside
 	tileset TilesetNationalPark
-	tileset TilesetShrinesAndRuins
+	tileset TilesetShrinesRuinsOutside
+	tileset TilesetPokeCenter
 	tileset TilesetLab
+	tileset TilesetShrinesRuins
 	;------------------------------------
 	tileset TilesetShamouti
 	tileset TilesetValencia
@@ -37,8 +39,6 @@ Tileset00End::
 	tileset TilesetHouse1
 	tileset TilesetHouse2
 	tileset TilesetHouse3
-	tileset TilesetPokeCenter
-	tileset TilesetPokeCom
 	tileset TilesetMart
 	tileset TilesetGate
 	tileset TilesetGym1

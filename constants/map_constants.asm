@@ -21,7 +21,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 1
 
-	map_const POKECENTER_2F,       8,  4 ;  1
+	map_const POKECENTER_2F,       6,  4 ;  1
 	map_const TRADE_CENTER,        5,  4 ;  2
 	map_const COLOSSEUM,           5,  4 ;  3
 	map_const HIDDEN_TREE_GROTTO,  5,  9 ;  4
@@ -262,7 +262,7 @@ MAP_NONE   EQU 0
 
 	map_const INDIGO_PLATEAU,               10, 13 ;  1
 	map_const ROUTE_23,                     10, 72 ;  2
-	map_const INDIGO_PLATEAU_POKECENTER_1F,  8,  7 ;  3
+	map_const INDIGO_PLATEAU_POKECENTER_1F,  8,  8 ;  3
 	map_const WILLS_ROOM,                    5,  9 ;  4
 	map_const KOGAS_ROOM,                    5,  9 ;  5
 	map_const BRUNOS_ROOM,                   5,  9 ;  6
@@ -352,28 +352,27 @@ MAP_NONE   EQU 0
 	newgroup ; 30
 
 	map_const GOLDENROD_CITY,                             24, 18 ;  1
-	map_const GOLDENROD_POKECOM_CENTER_1F,                16,  8 ;  2
-	map_const GOLDENROD_POKECOM_CENTER_OFFICE,             4,  4 ;  3
-	map_const GOLDENROD_GYM,                              10,  9 ;  4
-	map_const GOLDENROD_HAPPINESS_RATER,                   4,  4 ;  5
-	map_const GOLDENROD_BILLS_HOUSE,                       4,  4 ;  6
-	map_const GOLDENROD_HP_UP_HOUSE,                       4,  4 ;  7
-	map_const GOLDENROD_NET_BALL_HOUSE,                    4,  4 ;  8
-	map_const GOLDENROD_MUSEUM_1F,                         7,  4 ;  9
-	map_const GOLDENROD_MUSEUM_2F,                         7,  4 ; 10
-	map_const GOLDENROD_MAGNET_TRAIN_STATION,             10,  9 ; 11
-	map_const GOLDENROD_FLOWER_SHOP,                       4,  4 ; 12
-	map_const GOLDENROD_PP_SPEECH_HOUSE,                   4,  4 ; 13
-	map_const GOLDENROD_NAME_RATER,                        4,  4 ; 14
-	map_const GOLDENROD_DEPT_STORE_1F,                     8,  4 ; 15
-	map_const GOLDENROD_DEPT_STORE_2F,                     8,  4 ; 16
-	map_const GOLDENROD_DEPT_STORE_3F,                     8,  4 ; 17
-	map_const GOLDENROD_DEPT_STORE_4F,                     8,  4 ; 18
-	map_const GOLDENROD_DEPT_STORE_5F,                     8,  4 ; 19
-	map_const GOLDENROD_DEPT_STORE_6F,                     8,  4 ; 20
-	map_const GOLDENROD_DEPT_STORE_ELEVATOR,               2,  2 ; 21
-	map_const GOLDENROD_DEPT_STORE_ROOF,                   8,  6 ; 22
-	map_const GOLDENROD_GAME_CORNER,                      10,  7 ; 23
+	map_const GOLDENROD_POKECENTER_1F,                     6,  4 ;  2
+	map_const GOLDENROD_GYM,                              10,  9 ;  3
+	map_const GOLDENROD_HAPPINESS_RATER,                   4,  4 ;  4
+	map_const GOLDENROD_BILLS_HOUSE,                       4,  4 ;  5
+	map_const GOLDENROD_HP_UP_HOUSE,                       4,  4 ;  6
+	map_const GOLDENROD_NET_BALL_HOUSE,                    4,  4 ;  7
+	map_const GOLDENROD_MUSEUM_1F,                         7,  4 ;  8
+	map_const GOLDENROD_MUSEUM_2F,                         7,  4 ;  9
+	map_const GOLDENROD_MAGNET_TRAIN_STATION,             10,  9 ; 10
+	map_const GOLDENROD_FLOWER_SHOP,                       4,  4 ; 11
+	map_const GOLDENROD_PP_SPEECH_HOUSE,                   4,  4 ; 12
+	map_const GOLDENROD_NAME_RATER,                        4,  4 ; 13
+	map_const GOLDENROD_DEPT_STORE_1F,                     8,  4 ; 14
+	map_const GOLDENROD_DEPT_STORE_2F,                     8,  4 ; 15
+	map_const GOLDENROD_DEPT_STORE_3F,                     8,  4 ; 16
+	map_const GOLDENROD_DEPT_STORE_4F,                     8,  4 ; 17
+	map_const GOLDENROD_DEPT_STORE_5F,                     8,  4 ; 18
+	map_const GOLDENROD_DEPT_STORE_6F,                     8,  4 ; 19
+	map_const GOLDENROD_DEPT_STORE_ELEVATOR,               2,  2 ; 20
+	map_const GOLDENROD_DEPT_STORE_ROOF,                   8,  6 ; 21
+	map_const GOLDENROD_GAME_CORNER,                      10,  7 ; 22
 
 	newgroup ; 31
 

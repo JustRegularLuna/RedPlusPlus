@@ -1,9 +1,9 @@
 
-	GRAYSCALE 28, 19, 13, 07 ; gray
-	GRAYSCALE 28, 23, 16, 07 ; red
-	GRAYSCALE 26, 18, 10, 07 ; green
-	GRAYSCALE 28, 20, 13, 07 ; water
-	GRAYSCALE 28, 25, 20, 07 ; yellow
-	GRAYSCALE 24, 17, 13, 07 ; brown
-	GRAYSCALE 27, 26, 24, 23 ; roof
-	GRAYSCALE 29, 29, 09, 00 ; text
+	GRAYSCALE 29, 19, 13, 07 ; gray
+	GRAYSCALE 29, 21, 16, 07 ; red
+	GRAYSCALE 29, 27, 20, 07 ; green
+	GRAYSCALE 29, 25, 17, 07 ; water
+	GRAYSCALE 29, 29, 23, 07 ; yellow
+	GRAYSCALE 29, 18, 14, 07 ; brown
+	GRAYSCALE 29, 26, 20, 14 ; roof
+	GRAYSCALE 28, 31, 16, 00 ; text

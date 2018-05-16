@@ -24,14 +24,14 @@ tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'vermilion
                  'saffron', 'indigo', 'forest', 'new_bark_cherrygrove',
                  'violet_mahogany', 'azalea_blackthorn', 'goldenrod', 'ecruteak',
                  'olivine_cianwood', 'battle_tower_outside', 'national_park',
-                 'shrines_and_ruins', 'lab',
+                 'shrines_ruins_outside', 'pokecenter', 'lab', 'shrines_ruins',
                  ###############################################################
                  'shamouti', 'valencia', 'faraway', 'house1', 'house2', 'house3',
-                 'pokecenter', 'pokecom', 'mart', 'gate', 'gym1', 'gym2', 'gym3',
-                 'port', 'lab', 'facility', 'mansion', 'game_corner', 'decor',
-                 'museum', 'hotel', 'tower', 'battle_tower', 'radio_tower',
-                 'lighthouse', 'warehouse', 'cave', 'quiet_cave', 'ice_path',
-                 'tunnel', 'pc_forest', 'ruins', 'alph', 'pokemon_mansion'] 
+                 'mart', 'gate', 'gym1', 'gym2', 'gym3', 'port', 'pc_lab',
+                 'facility', 'mansion', 'game_corner', 'decor', 'museum',
+                 'hotel', 'tower', 'battle_tower', 'radio_tower', 'lighthouse',
+                 'warehouse', 'cave', 'quiet_cave', 'ice_path', 'tunnel',
+                 'pc_forest', 'ruins', 'alph', 'pokemon_mansion']
 # {'TILESET_PC_JOHTO_1': 'johto1', ...}
 tileset_ids = {}
 # {'NewBarkTown': 'johto1', ...}

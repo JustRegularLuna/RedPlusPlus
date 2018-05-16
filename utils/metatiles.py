@@ -249,7 +249,6 @@ class Attributes(object):
 		'ice_path': lambda: load_palette('gfx/tilesets/palettes/ice_path.pal'),
 		'mart': lambda: load_palette('gfx/tilesets/palettes/mart.pal'),
 		'pokecenter': lambda: load_palette('gfx/tilesets/palettes/pokecenter.pal'),
-		'pokecom': lambda: load_palette('gfx/tilesets/palettes/pokecom.pal'),
 		'quiet_cave': lambda: load_palette('gfx/tilesets/palettes/quiet_cave.pal'),
 		'radio_tower': lambda: load_palette('gfx/tilesets/palettes/radio_tower.pal'),
 		'ruins': lambda: load_palette('gfx/tilesets/palettes/ruins.pal'),

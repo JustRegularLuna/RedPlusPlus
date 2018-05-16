@@ -57,7 +57,7 @@ TilesetEcruteakAnim: ; TODO: waterfall $9a
 TilesetOlivineCianwoodAnim:
 TilesetBattleTowerOutsideAnim:
 TilesetNationalParkAnim: ; TODO: AnimateFountain $bc
-TilesetShrinesAndRuinsAnim: ; TODO: waterfall $9a
+TilesetShrinesRuinsOutsideAnim: ; TODO: waterfall $9a
 	dw KantoWaterFrames, AnimateFarawayWaterTiles
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -310,12 +310,13 @@ TilesetValenciaAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetPokeCenterAnim:
+TilesetLabAnim:
+TilesetShrinesRuinsAnim:
 TilesetJohto3Anim:
 TilesetHouse1Anim:
 TilesetHouse2Anim:
-TilesetPokeCenterAnim:
 TilesetGateAnim:
-TilesetLabAnim:
 TilesetPCLabAnim:
 TilesetFacilityAnim:
 TilesetMartAnim:
@@ -325,7 +326,6 @@ TilesetHouse3Anim:
 TilesetGym2Anim:
 TilesetGym3Anim:
 TilesetLighthouseAnim:
-TilesetPokeComAnim:
 TilesetBattleTowerAnim:
 TilesetRuinsAnim:
 TilesetRadioTowerAnim:
