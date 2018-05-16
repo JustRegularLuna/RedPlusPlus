@@ -4,6 +4,7 @@ CherrygrovePokeCenter1F_BlockData:
 VioletPokeCenter1F_BlockData:
 Route32PokeCenter1F_BlockData:
 AzaleaPokeCenter1F_BlockData:
+GoldenrodPokeCenter1F_BlockData:
 EcruteakPokeCenter1F_BlockData:
 OlivinePokeCenter1F_BlockData:
 CianwoodPokeCenter1F_BlockData:
@@ -347,12 +348,6 @@ StormyBeach_BlockData:
 
 Route34Coast_BlockData:
 	INCBIN "maps/Route34Coast.blk"
-
-GoldenrodPokeComCenter1F_BlockData:
-	INCBIN "maps/GoldenrodPokeComCenter1F.blk"
-
-GoldenrodPokeComCenterOffice_BlockData:
-	INCBIN "maps/GoldenrodPokeComCenterOffice.blk"
 
 GoldenrodGym_BlockData:
 	INCBIN "maps/GoldenrodGym.blk"

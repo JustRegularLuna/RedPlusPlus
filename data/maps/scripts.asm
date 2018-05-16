@@ -35,8 +35,7 @@ INCLUDE "maps/ShamoutiPokeCenter1F.asm"
 INCLUDE "maps/Route3PokeCenter1F.asm"
 INCLUDE "maps/Route10PokeCenter1F.asm"
 INCLUDE "maps/Route32PokeCenter1F.asm"
-INCLUDE "maps/GoldenrodPokeComCenter1F.asm"
-INCLUDE "maps/GoldenrodPokeComCenterOffice.asm"
+INCLUDE "maps/GoldenrodPokeCenter1F.asm"
 
 
 SECTION "Special Map Scripts", ROMX

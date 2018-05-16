@@ -272,17 +272,29 @@ INCBIN "data/tilesets/national_park_attributes.bin"
 
 SECTION "Tileset Data 22", ROMX
 
-TilesetShrinesAndRuinsGFX::
-INCBIN "gfx/tilesets/shrines_and_ruins.2bpp.unique.lz"
-TilesetShrinesAndRuinsMeta::
-INCBIN "data/tilesets/shrines_and_ruins_metatiles.bin"
-TilesetShrinesAndRuinsColl::
-INCLUDE "data/tilesets/shrines_and_ruins_collision.asm"
-TilesetShrinesAndRuinsAttr::
-INCBIN "data/tilesets/shrines_and_ruins_attributes.bin"
+TilesetShrinesRuinsOutsideGFX::
+INCBIN "gfx/tilesets/shrines_ruins_outside.2bpp.unique.lz"
+TilesetShrinesRuinsOutsideMeta::
+INCBIN "data/tilesets/shrines_ruins_outside_metatiles.bin"
+TilesetShrinesRuinsOutsideColl::
+INCLUDE "data/tilesets/shrines_ruins_outside_collision.asm"
+TilesetShrinesRuinsOutsideAttr::
+INCBIN "data/tilesets/shrines_ruins_outside_attributes.bin"
 
 
 SECTION "Tileset Data 23", ROMX
+
+TilesetPokeCenterGFX::
+INCBIN "gfx/tilesets/pokecenter.2bpp.lz"
+TilesetPokeCenterMeta::
+INCBIN "data/tilesets/pokecenter_metatiles.bin"
+TilesetPokeCenterColl::
+INCLUDE "data/tilesets/pokecenter_collision.asm"
+TilesetPokeCenterAttr::
+INCBIN "data/tilesets/pokecenter_attributes.bin"
+
+
+SECTION "Tileset Data 24", ROMX
 
 TilesetLabGFX::
 INCBIN "gfx/tilesets/lab.2bpp.lz"
@@ -292,6 +304,18 @@ TilesetLabColl::
 INCLUDE "data/tilesets/lab_collision.asm"
 TilesetLabAttr::
 INCBIN "data/tilesets/lab_attributes.bin"
+
+
+SECTION "Tileset Data 25", ROMX
+
+TilesetShrinesRuinsGFX::
+INCBIN "gfx/tilesets/shrines_ruins.2bpp.lz"
+TilesetShrinesRuinsMeta::
+INCBIN "data/tilesets/shrines_ruins_metatiles.bin"
+TilesetShrinesRuinsColl::
+INCLUDE "data/tilesets/shrines_ruins_collision.asm"
+TilesetShrinesRuinsAttr::
+INCBIN "data/tilesets/shrines_ruins_attributes.bin"
 
 ;------------------------------------
 
@@ -385,14 +409,6 @@ INCBIN "data/tilesets/lighthouse_metatiles.bin"
 TilesetLighthouseColl::
 INCLUDE "data/tilesets/lighthouse_collision.asm"
 
-TilesetPokeComGFX::
-INCBIN "gfx/tilesets/pokecom.2bpp.lz"
-TilesetPokeComMeta::
-INCBIN "data/tilesets/pokecom_metatiles.bin"
-
-TilesetPokeComColl::
-INCLUDE "data/tilesets/pokecom_collision.asm"
-
 TilesetIcePathGFX::
 INCBIN "gfx/tilesets/ice_path.2bpp.lz"
 TilesetIcePathMeta::
@@ -431,13 +447,6 @@ INCLUDE "data/tilesets/warehouse_collision.asm"
 
 
 SECTION "PC Tileset Data 7", ROMX
-
-TilesetPokeCenterGFX::
-INCBIN "gfx/tilesets/pokecenter.2bpp.lz"
-TilesetPokeCenterMeta::
-INCBIN "data/tilesets/pokecenter_metatiles.bin"
-TilesetPokeCenterColl::
-INCLUDE "data/tilesets/pokecenter_collision.asm"
 
 TilesetRuinsMeta::
 INCBIN "data/tilesets/ruins_metatiles.bin"
@@ -601,12 +610,6 @@ INCBIN "data/tilesets/house3_attributes.bin"
 
 
 SECTION "PC Tileset Data 19", ROMX
-
-TilesetPokeCenterAttr::
-INCBIN "data/tilesets/pokecenter_attributes.bin"
-
-TilesetPokeComAttr::
-INCBIN "data/tilesets/pokecom_attributes.bin"
 
 TilesetMartAttr::
 INCBIN "data/tilesets/mart_attributes.bin"
