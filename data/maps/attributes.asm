@@ -810,7 +810,8 @@ ENDM
 	map_attributes FightingDojo, FIGHTING_DOJO, $0, 0
 	map_attributes SaffronGym, SAFFRON_GYM, $0, 0
 	map_attributes SaffronMart, SAFFRON_MART, $0, 0
-	map_attributes SaffronPokeCenter1F, SAFFRON_POKECENTER_1F, $0, 0
+	map_attributes SaffronPokeComCenter1F, SAFFRON_POKECOM_CENTER_1F, $0, 0
+	map_attributes SaffronPokeComCenter2F, SAFFRON_POKECOM_CENTER_2F, $0, 0
 	map_attributes MrPsychicsHouse, MR_PSYCHICS_HOUSE, $0, 0
 	map_attributes SilphCo1F, SILPH_CO_1F, $0, 0
 	map_attributes SilphCo2F, SILPH_CO_2F, $0, 0

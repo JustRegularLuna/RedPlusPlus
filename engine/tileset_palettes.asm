@@ -244,28 +244,16 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [MapGroup]
 	cp GROUP_POKECENTER_2F
 	jr nz, .not_pokecenter_2f
-	ld a, [MapNumber]
-	cp MAP_POKECENTER_2F
-	jr nz, .not_pokecenter_2f
 	ld a, [BackupMapGroup]
-	cp GROUP_SHAMOUTI_POKECENTER_1F
-	jr nz, .normal_pokecenter
-	ld a, [BackupMapNumber]
-	cp MAP_SHAMOUTI_POKECENTER_1F
-	jr nz, .normal_pokecenter
-	jr .shamouti_pokecenter
 .not_pokecenter_2f
-	ld a, [MapGroup]
-	cp GROUP_SHAMOUTI_POKECENTER_1F
-	jr nz, .normal_pokecenter
-	ld a, [MapNumber]
-	cp MAP_SHAMOUTI_POKECENTER_1F
-	jr nz, .normal_pokecenter
-.shamouti_pokecenter
 	ld hl, ShamoutiPokeCenterPalette
-	jp LoadEightBGPalettes
-.normal_pokecenter
+	cp GROUP_SAFFRON_POKECOM_CENTER_1F
+	jr z, .pokecom_center
+	cp GROUP_SHAMOUTI_POKECENTER_1F
+	jr z, .shamouti_pokecenter
 	ld hl, PokeCenterPalette
+.pokecom_center
+.shamouti_pokecenter
 	jp LoadEightBGPalettes
 
 .tileset_lab

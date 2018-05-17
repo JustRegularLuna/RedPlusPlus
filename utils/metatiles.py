@@ -155,6 +155,8 @@ class Attributes(object):
 		'maps/OaksLab.blk': lambda: load_palette('gfx/tilesets/palettes/oaks_lab.pal'),
 		'maps/ElmsLab.blk': lambda: load_palette('gfx/tilesets/palettes/elms_lab.pal'),
 		'maps/IvysLab.blk': lambda: load_palette('gfx/tilesets/palettes/ivys_lab.pal'),
+		'maps/SaffronPokeComCenter1F.blk': lambda: load_palette('gfx/tilesets/palettes/shamouti_pokecenter.pal'),
+		'maps/SaffronPokeComCenter2F.blk': lambda: load_palette('gfx/tilesets/palettes/shamouti_pokecenter.pal'),
 		########################################################################
 		'maps/BrunosRoom.blk': lambda: load_palette('gfx/tilesets/palettes/brunos_room.pal'),
 		'maps/CeladonHomeDecorStore4F.blk': lambda: load_palette('gfx/tilesets/palettes/celadon_home_decor_store_4f.pal'),

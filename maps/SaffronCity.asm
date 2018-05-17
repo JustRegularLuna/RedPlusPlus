@@ -8,7 +8,7 @@ SaffronCity_MapScriptHeader:
 	warp_event 28,  7, FIGHTING_DOJO, 1
 	warp_event 36,  7, SAFFRON_GYM, 1
 	warp_event 29, 15, SAFFRON_MART, 2
-	warp_event 14, 33, SAFFRON_POKECENTER_1F, 1
+	warp_event 14, 33, SAFFRON_POKECOM_CENTER_1F, 1
 	warp_event 33, 33, MR_PSYCHICS_HOUSE, 1
 	warp_event  0,  0, N_A, 0 ; TODO: remove
 	warp_event 23, 25, SILPH_CO_1F, 1

@@ -8,7 +8,6 @@ VermilionPokeCenter1F_BlockData:
 Route10PokeCenter1F_BlockData:
 LavenderPokeCenter1F_BlockData:
 CeladonPokeCenter1F_BlockData:
-SaffronPokeCenter1F_BlockData:
 FuchsiaPokeCenter1F_BlockData:
 CinnabarPokeCenter1F_BlockData:
 ShamoutiPokeCenter1F_BlockData:
@@ -966,6 +965,12 @@ SaffronGym_BlockData:
 
 SaffronCity_BlockData:
 	INCBIN "maps/SaffronCity.blk"
+
+SaffronPokeComCenter1F_BlockData:
+	INCBIN "maps/SaffronPokeComCenter1F.blk"
+
+SaffronPokeComCenter2F_BlockData:
+	INCBIN "maps/SaffronPokeComCenter2F.blk"
 
 SaffronBookSpeechHouse_BlockData:
 	INCBIN "maps/SaffronBookSpeechHouse.blk"
