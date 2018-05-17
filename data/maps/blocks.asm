@@ -282,24 +282,6 @@ RuinsofAlphKabutoChamber_BlockData:
 RuinsofAlphOmanyteChamber_BlockData:
 	INCBIN "maps/RuinsofAlphPuzzleChamber.blk"
 
-RuinsofAlphAerodactylItemRoom_BlockData:
-RuinsofAlphHoOhItemRoom_BlockData:
-RuinsofAlphKabutoItemRoom_BlockData:
-RuinsofAlphOmanyteItemRoom_BlockData:
-	INCBIN "maps/RuinsofAlphItemRoom.blk"
-
-RuinsofAlphAerodactylWordRoom_BlockData:
-	INCBIN "maps/RuinsofAlphAerodactylWordRoom.blk"
-
-RuinsofAlphHoOhWordRoom_BlockData:
-	INCBIN "maps/RuinsofAlphHoOhWordRoom.blk"
-
-RuinsofAlphKabutoWordRoom_BlockData:
-	INCBIN "maps/RuinsofAlphKabutoWordRoom.blk"
-
-RuinsofAlphOmanyteWordRoom_BlockData:
-	INCBIN "maps/RuinsofAlphOmanyteWordRoom.blk"
-
 UnionCave1F_BlockData:
 GiovannisCave_BlockData:
 	INCBIN "maps/UnionCave1F.blk"

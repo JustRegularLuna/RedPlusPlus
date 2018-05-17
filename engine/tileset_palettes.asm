@@ -64,8 +64,6 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, RuinsPalette
 	cp TILESET_PC_RUINS_OF_ALPH
 	jp z, LoadEightBGPalettes
-	cp TILESET_PC_ALPH_WORD_ROOM
-	jp z, LoadEightBGPalettes
 
 	ld hl, FarawayIslandPalette
 	cp TILESET_PC_FARAWAY_ISLAND

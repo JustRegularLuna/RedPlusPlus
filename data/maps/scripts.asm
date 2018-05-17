@@ -136,14 +136,6 @@ INCLUDE "maps/RuinsofAlphAerodactylChamber.asm"
 INCLUDE "maps/RuinsofAlphHoOhChamber.asm"
 INCLUDE "maps/RuinsofAlphKabutoChamber.asm"
 INCLUDE "maps/RuinsofAlphOmanyteChamber.asm"
-INCLUDE "maps/RuinsofAlphAerodactylItemRoom.asm"
-INCLUDE "maps/RuinsofAlphHoOhItemRoom.asm"
-INCLUDE "maps/RuinsofAlphKabutoItemRoom.asm"
-INCLUDE "maps/RuinsofAlphOmanyteItemRoom.asm"
-INCLUDE "maps/RuinsofAlphAerodactylWordRoom.asm"
-INCLUDE "maps/RuinsofAlphHoOhWordRoom.asm"
-INCLUDE "maps/RuinsofAlphKabutoWordRoom.asm"
-INCLUDE "maps/RuinsofAlphOmanyteWordRoom.asm"
 
 
 SECTION "Union Cave Scripts", ROMX

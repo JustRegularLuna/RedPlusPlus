@@ -63,5 +63,4 @@ Tileset00End::
 	tileset TilesetTunnel
 	tileset TilesetPCForest
 	tileset TilesetRuins
-	tileset TilesetAlph
 	tileset TilesetPokemonMansion
