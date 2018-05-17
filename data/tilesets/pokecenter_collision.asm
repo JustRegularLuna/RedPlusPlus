@@ -76,9 +76,8 @@
 	tilecoll MART_SHELF, MART_SHELF, FLOOR, FLOOR
 	tilecoll MART_SHELF, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, WALL
+	tilecoll TV, TV, TV, TV
 	tilecoll WALL, WALL, FLOOR, WALL
 	tilecoll WALL, DOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
 	tilecoll FLOOR, WALL, FLOOR, FLOOR

@@ -1,21 +1,5 @@
 SECTION "Special Map Blockdata", ROMX
 
-CherrygrovePokeCenter1F_BlockData:
-VioletPokeCenter1F_BlockData:
-Route32PokeCenter1F_BlockData:
-AzaleaPokeCenter1F_BlockData:
-GoldenrodPokeCenter1F_BlockData:
-EcruteakPokeCenter1F_BlockData:
-OlivinePokeCenter1F_BlockData:
-CianwoodPokeCenter1F_BlockData:
-MahoganyPokeCenter1F_BlockData:
-BlackthornPokeCenter1F_BlockData:
-SilverCavePokeCenter1F_BlockData:
-	INCBIN "maps/JohtoPokeCenter1F.blk"
-
-PokeCenter2F_BlockData:
-	INCBIN "maps/JohtoPokeCenter2F.blk"
-
 ViridianPokeCenter1F_BlockData:
 PewterPokeCenter1F_BlockData:
 Route3PokeCenter1F_BlockData:
@@ -30,15 +14,25 @@ CinnabarPokeCenter1F_BlockData:
 ShamoutiPokeCenter1F_BlockData:
 	INCBIN "maps/KantoPokeCenter1F.blk"
 
-KantoPokeCenter2F_BlockData:
+PokeCenter2F_BlockData:
 	INCBIN "maps/KantoPokeCenter2F.blk"
 
-CherrygroveMart_BlockData:
-VioletMart_BlockData:
-AzaleaMart_BlockData:
-EcruteakMart_BlockData:
-OlivineMart_BlockData:
-BlackthornMart_BlockData:
+CherrygrovePokeCenter1F_BlockData:
+VioletPokeCenter1F_BlockData:
+Route32PokeCenter1F_BlockData:
+AzaleaPokeCenter1F_BlockData:
+GoldenrodPokeCenter1F_BlockData:
+EcruteakPokeCenter1F_BlockData:
+OlivinePokeCenter1F_BlockData:
+CianwoodPokeCenter1F_BlockData:
+MahoganyPokeCenter1F_BlockData:
+BlackthornPokeCenter1F_BlockData:
+SilverCavePokeCenter1F_BlockData:
+	INCBIN "maps/JohtoPokeCenter1F.blk"
+
+JohtoPokeCenter2F_BlockData:
+	INCBIN "maps/KantoPokeCenter2F.blk"
+
 ViridianMart_BlockData:
 PewterMart_BlockData:
 CeruleanMart_BlockData:
@@ -46,6 +40,12 @@ VermilionMart_BlockData:
 LavenderMart_BlockData:
 SaffronMart_BlockData:
 FuchsiaMart_BlockData:
+CherrygroveMart_BlockData:
+VioletMart_BlockData:
+AzaleaMart_BlockData:
+EcruteakMart_BlockData:
+OlivineMart_BlockData:
+BlackthornMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.blk"
 
