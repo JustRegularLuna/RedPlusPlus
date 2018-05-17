@@ -453,11 +453,6 @@ INCBIN "data/tilesets/ruins_metatiles.bin"
 TilesetRuinsColl::
 INCLUDE "data/tilesets/ruins_collision.asm"
 
-TilesetAlphMeta::
-INCBIN "data/tilesets/alph_metatiles.bin"
-TilesetAlphColl::
-INCLUDE "data/tilesets/alph_collision.asm"
-
 
 SECTION "PC Tileset Data 8", ROMX
 
@@ -581,7 +576,6 @@ INCBIN "data/tilesets/valencia_metatiles.bin"
 SECTION "PC Tileset Data 15", ROMX
 
 TilesetRuinsGFX::
-TilesetAlphGFX::
 INCBIN "gfx/tilesets/ruins.2bpp.lz"
 
 
@@ -701,9 +695,6 @@ SECTION "PC Tileset Data 26", ROMX
 
 TilesetRuinsAttr::
 INCBIN "data/tilesets/ruins_attributes.bin"
-
-TilesetAlphAttr::
-INCBIN "data/tilesets/alph_attributes.bin"
 
 TilesetPokemonMansionAttr::
 INCBIN "data/tilesets/pokemon_mansion_attributes.bin"

@@ -1,5 +1,21 @@
 SECTION "Special Map Blockdata", ROMX
 
+ViridianPokeCenter1F_BlockData:
+PewterPokeCenter1F_BlockData:
+Route3PokeCenter1F_BlockData:
+CeruleanPokeCenter1F_BlockData:
+VermilionPokeCenter1F_BlockData:
+Route10PokeCenter1F_BlockData:
+LavenderPokeCenter1F_BlockData:
+CeladonPokeCenter1F_BlockData:
+FuchsiaPokeCenter1F_BlockData:
+CinnabarPokeCenter1F_BlockData:
+ShamoutiPokeCenter1F_BlockData:
+	INCBIN "maps/KantoPokeCenter1F.blk"
+
+PokeCenter2F_BlockData:
+	INCBIN "maps/KantoPokeCenter2F.blk"
+
 CherrygrovePokeCenter1F_BlockData:
 VioletPokeCenter1F_BlockData:
 Route32PokeCenter1F_BlockData:
@@ -13,32 +29,9 @@ BlackthornPokeCenter1F_BlockData:
 SilverCavePokeCenter1F_BlockData:
 	INCBIN "maps/JohtoPokeCenter1F.blk"
 
-PokeCenter2F_BlockData:
-	INCBIN "maps/JohtoPokeCenter2F.blk"
-
-ViridianPokeCenter1F_BlockData:
-PewterPokeCenter1F_BlockData:
-Route3PokeCenter1F_BlockData:
-CeruleanPokeCenter1F_BlockData:
-VermilionPokeCenter1F_BlockData:
-Route10PokeCenter1F_BlockData:
-LavenderPokeCenter1F_BlockData:
-CeladonPokeCenter1F_BlockData:
-SaffronPokeCenter1F_BlockData:
-FuchsiaPokeCenter1F_BlockData:
-CinnabarPokeCenter1F_BlockData:
-ShamoutiPokeCenter1F_BlockData:
-	INCBIN "maps/KantoPokeCenter1F.blk"
-
-KantoPokeCenter2F_BlockData:
+JohtoPokeCenter2F_BlockData:
 	INCBIN "maps/KantoPokeCenter2F.blk"
 
-CherrygroveMart_BlockData:
-VioletMart_BlockData:
-AzaleaMart_BlockData:
-EcruteakMart_BlockData:
-OlivineMart_BlockData:
-BlackthornMart_BlockData:
 ViridianMart_BlockData:
 PewterMart_BlockData:
 CeruleanMart_BlockData:
@@ -46,6 +39,12 @@ VermilionMart_BlockData:
 LavenderMart_BlockData:
 SaffronMart_BlockData:
 FuchsiaMart_BlockData:
+CherrygroveMart_BlockData:
+VioletMart_BlockData:
+AzaleaMart_BlockData:
+EcruteakMart_BlockData:
+OlivineMart_BlockData:
+BlackthornMart_BlockData:
 GenericMart_BlockData:: ; used by tilesets/palettes.asm:LoadSpecialMapPalette
 	INCBIN "maps/Mart.blk"
 
@@ -281,24 +280,6 @@ RuinsofAlphHoOhChamber_BlockData:
 RuinsofAlphKabutoChamber_BlockData:
 RuinsofAlphOmanyteChamber_BlockData:
 	INCBIN "maps/RuinsofAlphPuzzleChamber.blk"
-
-RuinsofAlphAerodactylItemRoom_BlockData:
-RuinsofAlphHoOhItemRoom_BlockData:
-RuinsofAlphKabutoItemRoom_BlockData:
-RuinsofAlphOmanyteItemRoom_BlockData:
-	INCBIN "maps/RuinsofAlphItemRoom.blk"
-
-RuinsofAlphAerodactylWordRoom_BlockData:
-	INCBIN "maps/RuinsofAlphAerodactylWordRoom.blk"
-
-RuinsofAlphHoOhWordRoom_BlockData:
-	INCBIN "maps/RuinsofAlphHoOhWordRoom.blk"
-
-RuinsofAlphKabutoWordRoom_BlockData:
-	INCBIN "maps/RuinsofAlphKabutoWordRoom.blk"
-
-RuinsofAlphOmanyteWordRoom_BlockData:
-	INCBIN "maps/RuinsofAlphOmanyteWordRoom.blk"
 
 UnionCave1F_BlockData:
 GiovannisCave_BlockData:
@@ -984,6 +965,12 @@ SaffronGym_BlockData:
 
 SaffronCity_BlockData:
 	INCBIN "maps/SaffronCity.blk"
+
+SaffronPokeComCenter1F_BlockData:
+	INCBIN "maps/SaffronPokeComCenter1F.blk"
+
+SaffronPokeComCenter2F_BlockData:
+	INCBIN "maps/SaffronPokeComCenter2F.blk"
 
 SaffronBookSpeechHouse_BlockData:
 	INCBIN "maps/SaffronBookSpeechHouse.blk"

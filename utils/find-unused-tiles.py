@@ -31,7 +31,7 @@ tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'vermilion
                  'facility', 'mansion', 'game_corner', 'decor', 'museum',
                  'hotel', 'tower', 'battle_tower', 'radio_tower', 'lighthouse',
                  'warehouse', 'cave', 'quiet_cave', 'ice_path', 'tunnel',
-                 'pc_forest', 'ruins', 'alph', 'pokemon_mansion']
+                 'pc_forest', 'ruins', 'pokemon_mansion']
 # {'TILESET_PC_JOHTO_1': 'johto1', ...}
 tileset_ids = {}
 # {'NewBarkTown': 'johto1', ...}

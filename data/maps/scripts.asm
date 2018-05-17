@@ -23,7 +23,7 @@ SECTION "Pokemon Center Scripts 3", ROMX
 INCLUDE "maps/VermilionPokeCenter1F.asm"
 INCLUDE "maps/LavenderPokeCenter1F.asm"
 INCLUDE "maps/CeladonPokeCenter1F.asm"
-INCLUDE "maps/SaffronPokeCenter1F.asm"
+INCLUDE "maps/SaffronPokeComCenter1F.asm"
 INCLUDE "maps/FuchsiaPokeCenter1F.asm"
 INCLUDE "maps/CinnabarPokeCenter1F.asm"
 
@@ -43,6 +43,7 @@ SECTION "Special Map Scripts", ROMX
 INCLUDE "maps/PokeCenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
+INCLUDE "maps/SaffronPokeComCenter2F.asm"
 
 
 SECTION "Hidden Grotto Scripts", ROMX
@@ -136,14 +137,6 @@ INCLUDE "maps/RuinsofAlphAerodactylChamber.asm"
 INCLUDE "maps/RuinsofAlphHoOhChamber.asm"
 INCLUDE "maps/RuinsofAlphKabutoChamber.asm"
 INCLUDE "maps/RuinsofAlphOmanyteChamber.asm"
-INCLUDE "maps/RuinsofAlphAerodactylItemRoom.asm"
-INCLUDE "maps/RuinsofAlphHoOhItemRoom.asm"
-INCLUDE "maps/RuinsofAlphKabutoItemRoom.asm"
-INCLUDE "maps/RuinsofAlphOmanyteItemRoom.asm"
-INCLUDE "maps/RuinsofAlphAerodactylWordRoom.asm"
-INCLUDE "maps/RuinsofAlphHoOhWordRoom.asm"
-INCLUDE "maps/RuinsofAlphKabutoWordRoom.asm"
-INCLUDE "maps/RuinsofAlphOmanyteWordRoom.asm"
 
 
 SECTION "Union Cave Scripts", ROMX
