@@ -362,7 +362,7 @@ ENDM
 	connection east, EcruteakCity, ECRUTEAK_CITY, -2, 0, 18
 
 	map_attributes Route39, ROUTE_39, $f, SOUTH | EAST
-	connection south, OlivineCity, OLIVINE_CITY, -2, 0, 18
+	connection south, OlivineCity, OLIVINE_CITY, -3, 0, 18
 	connection east, Route38, ROUTE_38, -1, 0, 12
 
 	map_attributes Route40, ROUTE_40, $41, SOUTH | EAST
