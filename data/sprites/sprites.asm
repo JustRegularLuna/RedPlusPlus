@@ -52,6 +52,7 @@ SpriteHeaders:
 	overworld_sprite OldMediumWomanSprite, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite NurseSprite, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite CableClubWomanSprite, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite BenchSitterSprite, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite MrMasterballSprite, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LaprasGiverSprite, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite WardenSprite, STANDING_SPRITE, PAL_OW_BROWN
