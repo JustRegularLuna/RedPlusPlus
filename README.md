@@ -3,6 +3,8 @@
 Red++ serves as an updated and modernized version of Pokémon Red.
 It is considered the prequel to [**Pokémon Polished Crystal**][polished] by Rangi.
 
+For playable releases, check out the [**Patches**](patches/) folder.
+
 For a list of features, check out [**FEATURES.md**](FEATURES.md).
 
 
