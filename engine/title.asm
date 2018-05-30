@@ -63,13 +63,13 @@ _TitleScreen: ; 10ed67
 	call ByteFill
 
 ; Charizard
-	hlbgcoord 0, 12
+	hlbgcoord 1, 11
 	ld bc, 7 * BG_MAP_WIDTH ; the rest of the screen
 	ld a, 8
 	call ByteFill
 
 ; Trainers
-	hlbgcoord 11, 12
+	hlbgcoord 12, 11
 	lb bc, 7, 8
 	ld a, 12
 .row
@@ -107,13 +107,13 @@ _TitleScreen: ; 10ed67
 	call DrawTitleGraphic
 
 ; Draw Charizard
-	hlbgcoord 0, 12, VBGMap1
+	hlcoord 1, 11
 	lb bc, 7, 9
 	lb de, $80, $11
 	call DrawTitleGraphic
 
 ; Draw Trainers
-	hlbgcoord 11, 12, VBGMap1
+	hlcoord 12, 11
 	lb bc, 7, 8
 	lb de, $89, $11
 	call DrawTitleGraphic

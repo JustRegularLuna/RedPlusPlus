@@ -1201,7 +1201,7 @@ TitleScreenEntrance: ; 62bc
 ; Lay out a base (all lines scrolling together).
 	ld e, a
 	ld hl, LYOverrides
-	ld bc, 8 * 10 ; logo height
+	ld bc, 7 * 10 ; logo height
 	call ByteFill
 
 ; Reversed signage for every other line's position.
@@ -1210,7 +1210,7 @@ TitleScreenEntrance: ; 62bc
 	cpl
 	inc a
 
-	ld b, 8 * 10 / 2 ; logo height / 2
+	ld b, 7 * 10 / 2 ; logo height / 2
 	ld hl, LYOverrides + 1
 .loop
 	ld [hli], a
