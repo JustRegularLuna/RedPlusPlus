@@ -47,7 +47,7 @@ SpriteHeaders:
 	overworld_sprite WhitePlayerSprite, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite GymHelperSprite, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite OldPersonSprite, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite MartGuySprite, STANDING_SPRITE, PAL_OW_GREEN
+	overworld_sprite MartGuySprite, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite FisherSprite, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite OldMediumWomanSprite, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite NurseSprite, STANDING_SPRITE, PAL_OW_RED
