@@ -8081,7 +8081,8 @@ DoAcrobatics:
 .got_item
 	ld a, [hl]
 	and a
-	jr DoubleDamageIfNZ
+	ret nz
+	jr DoubleDamage
 
 DoFacade:
 	ld a, BATTLE_VARS_STATUS
