@@ -8,7 +8,7 @@ TrainerClassNames::
 	db "Sailor@"           ; SAILOR
 	db "Camper@"           ; JR_TRAINER_M
 	db "Picnicker@"        ; JR_TRAINER_F
-	db "Poké Maniac@"      ; POKEMANIAC
+	db "PokéManiac@"       ; POKEMANIAC
 	db "Super Nerd@"       ; SUPER_NERD
 	db "Hiker@"            ; HIKER
 	db "Biker@"            ; BIKER

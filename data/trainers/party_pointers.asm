@@ -1,7 +1,7 @@
 TrainerGroups: ; 0x39999
-	dba RedGroup
-	dba LeafGroup
-	dba ProfOakGroup
+	dba RedGroup ; unused
+	dba LeafGroup ; unused
+	dba ProfOakGroup ; unused
 	dba YoungsterGroup
 	dba BugCatcherGroup
 	dba LassGroup
@@ -27,11 +27,11 @@ TrainerGroups: ; 0x39999
 	dba BirdKeeperGroup
 	dba BlackbeltGroup
 	dba Green1Group
-	dba SwimmerFGroup ; Shared with Beauty
-	dba RocketFGroup ; Shared with all Rockets
+	dba SwimmerFGroup
+	dba RocketFGroup ; Shared with all Grunts
 	dba ScientistGroup
 	dba GiovanniGroup
-	dba RocketGroup ; Shared with all Rockets
+	dba RocketGroup ; Shared with all Grunts
 	dba AceTrainerMGroup
 	dba AceTrainerFGroup
 	dba BrunoGroup
@@ -51,14 +51,14 @@ TrainerGroups: ; 0x39999
 	dba LanceGroup
 	dba HexManiacGroup
 	dba TraceyGroup ; unused
-	dba ExecutiveFGroup ; Shared with all Rockets
-	dba ExecutiveMGroup ; Shared with all Rockets
+	dba ExecutiveFGroup ; Ariana
+	dba ExecutiveMGroup ; Archer
 	dba RockerFGroup
-	dba JessieJamesGroup ; unused ; Shared with all Rockets
+	dba JessieJamesGroup ; unused
 	dba CosplayGirlGroup
 	dba JanineGroup
-	dba UndercoverGroup ; Shared with all Rockets
+	dba UndercoverGroup ; Looks like the "PI" from Gen 4, used on Nugget Bridge
 	dba FlanneryGroup
-	dba JessieGroup ; Shared with all Rockets
-	dba JamesGroup ; Shared with all Rockets
+	dba JessieGroup
+	dba JamesGroup
 	dba GiovanniGymGroup
