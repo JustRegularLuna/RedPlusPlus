@@ -133,7 +133,7 @@ SpriteAnimOAMData: ; 8d94d
 	db 4
 	dsprite -1,  0, -1,  0, $00, -1
 	dsprite -1,  0,  0,  0, $01, -1
-	dsprite  0,  0, -1,  0, $08, $0
+	dsprite  0,  0, -1,  0, $08, $2
 	dsprite  0,  0,  0,  0, $03, -1
 
 .OAMData_3e:
@@ -141,7 +141,7 @@ SpriteAnimOAMData: ; 8d94d
 	db 4
 	dsprite -1,  0, -1,  0, $04, -1
 	dsprite -1,  0,  0,  0, $05, -1
-	dsprite  0,  0, -1,  0, $08, $0
+	dsprite  0,  0, -1,  0, $08, $2
 	dsprite  0,  0,  0,  0, $07, -1
 
 .OAMData_3f:
@@ -149,7 +149,7 @@ SpriteAnimOAMData: ; 8d94d
 	db 4
 	dsprite -1,  0, -1,  0, $00, -1
 	dsprite -1,  0,  0,  0, $01, -1
-	dsprite  0,  0, -1,  0, $09, $0
+	dsprite  0,  0, -1,  0, $09, $2
 	dsprite  0,  0,  0,  0, $03, -1
 
 .OAMData_40:
@@ -157,7 +157,7 @@ SpriteAnimOAMData: ; 8d94d
 	db 4
 	dsprite -1,  0, -1,  0, $04, -1
 	dsprite -1,  0,  0,  0, $05, -1
-	dsprite  0,  0, -1,  0, $09, $0
+	dsprite  0,  0, -1,  0, $09, $2
 	dsprite  0,  0,  0,  0, $07, -1
 
 .OAMData_4f:
