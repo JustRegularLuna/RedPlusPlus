@@ -8,8 +8,26 @@ BluesHouse2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	bg_event  0,  1, SIGNPOST_JUMPTEXT, BluesHouse2FPCText
+	bg_event  3,  5, SIGNPOST_JUMPTEXT, BluesHouse2FSNESText
 
 	db 0 ; object events
 
-	const_def 1 ; object constants
+BluesHouse2FPCText:
+	text "The web browser is"
+	line "open to an article"
+	cont "about legendary"
+	cont "#mon sightings."
+
+	para "What if they're"
+	line "real?"
+	done
+
+BluesHouse2FSNESText:
+	text "<PLAYER> played the"
+	line "SNES."
+
+	para "Better get going--"
+	line "no time to lose!"
+	done
