@@ -57,34 +57,15 @@ ViridianCityGymDoorLockTrigger:
 	end
 
 ViridianCitySleepyGuyScript:
+	checkevent EVENT_GOT_TM67_DREAM_EATER
+	iftrue_jumptextfaceplayer TM67Explanation
 	faceplayer
 	opentext
-	checkevent EVENT_LISTENED_TO_DREAM_EATER_INTRO
-	iftrue ViridianCityTutorDreamEaterScript
-	writetext UnknownText_0x1a9cc4
-	waitbutton
-	setevent EVENT_LISTENED_TO_DREAM_EATER_INTRO
-ViridianCityTutorDreamEaterScript:
-	writetext Text_ViridianCityTutorDreamEater
-	waitbutton
-	checkitem SILVER_LEAF
-	iffalse .NoSilverLeaf
-	writetext Text_ViridianCityTutorQuestion
-	yesorno
-	iffalse .TutorRefused
-	writebyte DREAM_EATER
-	writetext Text_ViridianCityTutorClear
-	special Special_MoveTutor
-	ifequal $0, .TeachMove
-.TutorRefused
-	jumpopenedtext Text_ViridianCityTutorRefused
-
-.NoSilverLeaf
-	jumpopenedtext Text_ViridianCityTutorNoSilverLeaf
-
-.TeachMove
-	takeitem SILVER_LEAF
-	jumpopenedtext Text_ViridianCityTutorTaught
+	writetext ViridianCityText_191ca
+	buttonsound
+	verbosegivetmhm TM_DREAM_EATER
+	setevent EVENT_GOT_TM67_DREAM_EATER
+	endtext
 
 ViridianCityCatchTutorialScript:
 	faceplayer
@@ -101,7 +82,6 @@ ViridianCityCatchTutorialScript:
 	writetext ViridianCityText_19219
 	waitbutton
 	closetext
-	; TODO - enable Missingno? haha
 	end
 
 ViridianCityGamblerScript:
@@ -275,59 +255,25 @@ ViridianCityText14:
 	line "are locked…"
 	done
 
-UnknownText_0x1a9cc4:
+ViridianCityText_191ca:
 	text "Yawn!"
+	line "I must have dozed"
+	cont "off in the sun."
 
-	para "I must have dozed"
-	line "off in the sun."
-
-	para "…I had this dream"
+	para "I had this dream"
 	line "about a Drowzee"
+	cont "eating my dream."
+	cont "What's this?"
+	cont "Where did this TM"
+	cont "come from?"
 
-	para "eating my dream."
-	line "And…"
-
-	para "I learned how to"
-	line "eat dreams…"
-
-	para "Ooh, this is too"
-	line "spooky!"
-	cont "But now…"
+	para "This is spooky!"
+	line "Here, you can"
+	cont "have this TM."
 	done
 
-Text_ViridianCityTutorDreamEater:
-	text "I can teach your"
-	line "#mon to eat"
-	cont "dreams."
-
-	para "I just want a"
-	line "Silver Leaf in"
-	cont "exchange."
-	done
-
-Text_ViridianCityTutorNoSilverLeaf:
-	text "You don't have any"
-	line "Silver Leaves…"
-	done
-
-Text_ViridianCityTutorQuestion:
-	text "Should I teach"
-	line "your #mon"
-	cont "Dream Eater?"
-	done
-
-Text_ViridianCityTutorRefused:
-	text "OK…"
-	done
-
-Text_ViridianCityTutorClear:
-	text ""
-	done
-
-Text_ViridianCityTutorTaught:
-	text "Now your #mon"
-	line "knows how to use"
-	cont "Dream Eater…"
-
-	para "…Zzzzz…"
+TM67Explanation:
+	text "TM67 contains"
+	line "Dream Eater…"
+	cont "…Snore…"
 	done

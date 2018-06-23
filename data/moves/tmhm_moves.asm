@@ -65,7 +65,7 @@ TMHMMoves:
 	db EXPLOSION    ; TM64
 	db SHADOW_CLAW  ; TM65
 	db POISON_JAB   ; TM66
-	db STRUGGLE     ; TM67 (TODO)
+	db DREAM_EATER  ; TM67
 	db GIGA_IMPACT  ; TM68
 	db U_TURN       ; TM69
 	db FLASH        ; TM70
@@ -85,7 +85,7 @@ TMHMMoves:
 	db COUNTER      ; MT03
 	db DEFENSE_CURL ; MT04
 	db DOUBLE_EDGE  ; MT05
-	db DREAM_EATER  ; MT06
+	db HEX          ; MT06
 	db EARTH_POWER  ; MT07
 	db FIRE_PUNCH   ; MT08
 	db HEADBUTT     ; MT09

@@ -89,7 +89,7 @@ ENDM
 	add_tm EXPLOSION    ; $3f
 	add_tm SHADOW_CLAW  ; $40
 	add_tm POISON_JAB   ; $41
-	add_tm STRUGGLE     ; $42 (TODO)
+	add_tm DREAM_EATER  ; $42
 	add_tm GIGA_IMPACT  ; $43
 	add_tm U_TURN       ; $44
 	add_tm FLASH        ; $45
@@ -113,7 +113,7 @@ NUM_HMS = const_value - HM01
 	add_mt COUNTER      ; $53
 	add_mt DEFENSE_CURL ; $54
 	add_mt DOUBLE_EDGE  ; $55
-	add_mt DREAM_EATER  ; $56
+	add_mt HEX          ; $56
 	add_mt EARTH_POWER  ; $57
 	add_mt FIRE_PUNCH   ; $58
 	add_mt HEADBUTT     ; $59
