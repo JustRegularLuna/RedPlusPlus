@@ -13,8 +13,9 @@ ViridianSchoolHouse_MapScriptHeader:
 	bg_event  3,  0, SIGNPOST_READ, SchoolBlackboard
 	bg_event  4,  0, SIGNPOST_READ, SchoolBlackboard
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event  0,  1, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, SchoolText1, -1
+	object_event  3,  3, SPRITE_BOOK_PAPER_POKEDEX, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SchoolNotes, -1
 	object_event  3,  4, SPRITE_BRUNETTE_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, SchoolText2, -1
 	object_event  4,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SchoolSlacker1, -1
 	object_event  5,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SchoolSlacker2, -1
@@ -89,6 +90,100 @@ SchoolSlacker2:
 	showtextfaceplayer SchoolText4
 	turnobject LAST_TALKED, LEFT
 	end
+
+SchoolNotes:
+	opentext
+	writetext ViridianSchoolNotebookText1
+	waitbutton
+	writetext TurnPageText
+	yesorno
+	iffalse_endtext
+	writetext ViridianSchoolNotebookText2
+	waitbutton
+	writetext TurnPageText
+	yesorno
+	iffalse_endtext
+	writetext ViridianSchoolNotebookText3
+	waitbutton
+	writetext TurnPageText
+	yesorno
+	iffalse_endtext
+	writetext ViridianSchoolNotebookText4
+	waitbutton
+	writetext TurnPageText
+	yesorno
+	iffalse_endtext
+	thisopenedtext
+
+ViridianSchoolNotebookText5:
+	text "Girl: Hey! Don't"
+	line "look at my notes!"
+	done
+
+ViridianSchoolNotebookText1:
+	text "Looked at the"
+	line "notebook!"
+
+	para "First page…"
+
+	para "# Balls are"
+	line "used to catch"
+	cont "#mon."
+
+	para "Up to 6 #mon"
+	line "can be carried."
+
+	para "People who raise"
+	line "and make #mon"
+	cont "fight are called"
+	cont "#mon trainers."
+	done
+
+ViridianSchoolNotebookText2:
+	text "Second page…"
+
+	para "A healthy #mon"
+	line "may be hard to"
+	cont "catch, so weaken"
+	cont "it first!"
+
+	para "Poison, burns and"
+	line "other damage are"
+	cont "effective!"
+	done
+
+ViridianSchoolNotebookText3:
+	text "Third page…"
+
+	para "#mon trainers"
+	line "seek others to"
+	cont "engage in #mon"
+	cont "fights."
+
+	para "Battles are"
+	line "constantly fought"
+	cont "at #mon Gyms."
+	done
+
+ViridianSchoolNotebookText4:
+	text "Fourth page…"
+
+	para "The goal for"
+	line "#mon trainers"
+	cont "is to beat the "
+	cont "top 8 #mon"
+	cont "Gym Leaders."
+
+	para "Do so to earn the"
+	line "right to face…"
+
+	para "The Elite Four of"
+	line "#mon League!"
+	done
+
+TurnPageText:
+	text "Turn the page?"
+	done
 
 SchoolText1:
 	text "Okay!"
