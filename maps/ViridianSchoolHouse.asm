@@ -94,22 +94,18 @@ SchoolSlacker2:
 SchoolNotes:
 	opentext
 	writetext ViridianSchoolNotebookText1
-	waitbutton
 	writetext TurnPageText
 	yesorno
 	iffalse_endtext
 	writetext ViridianSchoolNotebookText2
-	waitbutton
 	writetext TurnPageText
 	yesorno
 	iffalse_endtext
 	writetext ViridianSchoolNotebookText3
-	waitbutton
 	writetext TurnPageText
 	yesorno
 	iffalse_endtext
 	writetext ViridianSchoolNotebookText4
-	waitbutton
 	writetext TurnPageText
 	yesorno
 	iffalse_endtext
@@ -137,7 +133,7 @@ ViridianSchoolNotebookText1:
 	line "and make #mon"
 	cont "fight are called"
 	cont "#mon trainers."
-	done
+	prompt
 
 ViridianSchoolNotebookText2:
 	text "Second page…"
@@ -150,7 +146,7 @@ ViridianSchoolNotebookText2:
 	para "Poison, burns and"
 	line "other damage are"
 	cont "effective!"
-	done
+	prompt
 
 ViridianSchoolNotebookText3:
 	text "Third page…"
@@ -163,7 +159,7 @@ ViridianSchoolNotebookText3:
 	para "Battles are"
 	line "constantly fought"
 	cont "at #mon Gyms."
-	done
+	prompt
 
 ViridianSchoolNotebookText4:
 	text "Fourth page…"
@@ -179,7 +175,7 @@ ViridianSchoolNotebookText4:
 
 	para "The Elite Four of"
 	line "#mon League!"
-	done
+	prompt
 
 TurnPageText:
 	text "Turn the page?"
