@@ -9,13 +9,14 @@ RedsHouse2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, SIGNPOST_UP, RedsHouse2FPCScript
 if DEF(DEBUG)
 	bg_event  3,  5, SIGNPOST_READ, DebugCheatScript
 else
 	bg_event  3,  5, SIGNPOST_UP, RedsHouse2FSNESScipt
 endc
+	bg_event  5,  0, SIGNPOST_UP, RedsHouse2FPosterScript
 
 	db 0 ; object events
 
@@ -170,4 +171,11 @@ RedsHouse2FSNESScipt:
 
 	para "…Okay!"
 	line "It's time to go!"
+	done
+
+RedsHouse2FPosterScript:
+	thistext
+
+	text "It's a poster of a"
+	line "cute Marill."
 	done
