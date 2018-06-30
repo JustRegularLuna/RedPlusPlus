@@ -8,6 +8,7 @@ ENDM
 MapTriggers::
 	scene_var PALLET_TOWN, wPalletTownTrigger
 	scene_var VIRIDIAN_CITY, wViridianCityTrigger
+	scene_var ROUTE_22, wRoute22Trigger
 	scene_var OAKS_LAB, wOaksLabTrigger
 	scene_var VIRIDIAN_MART, wViridianMartTrigger
 	scene_var ROUTE_18_WEST, wAlways0Trigger

@@ -8,8 +8,9 @@ BluesHouse2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, SIGNPOST_JUMPTEXT, BluesHouse2FPCText
+	bg_event  5,  0, SIGNPOST_UP, BluesHouse2FPosterScript
 	bg_event  3,  5, SIGNPOST_JUMPTEXT, BluesHouse2FSNESText
 
 	db 0 ; object events
@@ -22,6 +23,13 @@ BluesHouse2FPCText:
 
 	para "What if they're"
 	line "real?"
+	done
+
+BluesHouse2FPosterScript:
+	thistext
+
+	text "It's a poster of a"
+	line "cute Marill."
 	done
 
 BluesHouse2FSNESText:

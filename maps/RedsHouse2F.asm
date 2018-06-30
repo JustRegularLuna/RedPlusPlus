@@ -74,8 +74,6 @@ DebugCheatScript:
 	setflag ENGINE_SOULBADGE
 	setflag ENGINE_VOLCANOBADGE
 	setflag ENGINE_EARTHBADGE
-	setevent EVENT_BEAT_ELITE_FOUR
-	setevent EVENT_BEAT_LEAF
 	; fly anywhere
 	setflag ENGINE_FLYPOINT_NEW_BARK
 	setflag ENGINE_FLYPOINT_CHERRYGROVE

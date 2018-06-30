@@ -459,6 +459,7 @@ OaksLabOakScript:
 	setevent EVENT_GOT_POKEDEX
 	clearevent EVENT_HIDE_VIRIDIAN_CITY_OLD_MAN
 	setmapscene VIRIDIAN_CITY, $1
+	setmapscene ROUTE_22, $1
 	special RestartMapMusic
 	end
 	
