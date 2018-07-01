@@ -42,6 +42,9 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, SafariZonePalette
 	cp TILESET_SAFARI_ZONE
 	jp z, LoadEightTimeOfDayBGPalettes
+	ld hl, ForestPalette
+	cp TILESET_FOREST
+	jp z, LoadEightBGPalettes
 	ld hl, BattleTowerOutsidePalette
 	cp TILESET_BATTLE_TOWER_OUTSIDE
 	jp z, LoadEightTimeOfDayBGPalettes
@@ -89,8 +92,6 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .tileset_ecruteak
 	cp TILESET_SHRINES_RUINS_OUTSIDE
 	jp z, .tileset_shrines_ruins_outside
-	cp TILESET_FOREST
-	jp z, .tileset_forest
 	cp TILESET_POKECENTER
 	jp z, .tileset_pokecenter
 	cp TILESET_LAB
@@ -229,16 +230,6 @@ LoadSpecialMapPalette: ; 494ac
 	jp nz, .do_nothing
 	ld hl, YellowForestPalette
 	jp LoadEightTimeOfDayBGPalettes
-
-.tileset_forest
-	ld a, [MapGroup]
-	cp GROUP_VIRIDIAN_FOREST
-	jp nz, .do_nothing
-	ld a, [MapNumber]
-	cp MAP_VIRIDIAN_FOREST
-	jp nz, .do_nothing
-	ld hl, ViridianForestPalette
-	jp LoadEightBGPalettes
 
 .tileset_pokecenter
 	ld a, [MapGroup]
@@ -832,6 +823,21 @@ endr
 	RGB_MONOCHROME_BLACK
 	MONOCHROME_RGB_FOUR_NIGHT
 	MONOCHROME_RGB_FOUR_NIGHT
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_WHITE
+	RGB_MONOCHROME_DARK
+	RGB_MONOCHROME_BLACK
+endc
+
+ForestPalette:
+if DEF(NOIR)
+INCLUDE "gfx/tilesets/palettes/noir/forest.pal"
+elif !DEF(MONOCHROME)
+INCLUDE "gfx/tilesets/palettes/forest.pal"
+else
+rept 7
+	MONOCHROME_RGB_FOUR
+endr
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK
@@ -1734,21 +1740,6 @@ endr
 	RGB_MONOCHROME_BLACK
 endc
 
-ViridianForestPalette:
-if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/viridian_forest.pal"
-elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/viridian_forest.pal"
-else
-rept 7
-	MONOCHROME_RGB_FOUR
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-endc
-
 CherrygroveCityPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/cherrygrove_city.pal"
@@ -2236,14 +2227,11 @@ LoadSpecialMapOBPalette:
 	jr .load_tree_palette
 
 .not_faraway:
-	ld a, [MapGroup]
-	cp GROUP_VIRIDIAN_FOREST
-	jr nz, .not_viridian_forest
-	ld a, [MapNumber]
-	cp MAP_VIRIDIAN_FOREST
-	jr z, .load_bg_tree_palette
+	cp TILESET_FOREST
+	jr nz, .not_forest
+	jr .load_bg_tree_palette
 
-.not_viridian_forest:
+.not_forest:
 	ld a, [MapGroup]
 	cp GROUP_MURKY_SWAMP
 	jr nz, .not_murky_swamp

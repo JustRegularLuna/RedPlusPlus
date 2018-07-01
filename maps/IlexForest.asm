@@ -12,7 +12,10 @@ IlexForest_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 4 ; object events
+	object_event 18, 20, SPRITE_BUSH_FOREST_TREE, SPRITEMOVEDATA_OVERHEAD_TILE_UP, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event  9, 47, SPRITE_BUSH_FOREST_TREE, SPRITEMOVEDATA_OVERHEAD_TILE_UP, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
+	object_event 12, 47, SPRITE_BUSH_FOREST_TREE, SPRITEMOVEDATA_OVERHEAD_TILE_UP, 0, 0, -1, -1, PAL_NPC_TREE, PERSONTYPE_COMMAND, end, NULL, -1
 	cuttree_event 12, 31, -1
 
 	const_def 1 ; object constants

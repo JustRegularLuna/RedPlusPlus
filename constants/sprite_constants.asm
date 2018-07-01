@@ -7,7 +7,6 @@
 	const SPRITE_LEAF
 	const SPRITE_LEAF_BIKE
 	const SPRITE_LEAF_SURF
-	
 	const SPRITE_BLUE
 	const SPRITE_OAK
 	const SPRITE_BUG_CATCHER
