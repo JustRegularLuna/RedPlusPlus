@@ -139,7 +139,6 @@ class Attributes(object):
 		load_palette('gfx/tilesets/palettes/bg.pal')[32:40])
 
 	map_palettes = {
-		'maps/ViridianForest.blk': lambda: load_palette('gfx/tilesets/palettes/viridian_forest.pal'),
 		'maps/Route30.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
 		'maps/CeriseIsland.blk': lambda: load_palette('gfx/tilesets/palettes/cerise_island.pal')[8:16],
 		'maps/CherrygroveBay.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
@@ -228,7 +227,7 @@ class Attributes(object):
 		'celadon': lambda: load_palette('gfx/tilesets/palettes/celadon.pal')[8:16],
 		'fuchsia': lambda: load_palette('gfx/tilesets/palettes/fuchsia.pal')[8:16],
 		'saffron': lambda: load_palette('gfx/tilesets/palettes/saffron.pal')[8:16],
-		'forest': lambda: Attributes.nite_palette(),
+		'forest': lambda: load_palette('gfx/tilesets/palettes/forest.pal'),
 		'safari_zone': lambda: load_palette('gfx/tilesets/palettes/safari_zone.pal')[8:16],
 		'lab': lambda: Attributes.indoor_palette(),
 		########################################################################
