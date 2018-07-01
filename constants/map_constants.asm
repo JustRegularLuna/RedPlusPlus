@@ -651,7 +651,7 @@ MAP_NONE   EQU 0
 	map_const UNION_CAVE_B2F,                         10, 18 ; 17
 	map_const SLOWPOKE_WELL_B1F,                      10,  9 ; 18
 	map_const SLOWPOKE_WELL_B2F,                      10,  9 ; 19
-	map_const ILEX_FOREST,                            17, 24 ; 20
+	map_const ILEX_FOREST,                            20, 26 ; 20
 	map_const MURKY_SWAMP,                            23, 19 ; 21
 	map_const WAREHOUSE_ENTRANCE,                      9, 18 ; 22
 	map_const UNDERGROUND_PATH_SWITCH_ROOM_ENTRANCES, 13, 14 ; 23

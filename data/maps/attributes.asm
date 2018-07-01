@@ -503,7 +503,7 @@ ENDM
 	map_attributes TeamRocketBaseB1F, TEAM_ROCKET_BASE_B1F, $0, 0
 	map_attributes TeamRocketBaseB2F, TEAM_ROCKET_BASE_B2F, $0, 0
 	map_attributes TeamRocketBaseB3F, TEAM_ROCKET_BASE_B3F, $0, 0
-	map_attributes IlexForest, ILEX_FOREST, $35, 0
+	map_attributes IlexForest, ILEX_FOREST, $0, 0
 	map_attributes MurkySwamp, MURKY_SWAMP, $35, 0
 	map_attributes WarehouseEntrance, WAREHOUSE_ENTRANCE, $0, 0
 	map_attributes UndergroundPathSwitchRoomEntrances, UNDERGROUND_PATH_SWITCH_ROOM_ENTRANCES, $0, 0
