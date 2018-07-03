@@ -374,7 +374,7 @@ YoungsterGroup:
 	db -1 ; end
 
 ; Route 25
-	db "Joey@", TRAINERTYPE_NORMAL
+	db "Joel@", TRAINERTYPE_NORMAL
 	db 15, RATTATA
 	db 15, SPEAROW
 	db -1 ; end
@@ -383,7 +383,7 @@ YoungsterGroup:
 	db 17, SLOWPOKE
 	db -1 ; end
 
-	db "Chad@", TRAINERTYPE_NORMAL
+	db "Ian@", TRAINERTYPE_NORMAL
 	db 14, EKANS
 	db 14, SANDSHREW
 	db -1 ; end
@@ -1427,7 +1427,7 @@ SwimmerFGroup:
 	db 30, SEADRA
 	db -1 ; end
 
-	db "Irene@", TRAINERTYPE_NORMAL
+	db "Debra@", TRAINERTYPE_NORMAL
 	db 30, TENTACOOL
 	db 30, HORSEA
 	db 30, SEEL
@@ -1589,7 +1589,7 @@ TamerGroup:
 	db -1 ; end
 
 ; Viridian Gym
-	db "Jason@", TRAINERTYPE_NORMAL
+	db "Evan@", TRAINERTYPE_NORMAL
 	db 43, RHYHORN
 	db -1 ; end
 
@@ -1859,11 +1859,6 @@ ExecutiveMGroup:
 	db -1 ; end
 
 JessieGroup:
-; Mt. Moon B2F
-	db "Jessie@", TRAINERTYPE_NORMAL
-	db 13, EKANS
-	db -1 ; end
-
 ; Rocket Hideout B4F
 	db "Jessie@", TRAINERTYPE_NORMAL
 	db 23, ARBOK
@@ -1871,11 +1866,6 @@ JessieGroup:
 	db -1 ; end
 
 JamesGroup:
-; Mt. Moon B2F
-	db "James@", TRAINERTYPE_NORMAL
-	db 13, KOFFING
-	db -1 ; end
-	
 ; Rocket Hideout B4F
 	db "James@", TRAINERTYPE_NORMAL
 	db 23, WEEZING
@@ -1883,7 +1873,12 @@ JamesGroup:
 	db -1 ; end
 
 JessieJamesGroup:
-; no data yet
+; Mt. Moon B2F
+	db "Duo@", TRAINERTYPE_NORMAL
+	db 14, MEOWTH
+	db 13, EKANS
+	db 13, KOFFING
+	db -1 ; end
 
 UndercoverGroup:
 ; Nugget Bridge "Boss"
@@ -1896,7 +1891,19 @@ RocketFGroup:
 RocketGroup:
 ; Mt. Moon B2F
 	db "Grunt@", TRAINERTYPE_NORMAL
-	db 14, RATICATE
+	db 11, SANDSHREW
+	db 11, RATTATA
+	db 11, ZUBAT
+	db -1 ; end
+
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 13, ZUBAT
+	db 13, EKANS
+	db -1 ; end
+
+	db "Grunt@", TRAINERTYPE_NORMAL
+	db 13, RATTATA
+	db 13, ZUBAT
 	db -1 ; end
 
 ; Cerulean City
@@ -2119,7 +2126,7 @@ AceTrainerMGroup:
 	db -1 ; end
 
 ; Victory Road 1F
-	db "Roland@", TRAINERTYPE_NORMAL
+	db "Clyde@", TRAINERTYPE_NORMAL
 	db 42, IVYSAUR
 	db 42, WARTORTLE
 	db 42, CHARMELEON
@@ -2157,7 +2164,7 @@ AceTrainerFGroup:
 	db -1 ; end
 
 ; Victory Road 3F
-	db "Carol@", TRAINERTYPE_NORMAL
+	db "Christy@", TRAINERTYPE_NORMAL
 	db 42, BELLSPROUT
 	db 42, WEEPINBELL
 	db 43, VICTREEBEL
