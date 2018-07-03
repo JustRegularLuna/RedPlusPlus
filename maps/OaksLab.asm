@@ -447,7 +447,6 @@ OaksLabOakScript:
 	waitsfx
 	buttonsound
 	writetext OaksLabDreamText
-	waitbutton
 	verbosegiveitem POKE_BALL, 5
 	faceobject OAKSLAB_BLUE, PLAYER
 	writetext OaksLabLeaveItToMeText
@@ -462,10 +461,9 @@ OaksLabOakScript:
 	setmapscene ROUTE_22, $1
 	special RestartMapMusic
 	end
-	
+
 .RatePokedex
 	writetext OaksLabDexCheckText
-	waitbutton
 	special ProfOaksPCBoot
 	thisopenedtext
 ;OaksLabGoodbyeText
@@ -475,11 +473,8 @@ OaksLabOakScript:
 	done
 
 .EnableJohto
-	writetext OaksLabIntroduceJohtoText
-	waitbutton
-	closetext
 	setevent EVENT_CAN_VISIT_JOHTO
-	end
+	jumpopenedtext OaksLabIntroduceJohtoText
 
 OaksLabBlueScript:
 	faceplayer
@@ -699,7 +694,7 @@ OaksLabDeliverParcelText2:
 	para "By the way, I must"
 	line "ask you to do"
 	cont "something for me."
-	done
+	prompt
 
 OaksLabGrampsText:
 	text "<RIVAL>: Gramps!"
@@ -758,7 +753,7 @@ OaksLabDreamText:
 	para "This is a great"
 	line "undertaking in"
 	cont "#mon history!"
-	
+
 	para "But you can't get"
 	line "detailed data on"
 	cont "#mon by just"
@@ -768,7 +763,7 @@ OaksLabDreamText:
 	line "them! Use these"
 	cont "to capture wild"
 	cont "#mon."
-	done
+	prompt
 
 OaksLabLeaveItToMeText:
 	text "<RIVAL>: Alright"
@@ -793,7 +788,7 @@ OaksLabDexCheckText:
 	line "dex coming?"
 
 	para "Let's see…"
-	done
+	prompt
 
 OaksLabIntroduceJohtoText:
 	text "Oak: <PLAYER>!"
@@ -803,13 +798,13 @@ OaksLabIntroduceJohtoText:
 	cont "arrangements for"
 	cont "you to take on a"
 	cont "new challenge."
-	
+
 	para "In the nearby"
 	line "Johto region,"
 	cont "there are another"
 	cont "set of Gym Leaders"
 	cont "that you can face!"
-	
+
 	para "There is also a"
 	line "Battle Tower, that"
 	cont "lets you test your"
@@ -817,16 +812,16 @@ OaksLabIntroduceJohtoText:
 	cont "of battles with"
 	cont "other skilled"
 	cont "trainers."
-	
+
 	para "You can take the"
 	line "Seagallop Ferry in"
 	cont "Vermilion City to"
 	cont "get there."
-	
+
 	para "Good luck on this"
 	line "new adventure,"
 	cont "<PLAYER>!"
-	done
+	prompt
 
 OaksLabTalkAboutJohtoText:
 	text "Oak: You'll meet"
@@ -834,7 +829,7 @@ OaksLabTalkAboutJohtoText:
 	cont "#mon and face"
 	cont "tough trainers in"
 	cont "the Johto region."
-	
+
 	para "It should be an"
 	line "exciting journey!"
 	done
@@ -852,25 +847,25 @@ OaksLabSign2Text:
 OaksLabEmailText:
 	text "There's an e-mail"
 	line "message here!"
-	
+
 	para "…"
-	
+
 	para "Calling all"
 	line "#mon trainers!"
-	
+
 	para "The elite trainers"
 	line "of #mon League"
 	cont "are ready to take"
 	cont "all comers!"
-	
+
 	para "Bring your best"
 	line "#mon and see"
 	cont "how you rate as a"
 	cont "trainer!"
-	
+
 	para "#mon League HQ"
 	line "Indigo Plateau"
-	
+
 	para "PS: Prof.Oak,"
 	line "please visit us!"
 	cont "…"
@@ -885,7 +880,7 @@ OaksLabGirlText:
 	text "Prof. Oak is the"
 	line "authority on"
 	cont "#mon!"
-	
+
 	para "Many #mon"
 	line "trainers hold him"
 	cont "in high regard!"
