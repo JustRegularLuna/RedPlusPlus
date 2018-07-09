@@ -114,10 +114,10 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll FLOOR, WALL, WALL, WALL
 	tilecoll WARP_CARPET_LEFT, FLOOR, WARP_CARPET_LEFT, FLOOR
-	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL
-	tilecoll WALL, WALL, TALL_GRASS, TALL_GRASS
-	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS
-	tilecoll TALL_GRASS, TALL_GRASS, WALL, WALL
+	tilecoll WALL, WALL, WALL, DOOR
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, DOOR
+	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WATER, WATER, WATER, WATER
@@ -215,15 +215,15 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, FLOOR, WALL, FLOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll TV, TV, TV, TV
-	tilecoll TV, TV, TV, TV
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
