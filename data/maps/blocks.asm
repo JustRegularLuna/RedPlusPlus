@@ -186,7 +186,7 @@ PewterNidoranSpeechHouse_BlockData:
 PewterSnoozeSpeechHouse_BlockData:
 Route12SuperRodHouse_BlockData:
 Route16FuchsiaSpeechHouse_BlockData:
-Route2NuggetSpeechHouse_BlockData:
+Route2TradeHouse_BlockData:
 Route26HealSpeechHouse_BlockData:
 Route27RestHouse_BlockData:
 Route5CleanseTagSpeechHouse_BlockData:

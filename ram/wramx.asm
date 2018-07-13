@@ -895,9 +895,7 @@ RegisteredItem:: ds 1
 PlayerState:: ds 1
 
 wHallOfFameCount:: ds 2
-wTradeFlags:: flag_array PARTY_LENGTH
-
-	ds 1 ; unused
+wTradeFlags:: flag_array NUM_NPC_TRADES
 
 MooMooBerries:: ds 1
 UndergroundSwitchPositions:: ds 1

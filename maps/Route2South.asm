@@ -16,8 +16,8 @@ Route2South_MapScriptHeader:
 	db 7 ; object events
 	treebase_left_event_1 12,  6, SECRET_BASE_ROUTE_2_SOUTH, EVENT_SECRET_BASE_ROUTE_2_SOUTH
 	treebase_left_event_2 12,  6, SECRET_BASE_ROUTE_2_SOUTH, EVENT_SECRET_BASE_ROUTE_2_SOUTH_ESTABLISHED
-	itemball_event 14, 17, MOON_STONE, 1, -1
-	itemball_event 13,  8, HP_UP, 1, -1
+	itemball_event 14, 17, MOON_STONE, 1, EVENT_ROUTE_2_MOON_STONE
+	itemball_event 13,  8, HP_UP, 1, EVENT_ROUTE_2_HP_UP
 	cuttree_event 12, 15, -1
 	cuttree_event 12, 22, -1
 	cuttree_event 12, 31, -1

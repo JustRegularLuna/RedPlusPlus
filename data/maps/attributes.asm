@@ -793,7 +793,7 @@ ENDM
 	map_attributes ViridianSchoolHouse, VIRIDIAN_SCHOOL_HOUSE, $0, 0
 	map_attributes ViridianMart, VIRIDIAN_MART, $0, 0
 	map_attributes ViridianPokeCenter1F, VIRIDIAN_POKECENTER_1F, $0, 0
-	map_attributes Route2NuggetSpeechHouse, ROUTE_2_NUGGET_SPEECH_HOUSE, $0, 0
+	map_attributes Route2TradeHouse, ROUTE_2_TRADE_HOUSE, $0, 0
 	map_attributes Route2Gate, ROUTE_2_GATE, $0, 0
 	map_attributes PokemonLeagueGate, POKEMON_LEAGUE_GATE, $0, 0
 	map_attributes ElmsLab, ELMS_LAB, $0, 0

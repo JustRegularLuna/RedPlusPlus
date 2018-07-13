@@ -61,7 +61,7 @@ MAP_NONE   EQU 0
 	map_const PEWTER_SNOOZE_SPEECH_HOUSE,   4,  4 ;  9
 	map_const PEWTER_MUSEUM_OF_SCIENCE_1F, 10,  4 ; 10
 	map_const PEWTER_MUSEUM_OF_SCIENCE_2F,  7,  4 ; 11
-	map_const ROUTE_2_NUGGET_SPEECH_HOUSE,  4,  4 ; 12
+	map_const ROUTE_2_TRADE_HOUSE,          4,  4 ; 12
 	map_const ROUTE_3_POKECENTER_1F,        6,  4 ; 13
 
 	newgroup ;  5

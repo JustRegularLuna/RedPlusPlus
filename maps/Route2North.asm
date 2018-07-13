@@ -4,7 +4,7 @@ Route2North_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 7 ; warp events
-	warp_event 15, 17, ROUTE_2_NUGGET_SPEECH_HOUSE, 1
+	warp_event 15, 17, ROUTE_2_TRADE_HOUSE, 1
 	warp_event 16, 33, ROUTE_2_GATE, 1
 	warp_event 17, 33, ROUTE_2_GATE, 2
 	warp_event 13,  7, DIGLETTS_CAVE, 3
@@ -20,7 +20,7 @@ Route2North_MapScriptHeader:
 	db 5 ; object events
 	treebase_right_event_1 15, -1, SECRET_BASE_ROUTE_2_NORTH, EVENT_SECRET_BASE_ROUTE_2_NORTH
 	treebase_right_event_2 15, -1, SECRET_BASE_ROUTE_2_NORTH, EVENT_SECRET_BASE_ROUTE_2_NORTH_ESTABLISHED
-	fruittree_event  7, 11, FRUITTREE_ROUTE_2, ORAN_BERRY
+	fruittree_event  7, 11, FRUITTREE_ROUTE_2, PECHA_BERRY
 	cuttree_event  5,  8, -1
 	cuttree_event 15, 20, -1
 
