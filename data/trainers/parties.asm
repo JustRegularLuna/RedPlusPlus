@@ -427,6 +427,12 @@ BugCatcherGroup:
 	db 7, WEEDLE
 	db -1 ; end
 
+	db "Tajiri@", TRAINERTYPE_NORMAL
+	db 6, METAPOD
+	db 6, CATERPIE
+	db 6, METAPOD
+	db -1 ; end
+
 	db "Sammy@", TRAINERTYPE_NORMAL
 	db 9, WEEDLE
 	db -1 ; end
@@ -492,6 +498,12 @@ BugCatcherGroup:
 	db -1 ; end
 
 LassGroup:
+; Viridian Forest
+	db "Sarah@", TRAINERTYPE_NORMAL
+	db 6, NIDORAN_F
+	db 6, NIDORAN_M
+	db -1 ; end
+
 ; Route 3
 	db "Janice@", TRAINERTYPE_NORMAL
 	db 9, PIDGEY

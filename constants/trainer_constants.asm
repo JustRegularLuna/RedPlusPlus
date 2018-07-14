@@ -36,6 +36,7 @@ ENDM
 	trainerclass BUG_CATCHER
 	const RICK
 	const DOUG
+	const TAJIRI
 	const SAMMY
 	const COLTON
 	const GREG
@@ -49,6 +50,7 @@ ENDM
 	const CONNER
 	
 	trainerclass LASS
+	const SARAH
 	const JANICE
 	const SALLY
 	const ROBIN
