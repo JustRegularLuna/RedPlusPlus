@@ -1,86 +1,116 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""
-Transposes the bytes of the metatiles.bin and palette_map.asm files for a
-particular tileset.
-"""
-
 from __future__ import print_function
 
-import sys
+"""
+Transposes the bytes of the metatiles.bin and attributes.bin files.
+"""
 
-from itertools import izip_longest
+# {'tileset name': {old block id: new block id, ...}, ...}
+tilesets_moved = {}
 
-def build_map(mapfile):
-	mapping = {}
-	revmap = {}
-	with open(mapfile, 'r') as f:
-		for line in f:
-			sym = '<->' in line
-			a, b = line.split('<->' if sym else '->')
-			if '-' in a and '-' in b:
-				a1, a2 = a.split('-')
-				b1, b2 = b.split('-')
-				a1, a2 = int(a1, 16), int(a2, 16)
-				b1, b2 = int(b1, 16), int(b2, 16)
-				for ai, bi in zip(range(a1, a2+1), range(b1, b2+1)):
-					mapping[ai], revmap[bi] = bi, ai
-					if sym:
-						mapping[bi], revmap[ai] = ai, bi
-			else:
-				a, b = int(a, 16), int(b, 16)
-				mapping[a], revmap[b] = b, a
-				if sym:
-					mapping[b], revmap[a] = a, b
-	return (mapping, revmap)
+tileset_maps = {
+'pallet_cinnabar': 'CinnabarIsland PalletTown Route1 Route19 Route20 Route21'.split(),
+'viridian': 'Route22 Route26 Route27East Route28 Route2South SilverCaveOutside ViridianCity'.split(),
+'pewter': 'MountMoonSquare PewterCity Route2North Route3North Route3South'.split(),
+'cerulean': 'CeruleanCape CeruleanCity Route10North Route24 Route25 Route4 Route5 Route9'.split(),
+'vermilion': 'Route11 Route6 VermilionCity'.split(),
+'celadon': 'CeladonCity Route16East Route7'.split(),
+'lavender': 'LavenderTown Route10South Route8 Route12North Route12South Route13 Route14 Route15'.split(),
+'cycling_road': 'Route16Middle Route16West Route17 Route18West UragaChannel'.split(),
+'fuchsia': 'FuchsiaCity Route18East'.split(),
+'safari_zone': 'SafariZoneEast SafariZoneHub SafariZoneNorth SafariZoneWest'.split(),
+'saffron': 'SaffronCity'.split(),
+'indigo': 'Route23 IndigoPlateau'.split(),
+'forest': 'ViridianForest'.split(),
+'new_bark_cherrygrove': 'CherrygroveBay CherrygroveCity NewBarkTown Route27West Route29 Route30 Route31 Route32 Route32Coast'.split(),
+'violet_mahogany': 'VioletCity'.split(),
+'olivine_cianwood': 'CianwoodCity GoldenrodHarbor OlivineCity Route35Coast Route38 Route39 Route40 Route41'.split(),
+'goldenrod': 'GoldenrodCity'.split(),
+'ecruteak': 'BellchimeTrail EcruteakCity Route35 Route36 Route37'.split(),
+'battle_tower_outside': 'BattleTowerOutside'.split(),
+'national_park': 'NationalPark'.split()
+'shrines_and_ruins': 'DragonsDenB1F EcruteakShrineOutside Route47 Route48 RuinsofAlphOutside'.split(),
+}
 
-def transpose_metatiles(metatiles, mapping):
-	data = []
-	with open(metatiles, 'rb') as f:
-		for a in f.read():
-			data.append(chr(mapping.get(ord(a), ord(a))))
-	with open(metatiles, 'wb') as f:
-		f.write(''.join(data))
+BANK1 = 1 << 3
+XFLIP = 1 << 5
+YFLIP = 1 << 6
 
-def transpose_palette(palette, revmap):
-	data = []
-	with open(palette, 'r') as f:
-		for line in f:
-			line = line.strip()
-			if not line.startswith('tilepal '):
-				continue
-			parts = [p.strip() for p in line.split(',')]
-			data.extend(parts[1:])
-	data.extend(['TEXT'] * (0x100 - len(data)))
-	new_data = [data[revmap.get(i, i)] for i in range(0x100)]
-	while new_data and new_data[-1] == 'TEXT':
-		new_data.pop()
-	if len(new_data) % 2:
-		new_data.append('TEXT')
-	with open(palette, 'wb') as f:
-		n = 0
-		while new_data:
-			row, new_data = new_data[:8], new_data[8:]
-			seg = 0 if n < 0x80 else 1
-			line = '\ttilepal %d, %s\n' % (seg, ', '.join(row))
+for tileset_name in sorted(tileset_maps.keys()):
+	for map_name in sorted(tileset_maps[tileset_name]):
+		moved = tilesets_moved.get(tileset_name, {})
+
+		print(map_name)
+
+		map_path = 'maps/%s.blk' % map_name
+
+		with open(map_path, 'rb') as f:
+			map_data = map(ord, f.read())
+
+		for i, bid in enumerate(map_data):
+			if bid in moved:
+				bid2 = moved[bid]
+				map_data[i] = bid2
+
+		with open(map_path, 'wb') as f:
+			for v in map_data:
+				f.write(chr(v))
+
+
+def chunks(s, n):
+	return [s[i:i+n] for i in range(0, len(s), n)]
+
+
+for tileset_name in sorted(tileset_maps.keys()):
+	moved = tilesets_moved.get(tileset_name, {})
+	inv_moved = {v: k for k, v in moved.items()}
+
+	print(tileset_name)
+
+	metatiles_path = 'data/tilesets/%s_metatiles.bin' % tileset_name
+	attributes_path = 'data/tilesets/%s_attributes.bin' % tileset_name
+	collisions_path = 'data/tilesets/%s_collision.asm' % tileset_name
+
+	with open(metatiles_path, 'rb') as f:
+		metatile_data = chunks(map(ord, f.read()), 16)
+	with open(attributes_path, 'rb') as f:
+		attribute_data = chunks(map(ord, f.read()), 16)
+	with open(collisions_path, 'r') as f:
+		collision_data = f.readlines()
+
+	metatile_data_2 = []
+	attribute_data_2 = []
+	collision_data_2 = []
+
+	for bid in range(len(metatile_data)):
+		if bid in inv_moved:
+			bid = inv_moved[bid]
+			if bid >= len(metatile_data):
+				bid = 0x00
+		metatile_data_2.append(metatile_data[bid])
+		attribute_data_2.append(attribute_data[bid])
+		collision_data_2.append(collision_data[bid])
+
+	bid = len(metatile_data_2)
+	while bid in inv_moved:
+		bid = inv_moved[len(metatile_data)]
+		if bid >= len(metatile_data):
+			bid = 0x00
+		metatile_data_2.append(metatile_data[bid])
+		attribute_data_2.append(attribute_data[bid])
+		collision_data_2.append(collision_data[bid])
+		bid = len(metatile_data_2)
+
+	with open(metatiles_path, 'wb') as f:
+		for mt in metatile_data_2:
+			for v in mt:
+				f.write(chr(v))
+	with open(attributes_path, 'wb') as f:
+		for mt in attribute_data_2:
+			for v in mt:
+				f.write(chr(v))
+	with open(collisions_path, 'w') as f:
+		for line in collision_data_2:
 			f.write(line)
-			n += len(row)
-
-def main():
-	if len(sys.argv) < 3:
-		print('Usage: %s map.txt tilesetID' % sys.argv[0])
-		print('       Transpose metatiles.bin and palette_map.asm')
-		sys.exit(1)
-
-	mapfile = sys.argv[1]
-	tilesetID = sys.argv[2]
-	metatiles = 'data/tilesets/%s_metatiles.bin' % tilesetID
-	palette = 'gfx/tilesets/%s_palette_map.asm' % tilesetID
-
-	mapping, revmap = build_map(mapfile)
-	transpose_metatiles(metatiles, mapping)
-	transpose_palette(palette, revmap)
-
-if __name__ == '__main__':
-	main()
