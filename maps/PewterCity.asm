@@ -13,7 +13,10 @@ PewterCity_MapScriptHeader:
 	warp_event 14, 11, PEWTER_MUSEUM_OF_SCIENCE_1F, 1
 	warp_event 20,  8, PEWTER_MUSEUM_OF_SCIENCE_1F, 3
 
-	db 0 ; coord events
+	db 3 ; coord events
+	coord_event 36, 22, 0, PewterCityBrockGuyTriggers1
+	coord_event 36, 23, 0, PewterCityBrockGuyTriggers2
+	coord_event 36, 24, 0, PewterCityBrockGuyTriggers3
 
 	db 5 ; bg events
 	bg_event 17, 33, SIGNPOST_JUMPTEXT, PewterCityText6
@@ -25,20 +28,235 @@ PewterCity_MapScriptHeader:
 	db 10 ; object events
 	treebase_right_event_1 25, 41, SECRET_BASE_ROUTE_2_NORTH, EVENT_SECRET_BASE_ROUTE_2_NORTH ; visible on Route2North
 	treebase_right_event_2 25, 41, SECRET_BASE_ROUTE_2_NORTH, EVENT_SECRET_BASE_ROUTE_2_NORTH_ESTABLISHED ; visible on Route2North
-	object_event  6, 18, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_COMMAND, jumptextfaceplayer, PewterCityText1, -1
-	object_event 14, 33, SPRITE_BLACK_HAIR_BOY_1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_COMMAND, jumptextfaceplayer, PewterCityText2, -1
-	object_event 29, 21, SPRITE_BLACK_HAIR_BOY_2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 26, 29, SPRITE_BLACK_HAIR_BOY_2, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 35, 21, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	fruittree_event 28,  7, FRUITTREE_PEWTER_CITY_1, ORAN_BERRY
-	fruittree_event 30,  7, FRUITTREE_PEWTER_CITY_2, ORAN_BERRY
+	object_event  6, 18, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_COMMAND, jumptextfaceplayer, PewterCityText1, -1
+	object_event 14, 33, SPRITE_BLACK_HAIR_BOY_1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_COMMAND, jumptextfaceplayer, PewterCityText2, -1
+	object_event 29, 21, SPRITE_BLACK_HAIR_BOY_2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, PewterCityMuseumGuyScript, -1
+	object_event 26, 29, SPRITE_BLACK_HAIR_BOY_2, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, PewterCityRepelGuyScript, -1
+	object_event 35, 21, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, PewterCityBrockGuyScript, EVENT_HIDE_PEWTER_BROCK_GUY
+	fruittree_event 28,  7, FRUITTREE_PEWTER_CITY_1, RAWST_BERRY
+	fruittree_event 30,  7, FRUITTREE_PEWTER_CITY_2, CHESTO_BERRY
 	cuttree_event 25,  9, -1
 
 	const_def 1 ; object constants
+	const PEWTER_TREEBASE_1
+	const PEWTER_TREEBASE_2
+	const PEWTER_LASS
+	const PEWTER_YOUNGSTER
+	const PEWTER_MUSEUM_GUY
+	const PEWTER_REPEL_GUY
+	const PEWTER_BROCK_GUY
 
 PewterCityFlyPoint:
 	setflag ENGINE_FLYPOINT_PEWTER
 	return
+
+PewterCityRepelGuyScript:
+	faceplayer
+	opentext
+	writetext PewterCityText_19427
+	yesorno
+	iftrue_jumpopenedtext PewterCityText_1942c
+	thisopenedtext
+;PewterCityText_19431:
+	text "I'm spraying Repel"
+	line "to keep #mon"
+	cont "out of my garden!"
+	done
+
+PewterCityMuseumGuyScript:
+	faceplayer
+	opentext
+	writetext PewterCityText_193f1
+	yesorno
+	iffalse .IntroduceMuseum
+	thisopenedtext
+;PewterCityText_193f6:
+	text "Weren't those"
+	line "fossils from Mt."
+	cont "Moon amazing?"
+	done
+
+.IntroduceMuseum
+	writetext PewterCityText_193fb
+	closetext
+	playmusic MUSIC_MUSEUM_GUY
+	follow PEWTER_MUSEUM_GUY, PLAYER
+	applymovement PEWTER_MUSEUM_GUY, .Movement_WalkToMuseum
+	stopfollow
+	faceplayer
+	special RestartMapMusic
+	showtext PewterCityText13
+	applymovement PEWTER_MUSEUM_GUY, .Movement_WalkAway
+	disappear PEWTER_MUSEUM_GUY
+	moveobject PEWTER_MUSEUM_GUY, 29, 21
+	appear PEWTER_MUSEUM_GUY
+	end
+
+.Movement_WalkToMuseum
+	step_up
+	step_up
+	step_up
+	step_up
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_up
+	step_up
+	step_up
+	step_up
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_end
+
+.Movement_WalkAway
+	step_up
+	step_right
+	step_right
+	step_down
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_end
+
+PewterCityBrockGuyTriggers1:
+	showtext PewterCityText_1945d
+	playmusic MUSIC_MUSEUM_GUY
+	applymovement PEWTER_BROCK_GUY, Movement_WalkDown
+	applyonemovement PLAYER, step_down
+	jump PewterCityBrockGuyTriggersCommon
+
+PewterCityBrockGuyTriggers2:
+	showtext PewterCityText_1945d
+	playmusic MUSIC_MUSEUM_GUY
+	applymovement PEWTER_BROCK_GUY, Movement_WalkDown
+	jump PewterCityBrockGuyTriggersCommon
+
+PewterCityBrockGuyTriggers3:
+	showtext PewterCityText_1945d
+	playmusic MUSIC_MUSEUM_GUY
+	applymovement PEWTER_BROCK_GUY, Movement_WalkDown
+	applyonemovement PLAYER, step_up
+	; fallthrough
+
+PewterCityBrockGuyTriggersCommon:
+	follow PEWTER_BROCK_GUY, PLAYER
+	applymovement PEWTER_BROCK_GUY, Movement_WalkToGym2
+	stopfollow
+	turnobject PEWTER_BROCK_GUY, LEFT
+	special RestartMapMusic
+	showtext PewterCityText14
+	applymovement PEWTER_BROCK_GUY, Movement_WalkAway2
+	disappear PEWTER_BROCK_GUY
+	moveobject PEWTER_BROCK_GUY, 35, 21
+	appear PEWTER_BROCK_GUY
+	end
+
+PewterCityBrockGuyScript:
+	faceplayer
+	showtext PewterCityText_1945d
+	playmusic MUSIC_MUSEUM_GUY
+	follow PEWTER_BROCK_GUY, PLAYER
+	applymovement PEWTER_BROCK_GUY, Movement_WalkToGym
+	stopfollow
+	faceplayer
+	special RestartMapMusic
+	showtext PewterCityText14
+	applymovement PEWTER_BROCK_GUY, Movement_WalkAway2
+	disappear PEWTER_BROCK_GUY
+	moveobject PEWTER_BROCK_GUY, 35, 21
+	appear PEWTER_BROCK_GUY
+	end
+
+Movement_WalkDown:
+	step_down
+	step_down
+	step_end
+
+Movement_WalkToGym:
+	step_down
+	step_down
+Movement_WalkToGym2:
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_end
+
+Movement_WalkAway2:
+	step_down
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_end
 
 PewterCityText1:
 	text "It's rumored that"
@@ -108,17 +326,11 @@ PewterCityText_193f1:
 	line "the Museum?"
 	done
 
-PewterCityText_193f6:
-	text "Weren't those"
-	line "fossils from Mt."
-	cont "Moon amazing?"
-	done
-
 PewterCityText_193fb:
 	text "Really?"
 	line "You absolutely"
 	cont "have to go!"
-	done
+	prompt
 
 PewterCityText13:
 	text "It's right here!"
@@ -137,12 +349,6 @@ PewterCityText_19427:
 PewterCityText_1942c:
 	text "That's right!"
 	line "It's hard work!"
-	done
-
-PewterCityText_19431:
-	text "I'm spraying Repel"
-	line "to keep #mon"
-	cont "out of my garden!"
 	done
 
 PewterCityText_1945d:

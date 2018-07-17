@@ -905,6 +905,7 @@ FarfetchdPosition:: ds 1
 wAlways0Trigger:: ds 1
 wPalletTownTrigger:: ds 1
 wViridianCityTrigger:: ds 1
+wPewterCityTrigger:: ds 1
 wRoute22Trigger:: ds 1
 wOaksLabTrigger:: ds 1
 wViridianMartTrigger:: ds 1
