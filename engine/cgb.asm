@@ -823,6 +823,92 @@ _CGB_TrainerCard2: ; 9289
 	call LoadPalette_White_Col1_Col2_Black
 
 	; Badges
+	ld hl, KantoBadgePalettes
+	ld de, UnknOBPals
+	ld bc, 8 palettes
+	ld a, $5
+	call FarCopyWRAM
+
+	; Brock
+	hlcoord 3, 10, AttrMap
+	lb bc, 3, 3
+	ld a, $2
+	call FillBoxCGB
+
+	; Misty
+	hlcoord 7, 10, AttrMap
+	lb bc, 3, 3
+	ld a, $3
+	call FillBoxCGB
+
+	; Lt. Surge
+	hlcoord 11, 10, AttrMap
+	lb bc, 3, 3
+	ld a, $4
+	call FillBoxCGB
+
+	; Erika
+	hlcoord 15, 10, AttrMap
+	lb bc, 3, 3
+	ld a, $5
+	call FillBoxCGB
+
+	; Koga
+	hlcoord 3, 13, AttrMap
+	lb bc, 3, 3
+	ld a, $6
+	call FillBoxCGB
+
+	; Sabrina
+	hlcoord 7, 13, AttrMap
+	lb bc, 3, 3
+	ld a, $6
+	call FillBoxCGB
+
+	; Blaine
+	hlcoord 11, 13, AttrMap
+	lb bc, 3, 3
+	ld a, $7
+	call FillBoxCGB
+
+	; Giovanni
+	hlcoord 15, 13, AttrMap
+	lb bc, 3, 3
+	ld a, $7
+	call FillBoxCGB
+
+	jp _CGB_FinishLayout
+; 9373
+
+
+_CGB_TrainerCard3:
+	call LoadFirstTwoTrainerCardPals
+
+	ld a, 1 ; TODO
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+
+	ld a, 1 ; TODO
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+
+	ld a, 1 ; TODO
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+
+	ld a, 1 ; TODO
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+
+	ld a, 1 ; TODO
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+
+	ld a, 1 ; TODO
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+
+	; Badges
 	ld hl, JohtoBadgePalettes
 	ld de, UnknOBPals
 	ld bc, 8 palettes
@@ -872,92 +958,6 @@ _CGB_TrainerCard2: ; 9289
 	call FillBoxCGB
 
 	; Clair
-	hlcoord 15, 13, AttrMap
-	lb bc, 3, 3
-	ld a, $7
-	call FillBoxCGB
-
-	jp _CGB_FinishLayout
-; 9373
-
-
-_CGB_TrainerCard3:
-	call LoadFirstTwoTrainerCardPals
-
-	ld a, 1 ; TODO
-	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-
-	ld a, 1 ; TODO
-	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-
-	ld a, 1 ; TODO
-	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-
-	ld a, 1 ; TODO
-	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-
-	ld a, 1 ; TODO
-	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-
-	ld a, 1 ; TODO
-	call GetTrainerPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-
-	; Badges
-	ld hl, KantoBadgePalettes
-	ld de, UnknOBPals
-	ld bc, 8 palettes
-	ld a, $5
-	call FarCopyWRAM
-
-	; Lt.Surge
-	hlcoord 3, 10, AttrMap
-	lb bc, 3, 3
-	ld a, $4
-	call FillBoxCGB
-
-	; Sabrina
-	hlcoord 7, 10, AttrMap
-	lb bc, 3, 3
-	ld a, $3
-	call FillBoxCGB
-
-	; Misty
-	hlcoord 11, 10, AttrMap
-	lb bc, 3, 3
-	ld a, $5
-	call FillBoxCGB
-
-	; Erika
-	hlcoord 15, 10, AttrMap
-	lb bc, 3, 3
-	ld a, $4
-	call FillBoxCGB
-
-	; Janine
-	hlcoord 3, 13, AttrMap
-	lb bc, 3, 3
-	ld a, $6
-	call FillBoxCGB
-
-	; Brock
-	hlcoord 7, 13, AttrMap
-	lb bc, 3, 3
-	ld a, $2
-	call FillBoxCGB
-
-	; Blaine
-	hlcoord 11, 13, AttrMap
-	lb bc, 3, 3
-	ld a, $3
-	call FillBoxCGB
-
-	; Blue
 	hlcoord 15, 13, AttrMap
 	lb bc, 3, 3
 	ld a, $7
