@@ -62,3 +62,7 @@ TrainerGroups: ; 0x39999
 	dba JessieGroup
 	dba JamesGroup
 	dba GiovanniGymGroup
+	dba FossilMeteorGroup
+	dba FossilMeteorGroup
+	dba FossilMeteorGroup
+	dba FossilMeteorGroup

@@ -62,4 +62,7 @@ TrainerPicPointers::
 	dba JessiePic
 	dba JamesPic
 	dba GiovanniGymPic
-
+	dba OmastarFossilPic
+	dba KabutopsFossilPic
+	dba AerodactylFossilPic
+	dba MeteoritePic

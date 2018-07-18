@@ -24,6 +24,8 @@
 
 SECTION "Enemy Trainer Parties", ROMX
 
+FossilMeteorGroup:
+
 RedGroup:
 
 LeafGroup:

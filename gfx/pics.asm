@@ -802,3 +802,9 @@ KabutoPuzzlePic:          INCBIN "gfx/paintings/kabuto_puzzle.2bpp.lz"
 OmanytePuzzlePic:         INCBIN "gfx/paintings/omanyte_puzzle.2bpp.lz"
 AerodactylPuzzlePic:      INCBIN "gfx/paintings/aerodactyl_puzzle.2bpp.lz"
 HoOhPuzzlePic:            INCBIN "gfx/paintings/ho_oh_puzzle.2bpp.lz"
+
+SECTION "Museum Pics", ROMX
+OmastarFossilPic:     INCBIN "gfx/trainers/omastarfossil.2bpp.lz"
+KabutopsFossilPic:    INCBIN "gfx/trainers/kabutopsfossil.2bpp.lz"
+AerodactylFossilPic:  INCBIN "gfx/trainers/aerodactylfossil.2bpp.lz"
+MeteoritePic:         INCBIN "gfx/trainers/meteorite.2bpp.lz"

@@ -371,4 +371,28 @@ TrainerClassAttributes: ; 3959c
 	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_SMART + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
-; 39771
+
+; Fossil
+	db 0, 0 ; items
+	db 4 ; base reward
+	dw AI_BASIC + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Fossil
+	db 0, 0 ; items
+	db 4 ; base reward
+	dw AI_BASIC + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Fossil
+	db 0, 0 ; items
+	db 4 ; base reward
+	dw AI_BASIC + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Meteorite
+	db 0, 0 ; items
+	db 4 ; base reward
+	dw AI_BASIC + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+

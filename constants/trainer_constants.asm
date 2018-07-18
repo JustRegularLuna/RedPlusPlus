@@ -468,4 +468,12 @@ ENDM
 	trainerclass GIOVANNI_2 ; LEADER as Class Name
 	const GIOVANNI_GYM
 
+	trainerclass OMASTAR_FOSSIL ; for museum
+	
+	trainerclass KABUTOPS_FOSSIL ; for museum
+	
+	trainerclass AERODACTYL_FOSSIL ; for museum
+	
+	trainerclass METEORITE ; for museum
+
 NUM_TRAINER_CLASSES EQU __enum__

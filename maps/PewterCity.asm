@@ -1,5 +1,7 @@
 PewterCity_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script PewterCityResetMuseum
+	scene_script PewterCityResetMuseum
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, PewterCityFlyPoint
@@ -49,6 +51,10 @@ PewterCity_MapScriptHeader:
 PewterCityFlyPoint:
 	setflag ENGINE_FLYPOINT_PEWTER
 	return
+
+PewterCityResetMuseum:
+	setmapscene PEWTER_MUSEUM_OF_SCIENCE_1F, $0
+	end
 
 PewterCityRepelGuyScript:
 	faceplayer
