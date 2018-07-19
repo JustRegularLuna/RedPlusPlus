@@ -46,7 +46,7 @@ CheckEngineFlag: ; c721
 	ret
 
 CheckBadge: ; c731
-; Check engine flag a (ENGINE_ZEPHYRBADGE thru ENGINE_EARTHBADGE)
+; Check engine flag de
 ; Display "Badge required" text and return carry if the badge is not owned
 	call CheckEngineFlag
 	ret nc
@@ -162,7 +162,7 @@ CutFunction: ; c785
 	dw .FailCut
 
 .CheckAble: ; c79c (3:479c)
-	ld de, ENGINE_HIVEBADGE
+	ld de, ENGINE_CASCADEBADGE
 	call CheckBadge
 	jr c, .nohivebadge
 	call CheckMapForSomethingToCut
@@ -414,7 +414,7 @@ SurfFunction: ; c909
 	dw .AlreadySurfing
 
 .TrySurf: ; c922 (3:4922)
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_SOULBADGE
 	call CheckBadge
 	jr c, .asm_c956
 	ld hl, BikeFlags
@@ -568,7 +568,7 @@ TrySurfOW:: ; c9e7
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_SOULBADGE
 	call CheckEngineFlag
 	jr c, .quit
 
@@ -654,7 +654,7 @@ FlyFunction: ; ca3b
 
 .TryFly: ; ca52
 ; Fly
-	ld de, ENGINE_STORMBADGE
+	ld de, ENGINE_THUNDERBADGE
 	call CheckBadge
 	jr c, .nostormbadge
 	call CheckFlyAllowedOnMap
@@ -1080,7 +1080,7 @@ StrengthFunction: ; cce5
 
 .TryStrength: ; ccee
 ; Strength
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_RAINBOWBADGE
 	call CheckBadge
 	jr c, .Failed
 	jr .UseStrength
@@ -1169,7 +1169,7 @@ TryStrengthOW: ; cd78
 	call CheckPartyMove
 	jr c, .nope
 
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_RAINBOWBADGE
 	call CheckEngineFlag
 	jr c, .nope
 
@@ -1912,7 +1912,7 @@ HasCutAvailable:: ; d186
 	call CheckPartyMove
 	jr c, .no
 
-	ld de, ENGINE_HIVEBADGE
+	ld de, ENGINE_CASCADEBADGE
 	call CheckEngineFlag
 	jr c, .no
 
