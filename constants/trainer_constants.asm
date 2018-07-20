@@ -80,7 +80,7 @@ ENDM
 	const PHILLIP
 	const DWAYNE
 	
-	trainerclass JR_TRAINER_M
+	trainerclass CAMPER
 	const LIAM
 	const SHANE
 	const ETHAN
@@ -91,7 +91,7 @@ ENDM
 	const DREW
 	const JUSTIN
 	
-	trainerclass JR_TRAINER_F
+	trainerclass PICNICKER
 	const NANCY
 	const ISABELLE
 	const ALICIA

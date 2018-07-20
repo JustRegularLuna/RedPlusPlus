@@ -35,9 +35,11 @@ ProfOakGroup:
 TraceyGroup:
 
 BrockGroup:
-	db "Brock@", TRAINERTYPE_NORMAL
+	db "Brock@", TRAINERTYPE_MOVES
 	db 12, GEODUDE
+		db TACKLE, DEFENSE_CURL, MUD_SLAP, RAPID_SPIN
 	db 14, ONIX
+		db TACKLE, WRAP, SANDSTORM, ROCK_THROW
 	db -1 ; end
 
 MistyGroup:
