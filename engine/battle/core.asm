@@ -9287,16 +9287,10 @@ BattleStartMessage: ; 3fc8b
 
 CheckPluralTrainer:
 	ld a, [OtherTrainerClass]
-;	cp TWINS
-;	jr z, .plural
-;	cp SR_AND_JR
-;	jr z, .plural
-;	cp COUPLE
-;	jr z, .plural
-;	cp ACE_DUO
-;	jr z, .plural
-;	cp JESSIE_JAMES
-;	jr z, .plural
+	cp COUPLE
+	jr z, .plural
+	cp JESSIE_JAMES
+	jr z, .plural
 	xor a
 	scf
 	ret

@@ -59,8 +59,6 @@ TrainerPicPointers::
 	dba JaninePic
 	dba PiTrainerPic
 	dba FlanneryPic
-	dba JessiePic
-	dba JamesPic
 	dba GiovanniGymPic
 	dba OmastarFossilPic
 	dba KabutopsFossilPic

@@ -59,8 +59,6 @@ TrainerGroups: ; 0x39999
 	dba JanineGroup
 	dba UndercoverGroup ; Looks like the "PI" from Gen 4, used on Nugget Bridge
 	dba FlanneryGroup
-	dba JessieGroup
-	dba JamesGroup
 	dba GiovanniGymGroup
 	dba FossilMeteorGroup
 	dba FossilMeteorGroup

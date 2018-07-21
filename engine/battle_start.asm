@@ -716,8 +716,6 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	db EXECUTIVE_F
 	db EXECUTIVE_M
 	db JESSIE_JAMES
-	db JESSIE
-	db JAMES
 	db GIOVANNI_2
 	db -1
 

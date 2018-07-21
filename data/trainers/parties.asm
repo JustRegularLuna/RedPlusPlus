@@ -355,8 +355,8 @@ JanineGroup:
 YoungsterGroup:
 ; Route 3
 	db "Ben@", TRAINERTYPE_NORMAL
+	db 11, ZIGZAGOON
 	db 11, RATTATA
-	db 11, EKANS
 	db -1 ; end
 
 	db "Calvin@", TRAINERTYPE_NORMAL
@@ -1874,26 +1874,21 @@ ExecutiveMGroup:
 	db 34, MAROWAK
 	db -1 ; end
 
-JessieGroup:
-; Rocket Hideout B4F
-	db "Jessie@", TRAINERTYPE_NORMAL
-	db 23, ARBOK
-	db 23, LICKITUNG
-	db -1 ; end
-
-JamesGroup:
-; Rocket Hideout B4F
-	db "James@", TRAINERTYPE_NORMAL
-	db 23, WEEZING
-	db 23, WEEPINBELL
-	db -1 ; end
-
 JessieJamesGroup:
 ; Mt. Moon B2F
-	db "Duo@", TRAINERTYPE_NORMAL
+	db "& James@", TRAINERTYPE_NORMAL
 	db 14, MEOWTH
 	db 13, EKANS
 	db 13, KOFFING
+	db -1 ; end
+
+; Rocket Hideout B4F
+	db "& James@", TRAINERTYPE_NORMAL
+	db 23, MEOWTH
+	db 23, ARBOK
+	db 23, WEEZING
+	db 23, LICKITUNG
+	db 23, WEEPINBELL
 	db -1 ; end
 
 UndercoverGroup:

@@ -54,11 +54,9 @@ TrainerClassNames::
 	db "Rocket@"           ; EXECUTIVE_F
 	db "Rocket@"           ; EXECUTIVE_M
 	db "Rocker@"           ; ROCKER_F
-	db "Rocket@"           ; JESSIE_JAMES
+	db "Jessie@"           ; JESSIE_JAMES
 	db "Cosplayer@"        ; COSPLAY_GIRL
 	db "<PK><MN> Trainer@" ; JANINE
 	db "Rocket@"           ; PI_TRAINER
 	db "<PK><MN> Trainer@" ; FLANNERY
-	db "Rocket@"           ; JESSIE
-	db "Rocket@"           ; JAMES
 	db "Leader@"           ; GIOVANNI_2

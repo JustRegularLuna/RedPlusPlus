@@ -448,6 +448,7 @@ ENDM
 	
 	trainerclass JESSIE_JAMES
 	const JESSIE_JAMES_MTMOON
+	const JESSIE_JAMES_HIDEOUT
 	
 	trainerclass COSPLAY_GIRL
 	const JESSICA
@@ -458,12 +459,6 @@ ENDM
 	const RECRUITER
 	
 	trainerclass FLANNERY
-	
-	trainerclass JESSIE
-	const JESSIE_HIDEOUT
-	
-	trainerclass JAMES
-	const JAMES_HIDEOUT
 	
 	trainerclass GIOVANNI_2 ; LEADER as Class Name
 	const GIOVANNI_GYM
