@@ -31,5 +31,5 @@ ViridianForestExitText2:
 	text "When I was raising"
 	line "my Eevee in the"
 	cont "forest, it went"
-    cont "and evolved!"
-    done
+	cont "and evolved!"
+	done
