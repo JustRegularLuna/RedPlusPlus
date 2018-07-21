@@ -20,12 +20,13 @@ PewterCity_MapScriptHeader:
 	coord_event 36, 23, 0, PewterCityBrockGuyTriggers2
 	coord_event 36, 24, 0, PewterCityBrockGuyTriggers3
 
-	db 5 ; bg events
+	db 6 ; bg events
 	bg_event 17, 33, SIGNPOST_JUMPTEXT, PewterCityText6
 	bg_event 33, 20, SIGNPOST_JUMPTEXT, PewterCityText7
 	bg_event 16, 12, SIGNPOST_JUMPTEXT, PewterCityText10
 	bg_event 10, 21, SIGNPOST_JUMPTEXT, PewterCityText11
 	bg_event 25, 27, SIGNPOST_JUMPTEXT, PewterCityText12
+	bg_event  6,  8, SIGNPOST_ITEM + POKE_BALL, EVENT_PEWTER_CITY_HIDDEN_POKEBALL
 
 	db 10 ; object events
 	treebase_right_event_1 25, 41, SECRET_BASE_ROUTE_2_NORTH, EVENT_SECRET_BASE_ROUTE_2_NORTH ; visible on Route2North

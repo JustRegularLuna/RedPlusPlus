@@ -9,8 +9,9 @@ Route3South_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 59,  9, SIGNPOST_JUMPTEXT, Route3Text10
+	bg_event 46, 11, SIGNPOST_ITEM + NUGGET, EVENT_ROUTE_3_HIDDEN_NUGGET
 
 	db 12 ; object events
 	treebase_right_event_1 57,  2, SECRET_BASE_ROUTE_3_TREE, EVENT_SECRET_BASE_ROUTE_3_TREE
