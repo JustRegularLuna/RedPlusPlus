@@ -32,6 +32,7 @@ Tileset00End::
 	tileset TilesetPokeCenter
 	tileset TilesetLab
 	tileset TilesetShrinesRuins
+	tileset TilesetCave
 	;------------------------------------
 	tileset TilesetShamouti
 	tileset TilesetValencia
@@ -57,7 +58,7 @@ Tileset00End::
 	tileset TilesetRadioTower
 	tileset TilesetLighthouse
 	tileset TilesetWarehouse
-	tileset TilesetCave
+	tileset TilesetPCCave
 	tileset TilesetQuietCave
 	tileset TilesetIcePath
 	tileset TilesetTunnel

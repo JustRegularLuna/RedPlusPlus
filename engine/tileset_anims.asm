@@ -35,6 +35,7 @@ _AnimateTileset:: ; fc000
 ; fc01b
 
 
+
 Tileset00Anim:
 TilesetPalletCinnabarAnim:
 TilesetViridianAnim:
@@ -178,7 +179,7 @@ TilesetTowerAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
-TilesetCaveAnim:
+TilesetPCCaveAnim:
 TilesetQuietCaveAnim:
 	dw NULL,  SafariFountainAnim4
 	dw NULL,  WaitTileAnimation
@@ -310,6 +311,7 @@ TilesetValenciaAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetCaveAnim: ; placeholder
 TilesetPokeCenterAnim:
 TilesetLabAnim:
 TilesetShrinesRuinsAnim:

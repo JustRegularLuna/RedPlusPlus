@@ -570,9 +570,9 @@ MAP_NONE   EQU 0
 	newgroup ; 51
 
 	map_const VIRIDIAN_FOREST,                        21, 28 ;  1
-	map_const MOUNT_MOON_1F,                          15, 13 ;  2
-	map_const MOUNT_MOON_B1F,                         16, 14 ;  3
-	map_const MOUNT_MOON_B2F,                         16, 17 ;  4
+	map_const MOUNT_MOON_1F,                          20, 18 ;  2
+	map_const MOUNT_MOON_B1F,                         14, 14 ;  3
+	map_const MOUNT_MOON_B2F,                         20, 18 ;  4
 	map_const FAST_SHIP_1F,                           16,  9 ;  5
 	map_const FAST_SHIP_B1F,                          14,  7 ;  6
 	map_const FAST_SHIP_CABINS_NNW_NNE_NE,             4, 16 ;  7

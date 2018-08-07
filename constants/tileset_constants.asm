@@ -28,6 +28,7 @@ GENERIC_GFX EQU const_value
 	const TILESET_POKECENTER
 	const TILESET_LAB
 	const TILESET_SHRINES_RUINS
+	const TILESET_CAVE
 	;------------------------------------
 	const TILESET_PC_SHAMOUTI_ISLAND
 	const TILESET_PC_VALENCIA_ISLAND
