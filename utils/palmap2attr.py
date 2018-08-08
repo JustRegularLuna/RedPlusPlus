@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""Convert a palette_map.asm file to an attributes.bin file."""
+
 import glob
 
 color_attrs = {
@@ -11,9 +16,6 @@ color_attrs = {
 
 palette_map_names = glob.glob('gfx/tilesets/*_palette_map.asm')
 for palette_map_name in palette_map_names:
-
-	if 'unused_museum_palette_map' in palette_map_name:
-		continue
 
 	palette_map_name = palette_map_name.replace('\\', '/')
 	metatiles_name = (palette_map_name.replace('gfx/', 'data/')

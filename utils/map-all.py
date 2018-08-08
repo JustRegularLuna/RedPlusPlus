@@ -23,7 +23,8 @@ tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'vermilion
                  'saffron', 'indigo', 'forest', 'new_bark_cherrygrove',
                  'violet_mahogany', 'azalea_blackthorn', 'goldenrod', 'ecruteak',
                  'olivine_cianwood', 'battle_tower_outside', 'national_park',
-                 'shrines_ruins_outside', 'pokecenter', 'lab', 'shrines_ruins']
+                 'shrines_ruins_outside', 'pokecenter', 'lab', 'shrines_ruins',
+                 'cave']
 
 # {'TILESET_PC_JOHTO_1': 1, ...}
 tileset_ids = {}
