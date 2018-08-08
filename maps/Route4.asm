@@ -4,7 +4,7 @@ Route4_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_event  4,  7, MOUNT_MOON_B1F, 8
+	warp_event  4,  7, MOUNT_MOON_B1F, 10
 	warp_event 19,  5, MOUNT_MOON_SQUARE, 1 ; TODO: Cable Car Building
 	warp_event 56,  8, HIDDEN_TREE_GROTTO, 1
 	warp_event 28,  4, HIDDEN_CAVE_GROTTO, 1

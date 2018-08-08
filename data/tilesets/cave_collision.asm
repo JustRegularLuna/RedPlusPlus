@@ -138,3 +138,17 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, TOP_WALL, WALL, FLOOR
+	tilecoll TOP_WALL, WALL, FLOOR, WALL
