@@ -321,13 +321,13 @@ INCBIN "data/tilesets/shrines_ruins_attributes.bin"
 SECTION "Tileset Data 26", ROMX
 
 TilesetCaveGFX::
-INCBIN "gfx/tilesets/normal_cave.2bpp.lz"
+INCBIN "gfx/tilesets/cave.2bpp.lz"
 TilesetCaveMeta::
-INCBIN "data/tilesets/normal_cave_metatiles.bin"
+INCBIN "data/tilesets/cave_metatiles.bin"
 TilesetCaveColl::
-INCLUDE "data/tilesets/normal_cave_collision.asm"
+INCLUDE "data/tilesets/cave_collision.asm"
 TilesetCaveAttr::
-INCBIN "data/tilesets/normal_cave_attributes.bin"
+INCBIN "data/tilesets/cave_attributes.bin"
 
 ;------------------------------------
 
@@ -469,16 +469,16 @@ INCLUDE "data/tilesets/ruins_collision.asm"
 SECTION "PC Tileset Data 8", ROMX
 
 TilesetPCCaveGFX::
-INCBIN "gfx/tilesets/cave.2bpp.lz"
+INCBIN "gfx/tilesets/pc_cave.2bpp.lz"
 TilesetQuietCaveGFX::
 INCBIN "gfx/tilesets/quiet_cave.2bpp.lz"
 TilesetPCCaveMeta::
 TilesetQuietCaveMeta::
-INCBIN "data/tilesets/cave_metatiles.bin"
+INCBIN "data/tilesets/pc_cave_metatiles.bin"
 
 TilesetPCCaveColl::
 TilesetQuietCaveColl::
-INCLUDE "data/tilesets/cave_collision.asm"
+INCLUDE "data/tilesets/pc_cave_collision.asm"
 
 TilesetPCForestGFX::
 INCBIN "gfx/tilesets/pc_forest.2bpp.lz"
@@ -688,7 +688,7 @@ SECTION "PC Tileset Data 24", ROMX
 
 TilesetPCCaveAttr::
 TilesetQuietCaveAttr::
-INCBIN "data/tilesets/cave_attributes.bin"
+INCBIN "data/tilesets/pc_cave_attributes.bin"
 
 TilesetIcePathAttr::
 INCBIN "data/tilesets/ice_path_attributes.bin"

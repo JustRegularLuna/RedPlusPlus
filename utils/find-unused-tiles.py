@@ -25,6 +25,7 @@ tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'vermilion
                  'violet_mahogany', 'azalea_blackthorn', 'goldenrod', 'ecruteak',
                  'olivine_cianwood', 'battle_tower_outside', 'national_park',
                  'shrines_ruins_outside', 'pokecenter', 'lab', 'shrines_ruins',
+                 'cave',
                  ###############################################################
                  'shamouti', 'valencia', 'faraway', 'house1', 'house2', 'house3',
                  'mart', 'gate', 'gym1', 'gym2', 'gym3', 'port', 'pc_lab',
