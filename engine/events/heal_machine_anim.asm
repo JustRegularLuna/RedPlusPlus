@@ -220,7 +220,7 @@ endc
 	bcpixel 2, 4
 	cp $1 ; ElmsLab
 	jr z, .okay
-	bcpixel 0, 0
+	bcpixel 2, 0
 
 .okay
 	ld a, [de]

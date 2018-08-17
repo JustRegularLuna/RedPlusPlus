@@ -20,7 +20,7 @@ Route22_MapScriptHeader:
 	coord_event 22, 7, 3, Route22LastRivalScriptBottom
 
 	db 1 ; bg events
-	bg_event  8, 10, SIGNPOST_READ, Route22FrontGateText
+	bg_event  8, 10, SIGNPOST_JUMPTEXT, Route22FrontGateText
 
 	db 2 ; object events
 	cavebase_event 28,  3, SECRET_BASE_ROUTE_22, EVENT_SECRET_BASE_ROUTE_22
