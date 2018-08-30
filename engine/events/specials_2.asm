@@ -220,6 +220,12 @@ SpecialWobbuffetOT:
 SpecialWobbuffetNick:
 	db "Buffy@"
 
+Special_MakeGiveMonShiny:
+	ld hl, PartyMon1Shiny
+	call _GetLastPartyMonAttribute
+	set 7, [hl]
+	ret
+
 Special_BillsGrandfather: ; 73f7
 	farcall SelectMonFromParty
 	jr c, .cancel

@@ -173,5 +173,6 @@ SpecialsPointers::
 	add_special GetHiddenGrottoContents
 	add_special EmptiedHiddenGrotto
 	add_special Special_GetOvercastIndex
+	add_special Special_MakeGiveMonShiny
 
 	add_special SpecialNone
