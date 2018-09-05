@@ -360,6 +360,156 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_SMART + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
+; Rei
+	db FULL_HEAL, 0 ; items
+	db 20 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_SMART + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Aroma Lady
+	db 0, 0 ; items
+	db 14 ; base reward
+	dw AI_BASIC + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Battle Girl
+	db FRESH_WATER, 0 ; items
+	db 6 ; base reward
+	dw AI_BASIC + AI_OFFENSIVE + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Breeder
+	db SUPER_POTION, 0 ; items
+	db 16 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Boarder
+	db 0, 0 ; items
+	db 18 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Skier
+	db 0, 0 ; items
+	db 18 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Firebreather
+	db 0, 0 ; items
+	db 15 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_OFFENSIVE + AI_OPPORTUNIST + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Sr and Jr
+	db LEMONADE, 0 ; items
+	db 16 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Kimono Girl
+	db 0, 0 ; items
+	db 20 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_SMART + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Sage
+	db 0, 0 ; items
+	db 8 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Medium
+	db 0, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Lady
+	db MAX_POTION, 0 ; items
+	db 50 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Officerm
+	db FRESH_WATER, 0 ; items
+	db 15 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Officerf
+	db FRESH_WATER, 0 ; items
+	db 15 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Artist
+	db 0, 0 ; items
+	db 14 ; base reward
+	dw AI_BASIC + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Parasol Girl
+	db 0, 0 ; items
+	db 14 ; base reward
+	dw AI_BASIC + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Pokefanm
+	db 0, 0 ; items
+	db 15 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_SMART + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Pokefanf
+	db 0, 0 ; items
+	db 15 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_SMART + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Rich Boy
+	db MAX_POTION, 0 ; items
+	db 50 ; base reward
+	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Ruin Maniac
+	db 0, 0 ; items
+	db 14 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_OFFENSIVE + AI_AGGRESSIVE + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Schoolboy
+	db SODA_POP, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Schoolgirl
+	db SODA_POP, 0 ; items
+	db 10 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Teacher
+	db 0, 0 ; items
+	db 18 ; base reward
+	dw AI_BASIC + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Twins
+	db 0, 0 ; items
+	db 5 ; base reward
+	dw NO_AI
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Looker
+	db 0, 0 ; items
+	db 20 ; base reward
+	dw AI_BASIC + AI_OFFENSIVE + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
 ; Fossil
 	db 0, 0 ; items
 	db 4 ; base reward

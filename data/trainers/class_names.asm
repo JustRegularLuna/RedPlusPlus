@@ -60,3 +60,32 @@ TrainerClassNames::
 	db "Rocket@"           ; PI_TRAINER
 	db "<PK><MN> Trainer@" ; FLANNERY
 	db "Leader@"           ; GIOVANNI_2
+	db "Shrine Maiden@"    ; SHRINE_MAIDEN
+	db "Aroma Lady@"       ; AROMA_LADY
+	db "Battle Girl@"      ; BATTLE_GIRL
+	db "Breeder@"          ; BREEDER
+	db "Boarder@"          ; BOARDER
+	db "Skier@"            ; SKIER
+	db "Firebreather@"     ; FIREBREATHER
+	db "Sr&Jr@"            ; SR_AND_JR
+	db "Kimono Girl@"      ; KIMONO_GIRL
+	db "Sage@"             ; SAGE
+	db "Medium@"           ; MEDIUM
+	db "Lady@"             ; LADY
+	db "Officer@"          ; OFFICER_M
+	db "Officer@"          ; OFFICER_F
+	db "Artist@"           ; ARTIST
+	db "Parasol Girl@"     ; PARASOL_GIRL
+	db "#fan@"             ; POKEFAN_M
+	db "#fan@"             ; POKEFAN_F
+	db "Rich Boy@"         ; RICH_BOY
+	db "Ruin Maniac@"      ; RUIN_MANIAC
+	db "Schoolboy@"        ; SCHOOLBOY
+	db "Schoolgirl@"       ; SCHOOLGIRL
+	db "Teacher@"          ; TEACHER
+	db "Twins@"            ; TWINS
+	db "Agent@"            ; LOOKER
+	db "?@"                ; OMASTAR_FOSSIL
+	db "?@"                ; KABUTOPS_FOSSIL
+	db "?@"                ; AERODACTYL_FOSSIL
+	db "?@"                ; METEORITE

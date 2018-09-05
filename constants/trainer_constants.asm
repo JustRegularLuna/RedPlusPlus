@@ -462,6 +462,56 @@ ENDM
 	
 	trainerclass GIOVANNI_2 ; LEADER as Class Name
 	const GIOVANNI_GYM
+	
+	trainerclass SHRINE_MAIDEN
+	
+	trainerclass AROMA_LADY
+	
+	trainerclass BATTLE_GIRL
+	
+	trainerclass BREEDER
+	
+	trainerclass BOARDER
+	
+	trainerclass SKIER
+	
+	trainerclass FIREBREATHER
+	
+	trainerclass SR_AND_JR
+	
+	trainerclass KIMONO_GIRL
+	
+	trainerclass SAGE
+	
+	trainerclass MEDIUM
+	
+	trainerclass LADY
+	
+	trainerclass OFFICER_M
+	
+	trainerclass OFFICER_F
+	
+	trainerclass ARTIST
+	
+	trainerclass PARASOL_GIRL
+	
+	trainerclass POKEFAN_M
+	
+	trainerclass POKEFAN_F
+	
+	trainerclass RICH_BOY
+	
+	trainerclass RUIN_MANIAC
+	
+	trainerclass SCHOOLBOY
+	
+	trainerclass SCHOOLGIRL
+	
+	trainerclass TEACHER
+	
+	trainerclass TWINS
+	
+	trainerclass LOOKER
 
 	trainerclass OMASTAR_FOSSIL ; for museum
 	

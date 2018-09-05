@@ -60,6 +60,31 @@ TrainerGroups: ; 0x39999
 	dba UndercoverGroup ; Looks like the "PI" from Gen 4, used on Nugget Bridge
 	dba FlanneryGroup
 	dba GiovanniGymGroup
+	dba ShrineMaidenGroup
+	dba AromaLadyGroup
+	dba BattleGirlGroup
+	dba BreederGroup
+	dba BoarderGroup
+	dba SkierGroup
+	dba FirebreatherGroup
+	dba SrAndJrGroup
+	dba KimonoGirlGroup
+	dba SageGroup
+	dba MediumGroup
+	dba LadyGroup
+	dba OfficerMGroup
+	dba OfficerFGroup
+	dba ArtistGroup
+	dba ParasolGirlGroup
+	dba PokefanMGroup
+	dba PokefanFGroup
+	dba RichBoyGroup
+	dba RuinManiacGroup
+	dba SchoolboyGroup
+	dba SchoolgirlGroup
+	dba TeacherGroup
+	dba TwinsGroup
+	dba LookerGroup
 	dba FossilMeteorGroup
 	dba FossilMeteorGroup
 	dba FossilMeteorGroup

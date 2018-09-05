@@ -790,6 +790,34 @@ Rival3Pic::               INCBIN "gfx/trainers/rival3.2bpp.lz"
 LoreleiPic::              INCBIN "gfx/trainers/lorelei.2bpp.lz"
 ChannelerPic::            INCBIN "gfx/trainers/channeler.2bpp.lz"
 
+SECTION "Trainer Pics 3", ROMX
+
+ShrineMaidenPic::         INCBIN "gfx/trainers/rei.2bpp.lz"
+AromaLadyPic::            INCBIN "gfx/trainers/aroma_lady.2bpp.lz"
+BattleGirlPic::           INCBIN "gfx/trainers/battle_girl.2bpp.lz"
+BreederPic::              INCBIN "gfx/trainers/breeder.2bpp.lz"
+BoarderPic::              INCBIN "gfx/trainers/boarder.2bpp.lz"
+SkierPic::                INCBIN "gfx/trainers/skier.2bpp.lz"
+FirebreatherPic::         INCBIN "gfx/trainers/firebreather.2bpp.lz"
+SrAndJrPic::              INCBIN "gfx/trainers/sr_and_jr.2bpp.lz"
+KimonoGirlPic::           INCBIN "gfx/trainers/kimono_girl.2bpp.lz"
+SagePic::                 INCBIN "gfx/trainers/sage.2bpp.lz"
+MediumPic::               INCBIN "gfx/trainers/medium.2bpp.lz"
+LadyPic::                 INCBIN "gfx/trainers/lady.2bpp.lz"
+OfficerMPic::             INCBIN "gfx/trainers/officer_m.2bpp.lz"
+OfficerFPic::             INCBIN "gfx/trainers/officer_f.2bpp.lz"
+ArtistPic::               INCBIN "gfx/trainers/artist.2bpp.lz"
+ParasolGirlPic::          INCBIN "gfx/trainers/parasol_lady.2bpp.lz"
+PokefanMPic::             INCBIN "gfx/trainers/pokefan_m.2bpp.lz"
+PokefanFPic::             INCBIN "gfx/trainers/pokefan_f.2bpp.lz"
+RichBoyPic::              INCBIN "gfx/trainers/rich_boy.2bpp.lz"
+RuinManiacPic::           INCBIN "gfx/trainers/ruin_maniac.2bpp.lz"
+SchoolboyPic::            INCBIN "gfx/trainers/schoolboy.2bpp.lz"
+SchoolgirlPic::           INCBIN "gfx/trainers/schoolgirl.2bpp.lz"
+TeacherPic::              INCBIN "gfx/trainers/teacher.2bpp.lz"
+TwinsPic::                INCBIN "gfx/trainers/twins.2bpp.lz"
+LookerPic::               INCBIN "gfx/trainers/looker.2bpp.lz"
+
 
 SECTION "Painting Pics", ROMX
 

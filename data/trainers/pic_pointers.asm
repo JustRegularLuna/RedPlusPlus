@@ -60,6 +60,31 @@ TrainerPicPointers::
 	dba PiTrainerPic
 	dba FlanneryPic
 	dba GiovanniGymPic
+	dba ShrineMaidenPic
+	dba AromaLadyPic
+	dba BattleGirlPic
+	dba BreederPic
+	dba BoarderPic
+	dba SkierPic
+	dba FirebreatherPic
+	dba SrAndJrPic
+	dba KimonoGirlPic
+	dba SagePic
+	dba MediumPic
+	dba LadyPic
+	dba OfficerMPic
+	dba OfficerFPic
+	dba ArtistPic
+	dba ParasolGirlPic
+	dba PokefanMPic
+	dba PokefanFPic
+	dba RichBoyPic
+	dba RuinManiacPic
+	dba SchoolboyPic
+	dba SchoolgirlPic
+	dba TeacherPic
+	dba TwinsPic
+	dba LookerPic
 	dba OmastarFossilPic
 	dba KabutopsFossilPic
 	dba AerodactylFossilPic

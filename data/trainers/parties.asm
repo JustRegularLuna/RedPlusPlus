@@ -2294,3 +2294,33 @@ HexManiacGroup:
 	db 33, GASTLY
 	db 33, HAUNTER
 	db -1 ; end
+
+ShrineMaidenGroup:
+AromaLadyGroup:
+BattleGirlGroup:
+BreederGroup:
+BoarderGroup:
+SkierGroup:
+FirebreatherGroup:
+SrAndJrGroup:
+KimonoGirlGroup:
+SageGroup:
+MediumGroup:
+LadyGroup:
+OfficerMGroup:
+OfficerFGroup:
+ArtistGroup:
+ParasolGirlGroup:
+PokefanMGroup:
+PokefanFGroup:
+RichBoyGroup:
+RuinManiacGroup:
+SchoolboyGroup:
+SchoolgirlGroup:
+TeacherGroup:
+TwinsGroup:
+LookerGroup:
+;placeholder
+	db "?@", TRAINERTYPE_NORMAL
+	db 5, ZIGZAGOON
+	db -1 ; end
