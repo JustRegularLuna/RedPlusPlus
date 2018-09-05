@@ -2310,7 +2310,7 @@ LadyGroup:
 OfficerMGroup:
 OfficerFGroup:
 ArtistGroup:
-ParasolGirlGroup:
+ParasolLadyGroup:
 PokefanMGroup:
 PokefanFGroup:
 RichBoyGroup:

@@ -493,7 +493,7 @@ ENDM
 	
 	trainerclass ARTIST
 	
-	trainerclass PARASOL_GIRL
+	trainerclass PARASOL_LADY
 	
 	trainerclass POKEFAN_M
 	

@@ -75,7 +75,7 @@ TrainerClassNames::
 	db "Officer@"          ; OFFICER_M
 	db "Officer@"          ; OFFICER_F
 	db "Artist@"           ; ARTIST
-	db "Parasol Girl@"     ; PARASOL_GIRL
+	db "Parasol Lady@"     ; PARASOL_LADY
 	db "#fan@"             ; POKEFAN_M
 	db "#fan@"             ; POKEFAN_F
 	db "Rich Boy@"         ; RICH_BOY

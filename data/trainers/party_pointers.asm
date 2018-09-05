@@ -75,7 +75,7 @@ TrainerGroups: ; 0x39999
 	dba OfficerMGroup
 	dba OfficerFGroup
 	dba ArtistGroup
-	dba ParasolGirlGroup
+	dba ParasolLadyGroup
 	dba PokefanMGroup
 	dba PokefanFGroup
 	dba RichBoyGroup

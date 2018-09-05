@@ -75,7 +75,7 @@ TrainerPicPointers::
 	dba OfficerMPic
 	dba OfficerFPic
 	dba ArtistPic
-	dba ParasolGirlPic
+	dba ParasolLadyPic
 	dba PokefanMPic
 	dba PokefanFPic
 	dba RichBoyPic

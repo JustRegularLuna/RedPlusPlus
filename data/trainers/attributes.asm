@@ -450,7 +450,7 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
-; Parasol Girl
+; Parasol Lady
 	db 0, 0 ; items
 	db 14 ; base reward
 	dw AI_BASIC + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
