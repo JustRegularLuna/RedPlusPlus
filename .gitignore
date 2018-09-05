@@ -32,3 +32,5 @@
 # swap files for gedit
 *~
 
+# intermediate files
+gfx/trainers/*.2bpp
