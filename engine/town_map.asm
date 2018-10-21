@@ -1,3 +1,6 @@
+BUBBLE_CORNER EQU $37
+UP_DOWN_ARROW EQU $38
+
 Pokegear_LoadGFX: ; 90c4e
 	call ClearVBank1
 	ld hl, TownMapGFX
@@ -169,7 +172,7 @@ PokegearMap_UpdateLandmarkName: ; 910b4
 	pop de
 	call TownMap_ConvertLineBreakCharacters
 	hlcoord 8, 0
-	ld [hl], "<UPDN>"
+	ld [hl], UP_DOWN_ARROW
 	ret
 
 ; 910d4
@@ -513,33 +516,44 @@ TownMapBubble: ; 91bb5
 
 ; Top-left corner
 	hlcoord 1, 0
-	ld a, $37
+	ld a, BUBBLE_CORNER
 	ld [hli], a
+	push hl
+	hlcoord 1, 0, AttrMap
+	ld [hl], 0
+	pop hl
 ; Top row
 	ld bc, 16
 	ld a, " "
 	call ByteFill
 ; Top-right corner
-	ld a, $38
+	ld a, BUBBLE_CORNER
 	ld [hl], a
-	hlcoord 1, 1
+	hlcoord 18, 0, AttrMap
+	ld [hl], 0 | X_FLIP
 
 ; Middle row
+	hlcoord 1, 1
 	ld bc, 18
 	ld a, " "
 	call ByteFill
 
 ; Bottom-left corner
 	hlcoord 1, 2
-	ld a, $39
+	ld a, BUBBLE_CORNER
 	ld [hli], a
+	push hl
+	hlcoord 1, 2, AttrMap
+	ld [hl], 0 | Y_FLIP
+	pop hl
 ; Bottom row
 	ld bc, 16
 	ld a, " "
 	call ByteFill
 ; Bottom-right corner
-	ld a, $3a
-	ld [hl], a
+	ld [hl], BUBBLE_CORNER
+	hlcoord 18, 2, AttrMap
+	ld [hl], 0 | X_FLIP | Y_FLIP
 
 ; Print "Where?"
 	hlcoord 2, 0
@@ -549,7 +563,7 @@ TownMapBubble: ; 91bb5
 	call .Name
 ; Up/down arrows
 	hlcoord 18, 1
-	ld [hl], "<UPDN>"
+	ld [hl], UP_DOWN_ARROW
 	ret
 
 .Where:
@@ -866,7 +880,16 @@ _Area: ; 91d11
 	ld h, b
 	ld l, c
 	ld de, .String_SNest
-	jp PlaceString
+	call PlaceString
+; show left/right arrows for other regions if they're available
+	ld a, [StatusFlags]
+	bit 6, a ; ENGINE_CREDITS_SKIP
+	ret z
+	hlcoord 0, 0
+	ld [hl], "◀"
+	hlcoord 19, 0
+	ld [hl], "▶"
+	ret
 
 ; 91e16
 
@@ -1110,10 +1133,15 @@ TownMapPals: ; 91f13
 	push hl
 	cp $40 ; tiles in PokegearGFX (after TownMapGFX) use palette 0
 	jr nc, .pal0
+	cp BUBBLE_CORNER ; corner of TownMapBubble bubble is already attributed
+	jr z, .corner
 	call GetNextTownMapTilePalette
 	jr .update
 .pal0
 	xor a
+	jr .update
+.corner
+	ld a, [de]
 .update
 	pop hl
 	ld [de], a

@@ -4,9 +4,9 @@
 INCLUDE "constants.asm"
 
 
-MP_METER0 EQU $20
-MP_METER8 EQU $28
-MP_DUTY0 EQU $29
+MP_METER0 EQU $21
+MP_METER8 EQU $29
+MP_DUTY0 EQU $2a
 
 
 SECTION "Music Player Graphics", ROMX
@@ -158,7 +158,7 @@ MusicPlayer::
 
 ; Load graphics
 	ld de, PianoGFX ; 
-	lb bc, BANK(PianoGFX), 32 + 13 ; PianoGFX + MusicTestGFX
+	lb bc, BANK(PianoGFX), 33 + 13 ; PianoGFX + MusicTestGFX
 	ld hl, VTiles2
 	call Request2bpp
 
