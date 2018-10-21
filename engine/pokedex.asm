@@ -765,7 +765,7 @@ Pokedex_UpdateUnownMode: ; 405df (10:45df)
 	call DelayFrame
 	ld hl, PokedexLZ
 	ld de, VTiles2 tile $31
-	lb bc, BANK(PokedexLZ), $3c
+	lb bc, BANK(PokedexLZ), $3e
 	jp DecompressRequest2bpp
 
 Pokedex_UnownModeHandleDPadInput: ; 40610 (10:4610)

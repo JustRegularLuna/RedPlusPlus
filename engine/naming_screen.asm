@@ -1,3 +1,7 @@
+NAMINGSCREEN_BORDER     EQU $60
+NAMINGSCREEN_MIDDLELINE EQU $ba
+NAMINGSCREEN_UNDERLINE  EQU $bb
+
 _NamingScreen: ; 0x116b7
 	call DisableSpriteUpdates
 	call NamingScreen
@@ -693,7 +697,7 @@ MailComposition_TryAddCharacter: ; 11b17 (4:5b17)
 	ld a, [hl]
 	cp "@"
 	jr z, .end_of_string
-	ld [hl], "<_>"
+	ld [hl], NAMINGSCREEN_UNDERLINE
 	and a
 	ret
 
@@ -710,12 +714,12 @@ NamingScreen_DeleteCharacter: ; 11bbc (4:5bbc)
 	ret z
 	dec [hl]
 	call NamingScreen_GetTextCursorPosition
-	ld [hl], "<_>"
+	ld [hl], NAMINGSCREEN_UNDERLINE
 	inc hl
 	ld a, [hl]
-	cp "<_>"
+	cp NAMINGSCREEN_UNDERLINE
 	ret nz
-	ld [hl], "<—>"
+	ld [hl], NAMINGSCREEN_MIDDLELINE
 	ret
 
 NamingScreen_GetTextCursorPosition: ; 11bd0 (4:5bd0)
@@ -734,17 +738,17 @@ NamingScreen_GetTextCursorPosition: ; 11bd0 (4:5bd0)
 ; 11be0
 
 NamingScreen_InitNameEntry: ; 11be0
-; load "<_>", ("<—>" * [wNamingScreenMaxNameLength]), "@" into the dw address at wNamingScreenDestinationPointer
+; load NAMINGSCREEN_UNDERLINE, (NAMINGSCREEN_MIDDLELINE * [wNamingScreenMaxNameLength]), "@" into the dw address at wNamingScreenDestinationPointer
 	ld hl, wNamingScreenDestinationPointer
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld [hl], "<_>"
+	ld [hl], NAMINGSCREEN_UNDERLINE
 	inc hl
 	ld a, [wNamingScreenMaxNameLength]
 	dec a
 	ld c, a
-	ld a, "<—>"
+	ld a, NAMINGSCREEN_MIDDLELINE
 .loop
 	ld [hli], a
 	dec c
@@ -763,9 +767,9 @@ NamingScreen_StoreEntry: ; 11bf7 (4:5bf7)
 	ld c, a
 .loop
 	ld a, [hl]
-	cp "<—>"
+	cp NAMINGSCREEN_MIDDLELINE
 	jr z, .terminator
-	cp "<_>"
+	cp NAMINGSCREEN_UNDERLINE
 	jr nz, .not_terminator
 .terminator
 	ld [hl], "@"
@@ -824,7 +828,12 @@ LoadNamingScreenGFX: ; 11c51
 	call LoadStandardFont
 	call LoadFontsExtra
 
-	ld de, VTiles2 tile $60
+	ld de, NamingScreenGFX_Lines
+	ld hl, VTiles0 tile NAMINGSCREEN_MIDDLELINE
+	lb bc, BANK(NamingScreenGFX_Lines), 2
+	call Get1bpp
+
+	ld de, VTiles2 tile NAMINGSCREEN_BORDER
 	ld hl, NamingScreenGFX_Border
 	ld bc, 1 tiles
 	ld a, BANK(NamingScreenGFX_Border)
@@ -854,6 +863,9 @@ LoadNamingScreenGFX: ; 11c51
 	ret
 
 ; 11cb7
+
+NamingScreenGFX_Lines:
+INCBIN "gfx/naming_screen/lines.1bpp"
 
 NamingScreenGFX_Border: ; 11cb7
 INCBIN "gfx/naming_screen/naming_border.2bpp"
@@ -954,7 +966,7 @@ INCBIN "gfx/icons/mail2.2bpp"
 	call WaitTop
 	hlcoord 0, 0
 	ld bc, 6 * SCREEN_WIDTH
-	ld a, $60 ; border
+	ld a, NAMINGSCREEN_BORDER
 	call ByteFill
 	hlcoord 0, 6
 	ld bc, 12 * SCREEN_WIDTH
@@ -1088,7 +1100,7 @@ INCBIN "gfx/icons/mail2.2bpp"
 	ret nz
 	inc [hl]
 	call NamingScreen_GetTextCursorPosition
-	ld [hl], "<_>"
+	ld [hl], NAMINGSCREEN_UNDERLINE
 	dec hl
 	ld [hl], "<NL>"
 	ret
@@ -1114,7 +1126,7 @@ INCBIN "gfx/icons/mail2.2bpp"
 	ret nz
 	dec [hl]
 	call NamingScreen_GetTextCursorPosition
-	ld [hl], "<_>"
+	ld [hl], NAMINGSCREEN_UNDERLINE
 	inc hl
 	ld [hl], "<NL>"
 	ret

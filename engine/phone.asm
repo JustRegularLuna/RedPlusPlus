@@ -476,7 +476,7 @@ Phone_FirstOfTwoRings: ; 902b3
 Phone_CallerTextboxWithName2: ; 902c9
 	call Phone_CallerTextbox
 	hlcoord 1, 2
-	ld [hl], "<PHONE>"
+	ld [hl], "<BLACK>"
 	inc hl
 	inc hl
 	ld a, [PhoneScriptBank]
@@ -557,7 +557,7 @@ Function90363: ; 90363 (24:4363)
 	push bc
 	call Phone_CallerTextbox
 	hlcoord 1, 1
-	ld [hl], "<PHONE>"
+	ld [hl], "<BLACK>"
 	inc hl
 	inc hl
 	ld d, h
@@ -640,7 +640,7 @@ GetCallerName: ; 903a9 (24:43a9)
 	jp PlaceString
 
 .Blank:
-	ld a, "<SHARP>"
+	ld a, "№"
 	ld [hli], a
 	ld a, [wPokegearPhoneScrollPosition]
 	ld b, a

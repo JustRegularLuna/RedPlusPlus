@@ -10,8 +10,6 @@ FontSerif:
 INCBIN "gfx/font/serif.1bpp"
 FontUnown:
 INCBIN "gfx/font/unown.1bpp"
-FontCommon:
-INCBIN "gfx/font/common.1bpp"
 
 Frames: ; f8800
 INCBIN "gfx/frames/1.1bpp"
@@ -66,11 +64,7 @@ _LoadStandardFont:: ; fb449
 	ld d, h
 	ld e, l
 	ld hl, VTiles1
-	lb bc, BANK(FontNormal), 111
-	call Get1bpp_2
-	ld de, FontCommon
-	ld hl, VTiles1 tile COMMON_FONT_START
-	lb bc, BANK(FontCommon), 11
+	lb bc, BANK(FontNormal), 106
 	jp Get1bpp_2
 ; fb48a
 
@@ -79,7 +73,7 @@ LoadOverworldFont::
 	ld d, h
 	ld e, l
 	ld hl, VTiles0 tile "A"
-	lb bc, BANK(FontNormal), 111
+	lb bc, BANK(FontNormal), 106
 	jp GetOpaque1bpp_2
 
 LoadStandardFontPointer::
@@ -120,13 +114,13 @@ _LoadFontsBattleExtra:: ; fb4be
 
 LoadFrame:: ; fb4cc
 	ld a, [TextBoxFrame]
-	ld bc, TILES_PER_FRAME * LEN_1BPP_TILE
+	ld bc, 6 * LEN_1BPP_TILE
 	ld hl, Frames
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, VTiles1 tile (FRAME_START - $80)
-	lb bc, BANK(Frames), TILES_PER_FRAME
+	ld hl, VTiles0 tile "┌"
+	lb bc, BANK(Frames), 6
 	call Get1bpp_2
 	ld hl, VTiles2 tile " "
 	ld de, TextBoxSpaceGFX

@@ -128,8 +128,8 @@
 	charmap "y",        $b8
 	charmap "z",        $b9
 
-	charmap "“",        $ba
-	charmap "”",        $bb
+	charmap "↑",        $ba
+	charmap "↓",        $bb
 	charmap "-",        $bc
 	charmap ":",        $bd
 	charmap "♂",        $be
@@ -146,12 +146,20 @@
 
 	charmap "é",        $c8
 
-; unused: c8-ce
+	charmap "¥",        $c9
+
+	charmap "▲",        $ca
+	charmap "▼",        $cb
+	charmap "◀",        $cc
+	charmap "▶",        $cd
+	charmap "▷",        $ce
 
 	charmap "␣",        $cf ; fake space for location names
 
-	charmap "<PO>",     $d0
-	charmap "<KE>",     $d1
+	charmap "★",        $d0
+
+	charmap "…",        $d1
+
 	charmap "<PK>",     $d2
 	charmap "<MN>",     $d3
 
@@ -168,9 +176,9 @@
 	charmap "×",        $db
 	charmap "/",        $dc
 	charmap "%",        $dd
-
 	charmap "+",        $de
-	charmap "<SHARP>",  $df
+
+	charmap "<BLACK>",  $df
 
 	charmap "0",        $e0
 	charmap "1",        $e1
@@ -183,39 +191,12 @@
 	charmap "8",        $e8
 	charmap "9",        $e9
 
-	charmap "¥",        $ea
-
-	charmap "▲",        $eb
-	charmap "▼",        $ec
-	charmap "◀",        $ed
-	charmap "▶",        $ee
-
-; common font:
-COMMON_FONT_START EQU $6f
-
-	charmap "▷",        $ef
-
-	charmap "…",        $f0
-
-	charmap "★",        $f1
-	charmap "<PHONE>",  $f2
-	charmap "′",        $f3
-	charmap "″",        $f4
-	charmap "<—>",      $f5
-	charmap "<_>",      $f6
-	charmap "↑",        $f7
-	charmap "↓",        $f8
-	charmap "<UPDN>",   $f9
-
-; frame:
-FRAME_START EQU $fa
-
-	charmap "┌",        $fa
-	charmap "─",        $fb
-	charmap "┐",        $fc
-	charmap "│",        $fd
-	charmap "└",        $fe
-	charmap "┘",        $ff
+	charmap "┌",        $ea
+	charmap "─",        $eb
+	charmap "┐",        $ec
+	charmap "│",        $ed
+	charmap "└",        $ee
+	charmap "┘",        $ef
 
 ; battle extra:
 BATTLEEXTRA_GFX_START EQU $5f
@@ -242,4 +223,11 @@ BATTLEEXTRA_GFX_START EQU $5f
 	charmap "<FULLXP>", $7d
 	charmap "<XPEND>",  $7e
 
-	charmap "<NONO>",   $f2 ; overwrites <PHONE> in battle
+	charmap "<NONO>",   $df ; overrides "<BLACK>"
+
+; other:
+
+	charmap "<SHARP>",  $20 ; music player
+
+	charmap "′",        $6d ; pokedex
+	charmap "″",        $6e ; pokedex

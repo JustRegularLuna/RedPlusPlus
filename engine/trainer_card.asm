@@ -346,9 +346,9 @@ TrainerCard_PrintTopHalfOfCard: ; 25299 (9:5299)
 ; 252ec (9:52ec)
 
 .Top_Headings: ; 252ec
-	db "┐Name/<LNBRK>"
-	db "┐<ID>№.<LNBRK>"
-	db "│└└└└└└└└└└└┘<LNBRK>"
+	db $fc, "Name/<LNBRK>"
+	db $fc, "<ID>№.<LNBRK>"
+	db $fd, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $fe, $ff, "<LNBRK>"
 	db "<LNBRK>"
 	db " Money@"
 
