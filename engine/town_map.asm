@@ -1,5 +1,6 @@
 BUBBLE_CORNER EQU $37
-UP_DOWN_ARROW EQU $38
+LEFT_RIGHT_ARROW EQU $38
+UP_DOWN_ARROW EQU $39
 
 Pokegear_LoadGFX: ; 90c4e
 	call ClearVBank1
@@ -886,9 +887,15 @@ _Area: ; 91d11
 	bit 6, a ; ENGINE_CREDITS_SKIP
 	ret z
 	hlcoord 0, 0
-	ld [hl], "◀"
+	ld [hl], LEFT_RIGHT_ARROW
+	push hl
+	hlcoord 0, 0, AttrMap
+	ld [hl], 0
+	pop hl
 	hlcoord 19, 0
-	ld [hl], "▶"
+	ld [hl], LEFT_RIGHT_ARROW
+	hlcoord 19, 0, AttrMap
+	ld [hl], 0 | X_FLIP
 	ret
 
 ; 91e16
@@ -1130,21 +1137,21 @@ TownMapPals: ; 91f13
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 .loop
 	ld a, [hli]
+	cp BUBBLE_CORNER ; corner of TownMapBubble bubble is already attributed
+	jr z, .skip
+	cp LEFT_RIGHT_ARROW ; red left/right arrow is already attributed
+	jr z, .skip
 	push hl
 	cp $40 ; tiles in PokegearGFX (after TownMapGFX) use palette 0
 	jr nc, .pal0
-	cp BUBBLE_CORNER ; corner of TownMapBubble bubble is already attributed
-	jr z, .corner
 	call GetNextTownMapTilePalette
 	jr .update
 .pal0
 	xor a
-	jr .update
-.corner
-	ld a, [de]
 .update
 	pop hl
 	ld [de], a
+.skip
 	inc de
 	dec bc
 	ld a, b
