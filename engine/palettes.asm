@@ -904,7 +904,7 @@ TMHMTypes:
 
 PokegearPals:
 if DEF(NOIR)
-	GRAYSCALE 31, 18, 09, 00 ; male interface and text
+	GRAYSCALE 31, 13, 12, 00 ; interface and text
 	GRAYSCALE 20, 21, 13, 00 ; border and Mt. Silver
 	GRAYSCALE 15, 16, 12, 14 ; water and shores
 	GRAYSCALE 13, 16, 20, 15 ; land and mountains
@@ -943,7 +943,7 @@ elif DEF(MONOCHROME)
 	MONOCHROME_RGB_FOUR
 	MONOCHROME_RGB_FOUR
 else
-	RGB 31,31,31, 31,15,00, 15,07,00, 00,00,00 ; male interface and text
+	RGB 31,31,31, 31,05,09, 00,17,19, 00,00,00 ; male interface and text
 	RGB 29,17,10, 21,21,21, 13,13,13, 00,00,00 ; border and Mt. Silver
 	RGB 20,13,08, 00,24,15, 00,17,19, 00,20,22 ; water and shores
 	RGB 00,20,12, 00,24,15, 29,17,10, 20,13,08 ; land and mountains
@@ -951,16 +951,6 @@ else
 	RGB 31,05,09, 00,24,15, 24,00,04, 04,04,04 ; cities
 	RGB 31,31,31, 00,24,15, 00,16,10, 04,04,04 ; land routes
 	RGB 31,22,05, 00,24,15, 29,17,10, 04,04,04 ; decorations
-endc
-
-
-FemalePokegearInterfacePalette:
-if DEF(NOIR)
-	GRAYSCALE 31, 17, 11, 00
-elif DEF(MONOCHROME)
-	MONOCHROME_RGB_FOUR
-else
-	RGB 31,31,31, 10,18,31, 13,06,31, 00,00,00
 endc
 
 
