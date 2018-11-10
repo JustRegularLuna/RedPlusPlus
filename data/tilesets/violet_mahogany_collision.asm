@@ -22,9 +22,9 @@
 	tilecoll FLOOR, FLOOR, WALL, FLOOR
 	tilecoll FLOOR, WALL, FLOOR, FLOOR
 	tilecoll FLOOR, FLOOR, FLOOR, WALL
-	tilecoll BUOY, BUOY, BUOY, WATER
-	tilecoll BUOY, BUOY, WATER, WATER
-	tilecoll BUOY, BUOY, WATER, BUOY
+	tilecoll WATER, WATER, WATER, WATER
+	tilecoll TOP_WALL, WALL, FLOOR, WALL
+	tilecoll WATER, WATER, WATER, WATER
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll BUOY, WATER, BUOY, WATER
 	tilecoll BUOY, BUOY, BUOY, BUOY

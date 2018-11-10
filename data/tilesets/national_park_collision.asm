@@ -66,3 +66,4 @@
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, FLOOR, WALL, WALL
 	tilecoll FLOOR, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL
