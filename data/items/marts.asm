@@ -55,9 +55,10 @@ ViridianMart:
 	db -1
 
 PewterMart:
-	db 7
+	db 8
 	db POKE_BALL
 	db POTION
+	db PEWTERCRUNCH
 	db ESCAPE_ROPE
 	db REPEL
 	db ANTIDOTE
