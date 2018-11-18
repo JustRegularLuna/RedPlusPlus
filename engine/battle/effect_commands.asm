@@ -6254,8 +6254,7 @@ BattleCommand_Teleport: ; 36778
 
 .trainer_battle
 	call CheckAnyOtherAliveMons
-	jr z, .failed
-	jp BattleCommand_SwitchOut
+	jp nz, ContinueToSwitchOut
 
 .failed
 	call AnimateFailedMove
@@ -8338,6 +8337,7 @@ DoCheckAnyOtherAliveMons:
 BattleCommand_SwitchOut:
 	call CheckAnyOtherAliveMons
 	ret z
+ContinueToSwitchOut:
 	call UpdateUserInParty
 	ld a, [hBattleTurn]
 	and a
