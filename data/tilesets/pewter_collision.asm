@@ -220,3 +220,4 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, FLOOR, FLOOR
