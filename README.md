@@ -1,14 +1,19 @@
-# Pokémon Red++
+## NOTE: The code here is a work in progress, for the upcoming v4 release.
+## For info about the current releases, check out the other repo [**here**][rpp-backup].
+
+
+# Pokémon Red++ v4
 
 Red++ serves as an updated and modernized version of Pokémon Red.
 It is considered the prequel to [**Pokémon Polished Crystal**][polished] by Rangi.
-
-For playable releases, check out the [**Patches**](patches/) folder.
-
-For a list of features, check out [**FEATURES.md**](FEATURES.md).
+The version here is actually based on a heavily modified copy of Polished Crystal's engine, instead of Red Version's engine the way previous versions were.
 
 
-For help, questions, or to generally keep up with development, check out the [**Lunaverse Discord**][lunaverse].
+* For playable releases, check out the [**Patches**](patches/) folder.
+
+* For a list of features that applies to v4, check out [**FEATURES.md**](FEATURES.md).
+
+* For help, questions, or to generally keep up with development, check out the [**Lunaverse Discord**][lunaverse].
 
 
 
@@ -22,4 +27,5 @@ After setting up the repository, you'll want to download the current release of 
 
 [polished]: http://github.com/Rangi42/polishedcrystal
 [polishedmap]: https://github.com/Rangi42/polished-map
+[rpp-backup]: https://github.com/TheFakeMateo/rpp-backup
 [lunaverse]: https://discord.gg/SQwkd7r

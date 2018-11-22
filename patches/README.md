@@ -1,5 +1,5 @@
-Apply these v2 .ips patches to a clean Pokémon Red Version ROM.  
+Apply these .ips patches to a clean Pokémon Red Version ROM.  
 You can find one on your own, or build [pokered](https://github.com/pret/pokered) to get one as well.
 
-The patches marked "GSC Color UNOFFICIAL" were not meant to be an official release.  
-They are just as far as we got before replacing the game engine. They are buggy and unsupported.
+Included are v2.4.2 (monochrome) and v3.0.1 (full color, current official release).
+There are no patches here for the rom that this repo actually builds (v4), as it is not playable yet.
