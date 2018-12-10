@@ -146,15 +146,15 @@
 	tilecoll WALL, WALL, POKECENTER_SIGN, WALL
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, MART_SIGN, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
+	tilecoll FLOOR, FLOOR, FLOOR, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
 	tilecoll FLOOR, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll LEDGE_DOWN, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, FLOOR, WALL
 	tilecoll WALL, WALL, DOOR, WALL
 	tilecoll WALL, WALL, FLOOR, FLOOR
 	tilecoll WALL, FLOOR, WALL, FLOOR
@@ -165,7 +165,7 @@
 	tilecoll WALL, WALL, WALL, DOOR
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll FLOOR, WALL, FLOOR, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL
 	tilecoll WALL, WALL, WALL, WALL

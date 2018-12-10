@@ -5,7 +5,7 @@ SaffronCity_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, SaffronCityFlyPoint
 
 	db 21 ; warp events
-	warp_event 28,  7, FIGHTING_DOJO, 1
+	warp_event 29,  7, FIGHTING_DOJO, 1
 	warp_event 36,  7, SAFFRON_GYM, 1
 	warp_event 29, 15, SAFFRON_MART, 2
 	warp_event 14, 33, SAFFRON_POKECOM_CENTER_1F, 1
