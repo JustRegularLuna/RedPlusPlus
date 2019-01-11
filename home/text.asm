@@ -1025,3 +1025,11 @@ Text_WeekDay:: ; 1582
 .Satur:  db "Satur@"
 .Day:    db "day@"
 ; 15d8
+
+PokecenterChanseyText::
+	text "Chansey: Sii!"
+	done
+
+PokecenterBlisseyText::
+	text "Blissey: Bliisii!"
+	done

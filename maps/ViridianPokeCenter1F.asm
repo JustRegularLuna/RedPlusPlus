@@ -14,15 +14,10 @@ ViridianPokeCenter1F_MapScriptHeader:
 
 	db 5 ; object events
 	pc_nurse_event  5,  1
-	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_POKEMON, CHANSEY, ViridianPokecenterChanseyText, -1
+	pc_chansey_event  6,  1
 	object_event  9,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, ViridianPokeCenterText1, -1
 	object_event  3,  3, SPRITE_BLACK_HAIR_BOY_1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, ViridianPokeCenterText2, -1
 	object_event  0,  4, SPRITE_BENCH_SITTER, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptext, ViridianPokecenterBenchGuyText, -1
-	
-
-ViridianPokecenterChanseyText:
-	text "Chansey: Sii!"
-	done
 
 ViridianPokeCenterText1:
 	text "Everything in a"

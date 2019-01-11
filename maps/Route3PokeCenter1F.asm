@@ -14,7 +14,7 @@ Route3PokeCenter1F_MapScriptHeader:
 
 	db 7 ; object events
 	pc_nurse_event  5,  1
-	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_POKEMON, CHANSEY, Route3PokecenterChanseyText, -1
+	pc_chansey_event  6,  1
 	object_event  4,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, MtMoonPokecenterText2, -1
 	object_event  7,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, MtMoonPokecenterText3, -1
 	object_event 10,  6, SPRITE_FAT_BALD_GUY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, PERSONTYPE_SCRIPT, 0, MagikarpSalesmanText, -1
@@ -49,10 +49,6 @@ MagikarpSalesmanText:
 
 .NotEnoughMoney
 	jumpopenedtext MagikarpSalesmanNoMoneyText
-
-Route3PokecenterChanseyText:
-	text "Chansey: Sii!"
-	done
 
 MtMoonPokecenterText2:
 	text "I've 6 # Balls"

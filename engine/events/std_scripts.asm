@@ -59,6 +59,10 @@ StdScripts::
 	dba CaveGrottoScript
 	dba WhirlpoolOWScript
 
+; Assume that the nurse and Chansey/Blissey are always the first two object_events
+ANYPOKECENTER_NURSE   EQU 1
+ANYPOKECENTER_CHANSEY EQU 2
+
 PokeCenterNurseScript:
 	opentext
 	checkevent EVENT_NURSE_SAW_FOUR_TRAINER_STARS
@@ -134,7 +138,8 @@ PokeCenterNurseScript:
 .heal_pokemon
 	farwritetext NurseTakePokemonText
 	pause 20
-	turnobject LAST_TALKED, LEFT
+	turnobject ANYPOKECENTER_NURSE, LEFT
+	turnobject ANYPOKECENTER_CHANSEY, RIGHT
 	pause 10
 	special HealParty
 	special SaveMusic
@@ -143,7 +148,8 @@ PokeCenterNurseScript:
 	special HealMachineAnim
 	pause 30
 	special RestoreMusic
-	turnobject LAST_TALKED, DOWN
+	turnobject ANYPOKECENTER_NURSE, DOWN
+	turnobject ANYPOKECENTER_CHANSEY, DOWN
 	pause 10
 
 	checkphonecall ; elm already called about pokerus
@@ -160,9 +166,11 @@ PokeCenterNurseScript:
 .done
 	farwritetext NurseGoodbyeText
 
-	turnobject LAST_TALKED, UP
+	turnobject ANYPOKECENTER_NURSE, UP ; bowing
 	pause 10
-	turnobject LAST_TALKED, DOWN
+	turnobject ANYPOKECENTER_NURSE, DOWN
+	turnobject ANYPOKECENTER_CHANSEY, DOWN
+	; TODO: ANYPOKECENTER_CHANSEY steps in place
 	pause 10
 
 	waitendtext

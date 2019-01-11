@@ -110,3 +110,9 @@ CableCarSilphSpriteGFX::           INCBIN "gfx/sprites/cable_car_silph.2bpp"
 SignFenceTreetopSpriteGFX::        INCBIN "gfx/sprites/sign_fence_treetop.2bpp"
 BushForestTreeSpriteGFX::          INCBIN "gfx/sprites/bush_forest_tree.2bpp"
 SecretBaseGFX::                    INCBIN "gfx/sprites/secret_base.2bpp"
+
+
+SECTION "Overworld Sprites 4", ROMX
+
+ChanseySprite::         INCBIN "gfx/sprites/chansey.2bpp"
+BlisseySprite::         INCBIN "gfx/sprites/blissey.2bpp"
