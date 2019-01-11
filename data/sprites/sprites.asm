@@ -80,6 +80,8 @@ SpriteHeaders:
 	overworld_sprite FlanneryOverworld, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite GreeterWoman, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite SurfingLapras, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite ChanseySprite, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite BlisseySprite, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SurfingPikachu, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite LookerOverworld, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SwimmerFSprite, WALKING_SPRITE, PAL_OW_BLUE

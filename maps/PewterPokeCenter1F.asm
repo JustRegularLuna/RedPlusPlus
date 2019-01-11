@@ -14,7 +14,7 @@ PewterPokeCenter1F_MapScriptHeader:
 
 	db 5 ; object events
 	pc_nurse_event  5,  1
-	object_event  6,  1, SPRITE_CHANSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_POKEMON, CHANSEY, PewterPokecenterChanseyText, -1
+	pc_chansey_event  6,  1
 	object_event  1,  2, SPRITE_JIGGLYPUFF, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, PewterPokecenterJigglypuffScript, -1
 	object_event  0,  4, SPRITE_BENCH_SITTER, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptext, PewterPokecenterBenchGuyText, -1
 	object_event  9,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, PewterPokecenterText2, -1
@@ -27,10 +27,6 @@ PewterPokecenterJigglypuffScript:
 	closetext
 	special RestartMapMusic
 	end
-
-PewterPokecenterChanseyText:
-	text "Chansey: Sii!"
-	done
 
 PewterJigglypuffText:
 	text "Jigglypuff: Puu"

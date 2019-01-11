@@ -131,6 +131,14 @@ pc_nurse_event: MACRO
 	object_event \1, \2, SPRITE_BOWING_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumpstd, pokecenternurse, -1
 ENDM
 
+pc_chansey_event: MACRO
+	object_event \1, \2, SPRITE_CHANSEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_POKEMON, CHANSEY, PokecenterChanseyText, -1
+ENDM
+
+pc_blissey_event: MACRO
+	object_event \1, \2, SPRITE_BLISSEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_POKEMON, BLISSEY, PokecenterBlisseyText, -1
+ENDM
+
 mart_clerk_event: MACRO
 	object_event \1, \2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, pokemart, \3, \4, -1
 ENDM
