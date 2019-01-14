@@ -818,7 +818,7 @@ INCLUDE "gfx/tilesets/palettes/noir/bg.pal"
 elif DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/monochrome/bg.pal"
 else
-INCLUDE "gfx/tilesets/palettes/bg.pal"
+INCLUDE "gfx/tilesets/bg_tiles.pal"
 endc
 
 MapObjectPals:
@@ -827,7 +827,7 @@ INCLUDE "gfx/tilesets/palettes/noir/ob.pal"
 elif DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/monochrome/ob.pal"
 else
-INCLUDE "gfx/tilesets/palettes/ob.pal"
+INCLUDE "gfx/overworld/npc_sprites.pal"
 endc
 
 RoofPals:
@@ -836,7 +836,7 @@ INCLUDE "gfx/tilesets/palettes/noir/roof.pal"
 elif DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/monochrome/roof.pal"
 else
-INCLUDE "gfx/tilesets/palettes/roof.pal"
+INCLUDE "gfx/tilesets/roofs.pal"
 endc
 
 OvercastRoofPals:
@@ -845,7 +845,7 @@ INCLUDE "gfx/tilesets/palettes/noir/roof_overcast.pal"
 elif DEF(MONOCHROME)
 INCLUDE "gfx/tilesets/palettes/monochrome/roof_overcast.pal"
 else
-INCLUDE "gfx/tilesets/palettes/roof_overcast.pal"
+INCLUDE "gfx/tilesets/roofs_overcast.pal"
 endc
 
 
