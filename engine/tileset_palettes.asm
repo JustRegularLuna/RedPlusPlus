@@ -574,7 +574,7 @@ BattleTowerPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/battle_tower.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/battle_tower.pal"
+INCLUDE "gfx/tilesets/battle_tower.pal"
 else
 rept 5
 	MONOCHROME_RGB_FOUR
@@ -615,7 +615,7 @@ GatePalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/gate.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/gate.pal"
+INCLUDE "gfx/tilesets/gate.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -630,7 +630,7 @@ HotelPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/hotel.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/hotel.pal"
+INCLUDE "gfx/tilesets/hotel.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -645,7 +645,7 @@ QuietCavePalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/quiet_cave.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/quiet_cave.pal"
+INCLUDE "gfx/tilesets/quiet_cave.pal"
 else
 rept 4
 	MONOCHROME_RGB_FOUR_NIGHT
@@ -666,7 +666,7 @@ RuinsPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/ruins.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/ruins.pal"
+INCLUDE "gfx/tilesets/ruins.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -681,7 +681,7 @@ CeladonPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/celadon.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/celadon.pal"
+INCLUDE "gfx/tilesets/celadon.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -716,7 +716,7 @@ FuchsiaPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/fuchsia.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/fuchsia.pal"
+INCLUDE "gfx/tilesets/fuchsia.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -751,7 +751,7 @@ SaffronPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/saffron.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/saffron.pal"
+INCLUDE "gfx/tilesets/saffron.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -786,7 +786,7 @@ SafariZonePalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/safari_zone.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/safari_zone.pal"
+INCLUDE "gfx/tilesets/safari_zone.pal"
 else
 rept 4
 	MONOCHROME_RGB_FOUR
@@ -833,7 +833,7 @@ ForestPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/forest.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/forest.pal"
+INCLUDE "gfx/tilesets/forest.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -848,7 +848,7 @@ BattleTowerOutsidePalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/battle_tower_outside.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/battle_tower_outside.pal"
+INCLUDE "gfx/tilesets/battle_tower_outside.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -883,7 +883,7 @@ NationalParkPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/national_park.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/national_park.pal"
+INCLUDE "gfx/tilesets/national_park.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -918,7 +918,7 @@ FarawayIslandPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/faraway_island.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/faraway_island.pal"
+INCLUDE "gfx/tilesets/faraway.pal"
 else
 rept 6
 	MONOCHROME_RGB_FOUR
@@ -969,7 +969,7 @@ ShamoutiIslandPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/shamouti_island.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/shamouti_island.pal"
+INCLUDE "gfx/tilesets/shamouti.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -1014,7 +1014,7 @@ ValenciaIslandPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/valencia_island.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/valencia_island.pal"
+INCLUDE "gfx/tilesets/valencia.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -2049,7 +2049,7 @@ OvercastBGPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/bg_overcast.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/bg_overcast.pal"
+INCLUDE "gfx/tilesets/bg_tiles_overcast.pal"
 else
 INCLUDE "gfx/tilesets/palettes/monochrome/bg_overcast.pal"
 endc
@@ -2058,7 +2058,7 @@ OvercastOBPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/ob_overcast.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/ob_overcast.pal"
+INCLUDE "gfx/overworld/npc_sprites_overcast.pal"
 else
 INCLUDE "gfx/tilesets/palettes/monochrome/ob_overcast.pal"
 endc
