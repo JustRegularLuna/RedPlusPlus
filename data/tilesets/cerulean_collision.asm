@@ -1,256 +1,256 @@
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, LEDGE_DOWN, WALL, WALL
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll WALL, WALL, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll LEDGE_DOWN, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, FLOOR
-	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, WALL
-	tilecoll BUOY, BUOY, BUOY, WATER
-	tilecoll BUOY, BUOY, WATER, WATER
-	tilecoll BUOY, BUOY, WATER, BUOY
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll BUOY, WATER, BUOY, WATER
-	tilecoll BUOY, BUOY, BUOY, BUOY
-	tilecoll WATER, BUOY, WATER, BUOY
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll BUOY, WATER, BUOY, BUOY
-	tilecoll WATER, WATER, BUOY, BUOY
-	tilecoll WATER, BUOY, BUOY, BUOY
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, LEDGE_LEFT, WALL, LEDGE_LEFT
-	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR
-	tilecoll LEDGE_RIGHT, WALL, LEDGE_RIGHT, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, WALL
-	tilecoll WALL, LEDGE_DOWN_LEFT, WALL, WALL
-	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL
-	tilecoll LEDGE_DOWN_RIGHT, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, WALL
-	tilecoll WALL, LEDGE_LEFT, WALL, LEDGE_LEFT
-	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR
-	tilecoll LEDGE_RIGHT, WALL, LEDGE_RIGHT, WALL
-	tilecoll FLOOR, WALL, FLOOR, FLOOR
-	tilecoll WALL, LEDGE_DOWN_LEFT, WALL, WALL
-	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL
-	tilecoll LEDGE_DOWN_RIGHT, WALL, WALL, WALL
-	tilecoll WALL, FLOOR, FLOOR, FLOOR
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WALL, TOP_WALL, WALL, FLOOR
-	tilecoll TOP_WALL, WALL, FLOOR, WALL
-	tilecoll WALL, TOP_WALL, WALL, FLOOR
-	tilecoll TOP_WALL, WALL, FLOOR, WALL
-	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll WALL, FLOOR, WALL, WALL
-	tilecoll FLOOR, WALL, WALL, WALL
-	tilecoll TOP_WALL, TOP_WALL, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll BOTTOM_WALL, FLOOR, CAVE, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, WALL, FLOOR
-	tilecoll WALL, TOP_WALL, WALL, FLOOR
-	tilecoll TOP_WALL, WALL, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, LEDGE_DOWN, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, LEDGE_DOWN, LEDGE_DOWN
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll WALL, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN
-	tilecoll WALL, TOP_WALL, WALL, FLOOR
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll WALL, TOP_WALL, WALL, FLOOR
-	tilecoll WALL, WALL, WALL, FLOOR
-	tilecoll TOP_WALL, WALL, FLOOR, WALL
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll FLOOR, WATER, FLOOR, WATER
-	tilecoll WALL, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, WALL, WALL, WALL
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WATER, WATER, FLOOR, FLOOR
-	tilecoll WATER, WATER, FLOOR, FLOOR
-	tilecoll WATER, WATER, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, DOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, DOOR, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WATERFALL, WATERFALL, WATERFALL, WATERFALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, WALL, DOOR
-	tilecoll WALL, WALL, POKECENTER_SIGN, WALL
-	tilecoll WALL, WALL, WALL, DOOR
-	tilecoll WALL, WALL, MART_SIGN, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, FLOOR
-	tilecoll LEDGE_DOWN, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, FLOOR, WALL
-	tilecoll WALL, WALL, DOOR, WALL
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, WALL, DOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, FLOOR, WALL
-	tilecoll WALL, DOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll FLOOR, WARP_CARPET_DOWN, WALL, WALL
-	tilecoll WARP_CARPET_DOWN, FLOOR, WALL, WALL
-	tilecoll WARP_CARPET_DOWN, WARP_CARPET_DOWN, WALL, WALL
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, BOTTOM_WALL, WALL, CAVE
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, DOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, CAVE, WALL
-	tilecoll WALL, WALL, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll FLOOR, FLOOR, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, DOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, DOOR
-	tilecoll WALL, WALL, FLOOR, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, FLOOR, WALL, WALL
-	tilecoll WATER, WATER, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll LEDGE_DOWN, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WATER, WATER, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, WATER, WATER
-	tilecoll WALL, WALL, WATER, WATER
-	tilecoll LEFT_WALL, RIGHT_WALL, LEFT_WALL, RIGHT_WALL
-	tilecoll WALL, WALL, WATER, WATER
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll WATER, WALL, WATER, WATER
-	tilecoll WATER, WATER, WATER, WATER
-	tilecoll WALL, WATER, WATER, WATER
-	tilecoll WALL, WALL, WATER, WATER
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll TOP_WALL, TOP_WALL, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll FLOOR, WALL, FLOOR, WALL
-	tilecoll WALL, FLOOR, WALL, FLOOR
-	tilecoll WALL, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, FLOOR
-	tilecoll FLOOR, WALL, FLOOR, FLOOR
-	tilecoll WALL, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, FLOOR
-	tilecoll WALL, WALL, FLOOR, WALL
-	tilecoll WALL, WALL, FLOOR, WALL
-	tilecoll WALL, WALL, WALL, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WARP_CARPET_RIGHT, WALL, WARP_CARPET_RIGHT, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll LEDGE_DOWN, WALL, WALL, WALL
-	tilecoll WALL, WALL, WALL, WALL
-	tilecoll WALL, WALL, DOOR, WALL
-	tilecoll WALL, WALL, WALL, WALL
+	tilecoll WALL, WALL, WALL, WALL ; 00
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 01
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 02
+	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 03
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 04
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 05
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 06
+	tilecoll WALL, WALL, WALL, WALL ; 07
+	tilecoll WALL, LEDGE_DOWN, WALL, WALL ; 08
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 09
+	tilecoll WALL, WALL, FLOOR, WALL ; 0a
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0b
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 0c
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0d
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 0e
+	tilecoll WALL, WALL, WALL, WALL ; 0f
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 10
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 11
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 12
+	tilecoll WALL, WALL, WALL, WALL ; 13
+	tilecoll LEDGE_DOWN, WALL, WALL, WALL ; 14
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 15
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 16
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 17
+	tilecoll BUOY, BUOY, BUOY, WATER ; 18
+	tilecoll BUOY, BUOY, WATER, WATER ; 19
+	tilecoll BUOY, BUOY, WATER, BUOY ; 1a
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1b
+	tilecoll BUOY, WATER, BUOY, WATER ; 1c
+	tilecoll BUOY, BUOY, BUOY, BUOY ; 1d
+	tilecoll WATER, BUOY, WATER, BUOY ; 1e
+	tilecoll WALL, WALL, WALL, WALL ; 1f
+	tilecoll BUOY, WATER, BUOY, BUOY ; 20
+	tilecoll WATER, WATER, BUOY, BUOY ; 21
+	tilecoll WATER, BUOY, BUOY, BUOY ; 22
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 23
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 24
+	tilecoll WALL, WALL, WALL, WALL ; 25
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 26
+	tilecoll WALL, WALL, WALL, WALL ; 27
+	tilecoll WALL, FLOOR, WALL, WALL ; 28
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 29
+	tilecoll FLOOR, WALL, WALL, WALL ; 2a
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2b
+	tilecoll WALL, LEDGE_LEFT, WALL, LEDGE_LEFT ; 2c
+	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR ; 2d
+	tilecoll LEDGE_RIGHT, WALL, LEDGE_RIGHT, WALL ; 2e
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 2f
+	tilecoll WALL, LEDGE_DOWN_LEFT, WALL, WALL ; 30
+	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 31
+	tilecoll LEDGE_DOWN_RIGHT, WALL, WALL, WALL ; 32
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 33
+	tilecoll WALL, LEDGE_LEFT, WALL, LEDGE_LEFT ; 34
+	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR ; 35
+	tilecoll LEDGE_RIGHT, WALL, LEDGE_RIGHT, WALL ; 36
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 37
+	tilecoll WALL, LEDGE_DOWN_LEFT, WALL, WALL ; 38
+	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 39
+	tilecoll LEDGE_DOWN_RIGHT, WALL, WALL, WALL ; 3a
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 3b
+	tilecoll WATER, WATER, WATER, WATER ; 3c
+	tilecoll WATER, WATER, WATER, WATER ; 3d
+	tilecoll WATER, WATER, WATER, WATER ; 3e
+	tilecoll WATER, WATER, WATER, WATER ; 3f
+	tilecoll WATER, WATER, WATER, WATER ; 40
+	tilecoll WATER, WATER, WATER, WATER ; 41
+	tilecoll WATER, WATER, WATER, WATER ; 42
+	tilecoll WATER, WATER, WATER, WATER ; 43
+	tilecoll WALL, TOP_WALL, WALL, FLOOR ; 44
+	tilecoll TOP_WALL, WALL, FLOOR, WALL ; 45
+	tilecoll WALL, TOP_WALL, WALL, FLOOR ; 46
+	tilecoll TOP_WALL, WALL, FLOOR, WALL ; 47
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 48
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 49
+	tilecoll WALL, FLOOR, WALL, WALL ; 4a
+	tilecoll FLOOR, WALL, WALL, WALL ; 4b
+	tilecoll TOP_WALL, TOP_WALL, FLOOR, FLOOR ; 4c
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 4d
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 4e
+	tilecoll BOTTOM_WALL, FLOOR, CAVE, WALL ; 4f
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 50
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 51
+	tilecoll WALL, TOP_WALL, WALL, FLOOR ; 52
+	tilecoll TOP_WALL, WALL, FLOOR, WALL ; 53
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 54
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 55
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 56
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 57
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 58
+	tilecoll FLOOR, LEDGE_DOWN, FLOOR, WALL ; 59
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5a
+	tilecoll FLOOR, FLOOR, LEDGE_DOWN, LEDGE_DOWN ; 5b
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 5c
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 5d
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 5e
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 5f
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 60
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 61
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 62
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 63
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 64
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 65
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 66
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 67
+	tilecoll WALL, TOP_WALL, WALL, FLOOR ; 68
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 69
+	tilecoll WALL, TOP_WALL, WALL, FLOOR ; 6a
+	tilecoll WALL, WALL, WALL, FLOOR ; 6b
+	tilecoll TOP_WALL, WALL, FLOOR, WALL ; 6c
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 6d
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 6e
+	tilecoll FLOOR, WATER, FLOOR, WATER ; 6f
+	tilecoll WALL, FLOOR, WALL, WALL ; 70
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 71
+	tilecoll FLOOR, WALL, WALL, WALL ; 72
+	tilecoll WATER, WATER, WATER, WATER ; 73
+	tilecoll WATER, WATER, WATER, WATER ; 74
+	tilecoll WATER, WATER, WATER, WATER ; 75
+	tilecoll WATER, WATER, WATER, WATER ; 76
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 77
+	tilecoll WATER, WATER, FLOOR, FLOOR ; 78
+	tilecoll WATER, WATER, FLOOR, FLOOR ; 79
+	tilecoll WATER, WATER, FLOOR, FLOOR ; 7a
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7b
+	tilecoll WALL, WALL, WALL, WALL ; 7c
+	tilecoll WALL, WALL, WALL, WALL ; 7d
+	tilecoll WALL, WALL, WALL, WALL ; 7e
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 7f
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 80
+	tilecoll WALL, WALL, WALL, WALL ; 81
+	tilecoll WALL, WALL, WALL, WALL ; 82
+	tilecoll WALL, WALL, WALL, WALL ; 83
+	tilecoll WALL, WALL, WALL, WALL ; 84
+	tilecoll WALL, WALL, WALL, WALL ; 85
+	tilecoll WALL, WALL, WALL, WALL ; 86
+	tilecoll WALL, WALL, WALL, DOOR ; 87
+	tilecoll WALL, WALL, WALL, WALL ; 88
+	tilecoll WALL, WALL, DOOR, WALL ; 89
+	tilecoll WALL, WALL, WALL, WALL ; 8a
+	tilecoll WATERFALL, WATERFALL, WATERFALL, WATERFALL ; 8b
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 8c
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 8d
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 8e
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 8f
+	tilecoll WALL, WALL, WALL, DOOR ; 90
+	tilecoll WALL, WALL, POKECENTER_SIGN, WALL ; 91
+	tilecoll WALL, WALL, WALL, DOOR ; 92
+	tilecoll WALL, WALL, MART_SIGN, WALL ; 93
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 94
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 95
+	tilecoll FLOOR, WALL, WALL, WALL ; 96
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 97
+	tilecoll LEDGE_DOWN, WALL, WALL, WALL ; 98
+	tilecoll WALL, WALL, WALL, WALL ; 99
+	tilecoll WALL, WALL, WALL, WALL ; 9a
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 9b
+	tilecoll WALL, WALL, FLOOR, WALL ; 9c
+	tilecoll WALL, WALL, DOOR, WALL ; 9d
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 9e
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 9f
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a0
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a1
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a2
+	tilecoll WALL, FLOOR, WALL, WALL ; a3
+	tilecoll WALL, WALL, WALL, DOOR ; a4
+	tilecoll WALL, WALL, WALL, WALL ; a5
+	tilecoll WALL, WALL, WALL, WALL ; a6
+	tilecoll FLOOR, WALL, FLOOR, WALL ; a7
+	tilecoll WALL, WALL, WALL, WALL ; a8
+	tilecoll WALL, WALL, WALL, WALL ; a9
+	tilecoll WALL, WALL, WALL, WALL ; aa
+	tilecoll WALL, WALL, FLOOR, WALL ; ab
+	tilecoll WALL, DOOR, FLOOR, FLOOR ; ac
+	tilecoll WALL, WALL, FLOOR, FLOOR ; ad
+	tilecoll WALL, WALL, FLOOR, FLOOR ; ae
+	tilecoll WALL, WALL, FLOOR, FLOOR ; af
+	tilecoll FLOOR, WARP_CARPET_DOWN, WALL, WALL ; b0
+	tilecoll WARP_CARPET_DOWN, FLOOR, WALL, WALL ; b1
+	tilecoll WARP_CARPET_DOWN, WARP_CARPET_DOWN, WALL, WALL ; b2
+	tilecoll FLOOR, WALL, FLOOR, WALL ; b3
+	tilecoll FLOOR, FLOOR, WALL, WALL ; b4
+	tilecoll FLOOR, FLOOR, WALL, WALL ; b5
+	tilecoll FLOOR, BOTTOM_WALL, WALL, CAVE ; b6
+	tilecoll FLOOR, WALL, FLOOR, WALL ; b7
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b8
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b9
+	tilecoll FLOOR, FLOOR, WALL, WALL ; ba
+	tilecoll FLOOR, FLOOR, WALL, WALL ; bb
+	tilecoll WALL, WALL, WALL, WALL ; bc
+	tilecoll WALL, WALL, WALL, WALL ; bd
+	tilecoll WALL, WALL, WALL, DOOR ; be
+	tilecoll WALL, WALL, WALL, WALL ; bf
+	tilecoll WALL, WALL, CAVE, WALL ; c0
+	tilecoll WALL, WALL, FLOOR, FLOOR ; c1
+	tilecoll FLOOR, FLOOR, WALL, WALL ; c2
+	tilecoll FLOOR, FLOOR, WALL, WALL ; c3
+	tilecoll WALL, WALL, WALL, WALL ; c4
+	tilecoll WALL, WALL, WALL, WALL ; c5
+	tilecoll WALL, WALL, WALL, DOOR ; c6
+	tilecoll WALL, WALL, WALL, WALL ; c7
+	tilecoll WALL, WALL, WALL, DOOR ; c8
+	tilecoll WALL, WALL, FLOOR, WALL ; c9
+	tilecoll WALL, WALL, WALL, WALL ; ca
+	tilecoll WALL, WALL, WALL, WALL ; cb
+	tilecoll WALL, FLOOR, WALL, WALL ; cc
+	tilecoll WATER, WATER, WALL, WALL ; cd
+	tilecoll WALL, WALL, WALL, WALL ; ce
+	tilecoll LEDGE_DOWN, WALL, WALL, WALL ; cf
+	tilecoll WALL, WALL, WALL, WALL ; d0
+	tilecoll WALL, WALL, WALL, WALL ; d1
+	tilecoll WALL, WALL, WALL, WALL ; d2
+	tilecoll WALL, WALL, WALL, WALL ; d3
+	tilecoll WALL, WALL, WALL, WALL ; d4
+	tilecoll WATER, WATER, WALL, WALL ; d5
+	tilecoll WALL, WALL, WALL, WALL ; d6
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; d7
+	tilecoll WALL, WALL, WATER, WATER ; d8
+	tilecoll WALL, WALL, WATER, WATER ; d9
+	tilecoll LEFT_WALL, RIGHT_WALL, LEFT_WALL, RIGHT_WALL ; da
+	tilecoll WALL, WALL, WATER, WATER ; db
+	tilecoll FLOOR, WALL, FLOOR, WALL ; dc
+	tilecoll WATER, WALL, WATER, WATER ; dd
+	tilecoll WATER, WATER, WATER, WATER ; de
+	tilecoll WALL, WATER, WATER, WATER ; df
+	tilecoll WALL, WALL, WATER, WATER ; e0
+	tilecoll WALL, WALL, WALL, WALL ; e1
+	tilecoll TOP_WALL, TOP_WALL, FLOOR, FLOOR ; e2
+	tilecoll WALL, WALL, WALL, WALL ; e3
+	tilecoll WALL, WALL, WALL, WALL ; e4
+	tilecoll FLOOR, WALL, FLOOR, WALL ; e5
+	tilecoll FLOOR, WALL, FLOOR, WALL ; e6
+	tilecoll WALL, FLOOR, WALL, FLOOR ; e7
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; e8
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; e9
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; ea
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; eb
+	tilecoll WALL, WALL, WALL, FLOOR ; ec
+	tilecoll WALL, WALL, FLOOR, WALL ; ed
+	tilecoll WALL, WALL, FLOOR, WALL ; ee
+	tilecoll WALL, WALL, WALL, FLOOR ; ef
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f2
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f3
+	tilecoll WALL, WALL, WALL, WALL ; f4
+	tilecoll WALL, WALL, WALL, WALL ; f5
+	tilecoll WALL, WALL, WALL, WALL ; f6
+	tilecoll WALL, WALL, WALL, WALL ; f7
+	tilecoll WARP_CARPET_RIGHT, WALL, WARP_CARPET_RIGHT, WALL ; f8
+	tilecoll WALL, WALL, WALL, WALL ; f9
+	tilecoll WALL, WALL, WALL, WALL ; fa
+	tilecoll WALL, WALL, WALL, WALL ; fb
+	tilecoll LEDGE_DOWN, WALL, WALL, WALL ; fc
+	tilecoll WALL, WALL, WALL, WALL ; fd
+	tilecoll WALL, WALL, DOOR, WALL ; fe
+	tilecoll WALL, WALL, WALL, WALL ; ff
