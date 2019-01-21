@@ -113,99 +113,28 @@ LoadMapPart:: ; 217a
 ; 2198
 
 LoadMetatiles:: ; 2198
-	; de <- wOverworldMapAnchor
-	ld a, [wOverworldMapAnchor]
-	ld e, a
-	ld a, [wOverworldMapAnchor + 1]
-	ld d, a
-	ld hl, wMisc
-	ld b, WMISC_HEIGHT / 4 ; 5
-
-.row
-	push de
-	push hl
-	ld c, WMISC_WIDTH / 4 ; 6
-
-.col
-	push de
-	push hl
-	; Load the current map block.
-	; If the current map block is a border block, load the border block.
-	ld a, [de]
-	and a
-	jr nz, .ok
-	ld a, [MapBorderBlock]
-
-.ok
-	; Load the current wMisc address into de.
-	ld e, l
-	ld d, h
-	; Set hl to the address of the current metatile data ([TilesetBlocksAddress] + (a) tiles).
-	ld l, a
-	ld h, 0
-rept 4
-	add hl, hl
-endr
-	ld a, [TilesetBlocksAddress]
-	add l
-	ld l, a
-	ld a, [TilesetBlocksAddress + 1]
-	adc h
-	ld h, a
-
-	; copy the 4x4 metatile
-rept 3
-rept 4
-	ld a, [hli]
-	and $7f
-	ld [de], a
-	inc de
-endr
-	ld a, e
-	add WMISC_WIDTH - 4
-	ld e, a
-	jr nc, .next\@
-	inc d
-.next\@
-endr
-rept 4
-	ld a, [hli]
-	and $7f
-	ld [de], a
-	inc de
-endr
-	; Next metatile
-	pop hl
-	ld de, 4
-	add hl, de
-	pop de
-	inc de
-	dec c
-	jp nz, .col
-	; Next metarow
-	pop hl
-	ld de, WMISC_WIDTH * 4
-	add hl, de
-	pop de
-	ld a, [MapWidth]
-	add 6
-	add e
-	ld e, a
-	jr nc, .ok2
-	inc d
-.ok2
-	dec b
-	jp nz, .row
-	ret
+	ld hl, wMiscTiles
+	ld de, TilesetBlocksAddress
+	jr LoadMetatileData
 ; 222a
 
 LoadMetatileAttributes::
+	ld hl, wMiscAttributes
+	ld de, TilesetAttributesAddress
+	; fallthrough
+
+LoadMetatileData:
+	ld a, [de]
+	ld [TilesetDataAddress], a
+	inc de
+	ld a, [de]
+	ld [TilesetDataAddress + 1], a
+
 	; de <- wOverworldMapAnchor
 	ld a, [wOverworldMapAnchor]
 	ld e, a
 	ld a, [wOverworldMapAnchor + 1]
 	ld d, a
-	ld hl, wMiscAttributes
 	ld b, WMISC_HEIGHT / 4 ; 5
 
 .row
@@ -224,25 +153,25 @@ LoadMetatileAttributes::
 	ld a, [MapBorderBlock]
 
 .ok
-	; Load the current wMiscAttributes address into de.
+	; Load the current wMiscTiles/Attributes address into de.
 	ld e, l
 	ld d, h
-	; Set hl to the address of the current metatile attr data ([TilesetAttributesAddress] + (a) tiles).
+	; Set hl to the address of the current metatile tile/attr data ([TilesetDataAddress] + (a) tiles).
 	ld l, a
 	ld h, 0
 rept 4
 	add hl, hl
 endr
-	ld a, [TilesetAttributesAddress]
+	ld a, [TilesetDataAddress]
 	add l
 	ld l, a
-	ld a, [TilesetAttributesAddress + 1]
+	ld a, [TilesetDataAddress + 1]
 	adc h
 	ld h, a
 
 	ld a, [rSVBK]
 	push af
-	ld a, BANK(wMiscAttributes)
+	ld a, BANK(wMiscTiles) ; aka BANK(wMiscAttributes)
 	ld [rSVBK], a
 
 	; copy the 4x4 metatile

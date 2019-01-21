@@ -288,7 +288,9 @@ wMailboxItems:: ds MAILBOX_CAPACITY
 wMailboxEnd:: ds 1
 ENDU
 
-	ds 6 ; unused
+TilesetDataAddress:: ds 2
+
+	ds 4 ; unused
 
 CurTMHM::
 CurItem::
@@ -1241,6 +1243,7 @@ wBTChoiceOfLvlGroup:: ds 1
 
 SECTION "Tileset Attributes", WRAMX
 
+wMiscTiles:: ds WMISC_WIDTH * WMISC_HEIGHT
 wMiscAttributes:: ds WMISC_WIDTH * WMISC_HEIGHT
 
 
