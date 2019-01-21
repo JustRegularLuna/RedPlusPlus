@@ -1613,7 +1613,12 @@ CheckSave:: ; 4cffe
 INCLUDE "data/maps/scenes.asm"
 
 _LoadMapPart:: ; 4d15b
-	ld hl, wMisc
+	ld hl, wMiscTiles
+	decoord 0, 0
+	call .copy
+	ld hl, wMiscAttributes
+	decoord 0, 0, AttrMap
+.copy:
 	ld a, [wMetatileStandingY]
 	and a
 	jr z, .top_row
@@ -1626,32 +1631,10 @@ _LoadMapPart:: ; 4d15b
 	inc hl
 	inc hl
 .left_column
-	decoord 0, 0
-	call .copy
-	ld hl, wMiscAttributes
-	ld a, [wMetatileStandingY]
-	and a
-	jr z, .top_row2
-	ld bc, WMISC_WIDTH * 2
-	add hl, bc
-.top_row2
-	ld a, [wMetatileStandingX]
-	and a
-	jr z, .left_column2
-	inc hl
-	inc hl
-.left_column2
-	decoord 0, 0, AttrMap
 	ld a, [rSVBK]
 	push af
-	ld a, BANK(wMiscAttributes)
+	ld a, BANK(wMiscTiles) ; aka BANK(wMiscAttributes)
 	ld [rSVBK], a
-	call .copy
-	pop af
-	ld [rSVBK], a
-	ret
-
-.copy:
 	ld b, SCREEN_HEIGHT
 .loop
 	ld c, SCREEN_WIDTH
@@ -1669,6 +1652,8 @@ _LoadMapPart:: ; 4d15b
 .carry
 	dec b
 	jr nz, .loop
+	pop af
+	ld [rSVBK], a
 	ret
 
 PhoneRing_LoadEDTile: ; 4d188
