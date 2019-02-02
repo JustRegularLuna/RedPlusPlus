@@ -16,8 +16,9 @@ tileset_filename       = 'constants/tileset_constants.asm'
 map_headers_filename   = 'data/maps/maps.asm'
 map_headers_2_filename = 'data/maps/attributes.asm'
 block_data_filename    = 'data/maps/blocks.asm'
-block_filename_fmt     = 'maps/%s.blk'
+block_filename_fmt     = 'maps/%s.ablk'
 metatile_filename_fmt  = 'data/tilesets/%s_metatiles.bin'
+attribute_filename_fmt = 'data/tilesets/%s_attributes.bin'
 
 tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'vermilion',
                  'celadon', 'lavender', 'cycling_road', 'fuchsia', 'safari_zone',
@@ -125,8 +126,8 @@ def read_block_filenames():
 			line = line.strip()
 			if line.endswith('_BlockData:'):
 				map_names.append(line[:-11])
-			elif line.startswith('INCBIN "maps/') and line.endswith('.blk"'):
-				block_data_name = line[13:-5]
+			elif line.startswith('INCBIN "maps/') and line.endswith('.ablk"'):
+				block_data_name = line[13:-6]
 				for map_name in map_names:
 					if map_name != block_data_name:
 						map_block_data_exceptions[map_name] = block_data_name
@@ -157,14 +158,16 @@ def read_used_block_ids_2():
 def read_used_tile_ids():
 	for tileset_id in tileset_ids.values():
 		tileset_used_tile_ids[tileset_id] = set()
-		with open(code_directory + metatile_filename_fmt % tileset_id, 'rb') as f:
+		with open(code_directory + metatile_filename_fmt % tileset_id, 'rb') as f, open(code_directory + attribute_filename_fmt % tileset_id, 'rb') as g:
 			block_id = 0
 			while True:
 				used_tile_ids = [ord(b) for b in f.read(16)]
-				if not used_tile_ids:
+				used_tile_attrs = [ord(b) for b in g.read(16)]
+				if not used_tile_ids or not used_tile_attrs:
 					break
+				used_tile_indexes = [b + (0x80 if c & 0b1000 else 0) for (b, c) in zip(used_tile_ids, used_tile_attrs)]
 				if block_id in tileset_used_block_ids[tileset_id]:
-					tileset_used_tile_ids[tileset_id].update(used_tile_ids)
+					tileset_used_tile_ids[tileset_id].update(used_tile_indexes)
 				block_id += 1
 
 def find_unused_block_ids():
@@ -192,7 +195,7 @@ def main():
 	read_used_block_ids()
 	print('Reading used block IDs from %s...' % map_headers_2_filename, file=sys.stderr)
 	read_used_block_ids_2()
-	print('Reading used tile IDs from each %s...' % (metatile_filename_fmt % '##'), file=sys.stderr)
+	print('Reading used tile IDs from each %s and %s...' % (metatile_filename_fmt % '##', attribute_filename_fmt % '##'), file=sys.stderr)
 	read_used_tile_ids()
 	print('Finding unused block IDs...', file=sys.stderr)
 	find_unused_block_ids()
