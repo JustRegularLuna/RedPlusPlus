@@ -20,7 +20,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 13
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 14
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 15
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 16
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 16
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 17
 	tilecoll BUOY, BUOY, BUOY, WATER ; 18
 	tilecoll BUOY, BUOY, WATER, WATER ; 19
