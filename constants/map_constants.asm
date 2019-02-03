@@ -120,8 +120,8 @@ MAP_NONE   EQU 0
 
 	newgroup ; 11
 
-	map_const CELADON_CITY,                         25, 24 ;  1
-	map_const ROUTE_7,                               9, 24 ;  2
+	map_const CELADON_CITY,                         25, 23 ;  1
+	map_const ROUTE_7,                               9, 23 ;  2
 	map_const ROUTE_16_EAST,                        10,  7 ;  3
 	map_const CELADON_POKECENTER_1F,                 6,  4 ;  4
 	map_const CELADON_GYM,                           5,  9 ;  5
