@@ -19,12 +19,11 @@ block_data_filename  = 'data/maps/blocks.asm'
 block_filename_fmt   = 'maps/%s.blk'
 
 tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'vermilion',
-                 'celadon', 'lavender', 'cycling_road', 'fuchsia', 'safari_zone',
-                 'saffron', 'indigo', 'forest', 'new_bark_cherrygrove',
-                 'violet_mahogany', 'azalea_blackthorn', 'goldenrod', 'ecruteak',
-                 'olivine_cianwood', 'battle_tower_outside', 'national_park',
-                 'shrines_ruins_outside', 'pokecenter', 'lab', 'shrines_ruins',
-                 'cave']
+                 'celadon', 'lavender', 'cycling_road', 'fuchsia', 'saffron',
+                 'indigo', 'forest', 'new_bark_cherrygrove', 'violet_mahogany',
+                 'azalea_blackthorn', 'goldenrod', 'ecruteak', 'olivine_cianwood',
+                 'battle_tower_outside', 'national_park', 'shrines_ruins_outside',
+                 'safari_zone', 'pokecenter', 'lab', 'shrines_ruins', 'cave']
 
 # {'TILESET_PC_JOHTO_1': 1, ...}
 tileset_ids = {}

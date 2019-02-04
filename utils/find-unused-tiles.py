@@ -21,12 +21,11 @@ metatile_filename_fmt  = 'data/tilesets/%s_metatiles.bin'
 attribute_filename_fmt = 'data/tilesets/%s_attributes.bin'
 
 tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'vermilion',
-                 'celadon', 'lavender', 'cycling_road', 'fuchsia', 'safari_zone',
-                 'saffron', 'indigo', 'forest', 'new_bark_cherrygrove',
-                 'violet_mahogany', 'azalea_blackthorn', 'goldenrod', 'ecruteak',
-                 'olivine_cianwood', 'battle_tower_outside', 'national_park',
-                 'shrines_ruins_outside', 'pokecenter', 'lab', 'shrines_ruins',
-                 'cave',
+                 'celadon', 'lavender', 'cycling_road', 'fuchsia', 'saffron',
+                 'indigo', 'forest', 'new_bark_cherrygrove', 'violet_mahogany',
+                 'azalea_blackthorn', 'goldenrod', 'ecruteak', 'olivine_cianwood',
+                 'battle_tower_outside', 'national_park', 'shrines_ruins_outside',
+                 'safari_zone', 'pokecenter', 'lab', 'shrines_ruins', 'cave',
                  ###############################################################
                  'shamouti', 'valencia', 'faraway', 'house1', 'house2', 'house3',
                  'mart', 'gate', 'gym1', 'gym2', 'gym3', 'port', 'pc_lab',

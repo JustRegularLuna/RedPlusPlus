@@ -49,7 +49,6 @@ TilesetFuchsiaAnim:
 TilesetSaffronAnim:
 TilesetIndigoAnim:
 TilesetForestAnim:
-TilesetSafariZoneAnim:
 TilesetNewBarkCherrygroveAnim:
 TilesetVioletMahoganyAnim: ; TODO: AnimateRainPuddleTile $ec
 TilesetAzaleaBlackthornAnim: ; TODO: waterfall $9a, AnimateRainPuddleTile $e8
@@ -65,6 +64,20 @@ TilesetShrinesRuinsOutsideAnim: ; TODO: waterfall $9a
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateKantoFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
+TilesetSafariZoneAnim:
+	dw KantoWaterFrames, AnimateFarawayWaterTiles
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
