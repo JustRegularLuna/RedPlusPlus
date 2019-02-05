@@ -6,7 +6,7 @@ CeruleanGymBadgeSpeechHouse_MapScriptHeader:
 	db 3 ; warp events
 	warp_event  2,  7, CERULEAN_CITY, 1
 	warp_event  3,  7, CERULEAN_CITY, 1
-	warp_event  3,  1, CERULEAN_CITY, 15
+	warp_event  3,  0, CERULEAN_CITY, 15
 
 	db 0 ; coord events
 

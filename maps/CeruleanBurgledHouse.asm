@@ -6,7 +6,7 @@ CeruleanBurgledHouse_MapScriptHeader:
 	db 3 ; warp events
 	warp_event  2,  7, CERULEAN_CITY, 2
 	warp_event  3,  7, CERULEAN_CITY, 2
-	warp_event  3,  1, CERULEAN_CITY, 13
+	warp_event  3,  0, CERULEAN_CITY, 13
 
 	db 0 ; coord events
 

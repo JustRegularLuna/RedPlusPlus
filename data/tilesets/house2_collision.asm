@@ -111,7 +111,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 6e
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 6f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 70
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 71
+	tilecoll WALL, STAIRCASE, STOVE, FLOOR ; 71
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 72
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 73
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 74

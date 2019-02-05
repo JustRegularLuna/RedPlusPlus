@@ -119,7 +119,6 @@ GoldenrodHappinessRater_BlockData:
 GoldenrodPPSpeechHouse_BlockData:
 GoldenrodHPUpHouse_BlockData:
 GuideGentsHouse_BlockData:
-CeruleanGymBadgeSpeechHouse_BlockData:
 CeruleanTradeSpeechHouse_BlockData:
 CeruleanCoupleHouse_BlockData:
 FuchsiaBillSpeechHouse_BlockData:
@@ -160,10 +159,14 @@ VioletOnixTradeHouse_BlockData:
 ValeriesHouse_BlockData:
 	INCBIN "maps/TraditionalHouse.ablk"
 
+CeruleanBurgledHouse_BlockData:
+; add a new map eventually
+CeruleanGymBadgeSpeechHouse_BlockData:
+	INCBIN "maps/CeruleanGymBadgeSpeechHouse.ablk"
+
 
 SECTION "Map Blockdata 1", ROMX
 
-CeruleanBurgledHouse_BlockData:
 CeruleanBerryPowderHouse_BlockData:
 CeruleanWaterShowSpeechHouse_BlockData:
 CeladonMansionRoofHouse_BlockData:
