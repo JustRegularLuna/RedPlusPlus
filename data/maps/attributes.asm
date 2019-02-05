@@ -591,7 +591,7 @@ ENDM
 	map_attributes SeafoamIslandsB3F, SEAFOAM_ISLANDS_B3F, $9, 0
 	map_attributes SeafoamIslandsB4F, SEAFOAM_ISLANDS_B4F, $9, 0
 	map_attributes CeruleanGymBadgeSpeechHouse, CERULEAN_GYM_BADGE_SPEECH_HOUSE, $0, 0
-	map_attributes CeruleanPoliceStation, CERULEAN_POLICE_STATION, $0, 0
+	map_attributes CeruleanBurgledHouse, CERULEAN_BURGLED_HOUSE, $0, 0
 	map_attributes CeruleanTradeSpeechHouse, CERULEAN_TRADE_SPEECH_HOUSE, $0, 0
 	map_attributes CeruleanPokeCenter1F, CERULEAN_POKECENTER_1F, $0, 0
 	map_attributes CeruleanGym, CERULEAN_GYM, $0, 0
@@ -600,6 +600,7 @@ ENDM
 	map_attributes CeruleanBerryPowderHouse, CERULEAN_BERRY_POWDER_HOUSE, $0, 0
 	map_attributes CeruleanCoupleHouse, CERULEAN_COUPLE_HOUSE, $0, 0
 	map_attributes CeruleanWaterShowSpeechHouse, CERULEAN_WATER_SHOW_SPEECH_HOUSE, $0, 0
+	map_attributes CeruleanZigHouse, CERULEAN_ZIG_HOUSE, $0, 0
 	map_attributes Route3PokeCenter1F, ROUTE_3_POKECENTER_1F, $0, 0
 	map_attributes Route10PokeCenter1F, ROUTE_10_POKECENTER_1F, $0, 0
 	map_attributes PowerPlant, POWER_PLANT, $0, 0

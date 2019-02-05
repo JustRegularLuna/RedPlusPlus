@@ -489,8 +489,9 @@ INCLUDE "maps/CeruleanCity.asm"
 INCLUDE "maps/CeruleanMart.asm"
 INCLUDE "maps/CeruleanGym.asm"
 INCLUDE "maps/CeruleanGymBadgeSpeechHouse.asm"
-INCLUDE "maps/CeruleanPoliceStation.asm"
+INCLUDE "maps/CeruleanBurgledHouse.asm"
 INCLUDE "maps/CeruleanTradeSpeechHouse.asm"
+INCLUDE "maps/CeruleanZigHouse.asm"
 
 
 SECTION "Cerulean Scripts 2", ROMX

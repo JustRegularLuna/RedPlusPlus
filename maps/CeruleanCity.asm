@@ -4,9 +4,9 @@ CeruleanCity_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlyPoint
 
-	db 11 ; warp events
+	db 16 ; warp events
 	warp_event 11,  9, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 1
-	warp_event 29,  9, CERULEAN_POLICE_STATION, 1
+	warp_event 29,  9, CERULEAN_BURGLED_HOUSE, 1 ; Originally Police Station
 	warp_event 15, 14, CERULEAN_TRADE_SPEECH_HOUSE, 1
 	warp_event 21, 15, CERULEAN_POKECENTER_1F, 1
 	warp_event 30, 17, CERULEAN_GYM, 1
@@ -16,6 +16,11 @@ CeruleanCity_MapScriptHeader:
 	warp_event 17,  9, CERULEAN_BERRY_POWDER_HOUSE, 1
 	warp_event 21, 23, CERULEAN_COUPLE_HOUSE, 1
 	warp_event 37,  8, CERULEAN_WATER_SHOW_SPEECH_HOUSE, 1
+	warp_event 31, 23, CERULEAN_ZIG_HOUSE, 1
+	warp_event 30,  6, CERULEAN_BURGLED_HOUSE, 3 ; back door
+	warp_event 31,  6, CERULEAN_BURGLED_HOUSE, 3 ; back door
+	warp_event 11,  6, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 3 ; back door
+	warp_event 12,  6, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 3 ; back door
 
 	db 0 ; coord events
 

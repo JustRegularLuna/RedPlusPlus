@@ -1,11 +1,11 @@
-CeruleanPoliceStation_MapScriptHeader:
+CeruleanZigHouse_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  2,  7, CERULEAN_CITY, 2
-	warp_event  3,  7, CERULEAN_CITY, 2
+	warp_event  2,  7, CERULEAN_CITY, 12
+	warp_event  3,  7, CERULEAN_CITY, 12
 
 	db 0 ; coord events
 

@@ -1,12 +1,12 @@
-CeruleanGymBadgeSpeechHouse_MapScriptHeader:
+CeruleanBurgledHouse_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
 	db 3 ; warp events
-	warp_event  2,  7, CERULEAN_CITY, 1
-	warp_event  3,  7, CERULEAN_CITY, 1
-	warp_event  3,  1, CERULEAN_CITY, 15
+	warp_event  2,  7, CERULEAN_CITY, 2
+	warp_event  3,  7, CERULEAN_CITY, 2
+	warp_event  3,  1, CERULEAN_CITY, 13
 
 	db 0 ; coord events
 

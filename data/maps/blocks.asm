@@ -129,6 +129,7 @@ LavenderTownSpeechHouse_BlockData:
 ViridianNicknameSpeechHouse_BlockData:
 CeladonOldManSpeechHouse_BlockData:
 CeladonDevelopmentSpeechHouse_BlockData:
+CeruleanZigHouse_BlockData:
 	INCBIN "maps/House2.ablk"
 
 MahoganyRedGyaradosSpeechHouse_BlockData:
@@ -162,7 +163,7 @@ ValeriesHouse_BlockData:
 
 SECTION "Map Blockdata 1", ROMX
 
-CeruleanPoliceStation_BlockData:
+CeruleanBurgledHouse_BlockData:
 CeruleanBerryPowderHouse_BlockData:
 CeruleanWaterShowSpeechHouse_BlockData:
 CeladonMansionRoofHouse_BlockData:

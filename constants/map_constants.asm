@@ -79,12 +79,13 @@ MAP_NONE   EQU 0
 	map_const CERULEAN_MART,                     6,  4 ;  6
 	map_const CERULEAN_GYM,                      5,  8 ;  7
 	map_const CERULEAN_BIKE_SHOP,                4,  4 ;  8
-	map_const CERULEAN_POLICE_STATION,           4,  4 ;  9
+	map_const CERULEAN_BURGLED_HOUSE,            4,  4 ;  9
 	map_const CERULEAN_BERRY_POWDER_HOUSE,       4,  4 ; 10
 	map_const CERULEAN_GYM_BADGE_SPEECH_HOUSE,   4,  4 ; 11
 	map_const CERULEAN_TRADE_SPEECH_HOUSE,       4,  4 ; 12
 	map_const CERULEAN_COUPLE_HOUSE,             4,  4 ; 13
 	map_const CERULEAN_WATER_SHOW_SPEECH_HOUSE,  4,  4 ; 14
+	map_const CERULEAN_ZIG_HOUSE,                4,  4 ; 15
 
 	newgroup ;  7
 
