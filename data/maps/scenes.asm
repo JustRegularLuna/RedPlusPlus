@@ -10,6 +10,7 @@ MapTriggers::
 	scene_var VIRIDIAN_CITY, wViridianCityTrigger
 	scene_var PEWTER_CITY, wPewterCityTrigger
 	scene_var ROUTE_22, wRoute22Trigger
+	scene_var REDS_HOUSE_2F, wRedsHouse2FTrigger
 	scene_var OAKS_LAB, wOaksLabTrigger
 	scene_var VIRIDIAN_MART, wViridianMartTrigger
 	scene_var PEWTER_MUSEUM_OF_SCIENCE_1F, wPewterMuseumTrigger

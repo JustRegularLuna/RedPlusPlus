@@ -1,5 +1,7 @@
 RedsHouse2F_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script PlayersBedroomFaceSNES
+	scene_script PlayersBedroomDoNothing
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, RedsHouse2FInitializeEvents
@@ -21,6 +23,13 @@ endc
 	db 0 ; object events
 
 	const_def 1 ; object constants
+
+PlayersBedroomFaceSNES:
+; In Gen 1, there was a script in your bedroom making you look UP toward the SNES at the start.
+	turnobject PLAYER, UP
+	setscene $1
+PlayersBedroomDoNothing:
+	end
 
 RedsHouse2FInitializeEvents:
 	checkevent EVENT_INITIALIZED_EVENTS
