@@ -16,7 +16,6 @@ Tileset00End::
 	tileset TilesetLavender
 	tileset TilesetCyclingRoad
 	tileset TilesetFuchsia
-	tileset TilesetSafariZone
 	tileset TilesetSaffron
 	tileset TilesetIndigo
 	tileset TilesetForest
@@ -29,6 +28,7 @@ Tileset00End::
 	tileset TilesetBattleTowerOutside
 	tileset TilesetNationalPark
 	tileset TilesetShrinesRuinsOutside
+	tileset TilesetSafariZone
 	tileset TilesetPokeCenter
 	tileset TilesetLab
 	tileset TilesetShrinesRuins

@@ -7,11 +7,9 @@ Route24_MapScriptHeader:
 	db 1 ; warp events
 	warp_event 18,  6, HIDDEN_CAVE_GROTTO, 1
 
-	db 10 ; coord events
-	coord_event 19, 17, 1, Route24BridgeOverheadTrigger
+	db 8 ; coord events
 	coord_event 20, 16, 1, Route24BridgeOverheadTrigger
 	coord_event 21, 16, 1, Route24BridgeOverheadTrigger
-	coord_event 22, 17, 1, Route24BridgeOverheadTrigger
 	coord_event 20, 39, 1, Route24BridgeOverheadTrigger
 	coord_event 21, 39, 1, Route24BridgeOverheadTrigger
 	coord_event 20, 17, 0, Route24BridgeUnderfootTrigger
@@ -61,7 +59,7 @@ Route24_UnderfootBridgeAsm:
 	changebridgeblock 20, 32, $da, ROUTE_24
 	changebridgeblock 20, 34, $da, ROUTE_24
 	changebridgeblock 20, 36, $da, ROUTE_24
-	changebridgeblock 20, 38, $57, ROUTE_24
+	changebridgeblock 20, 38, $d1, ROUTE_24
 	jp BufferScreen
 
 Route24BridgeOverheadTrigger:

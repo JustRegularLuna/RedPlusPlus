@@ -9,7 +9,6 @@
 	const TILESET_LAVENDER
 	const TILESET_CYCLING_ROAD
 	const TILESET_FUCHSIA
-	const TILESET_SAFARI_ZONE ; does not share metatiles
 	const TILESET_SAFFRON
 	const TILESET_INDIGO ; does not share metatiles
 	const TILESET_FOREST ; does not share metatiles
@@ -25,6 +24,7 @@ GENERIC_KANTO_GFX EQU const_value
 	const TILESET_SHRINES_RUINS_OUTSIDE
 GENERIC_GFX EQU const_value
 ; These are independent tilesets
+	const TILESET_SAFARI_ZONE
 	const TILESET_POKECENTER
 	const TILESET_LAB
 	const TILESET_SHRINES_RUINS

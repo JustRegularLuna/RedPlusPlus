@@ -603,7 +603,8 @@ def export_png_to_2bpp(filein, fileout=None, palout=None, **kwargs):
     palette = arguments.get('palette')
     if palout == None:
         palout = os.path.splitext(fileout)[0] + '.pal'
-    export_palette(palette, palout)
+    if 'tilesets' not in fileout:
+        export_palette(palette, palout)
 
 
 def get_image_padding(width, height, wstep=8, hstep=8):

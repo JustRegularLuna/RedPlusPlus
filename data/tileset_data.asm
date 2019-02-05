@@ -129,7 +129,7 @@ INCBIN "data/tilesets/fuchsia_attributes.bin"
 SECTION "Tileset Data 10", ROMX
 
 TilesetSafariZoneGFX::
-INCBIN "gfx/tilesets/safari_zone.2bpp.unique.lz"
+INCBIN "gfx/tilesets/safari_zone.2bpp.lz"
 TilesetSafariZoneMeta::
 INCBIN "data/tilesets/safari_zone_metatiles.bin"
 TilesetSafariZoneColl::
