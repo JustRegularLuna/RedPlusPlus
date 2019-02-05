@@ -1790,7 +1790,7 @@ GetRandomPickupItem::
 	db MAX_ELIXER
 
 .RarePickupTable:
-	db HYPER_POTION
+	db STARDUST
 	db NUGGET
 	db KINGS_ROCK
 	db FULL_RESTORE
