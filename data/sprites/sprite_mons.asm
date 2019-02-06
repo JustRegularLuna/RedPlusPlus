@@ -4,6 +4,7 @@ SpriteMons:
 	db JIGGLYPUFF
 	db ZIGZAGOON
 	db MEOWTH
+	db SLOWBRO
 	db ARTICUNO
 	db ZAPDOS
 	db MOLTRES

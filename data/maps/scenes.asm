@@ -9,6 +9,7 @@ MapTriggers::
 	scene_var PALLET_TOWN, wPalletTownTrigger
 	scene_var VIRIDIAN_CITY, wViridianCityTrigger
 	scene_var PEWTER_CITY, wPewterCityTrigger
+	scene_var CERULEAN_CITY, wCeruleanCityTrigger
 	scene_var ROUTE_22, wRoute22Trigger
 	scene_var REDS_HOUSE_2F, wRedsHouse2FTrigger
 	scene_var OAKS_LAB, wOaksLabTrigger

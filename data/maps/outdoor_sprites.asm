@@ -101,9 +101,16 @@ OutdoorSprites_Cerulean:
 OutdoorSprites_CeruleanCape:
 OutdoorSprites_Route10:
 OutdoorSprites_Route5:
+	db SPRITE_BLUE
+	db SPRITE_ROCKET
+	db SPRITE_BLACK_HAIR_BOY_1
+	db SPRITE_BLACK_HAIR_BOY_2
+	db SPRITE_LASS
+	db SPRITE_OFFICER_JENNY
 	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
 	db SPRITE_CABLE_CAR_SILPH
+	db SPRITE_SLOWBRO
 	db 0 ; end
 
 OutdoorSprites_Vermilion:
