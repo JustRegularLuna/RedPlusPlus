@@ -143,7 +143,7 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 8e
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 8f
 	tilecoll WALL, WALL, WALL, DOOR ; 90
-	tilecoll WALL, WALL, POKECENTER_SIGN, WALL ; 91
+	tilecoll WALL, WALL, WALL, WALL ; 91
 	tilecoll WALL, WALL, WALL, DOOR ; 92
 	tilecoll WALL, WALL, MART_SIGN, WALL ; 93
 	tilecoll WALL, WALL, WALL, WALL ; 94
