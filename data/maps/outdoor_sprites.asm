@@ -241,8 +241,11 @@ OutdoorSprites_Blackthorn:
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 
-OutdoorSprites_Special:
 OutdoorSprites_SilverCave:
+	db SPRITE_BALL_CUT_FRUIT
+	db 0 ; end
+
+OutdoorSprites_Special:
 OutdoorSprites_Shamouti:
 OutdoorSprites_ShamoutiShrine:
 OutdoorSprites_ShamoutiCoast:
