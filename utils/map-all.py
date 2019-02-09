@@ -16,7 +16,7 @@ tileset_filename     = 'constants/tileset_constants.asm'
 maps_filename        = 'constants/map_constants.asm'
 map_headers_filename = 'data/maps/maps.asm'
 block_data_filename  = 'data/maps/blocks.asm'
-block_filename_fmt   = 'maps/%s.blk'
+block_filename_fmt   = 'maps/%s.ablk'
 
 tileset_names = ['pallet_cinnabar', 'viridian', 'pewter', 'cerulean', 'vermilion',
                  'celadon', 'lavender', 'cycling_road', 'fuchsia', 'saffron',
@@ -31,7 +31,7 @@ tileset_ids = {}
 map_widths = OrderedDict()
 # {'NewBarkTown': 'TILESET_PC_JOHTO_1', ...}
 map_tilesets = OrderedDict()
-# {'NewBarkTown': 'NewBarkTown.blk', ...}
+# {'NewBarkTown': 'NewBarkTown.ablk', ...}
 map_block_data_exceptions = {}
 
 def read_tileset_ids():
@@ -77,8 +77,8 @@ def read_map_block_data():
 			line = line.strip()
 			if line.endswith('_BlockData:'):
 				map_names.append(line[:-11])
-			elif line.startswith('INCBIN "maps/') and line.endswith('.blk"'):
-				block_data_name = line[13:-5]
+			elif line.startswith('INCBIN "maps/') and line.endswith('.ablk"'):
+				block_data_name = line[13:-6]
 				for map_name in map_names:
 					if map_name != block_data_name:
 						map_block_data_exceptions[map_name] = block_data_name
