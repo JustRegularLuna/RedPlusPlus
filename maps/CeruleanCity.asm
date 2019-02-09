@@ -25,8 +25,8 @@ CeruleanCity_MapScriptHeader:
 	warp_event 12,  6, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 3 ; back door
 
 	db 2 ; coord events
-	coord_event 22, 4, 0, CeruleanCity_RivalTriggerLeft
-	coord_event 23, 4, 0, CeruleanCity_RivalTriggerRight
+	coord_event 22, 2, 0, CeruleanCity_RivalTriggerLeft
+	coord_event 23, 2, 0, CeruleanCity_RivalTriggerRight
 
 	db 4 ; bg events
 	bg_event 17, 19, SIGNPOST_JUMPTEXT, CeruleanCityText12
@@ -35,8 +35,7 @@ CeruleanCity_MapScriptHeader:
 	bg_event 27, 17, SIGNPOST_JUMPTEXT, CeruleanCityText17
 
 	db 12 ; object events
-	cuttree_event 25, 26, -1
-	object_event 22,  0, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_CERULEAN_CITY_RIVAL
+	object_event 22, -3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_CERULEAN_CITY_RIVAL
 	object_event 33,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1;PERSONTYPE_GENERICTRAINER, {TODO: range}, {TODO: generictrainer OPP_ROCKET, 5}, -1 ; CeruleanCityText2
 	object_event 31, 20, SPRITE_BLACK_HAIR_BOY_1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, CeruleanCityText3, -1
 	object_event 15, 17, SPRITE_BLACK_HAIR_BOY_2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, CeruleanCityText4, -1
@@ -47,15 +46,68 @@ CeruleanCity_MapScriptHeader:
 	object_event 28, 25, SPRITE_SLOWBRO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, CeruleanCityText8, -1
 	object_event 16, 24, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, CeruleanCityText9, -1
 	object_event  2, 10, SPRITE_BLACK_HAIR_BOY_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, CeruleanCityText10, EVENT_BEAT_ELITE_FOUR
+	cuttree_event 25, 26, -1
+
+	const_def 1 ; object constants
+	const CERULEANCITY_RIVAL
 
 CeruleanCityScriptEnd:
 	end
 
 CeruleanCity_RivalTriggerLeft:
+	scall CeruleanCity_RivalEnter
+	applyonemovement CERULEANCITY_RIVAL, slow_step_right
+	applyonemovement CERULEANCITY_RIVAL, slow_step_down
+	turnobject PLAYER, RIGHT
+CeruleanCity_RivalLeave:
+	applyonemovement CERULEANCITY_RIVAL, slow_step_down
+	turnobject PLAYER, DOWN
+	applymovement CERULEANCITY_RIVAL, CeruleanCityStepDown4Movement
+	disappear CERULEANCITY_RIVAL
+	setscene $1
+	playmapmusic
 	end
 
 CeruleanCity_RivalTriggerRight:
+	moveobject CERULEANCITY_RIVAL, 23, -3
+	scall CeruleanCity_RivalEnter
+	applyonemovement CERULEANCITY_RIVAL, slow_step_left
+	applyonemovement CERULEANCITY_RIVAL, slow_step_down
+	turnobject PLAYER, LEFT
+	jump CeruleanCity_RivalLeave
+
+CeruleanCity_RivalEnter:
+	appear CERULEANCITY_RIVAL
+	playmusic MUSIC_MEET_RIVAL
+	applymovement CERULEANCITY_RIVAL, CeruleanCityStepDown4Movement
+	showtext CeruleanCityRivalSeenText
+	winlosstext CeruleanCityRivalBeatenText, CeruleanCityRivalYouLoseText
+	setlasttalked CERULEANCITY_RIVAL
+	checkevent EVENT_PLAYER_CHOSE_SQUIRTLE
+	iftrue .Squirtle
+	checkevent EVENT_PLAYER_CHOSE_BULBASAUR
+	iftrue .Bulbasaur
+	loadtrainer SONY1, 7
+	jump .continueBattle
+.Squirtle
+	loadtrainer SONY1, 8
+	jump .continueBattle
+.Bulbasaur
+	loadtrainer SONY1, 9
+.continueBattle
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	playmusic MUSIC_FAREWELL_RIVAL
+	showtext CeruleanCityRivalAfterBattleText
 	end
+
+CeruleanCityStepDown4Movement:
+	slow_step_down
+	slow_step_down
+	slow_step_down
+	slow_step_down
+	step_end
 
 CeruleanCityFlyPoint:
 	setflag ENGINE_FLYPOINT_CERULEAN
@@ -89,7 +141,7 @@ CeruleanCityText10:
 
 CeruleanCityText12:
 	text "Cerulean City"
-	
+
 	para "A mysterious blue"
 	line "aura surrounds it"
 	done

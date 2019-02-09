@@ -11,6 +11,8 @@ SilverCaveOutside_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	cuttree_event 31, 18, -1
+	cuttree_event 34, 17, -1
 
 	const_def 1 ; object constants
