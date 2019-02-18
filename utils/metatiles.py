@@ -132,11 +132,11 @@ class Attributes(object):
 	PRIORITY = 0x80
 
 	day_palette = staticmethod(lambda:
-		(lambda x=load_palette('gfx/tilesets/palettes/bg.pal'): x[8:11]+[x[0x29]]+x[12:16])())
+		(lambda x=load_palette('gfx/tilesets/bg_tiles.pal'): x[8:11]+[x[0x29]]+x[12:16])())
 	nite_palette = staticmethod(lambda:
-		(lambda x=load_palette('gfx/tilesets/palettes/bg.pal'): x[16:19]+[x[0x2a]]+x[20:24])())
+		(lambda x=load_palette('gfx/tilesets/bg_tiles.pal'): x[16:19]+[x[0x2a]]+x[20:24])())
 	indoor_palette = staticmethod(lambda:
-		load_palette('gfx/tilesets/palettes/bg.pal')[32:40])
+		load_palette('gfx/tilesets/bg_tiles.pal')[32:40])
 
 	map_palettes = {
 		'maps/Route30.blk': lambda: load_palette('gfx/tilesets/palettes/cherrygrove_city.pal')[8:16],
@@ -224,11 +224,11 @@ class Attributes(object):
 	}
 
 	tileset_palettes = {
-		'celadon': lambda: load_palette('gfx/tilesets/palettes/celadon.pal')[8:16],
-		'fuchsia': lambda: load_palette('gfx/tilesets/palettes/fuchsia.pal')[8:16],
-		'saffron': lambda: load_palette('gfx/tilesets/palettes/saffron.pal')[8:16],
-		'forest': lambda: load_palette('gfx/tilesets/palettes/forest.pal'),
-		'safari_zone': lambda: load_palette('gfx/tilesets/palettes/safari_zone.pal')[8:16],
+		'celadon': lambda: load_palette('gfx/tilesets/celadon.pal')[8:16],
+		'fuchsia': lambda: load_palette('gfx/tilesets/fuchsia.pal')[8:16],
+		'saffron': lambda: load_palette('gfx/tilesets/saffron.pal')[8:16],
+		'forest': lambda: load_palette('gfx/tilesets/forest.pal'),
+		'safari_zone': lambda: load_palette('gfx/tilesets/safari_zone.pal')[8:16],
 		'lab': lambda: Attributes.indoor_palette(),
 		########################################################################
 		'johto1': lambda: Attributes.day_palette(),
@@ -241,21 +241,20 @@ class Attributes(object):
 		'pc_forest': lambda: Attributes.nite_palette(),
 		'cave': lambda: Attributes.nite_palette(),
 		'tunnel': lambda: Attributes.nite_palette(),
-		'alph': lambda: load_palette('gfx/tilesets/palettes/ruins.pal'),
-		'battle_tower': lambda: load_palette('gfx/tilesets/palettes/battle_tower.pal'),
-		'faraway': lambda: load_palette('gfx/tilesets/palettes/faraway_island.pal')[8:16],
-		'game_corner': lambda: load_palette('gfx/tilesets/palettes/game_corner.pal'),
-		'gate': lambda: load_palette('gfx/tilesets/palettes/gate.pal'),
-		'hotel': lambda: load_palette('gfx/tilesets/palettes/hotel.pal'),
-		'ice_path': lambda: load_palette('gfx/tilesets/palettes/ice_path.pal'),
-		'mart': lambda: load_palette('gfx/tilesets/palettes/mart.pal'),
-		'pokecenter': lambda: load_palette('gfx/tilesets/palettes/pokecenter.pal'),
-		'quiet_cave': lambda: load_palette('gfx/tilesets/palettes/quiet_cave.pal'),
-		'radio_tower': lambda: load_palette('gfx/tilesets/palettes/radio_tower.pal'),
-		'ruins': lambda: load_palette('gfx/tilesets/palettes/ruins.pal'),
-		'safari': lambda: load_palette('gfx/tilesets/palettes/safari_zone.pal')[8:16],
-		'shamouti': lambda: load_palette('gfx/tilesets/palettes/shamouti_island.pal')[8:16],
-		'valencia': lambda: load_palette('gfx/tilesets/palettes/valencia_island.pal')[8:16],
+		'alph': lambda: load_palette('gfx/tilesets/ruins.pal'),
+		'battle_tower': lambda: load_palette('gfx/tilesets/battle_tower.pal'),
+		'faraway': lambda: load_palette('gfx/tilesets/faraway.pal')[8:16],
+		'game_corner': lambda: load_palette('gfx/tilesets/game_corner.pal'),
+		'gate': lambda: load_palette('gfx/tilesets/gate.pal'),
+		'hotel': lambda: load_palette('gfx/tilesets/hotel.pal'),
+		'ice_path': lambda: load_palette('gfx/tilesets/ice_path.pal'),
+		'mart': lambda: load_palette('gfx/tilesets/mart.pal'),
+		'pokecenter': lambda: load_palette('gfx/tilesets/pokecenter.pal'),
+		'quiet_cave': lambda: load_palette('gfx/tilesets/quiet_cave.pal'),
+		'radio_tower': lambda: load_palette('gfx/tilesets/radio_tower.pal'),
+		'ruins': lambda: load_palette('gfx/tilesets/ruins.pal'),
+		'shamouti': lambda: load_palette('gfx/tilesets/shamouti.pal')[8:16],
+		'valencia': lambda: load_palette('gfx/tilesets/valencia.pal')[8:16],
 	}
 
 	def __init__(self, filename, key, map_blk):

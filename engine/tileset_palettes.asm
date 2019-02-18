@@ -594,7 +594,7 @@ IcePathPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/ice_path.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/ice_path.pal"
+INCLUDE "gfx/tilesets/ice_path.pal"
 else
 	MONOCHROME_RGB_FOUR
 	MONOCHROME_RGB_FOUR
@@ -1049,7 +1049,7 @@ RadioTowerPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/radio_tower.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/radio_tower.pal"
+INCLUDE "gfx/tilesets/radio_tower.pal"
 else
 	MONOCHROME_RGB_FOUR
 	MONOCHROME_RGB_FOUR
@@ -1222,7 +1222,7 @@ GameCornerPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/game_corner.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/game_corner.pal"
+INCLUDE "gfx/tilesets/game_corner.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
@@ -1237,7 +1237,7 @@ PokeCenterPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/pokecenter.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/pokecenter.pal"
+INCLUDE "gfx/tilesets/pokecenter.pal"
 else
 rept 6
 	MONOCHROME_RGB_FOUR
@@ -1483,7 +1483,7 @@ MartPalette:
 if DEF(NOIR)
 INCLUDE "gfx/tilesets/palettes/noir/mart.pal"
 elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/mart.pal"
+INCLUDE "gfx/tilesets/mart.pal"
 else
 rept 7
 	MONOCHROME_RGB_FOUR
