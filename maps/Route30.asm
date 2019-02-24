@@ -14,8 +14,8 @@ Route30_MapScriptHeader:
 
 	db 4 ; object events
 	itemball_event  8, 37, POKE_BALL, 1, -1
-	cuttree_event 11,  5, -1
+	cuttree_event 11,  6, -1
 	fruittree_event 10, 41, FRUITTREE_ROUTE_30_1, ORAN_BERRY
-	fruittree_event 13,  6, FRUITTREE_ROUTE_30_2, ORAN_BERRY
+	fruittree_event 13,  5, FRUITTREE_ROUTE_30_2, ORAN_BERRY
 
 	const_def 1 ; object constants
