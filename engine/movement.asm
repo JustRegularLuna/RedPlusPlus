@@ -89,6 +89,10 @@ MovementPointers: ; 5075
 	dw Movement_rock_smash            ; 57
 	dw Movement_return_dig            ; 58
 	dw Movement_skyfall_top           ; 59
+	dw Movement_stairs_step_down
+	dw Movement_stairs_step_up
+	dw Movement_stairs_step_left
+	dw Movement_stairs_step_right
 ; 5129
 
 
@@ -869,3 +873,44 @@ JumpStep: ; 548a
 	ld [hl], STEP_TYPE_PLAYER_JUMP
 	ret
 ; 54b8
+
+Movement_stairs_step_down:
+	ld a, STEP_WALK << 2 | DOWN
+	jr DiagonalStairsStep
+
+Movement_stairs_step_up:
+	ld a, STEP_WALK << 2 | UP
+	jr DiagonalStairsStep
+
+Movement_stairs_step_left:
+	ld a, STEP_WALK << 2 | LEFT
+	jr DiagonalStairsStep
+
+Movement_stairs_step_right:
+	ld a, STEP_WALK << 2 | RIGHT
+
+DiagonalStairsStep:
+	call InitStep
+	ld hl, OBJECT_31
+	add hl, bc
+	ld [hl], $0
+
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], PERSON_ACTION_STEP
+
+	ld hl, wCenteredObject
+	ldh a, [hMapObjectIndexBuffer]
+	cp [hl]
+	jr z, .player
+
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_NPC_STAIRS
+	ret
+
+.player
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_PLAYER_STAIRS
+	ret

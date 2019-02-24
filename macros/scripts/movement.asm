@@ -454,3 +454,23 @@ return_dig: macro
 skyfall_top: macro
 	db movement_skyfall_top ; $59
 	endm
+
+	enum movement_stairs_step_down
+stairs_step_down: macro
+	db movement_stairs_step_down
+	endm
+
+	enum movement_stairs_step_up
+stairs_step_up: macro
+	db movement_stairs_step_up
+	endm
+
+	enum movement_stairs_step_left
+stairs_step_left: macro
+	db movement_stairs_step_left
+	endm
+
+	enum movement_stairs_step_right
+stairs_step_right: macro
+	db movement_stairs_step_right
+	endm
