@@ -212,6 +212,9 @@
 	tilecoll WALL, WALL, WALL, WALL ; d3
 	tilecoll FLOOR, FLOOR, WALL, WALL ; d4
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; d5
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d6
+	tilecoll WALL, WALL, WALL, STAIRS_LEFT_DOWN ; d6
 	tilecoll WALL, WALL, WALL, WALL ; d7
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d8
+	tilecoll FLOOR, STAIRS_RIGHT_UP, FLOOR, FLOOR ; d9
+	tilecoll WALL, WALL, WALL, WALL ; da
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; db
