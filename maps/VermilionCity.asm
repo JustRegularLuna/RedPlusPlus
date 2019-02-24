@@ -27,9 +27,9 @@ VermilionCity_MapScriptHeader:
 	db 5 ; object events
 	cuttree_event 19, 19, -1
 	smashrock_event 38,  5
-	smashrock_event 31,  6
 	smashrock_event 37,  8
 	smashrock_event 30, 10
+	smashrock_event 33, 10
 
 	const_def 1 ; object constants
 
