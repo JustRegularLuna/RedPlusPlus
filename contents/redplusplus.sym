@@ -30278,9 +30278,9 @@
 2D:5765 PokedexSlowpokeLZ
 2D:5859 QuestionMarkLZ
 2D:58FC TilesetNewBarkCherrygroveGFX
-2D:5C82 TilesetNewBarkCherrygroveMeta
-2D:6C42 TilesetNewBarkCherrygroveColl
-2D:7032 TilesetNewBarkCherrygroveAttr
+2D:5C8E TilesetNewBarkCherrygroveMeta
+2D:6C4E TilesetNewBarkCherrygroveColl
+2D:703E TilesetNewBarkCherrygroveAttr
 2E:4000 MapGroupPointers
 2E:406E MapGroup_Special
 2E:409B MapGroup_Pallet
