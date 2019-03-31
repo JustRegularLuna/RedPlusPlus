@@ -26,22 +26,22 @@
 	tilecoll TOP_WALL, WALL, FLOOR, WALL ; 19
 	tilecoll WATER, WATER, WATER, WATER ; 1a
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 1b
-	tilecoll BUOY, WATER, BUOY, WATER ; 1c
-	tilecoll BUOY, BUOY, BUOY, BUOY ; 1d
+	tilecoll WATER, WATER, WATER, WATER ; 1c
+	tilecoll WATER, WATER, WATER, WATER ; 1d
 	tilecoll BOTTOM_WALL, FLOOR, CAVE, WALL ; 1e
 	tilecoll WALL, WALL, WALL, WALL ; 1f
-	tilecoll BUOY, WATER, BUOY, BUOY ; 20
+	tilecoll WALL, TOP_WALL, WALL, FLOOR ; 20
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 21
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 22
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 23
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 24
 	tilecoll WALL, WALL, WALL, WALL ; 25
-	tilecoll WALL, WALL, WALL, WALL ; 26
-	tilecoll WALL, WALL, WALL, WALL ; 27
+	tilecoll FLOOR, FLOOR, WALL, TOP_WALL ; 26
+	tilecoll FLOOR, FLOOR, TOP_WALL, TOP_WALL ; 27
 	tilecoll WALL, FLOOR, WALL, WALL ; 28
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 29
 	tilecoll FLOOR, WALL, WALL, WALL ; 2a
-	tilecoll WALL, WALL, WALL, WALL ; 2b
+	tilecoll WALL, TOP_WALL, FLOOR, FLOOR ; 2b
 	tilecoll WALL, LEDGE_LEFT, WALL, LEDGE_LEFT ; 2c
 	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR ; 2d
 	tilecoll LEDGE_RIGHT, WALL, LEDGE_RIGHT, WALL ; 2e
@@ -82,14 +82,14 @@
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 51
 	tilecoll WALL, TOP_WALL, WALL, FLOOR ; 52
 	tilecoll TOP_WALL, WALL, FLOOR, WALL ; 53
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 54
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 55
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 56
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 57
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 58
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 59
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 5a
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5b
+	tilecoll WATER, WATER, WATER, WATER ; 54
+	tilecoll WATER, WATER, WATER, WATER ; 55
+	tilecoll WATER, WATER, WATER, WATER ; 56
+	tilecoll WATER, WATER, WATER, WATER ; 57
+	tilecoll WATER, WATER, WATER, WATER ; 58
+	tilecoll WATER, WATER, WATER, WATER ; 59
+	tilecoll WATER, WATER, WATER, WATER ; 5a
+	tilecoll WATER, WATER, WATER, WATER ; 5b
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 5c
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 5d
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 5e
