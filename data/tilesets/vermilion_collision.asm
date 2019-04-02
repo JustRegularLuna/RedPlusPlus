@@ -217,3 +217,16 @@
 	tilecoll FLOOR, STAIRS_RIGHT_UP, FLOOR, STAIRS_RIGHT_UP ; d8
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; d9
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; da
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; db
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dc
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; dd
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; de
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; df
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e2
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e3
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e4
+	tilecoll BUOY, BUOY, WATER, WATER ; e5
+	tilecoll WATER, WATER, BUOY, BUOY ; e6
+	tilecoll BUOY, BUOY, BUOY, BUOY ; e7
