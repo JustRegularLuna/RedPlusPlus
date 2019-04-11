@@ -11,6 +11,14 @@ CeruleanWaterShowSpeechHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  2,  4, SPRITE_BLACK_HAIR_BOY_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, CeruleanWaterShowSpeechHouseCooltrainerMText, -1
 
-	const_def 1 ; object constants
+CeruleanWaterShowSpeechHouseCooltrainerMText:
+	text "Misty sometimes"
+	line "performs in water"
+	cont "shows at her Gym."
+
+	para "They're a sight to"
+	line "behold!"
+	done
