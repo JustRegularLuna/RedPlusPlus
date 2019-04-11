@@ -12,6 +12,20 @@ CeruleanGymBadgeSpeechHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  5,  3, SPRITE_FAT_BALD_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_COMMAND, jumptextfaceplayer, CeruleanHouse2Text1, -1
 
-	const_def 1 ; object constants
+CeruleanHouse2Text1:
+	text "Are you collecting"
+	line "Gym Badges?"
+
+	para "Several badges"
+	line "grant additional"
+	cont "perks."
+
+	para "Pay attention to"
+	line "what Leaders have"
+	cont "to say when they"
+	cont "hand out their"
+	cont "badge!"
+	done
