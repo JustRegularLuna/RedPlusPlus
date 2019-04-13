@@ -1,9 +1,9 @@
 NAME := redplusplus
-VERSION := 3.0.0-beta
+VERSION := 4.0.0-beta
 
 TITLE := POKEMONRPP
 MCODE := PRPP
-ROMVERSION := 0x30
+ROMVERSION := 0x40
 
 FILLER = 0x00
 
