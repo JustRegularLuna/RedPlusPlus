@@ -252,7 +252,7 @@ Route22RivalWonText1:
 	cont "#mon?"
 
 	para "You should catch"
-	cont "some more too!"
+	line "some more too!"
 	done
 
 Route22RivalBeforeBattleText2:
