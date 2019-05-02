@@ -422,7 +422,7 @@ OaksLabOakScript:
 	special RestartMapMusic
 	opentext
 	writetext OaksLabBlueWhyDidYouCallText
-	pause 8
+	waitbutton
 	writetext OaksLabIntroducePokedexText
 	closetext
 	checkcode VAR_FACING
