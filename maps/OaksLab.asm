@@ -285,7 +285,7 @@ CharmanderPokeballScript:
 	applymovement OAKSLAB_BLUE, Movement_BluePicksSquirtle
 	opentext
 	writetext OaksLabBlueChoosesStarterText
-	waitbutton
+	pause 15
 	disappear OAKSLAB_STARTER_2
 	opentext
 	pokenamemem SQUIRTLE, $0
@@ -328,7 +328,7 @@ SquirtlePokeballScript:
 	applymovement OAKSLAB_BLUE, Movement_BluePicksBulbasaur
 	opentext
 	writetext OaksLabBlueChoosesStarterText
-	waitbutton
+	pause 15
 	disappear OAKSLAB_STARTER_3
 	opentext
 	pokenamemem BULBASAUR, $0
@@ -371,7 +371,7 @@ BulbasaurPokeballScript:
 	applymovement OAKSLAB_BLUE, Movement_BluePicksCharmander
 	opentext
 	writetext OaksLabBlueChoosesStarterText
-	waitbutton
+	pause 15
 	disappear OAKSLAB_STARTER_1
 	opentext
 	pokenamemem CHARMANDER, $0
