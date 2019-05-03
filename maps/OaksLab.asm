@@ -424,7 +424,6 @@ OaksLabOakScript:
 	writetext OaksLabBlueWhyDidYouCallText
 	pause 8
 	writetext OaksLabIntroducePokedexText
-	waitbutton
 	closetext
 	checkcode VAR_FACING
 	ifequal RIGHT, .OakWalk2
@@ -451,7 +450,6 @@ OaksLabOakScript:
 	verbosegiveitem POKE_BALL, 5
 	faceobject OAKSLAB_BLUE, PLAYER
 	writetext OaksLabLeaveItToMeText
-	waitbutton
 	closetext
 	playmusic MUSIC_FAREWELL_RIVAL
 	applymovement OAKSLAB_BLUE, Movement_BlueRunsOut
