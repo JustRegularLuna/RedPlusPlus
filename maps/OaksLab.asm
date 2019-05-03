@@ -422,7 +422,7 @@ OaksLabOakScript:
 	special RestartMapMusic
 	opentext
 	writetext OaksLabBlueWhyDidYouCallText
-	waitbutton
+	pause 8
 	writetext OaksLabIntroducePokedexText
 	waitbutton
 	closetext
