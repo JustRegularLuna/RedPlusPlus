@@ -81,9 +81,10 @@ GenericTrainerCamperLiam:
 	done
 
 PewterGymGuyScript:
+	faceplayer
 	checkevent EVENT_BEAT_BROCK
-	iftrue_jumptextfaceplayer PewterGymGuyWinText
-	thisopenedtext
+	iftrue_jumptext PewterGymGuyWinText
+	thistext
 
 	text "Hiya! I can tell"
 	line "you have what it"
