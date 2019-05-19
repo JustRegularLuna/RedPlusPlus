@@ -38,8 +38,7 @@
 	GRAYSCALE 21, 13, 12, 08 ; Battle Tower
 	GRAYSCALE 13, 05, 07, 03 ; Route 41
 	GRAYSCALE 16, 12, 08, 06 ; Cianwood City
-	GRAYSCALE 13, 05, 07, 03 ; Route 47
-	GRAYSCALE 22, 14, 11, 07 ; Route 48
+	GRAYSCALE 12, 07, 07, 05 ; Route 47+48
 	GRAYSCALE 14, 08, 07, 04 ; Mahogany Town
 	GRAYSCALE 15, 09, 08, 04 ; Lake of Rage
 	GRAYSCALE 14, 09, 08, 04 ; Blackthorn City
