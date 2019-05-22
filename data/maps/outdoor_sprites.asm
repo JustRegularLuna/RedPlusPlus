@@ -39,7 +39,7 @@ OutdoorSprites: ; 144b8
 	dw OutdoorSprites_BattleTower
 	dw OutdoorSprites_Route41
 	dw OutdoorSprites_Cianwood
-	dw OutdoorSprites_Route47
+	dw OutdoorSprites_BridgeRoutes
 	dw OutdoorSprites_Mahogany
 	dw OutdoorSprites_LakeOfRage
 	dw OutdoorSprites_Blackthorn
@@ -225,7 +225,8 @@ OutdoorSprites_NationalPark:
 OutdoorSprites_BattleTower:
 	db 0 ; end
 
-OutdoorSprites_Route47:
+OutdoorSprites_BridgeRoutes:
+	db SPRITE_BALL_CUT_FRUIT
 	db SPRITE_SECRET_BASE
 	db 0 ; end
 

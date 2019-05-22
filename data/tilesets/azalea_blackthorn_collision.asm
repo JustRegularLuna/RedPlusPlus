@@ -82,10 +82,10 @@
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 51
 	tilecoll WALL, TOP_WALL, WALL, FLOOR ; 52
 	tilecoll TOP_WALL, WALL, FLOOR, WALL ; 53
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 54
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 55
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 56
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 57
+	tilecoll WALL, WATER, WATER, WATER ; 54
+	tilecoll WATER, WALL, WATER, WATER ; 55
+	tilecoll WALL, WATER, WALL, WATER ; 56
+	tilecoll WATER, WALL, WATER, WALL ; 57
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 58
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 59
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 5a

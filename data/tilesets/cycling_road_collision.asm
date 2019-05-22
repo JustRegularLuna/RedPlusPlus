@@ -236,3 +236,5 @@
 	tilecoll WALL, WALL, DOOR, WALL ; eb
 	tilecoll WALL, WALL, WALL, WALL ; ec
 	tilecoll LEDGE_DOWN, WALL, WALL, WALL ; ed
+	tilecoll WATER, WATER, WATER, WATER ; ee
+	tilecoll WATER, WATER, WATER, WATER ; ef
