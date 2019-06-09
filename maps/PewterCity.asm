@@ -26,9 +26,9 @@ PewterCity_MapScriptHeader:
 	bg_event 16, 12, SIGNPOST_JUMPTEXT, PewterCityText10
 	bg_event 10, 21, SIGNPOST_JUMPTEXT, PewterCityText11
 	bg_event 25, 27, SIGNPOST_JUMPTEXT, PewterCityText12
-	bg_event  6,  8, SIGNPOST_ITEM + POKE_BALL, EVENT_PEWTER_CITY_HIDDEN_POKEBALL
+	bg_event  6,  6, SIGNPOST_ITEM + POKE_BALL, EVENT_PEWTER_CITY_HIDDEN_POKEBALL
 
-	db 10 ; object events
+	db 12 ; object events
 	treebase_right_event_1 25, 41, SECRET_BASE_ROUTE_2_NORTH, EVENT_SECRET_BASE_ROUTE_2_NORTH ; visible on Route2North
 	treebase_right_event_2 25, 41, SECRET_BASE_ROUTE_2_NORTH, EVENT_SECRET_BASE_ROUTE_2_NORTH_ESTABLISHED ; visible on Route2North
 	object_event  6, 18, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_COMMAND, jumptextfaceplayer, PewterCityText1, -1
@@ -36,6 +36,8 @@ PewterCity_MapScriptHeader:
 	object_event 29, 21, SPRITE_BLACK_HAIR_BOY_2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, PewterCityMuseumGuyScript, -1
 	object_event 26, 29, SPRITE_BLACK_HAIR_BOY_2, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, PewterCityRepelGuyScript, -1
 	object_event 35, 21, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, PewterCityBrockGuyScript, EVENT_HIDE_PEWTER_BROCK_GUY
+	object_event  6,  8, SPRITE_ZIGZAGOON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_POKEMON, ZIGZAGOON, PewterCityZigzagoonText, -1
+	object_event  7,  8, SPRITE_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, PewterCityZigzagoonGirlScript, -1
 	fruittree_event 28,  7, FRUITTREE_PEWTER_CITY_1, RAWST_BERRY
 	fruittree_event 30,  7, FRUITTREE_PEWTER_CITY_2, CHESTO_BERRY
 	cuttree_event 25,  9, -1
@@ -48,6 +50,8 @@ PewterCity_MapScriptHeader:
 	const PEWTER_MUSEUM_GUY
 	const PEWTER_REPEL_GUY
 	const PEWTER_BROCK_GUY
+	const PEWTER_ZIGZAGOON
+	const PEWTER_ZIGZAGOON_GIRL
 
 PewterCityFlyPoint:
 	setflag ENGINE_FLYPOINT_PEWTER
@@ -265,6 +269,93 @@ Movement_WalkAway2:
 	step_left
 	step_end
 
+PewterCityZigzagoonGirlScript:
+	checkevent EVENT_GOT_PEWTERCRUNCH_PEWTER_CITY
+	iftrue_jumptextfaceplayer PewterZigzagoonGirlAfterText
+	checkevent EVENT_HELPED_ZIGZAGOON_GIRL
+	iftrue .GetPewterCrunch
+	showtext PewterZigzagoonGirlIntroText
+	faceplayer
+	opentext
+	writetext PewterZigzagoonGirlGreetingText
+	yesorno
+	iffalse .Refused
+	writetext PewterZigzagoonGirlExplanationText
+	waitbutton
+	writetext PewterCityZigzagoonText
+	cry ZIGZAGOON
+	waitbutton
+	writetext PewterZigzagoonGirlRequestText
+	yesorno
+	iffalse .Refused
+	writetext PewterZigzagoonGirlAcceptedText
+	waitbutton
+	closetext
+	special Special_FadeBlackQuickly
+	special Special_ReloadSpritesNoPalettes
+	pause 10
+	disappear PEWTER_ZIGZAGOON_GIRL
+	checkcode VAR_FACING
+	ifequal UP, .Up
+	ifequal DOWN, .Down
+	applyonemovement PLAYER, step_left
+	scall .SpendTimeWithZigzagoon
+	applyonemovement PLAYER, step_right
+	turnobject PLAYER, LEFT
+.Continue:
+	moveobject PEWTER_ZIGZAGOON_GIRL, 7, 8
+	appear PEWTER_ZIGZAGOON_GIRL
+	faceplayer
+	special Special_FadeInQuickly
+	setevent EVENT_HELPED_ZIGZAGOON_GIRL
+.GetPewterCrunch:
+	faceplayer
+	opentext
+	writetext PewterZigzagoonGirlThankYouText
+	buttonsound
+	verbosegiveitem PEWTERCRUNCH
+	iffalse_endtext
+	setevent EVENT_GOT_PEWTERCRUNCH_PEWTER_CITY
+	jumpopenedtext PewterZigzagoonGirlAfterText
+
+.Refused:
+	writetext PewterZigzagoonGirlRefusedText
+	waitbutton
+	closetext
+	turnobject PEWTER_ZIGZAGOON_GIRL, LEFT
+	end
+
+.Up:
+	applyonemovement PLAYER, step_up
+	scall .SpendTimeWithZigzagoon
+	applyonemovement PLAYER, step_down
+	turnobject PLAYER, UP
+	jump .Continue
+
+.Down:
+	applyonemovement PLAYER, step_down
+	scall .SpendTimeWithZigzagoon
+	applyonemovement PLAYER, step_up
+	turnobject PLAYER, DOWN
+	jump .Continue
+
+.SpendTimeWithZigzagoon:
+	turnobject PLAYER, LEFT
+	special Special_FadeInQuickly
+	pause 30
+	cry ZIGZAGOON
+	waitsfx
+	pause 30
+	opentext
+	writetext PewterCityZigzagoonText2
+	cry ZIGZAGOON
+	waitsfx
+	closetext
+	pause 30
+	special Special_FadeBlackQuickly
+	special Special_ReloadSpritesNoPalettes
+	end
+
 PewterCityText1:
 	text "It's rumored that"
 	line "Clefairys came"
@@ -370,4 +461,67 @@ PewterCityText14:
 	text "If you have the"
 	line "right stuff, go"
 	cont "take on Brock!"
+	done
+
+PewterZigzagoonGirlIntroText:
+	text "What am I supposed"
+	line "to do with you,"
+	cont "Zigzagoon?"
+	done
+
+PewterZigzagoonGirlGreetingText:
+	text "Hello there."
+	line "Could you do"
+	cont "me a favor?"
+	done
+
+PewterZigzagoonGirlExplanationText:
+	text "I want to go to"
+	line "the Museum, but my"
+	cont "dear Zigzagoon"
+	cont "refuses to budge!"
+	done
+
+PewterZigzagoonGirlRequestText:
+	text "Can you keep an"
+	line "eye on my Zigzag-"
+	cont "oon for a little"
+	cont "while?"
+	done
+
+PewterZigzagoonGirlAcceptedText:
+	text "Thank you very"
+	line "much!"
+
+	para "Please keep Zig-"
+	line "zagoon company."
+	done
+
+PewterZigzagoonGirlThankYouText:
+	text "Thank you for"
+	line "looking after my"
+	cont "dear Zigzagoon!"
+
+	para "Here, this is for"
+	line "your trouble."
+	done
+
+PewterZigzagoonGirlAfterText:
+	text "I would love it if"
+	line "you could keep an"
+	cont "eye on Zigzagoon"
+	cont "again sometime."
+	done
+
+PewterZigzagoonGirlRefusedText:
+	text "Oh dear…"
+	done
+
+PewterCityZigzagoonText:
+	text "Zigzagoon: Zig!"
+	done
+
+PewterCityZigzagoonText2:
+	text "Zigzagoon: Zag!"
+	line "Gooooon!"
 	done
