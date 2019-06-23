@@ -208,6 +208,8 @@ TilesetAzaleaBlackthornColl::
 INCLUDE "data/tilesets/azalea_blackthorn_collision.asm"
 TilesetAzaleaBlackthornAttr::
 INCBIN "data/tilesets/azalea_blackthorn_attributes.bin"
+TilesetAzaleaBlackthornExtraGFX::
+INCBIN "gfx/tilesets/extra/azalea_blackthorn.2bpp.lz"
 
 
 SECTION "Tileset Data 17", ROMX
