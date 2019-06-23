@@ -1391,6 +1391,19 @@ LoadGenericTileset:
 	pop af
 	ld [rVBK], a
 
+	ld a, [wTileset]
+	cp TILESET_AZALEA_BLACKTHORN
+	jr z, .NoExtra
+	ld hl, TilesetAzaleaBlackthornExtraGFX
+	ld a, BANK(TilesetAzaleaBlackthornExtraGFX)
+	ld de, wDecompressScratch
+	call FarDecompress
+	ld hl, wDecompressScratch
+	ld de, VTiles2 - $10 tiles
+	ld bc, $10 tiles
+	call CopyBytes
+.NoExtra:
+
 	pop af
 	ld [rSVBK], a
 
