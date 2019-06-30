@@ -92,7 +92,7 @@ LoadTrainerBattlePokeballTiles:
 ; Load the tiles used in the Pokeball Graphic that fills the screen
 ; at the start of every Trainer battle.
 	ld de, TrainerBattlePokeballTiles
-	ld hl, VTiles1 tile $7e
+	ld hl, VTiles1 tile $5e
 	lb bc, BANK(TrainerBattlePokeballTiles), 2
 	call Request2bpp
 
@@ -102,7 +102,7 @@ LoadTrainerBattlePokeballTiles:
 	ld [rVBK], a
 
 	ld de, TrainerBattlePokeballTiles
-	ld hl, VTiles4 tile $7e
+	ld hl, VTiles4 tile $5e
 	lb bc, BANK(TrainerBattlePokeballTiles), 2
 	call Request2bpp
 
@@ -467,7 +467,7 @@ endr
 	ld c, a
 	inc de
 .loop1
-	ld [hl], $ff
+	ld [hl], $df
 	ld a, [wcf65]
 	bit 0, a
 	jr z, .leftside
@@ -578,9 +578,9 @@ StartTrainerBattle_SpeckleToBlack: ; 8c58f (23:458f)
 ; If the tile has already been blacked out,
 ; sample a new tile
 	ld a, [hl]
-	cp $ff
+	cp $df
 	jr z, .y_loop
-	ld [hl], $ff
+	ld [hl], $df
 	ret
 
 StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
@@ -630,7 +630,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	jr z, .done
 	sla a
 	jr nc, .no_load
-	ld [hl], $fe
+	ld [hl], $de
 .no_load
 	inc hl
 	jr .loop4
@@ -894,7 +894,7 @@ StartTrainerBattle_ZoomToBlack: ; 8c768 (23:4768)
 ; 8c7b7
 
 .Copy: ; 8c7b7 (23:47b7)
-	ld a, $ff
+	ld a, $df
 .row
 	push bc
 	push hl
