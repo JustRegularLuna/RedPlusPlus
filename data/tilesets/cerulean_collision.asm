@@ -146,9 +146,9 @@
 	tilecoll WALL, WALL, POKECENTER_SIGN, WALL ; 91
 	tilecoll WALL, WALL, WALL, DOOR ; 92
 	tilecoll WALL, WALL, MART_SIGN, WALL ; 93
-	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 94
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 95
-	tilecoll FLOOR, WALL, WALL, WALL ; 96
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 94
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 95
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 96
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 97
 	tilecoll LEDGE_DOWN, WALL, WALL, WALL ; 98
 	tilecoll WALL, WALL, WALL, WALL ; 99

@@ -146,9 +146,9 @@
 	tilecoll WALL, WALL, POKECENTER_SIGN, WALL ; 91
 	tilecoll WALL, WALL, WALL, DOOR ; 92
 	tilecoll WALL, WALL, MART_SIGN, WALL ; 93
-	tilecoll WALL, WALL, WALL, WALL ; 94
-	tilecoll WALL, WALL, WALL, WALL ; 95
-	tilecoll WALL, WALL, WALL, WALL ; 96
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 94
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 95
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 96
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 97
 	tilecoll WALL, WALL, WALL, WALL ; 98
 	tilecoll WALL, WALL, WALL, WALL ; 99
@@ -158,10 +158,10 @@
 	tilecoll DOOR, WALL, FLOOR, FLOOR ; 9d
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9e
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 9f
-	tilecoll WALL, WALL, WALL, WALL ; a0
-	tilecoll WALL, WALL, WALL, WALL ; a1
-	tilecoll WALL, WALL, WALL, WALL ; a2
-	tilecoll WALL, WALL, WALL, WALL ; a3
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a0
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a1
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a2
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a3
 	tilecoll WALL, WALL, WALL, WALL ; a4
 	tilecoll WALL, WALL, WALL, WALL ; a5
 	tilecoll WALL, WALL, WALL, DOOR ; a6
@@ -247,3 +247,6 @@
 	tilecoll WALL, WALL, WALL, WALL ; f6
 	tilecoll WALL, WALL, WALL, WALL ; f7
 	tilecoll WALL, WALL, WALL, WALL ; f8
+	tilecoll WALL, WALL, WALL, WALL ; f9
+	tilecoll WALL, WALL, WALL, WALL ; fa
+	tilecoll WALL, WALL, WALL, WALL ; fb

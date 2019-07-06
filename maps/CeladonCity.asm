@@ -27,7 +27,8 @@ CeladonCity_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 5 ; object events
+	itemball_event 45, 18, POKE_BALL, 1, -1
 	treebase_left_event_1 10,  2, SECRET_BASE_CELADON_CITY, EVENT_SECRET_BASE_CELADON_CITY
 	treebase_left_event_2 10,  2, SECRET_BASE_CELADON_CITY, EVENT_SECRET_BASE_CELADON_CITY_ESTABLISHED
 	cuttree_event 46, 22, -1

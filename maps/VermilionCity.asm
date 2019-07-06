@@ -24,7 +24,8 @@ VermilionCity_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 6 ; object events
+	itemball_event 43, 21, POKE_BALL, 1, -1
 	cuttree_event 19, 19, -1
 	smashrock_event 38,  5
 	smashrock_event 37,  8
