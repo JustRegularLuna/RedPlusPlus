@@ -13,6 +13,9 @@ INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.generic.lz"
 GenericJohtoTilesetGFX::
 INCBIN "gfx/tilesets/new_bark_cherrygrove.2bpp.generic.lz"
 
+GenericExtraGFX::
+INCBIN "gfx/tilesets/extra/generic.2bpp.lz"
+
 
 SECTION "Tileset Data 1", ROMX
 
@@ -208,8 +211,6 @@ TilesetAzaleaBlackthornColl::
 INCLUDE "data/tilesets/azalea_blackthorn_collision.asm"
 TilesetAzaleaBlackthornAttr::
 INCBIN "data/tilesets/azalea_blackthorn_attributes.bin"
-TilesetAzaleaBlackthornExtraGFX::
-INCBIN "gfx/tilesets/extra/azalea_blackthorn.2bpp.lz"
 
 
 SECTION "Tileset Data 17", ROMX

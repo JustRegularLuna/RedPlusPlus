@@ -114,13 +114,13 @@ $(sorted_sym): rpp ; tail -n +3 $(NAME)-$(VERSION).sym | sort -o $@
 
 
 # Generic tileset support:
-# first 16*10 tiles are generic = 160 tiles = 10240 px = 20480 bits = 2560 bytes
+# first 16*9 tiles are generic = 144 tiles = 9216 px = 18432 bits = 2304 bytes
 
 %.2bpp.generic: %.2bpp
-	head -c 2560 $< > $@
+	head -c 2304 $< > $@
 
 %.2bpp.unique: %.2bpp
-	tail -c +2561 $< > $@
+	tail -c +2305 $< > $@
 
 
 %.o: dep = $(shell $(SCAN_INCLUDES) $(@D)/$*.asm)
