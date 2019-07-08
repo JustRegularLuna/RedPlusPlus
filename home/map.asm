@@ -1361,7 +1361,7 @@ LoadGenericTileset:
 	ld de, wDecompressScratch
 	call FarDecompress
 
-	ld bc, $20 tiles
+	ld bc, $10 tiles
 	call LoadTilesetGFXBank0
 
 	pop af
@@ -1384,25 +1384,21 @@ LoadGenericTileset:
 	ld [rVBK], a
 
 	ld hl, wDecompressScratch
-	ld de, VTiles2 + $20 tiles
-	ld bc, $60 tiles
+	ld de, VTiles2 + $10 tiles
+	ld bc, $70 tiles
 	call CopyBytes
 
 	pop af
 	ld [rVBK], a
 
-	ld a, [wTileset]
-	cp TILESET_AZALEA_BLACKTHORN
-	jr z, .NoExtra
-	ld hl, TilesetAzaleaBlackthornExtraGFX
-	ld a, BANK(TilesetAzaleaBlackthornExtraGFX)
+	ld hl, GenericExtraGFX
+	ld a, BANK(GenericExtraGFX)
 	ld de, wDecompressScratch
 	call FarDecompress
 	ld hl, wDecompressScratch
 	ld de, VTiles2 - $10 tiles
 	ld bc, $10 tiles
 	call CopyBytes
-.NoExtra:
 
 	pop af
 	ld [rSVBK], a
