@@ -28,11 +28,14 @@ CeruleanCity_MapScriptHeader:
 	coord_event 22, 2, 0, CeruleanCity_RivalTriggerLeft
 	coord_event 23, 2, 0, CeruleanCity_RivalTriggerRight
 
-	db 4 ; bg events
+	db 7 ; bg events
 	bg_event 17, 19, SIGNPOST_JUMPTEXT, CeruleanCityText12
 	bg_event 19, 26, SIGNPOST_JUMPTEXT, CeruleanCityText13
 	bg_event 11, 23, SIGNPOST_JUMPTEXT, CeruleanCityText16
 	bg_event 27, 17, SIGNPOST_JUMPTEXT, CeruleanCityText17
+	bg_event 11, 20, SIGNPOST_JUMPTEXT, CeruleanCityBicycleText
+	bg_event 11, 21, SIGNPOST_JUMPTEXT, CeruleanCityBicycleText
+	bg_event 11, 22, SIGNPOST_JUMPTEXT, CeruleanCityBicycleText
 
 	db 12 ; object events
 	object_event 22, -3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_CERULEAN_CITY_RIVAL
@@ -349,4 +352,9 @@ CeruleanCitySlowbroText3:
 CeruleanCitySlowbroText4:
 	text "Slowbro"
 	line "ignored orders…"
+	done
+
+CeruleanCityBicycleText:
+	text "A shiny new"
+	line "Bicycle!"
 	done
