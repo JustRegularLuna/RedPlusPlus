@@ -238,3 +238,5 @@
 	tilecoll LEDGE_DOWN, WALL, WALL, WALL ; ed
 	tilecoll WATER, WATER, WATER, WATER ; ee
 	tilecoll WATER, WATER, WATER, WATER ; ef
+	tilecoll WALL, WALL, WALL, WALL ; f0
+	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; f1
