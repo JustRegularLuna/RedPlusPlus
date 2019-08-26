@@ -252,3 +252,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; fb
 	tilecoll FLOOR, FLOOR, WALL, WALL ; fc
 	tilecoll FLOOR, FLOOR, WALL, WALL ; fd
+	tilecoll WALL, WALL, WALL, WALL ; fe
