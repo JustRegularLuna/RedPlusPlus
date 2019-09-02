@@ -42,8 +42,8 @@
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 29
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 2a
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 2b
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 2c
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 2d
+	tilecoll WALL, WALL, WALL, FLOOR ; 2c
+	tilecoll WALL, WALL, FLOOR, WALL ; 2d
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 2e
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 2f
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 30
@@ -129,4 +129,16 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 80
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 81
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 82
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 83
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 83
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 84
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 85
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 86
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 87
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 88
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 89
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 8a
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 8b
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 8c
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 8d
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 8e
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 8f
