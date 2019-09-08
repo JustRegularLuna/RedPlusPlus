@@ -83,7 +83,7 @@ ENDM
 	connection east, Route11, ROUTE_11, 2, 0, 13
 
 	map_attributes CeladonCity, CELADON_CITY, $1f, WEST | EAST
-	connection west, Route16East, ROUTE_16_EAST, 5, 0, 7
+	connection west, Route16East, ROUTE_16_EAST, 5, 0, 18
 	connection east, Route7, ROUTE_7, 0, 0, 23
 
 	map_attributes LavenderTown, LAVENDER_TOWN, $4d, NORTH | SOUTH | WEST
@@ -237,7 +237,7 @@ ENDM
 
 	map_attributes Route16East, ROUTE_16_EAST, $1f, WEST | EAST
 	connection west, Route16Middle, ROUTE_16_MIDDLE, 0, 0, 12
-	connection east, CeladonCity, CELADON_CITY, -3, 2, 13
+	connection east, CeladonCity, CELADON_CITY, -3, 2, 23
 
 	map_attributes Route16Middle, ROUTE_16_MIDDLE, $1f, SOUTH | WEST | EAST
 	connection south, Route17, ROUTE_17, 0, 0, 10
