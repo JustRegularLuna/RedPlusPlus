@@ -157,7 +157,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 9c
 	tilecoll FLOOR, WALL, WALL, WALL ; 9d
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 9e
-	tilecoll FLOOR, WALL, WALL, WALL ; 9f
+	tilecoll WALL, FLOOR, WALL, WALL ; 9f
 	tilecoll WALL, WALL, WALL, WALL ; a0
 	tilecoll WALL, WALL, WALL, WALL ; a1
 	tilecoll WALL, WALL, CAVE, WALL ; a2
@@ -252,3 +252,5 @@
 	tilecoll STAIRS_LEFT_UP, FLOOR, WALL, WALL ; fb
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fc
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; fd
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fe
+	tilecoll FLOOR, FLOOR, WALL, WALL ; ff
