@@ -26,7 +26,7 @@ SpawnPoints: ; 0x152ab
 	spawn VIOLET_CITY,                31, 30
 	spawn ROUTE_32,                   15, 78
 	spawn AZALEA_TOWN,                15, 12
-	spawn CIANWOOD_CITY,              23, 44
+	spawn CIANWOOD_CITY,              25, 44
 	spawn GOLDENROD_CITY,             19, 28
 	spawn OLIVINE_CITY,               13, 18
 	spawn ECRUTEAK_CITY,              23, 28

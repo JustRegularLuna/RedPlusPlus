@@ -140,6 +140,8 @@ CheckStandingOnEntrance:: ; 18c3
 	cp COLL_STAIRCASE
 	ret z
 	cp COLL_CAVE
+	ret z
+	cp COLL_CAVE_LEFT
 	ret
 ; 18d2
 
