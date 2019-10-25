@@ -62,7 +62,7 @@
 	tilecoll WATER, WATER, WATER, WATER ; 3d
 	tilecoll WATER, WATER, WATER, WATER ; 3e
 	tilecoll WALL, WALL, WALL, WALL ; 3f
-	tilecoll BOTTOM_WALL, WALL, CAVE, WALL ; 40
+	tilecoll FLOOR, WALL, RIGHT_WALL, CAVE_LEFT ; 40
 	tilecoll WATER, WATER, WATER, WATER ; 41
 	tilecoll WATER, WATER, WATER, WATER ; 42
 	tilecoll WATER, WATER, WATER, WATER ; 43

@@ -441,7 +441,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 38
 
-	map_const CIANWOOD_CITY,               15, 27 ;  1
+	map_const CIANWOOD_CITY,               16, 27 ;  1
 	map_const ROUTE_40,                    10, 20 ;  2
 	map_const CIANWOOD_POKECENTER_1F,       6,  4 ;  3
 	map_const CIANWOOD_GYM,                 5,  9 ;  4

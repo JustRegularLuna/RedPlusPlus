@@ -156,8 +156,8 @@ DoPlayerMovement:: ; 80000
 
 .warps
 	ld a, c
-	cp COLL_AWNING
-	jr z, .up
+	cp COLL_CAVE_LEFT
+	jr z, .right
 	cp COLL_DOOR
 	jr z, .down
 	cp COLL_STAIRCASE
@@ -168,8 +168,8 @@ DoPlayerMovement:: ; 80000
 .down
 	xor a ; DOWN
 	jr .set_direction
-.up
-	ld a, UP
+.right
+	ld a, RIGHT
 .set_direction
 	ld [WalkingDirection], a
 	jr .continue_walk
