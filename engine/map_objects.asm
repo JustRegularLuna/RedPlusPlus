@@ -2889,10 +2889,10 @@ PRIORITY_HIGH EQU $30
 	or d
 	ld d, a
 	xor a
-	bit OVERHEAD, e
-	jr z, .skip4
-	or %10000000
-.skip4
+;	bit OVERHEAD, e
+;	jr z, .skip4
+;	or %10000000
+;.skip4
 	ld [hCurSpriteOAMFlags], a
 	ld hl, OBJECT_SPRITE_X
 	add hl, bc
