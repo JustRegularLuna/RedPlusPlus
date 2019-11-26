@@ -1,7 +1,3 @@
-BUBBLE_CORNER EQU $37
-LEFT_RIGHT_ARROW EQU $38
-UP_DOWN_ARROW EQU $39
-
 Pokegear_LoadGFX: ; 90c4e
 	call ClearVBank1
 	ld hl, TownMapGFX
@@ -163,17 +159,21 @@ PokegearMap_InitCursor: ; 91098
 
 PokegearMap_UpdateLandmarkName: ; 910b4
 	push af
-	hlcoord 8, 0
-	lb bc, 2, 12
+	hlcoord 0, 0
+	lb bc, 1, SCREEN_WIDTH
 	call ClearBox
 	pop af
 	ld e, a
 	push de
 	farcall GetLandmarkName
 	pop de
-	call TownMap_ConvertLineBreakCharacters
-	hlcoord 8, 0
-	ld [hl], UP_DOWN_ARROW
+	hlcoord 1, 0
+	ld de, StringBuffer1
+	call PlaceString
+	hlcoord 0, 0
+	ld [hl], "▼"
+	hlcoord 19, 0
+	ld [hl], "▲"
 	ret
 
 ; 910d4
@@ -191,27 +191,6 @@ PokegearMap_UpdateCursorPosition: ; 910d4
 	ld [hl], d
 	ret
 ; 910e8
-
-TownMap_ConvertLineBreakCharacters: ; 1de2c5
-	ld hl, StringBuffer1
-.loop
-	ld a, [hl]
-	cp "@"
-	jr z, .end
-	cp "<NEXT>"
-	jr z, .line_break
-	cp "¯"
-	jr z, .line_break
-	inc hl
-	jr .loop
-
-.line_break
-	ld [hl], "<LNBRK>"
-
-.end
-	ld de, StringBuffer1
-	hlcoord 9, 0
-	jp PlaceString
 
 TownMap_GetJohtoLandmarkLimits:
 	lb de, SILVER_CAVE, NEW_BARK_TOWN
@@ -363,24 +342,6 @@ _TownMap: ; 9191c
 
 .InitTilemap: ; 91a04
 	farcall PokegearMap
-	ld a, $7
-	ld bc, 6
-	hlcoord 1, 0
-	call ByteFill
-	hlcoord 0, 0
-	ld [hl], $6
-	hlcoord 7, 0
-	ld [hl], $17
-	hlcoord 7, 1
-	ld [hl], $16
-	hlcoord 7, 2
-	ld [hl], $26
-	ld a, $7
-	ld bc, NAME_LENGTH
-	hlcoord 8, 2
-	call ByteFill
-	hlcoord 19, 2
-	ld [hl], $17
 	ld a, [wTownMapCursorLandmark]
 	call PokegearMap_UpdateLandmarkName
 	call TownMapPals
@@ -513,62 +474,20 @@ FlyMapScroll: ; 91b73
 ; 91bb5
 
 TownMapBubble: ; 91bb5
-; Draw the bubble containing the location text in the town map HUD
-
-; Top-left corner
-	hlcoord 1, 0
-	ld a, BUBBLE_CORNER
-	ld [hli], a
-	push hl
-	hlcoord 1, 0, AttrMap
-	ld [hl], 0
-	pop hl
+; Draw the row containing the location text in the town map HUD
 ; Top row
-	ld bc, 16
+	hlcoord 0, 0
+	ld bc, SCREEN_WIDTH
 	ld a, " "
 	call ByteFill
-; Top-right corner
-	ld a, BUBBLE_CORNER
-	ld [hl], a
-	hlcoord 18, 0, AttrMap
-	ld [hl], 0 | X_FLIP
-
-; Middle row
-	hlcoord 1, 1
-	ld bc, 18
-	ld a, " "
-	call ByteFill
-
-; Bottom-left corner
-	hlcoord 1, 2
-	ld a, BUBBLE_CORNER
-	ld [hli], a
-	push hl
-	hlcoord 1, 2, AttrMap
-	ld [hl], 0 | Y_FLIP
-	pop hl
-; Bottom row
-	ld bc, 16
-	ld a, " "
-	call ByteFill
-; Bottom-right corner
-	ld [hl], BUBBLE_CORNER
-	hlcoord 18, 2, AttrMap
-	ld [hl], 0 | X_FLIP | Y_FLIP
-
-; Print "Where?"
-	hlcoord 2, 0
-	ld de, .Where
-	call PlaceString
 ; Print the name of the default flypoint
 	call .Name
 ; Up/down arrows
-	hlcoord 18, 1
-	ld [hl], UP_DOWN_ARROW
+	hlcoord 0, 0
+	ld [hl], "▼"
+	hlcoord 19, 0
+	ld [hl], "▲"
 	ret
-
-.Where:
-	db "Where?@"
 
 .Name:
 ; We need the map location of the default flypoint
@@ -580,7 +499,7 @@ TownMapBubble: ; 91bb5
 	add hl, de
 	ld e, [hl]
 	farcall GetLandmarkName
-	hlcoord 2, 1
+	hlcoord 1, 0
 	ld de, StringBuffer1
 	jp PlaceString
 
@@ -868,15 +787,8 @@ _Area: ; 91d11
 	ld bc, SCREEN_WIDTH
 	ld a, " "
 	call ByteFill
-	hlcoord 0, 1
-	ld a, $6
-	ld [hli], a
-	ld bc, SCREEN_WIDTH - 2
-	ld a, $7
-	call ByteFill
-	ld [hl], $17
 	call GetPokemonName
-	hlcoord 2, 0
+	hlcoord 1, 0
 	call PlaceString
 	ld h, b
 	ld l, c
@@ -887,15 +799,13 @@ _Area: ; 91d11
 	bit 6, a ; ENGINE_CREDITS_SKIP
 	ret z
 	hlcoord 0, 0
-	ld [hl], LEFT_RIGHT_ARROW
-	push hl
+	ld [hl], "◀"
 	hlcoord 0, 0, AttrMap
 	ld [hl], 0
-	pop hl
 	hlcoord 19, 0
-	ld [hl], LEFT_RIGHT_ARROW
+	ld [hl], "▶"
 	hlcoord 19, 0, AttrMap
-	ld [hl], 0 | X_FLIP
+	ld [hl], 0
 	ret
 
 ; 91e16
@@ -1137,10 +1047,6 @@ TownMapPals: ; 91f13
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 .loop
 	ld a, [hli]
-	cp BUBBLE_CORNER ; corner of TownMapBubble bubble is already attributed
-	jr z, .skip
-	cp LEFT_RIGHT_ARROW ; red left/right arrow is already attributed
-	jr z, .skip
 	push hl
 	cp $40 ; tiles in PokegearGFX (after TownMapGFX) use palette 0
 	jr nc, .pal0
@@ -1195,10 +1101,10 @@ rept _NARG / 2
 	shift
 endr
 endm
-	townmappals 2, 2, 2, 3, 3, 6, 1, 1, 4, 4, 4, 5, 6, 7, 7, 6
-	townmappals 2, 2, 2, 3, 3, 6, 1, 1, 4, 4, 4, 6, 4, 4, 1, 1
-	townmappals 2, 2, 2, 6, 6, 6, 1, 1, 4, 4, 4, 7, 2, 4, 1, 1
-	townmappals 2, 2, 2, 2, 4, 4, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	townmappals 1, 0, 3, 3, 4, 4, 6, 6, 2, 2, 2, 2, 2, 0, 7, 7
+	townmappals 1, 1, 3, 3, 4, 4, 6, 6, 2, 2, 2, 2, 2, 2, 7, 7
+	townmappals 1, 1, 3, 3, 4, 0, 6, 6, 6, 5, 5, 1, 2, 0, 7, 7
+	townmappals 1, 1, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 2, 2, 7, 0
 
 TownMapJohtoFlips:
 	decoord 0, 0, JohtoMap
