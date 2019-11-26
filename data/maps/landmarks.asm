@@ -35,14 +35,14 @@ Landmarks: ; 0x1ca8c3
 	landmark  72,  76, Route36Name
 	landmark  76,  68, Route37Name
 	landmark  76,  60, EcruteakCityName
-	landmark  77,  58, BellchimeTrailName
+	landmark  76,  52, BellchimeTrailName
 	landmark  78,  58, TinTowerName
 	landmark  74,  58, BurnedTowerName
 	landmark  60,  60, Route38Name
 	landmark  44,  64, Route39Name
 	landmark  44,  76, OlivineCityName
 	landmark  46,  78, LighthouseName
-	landmark  36,  80, Route40Name
+	landmark  36,  92, Route40Name
 	landmark  36,  68, BattleTowerName
 	landmark  36, 108, WhirlIslandsName
 	landmark  36, 116, Route41Name
@@ -63,9 +63,9 @@ Landmarks: ; 0x1ca8c3
 	landmark 140,  60, BlackthornCityName
 	landmark 140,  52, DragonsDenName
 	landmark 140,  80, Route45Name
-	landmark 120,  84, DarkCaveName
+	landmark 116,  76, DarkCaveName
 	landmark 132, 104, Route46Name
-	landmark 152,  76, SilverCaveName
+	landmark 156,  92, SilverCaveName
 	landmark 110, 140, FastShipName
 	landmark 128,  44, SinjohRuinsName
 	landmark 128,  44, MystriStageName
@@ -87,7 +87,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 122,  82, UndergroundName
 	landmark 116,  84, Route6Name
 	landmark 116,  92, VermilionCityName
-	landmark 124,  84, DiglettsCaveName
+	landmark 124,  92, DiglettsCaveName
 	landmark 104,  76, Route7Name
 	landmark 132,  76, Route8Name
 	landmark 132,  60, Route9Name
@@ -114,7 +114,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 100, 124, FuchsiaCityName
 	landmark 100, 116, SafariZoneName
 	landmark  72, 124, UragaChannelName
-	landmark  68, 132, ScaryCaveName
+	landmark  68, 124, ScaryCaveName
 	landmark 100, 136, Route19Name
 	landmark  88, 148, Route20Name
 	landmark  76, 148, SeafoamIslandsName
@@ -144,9 +144,9 @@ Landmarks: ; 0x1ca8c3
 	landmark  68,  92, FireIslandName
 	landmark  84,  92, IceIslandName
 	landmark 100,  92, LightningIslandName
-	landmark  76, 124, Route49Name
-	landmark  84, 124, ValenciaIslandName
-	landmark 144, 136, NavelRockName
+	landmark  84, 132, Route49Name
+	landmark  92, 132, ValenciaIslandName
+	landmark 132, 128, NavelRockName
 	landmark  32, 136, FarawayIslandName
 
 
