@@ -1101,10 +1101,10 @@ rept _NARG / 2
 	shift
 endr
 endm
-	townmappals 1, 0, 3, 3, 4, 4, 6, 6, 2, 2, 2, 2, 2, 0, 7, 7
-	townmappals 1, 1, 3, 3, 4, 4, 6, 6, 2, 2, 2, 2, 2, 2, 7, 7
-	townmappals 1, 1, 3, 3, 4, 0, 6, 6, 6, 5, 5, 1, 2, 0, 7, 7
-	townmappals 1, 1, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 2, 2, 7, 0
+	townmappals 1, 0, 3, 3, 4, 4, 6, 6, 2, 2, 2, 2, 2, 1, 7, 7
+	townmappals 1, 1, 3, 3, 4, 4, 6, 6, 2, 2, 2, 2, 2, 1, 7, 7
+	townmappals 1, 1, 3, 3, 4, 0, 6, 6, 6, 5, 5, 1, 1, 1, 7, 7
+	townmappals 1, 1, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 4, 2, 7, 4
 
 TownMapJohtoFlips:
 	decoord 0, 0, JohtoMap
