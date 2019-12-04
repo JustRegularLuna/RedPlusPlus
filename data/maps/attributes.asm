@@ -289,16 +289,16 @@ ENDM
 	connection east, CeruleanCape, CERULEAN_CAPE, 0, 0, 19
 
 	map_attributes Route26, ROUTE_26, $f, WEST | EAST
-	connection west, Route27East, ROUTE_27_EAST, 45, 0, 9
+	connection west, Route27East, ROUTE_27_EAST, 43, 0, 11
 	connection east, CeriseIslandWest, CERISE_ISLAND_WEST, 37, 0, 17
 
 	map_attributes Route27East, ROUTE_27_EAST, $41, WEST | EAST
-	connection west, Route27West, ROUTE_27_WEST, 0, 0, 9
-	connection east, Route26, ROUTE_26, -3, 42, 12
+	connection west, Route27West, ROUTE_27_WEST, 2, 0, 9
+	connection east, Route26, ROUTE_26, -3, 40, 14
 
 	map_attributes Route27West, ROUTE_27_WEST, $f, WEST | EAST
-	connection west, NewBarkTown, NEW_BARK_TOWN, 0, 0, 11
-	connection east, Route27East, ROUTE_27_EAST, 0, 0, 9
+	connection west, NewBarkTown, NEW_BARK_TOWN, -2, 0, 11
+	connection east, Route27East, ROUTE_27_EAST, -2, 0, 9
 
 	map_attributes Route28, ROUTE_28, $4d, WEST | EAST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -3, 2, 14

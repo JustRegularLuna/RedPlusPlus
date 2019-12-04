@@ -173,7 +173,7 @@ EMOTE_MEM EQU -1
 NUM_FRUIT_TREES EQU const_value +- 1
 
 ; secret bases
-; see engine/hidden_grottoes.asm:HiddenGrottoData
+; see data/events/hidden_grottoes/grottoes.asm:HiddenGrottoData
 	const_def 1
 	const SECRET_BASE_ROUTE_2_SOUTH
 	const SECRET_BASE_ROUTE_2_NORTH
@@ -222,6 +222,8 @@ NUM_FRUIT_TREES EQU const_value +- 1
 	const SECRET_BASE_ROUTE_43
 	const SECRET_BASE_DRAGONS_DEN
 	const SECRET_BASE_ROUTE_44
+	const SECRET_BASE_ROUTE_27
+	const SECRET_BASE_ROUTE_26
 	const SECRET_BASE_SILVER_CAVE
 NUM_SECRET_BASES EQU const_value +- 1
 
