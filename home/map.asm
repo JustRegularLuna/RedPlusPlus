@@ -1772,8 +1772,6 @@ GetCoordTile:: ; 2a3c
 ; Get the collision byte for tile d, e
 	call GetBlockLocation
 	ld a, [hl]
-	and a
-	jr z, .nope
 	ld l, a
 	ld h, $0
 	add hl, hl
@@ -1796,10 +1794,6 @@ GetCoordTile:: ; 2a3c
 .nocarry2
 	ld a, [TilesetCollisionBank]
 	jp GetFarByte
-
-.nope
-	ld a, -1
-	ret
 ; 2a66
 
 GetBlockLocation:: ; 2a66

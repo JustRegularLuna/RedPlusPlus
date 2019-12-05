@@ -1,4 +1,4 @@
-	tilecoll WALL, WALL, WALL, WALL ; 00
+	tilecoll WATER, WATER, WATER, WATER ; 00
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 01
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 02
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 03
@@ -63,7 +63,7 @@
 	tilecoll WATER, WATER, WATER, WATER ; 3e
 	tilecoll WALL, WALL, WALL, WALL ; 3f
 	tilecoll FLOOR, WALL, RIGHT_WALL, CAVE_LEFT ; 40
-	tilecoll WATER, WATER, WATER, WATER ; 41
+	tilecoll BUOY, BUOY, BUOY, BUOY ; 41
 	tilecoll WATER, WATER, WATER, WATER ; 42
 	tilecoll WATER, WATER, WATER, WATER ; 43
 	tilecoll WALL, TOP_WALL, WALL, FLOOR ; 44
