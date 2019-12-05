@@ -407,7 +407,7 @@ MAP_NONE   EQU 0
 
 	newgroup ; 34
 
-	map_const ROUTE_38,           20, 14 ;  1
+	map_const ROUTE_38,           20, 18 ;  1
 	map_const ROUTE_39,           12, 23 ;  2
 	map_const ROUTE_39_BARN,       4,  4 ;  3
 	map_const ROUTE_39_FARMHOUSE,  4,  4 ;  4
