@@ -1,38 +1,4 @@
 _AnimateTileset:: ; fc000
-
-; Set grass tile attributes
-
-	ld a, [wGrassTileAddress]
-	ld h, a
-	ld a, [wGrassTileAddress+1]
-	ld l, a
-	ld bc, BG_MAP_WIDTH
-	add hl, bc
-
-	ld a, 1
-	ldh [rVBK], a
-
-	ld a, [wHasPlayerMoved]
-	and a
-	jr nz, .moving
-
-	ld a, PAL_BG_GREEN | BEHIND_BG
-	ld [hli], a
-	ld [hl], a
-
-	ld a, [wPrevGrassTileAddress]
-	ld h, a
-	ld a, [wPrevGrassTileAddress+1]
-	ld l, a
-
-.moving
-	ld a, PAL_BG_GREEN
-	ld [hli], a
-	ld [hl], a
-
-	xor a
-	ldh [rVBK], a
-
 ; Iterate over a given pointer array of
 ; animation functions (one per frame).
 
