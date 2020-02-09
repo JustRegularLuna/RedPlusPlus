@@ -447,14 +447,14 @@ Special_DayCareManOutside: ; 16936
 .Load0:
 	call PrintText
 	xor a
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 
 .PartyFull:
 	ld hl, .PartyFullText
 	call PrintText
 	ld a, $1
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 ; 16993
 
@@ -505,6 +505,20 @@ DayCare_GiveEgg: ; 169ac
 	ld [hli], a
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
+
+	; Red Gyarados' Eggs should be plain
+	cp MAGIKARP
+	jr nz, .not_red_magikarp
+	ld a, [wEggMonForm]
+	and FORM_MASK
+	cp NUM_MAGIKARP + 1
+	jr c, .not_red_magikarp
+	ld a, [wEggMonForm]
+	and $ff - FORM_MASK
+	or MAGIKARP_PLAIN_FORM
+	ld [wEggMonForm], a
+.not_red_magikarp
+
 	ld a, -1
 	ld [hl], a
 

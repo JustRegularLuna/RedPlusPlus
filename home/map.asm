@@ -239,14 +239,17 @@ CheckIndoorMap:: ; 22f4
 	ret
 ; 2300
 
-LoadMapAttributes:: ; 2309
+LoadMapAttributes::
+	ld a, [wTileset]
+	ld [wOldTileset], a
 	call CopyMapHeaders
 	call SwitchToMapScriptHeaderBank
 	xor a ; FALSE
 	jr ReadMapScripts
-; 2317
 
-LoadMapAttributes_SkipPeople:: ; 2317
+LoadMapAttributes_Continue::
+	ld a, -1
+	ld [wOldTileset], a
 	call CopyMapHeaders
 	call SwitchToMapScriptHeaderBank
 	ld a, TRUE
@@ -1039,12 +1042,73 @@ UnmaskObject:: ; 271e
 	ret
 ; 272a
 
-ScrollMapDown:: ; 272a
-	hlcoord 0, 0
+ReloadWalkedTile:
+; Update tile player is to walk on
+	hlcoord 8, 6
 	ld de, wBGMapBuffer
+	call .CommitTiles
+	hlcoord 8, 6, wAttrMap
+	ld de, wBGMapPalBuffer
+	call .CommitTiles
+	ld a, [wBGMapAnchor]
+	swap a
+	rrca
+	add 8 << 3
+	rlca
+	swap a
+	add $c0
+	ld l, a
+	ld a, [wBGMapAnchor + 1]
+	adc 0
+	ld h, a
+	ld c, 4
+	ld de, wBGMapBufferPtrs
+.ptr_loop
+	ld a, h
+	and HIGH($9800 | $9900 | $9a00 | $9b00) ; clamp within VRAM addresses
+	ld h, a
+	ld a, l
+	ld [de], a
+	inc de
+	ld a, h
+	ld [de], a
+	inc de
+
+	ld a, BG_MAP_WIDTH
+	call .AddHLDecC
+	jr nz, .ptr_loop
+	ret
+
+.CommitTiles:
+	ld c, 4
+.tile_loop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	inc de
+	ld a, SCREEN_WIDTH - 1
+	call .AddHLDecC
+	jr nz, .tile_loop
+	ret
+
+.AddHLDecC:
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+	dec c
+	ret
+
+ScrollMapDown:: ; 272a
+	call ReloadWalkedTile
+	hlcoord 0, 0
+	ld de, wBGMapBuffer + 8
 	call BackupBGMapRow
 	hlcoord 0, 0, wAttrMap
-	ld de, wBGMapPalBuffer
+	ld de, wBGMapPalBuffer + 8
 	call BackupBGMapRow
 	ld a, [wBGMapAnchor]
 	ld e, a
@@ -1057,11 +1121,12 @@ ScrollMapDown:: ; 272a
 ; 2748
 
 ScrollMapUp:: ; 2748
+	call ReloadWalkedTile
 	hlcoord 0, SCREEN_HEIGHT - 2
-	ld de, wBGMapBuffer
+	ld de, wBGMapBuffer + 8
 	call BackupBGMapRow
 	hlcoord 0, SCREEN_HEIGHT - 2, wAttrMap
-	ld de, wBGMapPalBuffer
+	ld de, wBGMapPalBuffer + 8
 	call BackupBGMapRow
 	ld a, [wBGMapAnchor]
 	ld l, a
@@ -1069,10 +1134,10 @@ ScrollMapUp:: ; 2748
 	ld h, a
 	ld bc, $0200
 	add hl, bc
-; cap d at VBGMap1 / $100
+; cap d at vBGMap1 / $100
 	ld a, h
 	and %00000011
-	or VBGMap0 / $100
+	or vBGMap0 / $100
 	ld e, l
 	ld d, a
 	call UpdateBGMapRow
@@ -1082,11 +1147,12 @@ ScrollMapUp:: ; 2748
 ; 2771
 
 ScrollMapRight:: ; 2771
+	call ReloadWalkedTile
 	hlcoord 0, 0
-	ld de, wBGMapBuffer
+	ld de, wBGMapBuffer + 8
 	call BackupBGMapColumn
 	hlcoord 0, 0, wAttrMap
-	ld de, wBGMapPalBuffer
+	ld de, wBGMapPalBuffer + 8
 	call BackupBGMapColumn
 	ld a, [wBGMapAnchor]
 	ld e, a
@@ -1099,20 +1165,21 @@ ScrollMapRight:: ; 2771
 ; 278f
 
 ScrollMapLeft:: ; 278f
+	call ReloadWalkedTile
 	hlcoord SCREEN_WIDTH - 2, 0
-	ld de, wBGMapBuffer
+	ld de, wBGMapBuffer + 8
 	call BackupBGMapColumn
 	hlcoord SCREEN_WIDTH - 2, 0, wAttrMap
-	ld de, wBGMapPalBuffer
+	ld de, wBGMapPalBuffer + 8
 	call BackupBGMapColumn
 	ld a, [wBGMapAnchor]
-	ld e, a
-	and %11100000
-	ld b, a
-	ld a, e
-	add SCREEN_HEIGHT
-	and %00011111
-	or b
+
+	; add SCREEN_HEIGHT, but wrap-around the last 5 bits
+	swap a
+	rrca
+	add SCREEN_HEIGHT << 3
+	rlca
+	swap a
 	ld e, a
 	ld a, [wBGMapAnchor + 1]
 	ld d, a
@@ -1155,11 +1222,11 @@ BackupBGMapColumn:: ; 27c0
 ; 27d3
 
 UpdateBGMapRow:: ; 27d3
-	ld hl, wBGMapBufferPtrs
+	ld hl, wBGMapBufferPtrs + 8
 	push de
 	call .iteration
 	pop de
-	ld a, $20
+	ld a, BG_MAP_WIDTH
 	add e
 	ld e, a
 
@@ -1181,95 +1248,95 @@ UpdateBGMapRow:: ; 27d3
 	ld e, a
 	dec c
 	jr nz, .loop
-	ld a, SCREEN_WIDTH
+	ld a, SCREEN_WIDTH + 4
 	ld [hBGMapTileCount], a
 	ret
 ; 27f8
 
 UpdateBGMapColumn:: ; 27f8
-	ld hl, wBGMapBufferPtrs
+	ld hl, wBGMapBufferPtrs + 8
 	ld c, SCREEN_HEIGHT
 .loop
 	ld a, e
 	ld [hli], a
 	ld a, d
 	ld [hli], a
-	ld a, $20
+	ld a, BG_MAP_HEIGHT
 	add e
 	ld e, a
 	jr nc, .skip
 	inc d
-; cap d at VBGMap1 / $100
+; cap d at vBGMap1 / $100
 	ld a, d
 	and $3
-	or VBGMap0 / $100
+	or vBGMap0 / $100
 	ld d, a
 
 .skip
 	dec c
 	jr nz, .loop
-	ld a, SCREEN_HEIGHT
+	ld a, SCREEN_HEIGHT + 4
 	ld [hBGMapTileCount], a
 	ret
 ; 2816
 
-LoadTileset:: ; 2821
-	ld hl, wTilesetGFXAddress
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [wTilesetGFXBank]
-	ld [hTilesetGFXBank], a
+LoadGraphicsAndDelay::
+	push hl
+	push de
+	push bc
+	ld a, [rVBK]
+	push af
+	xor a
+	ld [hDelayFrameLY], a
 
-	ld a, BANK(wDecompressScratch)
-	ld [rSVBK], a
+	; only allow this if we have time to spare
+	ld a, [rLY]
+	cp $20
+	jr nc, .done
 
-	ld a, [hTilesetGFXBank]
-	ld de, wDecompressScratch
-	call FarDecompress
+	ld a, [wPendingOverworldGraphics]
+	and a
+	jr z, .done
 
-	ld hl, wDecompressScratch
-	ld de, VTiles2
-	ld bc, $7f tiles
-	rst CopyBytes
+	dec a
+	ld [wPendingOverworldGraphics], a
+	call _LoadTileset
+	xor a
+	ld [hTileAnimFrame], a
 
-	ld a, $1
+.done
+	ld a, [hDelayFrameLY]
+	and a
+	call z, DelayFrame
+	pop af
 	ld [rVBK], a
+	pop bc
+	pop de
+	pop hl
+	ret
 
-	ld hl, wDecompressScratch + $80 tiles
-	ld de, VTiles5
-	ld bc, $80 tiles
-	rst CopyBytes
-
-	ld a, $1
-	ld [rSVBK], a
-
+_LoadTileset:
+; Loads one of up to 3 tileset groups depending on a
+	jr z, _LoadTileset0
+	dec a
+	jr z, _LoadTileset1
+_LoadTileset2:
+	ld a, 1
+	ld [rVBK], a
 	ld hl, wTilesetGFX2Address
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	or h
-	jr z, .no_gfx2
+	ld a, [wTilesetGFX2Bank]
+	ld de, vTiles4
+	jr _DoLoadTileset
 
-	ld a, BANK(wDecompressScratch)
-	ld [rSVBK], a
-
-	ld a, [hTilesetGFXBank]
-	ld de, wDecompressScratch
-	call FarDecompress
-
-	ld hl, wDecompressScratch
-	ld de, VTiles4
-	ld bc, $80 tiles
-	rst CopyBytes
-
-.no_gfx2
+_LoadTileset0:
+	ld a, [rSVBK]
+	push af
 	xor a
 	ld [rVBK], a
-
 	inc a
 	ld [rSVBK], a
 
+	; Check roof tiles
 	ld a, [wTileset]
 	cp TILESET_JOHTO_TRADITIONAL
 	jr z, .load_roof
@@ -1280,12 +1347,77 @@ LoadTileset:: ; 2821
 
 .load_roof
 	farcall LoadMapGroupRoof
+	ld hl, wTilesetGFX0Address
+	ld a, [wTilesetGFX0Bank]
+	ld de, vTiles2
+	ld c, $ff
+	call _DoLoadTileset0
+	jr .done
 
 .skip_roof
+	ld hl, wTilesetGFX0Address
+	ld a, [wTilesetGFX0Bank]
+	ld de, vTiles2
+	ld c, $7f
+	call _DoLoadTileset0
+.done
+	pop af
+	ld [rSVBK], a
+	ret
+
+_LoadTileset1:
+	ld a, 1
+	ld [rVBK], a
+	ld hl, wTilesetGFX1Address
+	ld a, [wTilesetGFX1Bank]
+	ld de, vTiles5
+	; fallthrough
+
+_DoLoadTileset:
+	ld c, $80
+_DoLoadTileset0:
+	ld b, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	; if the compressed GFX data starts with $ff, the decompressed data would
+	; be empty, so don't decompress or copy
+	ld a, b
+	call GetFarByte
+	inc a
+	ret z
+
+	inc c
+	jr z, .special_load
+	dec c
+	jp DecompressRequest2bpp
+
+.special_load
+	; Skip roof tiles when writing to VRAM
+	ld c, $7f
+	push de
+	push bc
+	call FarDecompressWRA6InB
+	pop bc
+	pop hl
+	ld de, wDecompressScratch
+	ld c, $a ; write tiles $00-09
+	call Request2bppInWRA6
+	ld de, wDecompressScratch tile $13
+	ld hl, vTiles2 tile $13
+	ld c, $6c ; write tiles $13-$7e
+	jp Request2bppInWRA6
+
+LoadTileset::
+	xor a
+	ld [wPendingOverworldGraphics], a
+	call _LoadTileset1
+	call _LoadTileset2
+	call _LoadTileset0
 	xor a
 	ld [hTileAnimFrame], a
 	ret
-; 2879
 
 BufferScreen:: ; 2879
 	ld hl, wOverworldMapAnchor
@@ -1401,6 +1533,9 @@ SaveScreen_LoadNeighbor:: ; 28f7
 	ret
 ; 2914
 
+GenericFinishBridge::
+	ld a, 1
+	ld [wOverworldDelaySkip], a
 GetMovementPermissions:: ; 2914
 	xor a
 	ld [wTilePermissions], a
@@ -1629,6 +1764,13 @@ GetCoordTile:: ; 2a3c
 	inc hl
 
 .nocarry2
+if DEF(DEBUG)
+	ld a, [hJoyDown]
+	and A_BUTTON | B_BUTTON
+	cp A_BUTTON | B_BUTTON
+	ld a, COLL_LADDER
+	ret z
+endc
 	ld a, BANK(wDecompressedCollisions)
 	jp GetFarWRAMByte
 ; 2a66
@@ -2229,7 +2371,19 @@ GetFishingGroup:: ; 2d19
 	ret
 ; 2d27
 
-LoadTilesetHeader:: ; 2d27
+TilesetUnchanged::
+; returns z if tileset is unchanged from last tileset
+	push bc
+	ld a, [wOldTileset]
+	ld b, a
+	ld a, [wTileset]
+	cp b
+	pop bc
+	ret
+
+LoadTilesetHeader::
+	call TilesetUnchanged
+	ret z
 	push hl
 	push bc
 
@@ -2248,7 +2402,6 @@ LoadTilesetHeader:: ; 2d27
 	pop bc
 	pop hl
 	ret
-; 2d43
 
 GetOvercastIndex::
 ; Some maps are overcast, depending on certain conditions

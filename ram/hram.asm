@@ -1,5 +1,7 @@
 HRAM_START         EQU $ff80
-hPushOAM           EQU $ff80 ; 10 bytes
+hPushOAM           EQU $ff80 ; 5 bytes
+
+hScriptVar         EQU $ff85
 
 hROMBankBackup     EQU $ff8a
 hBuffer            EQU $ff8b
@@ -64,24 +66,10 @@ hRemainder         EQU $ffb7
 hMultiplicand      EQU $ffb4 ; 3 bytes long
 hMultiplier        EQU $ffb7 ; 1 byte long
 hProduct           EQU $ffb3 ; result (4 bytes long)
+hPrintNum          EQU $ffb3 ; used by PrintNum (5 bytes)
 
 hMathBuffer        EQU $ffb8
 
-hTilesetPalettesHigh   EQU $ffb3
-
-hMetatileCountWidth    EQU $ffb3
-hMetatileCountHeight   EQU $ffb4
-
-hPrintNum1         EQU $ffb3
-hPrintNum2         EQU $ffb4
-hPrintNum3         EQU $ffb5
-hPrintNum4         EQU $ffb6
-hPrintNum5         EQU $ffb7
-hPrintNum6         EQU $ffb8
-hPrintNum7         EQU $ffb9
-hPrintNum8         EQU $ffba
-hPrintNum9         EQU $ffbb
-hPrintNum10        EQU $ffbc
 
 hUsedSpriteIndex   EQU $ffbd
 hUsedSpriteTile    EQU $ffbe
@@ -112,10 +100,10 @@ hWX                EQU $ffd1
 hWY                EQU $ffd2
 hTilesPerCycle     EQU $ffd3
 ; 0 - no update
-; 1 - VBGMap0 tiles
-; 2 - VBGMap0 attributes
-; 3 - VBGMap0 tiles
-; 4 - VBGMap0 attributes
+; 1 - vBGMap0 tiles
+; 2 - vBGMap0 attributes
+; 3 - vBGMap0 tiles
+; 4 - vBGMap0 attributes
 hBGMapMode         EQU $ffd4
 ; 0 - top third
 ; 1 - middle third
@@ -165,7 +153,5 @@ hTmpe              EQU $fff8
 hFastMusicUpdate   EQU $fff9
 
 hRequestOpaque1bpp EQU $fffb
-
-hTilesetGFXBank EQU $fffc
 
 HRAM_END EQU $ffff

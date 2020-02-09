@@ -896,7 +896,7 @@ DestinyKnotDesc:
 	next "back. (Hold)@"
 
 ExpertBeltDesc:
-	db   "Ups super-effect-"
+	db   "Ups super effect-"
 	next "ive moves. (Hold)@"
 
 FocusSashDesc:
@@ -944,7 +944,7 @@ SootheBellDesc:
 	next "friendship. (Hold)@"
 
 WeakPolicyDesc:
-	db   "Super-effective"
+	db   "Super effective"
 	next "hit ups offenses.@"
 
 WideLensDesc:
@@ -1037,7 +1037,7 @@ PowerAnkletDesc:
 
 MulchDesc:
 	db   "Plant fertilizer"
-	next "for Berry soil.@"
+	next "for Berry trees.@"
 
 SweetHoneyDesc:
 	db   "The aroma attracts"

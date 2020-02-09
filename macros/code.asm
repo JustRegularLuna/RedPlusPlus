@@ -9,14 +9,18 @@ assert: MACRO
 ENDM
 
 
-; Syntactic sugar macros
+; Syntactic sugar MACROs
 
 lb: MACRO ; r, hi, lo
 	ld \1, ((\2) & $ff) << 8 | ((\3) & $ff)
 ENDM
 
-ln: MACRO ; r, hi, lo
+ln: MACRO ; r, hi, lo[, hi, lo]
+if _NARG == 3
 	ld \1, ((\2) & $f) << 4 | ((\3) & $f)
+else
+	lb \1, ((\2) & $f) << 4 | ((\3) & $f), ((\4) & $f) << 4 | ((\5) & $f)
+endc
 ENDM
 
 ldpixel: MACRO
@@ -65,7 +69,7 @@ flagcheck: MACRO
 	bit (\2 & $7), [hl]
 ENDM
 
-changebridgeblock: macro
+changebridgeblock: MACRO
 	; lb de, \1 + 4, \2 + 4
 	; call GetBlockLocation
 	ld hl, wOverworldMap + (\2 / 2 + 3) * (\4_WIDTH + 6) + \1 / 2 + 3

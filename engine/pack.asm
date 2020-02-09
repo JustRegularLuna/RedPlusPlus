@@ -132,6 +132,7 @@ Pack: ; 10000
 	lb bc, $5, $9 ; Balls, Berries
 	call Pack_InterpretJoypad
 	ret c
+	jp nz, PackSortMenu
 	ld hl, .MenuDataHeader1
 	ld de, .Jumptable1
 	push de
@@ -262,8 +263,14 @@ PackSortMenu:
 	push hl
 	ld a, [wMenuData2_ScrollingMenuSpacing]
 	push af
+	ld a, [wCurrPocket]
+	cp TM_HM - 1
+	ld hl, MenuDataHeader_SortTMs
+	ld de, Jumptable_SortTMs
+	jr z, .got_sort_menu
 	ld hl, MenuDataHeader_SortItems
 	ld de, Jumptable_SortItems
+.got_sort_menu
 	push de
 	call LoadMenuDataHeader
 	call VerticalMenu
@@ -352,6 +359,20 @@ PackScrollingMenu:
 	ld a, [wMenuScrollPosition]
 	ret
 
+MenuDataHeader_SortTMs:
+	db $40 ; flags
+	db 05, 08 ; start coords
+	db 11, 19 ; end coords
+	dw .MenuData2
+	db 1 ; default option
+
+.MenuData2:
+	db $c0 ; flags
+	db 3 ; items
+	db "By Number@"
+	db "By Name@"
+	db "Quit@"
+
 MenuDataHeader_SortItems:
 	db $40 ; flags
 	db 05, 10 ; start coords
@@ -370,6 +391,21 @@ Jumptable_SortItems:
 	dw SortItemsName
 	dw SortItemsType
 	dw QuitItemSubmenu
+
+Jumptable_SortTMs:
+	dw SortTMsNumber
+	dw SortTMsName
+	dw QuitItemSubmenu
+
+SortTMsNumber:
+	ld hl, wTMHMPocketCursor
+	res 7, [hl]
+	ret
+
+SortTMsName:
+	ld hl, wTMHMPocketCursor
+	set 7, [hl]
+	ret
 
 SortItemsType:
 SortItemsName:
@@ -801,7 +837,6 @@ BattlePack: ; 10493
 	lb bc, $5, $9 ; Balls, Berries
 	call Pack_InterpretJoypad
 	ret c
-	xor a
 	jp TMHMSubmenu
 
 .InitBerriesPocket:
@@ -846,12 +881,15 @@ BattlePack: ; 10493
 	ld a, [wItemAttributeParamBuffer]
 	jp KeyItemSubmenu
 
+TMHMSubmenu:
+	jp nz, PackSortMenu
+	jr KeyItemSubmenu
+
 ItemSubmenu: ; 105d3 (4:45d3)
 	jp nz, PackSortMenu
 	farcall CheckItemContext
 	ld a, [wItemAttributeParamBuffer]
 KeyItemSubmenu:
-TMHMSubmenu: ; 105dc (4:45dc)
 	and a
 	ld hl, .UsableMenuDataHeader
 	ld de, .UsableJumptable
@@ -1370,7 +1408,7 @@ DrawPackGFX: ; 1089d
 	jr z, .female
 	ld a, [wPlayerGender]
 	rrca
-	jr c, .male
+	jr nc, .male
 .female
 	ld hl, PackFGFX
 	ld e, BANK(PackFGFX)
@@ -1381,7 +1419,7 @@ DrawPackGFX: ; 1089d
 	ld c, 25
 	ld d, h
 	ld e, l
-	ld hl, VTiles2 tile $27
+	ld hl, vTiles2 tile $27
 	jp Request2bpp
 
 Pack_InterpretJoypad: ; 108d4 (4:48d4)
@@ -1481,7 +1519,7 @@ Pack_InitGFX: ; 10955
 	call ClearSprites
 	call DisableLCD
 	ld hl, PackMenuGFX ; PackLeftColumnGFX is after it
-	ld de, VTiles2 tile $01
+	ld de, vTiles2 tile $01
 	ld bc, (20 + 18) tiles
 	ld a, BANK(PackMenuGFX)
 	call FarCopyBytes
@@ -1812,7 +1850,7 @@ Special_ChooseItem::
 
 .PickItem:
 	xor a ; ld a, FALSE
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 .loop
 	call DepositSellPack
 
@@ -1824,7 +1862,7 @@ Special_ChooseItem::
 	jr z, .next
 
 	ld a, TRUE
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 
 .next

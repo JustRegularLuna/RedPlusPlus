@@ -161,6 +161,7 @@ BattleTurn: ; 3c12f
 	jr nz, .skip_ai_move
 	farcall AIChooseMove
 	farcall AI_MaybeSwitch
+	call TryEnemyFlee
 .skip_ai_move
 	call SetPlayerTurn
 	call CheckLockedIn
@@ -176,7 +177,7 @@ BattleTurn: ; 3c12f
 	call ParsePlayerAction
 	jr nz, .loop1
 
-	call EnemyTriesToFlee
+	call CheckOpponentForfeit
 	ret c
 
 	call DetermineMoveOrder
@@ -192,6 +193,11 @@ BattleTurn: ; 3c12f
 	xor 1
 	ld [hBattleTurn], a
 	call .do_move
+	ret nz
+
+	call ProcessEnemyFleeing
+	ld a, [wBattleEnded]
+	and a
 	ret nz
 
 	farcall HandleBetweenTurnEffects
@@ -235,83 +241,48 @@ SafariBattleTurn:
 	jr .loop
 
 HandleBerserkGene: ; 3c27c
-	ld a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .reverse
+	call SetFastestTurn
+	call .do_it
+	call SwitchTurn
 
-	call .player
-	jr .enemy
-
-.reverse
-	call .enemy
-;	jr .player
-
-.player
-	call SetPlayerTurn
-	ld de, wPartyMon1Item
-	ld a, [wCurBattleMon]
-	ld b, a
-	jr .go
-
-.enemy
-	call SetEnemyTurn
-	ld de, wOTPartyMon1Item
-	ld a, [wCurOTMon]
-	ld b, a
-;	jr .go
-
-.go
-	push de
-	push bc
-	farcall GetUserItem
-	ld a, [hl]
-	ld [wd265], a
-	sub BERSERK_GENE
-	pop bc
-	pop de
-	ret nz
-
-	ld [hl], a
-
-	ld h, d
-	ld l, e
+.do_it
+	farcall GetUserItemAfterUnnerve
 	ld a, b
-	call GetPartyLocation
-	xor a
-	ld [hl], a
+	cp HELD_BERSERK_GENE
+	ret nz
+	call GetCurItemName
+	ld a, STAT_SKIPTEXT | STAT_SILENT
+	ld b, $10 | ATTACK
+	farcall _ForceRaiseStat
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	farcall UseStatItemText
+	farcall ConsumeUserItem
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
-	push af
-	set SUBSTATUS_CONFUSED, [hl]
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVarAddr
-	push hl
-	push af
-	xor a
-	ld [hl], a
-	ld [wAttackMissed], a
-	ld [wEffectFailed], a
-	farcall BattleCommand_attackup2
-	pop af
-	pop hl
-	ld [hl], a
-	call GetItemName
-	ld hl, BattleText_UsersStringBuffer1Activated
-	call StdBattleTextBox
-	farcall BattleCommand_statupmessage
-	pop af
-	bit SUBSTATUS_CONFUSED, a
+	bit SUBSTATUS_CONFUSED, [hl]
 	ret nz
-	xor a
+	set SUBSTATUS_CONFUSED, [hl]
+	ld a, [hBattleTurn]
+	and a
+	ld hl, wPlayerConfuseCount
+	jr z, .got_confuse_count
+	ld hl, wEnemyConfuseCount
+.got_confuse_count
+	call BattleRandom
+	and 1
+	add 2
+	ld [hl], a
 	ld [wNumHits], a
 	ld de, ANIM_CONFUSED
 	call Call_PlayBattleAnim_OnlyIfVisible
 	call SwitchTurn
 	ld hl, BecameConfusedText
-	jp StdBattleTextBox
-; 3c300
+	call StdBattleTextBox
+	jp SwitchTurn
 
-EnemyTriesToFlee: ; 3c300
+CheckOpponentForfeit:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
@@ -327,7 +298,6 @@ EnemyTriesToFlee: ; 3c300
 	call WildFled_EnemyFled_LinkBattleCanceled
 	scf
 	ret
-; 3c314
 
 DetermineMoveOrder:
 	ld a, [wBattlePlayerAction]
@@ -382,8 +352,7 @@ GetSpeed::
 	call GetBattleVar
 	bit PAR, a
 	jr z, .paralyze_done
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
+	call GetTrueUserAbility
 	cp QUICK_FEET
 	ld a, $12
 	call nz, ApplyDamageMod
@@ -496,6 +465,7 @@ ParsePlayerAction:
 	call GetBattleVarAddr
 	xor a
 	ld [hl], a
+	farcall UpdateMoveData
 	jr .encored
 
 .using_move
@@ -591,32 +561,8 @@ ParsePlayerAction:
 
 ; 3c4df
 
-TryEnemyFlee: ; 3c543
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .Stay
-
-	ld a, [wEnemyAbility]
-	cp RUN_AWAY
-	jr z, .skip_traps
-
-	call SetEnemyTurn
-	call CheckIfUserIsGhostType
-	jr z, .skip_traps
-	farcall CheckIfTrappedByAbility
-	jr z, .Stay
-
-	ld a, [wPlayerSubStatus2]
-	bit SUBSTATUS_CANT_RUN, a
-	jr nz, .Stay
-
-	ld a, [wEnemyWrapCount]
-	and a
-	jr nz, .Stay
-
-.skip_traps
-	ld a, [wEnemyMonStatus]
-	and 1 << FRZ | SLP
+TryEnemyFlee:
+	call EnemyCanFlee
 	jr nz, .Stay
 
 	ld a, [wTempEnemyMonSpecies]
@@ -649,13 +595,61 @@ TryEnemyFlee: ; 3c543
 	jr c, .Flee
 
 .Stay:
-	and a
+	xor a
+	ld [wEnemyFleeing], a
 	ret
 
 .Flee:
-	scf
+	ld a, 1
+	ld [wEnemyFleeing], a
 	ret
-; 3c59a
+
+ProcessEnemyFleeing:
+	ld a, [wEnemyFleeing]
+	and a
+	ret z
+
+	call EnemyCanFlee
+	jp z, WildFled_EnemyFled_LinkBattleCanceled
+
+	; enemy failed to flee
+	call SetEnemyTurn
+	ld hl, BattleText_EnemyCantEscape
+	jp StdBattleTextBox
+
+EnemyCanFlee:
+	ld a, [wBattleMode]
+	dec a
+	ret nz
+
+	call CheckNeutralizingGas
+	jr nz, .no_gas
+	ld a, [wEnemyAbility]
+	cp RUN_AWAY
+	jr z, .skip_traps
+
+.no_gas
+	call SetEnemyTurn
+	call CheckIfUserIsGhostType
+	jr z, .skip_traps
+	farcall CheckIfTrappedByAbility
+	jr nz, .not_ability_trapped
+	or 1
+	ret
+
+.not_ability_trapped
+	ld a, [wPlayerSubStatus2]
+	bit SUBSTATUS_CANT_RUN, a
+	ret nz
+
+	ld a, [wEnemyWrapCount]
+	and a
+	ret nz
+
+.skip_traps
+	ld a, [wEnemyMonStatus]
+	and 1 << FRZ | SLP
+	ret
 
 INCLUDE "data/wild/flee_mons.asm"
 
@@ -689,8 +683,7 @@ GetMovePriority: ; 3c5c5
 .got_priority
 	xor $80 ; treat it as a signed byte
 	ld b, a
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
+	call GetTrueUserAbility
 	cp PRANKSTER
 	jr nz, .no_priority
 	ld a, BATTLE_VARS_MOVE_CATEGORY
@@ -721,18 +714,15 @@ GetMoveEffect: ; 3c5ec
 
 
 PerformMove:
+	xor a
+	ld [wDamageTaken], a
+	ld [wDamageTaken + 1], a
 	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVarAddr
 	res SUBSTATUS_DESTINY_BOND, [hl]
 	call HasUserFainted
 	jr z, .end_protect_destinybond
-	ld a, [hBattleTurn]
-	and a
-	jr nz, .enemy
-	farcall DoPlayerTurn
-	jr .end_protect_destinybond
-.enemy
-	farcall DoEnemyTurn
+	farcall DoTurn
 .end_protect_destinybond
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
@@ -741,6 +731,11 @@ PerformMove:
 	ld a, BATTLE_VARS_SUBSTATUS2_OPP
 	call GetBattleVarAddr
 	res SUBSTATUS_DESTINY_BOND, [hl]
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE
+	call GetBattleVarAddr
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld [hl], a
 	; fallthrough
 
 ResolveFaints:
@@ -952,9 +947,10 @@ ForceDeferredSwitch:
 	pop hl
 	jr z, .all_done
 
-	; Regenerator, Natural Cure
+	; Regenerator, Natural Cure, suppress Neutralizing Gas
 	push hl
 	farcall RunSwitchAbilities
+	call SuppressUserNeutralizingGas
 	call UpdateUserInParty
 	pop hl
 
@@ -1375,7 +1371,9 @@ endc
 	ld a, [wFirstUnownSeen]
 	and a
 	jr nz, .skip_unown
-	ld hl, wEnemyMonForm
+	ld a, [wCurOTMon]
+	ld hl, wOTPartyMon1Form
+	call GetPartyLocation
 	predef GetVariant
 	ld a, [wCurForm]
 	ld [wFirstUnownSeen], a
@@ -1387,8 +1385,7 @@ endc
 	ld a, [wFirstMagikarpSeen]
 	and a
 	jr nz, .enemy_extras_done
-	ld hl, wEnemyMonForm
-	predef GetVariant
+	call GetEnemyMonVariant
 	ld a, [wCurForm]
 	ld [wFirstMagikarpSeen], a
 
@@ -1482,6 +1479,7 @@ GetParticipantsIncludingFainted::
 	push bc
 	call GetParticipantVar
 	ld a, [hl]
+	and $3f
 	pop bc
 	pop hl
 	ret
@@ -1493,6 +1491,7 @@ GetParticipantsNotFainted::
 	push bc
 	call GetParticipantVar
 	ld a, [hl]
+	and $3f
 	ld e, a
 	ld a, [wPartyCount]
 	ld d, a
@@ -1521,16 +1520,24 @@ GetParticipantsNotFainted::
 	ret
 
 GetParticipantVar::
-	ld hl, wGivingExperienceToExpShareHolders
-	ld a, [hl]
-	and a
-	ret nz
 	ld a, [wCurOTMon]
 	ld b, 0
 	ld c, a
 	ld hl, wPartyParticipants
 	add hl, bc
 	ret
+
+GetEnemyMonVariant:
+	ld a, [wCurOTMon]
+	ld hl, wOTPartyMon1Form
+	call GetPartyLocation
+	predef_jump GetVariant
+
+GetBattleMonVariant:
+	ld a, [wCurBattleMon]
+	ld hl, wPartyMon1Form
+	call GetPartyLocation
+	predef_jump GetVariant
 
 CheckOpponentFullHP:
 	call CallOpponentTurn
@@ -1897,21 +1904,10 @@ GiveExperiencePointsAfterCatch:
 	call GetExpShareParticipants
 	ld a, d
 	ld [wGivingExperienceToExpShareHolders], a
-	and a
-	jr z, .skip_exp_share
-
-	; Give exp to exp share holders
-	ld a, [wEnemyMonBaseExp]
-	srl a
-	ld [wBackupEnemyMonBaseExp], a
 	call GiveExperiencePoints
 	xor a
 	ld [wGivingExperienceToExpShareHolders], a
-	ld a, [wBackupEnemyMonBaseExp]
-	ld [wEnemyMonBaseExp], a
-
-.skip_exp_share
-	jp GiveExperiencePoints
+	ret
 
 GetExpShareParticipants:
 	ld a, [wPartyCount]
@@ -2015,8 +2011,8 @@ FaintUserPokemon:
 
 	ld hl, wBattleMonSpecies
 	call GetUserMonAttr
-	ld b, [hl]
-	farcall PlayFaintingCry
+	ld a, [hl]
+	farcall PlaySlowCryA
 	ld de, SFX_KINESIS
 	call PlaySFX
 
@@ -2051,7 +2047,28 @@ FaintUserPokemon:
 	jr z, .text
 	ld hl, BattleText_EnemyPkmnFainted
 .text
-	jp StdBattleTextBox
+	call StdBattleTextBox
+
+SuppressUserNeutralizingGas:
+; Use -1 as sentinel, not 0. This is because Transform (via Imposter) should
+; regain Neutralizing Gas in case it procs.
+	ld a, BATTLE_VARS_ABILITY
+	call GetBattleVarAddr
+	ld a, [hl]
+	cp NEUTRALIZING_GAS
+	ret nz
+	ld [hl], -1
+
+	; Unless opponent also has Neutralizing Gas or Unnerve, (re-)run its
+	; activation abilities. Yes, this means that it might run more than once.
+	call GetOpponentAbility
+	cp NEUTRALIZING_GAS
+	ret z
+	cp UNNERVE
+	ret z
+	call SwitchTurn
+	call RunActivationAbilities
+	jp SwitchTurn
 
 CheckEnemyTrainerDefeated: ; 3cf35
 	ld a, [wOTPartyCount]
@@ -2343,9 +2360,6 @@ PlayerMonFaintHappinessMod:
 	res SUBSTATUS_IN_LOOP, [hl]
 	xor a
 	ld [wLowHealthAlarm], a
-	ld hl, wPlayerDamageTaken
-	ld [hli], a
-	ld [hl], a
 	ld [wBattleMonStatus], a
 	call UpdateBattleMonInParty
 	ld c, HAPPINESS_FAINTED
@@ -2845,8 +2859,8 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 NewEnemyMonStatus: ; 3d834
 	xor a
 	ld [wEnemySelectedMove], a
-	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerCounterMove], a
+	ld [wLastEnemyCounterMove], a
 	ld [wLastEnemyMove], a
 	ld hl, wEnemySubStatus1
 	ld [hli], a
@@ -2975,8 +2989,7 @@ GetEnemyMonPersonality:
 	jp GetPartyLocation
 
 SendOutPlayerMon: ; 3db5f
-	ld hl, wBattleMonForm
-	predef GetVariant
+	call GetBattleMonVariant
 	hlcoord 1, 5
 	lb bc, 7, 8
 	call ClearBox
@@ -2991,8 +3004,8 @@ SendOutPlayerMon: ; 3db5f
 	ld [wTypeModifier], a
 	ld [wPlayerMoveStruct + MOVE_ANIM], a
 	ld [wPlayerSelectedMove], a
-	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerCounterMove], a
+	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
 	call CheckAmuletCoin
 	call FinishBattleAnim
@@ -3033,8 +3046,8 @@ SendOutPlayerMon: ; 3db5f
 NewBattleMonStatus: ; 3dbde
 	xor a
 	ld [wPlayerSelectedMove], a
-	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerCounterMove], a
+	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
 	ld hl, wPlayerSubStatus1
 	ld [hli], a
@@ -3106,11 +3119,25 @@ RunBothActivationAbilities:
 ; runs both pokémon's activation abilities (Intimidate, etc.).
 ; The faster Pokémon activates abilities first. This mostly
 ; just matter for weather abilities.
+	; Only show Neutralizing Gas message once.
+	call GetTrueUserAbility
+	cp NEUTRALIZING_GAS
+	jr nz, .no_double_gas
+	call GetOpponentAbility
+	cp NEUTRALIZING_GAS
+	jr nz, .no_double_gas
+	ld a, [hBattleTurn]
+	push af
+	call SetFastestTurn
+	jr .single_run
+
+.no_double_gas
 	ld a, [hBattleTurn]
 	push af
 	call SetFastestTurn
 	farcall RunActivationAbilitiesInner
 	call SwitchTurn
+.single_run
 	farcall RunActivationAbilitiesInner
 	pop af
 	ld [hBattleTurn], a
@@ -3126,12 +3153,10 @@ RunActivationAbilities:
 	call nz, HasOpponentFainted
 	ret z
 
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
+	call GetTrueUserAbility
 	cp TRACE
 	ret z ; trace failed, so don't check opponent trace
-	ld a, BATTLE_VARS_ABILITY_OPP
-	call GetBattleVar
+	call GetOpponentAbility
 	cp TRACE
 	ret nz
 	; invert whose turn it is to properly handle abilities.
@@ -3150,8 +3175,7 @@ SpikesDamage_CheckMoldBreaker:
 	ld c, 1
 	jr SpikesDamage_GotAbility
 SpikesDamage: ; 3dc23
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
+	call GetTrueUserAbility
 	ld b, a
 	ld c, 0
 SpikesDamage_GotAbility:
@@ -3341,8 +3365,7 @@ DoStealStatBoostBerry:
 
 QuarterPinchOrGluttony::
 ; Returns z if we're in a 1/4-HP pinch or if we have Gluttony
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
+	call GetTrueUserAbility
 	cp GLUTTONY
 	jr z, .gluttony
 	call GetQuarterMaxHP
@@ -3391,36 +3414,25 @@ _HeldStatBoostBerry:
 	cp MULTIPLE_STATS
 	jr nz, .got_stat
 
-	ld a, [wAttackMissed]
-	push af
-	push hl
 	farcall GetCappedStats
-	farcall SharplyRaiseRandomStat
-	pop hl
+	farcall SelectRandomRaiseStat
 	jr z, .failed
-	jr .finished_raising_stat
+	ld a, $10
+	or e
+	ld b, a
 
 .got_stat
-	ld a, [wAttackMissed]
-	push af
-	push hl
-	farcall BattleCommand_statup
-	pop hl
-.finished_raising_stat
+	ld a, STAT_SKIPTEXT | STAT_SILENT
+	farcall _ForceRaiseStat
 	ld a, [wFailedMessage]
 	and a
-	jr z, .success
+	ret nz
+	farcall UseStatItemText
+	xor a
+	ret
 .failed
-	pop af
 	ld [wAttackMissed], a
 	or 1
-	ret
-
-.success
-	farcall GetItemStatMessage
-	pop af
-	ld [wAttackMissed], a
-	xor a
 	ret
 
 StealHPHealingItem:
@@ -3760,7 +3772,7 @@ endr
 	ld [hl], a
 
 .not_own_shiny
-	ld a, BREEDMON
+	ld a, TEMPMON
 	ld [wMonType], a
 	farcall GetGender
 	ld a, " "
@@ -3835,7 +3847,7 @@ endr
 	ld [hl], a
 
 .not_shiny
-	ld a, BREEDMON
+	ld a, TEMPMON
 	ld [wMonType], a
 	farcall GetGender
 	ld a, " "
@@ -4365,12 +4377,12 @@ BattleMenuPKMN_Loop:
 
 Battle_StatsScreen: ; 3e308
 	call DisableLCD
-	ld hl, VTiles2 tile $31
-	ld de, VTiles0
+	ld hl, vTiles2 tile $31
+	ld de, vTiles0
 	ld bc, $11 tiles
 	rst CopyBytes
-	ld hl, VTiles2
-	ld de, VTiles0 tile $11
+	ld hl, vTiles2
+	ld de, vTiles0 tile $11
 	ld bc, $31 tiles
 	rst CopyBytes
 	call EnableLCD
@@ -4381,12 +4393,12 @@ Battle_StatsScreen: ; 3e308
 	farcall StatsScreenInit
 	call MaxVolume
 	call DisableLCD
-	ld hl, VTiles0
-	ld de, VTiles2 tile $31
+	ld hl, vTiles0
+	ld de, vTiles2 tile $31
 	ld bc, $11 tiles
 	rst CopyBytes
-	ld hl, VTiles0 tile $11
-	ld de, VTiles2
+	ld hl, vTiles0 tile $11
+	ld de, vTiles2
 	ld bc, $31 tiles
 	rst CopyBytes
 	jp EnableLCD
@@ -4413,8 +4425,7 @@ TryPlayerSwitch: ; 3e358
 	jr z, .try_switch
 	farcall CheckIfTrappedByAbility
 	jr nz, .check_other_trapped
-	ld a, BATTLE_VARS_ABILITY_OPP
-	call GetBattleVar
+	call GetOpponentAbility
 	ld b, a
 	farcall BufferAbility
 	ld hl, BattleText_PkmnCantBeRecalledAbility
@@ -4457,8 +4468,6 @@ BattleMenu_Run: ; 3e489
 	ld a, $3
 	ld [wMenuCursorY], a
 	call CheckRunSpeed
-	ld a, 0 ; not xor a; preserve carry flag
-	ld [wFailedToFlee], a
 	ret c
 	ld a, [wBattlePlayerAction]
 	and a
@@ -4471,6 +4480,11 @@ CheckRunSpeed:
 	ld a, [wBattleType]
 	cp BATTLETYPE_SAFARI
 	jp z, .can_escape
+
+	; if enemy is also trying to flee, always succeed
+	ld a, [wEnemyFleeing]
+	and a
+	jp nz, .can_escape
 
 ; Sets up speed stats properly and attempts to flee.
 	ld a, [hBattleTurn]
@@ -4508,6 +4522,8 @@ CheckRunSpeed:
 	dec a
 	jp nz, .forfeit_to_trainer
 
+	call CheckNeutralizingGas
+	jr z, .no_flee_ability
 	ld a, [wPlayerAbility]
 	cp RUN_AWAY
 	jr nz, .no_flee_ability
@@ -4632,8 +4648,7 @@ CheckRunSpeed:
 	jr .print_inescapable_text
 
 .ability_prevents_escape
-	ld a, BATTLE_VARS_ABILITY_OPP
-	call GetBattleVar
+	call GetOpponentAbility
 	ld b, a
 	farcall BufferAbility
 	ld hl, BattleText_PkmnCantBeRecalledAbility
@@ -4641,8 +4656,6 @@ CheckRunSpeed:
 .print_inescapable_text
 	call StdBattleTextBox
 .dont_forfeit
-	ld a, 1
-	ld [wFailedToFlee], a
 	call LoadTileMapToTempTileMap
 	and a
 	ret
@@ -5173,7 +5186,7 @@ MoveInfoBox: ; 3e6c8
 	rst AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, VTiles2 tile $59
+	ld hl, vTiles2 tile $59
 	lb bc, BANK(CategoryIconGFX), 2
 	call Request2bpp
 	ld hl, TypeIconGFX
@@ -5182,7 +5195,7 @@ MoveInfoBox: ; 3e6c8
 	rst AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, VTiles2 tile $5b
+	ld hl, vTiles2 tile $5b
 	lb bc, BANK(TypeIconGFX), 4
 	call Request1bpp
 	hlcoord 1, 9
@@ -5364,15 +5377,19 @@ ParseEnemyAction:
 .no_linkswitch
 	ld a, [wEnemySwitchTarget]
 	and a
-	jr nz, .is_switching
+	jr nz, .not_using_move
+	ld a, [wEnemyFleeing]
+	and a
+	jr nz, .not_using_move
 	farcall AI_TryItem
 	jr nc, .using_move
-.is_switching
+.not_using_move
 	call SetEnemyTurn
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
 	xor a
 	ld [hl], a
+	farcall UpdateMoveData
 	jr .skip_load
 
 .using_move
@@ -5991,7 +6008,7 @@ BattleWinSlideInEnemyTrainerFrontpic: ; 3ebd8
 	call FinishBattleAnim
 	ld a, [wOtherTrainerClass]
 	ld [wTrainerClass], a
-	ld de, VTiles2
+	ld de, vTiles2
 	farcall GetTrainerPic
 	hlcoord 19, 0
 	ld c, 0
@@ -6179,7 +6196,6 @@ GiveExperiencePoints: ; 3ee3b
 	bit 0, a
 	ret nz
 
-	call .EvenlyDivideExpAmongParticipants
 	xor a
 	ld [wCurPartyMon], a
 	ld bc, wPartyMon1Species
@@ -6191,18 +6207,18 @@ GiveExperiencePoints: ; 3ee3b
 	or [hl]
 	jp z, .next_mon ; fainted
 
+	ld hl, wGivingExperienceToExpShareHolders
+	push bc
+	call .CheckParticipation
+	pop bc
+	jr nz, .participating
 	push bc
 	call GetParticipantVar
-	ld a, [wCurPartyMon]
-	ld c, a
-	ld b, CHECK_FLAG
-	ld d, $0
-	predef FlagPredef
-	ld a, c
-	and a
+	call .CheckParticipation
 	pop bc
 	jp z, .next_mon
 
+.participating
 	call GiveBattleEVs
 
 	; No experience at level 100
@@ -6218,10 +6234,18 @@ GiveExperiencePoints: ; 3ee3b
 	ld [hMultiplicand + 1], a
 	ld a, [wEnemyMonBaseExp]
 	ld [hMultiplicand + 2], a
+	ld a, [wInitialOptions]
+	bit SCALED_EXP, a
+	call nz, GetNewBaseExp
 	ld a, [wEnemyMonLevel]
 	ld [hMultiplier], a
 	call Multiply
+	ld a, [wInitialOptions]
+	bit SCALED_EXP, a
 	ld a, 7
+	jr z, .got_exp_divisor
+	ld a, 5
+.got_exp_divisor
 	ld [hDivisor], a
 	ld b, 4
 	call Divide
@@ -6240,15 +6264,16 @@ GiveExperiencePoints: ; 3ee3b
 	jr z, .no_boost
 	ld a, [wInitialOptions]
 	bit TRADED_AS_OT_OPT, a
+	ld a, 0
 	jr nz, .no_boost
 
 .boosted
 	call BoostExp
-	ld a, $1
+	ld a, 1
 
 .no_boost
 ; Boost experience for a trainer battle
-	ld [wStringBuffer2 + 2], a
+	ld [wStringBuffer2 + 3], a
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
@@ -6259,19 +6284,35 @@ GiveExperiencePoints: ; 3ee3b
 	ld a, [hl]
 	cp LUCKY_EGG
 	call z, BoostExp
+
+	call .MaybeScaleExp
+
+	; make sure to give at least 1 exp
+	ld hl, hQuotient
+	ld a, [hli]
+	or [hl]
+	inc hl
+	or [hl]
+	jr nz, .exp_ok
+	inc [hl]
+.exp_ok
 	ld a, [hQuotient + 2]
-	ld [wStringBuffer2 + 1], a
+	ld [wStringBuffer2 + 2], a
 	ld a, [hQuotient + 1]
+	ld [wStringBuffer2 + 1], a
+	ld a, [hQuotient]
 	ld [wStringBuffer2], a
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
 	call GetNick
 	ld hl, Text_PkmnGainedExpPoint
 	call BattleTextBox
-	ld a, [wStringBuffer2 + 1]
+	ld a, [wStringBuffer2 + 2]
 	ld [hQuotient + 2], a
-	ld a, [wStringBuffer2]
+	ld a, [wStringBuffer2 + 1]
 	ld [hQuotient + 1], a
+	ld a, [wStringBuffer2]
+	ld [hQuotient], a
 	pop bc
 	call AnimateExpBar
 	push bc
@@ -6468,29 +6509,176 @@ GiveExperiencePoints: ; 3ee3b
 	ld c, l
 	jp .loop
 
-.EvenlyDivideExpAmongParticipants:
-; count number of battle participants
-	call GetParticipantsNotFainted
-	ld b, a
-	ld c, PARTY_LENGTH
-	ld d, 0
-.count_loop
-	xor a
-	srl b
-	adc d
-	ld d, a
-	dec c
-	jr nz, .count_loop
-	cp 2
-	ret c
-	ld [wd265], a
+.CheckParticipation:
+	ld a, [wCurPartyMon]
 	ld c, a
-	ld a, [wEnemyMonBaseExp]
-	call SimpleDivide
-	ld a, b
-	ld [wEnemyMonBaseExp], a
+	ld b, CHECK_FLAG
+	ld d, $0
+	predef FlagPredef
+	ld a, c
+	and a
 	ret
-; 3f106
+
+.MaybeScaleExp:
+; Distribute Exp Points evenly among participants, and maybe scale Exp on level
+	push bc
+
+	; Distribute among participants as follows:
+	; p=participats e=exp share holders
+	; If p or e is zero, just do 1/p or 1/e.
+	; Otherwise; P=e if participant, otherwise 0, E=p if holder, otherwise 0
+	; exp = current(E+P)/(2ep)
+	ld a, [wGivingExperienceToExpShareHolders]
+	ld d, a
+	call GetParticipantsNotFainted
+	ld e, a
+	and a
+	ld a, d
+	jr z, .single_factor
+	and a
+	ld a, e
+	jr z, .single_factor
+
+	; We are dealing with both participants and exp share holders.
+	; First, verify that we are a participant.
+	push de
+	ld b, 0
+	ld hl, wGivingExperienceToExpShareHolders
+	push bc
+	call .CheckParticipation
+	pop bc
+	pop de
+	push af
+	ld a, d
+	call .GetBits
+	ld d, a
+	pop af
+	jr z, .done_exp_share_pe
+	inc b
+
+.done_exp_share_pe
+	push de
+	push bc
+	call GetParticipantVar
+	call .CheckParticipation
+	pop bc
+	pop de
+	push af
+	ld a, e
+	call .GetBits
+	ld e, a
+	pop af
+	jr z, .done_participants_pe
+	set 1, b
+
+.done_participants_pe
+	push de
+	xor a
+	bit 0, b
+	jr z, .not_a_participant
+	add e
+.not_a_participant
+	bit 1, b
+	jr z, .not_a_holder
+	add d
+.not_a_holder
+	ld [hMultiplier], a
+	call Multiply
+	pop de
+	ld a, d
+	ld c, e
+	call SimpleMultiply
+	add a
+	ld [hDivisor], a
+	ld b, 4
+	call Divide
+	jr .done_sharing_exp
+
+.single_factor
+	call .GetBits
+	ld [hDivisor], a
+	ld b, 4
+	call Divide
+
+.done_sharing_exp
+	ld a, [wInitialOptions]
+	bit SCALED_EXP, a
+	jr z, .done_scaling
+
+	; Level multiplier
+	ld a, [wEnemyMonLevel]
+	ld c, a
+	add a
+	add 10
+	ld d, a
+
+	; Level divider
+	ld hl, wPartyMon1Level
+	ld a, [wCurPartyMon]
+	call GetPartyLocation
+	ld a, [hl]
+	add c
+	add 10
+	ld e, a
+
+	call .ScaleMod
+	call .ScaleMod
+	ld a, d
+	call .GetSqrt
+	ld d, a
+	ld a, e
+	call .GetSqrt
+	ld e, a
+	call .ScaleMod
+
+.done_scaling
+	pop bc
+	ret
+
+.ScaleMod:
+	ld a, d
+	ld [hMultiplier], a
+	call Multiply
+	ld a, e
+	ld [hDivisor], a
+	ld b, 4
+	jp Divide
+
+.GetSqrt:
+	push bc
+	cp 225
+	ld c, 15
+	jr nc, .got_result
+	ld b, a
+	ld c, 0
+.squareloop
+	inc c
+	ld a, c
+	call SimpleMultiply
+	cp b
+	jr c, .squareloop
+	jr z, .got_result
+	dec c
+.got_result
+	ld a, c
+	pop bc
+	ret
+
+.GetBits:
+; get amounts of bits set among bit 0-5 in a
+	push bc
+	ld b, 6
+	ld c, 0
+.bitloop
+	rrca
+	jr nc, .bitloopnext
+	inc c
+.bitloopnext
+	dec b
+	jr nz, .bitloop
+	ld a, c
+	pop bc
+	ret
 
 GiveBattleEVs:
 ; prepare registers for EV gain loop.
@@ -6533,7 +6721,10 @@ GiveBattleEVs:
 	ld hl, MON_EVS
 	add hl, bc
 	push bc
-	ld a, [wEnemyMonSpecies]
+	ld a, MON_SPECIES
+	push hl
+	call OTPartyAttr
+	pop hl
 	ld [wCurSpecies], a
 	call GetBaseData
 	; EV yield format:
@@ -6611,32 +6802,15 @@ GiveBattleEVs:
 	set (6 - SP_DEFENSE), e ; 2
 	ret
 
-BoostExp: ; 3f106
-; Multiply experience by 1.5x
-	push bc
-; load experience value
-	ld a, [hProduct + 2]
-	ld b, a
-	ld a, [hProduct + 3]
-	ld c, a
-; halve it
-	srl b
-	rr c
-; add it back to the whole exp value
-	add c
-	ld [hProduct + 3], a
-	ld a, [hProduct + 2]
-	adc b
-	ld [hProduct + 2], a
-	pop bc
-	ret
-; 3f11b
+BoostExp:
+	ld a, $32
+	jp ApplyDamageMod
 
 Text_PkmnGainedExpPoint: ; 3f11b
 	text_jump Text_Gained
 	start_asm
 	ld hl, TextJump_StringBuffer2ExpPoints
-	ld a, [wStringBuffer2 + 2] ; IsTradedMon
+	ld a, [wStringBuffer2 + 3] ; IsTradedMon
 	and a
 	ret z
 
@@ -6841,6 +7015,90 @@ AnimateExpBar: ; 3f136
 	ld [hBGMapMode], a
 	ret
 
+GetNewBaseExp:
+; basic stage mons: BST*0.2
+; stage 1 or non-evolver: BST*0.35
+; stage 2 or legendaries: BST*0.45
+; exceptions: Chansey, Blissey
+	ld a, MON_SPECIES
+	call OTPartyAttr
+	ld de, 3
+	ld hl, NewBaseExpExceptions
+	call IsInArray
+	jr nc, .calc_base_exp
+	inc hl
+	ld a, [hli]
+	ld [hMultiplicand + 2], a
+	ld a, [hl]
+	ld [hMultiplicand + 1], a
+	ret
+
+.calc_base_exp
+	ld hl, 0
+	ld de, wBaseHP
+	ld b, 6
+.bst_loop
+	ld a, [de]
+	ld c, a
+	inc de
+	push bc
+	ld b, 0
+	add hl, bc
+	pop bc
+	dec b
+	jr nz, .bst_loop
+
+	ld a, h
+	ld [hMultiplicand + 1], a
+	ld a, l
+	ld [hMultiplicand + 2], a
+
+	ld a, [wCurSpecies]
+	ld [wCurPartySpecies], a
+
+	farcall GetPreEvolution
+	jr c, .not_basic
+
+	; let's see if we have an evolution
+	ld hl, EvosAttacksPointers
+	ld a, [wCurPartySpecies]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld a, BANK(EvosAttacksPointers)
+	call GetFarHalfword
+
+	ld a, BANK(EvosAttacks)
+	call GetFarByte
+	and a
+	ld a, 4 ; basic mon (not evolved, but can evolve): *4/20 -> *0.2
+	jr nz, .got_multiplier
+	jr .stage_1_or_nonevolver
+
+.not_basic
+	ld de, 1
+	ld hl, LegendaryMons
+	call IsInArray
+	jr c, .legendary
+	farcall GetPreEvolution
+.legendary
+	ld a, 9 ; stage 2 or legendary: *9/20 -> *0.45
+	jr c, .got_multiplier
+.stage_1_or_nonevolver
+	ld a, 7 ; stage 1 or non-evolver: *7/20 -> *0.35
+.got_multiplier
+	ld [hMultiplier], a
+	call Multiply
+	ld a, 20
+	ld [hDivisor], a
+	ld b, 4
+	jp Divide
+
+NewBaseExpExceptions:
+	dbw CHANSEY, 395
+	dbw BLISSEY, 608
+	db -1
 
 Function_BattleTextEnemySentOut:
 	farcall Battle_GetTrainerName
@@ -7209,9 +7467,8 @@ DropPlayerSub: ; 3f447
 	push af
 	ld a, [wBattleMonSpecies]
 	ld [wCurPartySpecies], a
-	ld hl, wBattleMonForm
-	predef GetVariant
-	ld de, VTiles2 tile $31
+	call GetBattleMonVariant
+	ld de, vTiles2 tile $31
 	predef GetBackpic
 	pop af
 	ld [wCurPartySpecies], a
@@ -7248,9 +7505,8 @@ DropEnemySub: ; 3f486
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	call GetBaseData
-	ld hl, wEnemyMonForm
-	predef GetVariant
-	ld de, VTiles2
+	call GetEnemyMonVariant
+	ld de, vTiles2
 	predef FrontpicPredef
 	pop af
 	ld [wCurPartySpecies], a
@@ -7306,7 +7562,7 @@ BattleIntro: ; 3f4dd
 	call DisableSpriteUpdates
 	farcall ClearBattleRAM
 	call InitEnemy
-	call BackUpVBGMap2
+	call BackUpBGMap2
 	ld b, CGB_BATTLE_GRAYSCALE
 	call GetCGBLayout
 	ld hl, rLCDC
@@ -7352,13 +7608,13 @@ InitEnemy: ; 3f55e
 	jp InitEnemyWildmon ; wild
 ; 3f568
 
-BackUpVBGMap2: ; 3f568
+BackUpBGMap2: ; 3f568
 	ld a, [rSVBK]
 	push af
 	ld a, BANK(wDecompressScratch)
 	ld [rSVBK], a
 	ld hl, wDecompressScratch
-	ld bc, $40 tiles ; VBGMap3 - VBGMap2
+	ld bc, $40 tiles ; vBGMap3 - vBGMap2
 	ld a, $2
 	call ByteFill
 	ld a, [rVBK]
@@ -7366,8 +7622,8 @@ BackUpVBGMap2: ; 3f568
 	ld a, $1
 	ld [rVBK], a
 	ld de, wDecompressScratch
-	hlbgcoord 0, 0 ; VBGMap2
-	lb bc, BANK(BackUpVBGMap2), $40
+	hlbgcoord 0, 0 ; vBGMap2
+	lb bc, BANK(BackUpBGMap2), $40
 	call Request2bpp
 	pop af
 	ld [rVBK], a
@@ -7383,7 +7639,7 @@ InitEnemyTrainer: ; 3f594
 	farcall GetTrainerAttributes
 	farcall ReadTrainerParty
 	farcall ComputeTrainerReward
-	ld de, VTiles2
+	ld de, vTiles2
 	farcall GetTrainerPic
 	xor a
 	ld [hGraphicStartTile], a
@@ -7452,7 +7708,7 @@ InitEnemyWildmon: ; 3f607
 	ld [wFirstMagikarpSeen], a
 .skip_magikarp
 
-	ld de, VTiles2
+	ld de, vTiles2
 	predef FrontpicPredef
 	xor a
 	ld [wTrainerClass], a
@@ -7526,7 +7782,7 @@ CleanUpBattleRAM: ; 3f6d0
 	ld [wAttackMissed], a
 	ld [wTempWildMonSpecies], a
 	ld [wOtherTrainerClass], a
-	ld [wFailedToFlee], a
+	ld [wEnemyFleeing], a
 	ld [wNumFleeAttempts], a
 	ld [wPartyMenuCursor], a
 	ld [wKeyItemsPocketCursor], a
@@ -8169,7 +8425,7 @@ InitBattleDisplay: ; 3fb6c
 
 
 GetTrainerBackpic: ; 3fbff
-; Load the player character's backpic (6x6) into VRAM starting from VTiles2 tile $31.
+; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
 
 	ld b, BANK(LyraBackpic) ; BANK(ChrisBackpic), BANK(KrisBackpic)
 
@@ -8191,7 +8447,7 @@ GetTrainerBackpic: ; 3fbff
 	ld hl, KrisBackpic
 
 .Decompress:
-	ld de, VTiles2 tile $31
+	ld de, vTiles2 tile $31
 	ld c, 6 * 6
 	predef DecompressPredef
 	ret
@@ -8202,8 +8458,8 @@ CopyBackpic: ; 3fc30
 	push af
 	ld a, $6
 	ld [rSVBK], a
-	ld hl, VTiles0
-	ld de, VTiles2 tile $31
+	ld hl, vTiles0
+	ld de, vTiles2 tile $31
 	ld a, [hROMBank]
 	ld b, a
 	ld c, 7 * 7

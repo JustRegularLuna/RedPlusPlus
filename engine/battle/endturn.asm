@@ -233,9 +233,9 @@ HandleWeather:
 .PrintWeatherMessage:
 	ld a, [wWeather]
 	dec a
+	add a
 	ld c, a
 	ld b, 0
-	add hl, bc
 	add hl, bc
 	ld a, [hli]
 	ld h, [hl]
@@ -290,10 +290,10 @@ HandleWeatherEffects:
 	ld a, b
 	cp HELD_SAFETY_GOGGLES
 	jr z, .run_weather_abilities
-	call GetWeatherAfterCloudNine
+	call GetWeatherAfterUserUmbrella
 	cp WEATHER_HAIL
 	call z, .HandleHail
-	call GetWeatherAfterCloudNine
+	call GetWeatherAfterUserUmbrella
 	cp WEATHER_SANDSTORM
 	call z, .HandleSandstorm
 .run_weather_abilities
@@ -304,8 +304,7 @@ HandleWeatherEffects:
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
+	call GetTrueUserAbility
 	cp MAGIC_GUARD
 	ret z
 	cp OVERCOAT
@@ -334,8 +333,7 @@ HandleWeatherEffects:
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
+	call GetTrueUserAbility
 	cp MAGIC_GUARD
 	ret z
 	cp OVERCOAT
@@ -359,22 +357,23 @@ HandleFutureSight:
 	call SwitchTurn
 
 .do_it
-	ld hl, wPlayerFutureSightCount
 	ld a, [hBattleTurn]
 	and a
-	jr z, .okay
+	ld hl, wPlayerFutureSightCount
+	jr z, .got_future
 	ld hl, wEnemyFutureSightCount
-
-.okay
+.got_future
 	ld a, [hl]
 	and a
 	ret z
-	dec a
-	ld [hl], a
-	cp $1
+	dec [hl]
+	ld a, [hl]
+	and $f
 	ret nz
 
-	call HasUserFainted
+	push hl
+	call HasOpponentFainted
+	pop hl
 	jr nz, .do_future_sight
 
 	; Future Sight misses automatically
@@ -384,6 +383,7 @@ HandleFutureSight:
 	jp StdBattleTextBox
 
 .do_future_sight
+	push hl
 	ld hl, BattleText_TargetWasHitByFutureSight
 	call StdBattleTextBox
 
@@ -392,8 +392,8 @@ HandleFutureSight:
 	push af
 	ld a, FUTURE_SIGHT
 	ld [hl], a
-
 	farcall UpdateMoveData
+
 	xor a
 	ld [wAttackMissed], a
 	ld [wAlreadyDisobeyed], a
@@ -408,7 +408,9 @@ HandleFutureSight:
 	call GetBattleVarAddr
 	pop af
 	ld [hl], a
-
+	farcall UpdateMoveData
+	pop hl
+	ld [hl], 0
 	call UpdateBattleMonInParty
 	jp UpdateEnemyMonInParty
 
@@ -441,8 +443,7 @@ HandleLeftovers:
 
 PreventEndturnDamage:
 ; returns z if residual damage at endturn is prevented
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
+	call GetTrueUserAbility
 	cp MAGIC_GUARD
 	call nz, HasUserFainted
 	ret
@@ -480,8 +481,7 @@ HandleLeechSeed:
 	farcall GetHPAbsorption
 	ld a, $1
 	ld [hBGMapMode], a
-	ld a, BATTLE_VARS_ABILITY_OPP
-	call GetBattleVar
+	call GetOpponentAbility
 	cp LIQUID_OOZE
 	jr z, .hurt
 	farcall RestoreHP
@@ -528,8 +528,7 @@ DoPoisonBurnDamage:
 	pop hl
 	ret z
 
-	ld a, BATTLE_VARS_ABILITY
-	call GetBattleVar
+	call GetTrueUserAbility
 	cp POISON_HEAL
 	jr nz, .got_anim
 	; check if we are at full HP
@@ -882,8 +881,6 @@ HandleHealingItems:
 	call SwitchTurn
 
 .do_it
-	; runs instantly whenever possible, so don't prevent usage
-	; even if the user endturn switched
 	call HasUserFainted
 	ret z
 	farcall HandleHPHealingItem
@@ -970,11 +967,11 @@ HandleRoost:
 	inc hl
 	ld a, [hl]
 	cp UNKNOWN_T
-	jr nz, .aerliate
+	jr nz, .aerilate
 .got_target
 	ld [hl], FLYING
 	ret
-.aerliate
+.aerilate
 	; Set Flying types on both
 	ld a, FLYING
 	ld [hld], a

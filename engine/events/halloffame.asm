@@ -252,7 +252,7 @@ AnimateHOFMonEntrance: ; 865b5
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, " "
 	call ByteFill
-	ld de, VTiles2 tile $31
+	ld de, vTiles2 tile $31
 	predef GetBackpic
 	ld a, $31
 	ld [hGraphicStartTile], a
@@ -499,7 +499,7 @@ DisplayHOFMon: ; 86748
 	call GetBasePokemonName
 	hlcoord 7, 13
 	call PlaceString
-	ld a, BREEDMON
+	ld a, TEMPMON
 	ld [wMonType], a
 	farcall GetGender
 	ld a, " "

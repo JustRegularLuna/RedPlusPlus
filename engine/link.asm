@@ -35,7 +35,7 @@ Gen2ToGen2LinkComms: ; 28177
 	call Link_PrepPartyData_Gen2
 	call FixDataForLinkTransfer
 	call Function29dba
-	ld a, [wScriptVar]
+	ld a, [hScriptVar]
 	and a
 	jp z, LinkTimeout
 	ld a, [hSerialConnectionStatus]
@@ -73,8 +73,8 @@ Gen2ToGen2LinkComms: ; 28177
 	ld a, SERIAL_NO_DATA_BYTE
 	ld [de], a
 	ld hl, wLinkData
-	ld de, wOTPlayerName
-	ld bc, $1c2
+	ld de, wLinkOTExchangeStart
+	ld bc, wLinkOTExchangeEnd - wLinkOTExchangeStart
 	call Serial_ExchangeBytes
 	ld a, SERIAL_NO_DATA_BYTE
 	ld [de], a
@@ -684,16 +684,36 @@ PlaceTradePartnerNamesAndParty: ; fb60d
 	ld a, $14
 	ld [bc], a
 	hlcoord 7, 1
-	ld de, wPartySpecies
+	ld a, [wPartyCount]
+	ld de, wPartyMons
 	call .PlaceSpeciesNames
 	hlcoord 7, 9
-	ld de, wOTPartySpecies
+	ld a, [wOTPartyCount]
+	ld de, wOTPartyMons
 .PlaceSpeciesNames: ; fb634
-	ld c, $0
+	push bc
+	ld b, a
+	ld c, 0
 .loop
-	ld a, [de]
-	cp -1
-	ret z
+	push hl
+	push bc
+	ld hl, MON_IS_EGG
+	add hl, de
+	ld a, c
+	call GetPartyLocation
+	bit MON_IS_EGG_F, [hl]
+	ld a, EGG
+	jr nz, .got_species
+	ld hl, MON_SPECIES
+	add hl, de
+	pop bc
+	push bc
+	ld a, c
+	call GetPartyLocation
+	ld a, [hl]
+.got_species
+	pop bc
+	pop hl
 	ld [wd265], a
 	push bc
 	push hl
@@ -705,14 +725,15 @@ PlaceTradePartnerNamesAndParty: ; fb60d
 	pop hl
 	call PlaceString
 	pop de
-	inc de
 	pop hl
 	ld bc, SCREEN_WIDTH
 	add hl, bc
 	pop bc
 	inc c
-	jr .loop
-; fb656
+	dec b
+	jr nz, .loop
+	pop bc
+	ret
 
 LinkTrade_OTPartyMenu: ; 28803
 	ld a, OTPARTYMON
@@ -1167,11 +1188,18 @@ Function28926: ; 28926
 	ld [wcf57], a
 	ld [wOtherPlayerLinkAction], a
 	ld a, [wd003]
+	ld hl, wOTPartyMon1IsEgg
+	call GetPartyLocation
+	bit MON_IS_EGG_F, [hl]
+	ld a, EGG
+	jr nz, .got_ot_species
+	ld a, [wd003]
 	ld hl, wOTPartySpecies
 	ld c, a
 	ld b, $0
 	add hl, bc
 	ld a, [hl]
+.got_ot_species
 	ld [wd265], a
 	call GetPokemonName
 	hlcoord 0, 12
@@ -1368,23 +1396,37 @@ LinkTrade: ; 28b87
 	call LinkTextbox
 	call Link_WaitBGMap
 	ld a, [wd002]
+	ld hl, wPartyMon1IsEgg
+	call GetPartyLocation
+	bit MON_IS_EGG_F, [hl]
+	ld a, EGG
+	jr nz, .got_party_species
+	ld a, [wd002]
 	ld hl, wPartySpecies
 	ld c, a
 	ld b, $0
 	add hl, bc
 	ld a, [hl]
-	ld [wd265], a
+.got_party_species
+	ld [wNamedObjectIndexBuffer], a
 	call GetPokemonName
 	ld hl, wStringBuffer1
 	ld de, wd004
 	ld bc, PKMN_NAME_LENGTH
 	rst CopyBytes
 	ld a, [wd003]
+	ld hl, wOTPartyMon1IsEgg
+	call GetPartyLocation
+	bit MON_IS_EGG_F, [hl]
+	ld a, EGG
+	jr nz, .got_ot_species
+	ld a, [wd003]
 	ld hl, wOTPartySpecies
 	ld c, a
 	ld b, $0
 	add hl, bc
 	ld a, [hl]
+.got_ot_species
 	ld [wd265], a
 	call GetPokemonName
 	ld hl, .TradeThisForThat
@@ -1502,11 +1544,18 @@ LinkTrade: ; 28b87
 	ld bc, NAME_LENGTH
 	rst CopyBytes
 	ld a, [wd002]
+	ld hl, wPartyMon1IsEgg
+	call GetPartyLocation
+	bit MON_IS_EGG_F, [hl]
+	ld a, EGG
+	jr nz, .got_tradeparty_species
+	ld a, [wd002]
 	ld hl, wPartySpecies
 	ld b, $0
 	ld c, a
 	add hl, bc
 	ld a, [hl]
+.got_tradeparty_species
 	ld [wPlayerTrademonSpecies], a
 	push af
 	ld a, [wd002]
@@ -1544,11 +1593,18 @@ LinkTrade: ; 28b87
 	ld bc, NAME_LENGTH
 	rst CopyBytes
 	ld a, [wd003]
+	ld hl, wOTPartyMon1IsEgg
+	call GetPartyLocation
+	bit MON_IS_EGG_F, [hl]
+	ld a, EGG
+	jr nz, .got_tradeot_species
+	ld a, [wd003]
 	ld hl, wOTPartySpecies
 	ld b, $0
 	ld c, a
 	add hl, bc
 	ld a, [hl]
+.got_tradeot_species
 	ld [wOTTrademonSpecies], a
 	ld a, [wd003]
 	ld hl, wOTPartyMonOT
@@ -1796,7 +1852,7 @@ Function16d6ce: ; 16d6ce
 
 LoadTradeScreenGFX: ; 28ef8
 	ld de, TradeScreenGFX
-	ld hl, VTiles2
+	ld hl, vTiles2
 	lb bc, BANK(TradeScreenGFX), 70
 	jp Get2bpp
 ; 28eff
@@ -1937,12 +1993,12 @@ Special_WaitForLinkedFriend: ; 29d11
 	ld c, $32
 	call DelayFrames
 	ld a, $1
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 
 .done
 	xor a
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 ; 29d92
 
@@ -1962,7 +2018,7 @@ Special_CheckLinkTimeout: ; 29d92
 	call Link_CheckCommunicationError
 	xor a
 	ld [hVBlank], a
-	ld a, [wScriptVar]
+	ld a, [hScriptVar]
 	and a
 	ret nz
 	jp Link_ResetSerialRegistersAfterLinkClosure
@@ -1982,7 +2038,7 @@ Function29dba: ; 29dba
 	call DelayFrame
 	call DelayFrame
 	call Link_CheckCommunicationError
-	ld a, [wScriptVar]
+	ld a, [hScriptVar]
 	and a
 	jr z, .vblank
 	ld bc, -1
@@ -2007,7 +2063,7 @@ Function29dba: ; 29dba
 
 .script_var
 	xor a
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 
 .vblank
@@ -2039,7 +2095,7 @@ Link_CheckCommunicationError: ; 29e0c
 	ld a, $1
 
 .load_scriptvar
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ld hl, wLinkTimeoutFrames
 	xor a
 	ld [hli], a
@@ -2090,7 +2146,7 @@ Special_TryQuickSave: ; 29e66
 	jr nc, .return_result
 	xor a
 .return_result
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	pop af
 	ld [wd265], a
 	ret
@@ -2114,12 +2170,12 @@ Special_CheckBothSelectedSameRoom: ; 29e82
 	xor a
 	ld [hVBlank], a
 	ld a, $1
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 
 .fail
 	xor a
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 ; 29eaf
 
@@ -2205,7 +2261,7 @@ Special_CableClubCheckWhichChris: ; 29f47
 	dec a
 
 .yes
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 ; 29f54
 

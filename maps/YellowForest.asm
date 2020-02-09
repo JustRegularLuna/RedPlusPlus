@@ -1,7 +1,8 @@
 YellowForest_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, YellowForestFlyPoint
 	callback MAPCALLBACK_TILES, YellowForestTileScript
 
 	db 2 ; warp events
@@ -46,6 +47,10 @@ YellowForest_MapScriptHeader:
 	const YELLOWFOREST_YELLOW
 	const YELLOWFOREST_POKE_BALL5
 
+YellowForestFlyPoint:
+	setflag ENGINE_FLYPOINT_YELLOW_FOREST
+	return
+
 YellowForestTileScript:
 	checkscene
 	iftrue .underfoot
@@ -83,7 +88,7 @@ YellowForestBridgeUnderfootTrigger:
 YellowForest_FinishBridge:
 	ld [wWalkingOnBridge], a
 	ld [wYellowForestTrigger], a ; setscene a
-	jp RefreshScreen_BridgeUpdate ; refreshscreen (optimized)
+	jp GenericFinishBridge
 
 GenericTrainerSchoolgirlSarah:
 	generictrainer SCHOOLGIRL, SARAH, EVENT_BEAT_SCHOOLGIRL_SARAH, SchoolgirlSarahSeenText, SchoolgirlSarahBeatenText

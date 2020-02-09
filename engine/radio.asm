@@ -8,8 +8,9 @@ PlayRadioShow:
 	bit 0, a ; ENGINE_ROCKETS_IN_RADIO_TOWER
 	jr z, .ok
 ; If we're in Kanto, we don't need to be here.
-	call IsInJohto
-	jr nz, .ok
+	call GetCurrentLandmark
+	cp KANTO_LANDMARK
+	jr nc, .ok
 ; Team Rocket broadcasts on all stations.
 	ld a, ROCKET_RADIO
 	ld [wCurrentRadioLine], a
@@ -1308,24 +1309,19 @@ PnP_odd:
 
 PeoplePlaces6: ; Places
 	call Random
-	cp (PnP_HiddenPlaces.End - PnP_HiddenPlaces) / 2
+	cp PnP_Places.End - PnP_Places
 	jr nc, PeoplePlaces6
-	ld hl, PnP_HiddenPlaces
+	ld hl, PnP_Places
 	ld c, a
 	ld b, 0
 	add hl, bc
-	add hl, bc
-	ld b, [hl]
-	inc hl
-	ld c, [hl]
-	call GetWorldMapLocation
-	ld e, a
+	ld e, [hl]
 	farcall GetLandmarkName
 	ld hl, PnP_Text5
 	ld a, PLACES_AND_PEOPLE_7
 	jp NextRadioLine
 
-INCLUDE "data/radio/pnp_hidden_places.asm"
+INCLUDE "data/radio/pnp_places.asm"
 
 PnP_Text5:
 	; @ @

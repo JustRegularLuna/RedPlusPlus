@@ -23,6 +23,21 @@ NO_EFFECT          EQU $00
 	const MULTIPLE_STATS ; used by Curse
 NUM_LEVEL_STATS EQU const_value
 
+	const_def
+	const STAT_TARGET_F
+	const STAT_LOWER_F
+	const STAT_MISS_F
+	const STAT_SECONDARY_F
+	const STAT_SILENT_F
+	const STAT_SKIPTEXT_F
+
+STAT_TARGET    EQU 1 << STAT_TARGET_F
+STAT_LOWER     EQU 1 << STAT_LOWER_F
+STAT_MISS      EQU 1 << STAT_MISS_F
+STAT_SECONDARY EQU 1 << STAT_SECONDARY_F
+STAT_SILENT    EQU 1 << STAT_SILENT_F
+STAT_SKIPTEXT  EQU 1 << STAT_SKIPTEXT_F
+
 ; move struct
 	const_def
 	const MOVE_ANIM
@@ -174,6 +189,7 @@ endc
 	const ATKFAIL_ABILITY ; ability immunity, might have side effects
 	const ATKFAIL_GENERIC ; "But it failed!"
 	const ATKFAIL_IMMUNE  ; "It doesn't affect <TARGET>!"
+	const ATKFAIL_ACCMISS ; missed from accuracy
 	const ATKFAIL_CUSTOM  ; custom message
 
 ; deferred switch types
@@ -280,10 +296,6 @@ SCREENS_TOXIC_SPIKES EQU     %11000000
 	const WEATHER_SUN
 	const WEATHER_SANDSTORM
 	const WEATHER_HAIL
-	const WEATHER_RAIN_END
-	const WEATHER_SUN_END
-	const WEATHER_SANDSTORM_END
-	const WEATHER_HAIL_END
 
 ; Battle vars used in home/battle.asm
 	const_def

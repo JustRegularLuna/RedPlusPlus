@@ -7,11 +7,11 @@ Special_CelebiShrineEvent: ; 4989a
 
 	farcall ClearSpriteAnims
 	ld de, SpecialCelebiLeafGFX
-	ld hl, VTiles1
+	ld hl, vTiles1
 	lb bc, BANK(SpecialCelebiLeafGFX), 4
 	call Request2bpp
 	ld de, SpecialCelebiGFX
-	ld hl, VTiles0 tile $84
+	ld hl, vTiles0 tile $84
 	lb bc, BANK(SpecialCelebiGFX), $10
 	call Request2bpp
 	xor a
@@ -272,12 +272,12 @@ CheckCaughtCelebi: ; 49bf9
 	bit 6, a
 	jr z, .false
 	ld a, $1
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 
 .false
 	xor a
-	ld [wScriptVar], a
+	ld [hScriptVar], a
 	ret
 
 ; 49c0c

@@ -23,21 +23,21 @@ INCBIN "gfx/music_player/waveforms.2bpp"
 
 SECTION "Music Player", ROMX
 
-jrbutton: macro
+jrbutton: MACRO
 ; assumes hl == hJoyPressed
 	ld a, [hl]
 	and \1
 	jr nz, \2
-endm
+ENDM
 
-jpbutton: macro
+jpbutton: MACRO
 ; assumes hl == hJoyPressed
 	ld a, [hl]
 	and \1
 	jp nz, \2
-endm
+ENDM
 
-jrheldbutton: macro
+jrheldbutton: MACRO
 ; assumes hl == hJoyDown
 	ld a, [wTextDelayFrames]
 	and a
@@ -49,9 +49,9 @@ jrheldbutton: macro
 	ld [wTextDelayFrames], a
 	jr \2
 .no\@:
-endm
+ENDM
 
-jpheldbutton: macro
+jpheldbutton: MACRO
 ; assumes hl == hJoyDown
 	ld a, [wTextDelayFrames]
 	and a
@@ -63,7 +63,7 @@ jpheldbutton: macro
 	ld [wTextDelayFrames], a
 	jp \2
 .no\@:
-endm
+ENDM
 
 MusicPlayerPals:
 if !DEF(MONOCHROME)
@@ -159,12 +159,12 @@ MusicPlayer::
 ; Load graphics
 	ld de, PianoGFX ; 
 	lb bc, BANK(PianoGFX), 32 + 13 ; PianoGFX + MusicTestGFX
-	ld hl, VTiles2
+	ld hl, vTiles2
 	call Request2bpp
 
 	ld de, NotesGFX
 	lb bc, BANK(NotesGFX), $80
-	ld hl, VTiles0
+	ld hl, vTiles0
 	call Request2bpp
 
 ; Prerender all waveforms
@@ -182,7 +182,7 @@ MusicPlayer::
 ; Here we just use a static image.
 	ld de, WaveformsGFX
 	lb bc, BANK(WaveformsGFX), NUM_WAVEFORMS * 2
-	ld hl, VTiles2 tile $40
+	ld hl, vTiles2 tile $40
 	call Request2bpp
 
 	call DelayFrame
@@ -1069,7 +1069,7 @@ _DrawCh1_2_3:
 ;	jr .loop
 ;
 ;.done
-;	ld hl, VTiles2 tile $40
+;	ld hl, vTiles2 tile $40
 ;	ld a, [wRenderedWaveform]
 ;	swap a
 ;	sla a

@@ -34,9 +34,10 @@ TMHM_PocketLoop: ; 2c8d3 (b:48d3)
 	ld [w2DMenuFlags2], a
 	ld a, $20
 	ld [w2DMenuCursorOffsets], a
-	ld a, A_BUTTON | B_BUTTON | D_UP | D_DOWN | D_LEFT | D_RIGHT
+	ld a, A_BUTTON | B_BUTTON | START | D_UP | D_DOWN | D_LEFT | D_RIGHT
 	ld [wMenuJoypadFilter], a
 	ld a, [wTMHMPocketCursor]
+	and $7f
 	inc a
 	ld [wMenuCursorY], a
 	ld a, $1
@@ -44,12 +45,18 @@ TMHM_PocketLoop: ; 2c8d3 (b:48d3)
 	jr TMHM_ShowTMMoveDescription
 
 TMHM_JoypadLoop: ; 2c915 (b:4915)
-	call TMHM_DisplayPocketItems
 	call DoMenuJoypadLoop
 	ld b, a
+	push hl
+	ld hl, wTMHMPocketCursor
+	ld a, $80
+	and [hl]
+	ld [hl], a
 	ld a, [wMenuCursorY]
 	dec a
-	ld [wTMHMPocketCursor], a
+	or [hl]
+	ld [hl], a
+	pop hl
 	xor a
 	ld [hBGMapMode], a
 	ld a, [w2DMenuFlags2]
@@ -57,25 +64,25 @@ TMHM_JoypadLoop: ; 2c915 (b:4915)
 	jp nz, TMHM_ScrollPocket
 	ld a, b
 	ld [wMenuJoypad], a
+	bit START_F, a
+	jr nz, TMHM_SortMenu
 	bit A_BUTTON_F, a
 	jp nz, TMHM_ChooseTMorHM
 	bit B_BUTTON_F, a
 	jp nz, TMHM_ExitPack
-	bit D_RIGHT_F, a
-	jp nz, TMHM_ExitPocket
-	bit D_LEFT_F, a
-	jp nz, TMHM_ExitPocket
+	and D_RIGHT | D_LEFT
+	ret nz
 TMHM_ShowTMMoveDescription: ; 2c946 (b:4946)
 	call TMHM_GetCurrentTMHM
 	hlcoord 0, 12
 	lb bc, 4, SCREEN_WIDTH - 2
 	call TextBox
-	farcall LoadTMHMIconPalette
-	call SetPalettes
 	ld a, [wCurTMHM]
 	cp NUM_TMS + NUM_HMS + 1
 	jr nc, .Cancel
 	ld [wd265], a
+	farcall LoadTMHMIconPalette
+	call SetPalettes
 	predef GetTMHMMove
 	ld a, [wd265]
 	ld [wCurSpecies], a
@@ -87,6 +94,10 @@ TMHM_ShowTMMoveDescription: ; 2c946 (b:4946)
 .Cancel:
 	farcall ClearTMHMIcon
 	jp TMHM_JoypadLoop
+
+TMHM_SortMenu:
+	or 1
+	ret
 
 TMHM_ChooseTMorHM: ; 2c974 (b:4974)
 	call TMHM_PlaySFX_ReadText2
@@ -100,7 +111,7 @@ TMHM_ChooseTMorHM: ; 2c974 (b:4974)
 	ld a, [wd265]
 	cp b
 	jr z, _TMHM_ExitPack ; our cursor was hovering over CANCEL
-TMHM_GetCurrentTMHM: ; 2c98a (b:498a)
+TMHM_GetCurrentTMHM:
 	call TMHM_GetCurrentPocketPosition
 	ld a, [wMenuCursorY]
 	ld b, a
@@ -115,6 +126,7 @@ TMHM_GetCurrentTMHM: ; 2c98a (b:498a)
 	jr nz, .loop
 	ld a, c
 .okay
+	call TMHM_GetAlpha
 	ld [wCurTMHM], a
 	ret
 
@@ -179,6 +191,7 @@ TMHM_DisplayPocketItems: ; 2c9e2 (b:49e2)
 	jr z, .loop2
 	ld b, a
 	ld a, c
+	call TMHM_GetAlpha
 	ld [wd265], a
 	push hl
 	push de
@@ -287,9 +300,33 @@ CountTMsHMs: ; 2cb2a (b:4b2a)
 	ld b, wTMsHMsEnd - wTMsHMs
 	jp CountSetBits
 
+TMHM_CheckSorting:
+; Returns z if we should sort TMs numerically, nz if alphabetically
+	push hl
+	ld hl, wTMHMPocketCursor
+	bit 7, [hl]
+	pop hl
+	ret
+
+TMHM_GetAlpha:
+; If alpha mode is enabled, convert ordered alphanumeric to internal TM number
+	call TMHM_CheckSorting
+	ret z
+	push bc
+	ld c, a
+	ld b, 0
+	dec c
+	ld hl, TMHMListAlpha
+	add hl, bc
+	ld a, [hl]
+	pop bc
+	inc a
+	ret
+
 InnerCheckTMHM:
 	and a
 	ret z
+	call TMHM_GetAlpha
 	push bc
 	push de
 	dec a
@@ -458,6 +495,96 @@ TeachTMHM: ; 2c867
 	ret
 ; 2c8bf (b:48bf)
 
+_GetTMHMName::
+; Get TM/HM name by item id wNamedObjectIndexBuffer.
+	push hl
+	push de
+	push bc
+	ld a, [wNamedObjectIndexBuffer]
+	push af
+
+; TM/HM prefix
+	cp HM01
+	push af
+	jr c, .TM
+
+	ld hl, .HMText
+	ld bc, .HMTextEnd - .HMText
+	jr .asm_34a1
+
+.TM:
+	ld hl, .TMText
+	ld bc, .TMTextEnd - .TMText
+
+.asm_34a1
+	ld de, wStringBuffer1
+	rst CopyBytes
+
+; TM/HM number
+	ld a, [wNamedObjectIndexBuffer]
+	ld c, a
+
+; HM numbers start from 51, not 1
+	pop af
+	ld a, c
+	jr c, .asm_34b9
+	sub NUM_TMS
+.asm_34b9
+	inc a
+
+; Divide and mod by 10 to get the top and bottom digits respectively
+	ld b, "0"
+.mod10
+	sub 10
+	jr c, .asm_34c2
+	inc b
+	jr .mod10
+.asm_34c2
+	add 10
+
+	push af
+	ld a, b
+	ld [de], a
+	inc de
+	pop af
+
+	ld b, "0"
+	add b
+	ld [de], a
+
+; End the string
+	inc de
+	ld a, "@"
+	ld [de], a
+
+	pop af
+	ld [wNamedObjectIndexBuffer], a
+	pop bc
+	pop de
+	pop hl
+	ld de, wStringBuffer1
+	ret
+
+.TMText:
+	db "TM"
+.TMTextEnd:
+	db "@"
+
+.HMText:
+	db "HM"
+.HMTextEnd:
+	db "@"
+; 34df
+
+IsHM::
+	cp HM01
+	jr c, .NotHM
+	scf
+	ret
+.NotHM:
+	and a
+	ret
+
 KnowsMove: ; f9ea
 	ld a, MON_MOVES
 	call GetPartyParamLocation
@@ -507,3 +634,5 @@ Text_TMHMNotCompatible: ; 0x2c8ce
 	text_jump UnknownText_0x1c03c2
 	db "@"
 ; 0x2c8d3
+
+INCLUDE "data/moves/tmhm_order.asm"

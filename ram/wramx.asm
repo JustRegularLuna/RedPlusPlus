@@ -105,9 +105,9 @@ wMoveScreenMoves:: ds 55
 
 NEXTU
 ; miscellaneous
-wTempDayOfWeek::
-wUnusedApricorns:: ds 1
-	ds 2
+wTempDayOfWeek:: ds 1
+
+	ds 2 ; unused
 
 wStartFlypoint:: ds 1
 wEndFlypoint:: ds 1
@@ -250,7 +250,6 @@ wPartyMenuCursor:: ds 1
 wItemsPocketCursor:: ds 1
 wMedicinePocketCursor:: ds 1
 wBallsPocketCursor:: ds 1
-wTMHMPocketCursor:: ds 1
 wBerriesPocketCursor:: ds 1
 wKeyItemsPocketCursor:: ds 1
 
@@ -259,7 +258,6 @@ wPartyMenuScrollPosition:: ds 1 ; unused
 wItemsPocketScrollPosition:: ds 1
 wMedicinePocketScrollPosition:: ds 1
 wBallsPocketScrollPosition:: ds 1
-wTMHMPocketScrollPosition:: ds 1
 wBerriesPocketScrollPosition:: ds 1
 wKeyItemsPocketScrollPosition:: ds 1
 
@@ -391,7 +389,9 @@ wSpinning:: ds 1
 
 wBGMapAnchor:: ds 2
 
-	ds 64 ; unused
+wOldTileset:: ds 1
+
+	ds 63 ; unused
 
 wOverworldMapAnchor:: ds 2
 wMetatileStandingY:: ds 1
@@ -457,8 +457,11 @@ wEastConnectionStripXOffset:: ds 1
 wEastConnectionWindow:: ds 2
 
 wTilesetHeader::
-wTilesetGFXBank:: ds 1
-wTilesetGFXAddress:: ds 2
+wTilesetGFX0Bank:: ds 1
+wTilesetGFX0Address:: ds 2
+wTilesetGFX1Bank:: ds 1
+wTilesetGFX1Address:: ds 2
+wTilesetGFX2Bank:: ds 1
 wTilesetGFX2Address:: ds 2
 wTilesetBlocksBank:: ds 1
 wTilesetBlocksAddress:: ds 2
@@ -637,9 +640,10 @@ SECTION "Enemy Party", WRAMX
 wPokedexShowPointerAddr:: ds 2
 wPokedexShowPointerBank:: ds 1
 
-wFailedToFlee:: ds 1
+wEnemyFleeing:: ds 1
 wNumFleeAttempts:: ds 1
 
+wLinkOTExchangeStart::
 wOTPlayerName:: ds NAME_LENGTH
 wOTPlayerID:: ds 2
 wOTPartyCount:: ds 1
@@ -673,6 +677,7 @@ wOTPartyMonsEnd::
 wOTPartyMonOT:: ds NAME_LENGTH * PARTY_LENGTH
 wOTPartyMonNicknames:: ds PKMN_NAME_LENGTH * PARTY_LENGTH
 wOTPartyDataEnd::
+wLinkOTExchangeEnd::
 
 wBattleAction:: ds 1
 wLinkBattleSentAction:: ds 1
@@ -928,7 +933,10 @@ wPokegearFlags::
 wRadioTuningKnob:: ds 1
 wLastDexMode:: ds 1
 
-	ds 2 ; unused
+wTMHMPocketScrollPosition:: ds 1
+wTMHMPocketCursor::
+; beyond the cursor position, bit 7 also controls how TMs are sorted
+	ds 1
 
 wPlayerState:: ds 1
 
@@ -1384,11 +1392,6 @@ SECTION "Attributes", WRAMX
 wDecompressedAttributes:: ds 256 * 16
 
 
-SECTION "Music Player Notes", WRAMX
-
-wMPNotes:: ds 4 * 256
-
-
 SECTION "GBC Video", WRAMX
 
 ; 8 4-color palettes
@@ -1477,10 +1480,13 @@ wBattleAnimEnd::
 wSurfWaveBGEffectEnd::
 
 
-SECTION "Collisions", WRAMX
+SECTION "Collisions or Music Player", WRAMX
 
+UNION
 wDecompressedCollisions:: ds 256 * 4
-
+NEXTU
+wMPNotes:: ds 4 * 256
+ENDU
 
 SECTION "Scratch RAM", WRAMX
 

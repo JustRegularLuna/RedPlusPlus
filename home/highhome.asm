@@ -17,7 +17,7 @@ HBlankCopy2bpp::
 	ld h, d ; exchange hl and de
 	ld l, e
 ; vram to vram copy check:
-	cp VTiles0 / $100 ; is source in RAM?
+	cp vTiles0 / $100 ; is source in RAM?
 	jr c, .innerLoop
 	cp SRAM_Begin / $100 ; is source past VRAM
 	jr nc, .innerLoop
@@ -66,7 +66,7 @@ HBlankCopy2bpp::
 
 IsInArray::
 ; Find value a for every de bytes in array hl.
-; Return index in b and carry if found.
+; Return index in b, and carry if found.
 	ld b, 0
 	ld c, a
 .loop

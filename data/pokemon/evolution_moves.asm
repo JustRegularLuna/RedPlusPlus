@@ -173,6 +173,7 @@ EvolutionMoves::
 	db NO_MOVE      ; PICHU
 	db NO_MOVE      ; MUNCHLAX
 	db TRI_ATTACK   ; MAGNEZONE
+	db OUTRAGE      ; RHYPERIOR
 	db NO_MOVE      ; TANGROWTH
 	db NO_MOVE      ; NATU
 	db AIR_SLASH    ; XATU
@@ -180,7 +181,6 @@ EvolutionMoves::
 	db NO_MOVE      ; FLAAFFY
 	db THUNDERPUNCH ; AMPHAROS
 	db PETAL_DANCE  ; BELLOSSOM
-	db OUTRAGE      ; RHYPERIOR
 	db NO_MOVE      ; SUDOWOODO
 	db GIGA_DRAIN   ; POLITOED
 	db NO_MOVE      ; SUNKERN
@@ -213,13 +213,14 @@ endc
 	db NO_MOVE      ; GRANBULL
 	db NO_MOVE      ; QWILFISH
 	db METAL_CLAW   ; SCIZOR
+	db NO_MOVE      ; SHUCKLE
 	db NO_MOVE      ; HERACROSS
 	db NO_MOVE      ; SNEASEL
 	db NO_MOVE      ; WEAVILE
 	db NO_MOVE      ; TEDDIURSA
 	db NO_MOVE      ; URSARING
 	db NO_MOVE      ; SLUGMA
-	db DRAGON_DANCE ; MAGCARGO
+	db SHELL_SMASH  ; MAGCARGO
 	db NO_MOVE      ; SWINUB
 	db FURY_STRIKES ; PILOSWINE
 	db NO_MOVE      ; MAMOSWINE

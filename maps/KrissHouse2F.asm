@@ -68,11 +68,13 @@ if DEF(DEBUG)
 	setflag ENGINE_EXPN_CARD
 	; pokedex
 	setflag ENGINE_POKEDEX
-	setflag ENGINE_UNOWN_DEX
+;	setflag ENGINE_UNOWN_DEX
 	; all key items
 x = 0
 rept NUM_KEY_ITEMS
+if x != MACHINE_PART
 	givekeyitem x
+endc
 x = x + 1
 endr
 	; all tms+hms
@@ -81,12 +83,43 @@ rept NUM_TMS + NUM_HMS
 	givetmhm x
 x = x + 1
 endr
-	; all items
-x = 1
-rept NUM_ITEMS
-	giveitem x, 99
-x = x + 1
-endr
+	; useful items
+	giveitem MASTER_BALL, 99
+	giveitem MAX_POTION, 99
+	giveitem FULL_RESTORE, 99
+	giveitem MAX_REVIVE, 99
+	giveitem MAX_ELIXIR, 99
+	giveitem HP_UP, 99
+	giveitem PROTEIN, 99
+	giveitem IRON, 99
+	giveitem CARBOS, 99
+	giveitem CALCIUM, 99
+	giveitem ZINC, 99
+	giveitem RARE_CANDY, 99
+	giveitem PP_UP, 99
+	giveitem PP_MAX, 99
+	giveitem SACRED_ASH, 99
+	giveitem MAX_REPEL, 99
+	giveitem MAX_REPEL, 99
+	giveitem ESCAPE_ROPE, 99
+	giveitem ABILITY_CAP, 99
+	giveitem LEAF_STONE, 99
+	giveitem FIRE_STONE, 99
+	giveitem WATER_STONE, 99
+	giveitem THUNDERSTONE, 99
+	giveitem MOON_STONE, 99
+	giveitem SUN_STONE, 99
+	giveitem DUSK_STONE, 99
+	giveitem DAWN_STONE, 99
+	giveitem SHINY_STONE, 99
+	giveitem EXP_SHARE, 99
+	giveitem LEFTOVERS, 99
+	giveitem BIG_NUGGET, 99
+	giveitem SILVER_LEAF, 99
+	giveitem GOLD_LEAF, 99
+	giveitem BOTTLE_CAP, 99
+	giveitem MULCH, 99
+	giveitem MINT, 99
 	; all decorations
 x = EVENT_DECO_BED_1
 rept EVENT_DECO_BIG_LAPRAS_DOLL - EVENT_DECO_BED_1 + 1
@@ -153,6 +186,7 @@ endr
 	setflag ENGINE_FLYPOINT_ECRUTEAK
 	setflag ENGINE_FLYPOINT_OLIVINE
 	setflag ENGINE_FLYPOINT_CIANWOOD
+	setflag ENGINE_FLYPOINT_YELLOW_FOREST
 	setflag ENGINE_FLYPOINT_MAHOGANY
 	setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
 	setflag ENGINE_FLYPOINT_BLACKTHORN
@@ -163,6 +197,7 @@ endr
 	setflag ENGINE_FLYPOINT_PEWTER
 	setflag ENGINE_FLYPOINT_MT_MOON
 	setflag ENGINE_FLYPOINT_CERULEAN
+	setflag ENGINE_FLYPOINT_CERULEAN_CAPE
 	setflag ENGINE_FLYPOINT_VERMILION
 	setflag ENGINE_FLYPOINT_CELADON
 	setflag ENGINE_FLYPOINT_ROCK_TUNNEL
@@ -176,7 +211,7 @@ endr
 	setflag ENGINE_CREDITS_SKIP
 	setflag ENGINE_HAVE_SHINY_CHARM
 	; good party
-	givepoke MEWTWO, 100, ARMOR_SUIT
+	givepoke MEWTWO, 100, BRIGHTPOWDER
 	loadvar wPartyMon1EVs+0, 252
 	loadvar wPartyMon1EVs+1, 252
 	loadvar wPartyMon1EVs+2, 252
@@ -238,15 +273,15 @@ endr
 
 FillPokedex:
 	ld a, 1
-	ld [wUnlockedUnownMode], a
+;	ld [wUnlockedUnownMode], a
 	ld [wFirstUnownSeen], a
 	ld [wFirstMagikarpSeen], a
-	ld hl, wUnownDex
-	ld a, 1
-rept NUM_UNOWN
-	ld [hli], a
-	inc a
-endr
+;	ld hl, wUnownDex
+;	ld a, 1
+;rept NUM_UNOWN
+;	ld [hli], a
+;	inc a
+;endr
 	ld hl, wPokedexSeen
 	call .Fill
 	ld hl, wPokedexCaught

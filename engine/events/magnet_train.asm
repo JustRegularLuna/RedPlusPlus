@@ -1,5 +1,5 @@
 Special_MagnetTrain: ; 8cc04
-	ld a, [wScriptVar]
+	ld a, [hScriptVar]
 	and a
 	jr nz, .ToGoldenrod
 	ld a, 1 ; forwards
@@ -138,20 +138,20 @@ MagntTrain_LoadGFX_PlayMusic: ; 8ccc9
 	farcall GetPlayerIcon
 	pop af
 	ld [rSVBK], a
-	ld hl, VTiles0
+	ld hl, vTiles0
 	ld c, 4
 	push bc
 	push de
-	call Request2bpp
+	call Request2bppInWRA6
 	pop de
 	pop bc
 	ld hl, 12 tiles
 	add hl, de
 	ld d, h
 	ld e, l
-	ld hl, VTiles0 tile $04
+	ld hl, vTiles0 tile $04
 	ld c, 4
-	call Request2bpp
+	call Request2bppInWRA6
 	call MagnetTrain_InitLYOverrides
 	ld hl, wJumptableIndex
 	xor a

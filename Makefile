@@ -53,7 +53,7 @@ PYTHON = python2
 CC     = gcc
 RM     = rm -f
 GFX    = $(PYTHON) gfx.py
-MD5    = md5sum
+MD5    = md5sum -b
 
 LZ            = tools/lzcomp
 SCAN_INCLUDES = tools/scan_includes
@@ -74,7 +74,7 @@ data/maps/map_data.o \
 data/text/common.o \
 data/tilesets.o \
 engine/credits.o \
-engine/events.o \
+engine/overworld/events.o \
 gfx/pics.o \
 gfx/sprites.o
 
@@ -133,6 +133,18 @@ $(sorted_sym): crystal ; tail -n +3 $(NAME)-$(VERSION).sym | sort -o $@
 %.gbc: $(crystal_obj)
 	$(RGBDS_DIR)rgblink $(RGBLINK_FLAGS) -o $@ $^
 	$(RGBDS_DIR)rgbfix $(RGBFIX_FLAGS) $@
+
+%.2bpp.vram0: %.2bpp
+# take the first 128 tiles (= 8192 px = 16384 bits = 2048 bytes)
+	head -c 2048 $< > $@
+
+%.2bpp.vram1: %.2bpp
+# skip the first 128 tiles, take the next 128 tiles
+	tail -c +2049 $< | head -c 2048 > $@
+
+%.2bpp.vram2: %.2bpp
+# skip the first 256 tiles
+	tail -c +4097 $< > $@
 
 %.2bpp: %.png ; $(GFX) 2bpp $<
 %.1bpp: %.png ; $(GFX) 1bpp $<

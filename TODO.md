@@ -25,8 +25,6 @@ The final, non-beta 3.0 release should include all of these.
 * Variety Channel with daily unique music
 * Separate radio channels for March and Lullaby, available every day
 * Send gift Pokémon to the PC if the party is full
-* Get better Wonder Trade items at higher levels
-* Play Pokémon cry+animation when they escape a Poké Ball (from Prism)
 * Generate Battle Tower Pokémon
 * Generate random team for Psychic Inver
 * Wild Ghosts and the SilphScope2
@@ -88,19 +86,6 @@ Shamouti Island:
 * Shamouti Island
 * Shamouti Hotel (haunted room) (EVENT_SAW_HAUNTED_ROOM)
 * Shamouti Restaurant (works like Seven Stars Restaurant) (different subset of all trainers every day of the week)
-
-
-### Move animations
-
-Refer to [B/W animations with sound effects](https://www.dropbox.com/s/003d1w32gm60fdt/Pok%C3%A9mon%20Black%20%26%20White%20-%20All%20move%20animations%20with%20SOUND%20EFFECTS%20ONLY%21.mp4?dl=0).
-
-* Roost
-* Venoshock
-
-
-### Music player
-
-* Use the UnlockedMusic flag_array to hide unheard song titles
 
 
 ### Optimizations
@@ -210,16 +195,11 @@ Some of these may never be added; they're just suggestions.
 * Restore [unused memory game](http://iimarck.us/i/memory/) ([more info](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver#Unused_Memory_Game))
 * Restore the Pikachu's Beach minigame
 * Level ranges for wild Pokémon, instead of single values
-* Optional scaled experience formula from Gen V and Gen VII (port from [pokecrystal-speedchoice](https://github.com/Dabomstew/pokecrystal-speedchoice))
 * Use the News Machine for something (Mystery Gift?)
 * Championship title defense like in Gen VII (challengers: rival, Lyra, Lance, Prof.Oak, Prof.Elm, Clair, Blue, Eusine, Kimono Girl Naoko, Palmer, Lorelei, Agatha, Steven, Cynthia, Caitlin, and Lawrence)
 * Phone uses a bitfield to allow storing all numbers
 * Make more trainers rematchable
-* Catch rate formula from Gen III
-* Port critical captures from Prism
 * Allow evolution during battle
-* Itemfinder makes you face towards the item
-* Itemfinder beeps N times for an item N steps away
 * Battle [En and Madoka](http://bulbapedia.bulbagarden.net/wiki/The_Legendary_Rotation_Battle!) somewhere (Trainer House after catching the legendary trios, different trainer each day?)
    * Madoka:
    * She entered this tournament with new Pokémon! Which Pokémon wil she use?

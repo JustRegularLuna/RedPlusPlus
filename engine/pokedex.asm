@@ -769,7 +769,7 @@ Pokedex_UpdateUnownMode: ; 405df (10:45df)
 	ld [wJumptableIndex], a
 	call DelayFrame
 	ld hl, PokedexLZ
-	ld de, VTiles2 tile $31
+	ld de, vTiles2 tile $31
 	lb bc, BANK(PokedexLZ), $34
 	jp DecompressRequest2bpp
 
@@ -1060,9 +1060,9 @@ Pokedex_DrawMainScreenBG: ; 4074c (10:474c)
 	jp Pokedex_PlaceFrontpicTopLeftCorner
 
 String_SEEN: ; 407e1
-	db "S","e","e","n", $ff
+	db "Seen", $ff
 String_OWN: ; 407e6
-	db "O","w","n", $ff
+	db "Own", $ff
 String_SELECT_OPTION: ; 407ea
 ;	db $3b, $48, $49, $4a, $44, $45, $46, $47 ; SELECT > OPTION
 	db $3b, $41, $42, $43, $44, $45, $46, $47
@@ -1120,17 +1120,17 @@ Pokedex_DrawDexEntryScreenBG: ; 407fd
 	jp Pokedex_PlaceFrontpicTopLeftCorner
 
 .HeightImperial: ; 40852
-	db "Ht  ?′??″", $ff ; HT  ?'??"
+	rawchar "Ht  ?′??″", $ff ; HT  ?'??"
 .WeightImperial: ; 4085c
-	db "Wt   ???lb", $ff ; WT   ???lb
+	rawchar "Wt   ???lb", $ff ; WT   ???lb
 .HeightMetric:
-	db "Ht   ???m", $ff ; HT   ???m"
+	rawchar "Ht   ???m", $ff ; HT   ???m"
 .WeightMetric:
-	db "Wt   ???kg", $ff ; WT   ???kg
+	rawchar "Wt   ???kg", $ff ; WT   ???kg
 .MenuItems: ; 40867
-	db $3b, " ","P","a","g","e"," A","r","e","a"," ","C","r","y"," "," "," "," "," ", $ff
+	rawchar $3b, " Page Area Cry     ", $ff
 .MenuItemsShinyCharm:
-	db $3b, " ","P","a","g","e"," A","r","e","a"," ","C","r","y"," ","S","h","n","y", $ff
+	rawchar $3b, " Page Area Cry Shny", $ff
 
 Pokedex_DrawDexEntryScreenRightEdge: ; 1de247
 	ld a, [hBGMapAddress]
@@ -1186,7 +1186,7 @@ Pokedex_DrawOptionScreenBG: ; 4087c (10:487c)
 	jp PlaceString
 
 .Title: ; 408b2
-	db $3b, " ","O","p","t","i","o","n"," ", $3c, $ff
+	rawchar $3b, " Option ", $3c, $ff
 
 .Modes: ; 408bd
 	db   "Johto Mode"
@@ -1219,10 +1219,10 @@ Pokedex_DrawSearchScreenBG: ; 408f0 (10:48f0)
 	jp PlaceString
 
 .Title: ; 4092a
-	db $3b, " ","S","e","a","r","c","h"," ", $3c, $ff
+	rawchar $3b, " Search ", $3c, $ff
 
 .TypeLeftRightArrows: ; 40935
-	db $3d, " "," "," "," "," "," "," "," ","▷", $ff
+	db $3d, "        ▷", $ff
 
 .Types: ; 40940
 	db   "Type1"
@@ -2377,7 +2377,7 @@ Pokedex_LoadSelectedMonTiles: ; 4143b
 	ld a, [wd265]
 	ld [wCurPartySpecies], a
 	call GetBaseData
-	ld de, VTiles2
+	ld de, vTiles2
 	predef GetFrontpic
 	ret
 
@@ -2387,7 +2387,7 @@ Pokedex_LoadSelectedMonTiles: ; 4143b
 	ld hl, QuestionMarkLZ
 	ld de, sScratch
 	call Decompress
-	ld hl, VTiles2
+	ld hl, vTiles2
 	ld de, sScratch
 	ld c, 7 * 7
 	ld a, [hROMBank]
@@ -2421,24 +2421,24 @@ Pokedex_LoadAnyFootprint: ; 4147b
 
 	ld e, l
 	ld d, h
-	ld hl, VTiles2 tile $65
+	ld hl, vTiles2 tile $65
 	lb bc, BANK(Footprints), 4
 	jp Request1bpp
 
 Pokedex_LoadGFX:
 	call DisableLCD
 Pokedex_LoadGFX2:
-	ld hl, VTiles2
+	ld hl, vTiles2
 	ld bc, $31 tiles
 	xor a
 	call ByteFill
 	call LoadStandardFont
 	call LoadFontsExtra
 	ld hl, PokedexLZ
-	ld de, VTiles2 tile $31
+	ld de, vTiles2 tile $31
 	call Decompress
 	ld hl, PokedexSlowpokeLZ
-	ld de, VTiles0
+	ld de, vTiles0
 	call Decompress
 	ld a, 6
 	call SkipMusic
@@ -2465,7 +2465,7 @@ Pokedex_LoadUnownFrontpicTiles: ; 41a58 (10:5a58)
 	ld a, UNOWN
 	ld [wCurPartySpecies], a
 	call GetBaseData
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	predef GetFrontpic
 	pop af
 	ld [wCurForm], a
@@ -2532,7 +2532,7 @@ NewPokedexEntry: ; fb877
 	call EnableLCD
 	call ApplyTilemapInVBlank
 	call GetBaseData
-	ld de, VTiles2
+	ld de, vTiles2
 	predef GetFrontpic
 	ld a, CGB_POKEDEX
 	call Pokedex_GetCGBLayout
@@ -2545,11 +2545,10 @@ NewPokedexEntry: ; fb877
 	call LoadStandardFont
 	call Pokedex_PlaceFrontpicTopLeftCorner
 	call ApplyAttrAndTilemapInVBlank
-	farcall GetEnemyMonPersonality
-	ld a, [hli]
-	ld [wTempMonPersonality], a
-	ld a, [hl]
-	ld [wTempMonPersonality + 1], a
+	farcall GetEnemyMonDVs
+	ld de, wTempMonDVs
+	ld bc, 5
+	rst CopyBytes
 	ld b, CGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	jp SetPalettes
@@ -2580,5 +2579,5 @@ QuestionMarkLZ: ; 1de0e1
 INCBIN "gfx/pokedex/question_mark.2bpp.lz"
 
 Footprints: ; f9434
-INCLUDE "gfx/footprints.asm"
+INCLUDE "gfx/pokemon/footprints.asm"
 ; fb434

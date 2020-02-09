@@ -62,7 +62,6 @@ XScissor:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 SuckerPunch:
@@ -84,7 +83,6 @@ SuckerPunch:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 LeechHit:
@@ -112,7 +110,6 @@ DrainPunch:
 	draintarget
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 UTurn:
@@ -135,7 +132,6 @@ SwitchHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	switchout
 	endmove
 
@@ -167,11 +163,10 @@ FuryStrikes:
 	checkfaint
 	criticaltext
 	cleartext
-	supereffectivelooptext
 	postfainteffects
 	posthiteffects
+	supereffectivetext
 	endloop
-	pickpocket
 	raisesub
 	endmove
 
@@ -199,7 +194,6 @@ BraveBird:
 	recoil
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 FlinchHit:
@@ -234,7 +228,6 @@ ZenHeadbutt:
 	postfainteffects
 	posthiteffects
 	flinchtarget
-	pickpocket
 	endmove
 
 PoisonHit:
@@ -261,7 +254,6 @@ GunkShot:
 	postfainteffects
 	posthiteffects
 	poisontarget
-	pickpocket
 	endmove
 
 BurnHit:
@@ -288,7 +280,6 @@ FireBlast:
 	postfainteffects
 	posthiteffects
 	burntarget
-	pickpocket
 	endmove
 
 ParalyzeHit:
@@ -318,7 +309,6 @@ ZapCannon:
 	postfainteffects
 	posthiteffects
 	paralyzetarget
-	pickpocket
 	endmove
 
 BodySlam:
@@ -342,7 +332,6 @@ BodySlam:
 	postfainteffects
 	posthiteffects
 	paralyzetarget
-	pickpocket
 	endmove
 
 SleepHit:
@@ -365,7 +354,6 @@ SleepHit:
 	postfainteffects
 	posthiteffects
 	sleeptarget
-	pickpocket
 	endmove
 
 FreezeHit:
@@ -391,7 +379,6 @@ Blizzard:
 	postfainteffects
 	posthiteffects
 	freezetarget
-	pickpocket
 	endmove
 
 ConfuseHit:
@@ -420,7 +407,6 @@ Hurricane:
 	postfainteffects
 	posthiteffects
 	confusetarget
-	pickpocket
 	endmove
 
 AttackUpHit:
@@ -443,9 +429,7 @@ MetalClaw:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	attackup
-	statupmessage
-	pickpocket
+	raisestathit ATTACK
 	endmove
 
 DefenseUpHit:
@@ -468,9 +452,7 @@ SteelWing:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	defenseup
-	statupmessage
-	pickpocket
+	raisestathit DEFENSE
 	endmove
 
 AllUpHit:
@@ -493,8 +475,11 @@ Ancientpower:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	allstatsup
-	pickpocket
+	raisestathit ATTACK
+	raisestathit DEFENSE
+	raisestathit SPEED
+	raisestathit SP_ATTACK
+	raisestathit SP_DEFENSE
 	endmove
 
 AttackDownHit:
@@ -517,9 +502,7 @@ AuroraBeam:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	attackdown
-	statdownmessage
-	pickpocket
+	loweroppstathit ATTACK
 	endmove
 
 DefenseDownHit:
@@ -543,9 +526,7 @@ IronTail:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	defensedown
-	statdownmessage
-	pickpocket
+	loweroppstathit DEFENSE
 	endmove
 
 BrickBreak:
@@ -569,9 +550,6 @@ BrickBreak:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	defensedown
-	statdownmessage
-	pickpocket
 	endmove
 
 SpeedDownHit:
@@ -596,9 +574,7 @@ Bulldoze:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	speeddown
-	statdownmessage
-	pickpocket
+	loweroppstathit SPEED
 	endmove
 
 SpecialAttackDownHit:
@@ -621,9 +597,7 @@ Moonblast:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	specialattackdown
-	statdownmessage
-	pickpocket
+	loweroppstathit SP_ATTACK
 	endmove
 
 SpecialDefenseDownHit:
@@ -653,9 +627,7 @@ ShadowBall:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	specialdefensedown
-	statdownmessage
-	pickpocket
+	loweroppstathit SP_DEFENSE
 	endmove
 
 AccuracyDownHit:
@@ -679,9 +651,7 @@ Octazooka:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	accuracydown
-	statdownmessage
-	pickpocket
+	loweroppstathit ACCURACY
 	endmove
 
 EvasionDownHit:
@@ -703,9 +673,7 @@ EvasionDownHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	evasiondown
-	statdownmessage
-	pickpocket
+	loweroppstathit EVASION
 	endmove
 
 CloseCombat:
@@ -725,10 +693,10 @@ CloseCombat:
 	checkfaint
 	criticaltext
 	supereffectivetext
-	closecombat
+	lowerstat DEFENSE
+	lowerstat SP_DEFENSE
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 StaticDamage:
@@ -749,7 +717,6 @@ SuperFang:
 	checkfaint
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 DoPoison:
@@ -851,72 +818,42 @@ AttackUp:
 	checkobedience
 	usedmovetext
 	doturn
-	attackup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat ATTACK
 	endmove
 
 DefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
-	defenseup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat DEFENSE
 	endmove
 
 SpeedUp:
 	checkobedience
 	usedmovetext
 	doturn
-	speedup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat SPEED
 	endmove
 
 SpecialAttackUp:
 	checkobedience
 	usedmovetext
 	doturn
-	specialattackup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat SP_ATTACK
 	endmove
 
 SpecialDefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
-	specialdefenseup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat SP_DEFENSE
 	endmove
 
 AccuracyUp:
 	checkobedience
 	usedmovetext
 	doturn
-	accuracyup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat ACCURACY
 	endmove
 
 EvasionUp:
@@ -924,13 +861,7 @@ DoubleTeam:
 	checkobedience
 	usedmovetext
 	doturn
-	lowersub
-	evasionup
-	statupanim
-	lowersubnoanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat EVASION
 	endmove
 
 CriticalUp:
@@ -946,12 +877,7 @@ SwordsDance:
 	checkobedience
 	usedmovetext
 	doturn
-	attackup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | ATTACK
 	endmove
 
 DefenseUp2:
@@ -959,12 +885,7 @@ Barrier:
 	checkobedience
 	usedmovetext
 	doturn
-	defenseup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | DEFENSE
 	endmove
 
 SpeedUp2:
@@ -972,12 +893,7 @@ Agility:
 	checkobedience
 	usedmovetext
 	doturn
-	speedup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | SPEED
 	endmove
 
 SpecialAttackUp2:
@@ -985,12 +901,7 @@ NastyPlot:
 	checkobedience
 	usedmovetext
 	doturn
-	specialattackup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | SP_ATTACK
 	endmove
 
 SpecialDefenseUp2:
@@ -998,24 +909,14 @@ Amnesia:
 	checkobedience
 	usedmovetext
 	doturn
-	specialdefenseup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | SP_DEFENSE
 	endmove
 
 AccuracyUp2:
 	checkobedience
 	usedmovetext
 	doturn
-	accuracyup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | ACCURACY
 	endmove
 
 EvasionUp2:
@@ -1023,26 +924,23 @@ Minimize:
 	checkobedience
 	usedmovetext
 	doturn
-	evasionup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | EVASION
 	endmove
 
 BulkUp:
 	checkobedience
 	usedmovetext
 	doturn
-	bulkup
+	forceraisestat ATTACK
+	forceraisestat DEFENSE
 	endmove
 
 CalmMind:
 	checkobedience
 	usedmovetext
 	doturn
-	calmmind
+	forceraisestat SP_ATTACK
+	forceraisestat SP_DEFENSE
 	endmove
 
 Growth:
@@ -1056,14 +954,16 @@ DragonDance:
 	checkobedience
 	usedmovetext
 	doturn
-	dragondance
+	forceraisestat ATTACK
+	forceraisestat SPEED
 	endmove
 
 HoneClaws:
 	checkobedience
 	usedmovetext
 	doturn
-	honeclaws
+	forceraisestat ATTACK
+	forceraisestat ACCURACY
 	endmove
 
 AttackDown:
@@ -1074,12 +974,7 @@ Growl:
 	hastarget
 	checkhit
 	bounceback
-	attackdown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat ATTACK
 	endmove
 
 DefenseDown:
@@ -1090,12 +985,7 @@ Leer:
 	hastarget
 	checkhit
 	bounceback
-	defensedown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat DEFENSE
 	endmove
 
 SpeedDown:
@@ -1106,12 +996,7 @@ StringShot:
 	hastarget
 	checkhit
 	bounceback
-	speeddown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat SPEED
 	endmove
 
 SpecialAttackDown:
@@ -1121,12 +1006,7 @@ SpecialAttackDown:
 	hastarget
 	checkhit
 	bounceback
-	specialattackdown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat SP_ATTACK
 	endmove
 
 SpecialDefenseDown:
@@ -1136,12 +1016,7 @@ SpecialDefenseDown:
 	hastarget
 	checkhit
 	bounceback
-	specialdefensedown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat SP_DEFENSE
 	endmove
 
 AccuracyDown:
@@ -1153,12 +1028,7 @@ Flash:
 	hastarget
 	checkhit
 	bounceback
-	accuracydown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat ACCURACY
 	endmove
 
 EvasionDown:
@@ -1168,12 +1038,7 @@ EvasionDown:
 	hastarget
 	checkhit
 	bounceback
-	evasiondown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat EVASION
 	endmove
 
 AttackDown2:
@@ -1184,12 +1049,7 @@ Charm:
 	hastarget
 	checkhit
 	bounceback
-	attackdown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | ATTACK
 	endmove
 
 DefenseDown2:
@@ -1200,12 +1060,7 @@ Screech:
 	hastarget
 	checkhit
 	bounceback
-	defensedown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | DEFENSE
 	endmove
 
 SpeedDown2:
@@ -1216,12 +1071,7 @@ ScaryFace:
 	hastarget
 	checkhit
 	bounceback
-	speeddown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | SPEED
 	endmove
 
 SpecialAttackDown2:
@@ -1231,12 +1081,7 @@ SpecialAttackDown2:
 	hastarget
 	checkhit
 	bounceback
-	specialattackdown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | SP_ATTACK
 	endmove
 
 SpecialDefenseDown2:
@@ -1246,12 +1091,7 @@ SpecialDefenseDown2:
 	hastarget
 	checkhit
 	bounceback
-	specialdefensedown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | SP_DEFENSE
 	endmove
 
 AccuracyDown2:
@@ -1261,12 +1101,7 @@ AccuracyDown2:
 	hastarget
 	checkhit
 	bounceback
-	accuracydown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | ACCURACY
 	endmove
 
 EvasionDown2:
@@ -1276,12 +1111,18 @@ EvasionDown2:
 	hastarget
 	checkhit
 	bounceback
-	evasiondown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | EVASION
+	endmove
+
+ShellSmash:
+	checkobedience
+	usedmovetext
+	doturn
+	forcelowerstat DEFENSE
+	forcelowerstat SP_DEFENSE
+	forceraisestat $10 | ATTACK
+	forceraisestat $10 | SP_ATTACK
+	forceraisestat $10 | SPEED
 	endmove
 
 ResetStats:
@@ -1317,9 +1158,7 @@ TrickRoom:
 
 Heal:
 Recover:
-Softboiled:
 Rest:
-MilkDrink:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1358,7 +1197,6 @@ Outrage:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 Trap:
@@ -1385,7 +1223,6 @@ Whirlpool:
 	postfainteffects
 	posthiteffects
 	traptarget
-	pickpocket
 	endmove
 
 Explosion:
@@ -1428,7 +1265,6 @@ DreamEater:
 	eatdream
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 Roar:
@@ -1484,7 +1320,6 @@ PayDay:
 	payday
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 KnockOff:
@@ -1507,7 +1342,6 @@ KnockOff:
 	knockoff
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 BugBite:
@@ -1551,7 +1385,6 @@ TriAttack:
 	postfainteffects
 	posthiteffects
 	tristatuschance
-	pickpocket
 	endmove
 
 Transform:
@@ -1589,7 +1422,6 @@ GigaImpact:
 	rechargenextturn
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 Rage:
@@ -1601,8 +1433,8 @@ Rage:
 	damagestats
 	damagecalc
 	stab
-	checkhit
 	damagevariation
+	checkhit
 	hittarget
 	failuretext
 	rage
@@ -1611,7 +1443,6 @@ Rage:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 Metronome:
@@ -1716,7 +1547,6 @@ Reversal:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 FalseSwipe:
@@ -1738,7 +1568,6 @@ FalseSwipe:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 HealBell:
@@ -1748,48 +1577,19 @@ HealBell:
 	healbell
 	endmove
 
-TripleKick:
-	checkobedience
-	usedmovetext
-	doturn
-	hastarget
-	startloop
-	lowersub
-	checkhit
-	critical
-	damagestats
-	damagecalc
-	triplekick
-	stab
-	damagevariation
-	clearmissdamage
-	hittargetnosub
-	failuretext
-	checkfaint
-	criticaltext
-	cleartext
-	supereffectivelooptext
-	postfainteffects
-	posthiteffects
-	kickcounter
-	endloop
-	raisesub
-	pickpocket
-	endmove
-
 Thief:
 	checkobedience
 	usedmovetext
 	doturn
 	hastarget
 	critical
+	; Yes, thief is 100% but this makes Sheer Force and Substitute be handled correctly
 	effectchance
 	damagestats
 	damagecalc
 	stab
 	damagevariation
 	checkhit
-	; Yes, thief is 100% but this makes Sheer Force and Substitute be handled correctly
 	hittarget
 	failuretext
 	checkfaint
@@ -1798,7 +1598,6 @@ Thief:
 	postfainteffects
 	posthiteffects
 	thief
-	pickpocket
 	endmove
 
 MeanLook:
@@ -1831,7 +1630,6 @@ FlameWheel:
 	postfainteffects
 	posthiteffects
 	burntarget
-	pickpocket
 	endmove
 
 Curse:
@@ -1924,7 +1722,6 @@ Rollout:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 Swagger:
@@ -1934,16 +1731,7 @@ Swagger:
 	hastarget
 	checkhit
 	bounceback
-	switchturn
-	attackup2
-	switchturn
-	lowersub
-	statupanim
-	raisesub
-	failuretext
-	switchturn
-	statupmessage
-	switchturn
+	raiseoppstat $10 | ATTACK
 	confusetarget
 	endmove
 
@@ -1971,7 +1759,6 @@ ConditionalBoostHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 Attract:
@@ -2003,7 +1790,6 @@ Return:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 SacredFire:
@@ -2027,7 +1813,6 @@ SacredFire:
 	postfainteffects
 	posthiteffects
 	burntarget
-	pickpocket
 	endmove
 
 Magnitude:
@@ -2050,7 +1835,6 @@ Magnitude:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 GyroBall:
@@ -2072,7 +1856,6 @@ GyroBall:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 LowKick:
@@ -2094,7 +1877,6 @@ LowKick:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 BatonPass:
@@ -2123,7 +1905,6 @@ Pursuit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 RapidSpin:
@@ -2145,7 +1926,6 @@ RapidSpin:
 	clearhazards
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 HealingLight:
@@ -2173,7 +1953,6 @@ HiddenPower:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 RainDance:
@@ -2201,7 +1980,7 @@ MirrorCoat:
 	checkobedience
 	usedmovetext
 	doturn
-	mirrorcoat
+	counter
 	hittarget
 	failuretext
 	checkfaint
@@ -2229,7 +2008,6 @@ Earthquake:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 FutureSight:
@@ -2238,14 +2016,18 @@ FutureSight:
 	usedmovetext
 	doturn
 	hastarget
+	futuresight
+	critical
 	damagestats
 	damagecalc
-	futuresight
-	damagevariation ; skip here if last turn
+	stab
+	damagevariation
 	checkhit
 	hittargetnosub
 	failuretext
 	checkfaint
+	criticaltext
+	supereffectivetext
 	postfainteffects
 	posthiteffects
 	endmove
@@ -2269,7 +2051,6 @@ Gust:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 Stomp:
@@ -2293,7 +2074,6 @@ Stomp:
 	postfainteffects
 	posthiteffects
 	flinchtarget
-	pickpocket
 	endmove
 
 SolarBeam:
@@ -2317,7 +2097,6 @@ SolarBeam:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 Thunder:
@@ -2329,10 +2108,10 @@ Thunder:
 	effectchance
 	damagestats
 	damagecalc
-	thunderaccuracy
-	checkhit
 	stab
 	damagevariation
+	thunderaccuracy
+	checkhit
 	hittarget
 	failuretext
 	checkfaint
@@ -2341,7 +2120,6 @@ Thunder:
 	postfainteffects
 	posthiteffects
 	paralyzetarget
-	pickpocket
 	endmove
 
 Teleport:
@@ -2373,20 +2151,14 @@ Dig:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
-	pickpocket
 	endmove
 
 DefenseCurl:
 	checkobedience
 	usedmovetext
 	doturn
-	defenseup
+	forceraisestat DEFENSE
 	curl
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
 	endmove
 
 FlareBlitz:
@@ -2411,5 +2183,4 @@ FlareBlitz:
 	postfainteffects
 	posthiteffects
 	burntarget
-	pickpocket
 	endmove
