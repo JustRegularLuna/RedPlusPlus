@@ -14,7 +14,7 @@ GenericJohtoTilesetGFX::
 INCBIN "gfx/tilesets/new_bark_cherrygrove.2bpp.generic.lz"
 
 GenericExtraGFX::
-INCBIN "gfx/tilesets/extra/generic.2bpp.lz"
+INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.extra.lz"
 
 
 SECTION "Tileset Data 1", ROMX
