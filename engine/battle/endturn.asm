@@ -36,7 +36,7 @@ HandleBetweenTurnEffects:
 	ret c
 	; taunt
 	call HandleEncore
-	; disable (currently not at endturn)
+	call HandleDisable
 	; magnet rise
 	; telekinesis
 	; heal block
@@ -675,40 +675,80 @@ HandleEncore:
 	call HasUserFainted
 	ret z
 
-	ld a, BATTLE_VARS_SUBSTATUS2
-	call GetBattleVarAddr
-	bit SUBSTATUS_ENCORED, [hl]
-	ret z
-
 	ld a, [hBattleTurn]
 	and a
 	ld hl, wPlayerEncoreCount
 	jr z, .got_encore_count
 	ld hl, wEnemyEncoreCount
 .got_encore_count
-	dec [hl]
-	jr z, .end_encore
-
-	ld a, [hBattleTurn]
+	; We don't want to delete the move index, which is used for Choice-locking
+	ld a, [hl]
 	and a
-	ld hl, wBattleMonPP
-	jr z, .got_pp
-	ld hl, wEnemyMonPP
-.got_pp
-	ld a, [wCurMoveNum]
+	ret z ; no move used yet, and no encore
+	ld b, a
+
+	push bc
+	push hl
+	call .do_encore
+	pop hl
+	pop bc
+	ld a, [hl]
+	and a
+	ret nz ; encore not yet finished
+	ld a, b
+	and $f0
+	ld [hl], a
+	ret
+
+.do_encore
+	ld a, [hl]
+	and $f
+	ret z
+	push hl
+	ld a, [hl]
+	swap a
+	and $f
+	dec a
 	ld c, a
 	ld b, 0
+	ld hl, wBattleMonPP
+	call GetUserMonAttr
 	add hl, bc
 	ld a, [hl]
 	and $3f
+	pop hl
+	ld de, BattleText_UserEncoreEnded
+	jr z, EndturnEncoreDisable_End
+EndturnEncoreDisable:
+	ld a, [hl]
+	and $f
+	ret z
+	dec [hl]
+	ld a, [hl]
+	and $f
 	ret nz
-
-.end_encore
-	ld a, BATTLE_VARS_SUBSTATUS2
-	call GetBattleVarAddr
-	res SUBSTATUS_ENCORED, [hl]
-	ld hl, BattleText_UserEncoreEnded
+EndturnEncoreDisable_End:
+	ld [hl], 0
+	ld h, d
+	ld l, e
 	jp StdBattleTextBox
+
+HandleDisable:
+	call SetFastestTurn
+	call .do_it
+	call SwitchTurn
+
+.do_it
+	call HasUserFainted
+	ret z
+	ld de, DisabledNoMoreText
+
+	ld a, [hBattleTurn]
+	and a
+	ld hl, wPlayerDisableCount
+	jr z, EndturnEncoreDisable
+	ld hl, wEnemyDisableCount
+	jr EndturnEncoreDisable
 
 HandlePerishSong:
 	call SetFastestTurn
@@ -897,8 +937,12 @@ HandleStatusOrbs:
 	call SwitchTurn
 
 .do_it
-	call HasUserFainted
+	call HasOpponentFainted
 	ret z
+
+	; bypass ineffectiveness checks to avoid residual results from last attack
+	ld a, $10
+	ld [wTypeModifier], a
 
 	farcall GetOpponentItemAfterUnnerve
 	ld a, b

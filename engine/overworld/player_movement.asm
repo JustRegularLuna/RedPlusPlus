@@ -660,7 +660,19 @@ DoPlayerMovement:: ; 80000
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+if DEF(DEBUG)
+	ld a, [hJoyDown]
+	and A_BUTTON | B_BUTTON
+	cp A_BUTTON | B_BUTTON
 	ld a, [hl]
+	jr nz, .no_wtw
+	cp COLL_VOID
+	jr z, .no_wtw
+	ld a, COLL_LADDER
+.no_wtw
+else
+	ld a, [hl]
+endc
 	ld [wWalkingTile], a
 	ret
 
@@ -828,7 +840,7 @@ DoPlayerMovement:: ; 80000
 ; Return 0 if tile a is land. Otherwise, return carry.
 
 	call GetTileCollision
-	and a ; cp LANDTILE
+	and a ; cp LAND_TILE
 	ret z
 	scf
 	ret
@@ -839,14 +851,11 @@ DoPlayerMovement:: ; 80000
 ; Otherwise, return carry.
 
 	call GetTileCollision
-	cp WATERTILE
-	jr z, .Water
-
 ; Can walk back onto land from water.
-	and a ; cp LANDTILE
+	and a ; cp LAND_TILE
 	jr z, .Land
-
-	jr .Neither
+	dec a ; cp WATER_TILE
+	jr nz, .Neither
 
 .Water:
 	xor a
@@ -903,10 +912,10 @@ CheckStandingOnIce:: ; 80404
 
 CheckSpinning::
 	ld a, [wPlayerStandingTile]
-	call CheckSpinTile
-	jr z, .start_spin
 	cp COLL_STOP_SPIN
 	jr z, .stop_spin
+	call CheckSpinTile
+	jr z, .start_spin
 	ld a, [wSpinning]
 	and a
 	ret
@@ -921,6 +930,22 @@ CheckSpinning::
 .stop_spin
 	xor a
 	ld [wSpinning], a
+	ret
+
+CheckSpinTile:
+	cp COLL_SPIN_UP
+	ld c, UP
+	ret z
+	cp COLL_SPIN_DOWN
+	ld c, DOWN
+	ret z
+	cp COLL_SPIN_LEFT
+	ld c, LEFT
+	ret z
+	cp COLL_SPIN_RIGHT
+	ld c, RIGHT
+	ret z
+	ld c, STANDING
 	ret
 
 StopPlayerForEvent:: ; 80422

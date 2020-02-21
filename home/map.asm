@@ -1677,7 +1677,7 @@ GetMovementPermissions:: ; 2914
 	ret nz
 	ld a, [wTileLeft]
 	and 7
-	cp $0
+	and a
 	jr z, .ok_left
 	cp $4
 	jr z, .ok_left
@@ -1764,13 +1764,6 @@ GetCoordTile:: ; 2a3c
 	inc hl
 
 .nocarry2
-if DEF(DEBUG)
-	ld a, [hJoyDown]
-	and A_BUTTON | B_BUTTON
-	cp A_BUTTON | B_BUTTON
-	ld a, COLL_LADDER
-	ret z
-endc
 	ld a, BANK(wDecompressedCollisions)
 	jp GetFarWRAMByte
 ; 2a66

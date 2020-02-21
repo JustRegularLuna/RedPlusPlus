@@ -150,8 +150,8 @@ hRequestedVTileSource  EQU $fff5
 hTmpd              EQU $fff7
 hTmpe              EQU $fff8
 
-hFastMusicUpdate   EQU $fff9
+hBattlePalFadeMode EQU $fff8
 
-hRequestOpaque1bpp EQU $fffb
+hRequestOpaque1bpp EQU $fff9
 
 HRAM_END EQU $ffff

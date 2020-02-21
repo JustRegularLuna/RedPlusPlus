@@ -25,8 +25,15 @@ SECTION "timer", ROM0
 	scf
 	reti
 
+GetMemCGBLayout::
+	ld b, CGB_RAM
+GetCGBLayout::
+	farjp LoadCGBLayout
+
 SECTION "serial", ROM0
 	jp Serial
+
+	ds 5 ; free space
 
 SECTION "joypad", ROM0
 	reti

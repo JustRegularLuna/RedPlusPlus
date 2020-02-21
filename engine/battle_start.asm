@@ -1,5 +1,29 @@
-Predef_StartBattle: ; 8c20f
-	call .InitGFX
+DoBattleTransition:
+	farcall ReanchorBGMap_NoOAMUpdate
+	call UpdateSprites
+	call DelayFrame
+
+	ld de, .TrainerBattlePokeballTile
+	ld hl, vTiles0 tile "<PHONE>"
+	lb bc, BANK(.TrainerBattlePokeballTile), 1
+	call Request2bpp
+
+	ld b, 3
+	call SafeCopyTilemapAtOnce
+
+	ld a, SCREEN_HEIGHT_PX
+	ld [hWY], a
+	call DelayFrame
+
+	xor a
+	ld [hBGMapMode], a
+	ld hl, wJumptableIndex
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+
+	call WipeLYOverrides
+
 	ld a, [rBGP]
 	ld [wBGP], a
 	ld a, [rOBP0]
@@ -11,17 +35,17 @@ Predef_StartBattle: ; 8c20f
 	ld a, [hl]
 	push af
 	ld [hl], 3
-	jr .handleLoop
 
+	jr .handleLoop
 .loop
-	call FlashyTransitionToBattle
+	ld hl, .BattleTransitionScenes
+	rst JumpTable
 	call DelayFrame
 .handleLoop
 	ld a, [wJumptableIndex]
 	bit 7, a
 	jr z, .loop
 
-.done
 	ld a, [rSVBK]
 	push af
 	ld a, BANK(wUnknBGPals)
@@ -50,6 +74,7 @@ endc
 	ld [wBGP], a
 	call DmgToCgbBGPals
 	call DelayFrame
+
 	xor a
 	ld [hLCDCPointer], a
 	ld [hLYOverrideStart], a
@@ -60,57 +85,16 @@ endc
 	ld [rSVBK], a
 	ld hl, rIE
 	res LCD_STAT, [hl]
+
 	pop af
 	ld [hVBlank], a
 	jp DelayFrame
 ; 8c26d
 
-.InitGFX: ; 8c26d
-	farcall ReanchorBGMap_NoOAMUpdate
-	call UpdateSprites
-	call DelayFrame
-	call .LoadPokeballTiles
-	ld b, 3
-	call SafeCopyTilemapAtOnce
-	ld a, SCREEN_HEIGHT_PX
-	ld [hWY], a
-	call DelayFrame
-	xor a
-	ld [hBGMapMode], a
-	ld hl, wJumptableIndex
-	xor a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-	jp WipeLYOverrides
-; 8c2a0
+.TrainerBattlePokeballTile:
+INCBIN "gfx/overworld/trainer_battle_pokeball_tile.2bpp"
 
-.LoadPokeballTiles: ; 8c2a0
-; Load the tiles used in the Pokeball Graphic that fills the screen
-; at the start of every Trainer battle.
-	ld a, $1
-	ld [rVBK], a
-	ld de, .TrainerBattlePokeballTiles
-	ld hl, vTiles3 tile $fe
-	lb bc, BANK(.TrainerBattlePokeballTiles), 2
-	call Request2bpp
-	xor a
-	ld [rVBK], a
-	ld de, .TrainerBattlePokeballTiles
-	ld hl, vTiles0 tile $fe
-	lb bc, BANK(.TrainerBattlePokeballTiles), 2
-	jp Request2bpp
-; 8c2f4
-
-.TrainerBattlePokeballTiles: ; 8c2f4
-INCBIN "gfx/overworld/trainer_battle_pokeball_tiles.2bpp"
-
-
-FlashyTransitionToBattle: ; 8c314
-	jumptable .dw, wJumptableIndex
-; 8c323
-
-.dw ; 8c323 (23:4323)
+.BattleTransitionScenes ; 8c323 (23:4323)
 	dw StartTrainerBattle_DetermineWhichAnimation ; 00
 
 	; Animation 1: cave
@@ -232,7 +216,10 @@ StartTrainerBattle_SetUpBGMap: ; 8c3a1 (23:43a1)
 	ret
 
 StartTrainerBattle_Flash: ; 8c3ab (23:43ab)
-	call StartBattleFlash
+	ld a, [hBattlePalFadeMode]
+	ld [wPalFadeMode], a
+	ld c, 10
+	call DoFadePalettes
 	jp StartTrainerBattle_NextScene
 
 StartTrainerBattle_SetUpForWavyOutro: ; 8c3e8 (23:43e8)
@@ -306,7 +293,7 @@ StartTrainerBattle_SetUpForSpinOutro: ; 8c43d (23:443d)
 spintable_entry: MACRO
 	db \1
 	dw .wedge\2
-	dwcoord \3, \4
+	dw \4 * SCREEN_WIDTH + \3 + wAttrMap
 ENDM
 
 ; quadrants
@@ -331,7 +318,7 @@ endr
 	jr z, .end
 	ld [wcf65], a
 	call .load
-	ld a, $1
+	ld a, $2
 	ld [hBGMapMode], a
 	ld hl, wcf64
 	ld a, [hl]
@@ -410,7 +397,10 @@ endr
 	ld c, a
 	inc de
 .loop1
-	ld [hl], $ff
+	ld a, [hl]
+	and $ff ^ OAM_PALETTE
+	or PAL_BG_TEXT ; black
+	ld [hl], a
 	ld a, [wcf65]
 	bit 0, a
 	jr z, .leftside
@@ -470,7 +460,7 @@ StartTrainerBattle_SetUpForRandomScatterOutro: ; 8c578 (23:4578)
 	call StartTrainerBattle_NextScene
 	ld a, $10
 	ld [wcf64], a
-	ld a, $1
+	ld a, $2
 	ld [hBGMapMode], a
 	ret
 
@@ -490,7 +480,7 @@ StartTrainerBattle_SpeckleToBlack: ; 8c58f (23:458f)
 	ret
 
 .done
-	ld a, $1
+	ld a, $2
 	ld [hBGMapMode], a
 	call DelayFrame
 	call DelayFrame
@@ -514,7 +504,7 @@ StartTrainerBattle_SpeckleToBlack: ; 8c58f (23:458f)
 	jr nc, .x_loop
 	ld c, a
 
-	hlcoord 0, -1
+	hlcoord 0, -1, wAttrMap
 	ld de, SCREEN_WIDTH
 	inc b
 
@@ -527,18 +517,58 @@ StartTrainerBattle_SpeckleToBlack: ; 8c58f (23:458f)
 ; If the tile has already been blacked out,
 ; sample a new tile
 	ld a, [hl]
-	cp $ff
+	and OAM_PALETTE
+	cp PAL_BG_TEXT ; black
 	jr z, .y_loop
-	ld [hl], $ff
+	ld a, [hl]
+	and $ff ^ OAM_PALETTE
+	or PAL_BG_TEXT ; black
+	ld [hl], a
 	ret
 
 StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
-	ld a, [wOtherTrainerClass]
-	and a
-	jp z, .nextscene ; don't need to be here if wild
-
 	xor a
 	ld [hBGMapMode], a
+
+	ld a, [wOtherTrainerClass]
+	and a
+	jr nz, .trainer_battle
+
+	; wild battles just need PAL_BG_TEXT to be black, and do flash PAL_BG_GRAY
+	ld a, PALFADE_BG | PALFADE_FLASH
+	ld [hBattlePalFadeMode], a
+	ld a, [rSVBK]
+	push af
+	ld a, $5 ; WRAM5 = palettes
+	ld [rSVBK], a
+	ld hl, .black_pals
+	ld de, wUnknBGPals palette PAL_BG_TEXT ; black
+	call .copy
+	pop af
+	ld [rSVBK], a
+	ld a, $1
+	ld [hCGBPalUpdate], a
+	call DelayFrame
+	call CopyTilemapAtOnce
+	jp StartTrainerBattle_NextScene
+
+.trainer_battle
+	; don't flash PAL_BG_GRAY, the poke ball palette
+	ld a, PALFADE_BG | PALFADE_FLASH | PALFADE_SKIP_FIRST
+	ld [hBattlePalFadeMode], a
+
+	; use PAL_BG_RED for the whole flashing screen
+	hlcoord 0, 0, wAttrMap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+.loop1
+	ld a, [hl]
+	and $ff ^ OAM_PALETTE
+	or PAL_BG_RED ; flashing overworld
+	ld [hli], a
+	dec bc
+	ld a, b
+	or c
+	jr nz, .loop1
 
 	ld a, [wOtherTrainerClass]
 	ld de, 1
@@ -563,20 +593,16 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	jr z, .done
 	sla a
 	jr nc, .no_load
-	ld [hl], $fe
 
-	push af
+	; poke ball tile; use PAL_BG_GRAY, bank 0, no flips or priority
+	ld [hl], "<PHONE>"
 	push hl
 	push bc
 	ld bc, wAttrMap - wTileMap
 	add hl, bc
-	ld a, [hl]
-	and $ff ^ (X_FLIP | Y_FLIP | BEHIND_BG)
-	or PAL_BG_TEXT
-	ld [hl], a
+	ld [hl], PAL_BG_GRAY ; poke ball
 	pop bc
 	pop hl
-	pop af
 
 .no_load
 	inc hl
@@ -631,14 +657,12 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	ld [hCGBPalUpdate], a
 	call DelayFrame
 	call CopyTilemapAtOnce
-
-.nextscene ; 8c673 (23:4673)
 	jp StartTrainerBattle_NextScene
 
 .copypals ; 8c677 (23:4677)
-	ld de, wUnknBGPals palette PAL_BG_GRAY
+	ld de, wUnknBGPals palette PAL_BG_GRAY ; red poke ball, doesn't flash
 	call .copy
-	ld de, wUnknBGPals palette PAL_BG_RED
+	ld de, wUnknBGPals palette PAL_BG_RED ; flashing overworld
 	call .copy
 	ld de, wUnknBGPals palette PAL_BG_GREEN
 	call .copy
@@ -650,11 +674,12 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	call .copy
 	ld de, wUnknBGPals palette PAL_BG_ROOF
 	call .copy
-	ld de, wUnknBGPals palette PAL_BG_TEXT
-	call .copy
 	ld de, wUnknOBPals palette PAL_OW_ROCK
 	call .copy
 	ld de, wUnknOBPals palette PAL_OW_TREE
+	call .copy
+	ld hl, .black_pals
+	ld de, wUnknBGPals palette PAL_BG_TEXT ; black
 
 .copy ; 8c698 (23:4698)
 	push hl
@@ -725,6 +750,34 @@ else
 	MONOCHROME_RGB_FOUR
 endc
 
+.black_pals
+if !DEF(MONOCHROME)
+; morn
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+; day
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+; nite
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+; dark
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+else
+rept 16
+	RGB_MONOCHROME_BLACK
+endr
+endc
+
 PokeBallTransition:
 	db %00000011, %11000000
 	db %00001111, %11110000
@@ -791,7 +844,7 @@ WipeLYOverrides: ; 8c6d8
 zoombox: MACRO
 ; width, height, start y, start x
 	db \1, \2
-	dwcoord \3, \4
+	dw \4 * SCREEN_WIDTH + \3 + wAttrMap
 ENDM
 
 StartTrainerBattle_ZoomToBlack: ; 8c768 (23:4768)
@@ -816,7 +869,7 @@ StartTrainerBattle_ZoomToBlack: ; 8c768 (23:4768)
 	xor a
 	ld [hBGMapMode], a
 	call .Copy
-	call ApplyTilemapInVBlank
+	call ApplyAttrmapInVBlank
 	jr .loop
 
 .done
@@ -839,11 +892,13 @@ StartTrainerBattle_ZoomToBlack: ; 8c768 (23:4768)
 ; 8c7b7
 
 .Copy: ; 8c7b7 (23:47b7)
-	ld a, $ff
 .row
 	push bc
 	push hl
 .col
+	ld a, [hl]
+	and $ff ^ OAM_PALETTE
+	or PAL_BG_TEXT ; black
 	ld [hli], a
 	dec c
 	jr nz, .col

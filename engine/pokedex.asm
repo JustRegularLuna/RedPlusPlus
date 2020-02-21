@@ -422,7 +422,7 @@ DexEntryScreen_MenuActionJumptable: ; 402f2
 	call Pokedex_GetSelectedMon
 	ld a, [wDexCurrentLocation]
 	ld e, a
-	predef _Area
+	farcall Pokedex_GetArea
 	call Pokedex_BlackOutBG
 	call DelayFrame
 	xor a
@@ -1457,6 +1457,7 @@ Pokedex_FillBackgroundColor2: ; 40aa6
 Pokedex_PlaceFrontpicTopLeftCorner: ; 40ab2
 	hlcoord 1, 1
 Pokedex_PlaceFrontpicAtHL: ; 40ab5
+	ld de, SCREEN_WIDTH
 	xor a
 	ld b, $7
 .row
@@ -1469,7 +1470,6 @@ Pokedex_PlaceFrontpicAtHL: ; 40ab5
 	dec c
 	jr nz, .col
 	pop hl
-	ld de, SCREEN_WIDTH
 	add hl, de
 	pop af
 	inc a
@@ -2378,8 +2378,7 @@ Pokedex_LoadSelectedMonTiles: ; 4143b
 	ld [wCurPartySpecies], a
 	call GetBaseData
 	ld de, vTiles2
-	predef GetFrontpic
-	ret
+	predef_jump GetFrontpic
 
 .QuestionMark:
 	ld a, BANK(sScratch)

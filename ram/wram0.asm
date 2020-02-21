@@ -108,9 +108,21 @@ wMusicEnd::
 
 SECTION "WRAM 0", WRAM0
 
-	ds 2
+wMonType:: ds 1
 
-wTilesetDataAddress:: ds 2
+wCurSpecies::
+wCurMove::
+wCreditsSpawn::
+	ds 1
+
+wNamedObjectTypeBuffer:: ds 1
+
+wCurrentOptionsPage:: ds 1
+
+wBattleTowerBattleEnded::
+	ds 1
+
+wCurForm:: ds 1
 
 wRNGState:: ds 4
 wRNGCumulativeDividerPlus:: ds 2
@@ -132,8 +144,6 @@ wPrinterConnectionOpen:: ds 1
 wPrinterOpcode:: ds 1
 wLastDexEntry:: ds 1
 
-	ds 1
-
 wPreviousLandmark:: ds 1
 wCurrentLandmark:: ds 1
 wLandmarkSignTimer:: ds 2
@@ -142,8 +152,6 @@ wLinkMode::
 ; 1 link battle
 ; 4 mobile battle
 	ds 1
-
-	ds 1 ; unused
 
 wPlayerNextMovement:: ds 1
 wPlayerMovement:: ds 1
@@ -280,10 +288,24 @@ wSprites::
 wSpritesEnd::
 
 
-SECTION "Tilemap", WRAM0
+SECTION "Tilemap and Attrmap", WRAM0
 
-wTileMap:: ds SCREEN_WIDTH * SCREEN_HEIGHT ; 20x18 grid of 8x8 tiles
+wTileMap::
+; 20x18 grid of 8x8 tiles
+	ds SCREEN_WIDTH * SCREEN_HEIGHT
 wTileMapEnd::
+
+wAttrMap::
+; 20x18 grid of palettes for 8x8 tiles
+; read horizontally from the top row
+; bit 7: priority
+; bit 6: y flip
+; bit 5: x flip
+; bit 4: pal # (non-cgb)
+; bit 3: vram bank (cgb only)
+; bit 2-0: pal # (cgb only)
+	ds SCREEN_WIDTH * SCREEN_HEIGHT
+wAttrMapEnd::
 
 
 SECTION "Battle", WRAM0
@@ -426,7 +448,7 @@ wPlayerRolloutCount:: ds 1
 wPlayerConfuseCount:: ds 1
 wPlayerToxicCount:: ds 1
 wPlayerDisableCount:: ds 1
-wPlayerEncoreCount:: ds 1
+wPlayerEncoreCount:: ds 1 ; also for choice-locking
 wPlayerPerishCount:: ds 1
 wPlayerProtectCount:: ds 1
 	ds 1
@@ -536,8 +558,7 @@ wSafariMonEating:: ds 1
 
 wAlreadyDisobeyed:: ds 1
 
-wDisabledMove:: ds 1
-wEnemyDisabledMove:: ds 1
+	ds 2 ; unused
 
 wWhichMonFaintedFirst:: ds 1
 
@@ -771,7 +792,7 @@ SECTION "Overworld Map", WRAM0
 
 UNION
 ; overworld map
-wOverworldMap:: ds 1300
+wOverworldMap:: ds $580 ; large enough for 45x20 NavelRockInside.ablk; (45+6)x(20+6) = 1326 < 1408
 wOverworldMapEnd::
 
 NEXTU
@@ -838,32 +859,22 @@ wBGMapBuffer:: ds 48
 wBGMapPalBuffer:: ds 48
 wBGMapBufferPtrs:: ds 48 ; 24 bg map addresses (16x8 tiles)
 
-wCreditsPos:: ds 2
-wCreditsTimer:: ds 1
-
 wMemCGBLayout:: ds 1
 
+UNION
+wCreditsPos:: ds 2
+wCreditsTimer:: ds 1
+wCopyingSGBTileData:: ds 1
+wTrainerCardBadgePaletteAddr:: ds 2
+
+NEXTU
 wPlayerHPPal:: ds 1
 wEnemyHPPal:: ds 1
 wHPPals:: ds PARTY_LENGTH
 wCurHPPal:: ds 1
 wHPPalIndex:: ds 1
 
-wCopyingSGBTileData:: ds 1
-
-	ds 26
-
-wAttrMap::
-; 20x18 grid of palettes for 8x8 tiles
-; read horizontally from the top row
-; bit 7: priority
-; bit 6: y flip
-; bit 5: x flip
-; bit 4: pal # (non-cgb)
-; bit 3: vram bank (cgb only)
-; bit 2-0: pal # (cgb only)
-	ds SCREEN_WIDTH * SCREEN_HEIGHT
-wAttrMapEnd::
+ENDU
 
 wTileAnimBuffer:: ds 16
 
@@ -875,19 +886,7 @@ wcf57:: ds 4 ; TODO: replace with meaningful label
 wLinkTimeoutFrames:: ds 2
 wcf5d:: ds 2 ; TODO: replace with meaningful label
 
-wMonType:: ds 1
-
-wCurSpecies::
-wCurMove::
-wCreditsSpawn::
-	ds 1
-
-wNamedObjectTypeBuffer:: ds 1
-wCurrentOptionsPage:: ds 1
-
-wJumptableIndex::
-wBattleTowerBattleEnded::
-	ds 1
+wJumptableIndex:: ds 1 ; must come right before the union
 
 UNION
 ; intro and title data
@@ -935,10 +934,6 @@ wPalFadeMode::
 ; bit 3: partial fade (fade b of c frames)
 ; bit 4: skip the last palette
 	ds 1
-
-wCurForm:: ds 1
-
-wJustGotGSBall:: ds 1
 
 wWindowStackPointer:: ds 2
 wMenuJoypad:: ds 1
@@ -1019,8 +1014,6 @@ wMenuCursorX:: ds 1
 wCursorOffCharacter:: ds 1
 wCursorCurrentTile:: ds 2
 
-wTrainerCardBadgePaletteAddr:: ds 2
-
 wBTTempOTSprite:: ds 1
 
 wPendingOverworldGraphics:: ds 1
@@ -1081,8 +1074,6 @@ wTextBoxFrame::
 	ds 1
 
 wTextBoxFlags:: ds 1
-
-	ds 1
 
 wOptions2::
 ; bit 0-2: typeface

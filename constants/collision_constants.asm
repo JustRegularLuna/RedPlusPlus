@@ -1,10 +1,9 @@
-LANDTILE  EQU $0
-WATERTILE EQU $1
-WALLTILE  EQU $f
-
-TALK     EQU $1 << 4
+LAND_TILE  EQU %00 ; 'and a' checks
+WATER_TILE EQU %01 ; 'dec a' checks
+WALL_TILE  EQU %10
 
 COLL_FLOOR             EQU $00
+COLL_VOID              EQU $01
 COLL_WALL              EQU $07
 COLL_LONG_GRASS        EQU $14
 COLL_HEADBUTT_TREE     EQU $15

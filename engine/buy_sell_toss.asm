@@ -189,10 +189,6 @@ BuySellToss_UpdateQuantityDisplay: ; 25072
 	jp FarCall_de
 ; 25097
 
-ret_25097: ; 25097
-	ret
-; 25098
-
 DisplayPurchasePrice: ; 25098
 	call BuySell_MultiplyPrice
 	jp BuySell_DisplaySubtotal
@@ -272,7 +268,7 @@ TossItem_MenuDataHeader: ; 0x250ed
 	db $40 ; flags
 	db 09, 15 ; start coords
 	db 11, 19 ; end coords
-	dw ret_25097
+	dw DoNothing
 	db 0 ; default option
 ; 0x250f5
 

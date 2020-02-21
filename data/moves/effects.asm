@@ -1913,6 +1913,7 @@ RapidSpin:
 	doturn
 	hastarget
 	critical
+	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -1926,6 +1927,7 @@ RapidSpin:
 	clearhazards
 	postfainteffects
 	posthiteffects
+	raisestathit SPEED
 	endmove
 
 HealingLight:

@@ -19,7 +19,9 @@ TrainerCard: ; 25105
 	ld a, [hJoyLast]
 	and B_BUTTON
 	jr nz, .quit
-	call .RunJumptable
+	ld a, [wJumptableIndex]
+	ld hl, .Jumptable
+	rst JumpTable
 	call DelayFrame
 	jr .loop
 
@@ -66,9 +68,6 @@ TrainerCard: ; 25105
 	ld [hli], a
 	ld [hl], a
 	ret
-
-.RunJumptable: ; 2518e (9:518e)
-	jumptable .Jumptable, wJumptableIndex
 
 .Jumptable: ; 2519d (9:519d)
 	dw TrainerCard_Page1_LoadGFX
@@ -143,6 +142,7 @@ TrainerCard_Page2_LoadGFX: ; 251f4 (9:51f4)
 	lb bc, BANK(BadgeGFX), $2c
 	call Request2bpp
 
+	ld hl, TrainerCard_JohtoBadgesOAM
 	call TrainerCard_Page2_3_InitObjectsAndStrings
 	jp TrainerCard_IncrementJumptable
 
@@ -210,6 +210,7 @@ TrainerCard_Page3_LoadGFX: ; 2524c (9:524c)
 	lb bc, BANK(BadgeGFX2), $2c
 	call Request2bpp
 
+	ld hl, TrainerCard_KantoBadgesOAM
 	call TrainerCard_Page2_3_InitObjectsAndStrings
 	jp TrainerCard_IncrementJumptable
 
@@ -436,6 +437,7 @@ TrainerCard_Page1_PrintGameTime: ; 25415 (9:5415)
 	ret
 
 TrainerCard_Page2_3_InitObjectsAndStrings: ; 2536c (9:536c)
+	push hl
 	hlcoord 2, 10
 	ld a, $2f
 	ld c, 4
@@ -460,7 +462,7 @@ endr
 
 	xor a
 	ld [wcf64], a
-	ld hl, TrainerCard_KantoBadgesOAM
+	pop hl
 	jp TrainerCard_Page2_3_OAMUpdate
 
 TrainerCard_Page2_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
