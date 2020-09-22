@@ -8,20 +8,20 @@ ENDM
 SECTION "Generic Tileset Data", ROMX
 
 GenericKantoTilesetGFX::
-INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.generic.lz"
+INCBIN "gfx/tilesets/kanto.2bpp.lz"
 
 GenericJohtoTilesetGFX::
-INCBIN "gfx/tilesets/new_bark_cherrygrove.2bpp.generic.lz"
+INCBIN "gfx/tilesets/johto.2bpp.lz"
 
 GenericExtraGFX::
-INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.extra.lz"
+INCBIN "gfx/tilesets/extra.2bpp.trimfont.lz"
 
 
 SECTION "Tileset Data 1", ROMX
 
 Tileset00GFX::
 TilesetPalletCinnabarGFX::
-INCBIN "gfx/tilesets/pallet_cinnabar.2bpp.unique.lz"
+INCBIN "gfx/tilesets/pallet_cinnabar.kanto,extra.2bpp.lz"
 Tileset00Meta::
 TilesetPalletCinnabarMeta::
 INCBIN "data/tilesets/pallet_cinnabar_metatiles.bin"
@@ -36,7 +36,7 @@ INCBIN "data/tilesets/pallet_cinnabar_attributes.bin"
 SECTION "Tileset Data 2", ROMX
 
 TilesetViridianGFX::
-INCBIN "gfx/tilesets/viridian.2bpp.unique.lz"
+INCBIN "gfx/tilesets/viridian.kanto,extra.2bpp.lz"
 TilesetViridianMeta::
 INCBIN "data/tilesets/viridian_metatiles.bin"
 TilesetViridianColl::
@@ -48,7 +48,7 @@ INCBIN "data/tilesets/viridian_attributes.bin"
 SECTION "Tileset Data 3", ROMX
 
 TilesetPewterGFX::
-INCBIN "gfx/tilesets/pewter.2bpp.unique.lz"
+INCBIN "gfx/tilesets/pewter.kanto,extra.2bpp.lz"
 TilesetPewterMeta::
 INCBIN "data/tilesets/pewter_metatiles.bin"
 TilesetPewterColl::
@@ -60,7 +60,7 @@ INCBIN "data/tilesets/pewter_attributes.bin"
 SECTION "Tileset Data 4", ROMX
 
 TilesetCeruleanGFX::
-INCBIN "gfx/tilesets/cerulean.2bpp.unique.lz"
+INCBIN "gfx/tilesets/cerulean.kanto,extra.2bpp.lz"
 TilesetCeruleanMeta::
 INCBIN "data/tilesets/cerulean_metatiles.bin"
 TilesetCeruleanColl::
@@ -72,7 +72,7 @@ INCBIN "data/tilesets/cerulean_attributes.bin"
 SECTION "Tileset Data 5", ROMX
 
 TilesetVermilionGFX::
-INCBIN "gfx/tilesets/vermilion.2bpp.unique.lz"
+INCBIN "gfx/tilesets/vermilion.kanto,extra.2bpp.lz"
 TilesetVermilionMeta::
 INCBIN "data/tilesets/vermilion_metatiles.bin"
 TilesetVermilionColl::
@@ -84,7 +84,7 @@ INCBIN "data/tilesets/vermilion_attributes.bin"
 SECTION "Tileset Data 6", ROMX
 
 TilesetCeladonGFX::
-INCBIN "gfx/tilesets/celadon.2bpp.unique.lz"
+INCBIN "gfx/tilesets/celadon.kanto,extra.2bpp.lz"
 TilesetCeladonMeta::
 INCBIN "data/tilesets/celadon_metatiles.bin"
 TilesetCeladonColl::
@@ -96,7 +96,7 @@ INCBIN "data/tilesets/celadon_attributes.bin"
 SECTION "Tileset Data 7", ROMX
 
 TilesetLavenderGFX::
-INCBIN "gfx/tilesets/lavender.2bpp.unique.lz"
+INCBIN "gfx/tilesets/lavender.kanto,extra.2bpp.lz"
 TilesetLavenderMeta::
 INCBIN "data/tilesets/lavender_metatiles.bin"
 TilesetLavenderColl::
@@ -108,7 +108,7 @@ INCBIN "data/tilesets/lavender_attributes.bin"
 SECTION "Tileset Data 8", ROMX
 
 TilesetCyclingRoadGFX::
-INCBIN "gfx/tilesets/cycling_road.2bpp.unique.lz"
+INCBIN "gfx/tilesets/cycling_road.kanto,extra.2bpp.lz"
 TilesetCyclingRoadMeta::
 INCBIN "data/tilesets/cycling_road_metatiles.bin"
 TilesetCyclingRoadColl::
@@ -120,7 +120,7 @@ INCBIN "data/tilesets/cycling_road_attributes.bin"
 SECTION "Tileset Data 9", ROMX
 
 TilesetFuchsiaGFX::
-INCBIN "gfx/tilesets/fuchsia.2bpp.unique.lz"
+INCBIN "gfx/tilesets/fuchsia.kanto,extra.2bpp.lz"
 TilesetFuchsiaMeta::
 INCBIN "data/tilesets/fuchsia_metatiles.bin"
 TilesetFuchsiaColl::
@@ -144,7 +144,7 @@ INCBIN "data/tilesets/safari_zone_attributes.bin"
 SECTION "Tileset Data 11", ROMX
 
 TilesetSaffronGFX::
-INCBIN "gfx/tilesets/saffron.2bpp.unique.lz"
+INCBIN "gfx/tilesets/saffron.kanto,extra.2bpp.lz"
 TilesetSaffronMeta::
 INCBIN "data/tilesets/saffron_metatiles.bin"
 TilesetSaffronColl::
@@ -156,7 +156,7 @@ INCBIN "data/tilesets/saffron_attributes.bin"
 SECTION "Tileset Data 12", ROMX
 
 TilesetIndigoGFX::
-INCBIN "gfx/tilesets/indigo.2bpp.unique.lz"
+INCBIN "gfx/tilesets/indigo.kanto,extra.2bpp.lz"
 TilesetIndigoMeta::
 INCBIN "data/tilesets/indigo_metatiles.bin"
 TilesetIndigoColl::
@@ -168,7 +168,7 @@ INCBIN "data/tilesets/indigo_attributes.bin"
 SECTION "Tileset Data 13", ROMX
 
 TilesetForestGFX::
-INCBIN "gfx/tilesets/forest.2bpp.unique.lz"
+INCBIN "gfx/tilesets/forest.kanto,extra.2bpp.lz"
 TilesetForestMeta::
 INCBIN "data/tilesets/forest_metatiles.bin"
 TilesetForestColl::
@@ -180,7 +180,7 @@ INCBIN "data/tilesets/forest_attributes.bin"
 SECTION "Tileset Data 14", ROMX
 
 TilesetNewBarkCherrygroveGFX::
-INCBIN "gfx/tilesets/new_bark_cherrygrove.2bpp.unique.lz"
+INCBIN "gfx/tilesets/new_bark_cherrygrove.johto,extra.2bpp.lz"
 TilesetNewBarkCherrygroveMeta::
 INCBIN "data/tilesets/new_bark_cherrygrove_metatiles.bin"
 TilesetNewBarkCherrygroveColl::
@@ -192,7 +192,7 @@ INCBIN "data/tilesets/new_bark_cherrygrove_attributes.bin"
 SECTION "Tileset Data 15", ROMX
 
 TilesetVioletMahoganyGFX::
-INCBIN "gfx/tilesets/violet_mahogany.2bpp.unique.lz"
+INCBIN "gfx/tilesets/violet_mahogany.johto,extra.2bpp.lz"
 TilesetVioletMahoganyMeta::
 INCBIN "data/tilesets/violet_mahogany_metatiles.bin"
 TilesetVioletMahoganyColl::
@@ -204,7 +204,7 @@ INCBIN "data/tilesets/violet_mahogany_attributes.bin"
 SECTION "Tileset Data 16", ROMX
 
 TilesetAzaleaBlackthornGFX::
-INCBIN "gfx/tilesets/azalea_blackthorn.2bpp.unique.lz"
+INCBIN "gfx/tilesets/azalea_blackthorn.johto,extra.2bpp.lz"
 TilesetAzaleaBlackthornMeta::
 INCBIN "data/tilesets/azalea_blackthorn_metatiles.bin"
 TilesetAzaleaBlackthornColl::
@@ -216,7 +216,7 @@ INCBIN "data/tilesets/azalea_blackthorn_attributes.bin"
 SECTION "Tileset Data 17", ROMX
 
 TilesetGoldenrodGFX::
-INCBIN "gfx/tilesets/goldenrod.2bpp.unique.lz"
+INCBIN "gfx/tilesets/goldenrod.johto,extra.2bpp.lz"
 TilesetGoldenrodMeta::
 INCBIN "data/tilesets/goldenrod_metatiles.bin"
 TilesetGoldenrodColl::
@@ -228,7 +228,7 @@ INCBIN "data/tilesets/goldenrod_attributes.bin"
 SECTION "Tileset Data 18", ROMX
 
 TilesetEcruteakGFX::
-INCBIN "gfx/tilesets/ecruteak.2bpp.unique.lz"
+INCBIN "gfx/tilesets/ecruteak.johto,extra.2bpp.lz"
 TilesetEcruteakMeta::
 INCBIN "data/tilesets/ecruteak_metatiles.bin"
 TilesetEcruteakColl::
@@ -240,7 +240,7 @@ INCBIN "data/tilesets/ecruteak_attributes.bin"
 SECTION "Tileset Data 19", ROMX
 
 TilesetOlivineCianwoodGFX::
-INCBIN "gfx/tilesets/olivine_cianwood.2bpp.unique.lz"
+INCBIN "gfx/tilesets/olivine_cianwood.johto,extra.2bpp.lz"
 TilesetOlivineCianwoodMeta::
 INCBIN "data/tilesets/olivine_cianwood_metatiles.bin"
 TilesetOlivineCianwoodColl::
@@ -252,7 +252,7 @@ INCBIN "data/tilesets/olivine_cianwood_attributes.bin"
 SECTION "Tileset Data 20", ROMX
 
 TilesetBattleTowerOutsideGFX::
-INCBIN "gfx/tilesets/battle_tower_outside.2bpp.unique.lz"
+INCBIN "gfx/tilesets/battle_tower_outside.johto,extra.2bpp.lz"
 TilesetBattleTowerOutsideMeta::
 INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
 TilesetBattleTowerOutsideColl::
@@ -264,7 +264,7 @@ INCBIN "data/tilesets/battle_tower_outside_attributes.bin"
 SECTION "Tileset Data 21", ROMX
 
 TilesetNationalParkGFX::
-INCBIN "gfx/tilesets/national_park.2bpp.unique.lz"
+INCBIN "gfx/tilesets/national_park.johto,extra.2bpp.lz"
 TilesetNationalParkMeta::
 INCBIN "data/tilesets/national_park_metatiles.bin"
 TilesetNationalParkColl::
@@ -276,7 +276,7 @@ INCBIN "data/tilesets/national_park_attributes.bin"
 SECTION "Tileset Data 22", ROMX
 
 TilesetShrinesRuinsOutsideGFX::
-INCBIN "gfx/tilesets/shrines_ruins_outside.2bpp.unique.lz"
+INCBIN "gfx/tilesets/shrines_ruins_outside.johto,extra.2bpp.lz"
 TilesetShrinesRuinsOutsideMeta::
 INCBIN "data/tilesets/shrines_ruins_outside_metatiles.bin"
 TilesetShrinesRuinsOutsideColl::

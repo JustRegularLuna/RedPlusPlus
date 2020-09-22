@@ -113,17 +113,10 @@ $(roms_md5): rpp ; $(MD5) $(NAME)-$(VERSION).gbc > $@
 $(sorted_sym): rpp ; tail -n +3 $(NAME)-$(VERSION).sym | sort -o $@
 
 
-%.2bpp.generic: %.2bpp
-# take the first 144 tiles (= 9216 px = 18432 bits = 2304 bytes)
-	head -c 2304 $< > $@
-
-%.2bpp.unique: %.2bpp
-# skip the first 144 tiles, take the next 112 tiles (= 7168 px = 14336 bits = 1792 bytes)
-	tail -c +2305 $< | head -c 1792 > $@
-
-%.2bpp.extra: %.2bpp
-# skip the first 368 tiles, take the next 16 tiles (= 1024 px = 2048 bits = 256 bytes)
-	tail -c +5889 $< | head -c 256 > $@
+%.2bpp.trimfont: %.2bpp
+# skip the first 112 tiles (= 7168 px = 14336 bits = 1792 bytes),
+# take the next 16 tiles (= 1024 px = 2048 bits = 256 bytes)
+	tail -c +1793 $< | head -c 256 > $@
 
 
 %.o: dep = $(shell $(SCAN_INCLUDES) $(@D)/$*.asm)
