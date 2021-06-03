@@ -829,10 +829,10 @@ GetPokedexEntryBank:
 
 .PokedexEntryBanks:
 
-GLOBAL PokedexEntries1
-GLOBAL PokedexEntries2
-GLOBAL PokedexEntries3
-GLOBAL PokedexEntries4
+EXPORT PokedexEntries1
+EXPORT PokedexEntries2
+EXPORT PokedexEntries3
+EXPORT PokedexEntries4
 
 	db BANK(PokedexEntries1)
 	db BANK(PokedexEntries2)
@@ -959,8 +959,8 @@ LureBallMultiplier:
 
 MoonBallMultiplier:
 ; multiply catch rate by 4 if mon evolves with moon stone
-GLOBAL EvosAttacks
-GLOBAL EvosAttacksPointers
+EXPORT EvosAttacks
+EXPORT EvosAttacksPointers
 
 	push bc
 	ld a, [TempEnemyMonSpecies]

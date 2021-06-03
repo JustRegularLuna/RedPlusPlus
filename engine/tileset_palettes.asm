@@ -17,7 +17,7 @@ endc
 ; 49420
 
 LoadSpecialMapPalette: ; 494ac
-	GLOBAL GenericMart_BlockData
+	EXPORT GenericMart_BlockData
 	call GetMapHeaderTimeOfDayNybble
 	cp PALETTE_DARK
 	jr nz, .not_dark
@@ -80,8 +80,6 @@ LoadSpecialMapPalette: ; 494ac
 
 ; special cases for tilesets
 
-	cp TILESET_VIRIDIAN
-	jp z, .tileset_viridian
 	cp TILESET_NEW_BARK_CHERRYGROVE
 	jp z, .tileset_new_bark_cherrygrove
 	cp TILESET_VIOLET_MAHOGANY
@@ -147,16 +145,6 @@ LoadSpecialMapPalette: ; 494ac
 ; 494f2
 
 
-
-.tileset_viridian
-	ld a, [MapGroup]
-	cp GROUP_CERISE_ISLAND_WEST
-	jp nz, .do_nothing
-	ld a, [MapNumber]
-	cp MAP_CERISE_ISLAND_WEST
-	jp nz, .do_nothing
-	ld hl, CeriseIslandWestPalette
-	jp LoadEightTimeOfDayBGPalettes
 
 .tileset_new_bark_cherrygrove
 	ld a, [MapGroup]
@@ -1705,35 +1693,6 @@ endr
 	RGB_MONOCHROME_BLACK
 	MONOCHROME_RGB_FOUR_NIGHT
 	MONOCHROME_RGB_FOUR_NIGHT
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-endc
-
-CeriseIslandWestPalette:
-if DEF(NOIR)
-INCLUDE "gfx/tilesets/palettes/noir/cerise_island.pal"
-elif !DEF(MONOCHROME)
-INCLUDE "gfx/tilesets/palettes/cerise_island.pal"
-else
-rept 7
-	MONOCHROME_RGB_FOUR
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-rept 7
-	MONOCHROME_RGB_FOUR
-endr
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_WHITE
-	RGB_MONOCHROME_DARK
-	RGB_MONOCHROME_BLACK
-rept 7
-	MONOCHROME_RGB_FOUR_NIGHT
-endr
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_WHITE
 	RGB_MONOCHROME_DARK

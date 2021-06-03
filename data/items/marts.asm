@@ -40,7 +40,7 @@ Marts:
 	dw BattleTowerMart1
 	dw BattleTowerMart2
 	dw BattleTowerMart3
-MartsEnd
+MartsEnd:
 
 
 ; TODO: Tweak these as needed to include more of the new items, etc

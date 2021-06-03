@@ -121,7 +121,6 @@ Landmarks: ; 0x1ca8c3
 	landmark  60, 148, CinnabarIslandName
 	landmark  58, 146, PokemonMansionName
 	landmark  62, 146, CinnabarVolcanoName
-	landmark  44, 124, CeriseIslandName
 	landmark  60, 132, Route21Name
 	landmark  48,  92, Route22Name
 	landmark  28, 116, Route27Name
@@ -200,7 +199,6 @@ SafariZoneName:        db "Safari␣Zone@"
 SeafoamIslandsName:    db "Seafoam¯Islands@"
 PokemonMansionName:    db "Pokémon¯Mansion@"
 CinnabarVolcanoName:   db "Cinnabar¯Volcano@"
-CeriseIslandName:      db "Cerise¯Island@"
 CeruleanCaveName:      db "Cerulean¯Cave@"
 CeruleanCapeName:      db "Cerulean¯Cape@"
 LuckyIslandName:       db "Lucky¯Island@"

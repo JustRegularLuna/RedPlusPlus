@@ -268,10 +268,9 @@ ENDM
 	connection west, CinnabarIsland, CINNABAR_ISLAND, -3, 3, 13
 	connection east, Route19, ROUTE_19, -3, 21, 13
 
-	map_attributes Route21, ROUTE_21, $41, NORTH | SOUTH | WEST | EAST
+	map_attributes Route21, ROUTE_21, $41, NORTH | SOUTH | EAST
 	connection north, PalletTown, PALLET_TOWN, 2, 0, 10
 	connection south, CinnabarIsland, CINNABAR_ISLAND, 0, 0, 15
-	connection west, CeriseIslandEast, CERISE_ISLAND_EAST, 0, 0, 17
 	connection east, UragaChannelWest, URAGA_CHANNEL_WEST, 8, 0, 9
 
 	map_attributes Route22, ROUTE_22, $4d, EAST
@@ -288,9 +287,8 @@ ENDM
 	connection west, Route24, ROUTE_24, 0, 0, 20
 	connection east, CeruleanCape, CERULEAN_CAPE, 0, 0, 19
 
-	map_attributes Route26, ROUTE_26, $f, WEST | EAST
+	map_attributes Route26, ROUTE_26, $f, WEST
 	connection west, Route27East, ROUTE_27_EAST, 43, 0, 11
-	connection east, CeriseIslandWest, CERISE_ISLAND_WEST, 37, 0, 17
 
 	map_attributes Route27East, ROUTE_27_EAST, $41, WEST | EAST
 	connection west, Route27West, ROUTE_27_WEST, 2, 0, 9
@@ -412,14 +410,6 @@ ENDM
 
 	map_attributes UragaChannelWest, URAGA_CHANNEL_WEST, $41, WEST
 	connection west, Route21, ROUTE_21, -3, 5, 15
-
-	map_attributes CeriseIslandEast, CERISE_ISLAND_EAST, $41, WEST | EAST
-	connection west, CeriseIslandWest, CERISE_ISLAND_WEST, 0, 0, 17
-	connection east, Route21, ROUTE_21, 0, 0, 20
-
-	map_attributes CeriseIslandWest, CERISE_ISLAND_WEST, $41, WEST | EAST
-	connection west, Route26, ROUTE_26, -3, 34, 20
-	connection east, CeriseIslandEast, CERISE_ISLAND_EAST, 0, 0, 17
 
 	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $41, SOUTH | WEST | EAST
 	connection south, Route32Coast, ROUTE_32_COAST, 0, 0, 15

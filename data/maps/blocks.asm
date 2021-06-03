@@ -1083,10 +1083,6 @@ SeafoamIslandsB4F_BlockData:
 SilverCaveOutside_BlockData:
 	INCBIN "maps/SilverCaveOutside.ablk"
 
-CeriseIslandEast_BlockData:
-CeriseIslandWest_BlockData:
-	INCBIN "maps/CeriseIsland.ablk"
-
 SilverCaveRoom1_BlockData:
 	INCBIN "maps/SilverCaveRoom1.ablk"
 

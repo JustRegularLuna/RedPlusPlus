@@ -736,11 +736,6 @@ INCLUDE "maps/SeafoamIslandsB3F.asm"
 INCLUDE "maps/SeafoamIslandsB4F.asm"
 
 
-SECTION "Cerise Island Scripts", ROMX
-
-INCLUDE "maps/CeriseIsland.asm"
-
-
 SECTION "Silver Cave Scripts", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"

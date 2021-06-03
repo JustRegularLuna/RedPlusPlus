@@ -670,7 +670,7 @@ CheckIfUserIsSomeType::
 	ld b, a
 	ld a, [hBattleTurn]
 	xor 1
-CheckIfSomeoneIsSomeType
+CheckIfSomeoneIsSomeType:
 	ld c, a
 	ld de, EnemyMonType1
 	ld a, c
@@ -998,7 +998,7 @@ BattleTextBox:: ; 3ac3
 StdBattleTextBox:: ; 3ad5
 ; Open a textbox and print battle text at 20:hl.
 
-GLOBAL BattleText
+EXPORT BattleText
 
 	ld a, [hROMBank]
 	push af
@@ -1015,8 +1015,8 @@ GLOBAL BattleText
 
 GetBattleAnimPointer:: ; 3ae1
 
-GLOBAL BattleAnimations
-GLOBAL BattleAnimCommands
+EXPORT BattleAnimations
+EXPORT BattleAnimCommands
 
 	ld a, BANK(BattleAnimations)
 	rst Bankswitch

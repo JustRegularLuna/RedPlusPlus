@@ -610,7 +610,7 @@ _GetWaterWildmonPointer:
 	ld hl, OrangeWaterWildMons
 	ret
 
-_SwarmWildmonCheck
+_SwarmWildmonCheck:
 	call CopyCurrMapDE
 	push hl
 	ld hl, SwarmFlags
@@ -645,11 +645,11 @@ _SwarmWildmonCheck
 	scf
 	ret
 
-_NoSwarmWildmon
+_NoSwarmWildmon:
 	and a
 	ret
 
-_NormalWildmonOK
+_NormalWildmonOK:
 	call CopyCurrMapDE
 	jr LookUpWildmonsForMapDE
 ; 2a27f

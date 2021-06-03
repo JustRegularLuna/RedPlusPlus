@@ -127,35 +127,34 @@ KANTO_LANDMARK EQU const_value
 	const CINNABAR_ISLAND    ; 72
 	const POKEMON_MANSION    ; 73
 	const CINNABAR_VOLCANO   ; 74
-	const CERISE_ISLAND      ; 75
-	const ROUTE_21           ; 76
-	const ROUTE_22           ; 77
-	const ROUTE_27           ; 78
-	const TOHJO_FALLS        ; 79
-	const ROUTE_26           ; 7a
-	const POKEMON_LEAGUE     ; 7b
-	const ROUTE_23           ; 7c
-	const VICTORY_ROAD       ; 7d
-	const INDIGO_PLATEAU     ; 7e
-	const ROUTE_28           ; 7f
-	const CINNABAR_LAB       ; 80
+	const ROUTE_21           ; 75
+	const ROUTE_22           ; 76
+	const ROUTE_27           ; 77
+	const TOHJO_FALLS        ; 78
+	const ROUTE_26           ; 79
+	const POKEMON_LEAGUE     ; 7a
+	const ROUTE_23           ; 7b
+	const VICTORY_ROAD       ; 7c
+	const INDIGO_PLATEAU     ; 7d
+	const ROUTE_28           ; 7e
+	const CINNABAR_LAB       ; 7f
 
 SHAMOUTI_LANDMARK EQU const_value
 
-	const SHAMOUTI_ISLAND    ; 81
-	const BEAUTIFUL_BEACH    ; 82
-	const ROCKY_BEACH        ; 83
-	const NOISY_FOREST       ; 84
-	const SHRINE_RUINS       ; 85
-	const SHAMOUTI_TUNNEL    ; 86
-	const WARM_BEACH         ; 87
-	const SHAMOUTI_COAST     ; 88
-	const FIRE_ISLAND        ; 89
-	const ICE_ISLAND         ; 8a
-	const LIGHTNING_ISLAND   ; 8b
-	const ROUTE_49           ; 8c
-	const VALENCIA_ISLAND    ; 8d
-	const NAVEL_ROCK         ; 8e
-	const FARAWAY_ISLAND     ; 8f
+	const SHAMOUTI_ISLAND    ; 80
+	const BEAUTIFUL_BEACH    ; 81
+	const ROCKY_BEACH        ; 82
+	const NOISY_FOREST       ; 83
+	const SHRINE_RUINS       ; 84
+	const SHAMOUTI_TUNNEL    ; 85
+	const WARM_BEACH         ; 86
+	const SHAMOUTI_COAST     ; 87
+	const FIRE_ISLAND        ; 88
+	const ICE_ISLAND         ; 89
+	const LIGHTNING_ISLAND   ; 8a
+	const ROUTE_49           ; 8b
+	const VALENCIA_ISLAND    ; 8c
+	const NAVEL_ROCK         ; 8d
+	const FARAWAY_ISLAND     ; 8e
 
 NUM_LANDMARKS EQU const_value
