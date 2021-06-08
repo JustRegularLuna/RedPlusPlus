@@ -7,7 +7,7 @@ SaffronCity_MapScriptHeader:
 	db 21 ; warp events
 	warp_event 29,  7, FIGHTING_DOJO, 1
 	warp_event 36,  7, SAFFRON_GYM, 1
-	warp_event 29, 15, SAFFRON_MART, 2
+	warp_event 31, 15, SAFFRON_MART, 2
 	warp_event 14, 33, SAFFRON_POKECOM_CENTER_1F, 1
 	warp_event 33, 33, MR_PSYCHICS_HOUSE, 1
 	warp_event  0,  0, N_A, 0 ; TODO: remove
@@ -22,8 +22,8 @@ SaffronCity_MapScriptHeader:
 	warp_event 45, 23, ROUTE_8_SAFFRON_GATE, 2
 	warp_event 37, 15, POKEMON_TRAINER_FAN_CLUB, 1
 	warp_event  9, 33, SAFFRON_ORRE_SPEECH_HOUSE, 1
-	warp_event 21, 33, SAFFRON_BOOK_SPEECH_HOUSE, 1
-	warp_event 25, 33, SAFFRON_HITMONTOP_KID_HOUSE, 1
+	warp_event 23, 33, SAFFRON_BOOK_SPEECH_HOUSE, 1
+	warp_event 27, 33, SAFFRON_HITMONTOP_KID_HOUSE, 1
 	warp_event 17, 15, SAFFRON_RICH_SPEECH_HOUSE, 1
 	warp_event 11,  5, HIDDEN_TREE_GROTTO, 1
 

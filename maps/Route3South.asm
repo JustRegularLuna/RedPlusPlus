@@ -13,7 +13,7 @@ Route3South_MapScriptHeader:
 	bg_event 59,  9, SIGNPOST_JUMPTEXT, Route3Text10
 	bg_event 46, 11, SIGNPOST_ITEM + NUGGET, EVENT_ROUTE_3_HIDDEN_NUGGET
 
-	db 12 ; object events
+	db 15 ; object events
 	treebase_right_event_1 57,  2, SECRET_BASE_ROUTE_3_TREE, EVENT_SECRET_BASE_ROUTE_3_TREE
 	treebase_right_event_2 57,  2, SECRET_BASE_ROUTE_3_TREE, EVENT_SECRET_BASE_ROUTE_3_TREE_ESTABLISHED
 	cavebase_event 51,  9, SECRET_BASE_ROUTE_3_CAVE, EVENT_SECRET_BASE_ROUTE_3_CAVE
@@ -26,6 +26,9 @@ Route3South_MapScriptHeader:
 	object_event 21,  9, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_GENERICTRAINER, 3, GenericTrainerYoungsterCalvin, -1
 	object_event 24,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_GENERICTRAINER, 3, GenericTrainerBugCatcherJames, -1
 	object_event 33, 10, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, PERSONTYPE_GENERICTRAINER, 2, GenericTrainerLassRobin, -1
+	smashrock_event 15, 17
+	smashrock_event 17, 19
+	smashrock_event 20, 16
 
 GenericTrainerBugCatcherColton:
 	generictrainer BUG_CATCHER, COLTON, EVENT_BEAT_BUG_CATCHER_COLTON, Route3BattleText1, Route3EndBattleText1

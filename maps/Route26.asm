@@ -4,7 +4,7 @@ Route26_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_event 12,  5, POKEMON_LEAGUE_GATE, 3
+	warp_event 10,  5, POKEMON_LEAGUE_GATE, 3
 	warp_event 17, 57, ROUTE_26_HEAL_SPEECH_HOUSE, 1
 	warp_event  7, 72, ROUTE_26_DAY_OF_WEEK_SIBLINGS_HOUSE, 1
 	warp_event 12, 78, HIDDEN_TREE_GROTTO, 1

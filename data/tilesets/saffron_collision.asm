@@ -119,7 +119,7 @@
 	tilecoll WALL, WALL, FLOOR, WALL ; 76
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 77
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 78
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 79
+	tilecoll WALL, WALL, WALL, DOOR ; 79
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 7a
 	tilecoll WALL, WALL, WALL, WALL ; 7b
 	tilecoll WALL, FLOOR, WALL, WALL ; 7c
@@ -144,7 +144,7 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 8f
 	tilecoll WALL, WALL, WALL, DOOR ; 90
 	tilecoll WALL, WALL, WALL, WALL ; 91
-	tilecoll WALL, WALL, WALL, DOOR ; 92
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 92
 	tilecoll WALL, WALL, MART_SIGN, WALL ; 93
 	tilecoll WALL, WALL, WALL, WALL ; 94
 	tilecoll WALL, WALL, WALL, WALL ; 95
@@ -209,7 +209,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; d0
 	tilecoll WALL, WALL, WALL, WALL ; d1
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; d2
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; d3
+	tilecoll FLOOR, FLOOR, WALL, WALL ; d3
 	tilecoll WALL, WALL, WALL, WALL ; d4
 	tilecoll WALL, WALL, WALL, WALL ; d5
 	tilecoll WALL, WALL, WALL, WALL ; d6

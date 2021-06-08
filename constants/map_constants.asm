@@ -52,7 +52,7 @@ MAP_NONE   EQU 0
 
 	map_const PEWTER_CITY,                 20, 21 ;  1
 	map_const ROUTE_2_NORTH,               13, 18 ;  2
-	map_const ROUTE_3_SOUTH,               36, 10 ;  3
+	map_const ROUTE_3_SOUTH,               36, 12 ;  3
 	map_const ROUTE_3_NORTH,               12,  9 ;  4
 	map_const PEWTER_POKECENTER_1F,         6,  4 ;  5
 	map_const PEWTER_MART,                  6,  4 ;  6
