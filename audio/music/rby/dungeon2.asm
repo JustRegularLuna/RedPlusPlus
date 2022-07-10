@@ -267,25 +267,6 @@ Music_Dungeon2_branch_7e958:
 	callchannel Music_Dungeon2_branch_7e9d1
 	callchannel Music_Dungeon2_branch_7e9d1
 	loopchannel 0, Music_Dungeon2_branch_7e940
-	octave 2
-	note G_, 2
-	note A#, 4
-	note G_, 2
-	octave 3
-	note C#, 4
-	octave 2
-	note G_, 2
-	note A_, 2
-	note A#, 2
-	note G_, 2
-	octave 3
-	note C#, 4
-	octave 2
-	note G_, 2
-	note A#, 2
-	note G_, 2
-	note __, 2
-	endchannel
 
 Music_Dungeon2_branch_7e9d1:
 	octave 4
